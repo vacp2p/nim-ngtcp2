@@ -18,4 +18,5 @@ type
     {.header: socketheader, importc: "sockaddr_storage".} = object
 
 cIncludeDir(ngtcp2src/"lib"/"includes")
+cDefine("NGTCP2_STATICLIB")
 cImport(ngtcp2src/"lib"/"includes"/"ngtcp2"/"ngtcp2.h")
