@@ -6,6 +6,7 @@ static:
   cCompile(ngtcp2src/"lib"/"*.c")
 
 when defined(windows):
+  {.passL: "-lws2_32".}
   const socketheader = "<winsock2.h>"
 else:
   const socketheader = "<sys/socket.h>"
