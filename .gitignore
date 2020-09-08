@@ -1,4 +1,13 @@
 *
 !*/
 !*.*
-build
+
+# ignore all cmake build files, except version.h
+build/*
+!build/lib/
+build/lib/*
+!build/lib/includes/
+build/lib/includes/*
+!build/lib/includes/ngtcp2/
+build/lib/includes/ngtcp2/*
+!build/lib/includes/ngtcp2/version.h
