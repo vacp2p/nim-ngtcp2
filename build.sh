@@ -15,8 +15,14 @@ cat "${root}/sockets.nim" > "${root}/ngtcp2.nim"
 # dividing line
 echo >> "${root}/ngtcp2.nim"
 
+# assemble list of C files to be compiled
+for file in `ls "${root}/sources/lib"/*.c`; do
+  compile="${compile} --compile=${file}"
+done
+
 # generate nim wrapper with nimterop
 toast \
+  $compile \
   --pnim \
   --preprocess \
   --includeDirs="${root}/sources/lib/includes" \
