@@ -8,6 +8,6 @@ else:
 
 type
   sockaddr*
-    {.header: socketheader, importc: "sockaddr".} = object
+    {.header: socketheader, importc: "struct sockaddr".} = object
   sockaddr_storage*
-    {.header: socketheader, importc: "sockaddr_storage".} = object
+    {.header: socketheader, importc: "struct sockaddr_storage".} = object

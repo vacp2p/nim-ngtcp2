@@ -19,13 +19,13 @@ else:
 
 type
   sockaddr*
-    {.header: socketheader, importc: "sockaddr".} = object
+    {.header: socketheader, importc: "struct sockaddr".} = object
   sockaddr_storage*
-    {.header: socketheader, importc: "sockaddr_storage".} = object
+    {.header: socketheader, importc: "struct sockaddr_storage".} = object
 
-# Generated @ 2020-09-08T10:13:48+02:00
+# Generated @ 2020-09-08T15:24:49+02:00
 # Command line:
-#   /home/user/.nimble/pkgs/nimterop-0.6.11/nimterop/toast --compile=./sources/lib/ngtcp2_acktr.c --compile=./sources/lib/ngtcp2_addr.c --compile=./sources/lib/ngtcp2_buf.c --compile=./sources/lib/ngtcp2_cc.c --compile=./sources/lib/ngtcp2_cid.c --compile=./sources/lib/ngtcp2_conn.c --compile=./sources/lib/ngtcp2_conv.c --compile=./sources/lib/ngtcp2_crypto.c --compile=./sources/lib/ngtcp2_err.c --compile=./sources/lib/ngtcp2_gaptr.c --compile=./sources/lib/ngtcp2_idtr.c --compile=./sources/lib/ngtcp2_ksl.c --compile=./sources/lib/ngtcp2_log.c --compile=./sources/lib/ngtcp2_map.c --compile=./sources/lib/ngtcp2_mem.c --compile=./sources/lib/ngtcp2_path.c --compile=./sources/lib/ngtcp2_pkt.c --compile=./sources/lib/ngtcp2_ppe.c --compile=./sources/lib/ngtcp2_pq.c --compile=./sources/lib/ngtcp2_pv.c --compile=./sources/lib/ngtcp2_qlog.c --compile=./sources/lib/ngtcp2_range.c --compile=./sources/lib/ngtcp2_ringbuf.c --compile=./sources/lib/ngtcp2_rob.c --compile=./sources/lib/ngtcp2_rst.c --compile=./sources/lib/ngtcp2_rtb.c --compile=./sources/lib/ngtcp2_str.c --compile=./sources/lib/ngtcp2_strm.c --compile=./sources/lib/ngtcp2_vec.c --compile=./sources/lib/ngtcp2_version.c --pnim --preprocess --noHeader --includeDirs=./sources/lib/includes --includeDirs=./build/lib/includes --defines=NGTCP2_STATICLIB ./sources/lib/includes/ngtcp2/ngtcp2.h
+#   /home/user/.nimble/pkgs/nimterop-0.6.11/nimterop/toast --compile=./sources/lib/ngtcp2_acktr.c --compile=./sources/lib/ngtcp2_addr.c --compile=./sources/lib/ngtcp2_buf.c --compile=./sources/lib/ngtcp2_cc.c --compile=./sources/lib/ngtcp2_cid.c --compile=./sources/lib/ngtcp2_conn.c --compile=./sources/lib/ngtcp2_conv.c --compile=./sources/lib/ngtcp2_crypto.c --compile=./sources/lib/ngtcp2_err.c --compile=./sources/lib/ngtcp2_gaptr.c --compile=./sources/lib/ngtcp2_idtr.c --compile=./sources/lib/ngtcp2_ksl.c --compile=./sources/lib/ngtcp2_log.c --compile=./sources/lib/ngtcp2_map.c --compile=./sources/lib/ngtcp2_mem.c --compile=./sources/lib/ngtcp2_path.c --compile=./sources/lib/ngtcp2_pkt.c --compile=./sources/lib/ngtcp2_ppe.c --compile=./sources/lib/ngtcp2_pq.c --compile=./sources/lib/ngtcp2_pv.c --compile=./sources/lib/ngtcp2_qlog.c --compile=./sources/lib/ngtcp2_range.c --compile=./sources/lib/ngtcp2_ringbuf.c --compile=./sources/lib/ngtcp2_rob.c --compile=./sources/lib/ngtcp2_rst.c --compile=./sources/lib/ngtcp2_rtb.c --compile=./sources/lib/ngtcp2_str.c --compile=./sources/lib/ngtcp2_strm.c --compile=./sources/lib/ngtcp2_vec.c --compile=./sources/lib/ngtcp2_version.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --includeDirs=./sources/lib/includes --includeDirs=./build/lib/includes ./sources/lib/includes/ngtcp2/ngtcp2.h
 
 # const 'NGTCP2_PROTO_VER_MAX' has unsupported value 'NGTCP2_PROTO_VER'
 # const 'NGTCP2_INITIAL_SALT' has unsupported value '"\xaf\xbf\xec\x28\x99\x93\xd2\x4c\x9e\x97\x86\xf1\x9c\x61\x11\xe0\x43\x90" "\xa8\x99"'
