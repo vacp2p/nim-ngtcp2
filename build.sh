@@ -26,6 +26,7 @@ toast \
   --pnim \
   --preprocess \
   --noHeader \
+  --defines=NGTCP2_STATICLIB \
   --includeDirs="${root}/sources/lib/includes" \
   --includeDirs="${root}/build/lib/includes" \
   "${root}/sources/lib/includes/ngtcp2/ngtcp2.h" >> "${root}/ngtcp2.nim"
