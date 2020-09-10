@@ -9,14 +9,8 @@ fi
 # run cmake on ngtcp2 sources
 cmake -S "${root}/sources" -B "${root}/build"
 
-# C includes
-cat "${root}/includes.nim" > "${root}/ngtcp2.nim"
-
-# dividing line
-echo >> "${root}/ngtcp2.nim"
-
-# socket definitions
-cat "${root}/sockets.nim" >> "${root}/ngtcp2.nim"
+# add prelude
+cat "${root}/prelude.nim" > "${root}/ngtcp2.nim"
 
 # dividing line
 echo >> "${root}/ngtcp2.nim"
