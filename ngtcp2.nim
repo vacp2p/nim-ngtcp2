@@ -10,20 +10,103 @@ const buildInclude = root/"build"/"lib"/"includes"
 {.passC: fmt"-I{sourceInclude} -I{buildInclude}".}
 
 # Import socket definitions from system
+import nativesockets
+export Port
 
 when defined(windows):
   {.passL: "-lws2_32".}
-  const socketheader = "<winsock2.h>"
+  {.
+    pragma: import_in_addr,
+    importc: "struct in_addr",
+    header: "<winsock2.h>"
+  .}
+  {.
+    pragma: import_in6_addr,
+    importc: "struct in6_addr",
+    header: "<in6addr.h>"
+  .}
+  {.
+    pragma: import_sockaddr,
+    importc: "struct sockaddr",
+    header: "<ws2tcpip.h>"
+  .}
+  {.
+    pragma: import_sockaddr_in,
+    importc: "struct sockaddr_in",
+    header: "<ws2tcpip.h>"
+  .}
+  {.
+    pragma: import_sockaddr_in6,
+    importc: "struct sockaddr_in6",
+    header: "<ws2tcpip.h>"
+  .}
+  {.
+    pragma: import_sockaddr_storage,
+    importc: "struct sockaddr_storage",
+    header: "<ws2tcpip.h>"
+  .}
 else:
-  const socketheader = "<sys/socket.h>"
+  {.
+    pragma: import_in_addr,
+    importc: "struct in_addr",
+    header: "<netinet/in.h>"
+  .}
+  {.
+    pragma: import_in6_addr,
+    importc: "struct in6_addr",
+    header: "<netinet/in.h>"
+  .}
+  {.
+    pragma: import_sockaddr
+    importc: "struct sockaddr",
+    header: "<sys/socket.h>"
+  .}
+  {.
+    pragma: import_sockaddr_in,
+    importc: "struct sockaddr_in",
+    header: "<netinet/in.h>"
+  .}
+  {.
+    pragma: import_sockaddr_in6,
+    importc: "struct sockaddr_in6",
+    header: "<netinet/in.h>"
+  .}
+  {.
+    pragma: import_sockaddr_storage,
+    importc: "struct sockaddr_storage",
+    header: "<sys/socket.h>"
+  .}
 
 type
-  sockaddr*
-    {.header: socketheader, importc: "struct sockaddr".} = object
-  sockaddr_storage*
-    {.header: socketheader, importc: "struct sockaddr_storage".} = object
+  AddressFamily* {.size: sizeof(uint16).} = enum
+    AF_INET = nativesockets.AF_INET
+    AF_INET6 = nativesockets.AF_INET6
+  in_addr* {.import_in_addr.} = object
+    s_addr*: uint32
+  in6_addr* {.import_in6_addr.} = object
+    s6_addr*: array[16, uint8]
+  sockaddr_storage* {.import_sockaddr_storage.} = object
+  sockaddr_in* {.import_sockaddr_in.} = object
+    sin_family*: AddressFamily
+    sin_port*: Port
+    sin_addr*: in_addr
+    sin_zero*: array[8, char]
+  sockaddr_in6* {.import_sockaddr_in6.} = object
+    sin6_family*: AddressFamily
+    sin6_port*: Port
+    sin6_flowinfo*: uint32
+    sin6_address*: in6_addr
+    sin6_scopy_id*: uint32
+  sockaddr* {.import_sockaddr.} = object
+    sa_family*: AddressFamily
+    sa_data*: array[14, char]
+  SocketAddress* {.union.} = object
+    address*: sockaddr
+    ipv4*: sockaddr_in
+    ipv6*: sockaddr_in6
+    storage*: sockaddr_storage
 
-# Generated @ 2020-09-08T15:24:49+02:00
+# Generated @ 2020-09-10T16:49:03+02:00
 # Command line:
 #   /home/user/.nimble/pkgs/nimterop-0.6.11/nimterop/toast --compile=./sources/lib/ngtcp2_acktr.c --compile=./sources/lib/ngtcp2_addr.c --compile=./sources/lib/ngtcp2_buf.c --compile=./sources/lib/ngtcp2_cc.c --compile=./sources/lib/ngtcp2_cid.c --compile=./sources/lib/ngtcp2_conn.c --compile=./sources/lib/ngtcp2_conv.c --compile=./sources/lib/ngtcp2_crypto.c --compile=./sources/lib/ngtcp2_err.c --compile=./sources/lib/ngtcp2_gaptr.c --compile=./sources/lib/ngtcp2_idtr.c --compile=./sources/lib/ngtcp2_ksl.c --compile=./sources/lib/ngtcp2_log.c --compile=./sources/lib/ngtcp2_map.c --compile=./sources/lib/ngtcp2_mem.c --compile=./sources/lib/ngtcp2_path.c --compile=./sources/lib/ngtcp2_pkt.c --compile=./sources/lib/ngtcp2_ppe.c --compile=./sources/lib/ngtcp2_pq.c --compile=./sources/lib/ngtcp2_pv.c --compile=./sources/lib/ngtcp2_qlog.c --compile=./sources/lib/ngtcp2_range.c --compile=./sources/lib/ngtcp2_ringbuf.c --compile=./sources/lib/ngtcp2_rob.c --compile=./sources/lib/ngtcp2_rst.c --compile=./sources/lib/ngtcp2_rtb.c --compile=./sources/lib/ngtcp2_str.c --compile=./sources/lib/ngtcp2_strm.c --compile=./sources/lib/ngtcp2_vec.c --compile=./sources/lib/ngtcp2_version.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --includeDirs=./sources/lib/includes --includeDirs=./build/lib/includes ./sources/lib/includes/ngtcp2/ngtcp2.h
 
