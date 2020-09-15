@@ -17,3 +17,6 @@ test "SocketAddress union":
   address.address.sa_family = AF_INET
   check address.ipv4.sin_family == AF_INET
   check address.ipv6.sin6_family == AF_INET
+
+test "Socketaddress can be converted to string":
+  discard $SocketAddress()

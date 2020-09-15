@@ -84,8 +84,8 @@ type
     sin6_family*: AddressFamily
     sin6_port*: Port
     sin6_flowinfo*: uint32
-    sin6_address*: in6_addr
-    sin6_scopy_id*: uint32
+    sin6_addr*: in6_addr
+    sin6_scope_id*: uint32
   sockaddr* {.import_sockaddr.} = object
     sa_family*: AddressFamily
     sa_data*: array[14, char]
