@@ -1,9 +1,11 @@
 import os
 import strformat
-import ngtcp2/sockets
 
 # Socket definitions
-export sockets
+import nativesockets
+
+when defined(windows):
+  {.passL: "-lws2_32".}
 
 # C include directories
 const root = currentSourcePath.parentDir
@@ -12,9 +14,9 @@ const buildInclude = root/"build"/"lib"/"includes"
 
 {.passC: fmt"-I{sourceInclude} -I{buildInclude}".}
 
-# Generated @ 2020-09-10T17:06:23+02:00
+# Generated @ 2020-10-07T16:35:19+02:00
 # Command line:
-#   /home/user/.nimble/pkgs/nimterop-0.6.11/nimterop/toast --compile=./sources/lib/ngtcp2_acktr.c --compile=./sources/lib/ngtcp2_addr.c --compile=./sources/lib/ngtcp2_buf.c --compile=./sources/lib/ngtcp2_cc.c --compile=./sources/lib/ngtcp2_cid.c --compile=./sources/lib/ngtcp2_conn.c --compile=./sources/lib/ngtcp2_conv.c --compile=./sources/lib/ngtcp2_crypto.c --compile=./sources/lib/ngtcp2_err.c --compile=./sources/lib/ngtcp2_gaptr.c --compile=./sources/lib/ngtcp2_idtr.c --compile=./sources/lib/ngtcp2_ksl.c --compile=./sources/lib/ngtcp2_log.c --compile=./sources/lib/ngtcp2_map.c --compile=./sources/lib/ngtcp2_mem.c --compile=./sources/lib/ngtcp2_path.c --compile=./sources/lib/ngtcp2_pkt.c --compile=./sources/lib/ngtcp2_ppe.c --compile=./sources/lib/ngtcp2_pq.c --compile=./sources/lib/ngtcp2_pv.c --compile=./sources/lib/ngtcp2_qlog.c --compile=./sources/lib/ngtcp2_range.c --compile=./sources/lib/ngtcp2_ringbuf.c --compile=./sources/lib/ngtcp2_rob.c --compile=./sources/lib/ngtcp2_rst.c --compile=./sources/lib/ngtcp2_rtb.c --compile=./sources/lib/ngtcp2_str.c --compile=./sources/lib/ngtcp2_strm.c --compile=./sources/lib/ngtcp2_vec.c --compile=./sources/lib/ngtcp2_version.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --includeDirs=./sources/lib/includes --includeDirs=./build/lib/includes ./sources/lib/includes/ngtcp2/ngtcp2.h
+#   /home/user/.nimble/pkgs/nimterop-0.6.11/nimterop/toast --compile=./sources/lib/ngtcp2_acktr.c --compile=./sources/lib/ngtcp2_addr.c --compile=./sources/lib/ngtcp2_buf.c --compile=./sources/lib/ngtcp2_cc.c --compile=./sources/lib/ngtcp2_cid.c --compile=./sources/lib/ngtcp2_conn.c --compile=./sources/lib/ngtcp2_conv.c --compile=./sources/lib/ngtcp2_crypto.c --compile=./sources/lib/ngtcp2_err.c --compile=./sources/lib/ngtcp2_gaptr.c --compile=./sources/lib/ngtcp2_idtr.c --compile=./sources/lib/ngtcp2_ksl.c --compile=./sources/lib/ngtcp2_log.c --compile=./sources/lib/ngtcp2_map.c --compile=./sources/lib/ngtcp2_mem.c --compile=./sources/lib/ngtcp2_path.c --compile=./sources/lib/ngtcp2_pkt.c --compile=./sources/lib/ngtcp2_ppe.c --compile=./sources/lib/ngtcp2_pq.c --compile=./sources/lib/ngtcp2_pv.c --compile=./sources/lib/ngtcp2_qlog.c --compile=./sources/lib/ngtcp2_range.c --compile=./sources/lib/ngtcp2_ringbuf.c --compile=./sources/lib/ngtcp2_rob.c --compile=./sources/lib/ngtcp2_rst.c --compile=./sources/lib/ngtcp2_rtb.c --compile=./sources/lib/ngtcp2_str.c --compile=./sources/lib/ngtcp2_strm.c --compile=./sources/lib/ngtcp2_vec.c --compile=./sources/lib/ngtcp2_version.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --replace=sockaddr=SockAddr,sockaddr_storage=Sockaddr_storage --includeDirs=./sources/lib/includes --includeDirs=./build/lib/includes ./sources/lib/includes/ngtcp2/ngtcp2.h
 
 # const 'NGTCP2_PROTO_VER_MAX' has unsupported value 'NGTCP2_PROTO_VER'
 # const 'NGTCP2_INITIAL_SALT' has unsupported value '"\xaf\xbf\xec\x28\x99\x93\xd2\x4c\x9e\x97\x86\xf1\x9c\x61\x11\xe0\x43\x90" "\xa8\x99"'
@@ -750,7 +752,7 @@ type
     addrlen*: uint             ## ```
                  ##   addrlen is the length of addr.
                  ## ```
-    `addr`*: ptr sockaddr ## ```
+    `addr`*: ptr SockAddr ## ```
                        ##   addr points to the buffer which contains endpoint address.  It
                        ##        must not be NULL.
                        ## ```
@@ -777,8 +779,8 @@ type
                                        ##    ngtcp2_path_storage is a convenient struct to have buffers to store
                                        ##    the longest addresses.
                                        ## ```
-    local_addrbuf*: sockaddr_storage
-    remote_addrbuf*: sockaddr_storage
+    local_addrbuf*: SockAddr_storage
+    remote_addrbuf*: SockAddr_storage
     path*: ngtcp2_path
 
   ngtcp2_crypto_md* {.bycopy.} = object ## ```
@@ -2593,7 +2595,7 @@ proc ngtcp2_err_infer_quic_transport_error_code*(liberr: cint): uint64 {.importc
   ##    ngtcp2_err_infer_quic_transport_error_code returns a QUIC
   ##    transport error code which corresponds to |liberr|.
   ## ```
-proc ngtcp2_addr_init*(dest: ptr ngtcp2_addr; `addr`: ptr sockaddr; addrlen: uint;
+proc ngtcp2_addr_init*(dest: ptr ngtcp2_addr; `addr`: ptr SockAddr; addrlen: uint;
                       user_data: pointer): ptr ngtcp2_addr {.importc, cdecl.}
   ## ```
   ##   @function
@@ -2602,8 +2604,8 @@ proc ngtcp2_addr_init*(dest: ptr ngtcp2_addr; `addr`: ptr sockaddr; addrlen: uin
   ##    returns |dest|.
   ## ```
 proc ngtcp2_path_storage_init*(ps: ptr ngtcp2_path_storage;
-                              local_addr: ptr sockaddr; local_addrlen: uint;
-                              local_user_data: pointer; remote_addr: ptr sockaddr;
+                              local_addr: ptr SockAddr; local_addrlen: uint;
+                              local_user_data: pointer; remote_addr: ptr SockAddr;
                               remote_addrlen: uint; remote_user_data: pointer) {.
     importc, cdecl.}
   ## ```

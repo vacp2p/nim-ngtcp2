@@ -1,9 +1,11 @@
 import os
 import strformat
-import ngtcp2/sockets
 
 # Socket definitions
-export sockets
+import nativesockets
+
+when defined(windows):
+  {.passL: "-lws2_32".}
 
 # C include directories
 const root = currentSourcePath.parentDir
