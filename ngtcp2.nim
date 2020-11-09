@@ -14,11 +14,10 @@ const buildInclude = root/"build"/"lib"/"includes"
 
 {.passC: fmt"-I{sourceInclude} -I{buildInclude}".}
 
-# Generated @ 2020-10-07T16:35:19+02:00
+# Generated @ 2020-11-05T18:02:10+01:00
 # Command line:
 #   /home/user/.nimble/pkgs/nimterop-0.6.11/nimterop/toast --compile=./sources/lib/ngtcp2_acktr.c --compile=./sources/lib/ngtcp2_addr.c --compile=./sources/lib/ngtcp2_buf.c --compile=./sources/lib/ngtcp2_cc.c --compile=./sources/lib/ngtcp2_cid.c --compile=./sources/lib/ngtcp2_conn.c --compile=./sources/lib/ngtcp2_conv.c --compile=./sources/lib/ngtcp2_crypto.c --compile=./sources/lib/ngtcp2_err.c --compile=./sources/lib/ngtcp2_gaptr.c --compile=./sources/lib/ngtcp2_idtr.c --compile=./sources/lib/ngtcp2_ksl.c --compile=./sources/lib/ngtcp2_log.c --compile=./sources/lib/ngtcp2_map.c --compile=./sources/lib/ngtcp2_mem.c --compile=./sources/lib/ngtcp2_path.c --compile=./sources/lib/ngtcp2_pkt.c --compile=./sources/lib/ngtcp2_ppe.c --compile=./sources/lib/ngtcp2_pq.c --compile=./sources/lib/ngtcp2_pv.c --compile=./sources/lib/ngtcp2_qlog.c --compile=./sources/lib/ngtcp2_range.c --compile=./sources/lib/ngtcp2_ringbuf.c --compile=./sources/lib/ngtcp2_rob.c --compile=./sources/lib/ngtcp2_rst.c --compile=./sources/lib/ngtcp2_rtb.c --compile=./sources/lib/ngtcp2_str.c --compile=./sources/lib/ngtcp2_strm.c --compile=./sources/lib/ngtcp2_vec.c --compile=./sources/lib/ngtcp2_version.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --replace=sockaddr=SockAddr,sockaddr_storage=Sockaddr_storage --includeDirs=./sources/lib/includes --includeDirs=./build/lib/includes ./sources/lib/includes/ngtcp2/ngtcp2.h
 
-# const 'NGTCP2_PROTO_VER_MAX' has unsupported value 'NGTCP2_PROTO_VER'
 # const 'NGTCP2_INITIAL_SALT' has unsupported value '"\xaf\xbf\xec\x28\x99\x93\xd2\x4c\x9e\x97\x86\xf1\x9c\x61\x11\xe0\x43\x90" "\xa8\x99"'
 {.push hint[ConvFromXtoItselfNotNeeded]: off.}
 import macros
@@ -133,7 +132,8 @@ defineEnum(ngtcp2_write_stream_flag) ## ```
 defineEnum(ngtcp2_connection_close_error_code_type)
 defineEnum(ngtcp2_log_event)
 const
-  NGTCP2_PROTO_VER* = 0xFF00001D'u
+  NGTCP2_PROTO_VER_MAX* = 0xFF000020'u
+  NGTCP2_PROTO_VER_MIN* = 0xFF00001D'u
   NGTCP2_MAX_PKTLEN_IPV4* = 1252
   NGTCP2_MAX_PKTLEN_IPV6* = 1232
   NGTCP2_MIN_INITIAL_PKTLEN* = 1200
@@ -187,6 +187,7 @@ const
   NGTCP2_ERR_WRITE_MORE* = (-240).ngtcp2_lib_error
   NGTCP2_ERR_RETRY* = (-241).ngtcp2_lib_error
   NGTCP2_ERR_DROP_CONN* = (-242).ngtcp2_lib_error
+  NGTCP2_ERR_AEAD_LIMIT_REACHED* = (-243).ngtcp2_lib_error
   NGTCP2_ERR_FATAL* = (-500).ngtcp2_lib_error
   NGTCP2_ERR_NOMEM* = (-501).ngtcp2_lib_error
   NGTCP2_ERR_CALLBACK_FAILURE* = (-502).ngtcp2_lib_error
@@ -221,6 +222,7 @@ const
   NGTCP2_APPLICATION_ERROR* = 0x0000000C'u
   NGTCP2_CRYPTO_BUFFER_EXCEEDED* = 0x0000000D'u
   NGTCP2_KEY_UPDATE_ERROR* = 0x0000000E'u
+  NGTCP2_AEAD_LIMIT_REACHED* = 0x0000000F'u
   NGTCP2_CRYPTO_ERROR* = 0x00000100'u
   NGTCP2_PATH_VALIDATION_RESULT_SUCCESS* = (0).ngtcp2_path_validation_result
   NGTCP2_PATH_VALIDATION_RESULT_FAILURE* = (
@@ -587,6 +589,7 @@ type
     smoothed_rtt*: ngtcp2_duration
     rttvar*: ngtcp2_duration
     initial_rtt*: ngtcp2_duration
+    first_rtt_sample_ts*: ngtcp2_tstamp
     pto_count*: uint
     loss_detection_timer*: ngtcp2_tstamp ## ```
                                        ##   last_tx_pkt_ts corresponds to
@@ -742,6 +745,25 @@ type
     rand_ctx*: ngtcp2_rand_ctx ## ```
                              ##   rand_ctx is an optional random number generator to be passed to
                              ##      :type:ngtcp2_rand callback.
+                             ## ```
+    max_window*: uint64 ## ```
+                      ##   max_window is the maximum connection-level flow control window if
+                      ##      connection-level window auto-tuning is enabled.  The
+                      ##      connection-level window auto tuning is enabled if nonzero value
+                      ##      is specified in this field.  The initial value of window size is
+                      ##      initial_max_data in transport_params.  The window size is scaled
+                      ##      up to the value specified in this field.
+                      ## ```
+    max_stream_window*: uint64 ## ```
+                             ##   max_stream_window is the maximum stream-level flow control window
+                             ##      if stream-level window auto-tuning is enabled.  The stream-level
+                             ##      window auto-tuning is enabled if nonzero value is specified in
+                             ##      this field.  The initial value of window size is
+                             ##      initial_max_stream_data_bidi_remote,
+                             ##      initial_max_stream_data_bidi_local, or
+                             ##      initial_max_stream_data_uni in transport_params, depending on the
+                             ##      type of stream.  The window size is scaled up to the value
+                             ##      specified in this field.
                              ## ```
   
   ngtcp2_addr* {.bycopy.} = object ## ```
@@ -1235,13 +1257,13 @@ proc ngtcp2_pkt_decode_version_cid*(pversion: ptr uint32; pdcid: ptr ptr uint8;
   ##    its length and assigns them to |*pscid| and |*pscidlen|
   ##    respectively.
   ##   
-  ##    If the given packet is Short packet, |*pversion| will be
-  ##    :macro:NGTCP2_PROTO_VER, |*pscid| will be NULL, and |*pscidlen|
-  ##    will be 0.  Because the Short packet does not have the length of
-  ##    Destination Connection ID, the caller has to pass the length in
-  ##    |short_dcidlen|.  This function extracts the pointer to the
-  ##    Destination Connection ID and assigns it to |*pdcid|.
-  ##    |short_dcidlen| is assigned to |*pdcidlen|.
+  ##    If the given packet is Short packet, |*pversion| will be 0,
+  ##    |*pscid| will be NULL, and |*pscidlen| will be 0.  Because the
+  ##    Short packet does not have the length of Destination Connection ID,
+  ##    the caller has to pass the length in |short_dcidlen|.  This
+  ##    function extracts the pointer to the Destination Connection ID and
+  ##    assigns it to |*pdcid|.  |short_dcidlen| is assigned to
+  ##    |*pdcidlen|.
   ##   
   ##    This function returns 0 or 1 if it succeeds.  It returns 1 if
   ##    Version Negotiation packet should be sent.  Otherwise, one of the
@@ -1359,8 +1381,8 @@ proc ngtcp2_pkt_get_type_long*(c: uint8): uint8 {.importc, cdecl.}
   ##    the first byte of Long packet header.
   ## ```
 proc ngtcp2_pkt_write_connection_close*(dest: ptr uint8; destlen: uint;
-                                       dcid: ptr ngtcp2_cid; scid: ptr ngtcp2_cid;
-                                       error_code: uint64;
+                                       version: uint32; dcid: ptr ngtcp2_cid;
+                                       scid: ptr ngtcp2_cid; error_code: uint64;
                                        encrypt: ngtcp2_encrypt;
                                        aead: ptr ngtcp2_crypto_aead;
                                        aead_ctx: ptr ngtcp2_crypto_aead_ctx;
@@ -1389,9 +1411,9 @@ proc ngtcp2_pkt_write_connection_close*(dest: ptr uint8; destlen: uint;
   ##    :enum:NGTCP2_ERR_CALLBACK_FAILURE
   ##        Callback function failed.
   ## ```
-proc ngtcp2_pkt_write_retry*(dest: ptr uint8; destlen: uint; dcid: ptr ngtcp2_cid;
-                            scid: ptr ngtcp2_cid; odcid: ptr ngtcp2_cid;
-                            token: ptr uint8; tokenlen: uint;
+proc ngtcp2_pkt_write_retry*(dest: ptr uint8; destlen: uint; version: uint32;
+                            dcid: ptr ngtcp2_cid; scid: ptr ngtcp2_cid;
+                            odcid: ptr ngtcp2_cid; token: ptr uint8; tokenlen: uint;
                             encrypt: ngtcp2_encrypt; aead: ptr ngtcp2_crypto_aead;
                             aead_ctx: ptr ngtcp2_crypto_aead_ctx): ngtcp2_ssize {.
     importc, cdecl.}
@@ -1905,6 +1927,15 @@ proc ngtcp2_conn_open_bidi_stream*(conn: ptr ngtcp2_conn; pstream_id: ptr int64;
   ##    |stream_user_data| is the user data specific to the stream.  The
   ##    open stream ID is stored in |*pstream_id|.
   ##   
+  ##    Application can call this function before handshake completes.  For
+  ##    0RTT packet, application can call this function after calling
+  ##    ngtcp2_conn_set_early_remote_transport_params.  For 1RTT packet,
+  ##    application can call this function after calling
+  ##    ngtcp2_conn_set_remote_transport_params and
+  ##    ngtcp2_conn_install_tx_key.  If ngtcp2 crypto support library is
+  ##    used, application can call this function after calling
+  ##    ngtcp2_crypto_derive_and_install_tx_key for 1RTT packet.
+  ##   
   ##    This function returns 0 if it succeeds, or one of the following
   ##    negative error codes:
   ##   
@@ -1921,6 +1952,15 @@ proc ngtcp2_conn_open_uni_stream*(conn: ptr ngtcp2_conn; pstream_id: ptr int64;
   ##    ngtcp2_conn_open_uni_stream opens new unidirectional stream.  The
   ##    |stream_user_data| is the user data specific to the stream.  The
   ##    open stream ID is stored in |*pstream_id|.
+  ##   
+  ##    Application can call this function before handshake completes.  For
+  ##    0RTT packet, application can call this function after calling
+  ##    ngtcp2_conn_set_early_remote_transport_params.  For 1RTT packet,
+  ##    application can call this function after calling
+  ##    ngtcp2_conn_set_remote_transport_params and
+  ##    ngtcp2_conn_install_tx_key.  If ngtcp2 crypto support library is
+  ##    used, application can call this function after calling
+  ##    ngtcp2_crypto_derive_and_install_tx_key for 1RTT packet.
   ##   
   ##    This function returns 0 if it succeeds, or one of the following
   ##    negative error codes:
@@ -2022,12 +2062,14 @@ proc ngtcp2_conn_writev_stream*(conn: ptr ngtcp2_conn; path: ptr ngtcp2_path;
   ##   
   ##    If |path| is not NULL, this function stores the network path with
   ##    which the packet should be sent.  Each addr field must point to the
-  ##    buffer which is at least 128 bytes.  sizeof(struct
-  ##    sockaddr_storage) is enough.  The assignment might not be done if
-  ##    nothing is written to |dest|.
+  ##    buffer which should be at least sizeof(struct sockaddr_storage)
+  ##    bytes long.  The assignment might not be done if nothing is written
+  ##    to |dest|.
   ##   
   ##    If |pi| is not NULL, this function stores packet metadata in it if
-  ##    it succeeds.  The metadata includes ECN markings.
+  ##    it succeeds.  The metadata includes ECN markings.  When calling
+  ##    this function again after it returns :enum:NGTCP2_ERR_WRITE_MORE,
+  ##    caller must pass the same |pi| to this function.
   ##   
   ##    If the all given data is encoded as STREAM frame in |dest|, and if
   ##    |flags| & NGTCP2_WRITE_STREAM_FLAG_FIN is nonzero, fin flag is set
@@ -2122,7 +2164,8 @@ proc ngtcp2_conn_writev_stream*(conn: ptr ngtcp2_conn; path: ptr ngtcp2_path;
   ##    other library functions.
   ## ```
 proc ngtcp2_conn_write_connection_close*(conn: ptr ngtcp2_conn;
-                                        path: ptr ngtcp2_path; dest: ptr uint8;
+                                        path: ptr ngtcp2_path;
+                                        pi: ptr ngtcp2_pkt_info; dest: ptr uint8;
                                         destlen: uint; error_code: uint64;
                                         ts: ngtcp2_tstamp): ngtcp2_ssize {.importc,
     cdecl.}
@@ -2135,9 +2178,12 @@ proc ngtcp2_conn_write_connection_close*(conn: ptr ngtcp2_conn;
   ##   
   ##    If |path| is not NULL, this function stores the network path with
   ##    which the packet should be sent.  Each addr field must point to the
-  ##    buffer which is at least 128 bytes.  sizeof(struct
-  ##    sockaddr_storage) is enough.  The assignment might not be done if
-  ##    nothing is written to |dest|.
+  ##    buffer which should be at least sizeof(struct sockaddr_storage)
+  ##    bytes long.  The assignment might not be done if nothing is written
+  ##    to |dest|.
+  ##   
+  ##    If |pi| is not NULL, this function stores packet metadata in it if
+  ##    it succeeds.  The metadata includes ECN markings.
   ##   
   ##    This function must not be called from inside the callback
   ##    functions.
@@ -2158,8 +2204,8 @@ proc ngtcp2_conn_write_connection_close*(conn: ptr ngtcp2_conn;
   ##        User callback failed
   ## ```
 proc ngtcp2_conn_write_application_close*(conn: ptr ngtcp2_conn;
-    path: ptr ngtcp2_path; dest: ptr uint8; destlen: uint; app_error_code: uint64;
-    ts: ngtcp2_tstamp): ngtcp2_ssize {.importc, cdecl.}
+    path: ptr ngtcp2_path; pi: ptr ngtcp2_pkt_info; dest: ptr uint8; destlen: uint;
+    app_error_code: uint64; ts: ngtcp2_tstamp): ngtcp2_ssize {.importc, cdecl.}
   ## ```
   ##   @function
   ##   
@@ -2169,9 +2215,12 @@ proc ngtcp2_conn_write_application_close*(conn: ptr ngtcp2_conn;
   ##   
   ##    If |path| is not NULL, this function stores the network path with
   ##    which the packet should be sent.  Each addr field must point to the
-  ##    buffer which is at least 128 bytes.  sizeof(struct
-  ##    sockaddr_storage) is enough.  The assignment might not be done if
-  ##    nothing is written to |dest|.
+  ##    buffer which should be at least sizeof(struct sockaddr_storage)
+  ##    bytes long.  The assignment might not be done if nothing is written
+  ##    to |dest|.
+  ##   
+  ##    If |pi| is not NULL, this function stores packet metadata in it if
+  ##    it succeeds.  The metadata includes ECN markings.
   ##   
   ##    If handshake has not been confirmed yet, CONNECTION_CLOSE (type
   ##    0x1c) with error code :macro:NGTCP2_APPLICATION_ERROR is written
