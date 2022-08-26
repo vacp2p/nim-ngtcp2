@@ -27,7 +27,9 @@ toast \
   --preprocess \
   --noHeader \
   --defines=NGTCP2_STATICLIB \
-  --replace=sockaddr=SockAddr,sockaddr_storage=Sockaddr_storage \
+  --replace=sockaddr=SockAddr,SockAddr_storage=Sockaddr_storage \
   --includeDirs="${root}/sources/lib/includes" \
   --includeDirs="${root}/build/lib/includes" \
   "${root}/sources/lib/includes/ngtcp2/ngtcp2.h" >> "${root}/ngtcp2.nim"
+
+sed -i 's/\bpassC\b/passc/g' ngtcp2.nim
