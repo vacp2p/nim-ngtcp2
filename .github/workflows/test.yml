@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: true
-    - uses: iffy/install-nim@v1.1
+    - uses: iffy/install-nim@v3
     - name: Build
       run: nimble install -y
     - name: Test
