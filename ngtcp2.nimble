@@ -6,4 +6,4 @@ license = "MIT"
 installDirs = @["sources", "build"]
 installFiles = @["ngtcp2.nim"]
 
-requires "nim >= 1.2.6"
+requires "nim >= 1.6.0"
