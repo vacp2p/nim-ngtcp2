@@ -29,7 +29,6 @@ const buildInclude = root/"build"/"lib"/"includes"
 # const 'NGTCP2_CONN_INFO_VERSION' has unsupported value 'NGTCP2_CONN_INFO_V1'
 # const 'NGTCP2_SETTINGS_VERSION' has unsupported value 'NGTCP2_SETTINGS_V2'
 # const 'NGTCP2_CALLBACKS_VERSION' has unsupported value 'NGTCP2_CALLBACKS_V1'
-{.push hint[ConvFromXtoItselfNotNeeded]: off.}
 import macros
 
 macro defineEnum(typ: untyped): untyped =
@@ -3811,4 +3810,3 @@ proc ngtcp2_select_version*(preferred_versions: ptr uint32;
                                                                                  ##    Negotiation packet.  If no version is selected, this function
                                                                                  ##    returns 0.
                                                                                  ## ```
-{.pop.}
