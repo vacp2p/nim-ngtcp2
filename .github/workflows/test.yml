@@ -8,13 +8,14 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest]
+        nim: [1.6.20, stable]
     steps:
     - uses: actions/checkout@v2
       with:
         submodules: true
     - uses: iffy/install-nim@v5
       with:
-        version: 1.6.20
+        version: ${{ matrix.nim }}
     - name: Build
       run: nimble install -y
     - name: Test
