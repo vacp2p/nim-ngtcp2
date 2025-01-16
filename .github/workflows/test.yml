@@ -1,27 +1,14 @@
 name: CI
-
 on:
   push:
-      branches:
-      - main
+    branches:
+      - master
   pull_request:
   workflow_dispatch:
 
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
-        nim: [1.6.20, stable]
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: true
-    - uses: iffy/install-nim@v5
-      with:
-        version: ${{ matrix.nim }}
-    - name: Build
-      run: nimble install -y
-    - name: Test
-      run: nimble test -y
+  build:
+    uses: status-im/nimbus-common-workflow/.github/workflows/common.yml@main
+    with:
+      test-command: |
+        nimble test --styleCheck:off
