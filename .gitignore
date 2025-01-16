@@ -11,3 +11,6 @@ build/lib/includes/*
 !build/lib/includes/ngtcp2/
 build/lib/includes/ngtcp2/*
 !build/lib/includes/ngtcp2/version.h
+
+!LICENSE-MIT
+!LICENSE-APACHEv2
