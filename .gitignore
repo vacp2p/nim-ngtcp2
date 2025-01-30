@@ -14,3 +14,6 @@ build/lib/includes/ngtcp2/*
 
 !LICENSE-MIT
 !LICENSE-APACHEv2
+
+!sources/
+!sources/*

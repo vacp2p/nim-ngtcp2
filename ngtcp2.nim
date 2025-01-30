@@ -9,17 +9,60 @@ when defined(windows):
 else:
   {.passc: "-DHAVE_UNISTD_H".}
 
-# C include directories
-const root = currentSourcePath.parentDir
-const sourceInclude = root/"sources"/"lib"/"includes"
-const buildInclude = root/"build"/"lib"/"includes"
 
-{.passc: fmt"-I{sourceInclude} -I{buildInclude}".}
+{.passl: "-lcrypto".}
 
-# Generated @ 2024-07-03T20:14:17+02:00
+type
+  st_ptls_t = object
+  st_ptls_cipher_algorithm_t = object
+  st_ptls_key_exchange_algorithm_t = object
+  st_ptls_cipher_suite_t = object
+  st_ptls_key_schedule_t = object
+  st_ptls_hash_algorithm_t = object
+  st_ptls_hpke_kem_t = object
+  st_ptls_hpke_cipher_suite_t = object
+  st_ptls_aead_algorithm_t = object
+  in6_addr = object
+  st_ptls_log_t = object
+  in_addr = object
+
+# Generated @ 2025-01-29T21:37:57-04:00
 # Command line:
-#   /nim/1.6.20/nimble/pkgs/nimterop-0.6.11/nimterop/toast --compile=./sources/lib/ngtcp2_acktr.c --compile=./sources/lib/ngtcp2_addr.c --compile=./sources/lib/ngtcp2_balloc.c --compile=./sources/lib/ngtcp2_bbr.c --compile=./sources/lib/ngtcp2_buf.c --compile=./sources/lib/ngtcp2_cc.c --compile=./sources/lib/ngtcp2_cid.c --compile=./sources/lib/ngtcp2_conn.c --compile=./sources/lib/ngtcp2_conv.c --compile=./sources/lib/ngtcp2_crypto.c --compile=./sources/lib/ngtcp2_err.c --compile=./sources/lib/ngtcp2_frame_chain.c --compile=./sources/lib/ngtcp2_gaptr.c --compile=./sources/lib/ngtcp2_idtr.c --compile=./sources/lib/ngtcp2_ksl.c --compile=./sources/lib/ngtcp2_log.c --compile=./sources/lib/ngtcp2_map.c --compile=./sources/lib/ngtcp2_mem.c --compile=./sources/lib/ngtcp2_objalloc.c --compile=./sources/lib/ngtcp2_opl.c --compile=./sources/lib/ngtcp2_path.c --compile=./sources/lib/ngtcp2_pkt.c --compile=./sources/lib/ngtcp2_pmtud.c --compile=./sources/lib/ngtcp2_ppe.c --compile=./sources/lib/ngtcp2_pq.c --compile=./sources/lib/ngtcp2_pv.c --compile=./sources/lib/ngtcp2_qlog.c --compile=./sources/lib/ngtcp2_range.c --compile=./sources/lib/ngtcp2_ringbuf.c --compile=./sources/lib/ngtcp2_rob.c --compile=./sources/lib/ngtcp2_rst.c --compile=./sources/lib/ngtcp2_rtb.c --compile=./sources/lib/ngtcp2_settings.c --compile=./sources/lib/ngtcp2_str.c --compile=./sources/lib/ngtcp2_strm.c --compile=./sources/lib/ngtcp2_transport_params.c --compile=./sources/lib/ngtcp2_unreachable.c --compile=./sources/lib/ngtcp2_vec.c --compile=./sources/lib/ngtcp2_version.c --compile=./sources/lib/ngtcp2_window_filter.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --replace=sockaddr=SockAddr,SockAddr_storage=Sockaddr_storage,socklen_t=SockLen --includeDirs=./sources/lib/includes --includeDirs=./build/lib/includes ./sources/lib/includes/ngtcp2/ngtcp2.h
+#   /home/richard/.nimble/pkgs2/nimterop-0.6.13-a93246b2ad5531db11e51de7b2d188c42d95576a/nimterop/toast --compile=/home/richard/Desktop/nim-ngtcp2/sources/picotls/lib/pembase64.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/picotls/lib/hpke.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/picotls/lib/picotls.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/picotls/lib/openssl.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/crypto/shared.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/crypto/picotls/picotls.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_acktr.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_addr.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_balloc.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_bbr.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_buf.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_cc.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_cid.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_conn.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_conv.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_crypto.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_dcidtr.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_err.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_frame_chain.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_gaptr.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_idtr.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_ksl.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_log.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_map.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_mem.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_objalloc.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_opl.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_path.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_pkt.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_pmtud.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_ppe.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_pq.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_pv.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_qlog.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_range.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_ringbuf.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_rob.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_rst.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_rtb.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_settings.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_str.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_strm.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_transport_params.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_unreachable.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_vec.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_version.c --compile=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_window_filter.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --replace=sockaddr=SockAddr,SockAddr_storage=Sockaddr_storage,socklen_t=SockLen --replace=clone_=ptlsXXclone,destroy_=ptlsXXdestroy,random_=ptlsXXrandom,_output=XXoutput,__=xXx --includeDirs=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/crypto --includeDirs=/home/richard/Desktop/nim-ngtcp2/sources/picotls/include --includeDirs=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib --includeDirs=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/crypto/includes --includeDirs=/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/includes /home/richard/Desktop/nim-ngtcp2/sources/picotls/include/picotls.h /home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/includes/ngtcp2/ngtcp2.h /home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_picotls.h
 
+# const 'PTLS_THREADLOCAL' has unsupported value '__thread'
+# const 'PTLS_AESGCM_INTEGRITY_LIMIT' has unsupported value 'UINT64_C(0x40000000000000) /* 2^54 */'
+# const 'PTLS_CHACHA20POLY1305_CONFIDENTIALITY_LIMIT' has unsupported value 'UINT64_MAX /* at least 2^64 */'
+# const 'PTLS_CHACHA20POLY1305_INTEGRITY_LIMIT' has unsupported value 'UINT64_C(0x1000000000) /* 2^36 */'
+# const 'PTLS_AEGIS128L_CONFIDENTIALITY_LIMIT' has unsupported value 'UINT64_MAX /* at least 2^64 */'
+# const 'PTLS_AEGIS128L_INTEGRITY_LIMIT' has unsupported value 'UINT64_C(0x1000000000000) /* 2^48 */'
+# const 'PTLS_AEGIS256_CONFIDENTIALITY_LIMIT' has unsupported value 'UINT64_MAX /* at least 2^64 */'
+# const 'PTLS_AEGIS256_INTEGRITY_LIMIT' has unsupported value 'UINT64_C(0x1000000000000) /* 2^48 */'
+# const 'PTLS_ZERO_DIGEST_SHA256' has unsupported value '{0xe3, 0xb0, 0xc4, 0x42, 0x98, 0xfc, 0x1c, 0x14, 0x9a, 0xfb, 0xf4, 0xc8, 0x99, 0x6f, 0xb9, 0x24, 0x27, 0xae, 0x41, 0xe4, 0x64, 0x9b, 0x93, 0x4c, 0xa4, 0x95, 0x99, 0x1b, 0x78, 0x52, 0xb8, 0x55}'
+# const 'PTLS_ZERO_DIGEST_SHA384' has unsupported value '{0x38, 0xb0, 0x60, 0xa7, 0x51, 0xac, 0x96, 0x38, 0x4c, 0xd9, 0x32, 0x7e, 0xb1, 0xb1, 0xe3, 0x6a, 0x21, 0xfd, 0xb7, 0x11, 0x14, 0xbe, 0x07, 0x43, 0x4c, 0x0c, 0xc7, 0xbf, 0x63, 0xf6, 0xe1, 0xda, 0x27, 0x4e, 0xde, 0xbf, 0xe7, 0x6f, 0x65, 0xfb, 0xd5, 0x1a, 0xd2, 0xf1, 0x48, 0x98, 0xb9, 0x5b}'
+# const 'PTLS_ZERO_DIGEST_SHA512' has unsupported value '{0xcf, 0x83, 0xe1, 0x35, 0x7e, 0xef, 0xb8, 0xbd, 0xf1, 0x54, 0x28, 0x50, 0xd6, 0x6d, 0x80, 0x07, 0xd6, 0x20, 0xe4, 0x05, 0x0b, 0x57, 0x15, 0xdc, 0x83, 0xf4, 0xa9, 0x21, 0xd3, 0x6c, 0xe9, 0xce, 0x47, 0xd0, 0xd1, 0x3c, 0x5d, 0x85, 0xf2, 0xb0, 0xff, 0x83, 0x18, 0xd2, 0x87, 0x7e, 0xec, 0x2f, 0x63, 0xb9, 0x31, 0xbd, 0x47, 0x41, 0x7a, 0x81, 0xa5, 0x38, 0x32, 0x7a, 0xf9, 0x27, 0xda, 0x3e}'
+# proc 'ptls_log_point_maybe_active' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_log_recalc_conn_state' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_log_conn_maybe_active' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_new' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_iovec_init' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_buffer_init' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_buffer_dispose' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_encode_quicint' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_cipher_init' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_cipher_encrypt' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead_get_iv' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead_set_iv' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead_encrypt' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead_encrypt_s' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead_encrypt_v' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead_encrypt_init' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead_encrypt_update' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead_encrypt_final' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead__do_encrypt' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead__do_encrypt_v' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_aead_decrypt' skipped - static inline procs cannot work with '--noHeader | -H'
+# proc 'ptls_hash_clone_memcpy' skipped - static inline procs cannot work with '--noHeader | -H'
 # const 'NGTCP2_PROTO_VER_MAX' has unsupported value 'NGTCP2_PROTO_VER_V1'
 # const 'NGTCP2_PROTO_VER_MIN' has unsupported value 'NGTCP2_PROTO_VER_V1'
 # const 'NGTCP2_PKT_INFO_VERSION' has unsupported value 'NGTCP2_PKT_INFO_V1'
@@ -29,6 +72,7 @@ const buildInclude = root/"build"/"lib"/"includes"
 # const 'NGTCP2_CONN_INFO_VERSION' has unsupported value 'NGTCP2_CONN_INFO_V1'
 # const 'NGTCP2_SETTINGS_VERSION' has unsupported value 'NGTCP2_SETTINGS_V2'
 # const 'NGTCP2_CALLBACKS_VERSION' has unsupported value 'NGTCP2_CALLBACKS_V1'
+{.push hint[ConvFromXtoItselfNotNeeded]: off.}
 import macros
 
 macro defineEnum(typ: untyped): untyped =
@@ -75,87 +119,313 @@ macro defineEnum(typ: untyped): untyped =
 
 {.experimental: "codeReordering".}
 {.passc: "-DNGTCP2_STATICLIB".}
-{.passc: "-I./sources/lib/includes".}
-{.passc: "-I./build/lib/includes".}
-{.compile: "./sources/lib/ngtcp2_acktr.c".}
-{.compile: "./sources/lib/ngtcp2_addr.c".}
-{.compile: "./sources/lib/ngtcp2_balloc.c".}
-{.compile: "./sources/lib/ngtcp2_bbr.c".}
-{.compile: "./sources/lib/ngtcp2_buf.c".}
-{.compile: "./sources/lib/ngtcp2_cc.c".}
-{.compile: "./sources/lib/ngtcp2_cid.c".}
-{.compile: "./sources/lib/ngtcp2_conn.c".}
-{.compile: "./sources/lib/ngtcp2_conv.c".}
-{.compile: "./sources/lib/ngtcp2_crypto.c".}
-{.compile: "./sources/lib/ngtcp2_err.c".}
-{.compile: "./sources/lib/ngtcp2_frame_chain.c".}
-{.compile: "./sources/lib/ngtcp2_gaptr.c".}
-{.compile: "./sources/lib/ngtcp2_idtr.c".}
-{.compile: "./sources/lib/ngtcp2_ksl.c".}
-{.compile: "./sources/lib/ngtcp2_log.c".}
-{.compile: "./sources/lib/ngtcp2_map.c".}
-{.compile: "./sources/lib/ngtcp2_mem.c".}
-{.compile: "./sources/lib/ngtcp2_objalloc.c".}
-{.compile: "./sources/lib/ngtcp2_opl.c".}
-{.compile: "./sources/lib/ngtcp2_path.c".}
-{.compile: "./sources/lib/ngtcp2_pkt.c".}
-{.compile: "./sources/lib/ngtcp2_pmtud.c".}
-{.compile: "./sources/lib/ngtcp2_ppe.c".}
-{.compile: "./sources/lib/ngtcp2_pq.c".}
-{.compile: "./sources/lib/ngtcp2_pv.c".}
-{.compile: "./sources/lib/ngtcp2_qlog.c".}
-{.compile: "./sources/lib/ngtcp2_range.c".}
-{.compile: "./sources/lib/ngtcp2_ringbuf.c".}
-{.compile: "./sources/lib/ngtcp2_rob.c".}
-{.compile: "./sources/lib/ngtcp2_rst.c".}
-{.compile: "./sources/lib/ngtcp2_rtb.c".}
-{.compile: "./sources/lib/ngtcp2_settings.c".}
-{.compile: "./sources/lib/ngtcp2_str.c".}
-{.compile: "./sources/lib/ngtcp2_strm.c".}
-{.compile: "./sources/lib/ngtcp2_transport_params.c".}
-{.compile: "./sources/lib/ngtcp2_unreachable.c".}
-{.compile: "./sources/lib/ngtcp2_vec.c".}
-{.compile: "./sources/lib/ngtcp2_version.c".}
-{.compile: "./sources/lib/ngtcp2_window_filter.c".}
+{.passc: "-I/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/crypto".}
+{.passc: "-I/home/richard/Desktop/nim-ngtcp2/sources/picotls/include".}
+{.passc: "-I/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib".}
+{.passc: "-I/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/crypto/includes".}
+{.passc: "-I/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/includes".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/picotls/lib/pembase64.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/picotls/lib/hpke.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/picotls/lib/picotls.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/picotls/lib/openssl.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/crypto/shared.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/crypto/picotls/picotls.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_acktr.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_addr.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_balloc.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_bbr.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_buf.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_cc.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_cid.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_conn.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_conv.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_crypto.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_dcidtr.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_err.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_frame_chain.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_gaptr.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_idtr.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_ksl.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_log.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_map.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_mem.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_objalloc.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_opl.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_path.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_pkt.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_pmtud.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_ppe.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_pq.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_pv.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_qlog.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_range.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_ringbuf.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_rob.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_rst.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_rtb.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_settings.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_str.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_strm.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_transport_params.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_unreachable.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_vec.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_version.c".}
+{.compile: "/home/richard/Desktop/nim-ngtcp2/sources/ngtcp2/lib/ngtcp2_window_filter.c".}
+defineEnum(en_ptls_hash_final_mode_t) ## ```
+                                      ##   
+                                      ## ```
+defineEnum(en_ptls_early_data_acceptance_t)
 defineEnum(ngtcp2_pkt_type) ## ```
                             ##   @enum
-                            ##
+                            ##   
                             ##    :type:ngtcp2_pkt_type defines QUIC version-independent QUIC
                             ##    packet types.
                             ## ```
 defineEnum(ngtcp2_path_validation_result) ## ```
                                           ##   @enum
-                                          ##
+                                          ##   
                                           ##    :type:ngtcp2_path_validation_result defines path validation
                                           ##    result code.
                                           ## ```
 defineEnum(ngtcp2_cc_algo) ## ```
                            ##   @enum
-                           ##
+                           ##   
                            ##    :type:ngtcp2_cc_algo defines congestion control algorithms.
                            ## ```
 defineEnum(ngtcp2_token_type) ## ```
                               ##   @enum
-                              ##
+                              ##   
                               ##    :type:ngtcp2_token_type defines the type of token.
                               ## ```
 defineEnum(ngtcp2_encryption_level) ## ```
                                     ##   @enum
-                                    ##
+                                    ##   
                                     ##    :type:ngtcp2_encryption_level is QUIC encryption level.
                                     ## ```
 defineEnum(ngtcp2_connection_id_status_type) ## ```
                                              ##   @enum
-                                             ##
+                                             ##   
                                              ##    :type:ngtcp2_connection_id_status_type defines a set of status
                                              ##    for Destination Connection ID.
                                              ## ```
 defineEnum(ngtcp2_ccerr_type) ## ```
                               ##   @enum
-                              ##
+                              ##   
                               ##    :type:ngtcp2_ccerr_type defines connection error type.
                               ## ```
 const
+  PTLS_HAVE_LOG* = 1
+  PTLS_FUZZ_HANDSHAKE* = 0
+  PTLS_HELLO_RANDOM_SIZE* = 32
+  PTLS_AES128_KEY_SIZE* = 16
+  PTLS_AES256_KEY_SIZE* = 32
+  PTLS_AES_BLOCK_SIZE* = 16
+  PTLS_AES_IV_SIZE* = 16
+  PTLS_AESGCM_IV_SIZE* = 12
+  PTLS_AESGCM_TAG_SIZE* = 16
+  PTLS_AESGCM_CONFIDENTIALITY_LIMIT* = 0x02000000
+  PTLS_AESCCM_CONFIDENTIALITY_LIMIT* = 0x00B504F3
+  PTLS_AESCCM_INTEGRITY_LIMIT* = 0x00B504F3
+  PTLS_CHACHA20_KEY_SIZE* = 32
+  PTLS_CHACHA20_IV_SIZE* = 16
+  PTLS_CHACHA20POLY1305_IV_SIZE* = 12
+  PTLS_CHACHA20POLY1305_TAG_SIZE* = 16
+  PTLS_AEGIS128L_KEY_SIZE* = 16
+  PTLS_AEGIS128L_IV_SIZE* = 16
+  PTLS_AEGIS128L_TAG_SIZE* = 16
+  PTLS_AEGIS256_KEY_SIZE* = 32
+  PTLS_AEGIS256_IV_SIZE* = 32
+  PTLS_AEGIS256_TAG_SIZE* = 16
+  PTLS_BLOWFISH_KEY_SIZE* = 16
+  PTLS_BLOWFISH_BLOCK_SIZE* = 8
+  PTLS_SHA256_BLOCK_SIZE* = 64
+  PTLS_SHA256_DIGEST_SIZE* = 32
+  PTLS_SHA384_BLOCK_SIZE* = 128
+  PTLS_SHA384_DIGEST_SIZE* = 48
+  PTLS_SHA512_BLOCK_SIZE* = 128
+  PTLS_SHA512_DIGEST_SIZE* = 64
+  PTLS_MAX_SECRET_SIZE* = 32
+  PTLS_MAX_IV_SIZE* = 32
+  PTLS_MAX_DIGEST_SIZE* = 64
+  PTLS_PROTOCOL_VERSION_TLS12* = 0x00000303
+  PTLS_PROTOCOL_VERSION_TLS13* = 0x00000304
+  PTLS_CIPHER_SUITE_AES_128_GCM_SHA256* = 0x00001301
+  PTLS_CIPHER_SUITE_NAME_AES_128_GCM_SHA256* = "TLS_AES_128_GCM_SHA256"
+  PTLS_CIPHER_SUITE_AES_256_GCM_SHA384* = 0x00001302
+  PTLS_CIPHER_SUITE_NAME_AES_256_GCM_SHA384* = "TLS_AES_256_GCM_SHA384"
+  PTLS_CIPHER_SUITE_CHACHA20_POLY1305_SHA256* = 0x00001303
+  PTLS_CIPHER_SUITE_NAME_CHACHA20_POLY1305_SHA256* = "TLS_CHACHA20_POLY1305_SHA256"
+  PTLS_CIPHER_SUITE_AEGIS256_SHA512* = 0x00001306
+  PTLS_CIPHER_SUITE_NAME_AEGIS256_SHA512* = "TLS_AEGIS_256_SHA512"
+  PTLS_CIPHER_SUITE_AEGIS128L_SHA256* = 0x00001307
+  PTLS_CIPHER_SUITE_NAME_AEGIS128L_SHA256* = "TLS_AEGIS_128L_SHA256"
+  PTLS_CIPHER_SUITE_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256* = 0x0000C02B
+  PTLS_CIPHER_SUITE_NAME_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256* = "ECDHE-ECDSA-AES128-GCM-SHA256"
+  PTLS_CIPHER_SUITE_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384* = 0x0000C02C
+  PTLS_CIPHER_SUITE_NAME_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384* = "ECDHE-ECDSA-AES256-GCM-SHA384"
+  PTLS_CIPHER_SUITE_ECDHE_RSA_WITH_AES_128_GCM_SHA256* = 0x0000C02F
+  PTLS_CIPHER_SUITE_NAME_ECDHE_RSA_WITH_AES_128_GCM_SHA256* = "ECDHE-RSA-AES128-GCM-SHA256"
+  PTLS_CIPHER_SUITE_ECDHE_RSA_WITH_AES_256_GCM_SHA384* = 0x0000C030
+  PTLS_CIPHER_SUITE_NAME_ECDHE_RSA_WITH_AES_256_GCM_SHA384* = "ECDHE-RSA-AES256-GCM-SHA384"
+  PTLS_CIPHER_SUITE_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256* = 0x0000CCA8
+  PTLS_CIPHER_SUITE_NAME_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256* = "ECDHE-RSA-CHACHA20-POLY1305"
+  PTLS_CIPHER_SUITE_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256* = 0x0000CCA9
+  PTLS_CIPHER_SUITE_NAME_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256* = "ECDHE-ECDSA-CHACHA20-POLY1305"
+  PTLS_GROUP_SECP256R1* = 23
+  PTLS_GROUP_NAME_SECP256R1* = "secp256r1"
+  PTLS_GROUP_SECP384R1* = 24
+  PTLS_GROUP_NAME_SECP384R1* = "secp384r1"
+  PTLS_GROUP_SECP521R1* = 25
+  PTLS_GROUP_NAME_SECP521R1* = "secp521r1"
+  PTLS_GROUP_X25519* = 29
+  PTLS_GROUP_NAME_X25519* = "x25519"
+  PTLS_GROUP_X448* = 30
+  PTLS_GROUP_NAME_X448* = "x448"
+  PTLS_GROUP_X25519MLKEM768* = 4588
+  PTLS_GROUP_NAME_X25519MLKEM768* = "X25519MLKEM768"
+  PTLS_SIGNATURE_RSA_PKCS1_SHA1* = 0x00000201
+  PTLS_SIGNATURE_RSA_PKCS1_SHA256* = 0x00000401
+  PTLS_SIGNATURE_ECDSA_SECP256R1_SHA256* = 0x00000403
+  PTLS_SIGNATURE_ECDSA_SECP384R1_SHA384* = 0x00000503
+  PTLS_SIGNATURE_ECDSA_SECP521R1_SHA512* = 0x00000603
+  PTLS_SIGNATURE_RSA_PSS_RSAE_SHA256* = 0x00000804
+  PTLS_SIGNATURE_RSA_PSS_RSAE_SHA384* = 0x00000805
+  PTLS_SIGNATURE_RSA_PSS_RSAE_SHA512* = 0x00000806
+  PTLS_SIGNATURE_ED25519* = 0x00000807
+  PTLS_HPKE_MODE_BASE* = 0
+  PTLS_HPKE_MODE_PSK* = 1
+  PTLS_HPKE_MODE_AUTH* = 2
+  PTLS_HPKE_MODE_AUTH_PSK* = 3
+  PTLS_HPKE_KEM_P256_SHA256* = 16
+  PTLS_HPKE_KEM_P384_SHA384* = 17
+  PTLS_HPKE_KEM_X25519_SHA256* = 32
+  PTLS_HPKE_HKDF_SHA256* = 1
+  PTLS_HPKE_HKDF_SHA384* = 2
+  PTLS_HPKE_HKDF_SHA512* = 3
+  PTLS_HPKE_AEAD_AES_128_GCM* = 1
+  PTLS_HPKE_AEAD_AES_256_GCM* = 2
+  PTLS_HPKE_AEAD_CHACHA20POLY1305* = 3
+  PTLS_ERROR_CLASS_SELF_ALERT* = 0
+  PTLS_ERROR_CLASS_PEER_ALERT* = 0x00000100
+  PTLS_ERROR_CLASS_INTERNAL* = 0x00000200
+  PTLS_HKDF_EXPAND_LABEL_PREFIX* = "tls13 "
+  PTLS_ALERT_LEVEL_WARNING* = 1
+  PTLS_ALERT_LEVEL_FATAL* = 2
+  PTLS_ALERT_CLOSE_NOTIFY* = 0
+  PTLS_ALERT_UNEXPECTED_MESSAGE* = 10
+  PTLS_ALERT_BAD_RECORD_MAC* = 20
+  PTLS_ALERT_HANDSHAKE_FAILURE* = 40
+  PTLS_ALERT_BAD_CERTIFICATE* = 42
+  PTLS_ALERT_UNSUPPORTED_CERTIFICATE* = 43
+  PTLS_ALERT_CERTIFICATE_REVOKED* = 44
+  PTLS_ALERT_CERTIFICATE_EXPIRED* = 45
+  PTLS_ALERT_CERTIFICATE_UNKNOWN* = 46
+  PTLS_ALERT_ILLEGAL_PARAMETER* = 47
+  PTLS_ALERT_UNKNOWN_CA* = 48
+  PTLS_ALERT_ACCESS_DENIED* = 49
+  PTLS_ALERT_DECODE_ERROR* = 50
+  PTLS_ALERT_DECRYPT_ERROR* = 51
+  PTLS_ALERT_PROTOCOL_VERSION* = 70
+  PTLS_ALERT_INTERNAL_ERROR* = 80
+  PTLS_ALERT_USER_CANCELED* = 90
+  PTLS_ALERT_MISSING_EXTENSION* = 109
+  PTLS_ALERT_UNSUPPORTED_EXTENSION* = 110
+  PTLS_ALERT_UNRECOGNIZED_NAME* = 112
+  PTLS_ALERT_UNKNOWN_PSK_IDENTITY* = 115
+  PTLS_ALERT_CERTIFICATE_REQUIRED* = 116
+  PTLS_ALERT_NO_APPLICATION_PROTOCOL* = 120
+  PTLS_ALERT_ECH_REQUIRED* = 121
+  PTLS_TLS12_MASTER_SECRET_SIZE* = 48
+  PTLS_TLS12_AAD_SIZE* = 13
+  PTLS_TLS12_AESGCM_FIXED_IV_SIZE* = 4
+  PTLS_TLS12_AESGCM_RECORD_IV_SIZE* = 8
+  PTLS_TLS12_CHACHAPOLY_FIXED_IV_SIZE* = 12
+  PTLS_TLS12_CHACHAPOLY_RECORD_IV_SIZE* = 0
+  PTLS_ERROR_NO_MEMORY* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(1))
+  PTLS_ERROR_IN_PROGRESS* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(2))
+  PTLS_ERROR_LIBRARY* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(3))
+  PTLS_ERROR_INCOMPATIBLE_KEY* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(4))
+  PTLS_ERROR_SESSION_NOT_FOUND* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(5))
+  PTLS_ERROR_STATELESS_RETRY* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(6))
+  PTLS_ERROR_NOT_AVAILABLE* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(7))
+  PTLS_ERROR_COMPRESSION_FAILURE* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(8))
+  PTLS_ERROR_REJECT_EARLY_DATA* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(9))
+  PTLS_ERROR_DELEGATE* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(10))
+  PTLS_ERROR_ASYNC_OPERATION* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(11))
+  PTLS_ERROR_BLOCK_OVERFLOW* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(12))
+  PTLS_ERROR_INCORRECT_BASE64* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(50))
+  PTLS_ERROR_PEM_LABEL_NOT_FOUND* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(51))
+  PTLS_ERROR_BER_INCORRECT_ENCODING* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(52))
+  PTLS_ERROR_BER_MALFORMED_TYPE* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(53))
+  PTLS_ERROR_BER_MALFORMED_LENGTH* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(54))
+  PTLS_ERROR_BER_EXCESSIVE_LENGTH* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(55))
+  PTLS_ERROR_BER_ELEMENT_TOO_SHORT* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(56))
+  PTLS_ERROR_BER_UNEXPECTED_EOC* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(57))
+  PTLS_ERROR_DER_INDEFINITE_LENGTH* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(58))
+  PTLS_ERROR_INCORRECT_ASN1_SYNTAX* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(59))
+  PTLS_ERROR_INCORRECT_PEM_KEY_VERSION* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(60))
+  PTLS_ERROR_INCORRECT_PEM_ECDSA_KEY_VERSION* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(61))
+  PTLS_ERROR_INCORRECT_PEM_ECDSA_CURVE* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(62))
+  PTLS_ERROR_INCORRECT_PEM_ECDSA_KEYSIZE* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(63))
+  PTLS_ERROR_INCORRECT_ASN1_ECDSA_KEY_SYNTAX* = (
+    PTLS_ERROR_CLASS_INTERNAL + typeof(PTLS_ERROR_CLASS_INTERNAL)(64))
+  PTLS_HANDSHAKE_TYPE_CLIENT_HELLO* = 1
+  PTLS_HANDSHAKE_TYPE_SERVER_HELLO* = 2
+  PTLS_HANDSHAKE_TYPE_NEW_SESSION_TICKET* = 4
+  PTLS_HANDSHAKE_TYPE_END_OF_EARLY_DATA* = 5
+  PTLS_HANDSHAKE_TYPE_ENCRYPTED_EXTENSIONS* = 8
+  PTLS_HANDSHAKE_TYPE_CERTIFICATE* = 11
+  PTLS_HANDSHAKE_TYPE_CERTIFICATE_REQUEST* = 13
+  PTLS_HANDSHAKE_TYPE_CERTIFICATE_VERIFY* = 15
+  PTLS_HANDSHAKE_TYPE_FINISHED* = 20
+  PTLS_HANDSHAKE_TYPE_KEY_UPDATE* = 24
+  PTLS_HANDSHAKE_TYPE_COMPRESSED_CERTIFICATE* = 25
+  PTLS_HANDSHAKE_TYPE_MESSAGE_HASH* = 254
+  PTLS_HANDSHAKE_TYPE_PSEUDO_HRR* = -1
+  PTLS_CERTIFICATE_TYPE_X509* = 0
+  PTLS_CERTIFICATE_TYPE_RAW_PUBLIC_KEY* = 2
+  PTLS_DEFAULT_MAX_TICKETS_TO_SERVE* = 4
+  PTLS_HASH_FINAL_MODE_FREE* = (0).en_ptls_hash_final_mode_t ## ```
+                                                             ##   obtains the digest and frees the context
+                                                             ## ```
+  PTLS_HASH_FINAL_MODE_RESET* = (1).en_ptls_hash_final_mode_t ## ```
+                                                              ##   obtains the digest and reset the context to initial state
+                                                              ## ```
+  PTLS_HASH_FINAL_MODE_SNAPSHOT* = (2).en_ptls_hash_final_mode_t ## ```
+                                                                 ##   obtains the digest while leaving the context as-is
+                                                                 ## ```
+  PTLS_EARLY_DATA_ACCEPTANCE_UNKNOWN* = (0).en_ptls_early_data_acceptance_t
+  PTLS_EARLY_DATA_REJECTED* = (PTLS_EARLY_DATA_ACCEPTANCE_UNKNOWN + 1).en_ptls_early_data_acceptance_t
+  PTLS_EARLY_DATA_ACCEPTED* = (PTLS_EARLY_DATA_REJECTED + 1).en_ptls_early_data_acceptance_t
+  PTLS_ENCODE_QUICINT_CAPACITY* = 8
+  PTLS_QUICINT_MAX* = 4611686018427387903
+  PTLS_QUICINT_LONGEST_STR* = "4611686018427387903"
   NGTCP2_SECONDS* = (cast[ngtcp2_duration](1000000000'u64))
   NGTCP2_MILLISECONDS* = (cast[ngtcp2_duration](1000000'u64))
   NGTCP2_MICROSECONDS* = (cast[ngtcp2_duration](1000'u64))
@@ -169,10 +439,10 @@ const
   NGTCP2_STATELESS_RESET_TOKENLEN* = 16
   NGTCP2_MIN_STATELESS_RESET_RANDLEN* = 5
   NGTCP2_PATH_CHALLENGE_DATALEN* = 8
-  NGTCP2_RETRY_KEY_V1* = "ï¿½\fi\vï¿½fWZ\x1DvkTï¿½hï¿½N"
-  NGTCP2_RETRY_NONCE_V1* = "F\x15ï¿½ï¿½]c+ï¿½#ï¿½%ï¿½"
-  NGTCP2_RETRY_KEY_V2* = "ï¿½ï¿½ï¿½\eVï¿½Hï¿½`ï¿½ï¿½Î­|Ì’"
-  NGTCP2_RETRY_NONCE_V2* = "ï¿½iiï¿½-|mï¿½ï¿½ï¿½J"
+  NGTCP2_RETRY_KEY_V1* = "¾\fi\vŸfWZ\x1DvkTãhÈN"
+  NGTCP2_RETRY_NONCE_V1* = "F\x15™Ó]c+ò#˜%»"
+  NGTCP2_RETRY_KEY_V2* = "´°\eV¬Hâ`ûËÎ­|Ì’"
+  NGTCP2_RETRY_NONCE_V2* = "Øii¼-|m™ï°J"
   NGTCP2_HP_MASKLEN* = 5
   NGTCP2_HP_SAMPLELEN* = 16
   NGTCP2_DEFAULT_INITIAL_RTT* = (333 * typeof(333)(NGTCP2_MILLISECONDS))
@@ -388,9 +658,720 @@ const
                                                                                  ## ```
   NGTCP2_VERSION_AGE* = 1
 type
+  ptls_t* = st_ptls_t
+  ptls_context_t* = st_ptls_context_t
+  ptls_key_schedule_t* = st_ptls_key_schedule_t
+  st_ptls_iovec_t* {.bycopy.} = object ## ```
+                                        ##   represents a sequence of octets
+                                        ## ```
+    base*: ptr uint8
+    len*: uint
+  ptls_iovec_t* = st_ptls_iovec_t ## ```
+                                  ##   represents a sequence of octets
+                                  ## ```
+  st_ptls_buffer_t* {.bycopy.} = object ## ```
+                                         ##   used for storing output
+                                         ## ```
+    base*: ptr uint8
+    capacity*: uint
+    off*: uint
+    is_allocated*: uint8     ## ```
+                             ##   boolean
+                             ## ```
+    align_bits*: uint8 ## ```
+                       ##   if particular alignment is required, set to log2(alignment); otherwize zero
+                       ## ```
+  ptls_buffer_t* = st_ptls_buffer_t ## ```
+                                    ##   used for storing output
+                                    ## ```
+  st_ptls_key_exchange_context_t* {.bycopy.} = object ## ```
+                                                       ##   key exchange context built by ptls_key_exchange_algorithm::create.
+                                                       ## ```
+    algo*: ptr st_ptls_key_exchange_algorithm_t ## ```
+                                                ##   the underlying algorithm
+                                                ## ```
+    pubkey*: ptls_iovec_t    ## ```
+                             ##   public key of this context
+                             ## ```
+    on_exchange*: proc (keyex: ptr ptr st_ptls_key_exchange_context_t;
+                        release: cint; secret: ptr ptls_iovec_t;
+                        peerkey: ptls_iovec_t): cint {.cdecl.} ## ```
+                                                               ##   This function can be used for deriving a shared secret or for destroying the context.
+                                                               ##        When secret is non-NULL, this callback derives the shared secret using the private key of the context and the peer key
+                                                               ##        being given, and sets the value in secret. The memory pointed to by secret->base must be freed by the caller by calling
+                                                               ##        free. When release is set, the callee frees resources allocated to the context and setkeyex to NULL. Upon failure
+                                                               ##        (i.e., when an PTLS error code is returned),pubkey andsecret either remain unchanged or are zero-cleared.
+                                                               ## ```
+  ptls_key_exchange_context_t* = st_ptls_key_exchange_context_t ## ```
+                                                                ##   key exchange context built by ptls_key_exchange_algorithm::create.
+                                                                ## ```
+  ptls_key_exchange_algorithm_t* = st_ptls_key_exchange_algorithm_t ## ```
+                                                                    ##   A key exchange algorithm.
+                                                                    ## ```
+  st_ptls_cipher_context_t* {.bycopy.} = object ## ```
+                                                 ##   context of a symmetric cipher
+                                                 ## ```
+    algo*: ptr st_ptls_cipher_algorithm_t ## ```
+                                          ##   field above this line must not be altered by the crypto binding
+                                          ## ```
+    do_dispose*: proc (ctx: ptr st_ptls_cipher_context_t) {.cdecl.} ## ```
+                                                                    ##   field above this line must not be altered by the crypto binding
+                                                                    ## ```
+    do_init*: proc (ctx: ptr st_ptls_cipher_context_t; iv: pointer) {.cdecl.}
+    do_transform*: proc (ctx: ptr st_ptls_cipher_context_t; output: pointer;
+                         input: pointer; len: uint) {.cdecl.}
+  ptls_cipher_context_t* = st_ptls_cipher_context_t ## ```
+                                                    ##   context of a symmetric cipher
+                                                    ## ```
+  ptls_cipher_algorithm_t* = st_ptls_cipher_algorithm_t ## ```
+                                                        ##   a symmetric cipher
+                                                        ## ```
+  st_ptls_aead_supplementary_encryption_t* {.bycopy.} = object ## ```
+                                                                ##   This object specifies symmetric cipher to be calculated alongside the AEAD encryption.
+                                                                ##    QUIC stacks can use this object to apply QUIC header protection and AEAD encryption in one shot.
+                                                                ## ```
+    ctx*: ptr ptls_cipher_context_t ## ```
+                                    ##   Cipher context to be used.
+                                    ## ```
+    input*: pointer ## ```
+                    ##   Input to the cipher.
+                    ##        This field may point to the output of AEAD encryption, in which case the input will be read after AEAD encryption is
+                    ##        complete.
+                    ## ```
+    output*: array[16, uint8] ## ```
+                              ##   Output.
+                              ## ```
+  ptls_aead_supplementary_encryption_t* = st_ptls_aead_supplementary_encryption_t ## ```
+                                                                                  ##   This object specifies symmetric cipher to be calculated alongside the AEAD encryption.
+                                                                                  ##    QUIC stacks can use this object to apply QUIC header protection and AEAD encryption in one shot.
+                                                                                  ## ```
+  st_ptls_aead_context_t* {.bycopy.} = object ## ```
+                                               ##   AEAD context.
+                                               ##    AEAD implementations are allowed to stuff data at the end of the struct; see ptls_aead_algorithm_t::setup_crypto.
+                                               ##    Ciphers for TLS over TCP MUST implement do_encrypt, do_encrypt_v, do_decrypt.
+                                               ##    do_encrypt_init, ~update, ~final are obsolete, and therefore may not be available.
+                                               ## ```
+    algo*: ptr st_ptls_aead_algorithm_t ## ```
+                                        ##   Points to the algorithm. This field is governed by picotls core; backends must not alter.
+                                        ## ```
+    dispose_crypto*: proc (ctx: ptr st_ptls_aead_context_t) {.cdecl.} ## ```
+                                                                      ##   Mandatory callback that disposes of all the backend-specific data.
+                                                                      ## ```
+    do_get_iv*: proc (ctx: ptr st_ptls_aead_context_t; iv: pointer) {.cdecl.} ## ```
+                                                                              ##   Mandatory callback that returns the static IV. The size of IV is available as ptls_aead_algorithm_t::iv_size.
+                                                                              ## ```
+    do_set_iv*: proc (ctx: ptr st_ptls_aead_context_t; iv: pointer) {.cdecl.} ## ```
+                                                                              ##   Mandatory callback that sets the static IV. The size of IV is available as ptls_aead_algorithm_t::iv_size.
+                                                                              ## ```
+    do_encrypt_init*: proc (ctx: ptr st_ptls_aead_context_t; seq: uint64;
+                            aad: pointer; aadlen: uint) {.cdecl.} ## ```
+                                                                  ##   Deprecated.
+                                                                  ## ```
+    do_encrypt_update*: proc (ctx: ptr st_ptls_aead_context_t; output: pointer;
+                              input: pointer; inlen: uint): uint {.cdecl.} ## ```
+                                                                           ##   Deprecated.
+                                                                           ## ```
+    do_encrypt_final*: proc (ctx: ptr st_ptls_aead_context_t; output: pointer): uint {.
+        cdecl.}              ## ```
+                             ##   Deprecated.
+                             ## ```
+    do_encrypt*: proc (ctx: ptr st_ptls_aead_context_t; output: pointer;
+                       input: pointer; inlen: uint; seq: uint64; aad: pointer;
+                       aadlen: uint;
+                       supp: ptr ptls_aead_supplementary_encryption_t) {.cdecl.} ## ```
+                                                                                 ##   Mandatory callback that does "one-shot" encryption of an AEAD block.
+                                                                                 ##        When supp is set to non-NULL, the callback must also encrypt the supplementary block.
+                                                                                 ##        Backends may set this field to ptls_aead__do_encrypt that calls do_encrypt_v and ptls_cipher_* functions for handling
+                                                                                 ##        the supplimentary block.
+                                                                                 ## ```
+    do_encrypt_v*: proc (ctx: ptr st_ptls_aead_context_t; output: pointer;
+                         input: ptr ptls_iovec_t; incnt: uint; seq: uint64;
+                         aad: pointer; aadlen: uint) {.cdecl.} ## ```
+                                                               ##   Variant of do_encrypt that gathers input from multiple blocks. Support for this callback is also mandatory.
+                                                               ##        Legacy backends may set this field to ptls_aead__do_encrypt_v that calls do_encrypt_init, do_encrypt_update,
+                                                               ##        do_encrypt_final.
+                                                               ## ```
+    do_decrypt*: proc (ctx: ptr st_ptls_aead_context_t; output: pointer;
+                       input: pointer; inlen: uint; seq: uint64; aad: pointer;
+                       aadlen: uint): uint {.cdecl.} ## ```
+                                                     ##   Mandatory callback for decrypting an AEAD block.
+                                                     ##        If successful, returns the amount of cleartext bytes being written to output. Otherwise, returns SIZE_MAX.
+                                                     ## ```
+  ptls_aead_context_t* = st_ptls_aead_context_t ## ```
+                                                ##   AEAD context.
+                                                ##    AEAD implementations are allowed to stuff data at the end of the struct; see ptls_aead_algorithm_t::setup_crypto.
+                                                ##    Ciphers for TLS over TCP MUST implement do_encrypt, do_encrypt_v, do_decrypt.
+                                                ##    do_encrypt_init, ~update, ~final are obsolete, and therefore may not be available.
+                                                ## ```
+  ptls_aead_algorithm_t* = st_ptls_aead_algorithm_t ## ```
+                                                    ##   An AEAD cipher.
+                                                    ## ```
+  ptls_hash_final_mode_t* = en_ptls_hash_final_mode_t ## ```
+                                                      ##   
+                                                      ## ```
+  st_ptls_hash_context_t* {.bycopy.} = object ## ```
+                                               ##   A hash context.
+                                               ## ```
+    update*: proc (ctx: ptr st_ptls_hash_context_t; src: pointer; len: uint) {.
+        cdecl.}              ## ```
+                             ##   feeds additional data into the hash context
+                             ## ```
+    final*: proc (ctx: ptr st_ptls_hash_context_t; md: pointer;
+                  mode: ptls_hash_final_mode_t) {.cdecl.} ## ```
+                                                          ##   returns the digest and performs necessary operation specified by mode
+                                                          ## ```
+    ptlsXXclone*: proc (src: ptr st_ptls_hash_context_t): ptr st_ptls_hash_context_t {.
+        cdecl.}              ## ```
+                             ##   creates a copy of the hash context
+                             ## ```
+  ptls_hash_context_t* = st_ptls_hash_context_t ## ```
+                                                ##   A hash context.
+                                                ## ```
+  ptls_hash_algorithm_t* = st_ptls_hash_algorithm_t ## ```
+                                                    ##   A hash algorithm and its properties.
+                                                    ## ```
+  ptls_cipher_suite_t* = st_ptls_cipher_suite_t
+  st_ptls_traffic_protection_t* {.incompleteStruct.} = object
+  st_ptls_message_emitter_t* {.bycopy.} = object
+    buf*: ptr ptls_buffer_t
+    enc*: ptr st_ptls_traffic_protection_t
+    record_header_length*: uint
+    begin_message*: proc (self: ptr st_ptls_message_emitter_t): cint {.cdecl.}
+    commit_message*: proc (self: ptr st_ptls_message_emitter_t): cint {.cdecl.}
+  ptls_message_emitter_t* = st_ptls_message_emitter_t
+  ptls_hpke_kem_t* = st_ptls_hpke_kem_t ## ```
+                                        ##   HPKE KEM
+                                        ## ```
+  st_ptls_hpke_cipher_suite_id_t* {.bycopy.} = object
+    kdf*: uint16
+    aead*: uint16
+  ptls_hpke_cipher_suite_id_t* = st_ptls_hpke_cipher_suite_id_t
+  ptls_hpke_cipher_suite_t* = st_ptls_hpke_cipher_suite_t
+  st_ptls_client_hello_psk_identity_t* {.bycopy.} = object
+    identity*: ptls_iovec_t
+    obfuscated_ticket_age*: uint32
+    binder*: ptls_iovec_t
+  ptls_client_hello_psk_identity_t* = st_ptls_client_hello_psk_identity_t
+  Type_picotlsh1* {.bycopy.} = object ## ```
+                                       ##   
+                                       ## ```
+    list*: ptr ptls_iovec_t
+    count*: uint
+  Type_picotlsh2* {.bycopy.} = object
+    list*: ptr uint16
+    count*: uint
+  Type_picotlsh3* {.bycopy.} = object
+    list*: ptr uint16
+    count*: uint
+  Type_picotlsh4* {.bycopy.} = object
+    list*: ptr uint8
+    count*: uint
+  Type_picotlsh5* {.bycopy.} = object
+    list*: ptr ptls_client_hello_psk_identity_t
+    count*: uint
+  st_ptls_on_client_hello_parameters_t* {.bycopy.} = object ## ```
+                                                             ##   arguments passsed to the on_client_hello callback
+                                                             ## ```
+    server_name*: ptls_iovec_t ## ```
+                               ##   SNI value received from the client. The value is {NULL, 0} if the extension was absent.
+                               ## ```
+    raw_message*: ptls_iovec_t ## ```
+                               ##   Raw value of the client_hello message.
+                               ## ```
+    cipher_suites*: ptls_iovec_t ## ```
+                                 ##   points to the cipher-suites section of the raw_message (see above)
+                                 ## ```
+    negotiated_protocols*: Type_picotlsh1 ## ```
+                                          ##   
+                                          ## ```
+    signature_algorithms*: Type_picotlsh2
+    certificate_compression_algorithms*: Type_picotlsh3
+    server_certificate_types*: Type_picotlsh4
+    psk_identities*: Type_picotlsh5
+    incompatible_version* {.bitsize: 1.}: cuint ## ```
+                                                ##   set to 1 if ClientHello is too old (or too new) to be handled by picotls
+                                                ## ```
+  ptls_on_client_hello_parameters_t* = st_ptls_on_client_hello_parameters_t ## ```
+                                                                            ##   arguments passsed to the on_client_hello callback
+                                                                            ## ```
+  st_ptls_get_time_t* {.bycopy.} = object ## ```
+                                           ##   returns current time in milliseconds (ptls_get_time can be used to return the physical time)
+                                           ## ```
+    cb*: proc (self: ptr st_ptls_get_time_t): uint64 {.cdecl.}
+  ptls_get_time_t* = st_ptls_get_time_t ## ```
+                                        ##   returns current time in milliseconds (ptls_get_time can be used to return the physical time)
+                                        ## ```
+  st_ptls_on_client_hello_t* {.bycopy.} = object ## ```
+                                                  ##   after receiving ClientHello, the core calls the optional callback to give a chance to the swap the context depending on the input
+                                                  ##    values. The callback is required to call ptls_set_server_name if an SNI extension needs to be sent to the client.
+                                                  ## ```
+    cb*: proc (self: ptr st_ptls_on_client_hello_t; tls: ptr ptls_t;
+               params: ptr ptls_on_client_hello_parameters_t): cint {.cdecl.}
+  ptls_on_client_hello_t* = st_ptls_on_client_hello_t ## ```
+                                                      ##   after receiving ClientHello, the core calls the optional callback to give a chance to the swap the context depending on the input
+                                                      ##    values. The callback is required to call ptls_set_server_name if an SNI extension needs to be sent to the client.
+                                                      ## ```
+  st_ptls_emit_certificate_t* {.bycopy.} = object ## ```
+                                                   ##   callback to generate the certificate message. ptls_context::certificates are set when the callback is set to NULL.
+                                                   ## ```
+    cb*: proc (self: ptr st_ptls_emit_certificate_t; tls: ptr ptls_t;
+               emitter: ptr ptls_message_emitter_t;
+               key_sched: ptr ptls_key_schedule_t; context: ptls_iovec_t;
+               push_status_request: cint; compress_algos: ptr uint16;
+               num_compress_algos: uint): cint {.cdecl.}
+  ptls_emit_certificate_t* = st_ptls_emit_certificate_t ## ```
+                                                        ##   callback to generate the certificate message. ptls_context::certificates are set when the callback is set to NULL.
+                                                        ## ```
+  st_ptls_async_job_t* {.bycopy.} = object ## ```
+                                            ##   An object that represents an asynchronous task (e.g., RSA signature generation).
+                                            ##    When ptls_handshake returns PTLS_ERROR_ASYNC_OPERATION, it has an associated task in flight. The user should obtain the
+                                            ##    reference to the associated task by calling ptls_get_async_job, then either wait for the file descriptor obtained from
+                                            ##    the get_fd callback to become readable, or set a completion callback via set_completion_callback and wait for its
+                                            ##    invocation. Once notified, the user should invoke ptls_handshake again.
+                                            ##    Async jobs typically provide support for only one of the two methods.
+                                            ## ```
+    ptlsXXdestroy*: proc (self: ptr st_ptls_async_job_t) {.cdecl.} ## ```
+                                                                   ##   optional callback returning a file descriptor that becomes readable when the job is complete
+                                                                   ## ```
+    get_fd*: proc (self: ptr st_ptls_async_job_t): cint {.cdecl.} ## ```
+                                                                  ##   optional callback returning a file descriptor that becomes readable when the job is complete
+                                                                  ## ```
+    set_completion_callback*: proc (self: ptr st_ptls_async_job_t;
+                                    cb: proc (a1: pointer) {.cdecl.};
+                                    cbdata: pointer) {.cdecl.} ## ```
+                                                               ##   optional callback for setting a completion callback
+                                                               ## ```
+  ptls_async_job_t* = st_ptls_async_job_t ## ```
+                                          ##   An object that represents an asynchronous task (e.g., RSA signature generation).
+                                          ##    When ptls_handshake returns PTLS_ERROR_ASYNC_OPERATION, it has an associated task in flight. The user should obtain the
+                                          ##    reference to the associated task by calling ptls_get_async_job, then either wait for the file descriptor obtained from
+                                          ##    the get_fd callback to become readable, or set a completion callback via set_completion_callback and wait for its
+                                          ##    invocation. Once notified, the user should invoke ptls_handshake again.
+                                          ##    Async jobs typically provide support for only one of the two methods.
+                                          ## ```
+  st_ptls_sign_certificate_t* {.bycopy.} = object ## ```
+                                                   ##   When gerenating CertificateVerify, the core calls the callback to sign the handshake context using the certificate. This callback
+                                                   ##    supports asynchronous mode; see ptls_openssl_sign_certificate_t for more information.
+                                                   ## ```
+    cb*: proc (self: ptr st_ptls_sign_certificate_t; tls: ptr ptls_t;
+               async: ptr ptr ptls_async_job_t; selected_algorithm: ptr uint16;
+               output: ptr ptls_buffer_t; input: ptls_iovec_t;
+               algorithms: ptr uint16; num_algorithms: uint): cint {.cdecl.}
+  ptls_sign_certificate_t* = st_ptls_sign_certificate_t ## ```
+                                                        ##   When gerenating CertificateVerify, the core calls the callback to sign the handshake context using the certificate. This callback
+                                                        ##    supports asynchronous mode; see ptls_openssl_sign_certificate_t for more information.
+                                                        ## ```
+  st_ptls_verify_certificate_t* {.bycopy.} = object ## ```
+                                                     ##   after receiving Certificate, the core calls the callback to verify the certificate chain and to obtain a pointer to a
+                                                     ##    callback that should be used for verifying CertificateVerify. If an error occurs between a successful return from this
+                                                     ##    callback to the invocation of the verify_sign callback, verify_sign is called with both data and sign set to an empty buffer.
+                                                     ##    The implementor of the callback should use that as the opportunity to free any temporary data allocated for the verify_sign
+                                                     ##    callback.
+                                                     ##    The name of the server to be verified, if any, is provided explicitly as server_name. When ECH is offered by the client but
+                                                     ##    the was rejected by the server, this value can be different from that being sent via ptls_get_server_name.
+                                                     ## ```
+    cb*: proc (self: ptr st_ptls_verify_certificate_t; tls: ptr ptls_t;
+               server_name: cstring; verify_sign: ptr proc (verify_ctx: pointer;
+        algo: uint16; data: ptls_iovec_t; sign: ptls_iovec_t): cint {.cdecl.};
+               verify_data: ptr pointer; certs: ptr ptls_iovec_t;
+               num_certs: uint): cint {.cdecl.}
+    algos*: ptr uint16 ## ```
+                       ##   list of signature algorithms being supported, terminated by UINT16_MAX
+                       ## ```
+  ptls_verify_certificate_t* = st_ptls_verify_certificate_t ## ```
+                                                            ##   after receiving Certificate, the core calls the callback to verify the certificate chain and to obtain a pointer to a
+                                                            ##    callback that should be used for verifying CertificateVerify. If an error occurs between a successful return from this
+                                                            ##    callback to the invocation of the verify_sign callback, verify_sign is called with both data and sign set to an empty buffer.
+                                                            ##    The implementor of the callback should use that as the opportunity to free any temporary data allocated for the verify_sign
+                                                            ##    callback.
+                                                            ##    The name of the server to be verified, if any, is provided explicitly as server_name. When ECH is offered by the client but
+                                                            ##    the was rejected by the server, this value can be different from that being sent via ptls_get_server_name.
+                                                            ## ```
+  st_ptls_encrypt_ticket_t* {.bycopy.} = object ## ```
+                                                 ##   Encrypt-and-signs (or verify-and-decrypts) a ticket (server-only).
+                                                 ##    When used for encryption (i.e., is_encrypt being set), the function should return 0 if successful, or else a non-zero value.
+                                                 ##    When used for decryption, the function should return 0 (successful), PTLS_ERROR_REJECT_EARLY_DATA (successful, but 0-RTT is
+                                                 ##    forbidden), or any other value to indicate failure.
+                                                 ## ```
+    cb*: proc (self: ptr st_ptls_encrypt_ticket_t; tls: ptr ptls_t;
+               is_encrypt: cint; dst: ptr ptls_buffer_t; src: ptls_iovec_t): cint {.
+        cdecl.}
+  ptls_encrypt_ticket_t* = st_ptls_encrypt_ticket_t ## ```
+                                                    ##   Encrypt-and-signs (or verify-and-decrypts) a ticket (server-only).
+                                                    ##    When used for encryption (i.e., is_encrypt being set), the function should return 0 if successful, or else a non-zero value.
+                                                    ##    When used for decryption, the function should return 0 (successful), PTLS_ERROR_REJECT_EARLY_DATA (successful, but 0-RTT is
+                                                    ##    forbidden), or any other value to indicate failure.
+                                                    ## ```
+  st_ptls_save_ticket_t* {.bycopy.} = object ## ```
+                                              ##   saves a ticket (client-only)
+                                              ## ```
+    cb*: proc (self: ptr st_ptls_save_ticket_t; tls: ptr ptls_t;
+               input: ptls_iovec_t): cint {.cdecl.}
+  ptls_save_ticket_t* = st_ptls_save_ticket_t ## ```
+                                              ##   saves a ticket (client-only)
+                                              ## ```
+  st_ptls_log_event_t* {.bycopy.} = object ## ```
+                                            ##   event logging (incl. secret logging)
+                                            ## ```
+    cb*: proc (self: ptr st_ptls_log_event_t; tls: ptr ptls_t; `type`: cstring;
+               fmt: cstring) {.cdecl, varargs.}
+  ptls_log_event_t* = st_ptls_log_event_t ## ```
+                                          ##   event logging (incl. secret logging)
+                                          ## ```
+  st_ptls_update_open_count_t* {.bycopy.} = object ## ```
+                                                    ##   reference counting
+                                                    ## ```
+    cb*: proc (self: ptr st_ptls_update_open_count_t; delta: int) {.cdecl.}
+  ptls_update_open_count_t* = st_ptls_update_open_count_t ## ```
+                                                          ##   reference counting
+                                                          ## ```
+  st_ptls_update_traffic_key_t* {.bycopy.} = object ## ```
+                                                     ##   applications that have their own record layer can set this function to derive their own traffic keys from the traffic secret.
+                                                     ##    The cipher-suite that is being associated to the connection can be obtained by calling the ptls_get_cipher function.
+                                                     ## ```
+    cb*: proc (self: ptr st_ptls_update_traffic_key_t; tls: ptr ptls_t;
+               is_enc: cint; epoch: uint; secret: pointer): cint {.cdecl.}
+  ptls_update_traffic_key_t* = st_ptls_update_traffic_key_t ## ```
+                                                            ##   applications that have their own record layer can set this function to derive their own traffic keys from the traffic secret.
+                                                            ##    The cipher-suite that is being associated to the connection can be obtained by calling the ptls_get_cipher function.
+                                                            ## ```
+  st_ptls_on_extension_t* {.bycopy.} = object ## ```
+                                               ##   callback for every extension detected during decoding
+                                               ## ```
+    cb*: proc (self: ptr st_ptls_on_extension_t; tls: ptr ptls_t; hstype: uint8;
+               exttype: uint16; extdata: ptls_iovec_t): cint {.cdecl.}
+  ptls_on_extension_t* = st_ptls_on_extension_t ## ```
+                                                ##   callback for every extension detected during decoding
+                                                ## ```
+  st_ptls_decompress_certificate_t* {.bycopy.} = object ## ```
+                                                         ##   
+                                                         ## ```
+    supported_algorithms*: ptr uint16 ## ```
+                                      ##   list of supported algorithms terminated by UINT16_MAX
+                                      ## ```
+    cb*: proc (self: ptr st_ptls_decompress_certificate_t; tls: ptr ptls_t;
+               algorithm: uint16; output: ptls_iovec_t; input: ptls_iovec_t): cint {.
+        cdecl.}              ## ```
+                             ##   callback that decompresses the message
+                             ## ```
+  ptls_decompress_certificate_t* = st_ptls_decompress_certificate_t ## ```
+                                                                    ##   
+                                                                    ## ```
+  st_ptls_ech_create_opener_t* {.bycopy.} = object ## ```
+                                                    ##   ECH: creates the AEAD context to be used for "Open"-ing inner CH. Given config_id, the callback looks up the ECH config and the
+                                                    ##    corresponding private key, invokes ptls_hpke_setup_base_r with provided cipher, enc, and info_prefix (which will be
+                                                    ##    "tls ech" || 00).
+                                                    ## ```
+    cb*: proc (self: ptr st_ptls_ech_create_opener_t;
+               kem: ptr ptr ptls_hpke_kem_t;
+               cipher: ptr ptr ptls_hpke_cipher_suite_t; tls: ptr ptls_t;
+               config_id: uint8; cipher_id: ptls_hpke_cipher_suite_id_t;
+               enc: ptls_iovec_t; info_prefix: ptls_iovec_t): ptr ptls_aead_context_t {.
+        cdecl.}
+  ptls_ech_create_opener_t* = st_ptls_ech_create_opener_t ## ```
+                                                          ##   ECH: creates the AEAD context to be used for "Open"-ing inner CH. Given config_id, the callback looks up the ECH config and the
+                                                          ##    corresponding private key, invokes ptls_hpke_setup_base_r with provided cipher, enc, and info_prefix (which will be
+                                                          ##    "tls ech" || 00).
+                                                          ## ```
+  Type_picotlsh6* {.bycopy.} = object ## ```
+                                       ##   list of certificates
+                                       ## ```
+    list*: ptr ptls_iovec_t
+    count*: uint
+  Type_picotlsh7* {.bycopy.} = object ## ```
+                                       ##   External pre-shared key used for mutual authentication. Unless when using PSK, all the fields must be set to NULL / 0.
+                                       ## ```
+    identity*: ptls_iovec_t
+    secret*: ptls_iovec_t ## ```
+                          ##   (mandatory) hash algorithm associated to the PSK; cipher-suites not sharing the same ptls_hash_algorithm_t will be
+                          ##            ignored
+                          ## ```
+    hash*: ptr ptls_hash_algorithm_t ## ```
+                                     ##   (mandatory) hash algorithm associated to the PSK; cipher-suites not sharing the same ptls_hash_algorithm_t will be
+                                     ##            ignored
+                                     ## ```
+  Type_picotlsh9* {.bycopy.} = object
+    ciphers*: ptr ptr ptls_hpke_cipher_suite_t ## ```
+                                               ##   list of HPKE symmetric cipher-suites (set to NULL to disable ECH altogether)
+                                               ## ```
+    kems*: ptr ptr ptls_hpke_kem_t ## ```
+                                   ##   KEMs being supported
+                                   ## ```
+  Type_picotlsh10* {.bycopy.} = object
+    create_opener*: ptr ptls_ech_create_opener_t ## ```
+                                                 ##   callback that does ECDH key exchange and returns the AEAD context
+                                                 ## ```
+    retry_configs*: ptls_iovec_t ## ```
+                                 ##   ECHConfigList to be sent to the client when there is mismatch (or when the client sends a grease)
+                                 ## ```
+  Type_picotlsh8* {.bycopy.} = object ## ```
+                                       ##   ECH
+                                       ## ```
+    client*: Type_picotlsh9
+    server*: Type_picotlsh10
+  Type_picotlsh11* {.bycopy.} = object ## ```
+                                        ##   (optional) session ID Context to segment resumption
+                                        ## ```
+    bytes*: array[32, uint8]
+    is_set* {.bitsize: 1.}: cuint
+  Type_picotlsh12* {.bycopy.} = object ## ```
+                                        ##   (optional) list of CAs advertised to clients as supported in the CertificateRequest message; each item must be DNs in DER
+                                        ##        format. The values are sent to the client only when ptls_context_t::require_client_authentication is set to true.
+                                        ## ```
+    list*: ptr ptls_iovec_t
+    count*: uint
+  Type_picotlsh14* {.bycopy.} = object ## ```
+                                        ##   if set to non-zero and if the save_ticket callback is provided, a ticket_request extension containing the specified
+                                        ##            values is sent
+                                        ## ```
+    new_session_count*: uint8
+    resumption_count*: uint8
+  Type_picotlsh15* {.bycopy.} = object ## ```
+                                        ##   if set to non-zero, the maximum number of tickets being sent is capped to the specifed value; if set to zero, the maximum
+                                        ##            adopted is PTLS_DEFAULT_MAX_TICKETS_TO_SERVE.
+                                        ## ```
+    max_count*: uint8
+  Type_picotlsh13* {.bycopy.} = object ## ```
+                                        ##   (optional)
+                                        ## ```
+    client*: Type_picotlsh14 ## ```
+                             ##   if set to non-zero and if the save_ticket callback is provided, a ticket_request extension containing the specified
+                             ##            values is sent
+                             ## ```
+    server*: Type_picotlsh15 ## ```
+                             ##   if set to non-zero, the maximum number of tickets being sent is capped to the specifed value; if set to zero, the maximum
+                             ##            adopted is PTLS_DEFAULT_MAX_TICKETS_TO_SERVE.
+                             ## ```
+  st_ptls_context_t* {.bycopy.} = object
+    ptlsXXrandombytes*: proc (buf: pointer; len: uint) {.cdecl.} ## ```
+                                                                 ##   PRNG to be used
+                                                                 ## ```
+    get_time*: ptr ptls_get_time_t ## ```
+                                   ##   
+                                   ## ```
+    key_exchanges*: ptr ptr ptls_key_exchange_algorithm_t ## ```
+                                                          ##   list of supported key-exchange algorithms terminated by NULL
+                                                          ## ```
+    cipher_suites*: ptr ptr ptls_cipher_suite_t ## ```
+                                                ##   list of supported cipher-suites terminated by NULL
+                                                ## ```
+    certificates*: Type_picotlsh6 ## ```
+                                  ##   list of certificates
+                                  ## ```
+    pre_shared_key*: Type_picotlsh7 ## ```
+                                    ##   External pre-shared key used for mutual authentication. Unless when using PSK, all the fields must be set to NULL / 0.
+                                    ## ```
+    ech*: Type_picotlsh8     ## ```
+                             ##   ECH
+                             ## ```
+    on_client_hello*: ptr ptls_on_client_hello_t ## ```
+                                                 ##   
+                                                 ## ```
+    emit_certificate*: ptr ptls_emit_certificate_t ## ```
+                                                   ##   
+                                                   ## ```
+    sign_certificate*: ptr ptls_sign_certificate_t ## ```
+                                                   ##   
+                                                   ## ```
+    verify_certificate*: ptr ptls_verify_certificate_t ## ```
+                                                       ##   
+                                                       ## ```
+    ticket_lifetime*: uint32 ## ```
+                             ##   lifetime of a session ticket (server-only)
+                             ## ```
+    max_early_data_size*: uint32 ## ```
+                                 ##   maximum permitted size of early data (server-only)
+                                 ## ```
+    max_buffer_size*: uint ## ```
+                           ##   maximum size of the message buffer (default: 0 = unlimited = 3 + 2^24 bytes)
+                           ## ```
+    hkdf_label_prefixxXxobsolete*: cstring ## ```
+                                           ##   this field is obsolete and ignored
+                                           ## ```
+    require_dhe_on_psk* {.bitsize: 1.}: cuint ## ```
+                                              ##   if set, psk handshakes use (ec)dhe
+                                              ## ```
+    use_exporter* {.bitsize: 1.}: cuint ## ```
+                                        ##   if exporter master secrets should be recorded
+                                        ## ```
+    send_change_cipher_spec* {.bitsize: 1.}: cuint ## ```
+                                                   ##   if ChangeCipherSpec record should be sent during handshake. If the client sends CCS, the server sends one in response
+                                                   ##        regardless of the value of this flag. See RFC 8446 Appendix D.3.
+                                                   ## ```
+    require_client_authentication* {.bitsize: 1.}: cuint ## ```
+                                                         ##   if set, the server requests client certificates to authenticate the client
+                                                         ## ```
+    omit_end_of_early_data* {.bitsize: 1.}: cuint ## ```
+                                                  ##   if set, EOED will not be emitted or accepted
+                                                  ## ```
+    use_raw_public_keys* {.bitsize: 1.}: cuint ## ```
+                                               ##   This option turns on support for Raw Public Keys (RFC 7250).
+                                               ##       
+                                               ##        When running as a client, this option instructs the client to request the server to send raw public keys in place of X.509
+                                               ##        certificate chain. The client should set its certificate_verify callback to one that is capable of validating the raw
+                                               ##        public key that will be sent by the server.
+                                               ##       
+                                               ##        When running as a server, this option instructs the server to only handle clients requesting the use of raw public keys. If
+                                               ##        the client does not, the handshake is rejected. Note however that the rejection happens only after the on_client_hello
+                                               ##        callback is being called. Therefore, applications can support both X.509 and raw public keys by swapping ptls_context_t to
+                                               ##        the correct one when that callback is being called (like handling swapping the contexts based on the value of SNI).
+                                               ## ```
+    server_cipher_preference* {.bitsize: 1.}: cuint ## ```
+                                                    ##   boolean indicating if the cipher-suite should be chosen based on server's preference
+                                                    ## ```
+    server_cipher_chacha_priority* {.bitsize: 1.}: cuint ## ```
+                                                         ##   boolean indicating if ChaCha20-Poly1305 should be reprioritized to the top of the server cipher list if a ChaCha20-Poly1305
+                                                         ##        cipher is at the top of the client cipher list
+                                                         ## ```
+    encrypt_ticket*: ptr ptls_encrypt_ticket_t ## ```
+                                               ##   
+                                               ## ```
+    save_ticket*: ptr ptls_save_ticket_t ## ```
+                                         ##   
+                                         ## ```
+    log_event*: ptr ptls_log_event_t ## ```
+                                     ##   
+                                     ## ```
+    update_open_count*: ptr ptls_update_open_count_t ## ```
+                                                     ##   
+                                                     ## ```
+    update_traffic_key*: ptr ptls_update_traffic_key_t ## ```
+                                                       ##   
+                                                       ## ```
+    decompress_certificate*: ptr ptls_decompress_certificate_t ## ```
+                                                               ##   
+                                                               ## ```
+    on_extension*: ptr ptls_on_extension_t ## ```
+                                           ##   
+                                           ## ```
+    tls12_cipher_suites*: ptr ptr ptls_cipher_suite_t ## ```
+                                                      ##   (optional) list of supported tls12 cipher-suites terminated by NULL
+                                                      ## ```
+    ticket_context*: Type_picotlsh11 ## ```
+                                     ##   (optional) session ID Context to segment resumption
+                                     ## ```
+    client_ca_names*: Type_picotlsh12 ## ```
+                                      ##   (optional) list of CAs advertised to clients as supported in the CertificateRequest message; each item must be DNs in DER
+                                      ##        format. The values are sent to the client only when ptls_context_t::require_client_authentication is set to true.
+                                      ## ```
+    ticket_requests*: Type_picotlsh13 ## ```
+                                      ##   (optional)
+                                      ## ```
+  st_ptls_raw_extension_t* {.bycopy.} = object
+    `type`*: uint16
+    data*: ptls_iovec_t
+  ptls_raw_extension_t* = st_ptls_raw_extension_t
+  ptls_early_data_acceptance_t* = en_ptls_early_data_acceptance_t
+  Type_picotlsh17* {.bycopy.} = object ## ```
+                                        ##   list of protocols offered through ALPN
+                                        ## ```
+    list*: ptr ptls_iovec_t
+    count*: uint
+  Type_picotlsh18* {.bycopy.} = object ## ```
+                                        ##   ECH
+                                        ## ```
+    configs*: ptls_iovec_t ## ```
+                           ##   Config offered by server e.g., by HTTPS RR. If config.base is non-NULL but config.len is zero, a grease ECH will
+                           ##                    be sent, assuming that X25519-SHA256 KEM and SHA256-AES-128-GCM HPKE cipher is available.
+                           ## ```
+    retry_configs*: ptr ptls_iovec_t ## ```
+                                     ##   slot to save the config obtained from server on mismatch; user must free the returned blob by calling free
+                                     ## ```
+  Type_picotlsh16* {.bycopy.} = object
+    negotiated_protocols*: Type_picotlsh17 ## ```
+                                           ##   list of protocols offered through ALPN
+                                           ## ```
+    session_ticket*: ptls_iovec_t ## ```
+                                  ##   session ticket sent to the application via save_ticket callback
+                                  ## ```
+    max_early_data_size*: ptr uint ## ```
+                                   ##   pointer to store the maximum size of early-data that can be sent immediately. If set to non-NULL, the first call to
+                                   ##                ptls_handshake (or ptls_handle_message) will setmax_early_data to the value obtained from the session ticket, or
+                                   ##                to zero if early-data cannot be sent. If NULL, early data will not be used.
+                                   ## ```
+    early_data_acceptance*: ptls_early_data_acceptance_t ## ```
+                                                         ##   If early-data has been accepted by peer, or if the state is still unknown. The state changes anytime after handshake
+                                                         ##                keys become available. Applications can peek the tri-state variable every time it calls ptls_hanshake or
+                                                         ##                ptls_handle_message to determine the result at the earliest moment. This is an output parameter.
+                                                         ## ```
+    negotiate_before_key_exchange* {.bitsize: 1.}: cuint ## ```
+                                                         ##   negotiate the key exchange method before sending key_share
+                                                         ## ```
+    ech*: Type_picotlsh18    ## ```
+                             ##   ECH
+                             ## ```
+  Type_picotlsh20* {.bycopy.} = object ## ```
+                                        ##   psk binder being selected (len is set to zero if none)
+                                        ## ```
+    base*: array[64, uint8]
+    len*: uint
+  Type_picotlsh21* {.bycopy.} = object ## ```
+                                        ##   parameters related to use of the Cookie extension
+                                        ## ```
+    key*: pointer ## ```
+                  ##   HMAC key to protect the integrity of the cookie. The key should be as long as the digest size of the first
+                  ##                    ciphersuite specified in ptls_context_t (i.e. the hash algorithm of the best ciphersuite that can be chosen).
+                  ## ```
+    additional_data*: ptls_iovec_t ## ```
+                                   ##   additional data to be used for verifying the cookie
+                                   ## ```
+  Type_picotlsh19* {.bycopy.} = object
+    selected_psk_binder*: Type_picotlsh20 ## ```
+                                          ##   psk binder being selected (len is set to zero if none)
+                                          ## ```
+    cookie*: Type_picotlsh21 ## ```
+                             ##   parameters related to use of the Cookie extension
+                             ## ```
+    enforce_retry* {.bitsize: 1.}: cuint ## ```
+                                         ##   if HRR should always be sent
+                                         ## ```
+    retry_uses_cookie* {.bitsize: 1.}: cuint ## ```
+                                             ##   if retry should be stateless (cookie.key MUST be set when this option is used)
+                                             ## ```
+  st_ptls_handshake_properties_t* {.bycopy.} = object
+    client*: Type_picotlsh16
+    server*: Type_picotlsh19
+    additional_extensions*: ptr ptls_raw_extension_t ## ```
+                                                     ##   an optional list of additional extensions to send either in CH or EE, terminated by type == UINT16_MAX
+                                                     ## ```
+    collect_extension*: proc (tls: ptr ptls_t;
+                              properties: ptr st_ptls_handshake_properties_t;
+                              `type`: uint16): cint {.cdecl.} ## ```
+                                                              ##   an optional callback that returns a boolean value indicating if a particular extension should be collected
+                                                              ## ```
+    collected_extensions*: proc (tls: ptr ptls_t; properties: ptr st_ptls_handshake_properties_t;
+                                 extensions: ptr ptls_raw_extension_t): cint {.
+        cdecl.} ## ```
+                ##   an optional callback that reports the extensions being collected
+                ## ```
+  ptls_handshake_properties_t* = st_ptls_handshake_properties_t
+  st_ptls_log_state_t* {.bycopy.} = object
+    active_conns*: uint32    ## ```
+                             ##   bit array of connections (1 is active)
+                             ## ```
+    generation*: uint64 ## ```
+                        ##   generation counter used for staleness check; see ptls_log._generation
+                        ## ```
+  st_ptls_log_point_t* {.bycopy.} = object
+    name*: cstring
+    state*: st_ptls_log_state_t
+  st_ptls_log_conn_state_t* {.bycopy.} = object ## ```
+                                                 ##   represents a logging state of each connection
+                                                 ## ```
+    ptlsXXrandom*: cfloat ## ```
+                          ##   random value between 0 (inclusive) and 1 (non-inclusive) used to determine the ratio of sampling-based logging; see
+                          ##        ptls_add_fd'. To disable logging entirely, use ptls_log.dummy_conn_state, or set the value exactly to 1.
+                          ## ```
+    address*: in6_addr ## ```
+                       ##   represents peer address; ipv4 addresses are stored using the mapped form (::ffff:192.0.2.1)
+                       ## ```
+    state*: st_ptls_log_state_t
+  ptls_log_conn_state_t* = st_ptls_log_conn_state_t ## ```
+                                                    ##   represents a logging state of each connection
+                                                    ## ```
   ngtcp2_ssize* = ByteAddress ## ```
                               ##   @typedef
-                              ##
+                              ##   
                               ##    :type:ngtcp2_ssize is signed counterpart of size_t.
                               ## ```
   ngtcp2_malloc* = proc (size: uint; user_data: pointer): pointer {.cdecl.}
@@ -401,41 +1382,45 @@ type
       cdecl.}
   ngtcp2_mem* {.bycopy.} = object ## ```
                                    ##   @struct
-                                   ##
+                                   ##   
                                    ##    :type:ngtcp2_mem is a custom memory allocator.  The
                                    ##    :member:user_data field is passed to each allocator function.
                                    ##    This can be used, for example, to achieve per-connection memory
                                    ##    pool.
-                                   ##
+                                   ##   
                                    ##    In the following example code, my_malloc, my_free,
                                    ##    my_calloc and my_realloc are the replacement of the
                                    ##    standard allocators :manpage:malloc(3), :manpage:free(3),
                                    ##    :manpage:calloc(3) and :manpage:realloc(3) respectively::
-                                   ##
+                                   ##   
                                    ##        voidmy_malloc_cb(size_t size, voiduser_data) {
                                    ##          (void)user_data;
                                    ##          return my_malloc(size);
                                    ##        }
-                                   ##
+                                   ##   
                                    ##        void my_free_cb(voidptr, voiduser_data) {
                                    ##          (void)user_data;
                                    ##          my_free(ptr);
                                    ##        }
-                                   ##
+                                   ##   
                                    ##        voidmy_calloc_cb(size_t nmemb, size_t size, voiduser_data) {
                                    ##          (void)user_data;
                                    ##          return my_calloc(nmemb, size);
                                    ##        }
-                                   ##
+                                   ##   
                                    ##        voidmy_realloc_cb(voidptr, size_t size, voiduser_data) {
                                    ##          (void)user_data;
                                    ##          return my_realloc(ptr, size);
                                    ##        }
-                                   ##
+                                   ##   
                                    ##        void conn_new() {
-                                   ##          ngtcp2_mem mem = {NULL, my_malloc_cb, my_free_cb, my_calloc_cb,
-                                   ##                            my_realloc_cb};
-                                   ##
+                                   ##          ngtcp2_mem mem = {
+                                   ##            .malloc = my_malloc_cb,
+                                   ##            .free = my_free_cb,
+                                   ##            .calloc = my_calloc_cb,
+                                   ##            .realloc = my_realloc_cb,
+                                   ##          };
+                                   ##   
                                    ##          ...
                                    ##        }
                                    ## ```
@@ -459,10 +1444,9 @@ type
                              ##   :member:realloc is a custom allocator function to replace
                              ##      :manpage:realloc(3).
                              ## ```
-
   ngtcp2_pkt_info* {.bycopy.} = object ## ```
                                         ##   @struct
-                                        ##
+                                        ##   
                                         ##    :type:ngtcp2_pkt_info is a packet metadata.
                                         ## ```
     ecn*: uint8 ## ```
@@ -471,24 +1455,23 @@ type
                 ##      :macro:NGTCP2_ECN_NOT_ECT, :macro:NGTCP2_ECN_ECT_1,
                 ##      :macro:NGTCP2_ECN_ECT_0, or :macro:NGTCP2_ECN_CE.
                 ## ```
-
   ngtcp2_tstamp* = uint64 ## ```
                           ##   @typedef
-                          ##
+                          ##   
                           ##    :type:ngtcp2_tstamp is a timestamp with nanosecond resolution.
                           ##    UINT64_MAX is an invalid value, and it is often used to
                           ##    indicate that no value is set.
                           ## ```
   ngtcp2_duration* = uint64 ## ```
                             ##   @typedef
-                            ##
+                            ##   
                             ##    :type:ngtcp2_duration is a period of time in nanosecond
                             ##    resolution.  UINT64_MAX is an invalid value, and it is often
                             ##    used to indicate that no value is set.
                             ## ```
   ngtcp2_cid* {.bycopy.} = object ## ```
                                    ##   @struct
-                                   ##
+                                   ##   
                                    ##    :type:ngtcp2_cid holds a Connection ID.
                                    ## ```
     datalen*: uint           ## ```
@@ -497,10 +1480,9 @@ type
     data*: array[20, uint8] ## ```
                             ##   :member:data is the buffer to store Connection ID.
                             ## ```
-
   ngtcp2_vec* {.bycopy.} = object ## ```
                                    ##   @struct
-                                   ##
+                                   ##   
                                    ##    :type:ngtcp2_vec is struct iovec compatible structure to
                                    ##    reference arbitrary array of bytes.
                                    ## ```
@@ -511,10 +1493,9 @@ type
                ##   :member:len is the number of bytes which the buffer pointed by
                ##      base contains.
                ## ```
-
   ngtcp2_pkt_hd* {.bycopy.} = object ## ```
                                       ##   @struct
-                                      ##
+                                      ##   
                                       ##    :type:ngtcp2_pkt_hd represents QUIC packet header.
                                       ## ```
     dcid*: ngtcp2_cid        ## ```
@@ -555,10 +1536,9 @@ type
                   ##   :member:flags is zero or more of :macro:NGTCP2_PKT_FLAG_*
                   ##      <NGTCP2_PKT_FLAG_NONE>.
                   ## ```
-
   ngtcp2_pkt_stateless_reset* {.bycopy.} = object ## ```
                                                    ##   @struct
-                                                   ##
+                                                   ##   
                                                    ##    :type:ngtcp2_pkt_stateless_reset represents Stateless Reset.
                                                    ## ```
     stateless_reset_token*: array[16, uint8] ## ```
@@ -571,48 +1551,46 @@ type
     randlen*: uint           ## ```
                              ##   :member:randlen is the number of random bytes.
                              ## ```
-
   ngtcp2_SockAddr* = SockAddr ## ```
                               ##   @typedef
-                              ##
+                              ##   
                               ##    :type:ngtcp2_sockaddr is typedefed to struct sockaddr.  If
                               ##    :macro:NGTCP2_USE_GENERIC_SOCKADDR is defined, it is typedefed to
                               ##    the generic struct sockaddr defined in ngtcp2.h.
                               ## ```
   ngtcp2_SockAddr_in* = SockAddr_in ## ```
                                     ##   @typedef
-                                    ##
+                                    ##   
                                     ##    :type:ngtcp2_sockaddr_in is typedefed to struct sockaddr_in.  If
                                     ##    :macro:NGTCP2_USE_GENERIC_SOCKADDR is defined, it is typedefed to
                                     ##    the generic struct sockaddr_in defined in ngtcp2.h.
                                     ## ```
   ngtcp2_SockAddr_in6* = SockAddr_in6 ## ```
                                       ##   @typedef
-                                      ##
+                                      ##   
                                       ##    :type:ngtcp2_sockaddr_in6 is typedefed to struct sockaddr_in6.
                                       ##    If :macro:NGTCP2_USE_GENERIC_SOCKADDR is defined, it is typedefed
                                       ##    to the generic struct sockaddr_in6 defined in ngtcp2.h.
                                       ## ```
   ngtcp2_socklen* = SockLen ## ```
                             ##   @typedef
-                            ##
+                            ##   
                             ##    :type:ngtcp2_socklen is typedefed to socklen_t.  If
                             ##    :macro:NGTCP2_USE_GENERIC_SOCKADDR is defined, it is typedefed to
                             ##    uint32_t.
                             ## ```
   ngtcp2_SockAddr_union* {.union, bycopy.} = object ## ```
                                                      ##   @struct
-                                                     ##
+                                                     ##   
                                                      ##    :type:ngtcp2_sockaddr_union conveniently includes all supported
                                                      ##    address types.
                                                      ## ```
     sa*: ngtcp2_SockAddr
     `in`*: ngtcp2_SockAddr_in
     in6*: ngtcp2_SockAddr_in6
-
   ngtcp2_preferred_addr* {.bycopy.} = object ## ```
                                               ##   @struct
-                                              ##
+                                              ##   
                                               ##    :type:ngtcp2_preferred_addr represents preferred address
                                               ##    structure.
                                               ## ```
@@ -636,10 +1614,9 @@ type
     stateless_reset_token*: array[16, uint8] ## ```
                                              ##   :member:stateless_reset_token contains stateless reset token.
                                              ## ```
-
   ngtcp2_version_info* {.bycopy.} = object ## ```
                                             ##   @struct
-                                            ##
+                                            ##   
                                             ##    :type:ngtcp2_version_info represents version_information
                                             ##    structure.  See :rfc:9368.
                                             ## ```
@@ -656,10 +1633,9 @@ type
                                  ##      :member:available_versions, not the number of versions
                                  ##      included.
                                  ## ```
-
   ngtcp2_transport_params* {.bycopy.} = object ## ```
                                                 ##   @struct
-                                                ##
+                                                ##   
                                                 ##    :type:ngtcp2_transport_params represents QUIC transport
                                                 ##    parameters.
                                                 ## ```
@@ -735,7 +1711,9 @@ type
                                   ## ```
     active_connection_id_limit*: uint64 ## ```
                                         ##   :member:active_connection_id_limit is the maximum number of
-                                        ##      Connection ID that sender can store.
+                                        ##      Connection ID that sender can store.  If specified, it must be in
+                                        ##      the range of [:macro:NGTCP2_DEFAULT_ACTIVE_CONNECTION_ID_LIMIT,
+                                        ##      8], inclusive.
                                         ## ```
     ack_delay_exponent*: uint64 ## ```
                                 ##   :member:ack_delay_exponent is the exponent used in ACK Delay
@@ -794,10 +1772,9 @@ type
                                  ##      :member:version_info is set.  Application should not specify
                                  ##      this field.
                                  ## ```
-
   ngtcp2_conn_info* {.bycopy.} = object ## ```
                                          ##   @struct
-                                         ##
+                                         ##   
                                          ##    :type:ngtcp2_conn_info holds various connection statistics.
                                          ## ```
     latest_rtt*: ngtcp2_duration ## ```
@@ -824,11 +1801,10 @@ type
                              ##   :member:bytes_in_flight is the number in bytes of all sent
                              ##      packets which have not been acknowledged.
                              ## ```
-
   ngtcp2_printf* = proc (user_data: pointer; format: cstring) {.cdecl, varargs.}
   ngtcp2_rand_ctx* {.bycopy.} = object ## ```
                                         ##   @struct
-                                        ##
+                                        ##   
                                         ##    :type:ngtcp2_rand_ctx is a wrapper around native random number
                                         ##    generator.  It is opaque to the ngtcp2 library.  This might be
                                         ##    useful if application needs to specify random number generator per
@@ -838,12 +1814,11 @@ type
                             ##   :member:native_handle is a pointer to an underlying random
                             ##      number generator.
                             ## ```
-
   ngtcp2_qlog_write* = proc (user_data: pointer; flags: uint32; data: pointer;
                              datalen: uint) {.cdecl.}
   ngtcp2_settings* {.bycopy.} = object ## ```
                                         ##   @struct
-                                        ##
+                                        ##   
                                         ##    :type:ngtcp2_settings defines QUIC connection settings.
                                         ## ```
     qlog_write*: ngtcp2_qlog_write ## ```
@@ -871,17 +1846,17 @@ type
                                    ## ```
     token*: ptr uint8 ## ```
                       ##   :member:token is a token from Retry packet or NEW_TOKEN frame.
-                      ##
+                      ##     
                       ##      Server sets this field if it received the token in Client Initial
                       ##      packet and successfully validated.  It should also set
                       ##      :member:token_type field.
-                      ##
+                      ##     
                       ##      Client sets this field if it intends to send token in its Initial
                       ##      packet.
-                      ##
+                      ##     
                       ##      ngtcp2_conn_server_new and ngtcp2_conn_client_new make a copy
                       ##      of token.
-                      ##
+                      ##     
                       ##      Set NULL if there is no token.
                       ## ```
     tokenlen*: uint ## ```
@@ -914,6 +1889,13 @@ type
                                ##      or :member:ngtcp2_transport_params.initial_max_stream_data_uni,
                                ##      depending on the type of stream.  The window size is scaled up to
                                ##      the value specified in this field.
+                               ##     
+                               ##      Please note that the auto-tuning is done per stream.  Even if the
+                               ##      previous stream gets larger window as a result of auto-tuning,
+                               ##      the new stream still starts with the initial value set in
+                               ##      transport parameters.  This might become a bottleneck if
+                               ##      congestion window of a remote server is wide open.  If this
+                               ##      causes an issue, do not enable auto-tuning.
                                ## ```
     ack_thresh*: uint ## ```
                       ##   :member:ack_thresh is the minimum number of the received ACK
@@ -942,7 +1924,7 @@ type
                                     ##      must be supported by the library, and compatible to QUIC v1.  The
                                     ##      reserved versions are not allowed.  They are sorted in the order
                                     ##      of preference.
-                                    ##
+                                    ##     
                                     ##      On compatible version negotiation, server will negotiate one of
                                     ##      those versions contained in this array if there is some overlap
                                     ##      between these versions and the versions offered by the client.
@@ -951,7 +1933,7 @@ type
                                     ##      version as the negotiated version.  This version set corresponds
                                     ##      to Offered Versions described in :rfc:9368, and it should be
                                     ##      included in Version Negotiation packet.
-                                    ##
+                                    ##     
                                     ##      Client uses this field and :member:original_version to prevent
                                     ##      version downgrade attack if it reacted upon Version Negotiation
                                     ##      packet.  If this field is specified, client must include
@@ -968,14 +1950,14 @@ type
                                     ##      going to be set in :member:available_versions
                                     ##      <ngtcp2_version_info.available_versions> field of outgoing
                                     ##      version_information QUIC transport parameter.
-                                    ##
+                                    ##     
                                     ##      For server, this corresponds to Fully-Deployed Versions described
                                     ##      in :rfc:9368.  If this field is not set, it is set to
                                     ##      :member:preferred_versions internally if
                                     ##      :member:preferred_versionslen is not zero.  If this field is
                                     ##      not set, and :member:preferred_versionslen is zero, this field
                                     ##      is set to :macro:NGTCP2_PROTO_VER_V1 internally.
-                                    ##
+                                    ##     
                                     ##      Client must include |client_chosen_version| passed to
                                     ##      ngtcp2_conn_client_new in this array if this field is set and
                                     ##      |client_chosen_version| is not a reserved version.  If this field
@@ -1000,12 +1982,13 @@ type
                      ##      Discovery.
                      ## ```
     initial_pkt_num*: uint32 ## ```
-                             ##   :member:pkt_num is the initial packet number for each packet
-                             ##      number space.  It must be in range [0, INT32_MAX], inclusive.
+                             ##   :member:initial_pkt_num is the initial packet number for each
+                             ##      packet number space.  It must be in range [0, INT32_MAX],
+                             ##      inclusive.
                              ## ```
     pmtud_probes*: ptr uint16 ## ```
-                              ##   The following fields have been added since NGTCP2_SETTINGS_V2.
-                              ##
+                              ##   The following fields have been added since NGTCP2_SETTINGS_V2. 
+                              ##     
                               ##      :member:pmtud_probes is the array of UDP datagram payload size
                               ##      to probe during Path MTU Discovery.  The discovery is done in the
                               ##      order appeared in this array.  The size must be strictly larger
@@ -1020,10 +2003,9 @@ type
                            ##      contained in the array pointed by :member:pmtud_probes.  This
                            ##      field has been available since v1.4.0.
                            ## ```
-
   ngtcp2_addr* {.bycopy.} = object ## ```
                                     ##   @struct
-                                    ##
+                                    ##   
                                     ##    :type:ngtcp2_addr is the endpoint address.
                                     ## ```
     `addr`*: ptr ngtcp2_SockAddr ## ```
@@ -1034,10 +2016,9 @@ type
                              ##   :member:addrlen is the length of :member:addr.  It must not
                              ##      be longer than sizeof(:type:ngtcp2_sockaddr_union).
                              ## ```
-
   ngtcp2_path* {.bycopy.} = object ## ```
                                     ##   @struct
-                                    ##
+                                    ##   
                                     ##    :type:ngtcp2_path is the network endpoints where a packet is sent
                                     ##    and received.
                                     ## ```
@@ -1050,7 +2031,7 @@ type
     user_data*: pointer ## ```
                         ##   :member:user_data is an arbitrary data and opaque to the
                         ##      library.
-                        ##
+                        ##     
                         ##      Note that :type:ngtcp2_path is generally passed to
                         ##      :type:ngtcp2_conn by an application, and :type:ngtcp2_conn
                         ##      stores their copies.  Unfortunately, there is no way for the
@@ -1061,10 +2042,9 @@ type
                         ##      data pointed by this field persists in an entire lifetime of the
                         ##      connection.
                         ## ```
-
   ngtcp2_path_storage* {.bycopy.} = object ## ```
                                             ##   @struct
-                                            ##
+                                            ##   
                                             ##    :type:ngtcp2_path_storage is a convenient struct to have buffers
                                             ##    to store the longest addresses.
                                             ## ```
@@ -1077,10 +2057,9 @@ type
     remote_addrbuf*: ngtcp2_SockAddr_union ## ```
                                            ##   :member:remote_addrbuf is a buffer to store remote address.
                                            ## ```
-
   ngtcp2_crypto_md* {.bycopy.} = object ## ```
                                          ##   @struct
-                                         ##
+                                         ##   
                                          ##    :type:ngtcp2_crypto_md is a wrapper around native message digest
                                          ##    object.
                                          ## ```
@@ -1088,10 +2067,9 @@ type
                             ##   :member:native_handle is a pointer to an underlying message
                             ##      digest object.
                             ## ```
-
   ngtcp2_crypto_aead* {.bycopy.} = object ## ```
                                            ##   @struct
-                                           ##
+                                           ##   
                                            ##    :type:ngtcp2_crypto_aead is a wrapper around native AEAD object.
                                            ## ```
     native_handle*: pointer ## ```
@@ -1102,10 +2080,9 @@ type
                         ##   :member:max_overhead is the number of additional bytes which
                         ##      AEAD encryption needs on encryption.
                         ## ```
-
   ngtcp2_crypto_cipher* {.bycopy.} = object ## ```
                                              ##   @struct
-                                             ##
+                                             ##   
                                              ##    :type:ngtcp2_crypto_cipher is a wrapper around native cipher
                                              ##    object.
                                              ## ```
@@ -1113,10 +2090,9 @@ type
                             ##   :member:native_handle is a pointer to an underlying cipher
                             ##      object.
                             ## ```
-
   ngtcp2_crypto_aead_ctx* {.bycopy.} = object ## ```
                                                ##   @struct
-                                               ##
+                                               ##   
                                                ##    :type:ngtcp2_crypto_aead_ctx is a wrapper around native AEAD
                                                ##    cipher context object.  It should be initialized with a specific
                                                ##    key.  ngtcp2 library reuses this context object to encrypt or
@@ -1126,10 +2102,9 @@ type
                             ##   :member:native_handle is a pointer to an underlying AEAD
                             ##      context object.
                             ## ```
-
   ngtcp2_crypto_cipher_ctx* {.bycopy.} = object ## ```
                                                  ##   @struct
-                                                 ##
+                                                 ##   
                                                  ##    :type:ngtcp2_crypto_cipher_ctx is a wrapper around native cipher
                                                  ##    context object.  It should be initialized with a specific key.
                                                  ##    ngtcp2 library reuses this context object to encrypt or decrypt
@@ -1139,10 +2114,9 @@ type
                             ##   :member:native_handle is a pointer to an underlying cipher
                             ##      context object.
                             ## ```
-
   ngtcp2_crypto_ctx* {.bycopy.} = object ## ```
                                           ##   @struct
-                                          ##
+                                          ##   
                                           ##    :type:ngtcp2_crypto_ctx is a convenient structure to bind all
                                           ##    crypto related objects in one place.  Use
                                           ##    ngtcp2_crypto_ctx_initial to initialize this struct for Initial
@@ -1167,10 +2141,9 @@ type
                                     ##   :member:max_decryption_failure is the number of decryption
                                     ##      failure with this key.
                                     ## ```
-
   ngtcp2_version_cid* {.bycopy.} = object ## ```
                                            ##   @struct
-                                           ##
+                                           ##   
                                            ##    :type:ngtcp2_version_cid is a convenient struct to store the
                                            ##    result of ngtcp2_pkt_decode_version_cid.
                                            ## ```
@@ -1191,7 +2164,6 @@ type
                    ##   :member:scidlen is the length of the Source Connection ID
                    ##      pointed by :member:scid.
                    ## ```
-
   ngtcp2_conn* {.incompleteStruct.} = object
   ngtcp2_client_initial* = proc (conn: ptr ngtcp2_conn; user_data: pointer): cint {.
       cdecl.}
@@ -1311,7 +2283,7 @@ type
       user_data: pointer): cint {.cdecl.}
   ngtcp2_callbacks* {.bycopy.} = object ## ```
                                          ##   @struct
-                                         ##
+                                         ##   
                                          ##    :type:ngtcp2_callbacks holds a set of callback functions.
                                          ## ```
     client_initial*: ngtcp2_client_initial ## ```
@@ -1531,10 +2503,9 @@ type
                                                              ##      client decided not to attempt early data.  This callback function
                                                              ##      is only used by client.
                                                              ## ```
-
   ngtcp2_cid_token* {.bycopy.} = object ## ```
                                          ##   @struct
-                                         ##
+                                         ##   
                                          ##    :type:ngtcp2_cid_token is the convenient struct to store
                                          ##    Connection ID, its associated path, and stateless reset token.
                                          ## ```
@@ -1556,10 +2527,9 @@ type
                           ##   :member:token_present is nonzero if token contains stateless
                           ##      reset token.
                           ## ```
-
   ngtcp2_ccerr* {.bycopy.} = object ## ```
                                      ##   @struct
-                                     ##
+                                     ##   
                                      ##    :type:ngtcp2_ccerr contains connection error code, its type, a
                                      ##    frame type that caused this error, and the optional reason phrase.
                                      ## ```
@@ -1585,10 +2555,9 @@ type
                      ##   :member:reasonlen is the length of data pointed by
                      ##      :member:reason.
                      ## ```
-
   ngtcp2_info* {.bycopy.} = object ## ```
                                     ##   @struct
-                                    ##
+                                    ##   
                                     ##    :type:ngtcp2_info is what ngtcp2_version returns.  It holds
                                     ##    information about the particular ngtcp2 version.
                                     ## ```
@@ -1605,12 +2574,622 @@ type
                           ##   :member:version_str points to the :macro:NGTCP2_VERSION
                           ##      string (since :member:age ==1)
                           ## ```
-
+  ngtcp2_crypto_picotls_ctx* {.bycopy.} = object ## ```
+                                                  ##   @struct
+                                                  ##   
+                                                  ##    :type:ngtcp2_crypto_picotls_ctx contains per-connection state of
+                                                  ##    Picotls objects and must be an object to bet set to
+                                                  ##    ngtcp2_conn_set_tls_native_handle.
+                                                  ## ```
+    ptls*: ptr ptls_t        ## ```
+                             ##   :member:ptls is a pointer to ptls_t object.
+                             ## ```
+    handshake_properties*: ptls_handshake_properties_t ## ```
+                                                       ##   :member:handshake_properties is a set of configurations used
+                                                       ##      during this particular TLS handshake.
+                                                       ## ```
+var
+  ptls_log* {.importc.}: st_ptls_log_t ## ```
+                                       ##   global variables exposed
+                                       ## ```
+  ptls_clear_memory* {.importc.}: proc (p: pointer; len: uint) {.cdecl.} ## ```
+                                                                         ##   clears memory
+                                                                         ## ```
+  ptls_mem_equal* {.importc.}: proc (x: pointer; y: pointer; len: uint): cint {.
+      cdecl.}                ## ```
+                             ##   constant-time memcmp
+                             ## ```
+  ptls_get_time* {.importc.}: ptls_get_time_t ## ```
+                                              ##   the default get_time callback
+                                              ## ```
+proc ptls_iovec_init*(p: pointer; len: uint): ptls_iovec_t {.importc, cdecl.}
+  ## ```
+                                                                             ##   builds a new ptls_iovec_t instance using the supplied parameters
+                                                                             ## ```
+proc ptls_buffer_init*(buf: ptr ptls_buffer_t; smallbuf: pointer;
+                       smallbuf_size: uint) {.importc, cdecl.}
+  ## ```
+                                                              ##   initializes a buffer, setting the default destination to the small buffer provided as the argument.
+                                                              ## ```
+proc ptls_buffer_dispose*(buf: ptr ptls_buffer_t) {.importc, cdecl.}
+  ## ```
+                                                                    ##   disposes a buffer, freeing resources allocated by the buffer itself (if any)
+                                                                    ## ```
+proc ptls_bufferxXxrelease_memory*(buf: ptr ptls_buffer_t) {.
+    importc: "ptls_buffer__release_memory", cdecl.}
+  ## ```
+                                                   ##   internal
+                                                   ## ```
+proc ptls_buffer_reserve*(buf: ptr ptls_buffer_t; delta: uint): cint {.importc,
+    cdecl.}
+  ## ```
+           ##   reserves space for additional amount of memory
+           ## ```
+proc ptls_buffer_reserve_aligned*(buf: ptr ptls_buffer_t; delta: uint;
+                                  align_bits: uint8): cint {.importc, cdecl.}
+  ## ```
+                                                                             ##   reserves space for additional amount of memory, requiring buf->base to follow specified alignment
+                                                                             ## ```
+proc ptls_bufferxXxdo_pushv*(buf: ptr ptls_buffer_t; src: pointer; len: uint): cint {.
+    importc: "ptls_buffer__do_pushv", cdecl.}
+  ## ```
+                                             ##   internal
+                                             ## ```
+proc ptls_bufferxXxadjust_quic_blocksize*(buf: ptr ptls_buffer_t;
+    body_size: uint): cint {.importc: "ptls_buffer__adjust_quic_blocksize",
+                             cdecl.}
+  ## ```
+                                    ##   internal
+                                    ## ```
+proc ptls_bufferxXxadjust_asn1_blocksize*(buf: ptr ptls_buffer_t;
+    body_size: uint): cint {.importc: "ptls_buffer__adjust_asn1_blocksize",
+                             cdecl.}
+  ## ```
+                                    ##   internal
+                                    ## ```
+proc ptls_buffer_push_asn1_ubigint*(buf: ptr ptls_buffer_t; bignum: pointer;
+                                    size: uint): cint {.importc, cdecl.}
+  ## ```
+                                                                        ##   pushes an unsigned bigint
+                                                                        ## ```
+proc ptls_encode_quicint*(p: ptr uint8; v: uint64): ptr uint8 {.importc, cdecl.}
+  ## ```
+                                                                                ##   encodes a quic varint (maximum length is PTLS_ENCODE_QUICINT_CAPACITY)
+                                                                                ## ```
+proc ptls_decode8*(value: ptr uint8; src: ptr ptr uint8; `end`: ptr uint8): cint {.
+    importc, cdecl.}
+proc ptls_decode16*(value: ptr uint16; src: ptr ptr uint8; `end`: ptr uint8): cint {.
+    importc, cdecl.}
+proc ptls_decode24*(value: ptr uint32; src: ptr ptr uint8; `end`: ptr uint8): cint {.
+    importc, cdecl.}
+proc ptls_decode32*(value: ptr uint32; src: ptr ptr uint8; `end`: ptr uint8): cint {.
+    importc, cdecl.}
+proc ptls_decode64*(value: ptr uint64; src: ptr ptr uint8; `end`: ptr uint8): cint {.
+    importc, cdecl.}
+proc ptls_decode_quicint*(src: ptr ptr uint8; `end`: ptr uint8): uint64 {.
+    importc, cdecl.}
+proc ptls_log_init_conn_state*(state: ptr ptls_log_conn_state_t;
+    ptlsXXrandombytes: proc (a1: pointer; a2: uint) {.cdecl.}) {.importc, cdecl.}
+  ## ```
+                                                                                 ##   initializes a ptls_log_conn_state_t
+                                                                                 ## ```
+proc ptls_log_recalc_conn_state*(state: ptr ptls_log_conn_state_t) {.importc,
+    cdecl.}
+  ## ```
+           ##   forces recalculation of the log state (should be called when SNI is determined)
+           ## ```
+proc ptls_log_point_maybe_active*(point: ptr st_ptls_log_point_t): uint32 {.
+    importc, cdecl.}
+  ## ```
+                    ##   returns a bitmap indicating the loggers active for given log point
+                    ## ```
+proc ptls_log_conn_maybe_active*(conn: ptr ptls_log_conn_state_t;
+                                 get_sni: proc (a1: pointer): cstring {.cdecl.};
+                                 get_sni_arg: pointer): uint32 {.importc, cdecl.}
+  ## ```
+                                                                                 ##   returns a bitmap indicating the loggers active for given connection
+                                                                                 ## ```
+proc ptls_log_num_lost*(): uint {.importc, cdecl.}
+  ## ```
+                                                  ##   Returns the number of log events that were unable to be emitted.
+                                                  ## ```
+proc ptls_log_add_fd*(fd: cint; sample_ratio: cfloat; points: cstring;
+                      snis: cstring; addresses: cstring; appdata: cint): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   Registers an fd to the logger. A registered fd is automatically closed and removed when it is closed by the peer.
+                    ##    @param sample_ratio  sampling ratio between 0 and 1
+                    ##    @param points        list of points to log, in the form of p1\0p2\0\0 (i.e., concatenated list of C strings with an empty string
+                    ##                         marking the end). An empty list means attach to all.
+                    ##    @param snis          list of SNIs to log, using the same form as points
+                    ##    @param addresses     list of IPv4/v6 addresses to log, using the same form as points
+                    ## ```
+proc ptls_logxXxrecalc_point*(caller_locked: cint;
+                              point: ptr st_ptls_log_point_t) {.
+    importc: "ptls_log__recalc_point", cdecl.}
+proc ptls_logxXxrecalc_conn*(caller_locked: cint;
+                             conn: ptr st_ptls_log_conn_state_t;
+                             get_sni: proc (a1: pointer): cstring {.cdecl.};
+                             get_sni_arg: pointer) {.
+    importc: "ptls_log__recalc_conn", cdecl.}
+proc ptls_logxXxdo_push_element_safestr*(prefix: cstring; prefix_len: uint;
+    s: cstring; l: uint) {.importc: "ptls_log__do_push_element_safestr", cdecl.}
+proc ptls_logxXxdo_push_element_unsafestr*(prefix: cstring; prefix_len: uint;
+    s: cstring; l: uint) {.importc: "ptls_log__do_push_element_unsafestr", cdecl.}
+proc ptls_logxXxdo_push_element_hexdump*(prefix: cstring; prefix_len: uint;
+    s: pointer; l: uint) {.importc: "ptls_log__do_push_element_hexdump", cdecl.}
+proc ptls_logxXxdo_push_element_signed32*(prefix: cstring; prefix_len: uint;
+    v: int32) {.importc: "ptls_log__do_push_element_signed32", cdecl.}
+proc ptls_logxXxdo_push_element_signed64*(prefix: cstring; prefix_len: uint;
+    v: int64) {.importc: "ptls_log__do_push_element_signed64", cdecl.}
+proc ptls_logxXxdo_push_element_unsigned32*(prefix: cstring; prefix_len: uint;
+    v: uint32) {.importc: "ptls_log__do_push_element_unsigned32", cdecl.}
+proc ptls_logxXxdo_push_element_unsigned64*(prefix: cstring; prefix_len: uint;
+    v: uint64) {.importc: "ptls_log__do_push_element_unsigned64", cdecl.}
+proc ptls_logxXxdo_push_element_bool*(prefix: cstring; prefix_len: uint; v: cint) {.
+    importc: "ptls_log__do_push_element_bool", cdecl.}
+proc ptls_logxXxdo_push_appdata_element_unsafestr*(includes_appdata: cint;
+    prefix: cstring; prefix_len: uint; s: cstring; l: uint) {.
+    importc: "ptls_log__do_push_appdata_element_unsafestr", cdecl.}
+proc ptls_logxXxdo_push_appdata_element_hexdump*(includes_appdata: cint;
+    prefix: cstring; prefix_len: uint; s: pointer; l: uint) {.
+    importc: "ptls_log__do_push_appdata_element_hexdump", cdecl.}
+proc ptls_logxXxdo_write_start*(point: ptr st_ptls_log_point_t; add_time: cint) {.
+    importc: "ptls_log__do_write_start", cdecl.}
+proc ptls_logxXxdo_write_end*(point: ptr st_ptls_log_point_t;
+                              conn: ptr st_ptls_log_conn_state_t;
+                              get_sni: proc (a1: pointer): cstring {.cdecl.};
+                              get_sni_arg: pointer; includes_appdata: cint): cint {.
+    importc: "ptls_log__do_write_end", cdecl.}
+proc ptls_client_new*(ctx: ptr ptls_context_t): ptr ptls_t {.importc, cdecl.}
+  ## ```
+                                                                             ##   create a client object to handle new TLS connection
+                                                                             ## ```
+proc ptls_server_new*(ctx: ptr ptls_context_t): ptr ptls_t {.importc, cdecl.}
+  ## ```
+                                                                             ##   create a server object to handle new TLS connection
+                                                                             ## ```
+proc ptls_new*(ctx: ptr ptls_context_t; is_server: cint): ptr ptls_t {.importc,
+    cdecl.}
+  ## ```
+           ##   creates an object handle new TLS connection
+           ## ```
+proc ptls_build_tls12_export_params*(ctx: ptr ptls_context_t;
+                                     output: ptr ptls_buffer_t; is_server: cint;
+                                     session_reused: cint;
+                                     cipher: ptr ptls_cipher_suite_t;
+                                     master_secret: pointer;
+                                     hello_randoms: pointer;
+                                     next_send_record_iv: uint64;
+                                     server_name: cstring;
+                                     negotiated_protocol: ptls_iovec_t): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   creates TLS 1.2 record layer for post-handshake communication
+                    ## ```
+proc ptls_export*(tls: ptr ptls_t; output: ptr ptls_buffer_t): cint {.importc,
+    cdecl.}
+  ## ```
+           ##   store the parameters of a post-handshake TLS connection so that it can be reconstructed later
+           ## ```
+proc ptls_import*(ctx: ptr ptls_context_t; tls: ptr ptr ptls_t;
+                  params: ptls_iovec_t): cint {.importc, cdecl.}
+  ## ```
+                                                                ##   create a post-handshake TLS connection object using given parameters
+                                                                ## ```
+proc ptls_free*(tls: ptr ptls_t) {.importc, cdecl.}
+  ## ```
+                                                   ##   releases all resources associated to the object
+                                                   ## ```
+proc ptls_get_context*(tls: ptr ptls_t): ptr ptls_context_t {.importc, cdecl.}
+  ## ```
+                                                                              ##   returns address of the crypto callbacks that the connection is using
+                                                                              ## ```
+proc ptls_set_context*(tls: ptr ptls_t; ctx: ptr ptls_context_t) {.importc,
+    cdecl.}
+  ## ```
+           ##   updates the context of a connection. Can be called from on_client_hello callback.
+           ## ```
+proc ptls_get_async_job*(tls: ptr ptls_t): ptr ptls_async_job_t {.importc, cdecl.}
+  ## ```
+                                                                                  ##   get the signature context
+                                                                                  ## ```
+proc ptls_get_client_random*(tls: ptr ptls_t): ptls_iovec_t {.importc, cdecl.}
+  ## ```
+                                                                              ##   returns the client-random
+                                                                              ## ```
+proc ptls_get_cipher*(tls: ptr ptls_t): ptr ptls_cipher_suite_t {.importc, cdecl.}
+  ## ```
+                                                                                  ##   returns the cipher-suite being used
+                                                                                  ## ```
+proc ptls_find_cipher_suite*(cipher_suites: ptr ptr ptls_cipher_suite_t;
+                             id: uint16): ptr ptls_cipher_suite_t {.importc,
+    cdecl.}
+  ## ```
+           ##   returns a supported cipher-suite given an id
+           ## ```
+proc ptls_get_protocol_version*(tls: ptr ptls_t): uint16 {.importc, cdecl.}
+  ## ```
+                                                                           ##   Returns protocol version (e.g., 0x0303 for TLS 1.2, 0x0304 for TLS 1.3). The result may be unstable prior to handshake
+                                                                           ##    completion.
+                                                                           ## ```
+proc ptls_get_traffic_keys*(tls: ptr ptls_t; is_enc: cint; key: ptr uint8;
+                            iv: ptr uint8; seq: ptr uint64): cint {.importc,
+    cdecl.}
+  ## ```
+           ##   Returns current state of traffic keys. The cipher-suite being used, as well as the length of the traffic keys, can be obtained
+           ##    via ptls_get_cipher.
+           ##    TODO: Even in case of offloading just the TX side, there should be API for handling key updates, sending Close aleart.
+           ## ```
+proc ptls_get_server_name*(tls: ptr ptls_t): cstring {.importc, cdecl.}
+  ## ```
+                                                                       ##   returns the server-name (NULL if SNI is not used or failed to negotiate)
+                                                                       ## ```
+proc ptls_set_server_name*(tls: ptr ptls_t; server_name: cstring;
+                           server_name_len: uint): cint {.importc, cdecl.}
+  ## ```
+                                                                          ##   sets the server-name associated to the TLS connection. If server_name_len is zero, then strlen(server_name) is called to
+                                                                          ##    determine the length of the name.
+                                                                          ##    On the client-side, the value is used for certificate validation. The value will be also sent as an SNI extension, if it looks
+                                                                          ##    like a DNS name.
+                                                                          ##    On the server-side, it can be called from on_client_hello to indicate the acceptance of the SNI extension to the client.
+                                                                          ## ```
+proc ptls_get_negotiated_protocol*(tls: ptr ptls_t): cstring {.importc, cdecl.}
+  ## ```
+                                                                               ##   returns the negotiated protocol (or NULL)
+                                                                               ## ```
+proc ptls_set_negotiated_protocol*(tls: ptr ptls_t; protocol: cstring;
+                                   protocol_len: uint): cint {.importc, cdecl.}
+  ## ```
+                                                                               ##   sets the negotiated protocol. If protocol_len is zero, strlen(protocol) is called to determine the length of the protocol name.
+                                                                               ## ```
+proc ptls_handshake_is_complete*(tls: ptr ptls_t): cint {.importc, cdecl.}
+  ## ```
+                                                                          ##   returns if the handshake has been completed
+                                                                          ## ```
+proc ptls_is_psk_handshake*(tls: ptr ptls_t): cint {.importc, cdecl.}
+  ## ```
+                                                                     ##   returns if a PSK (or PSK-DHE) handshake was performed
+                                                                     ## ```
+proc ptls_is_ech_handshake*(tls: ptr ptls_t; config_id: ptr uint8;
+                            kem: ptr ptr ptls_hpke_kem_t;
+                            cipher: ptr ptr ptls_hpke_cipher_suite_t): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   return if a ECH handshake was performed, as well as optionally the kem and cipher-suite being used
+                    ##    FIXME: this function always return false when the TLS session is exported and imported
+                    ## ```
+proc ptls_get_data_ptr*(tls: ptr ptls_t): ptr pointer {.importc, cdecl.}
+  ## ```
+                                                                        ##   returns a pointer to user data pointer (client is reponsible for freeing the associated data prior to calling ptls_free)
+                                                                        ## ```
+proc ptls_get_log_state*(tls: ptr ptls_t): ptr ptls_log_conn_state_t {.importc,
+    cdecl.}
+  ## ```
+           ##   Returns ptls_log_conn_state_t of ptls_t. By default, the state is initialized by calling ptls_log_init_conn_state, but the
+           ##    behavior can be overidden by setting ptls_log_conn_state_override.
+           ##    This value can be changed by setting ptls_log_random_override or by calling ptls_set_log_random.
+           ## ```
+proc ptls_handshake*(tls: ptr ptls_t; sendbuf: ptr ptls_buffer_t;
+                     input: pointer; inlen: ptr uint;
+                     args: ptr ptls_handshake_properties_t): cint {.importc,
+    cdecl.}
+  ## ```
+           ##   proceeds with the handshake, optionally taking some input from peer. The function returns zero in case the handshake completed
+           ##    successfully. PTLS_ERROR_IN_PROGRESS is returned in case the handshake is incomplete. Otherwise, an error value is returned. The
+           ##    contents of sendbuf should be sent to the client, regardless of whether if an error is returned. inlen is an argument used for
+           ##    both input and output. As an input, the arguments takes the size of the data available as input. Upon return the value is updated
+           ##    to the number of bytes consumed by the handshake. In case the returned value is PTLS_ERROR_IN_PROGRESS there is a guarantee that
+           ##    all the input are consumed (i.e. the value of inlen does not change).
+           ## ```
+proc ptls_receive*(tls: ptr ptls_t; plaintextbuf: ptr ptls_buffer_t;
+                   input: pointer; len: ptr uint): cint {.importc, cdecl.}
+  ## ```
+                                                                          ##   decrypts the first record within given buffer
+                                                                          ## ```
+proc ptls_send*(tls: ptr ptls_t; sendbuf: ptr ptls_buffer_t; input: pointer;
+                inlen: uint): cint {.importc, cdecl.}
+  ## ```
+                                                     ##   encrypts given buffer into multiple TLS records
+                                                     ## ```
+proc ptls_update_key*(tls: ptr ptls_t; request_update: cint): cint {.importc,
+    cdecl.}
+  ## ```
+           ##   updates the send traffic key (as well as asks the peer to update)
+           ## ```
+proc ptls_is_server*(tls: ptr ptls_t): cint {.importc, cdecl.}
+  ## ```
+                                                              ##   Returns if the context is a server context.
+                                                              ## ```
+proc ptls_get_record_overhead*(tls: ptr ptls_t): uint {.importc, cdecl.}
+  ## ```
+                                                                        ##   returns per-record overhead
+                                                                        ## ```
+proc ptls_send_alert*(tls: ptr ptls_t; sendbuf: ptr ptls_buffer_t; level: uint8;
+                      description: uint8): cint {.importc, cdecl.}
+  ## ```
+                                                                  ##   sends an alert
+                                                                  ## ```
+proc ptls_export_secret*(tls: ptr ptls_t; output: pointer; outlen: uint;
+                         label: cstring; context_value: ptls_iovec_t;
+                         is_early: cint): cint {.importc, cdecl.}
+  ## ```
+                                                                 ##   
+                                                                 ## ```
+proc ptls_build_certificate_message*(buf: ptr ptls_buffer_t;
+                                     request_context: ptls_iovec_t;
+                                     certificates: ptr ptls_iovec_t;
+                                     num_certificates: uint;
+                                     ocsp_status: ptls_iovec_t): cint {.importc,
+    cdecl.}
+  ## ```
+           ##   build the body of a Certificate message. Can be called with tls set to NULL in order to create a precompressed message.
+           ## ```
+proc ptls_calc_hash*(algo: ptr ptls_hash_algorithm_t; output: pointer;
+                     src: pointer; len: uint): cint {.importc, cdecl.}
+  ## ```
+                                                                      ##   
+                                                                      ## ```
+proc ptls_hmac_create*(algo: ptr ptls_hash_algorithm_t; key: pointer;
+                       key_size: uint): ptr ptls_hash_context_t {.importc, cdecl.}
+  ## ```
+                                                                                  ##   
+                                                                                  ## ```
+proc ptls_hkdf_extract*(hash: ptr ptls_hash_algorithm_t; output: pointer;
+                        salt: ptls_iovec_t; ikm: ptls_iovec_t): cint {.importc,
+    cdecl.}
+  ## ```
+           ##   
+           ## ```
+proc ptls_hkdf_expand*(hash: ptr ptls_hash_algorithm_t; output: pointer;
+                       outlen: uint; prk: ptls_iovec_t; info: ptls_iovec_t): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   
+                    ## ```
+proc ptls_hkdf_expand_label*(algo: ptr ptls_hash_algorithm_t; output: pointer;
+                             outlen: uint; secret: ptls_iovec_t; label: cstring;
+                             hash_value: ptls_iovec_t; label_prefix: cstring): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   
+                    ## ```
+proc ptls_tls12_phash*(algo: ptr ptls_hash_algorithm_t; output: pointer;
+                       outlen: uint; secret: ptls_iovec_t; label: cstring;
+                       seed: ptls_iovec_t): cint {.importc, cdecl.}
+  ## ```
+                                                                   ##   The expansion function of TLS 1.2 defined in RFC 5426 section 5. When label is NULL, acts as P_<hash>, or if non-NULL, as PRF.
+                                                                   ## ```
+proc ptls_cipher_new*(algo: ptr ptls_cipher_algorithm_t; is_enc: cint;
+                      key: pointer): ptr ptls_cipher_context_t {.importc, cdecl.}
+  ## ```
+                                                                                 ##   instantiates a symmetric cipher
+                                                                                 ## ```
+proc ptls_cipher_free*(ctx: ptr ptls_cipher_context_t) {.importc, cdecl.}
+  ## ```
+                                                                         ##   destroys a symmetric cipher
+                                                                         ## ```
+proc ptls_cipher_init*(ctx: ptr ptls_cipher_context_t; iv: pointer) {.importc,
+    cdecl.}
+  ## ```
+           ##   initializes the IV; this function must be called prior to calling ptls_cipher_encrypt
+           ## ```
+proc ptls_cipher_encrypt*(ctx: ptr ptls_cipher_context_t; output: pointer;
+                          input: pointer; len: uint) {.importc, cdecl.}
+  ## ```
+                                                                       ##   Encrypts given text. The function must be used in a way that the output length would be equal to the input length. For example,
+                                                                       ##    when using a block cipher in ECB mode, len must be a multiple of the block size when using a block cipher. The length can be
+                                                                       ##    of any value when using a stream cipher or a block cipher in CTR mode.
+                                                                       ## ```
+proc ptls_aead_new*(aead: ptr ptls_aead_algorithm_t;
+                    hash: ptr ptls_hash_algorithm_t; is_enc: cint;
+                    secret: pointer; label_prefix: cstring): ptr ptls_aead_context_t {.
+    importc, cdecl.}
+  ## ```
+                    ##   instantiates an AEAD cipher given a secret, which is expanded using hkdf to a set of key and iv
+                    ##    @param aead
+                    ##    @param hash
+                    ##    @param is_enc 1 if creating a context for encryption, 0 if creating a context for decryption
+                    ##    @param secret the secret. The size must be the digest length of the hash algorithm
+                    ##    @return pointer to an AEAD context if successful, otherwise NULL
+                    ## ```
+proc ptls_aead_new_direct*(aead: ptr ptls_aead_algorithm_t; is_enc: cint;
+                           key: pointer; iv: pointer): ptr ptls_aead_context_t {.
+    importc, cdecl.}
+  ## ```
+                    ##   instantiates an AEAD cipher given key and iv
+                    ##    @param aead
+                    ##    @param is_enc 1 if creating a context for encryption, 0 if creating a context for decryption
+                    ##    @return pointer to an AEAD context if successful, otherwise NULL
+                    ## ```
+proc ptls_aead_free*(ctx: ptr ptls_aead_context_t) {.importc, cdecl.}
+  ## ```
+                                                                     ##   destroys an AEAD cipher context
+                                                                     ## ```
+proc ptls_aead_xor_iv*(ctx: ptr ptls_aead_context_t; bytes: pointer; len: uint) {.
+    importc, cdecl.}
+  ## ```
+                    ##   Permutes the static IV by applying given bytes using bit-wise XOR. This API can be used for supplying nonces longer than 64-
+                    ##    bits.
+                    ## ```
+proc ptls_aead_get_iv*(ctx: ptr ptls_aead_context_t; iv: pointer) {.importc,
+    cdecl.}
+proc ptls_aead_set_iv*(ctx: ptr ptls_aead_context_t; iv: pointer) {.importc,
+    cdecl.}
+  ## ```
+           ##   Encrypts one AEAD block, given input and output vectors.
+           ## ```
+proc ptls_aead_encrypt*(ctx: ptr ptls_aead_context_t; output: pointer;
+                        input: pointer; inlen: uint; seq: uint64; aad: pointer;
+                        aadlen: uint): uint {.importc, cdecl.}
+  ## ```
+                                                              ##   Encrypts one AEAD block, given input and output vectors.
+                                                              ## ```
+proc ptls_aead_encrypt_s*(ctx: ptr ptls_aead_context_t; output: pointer;
+                          input: pointer; inlen: uint; seq: uint64;
+                          aad: pointer; aadlen: uint;
+                          supp: ptr ptls_aead_supplementary_encryption_t) {.
+    importc, cdecl.}
+  ## ```
+                    ##   Encrypts one AEAD block, as well as one block of ECB (for QUIC / DTLS packet number encryption). Depending on the AEAD engine
+                    ##    being used, the two operations might run simultaneously.
+                    ## ```
+proc ptls_aead_encrypt_v*(ctx: ptr ptls_aead_context_t; output: pointer;
+                          input: ptr ptls_iovec_t; incnt: uint; seq: uint64;
+                          aad: pointer; aadlen: uint) {.importc, cdecl.}
+  ## ```
+                                                                        ##   Encrypts one AEAD block, given a vector of vectors.
+                                                                        ## ```
+proc ptls_aead_encrypt_init*(ctx: ptr ptls_aead_context_t; seq: uint64;
+                             aad: pointer; aadlen: uint) {.importc, cdecl.}
+  ## ```
+                                                                           ##   Obsolete; new applications should use one of: ptls_aead_encrypt, ptls_aead_encrypt_s, ptls_aead_encrypt_v.
+                                                                           ## ```
+proc ptls_aead_encrypt_update*(ctx: ptr ptls_aead_context_t; output: pointer;
+                               input: pointer; inlen: uint): uint {.importc,
+    cdecl.}
+  ## ```
+           ##   Obsolete; see ptls_aead_encrypt_init.
+           ## ```
+proc ptls_aead_encrypt_final*(ctx: ptr ptls_aead_context_t; output: pointer): uint {.
+    importc, cdecl.}
+  ## ```
+                    ##   Obsolete; see ptls_aead_encrypt_init.
+                    ## ```
+proc ptls_aead_decrypt*(ctx: ptr ptls_aead_context_t; output: pointer;
+                        input: pointer; inlen: uint; seq: uint64; aad: pointer;
+                        aadlen: uint): uint {.importc, cdecl.}
+  ## ```
+                                                              ##   decrypts an AEAD record
+                                                              ##    @return number of bytes emitted to output if successful, or SIZE_MAX if the input is invalid (e.g. broken MAC)
+                                                              ## ```
+proc ptls_get_read_epoch*(tls: ptr ptls_t): uint {.importc, cdecl.}
+  ## ```
+                                                                   ##   Return the current read epoch (i.e., that of the message being received or to be)
+                                                                   ## ```
+proc ptls_handle_message*(tls: ptr ptls_t; sendbuf: ptr ptls_buffer_t;
+                          epoch_offsets: array[5, uint]; in_epoch: uint;
+                          input: pointer; inlen: uint;
+                          properties: ptr ptls_handshake_properties_t): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   Runs the handshake by dealing directly with handshake messages. Callers MUST delay supplying input to this function until the
+                    ##    epoch of the input becomes equal to the value returned by ptls_get_read_epoch().
+                    ##    @param tls            the TLS context
+                    ##    @param sendbuf        buffer to which the output will be written
+                    ##    @param epoch_offsets  start and end offset of the messages in each epoch. For example, when the server emits ServerHello between
+                    ##                          offset 0 and 38, the following handshake messages between offset 39 and 348, and a post-handshake message
+                    ##                          between 349 and 451, epoch_offsets will be {0,39,39,349,452} and the length of the sendbuf will be 452.
+                    ##                          This argument is an I/O argument. Applications can either reset sendbuf to empty and epoch_offsets and to
+                    ##                          all zero every time they invoke the function, or retain the values until the handshake completes so that
+                    ##                          data will be appended to sendbuf and epoch_offsets will be adjusted.
+                    ##    @param in_epoch       epoch of the input
+                    ##    @param input          input bytes (must be NULL when starting the handshake on the client side)
+                    ##    @param inlen          length of the input
+                    ##    @param properties     properties specific to the running handshake
+                    ##    @return same as ptls_handshake
+                    ## ```
+proc ptls_client_handle_message*(tls: ptr ptls_t; sendbuf: ptr ptls_buffer_t;
+                                 epoch_offsets: array[5, uint]; in_epoch: uint;
+                                 input: pointer; inlen: uint;
+                                 properties: ptr ptls_handshake_properties_t): cint {.
+    importc, cdecl.}
+proc ptls_server_handle_message*(tls: ptr ptls_t; sendbuf: ptr ptls_buffer_t;
+                                 epoch_offsets: array[5, uint]; in_epoch: uint;
+                                 input: pointer; inlen: uint;
+                                 properties: ptr ptls_handshake_properties_t): cint {.
+    importc, cdecl.}
+proc ptls_aeadxXxbuild_iv*(algo: ptr ptls_aead_algorithm_t; iv: ptr uint8;
+                           static_iv: ptr uint8; seq: uint64) {.
+    importc: "ptls_aead__build_iv", cdecl.}
+  ## ```
+                                           ##   internal
+                                           ## ```
+proc ptls_aeadxXxdo_encrypt*(ctx: ptr ptls_aead_context_t; output: pointer;
+                             input: pointer; inlen: uint; seq: uint64;
+                             aad: pointer; aadlen: uint;
+                             supp: ptr ptls_aead_supplementary_encryption_t) {.
+    importc: "ptls_aead__do_encrypt", cdecl.}
+  ## ```
+                                             ##   
+                                             ## ```
+proc ptls_aeadxXxdo_encrypt_v*(ctx: ptr ptls_aead_context_t; XXoutput: pointer;
+                               input: ptr ptls_iovec_t; incnt: uint;
+                               seq: uint64; aad: pointer; aadlen: uint) {.
+    importc: "ptls_aead__do_encrypt_v", cdecl.}
+  ## ```
+                                               ##   
+                                               ## ```
+proc ptlsxXxkey_schedule_update_hash*(sched: ptr ptls_key_schedule_t;
+                                      msg: ptr uint8; msglen: uint;
+                                      use_outer: cint) {.
+    importc: "ptls__key_schedule_update_hash", cdecl.}
+  ## ```
+                                                      ##   internal
+                                                      ## ```
+proc ptls_server_name_is_ipaddr*(name: cstring): cint {.importc, cdecl.}
+  ## ```
+                                                                        ##   checks if a server name is an IP address.
+                                                                        ## ```
+proc ptls_ech_encode_config*(buf: ptr ptls_buffer_t; config_id: uint8;
+                             kem: ptr ptls_hpke_kem_t; public_key: ptls_iovec_t;
+                             ciphers: ptr ptr ptls_hpke_cipher_suite_t;
+                             max_name_length: uint8; public_name: cstring): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   encodes one ECH Config
+                    ## ```
+proc ptls_load_certificates*(ctx: ptr ptls_context_t; cert_pem_file: cstring): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   loads a certificate chain to ptls_context_t::certificates. certificate.list and each element of the list is allocated by
+                    ##    malloc.  It is the responsibility of the user to free them when discarding the TLS context.
+                    ## ```
+proc ptls_hpke_setup_base_s*(kem: ptr ptls_hpke_kem_t;
+                             cipher: ptr ptls_hpke_cipher_suite_t;
+                             pk_s: ptr ptls_iovec_t;
+                             ctx: ptr ptr ptls_aead_context_t;
+                             pk_r: ptls_iovec_t; info: ptls_iovec_t): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   SetupBaseS function of RFC 9180. Given kem, algo, info, and receiver's public key, returns an ephemeral public key and an
+                    ##    AEAD context used for encrypting data.
+                    ## ```
+proc ptls_hpke_setup_base_r*(kem: ptr ptls_hpke_kem_t;
+                             cipher: ptr ptls_hpke_cipher_suite_t;
+                             keyex: ptr ptls_key_exchange_context_t;
+                             ctx: ptr ptr ptls_aead_context_t;
+                             pk_s: ptls_iovec_t; info: ptls_iovec_t): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   SetupBaseR function of RFC 9180. Given kem, algo, info, receiver's private key (keyex), and the esnder's public key,
+                    ##    returns the AEAD context to be used for decrypting data.
+                    ## ```
+proc ptls_hexdump*(dst: cstring; src: pointer; len: uint): cstring {.importc,
+    cdecl.}
+  ## ```
+           ##   
+           ## ```
+proc ptls_jsonescape*(buf: cstring; s: cstring; len: uint): cstring {.importc,
+    cdecl.}
+  ## ```
+           ##   Builds a JSON-safe string without double quotes. Supplied buffer MUST be at least 6x + 1 bytes larger than the input.
+           ## ```
+proc ptls_build_v4_mapped_v6_address*(v6: ptr in6_addr; v4: ptr in_addr) {.
+    importc, cdecl.}
+  ## ```
+                    ##   builds a v4-mapped address (i.e., ::ffff:192.0.2.1)
+                    ## ```
+proc ptls_hash_ptlsXXclonememcpy*(dst: pointer; src: pointer; size: uint) {.
+    importc: "ptls_hash_clone_memcpy", cdecl.}
+  ## ```
+                                              ##   default hash clone function that calls memcpy
+                                              ## ```
 proc ngtcp2_cid_init*(cid: ptr ngtcp2_cid; data: ptr uint8; datalen: uint) {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_cid_init initializes Connection ID |cid| with the byte
                     ##    string pointed by |data| and its length is |datalen|.  |datalen|
                     ##    must be at most :macro:NGTCP2_MAX_CIDLEN.
@@ -1618,7 +3197,7 @@ proc ngtcp2_cid_init*(cid: ptr ngtcp2_cid; data: ptr uint8; datalen: uint) {.
 proc ngtcp2_cid_eq*(a: ptr ngtcp2_cid; b: ptr ngtcp2_cid): cint {.importc, cdecl.}
   ## ```
                                                                                   ##   @function
-                                                                                  ##
+                                                                                  ##   
                                                                                   ##    ngtcp2_cid_eq returns nonzero if |a| and |b| share the same
                                                                                   ##    Connection ID.
                                                                                   ## ```
@@ -1627,17 +3206,17 @@ proc ngtcp2_transport_params_encode_versioned*(dest: ptr uint8; destlen: uint;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_transport_params_encode encodes |params| in |dest| of
                     ##    length |destlen|.
-                    ##
+                    ##   
                     ##    If |dest| is NULL, and |destlen| is zero, this function just
                     ##    returns the number of bytes required to store the encoded transport
                     ##    parameters.
-                    ##
+                    ##   
                     ##    This function returns the number of bytes written, or one of the
                     ##    following negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOBUF
                     ##        Buffer is too small.
                     ## ```
@@ -1646,22 +3225,22 @@ proc ngtcp2_transport_params_decode_versioned*(transport_params_version: cint;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_transport_params_decode decodes transport parameters in
                     ##    |data| of length |datalen|, and stores the result in the object
                     ##    pointed by |params|.
-                    ##
+                    ##   
                     ##    If an optional parameter is missing, the default value is assigned.
-                    ##
+                    ##   
                     ##    The following fields may point to somewhere inside the buffer
                     ##    pointed by |data| of length |datalen|:
-                    ##
+                    ##   
                     ##    - :member:ngtcp2_transport_params.version_info.available_versions
                     ##      <ngtcp2_version_info.available_versions>
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_MALFORMED_TRANSPORT_PARAM
                     ##        The input is malformed.
                     ## ```
@@ -1670,27 +3249,27 @@ proc ngtcp2_transport_params_decode_new*(
     mem: ptr ngtcp2_mem): cint {.importc, cdecl.}
   ## ```
                                                  ##   @function
-                                                 ##
+                                                 ##   
                                                  ##    ngtcp2_transport_params_decode_new decodes transport parameters
                                                  ##    in |data| of length |datalen|, and stores the result in the object
                                                  ##    allocated dynamically.  The pointer to the allocated object is
                                                  ##    assigned to |*pparams|.  Unlike ngtcp2_transport_params_decode,
                                                  ##    all direct and indirect fields are also allocated dynamically if
                                                  ##    needed.
-                                                 ##
+                                                 ##   
                                                  ##    |mem| is a memory allocator to allocate memory.  If |mem| is
                                                  ##    NULL, the memory allocator returned by ngtcp2_mem_default()
                                                  ##    is used.
-                                                 ##
+                                                 ##   
                                                  ##    If the optional parameters are missing, the default value is
                                                  ##    assigned.
-                                                 ##
+                                                 ##   
                                                  ##    ngtcp2_transport_params_del frees the memory allocated by this
                                                  ##    function.
-                                                 ##
+                                                 ##   
                                                  ##    This function returns 0 if it succeeds, or one of the following
                                                  ##    negative error codes:
-                                                 ##
+                                                 ##   
                                                  ##    :macro:NGTCP2_ERR_MALFORMED_TRANSPORT_PARAM
                                                  ##        The input is malformed.
                                                  ##    :macro:NGTCP2_ERR_NOMEM
@@ -1700,14 +3279,14 @@ proc ngtcp2_transport_params_del*(params: ptr ngtcp2_transport_params;
                                   mem: ptr ngtcp2_mem) {.importc, cdecl.}
   ## ```
                                                                          ##   @function
-                                                                         ##
+                                                                         ##   
                                                                          ##    ngtcp2_transport_params_del frees the |params| which must be
                                                                          ##    dynamically allocated by ngtcp2_transport_params_decode_new.
-                                                                         ##
+                                                                         ##   
                                                                          ##    |mem| is a memory allocator that allocated |params|.  If |mem| is
                                                                          ##    NULL, the memory allocator returned by ngtcp2_mem_default()
                                                                          ##    is used.
-                                                                         ##
+                                                                         ##   
                                                                          ##    If |params| is NULL, this function does nothing.
                                                                          ## ```
 proc ngtcp2_pkt_decode_version_cid*(dest: ptr ngtcp2_version_cid;
@@ -1715,7 +3294,7 @@ proc ngtcp2_pkt_decode_version_cid*(dest: ptr ngtcp2_version_cid;
                                     short_dcidlen: uint): cint {.importc, cdecl.}
   ## ```
                                                                                  ##   @function
-                                                                                 ##
+                                                                                 ##   
                                                                                  ##    ngtcp2_pkt_decode_version_cid extracts QUIC version, Destination
                                                                                  ##    Connection ID and Source Connection ID from the packet pointed by
                                                                                  ##    |data| of length |datalen|.  This function can handle Connection ID
@@ -1724,7 +3303,7 @@ proc ngtcp2_pkt_decode_version_cid*(dest: ptr ngtcp2_version_cid;
                                                                                  ##    Connection ID less than or equal to :macro:NGTCP2_MAX_CIDLEN.
                                                                                  ##    Longer Connection ID is only valid if the version is unsupported
                                                                                  ##    QUIC version.
-                                                                                 ##
+                                                                                 ##   
                                                                                  ##    If the given packet is Long header packet, this function extracts
                                                                                  ##    the version from the packet, and assigns it to
                                                                                  ##    :member:dest->version <ngtcp2_version_cid.version>.  It also
@@ -1736,7 +3315,7 @@ proc ngtcp2_pkt_decode_version_cid*(dest: ptr ngtcp2_version_cid;
                                                                                  ##    them to :member:dest->scid <ngtcp2_version_cid.scid> and
                                                                                  ##    :member:dest->scidlen <ngtcp2_version_cid.scidlen> respectively.
                                                                                  ##    |short_dcidlen| is ignored.
-                                                                                 ##
+                                                                                 ##   
                                                                                  ##    If the given packet is Short header packet, :member:dest->version
                                                                                  ##    <ngtcp2_version_cid.version> will be 0, :member:dest->scid
                                                                                  ##    <ngtcp2_version_cid.scid> will be NULL, and
@@ -1747,14 +3326,14 @@ proc ngtcp2_pkt_decode_version_cid*(dest: ptr ngtcp2_version_cid;
                                                                                  ##    Destination Connection ID, and assigns it to :member:dest->dcid
                                                                                  ##    <ngtcp2_version_cid.dcid>.  |short_dcidlen| is assigned to
                                                                                  ##    :member:dest->dcidlen <ngtcp2_version_cid.dcidlen>.
-                                                                                 ##
+                                                                                 ##   
                                                                                  ##    If Version Negotiation is required, this function returns
                                                                                  ##    :macro:NGTCP2_ERR_VERSION_NEGOTIATION.  Unlike the other error
                                                                                  ##    cases, all fields of |dest| are assigned as described above.
-                                                                                 ##
+                                                                                 ##   
                                                                                  ##    This function returns 0 if it succeeds.  Otherwise, one of the
                                                                                  ##    following negative error code:
-                                                                                 ##
+                                                                                 ##   
                                                                                  ##    :macro:NGTCP2_ERR_INVALID_ARGUMENT
                                                                                  ##        The function could not decode the packet header.
                                                                                  ##    :macro:NGTCP2_ERR_VERSION_NEGOTIATION
@@ -1764,18 +3343,18 @@ proc ngtcp2_pkt_decode_hd_long*(dest: ptr ngtcp2_pkt_hd; pkt: ptr uint8;
                                 pktlen: uint): ngtcp2_ssize {.importc, cdecl.}
   ## ```
                                                                               ##   @function
-                                                                              ##
+                                                                              ##   
                                                                               ##    ngtcp2_pkt_decode_hd_long decodes QUIC long packet header in
                                                                               ##    |pkt| of length |pktlen|.  This function only parses the input just
                                                                               ##    before packet number field.
-                                                                              ##
+                                                                              ##   
                                                                               ##    This function does not verify that length field is correct.  In
                                                                               ##    other words, this function succeeds even if length > |pktlen|.
-                                                                              ##
+                                                                              ##   
                                                                               ##    This function can handle Connection ID up to
                                                                               ##    :macro:NGTCP2_MAX_CIDLEN.  Consider to use
                                                                               ##    ngtcp2_pkt_decode_version_cid to get longer Connection ID.
-                                                                              ##
+                                                                              ##   
                                                                               ##    This function handles Version Negotiation specially.  If version
                                                                               ##    field is 0, |pkt| must contain Version Negotiation packet.  Version
                                                                               ##    Negotiation packet has random type in wire format.  For
@@ -1786,11 +3365,11 @@ proc ngtcp2_pkt_decode_hd_long*(dest: ptr ngtcp2_pkt_hd; pkt: ptr uint8;
                                                                               ##    <ngtcp2_pkt_hd.flags>, and sets 0 to :member:dest->len
                                                                               ##    <ngtcp2_pkt_hd.len>.  Version Negotiation packet occupies a single
                                                                               ##    packet.
-                                                                              ##
+                                                                              ##   
                                                                               ##    It stores the result in the object pointed by |dest|, and returns
                                                                               ##    the number of bytes decoded to read the packet header if it
                                                                               ##    succeeds, or one of the following error codes:
-                                                                              ##
+                                                                              ##   
                                                                               ##    :macro:NGTCP2_ERR_INVALID_ARGUMENT
                                                                               ##        Packet is too short; or it is not a long header
                                                                               ## ```
@@ -1799,7 +3378,7 @@ proc ngtcp2_pkt_decode_hd_short*(dest: ptr ngtcp2_pkt_hd; pkt: ptr uint8;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_pkt_decode_hd_short decodes QUIC short header in |pkt| of
                     ##    length |pktlen|.  Short header packet does not encode the length of
                     ##    Connection ID, thus we need the input from the outside.  |dcidlen|
@@ -1811,7 +3390,7 @@ proc ngtcp2_pkt_decode_hd_short*(dest: ptr ngtcp2_pkt_hd; pkt: ptr uint8;
                     ##    stores the result in the object pointed by |dest|, and returns the
                     ##    number of bytes decoded to read the packet header if it succeeds,
                     ##    or one of the following error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_INVALID_ARGUMENT
                     ##        Packet is too short; or it is not a short header
                     ## ```
@@ -1821,7 +3400,7 @@ proc ngtcp2_pkt_write_stateless_reset*(dest: ptr uint8; destlen: uint;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_pkt_write_stateless_reset writes Stateless Reset packet in
                     ##    the buffer pointed by |dest| whose length is |destlen|.
                     ##    |stateless_reset_token| is a pointer to the Stateless Reset Token,
@@ -1830,13 +3409,13 @@ proc ngtcp2_pkt_write_stateless_reset*(dest: ptr uint8; destlen: uint;
                     ##    Reset Token.  The length of |rand| is specified by |randlen| which
                     ##    must be at least :macro:NGTCP2_MIN_STATELESS_RESET_RANDLEN bytes
                     ##    long.
-                    ##
+                    ##   
                     ##    If |randlen| is too long to write them all in the buffer, |rand| is
                     ##    written to the buffer as much as possible, and is truncated.
-                    ##
+                    ##   
                     ##    This function returns the number of bytes written to the buffer, or
                     ##    one of the following negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOBUF
                     ##        Buffer is too small.
                     ##    :macro:NGTCP2_ERR_INVALID_ARGUMENT
@@ -1848,7 +3427,7 @@ proc ngtcp2_pkt_write_version_negotiation*(dest: ptr uint8; destlen: uint;
     scidlen: uint; sv: ptr uint32; nsv: uint): ngtcp2_ssize {.importc, cdecl.}
   ## ```
                                                                               ##   @function
-                                                                              ##
+                                                                              ##   
                                                                               ##    ngtcp2_pkt_write_version_negotiation writes Version Negotiation
                                                                               ##    packet in the buffer pointed by |dest| whose length is |destlen|.
                                                                               ##    |unused_random| should be generated randomly.  |dcid| is a
@@ -1858,10 +3437,10 @@ proc ngtcp2_pkt_write_version_negotiation*(dest: ptr uint8; destlen: uint;
                                                                               ##    Connection ID sent by client.  |sv| is a list of supported
                                                                               ##    versions, and |nsv| specifies the number of supported versions
                                                                               ##    included in |sv|.
-                                                                              ##
+                                                                              ##   
                                                                               ##    This function returns the number of bytes written to the buffer, or
                                                                               ##    one of the following negative error codes:
-                                                                              ##
+                                                                              ##   
                                                                               ##    :macro:NGTCP2_ERR_NOBUF
                                                                               ##        Buffer is too small.
                                                                               ## ```
@@ -1879,20 +3458,20 @@ proc ngtcp2_pkt_write_connection_close*(dest: ptr uint8; destlen: uint;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_pkt_write_connection_close writes Initial packet
                     ##    containing CONNECTION_CLOSE frame with the given |error_code| and
                     ##    the optional |reason| of length |reasonlen| to the buffer pointed
                     ##    by |dest| of length |destlen|.  All encryption parameters are for
                     ##    Initial packet encryption.  The packet number is always 0.
-                    ##
+                    ##   
                     ##    The primary use case of this function is for server to send
                     ##    CONNECTION_CLOSE frame in Initial packet to close connection
                     ##    without committing any state when validating Retry token fails.
-                    ##
+                    ##   
                     ##    This function returns the number of bytes written if it succeeds,
                     ##    or one of the following negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOBUF
                     ##        Buffer is too small.
                     ##    :macro:NGTCP2_ERR_CALLBACK_FAILURE
@@ -1907,7 +3486,7 @@ proc ngtcp2_pkt_write_retry*(dest: ptr uint8; destlen: uint; version: uint32;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_pkt_write_retry writes Retry packet in the buffer pointed
                     ##    by |dest| whose length is |destlen|.  |dcid| is the Connection ID
                     ##    which appeared in a packet as a Source Connection ID sent by
@@ -1917,10 +3496,10 @@ proc ngtcp2_pkt_write_retry*(dest: ptr uint8; destlen: uint; version: uint32;
                     ##    specifies Retry Token, and |tokenlen| specifies its length.  |aead|
                     ##    must be AEAD_AES_128_GCM.  |aead_ctx| must be initialized with
                     ##    :macro:NGTCP2_RETRY_KEY as an encryption key.
-                    ##
+                    ##   
                     ##    This function returns the number of bytes written to the buffer, or
                     ##    one of the following negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOBUF
                     ##        Buffer is too small.
                     ##    :macro:NGTCP2_ERR_CALLBACK_FAILURE
@@ -1933,17 +3512,17 @@ proc ngtcp2_accept*(dest: ptr ngtcp2_pkt_hd; pkt: ptr uint8; pktlen: uint): cint
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_accept is used by server implementation, and decides
                     ##    whether packet |pkt| of length |pktlen| from client is acceptable
                     ##    for the very first packet to a connection.
-                    ##
+                    ##   
                     ##    If |dest| is not NULL and the function returns 0, the decoded
                     ##    packet header is stored in the object pointed by |dest|.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_INVALID_ARGUMENT
                     ##        The packet is not acceptable for the very first packet to a new
                     ##        connection; or the function failed to parse the packet header.
@@ -1963,7 +3542,7 @@ proc ngtcp2_conn_client_new_versioned*(pconn: ptr ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_client_new creates new :type:ngtcp2_conn, and
                     ##    initializes it as client.  On success, it stores the pointer to the
                     ##    newly allocated object in |*pconn|.  |dcid| is a randomized
@@ -1978,12 +3557,12 @@ proc ngtcp2_conn_client_new_versioned*(pconn: ptr ptr ngtcp2_conn;
                     ##    handshake.  |user_data| is the arbitrary pointer which is passed to
                     ##    the user-defined callback functions.  If |mem| is NULL, the
                     ##    memory allocator returned by ngtcp2_mem_default() is used.
-                    ##
+                    ##   
                     ##    Call ngtcp2_conn_del to free memory allocated for |*pconn|.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory.
                     ## ```
@@ -2002,7 +3581,7 @@ proc ngtcp2_conn_server_new_versioned*(pconn: ptr ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_server_new creates new :type:ngtcp2_conn, and
                     ##    initializes it as server.  On success, it stores the pointer to the
                     ##    newly allocated object in |*pconn|.  |dcid| is a Destination
@@ -2018,19 +3597,19 @@ proc ngtcp2_conn_server_new_versioned*(pconn: ptr ptr ngtcp2_conn;
                     ##    passed to the user-defined callback functions.  If |mem| is
                     ##    NULL, the memory allocator returned by ngtcp2_mem_default()
                     ##    is used.
-                    ##
+                    ##   
                     ##    Call ngtcp2_conn_del to free memory allocated for |*pconn|.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory.
                     ## ```
 proc ngtcp2_conn_del*(conn: ptr ngtcp2_conn) {.importc, cdecl.}
   ## ```
                                                                ##   @function
-                                                               ##
+                                                               ##   
                                                                ##    ngtcp2_conn_del frees resources allocated for |conn|.  It also
                                                                ##    frees memory pointed by |conn|.
                                                                ## ```
@@ -2042,19 +3621,19 @@ proc ngtcp2_conn_read_pkt_versioned*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_read_pkt decrypts QUIC packet given in |pkt| of
                     ##    length |pktlen| and processes it.  |path| is the network path the
                     ##    packet is delivered and must not be NULL.  |pi| is packet
                     ##    metadata and may be NULL. This function performs QUIC handshake
                     ##    as well.
-                    ##
+                    ##   
                     ##    This function must not be called from inside the callback
                     ##    functions.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_RETRY
                     ##       Server must perform address validation by sending Retry packet
                     ##       (see ngtcp2_crypto_write_retry and ngtcp2_pkt_write_retry),
@@ -2075,7 +3654,7 @@ proc ngtcp2_conn_read_pkt_versioned*(conn: ptr ngtcp2_conn;
                     ##    :macro:NGTCP2_ERR_CRYPTO
                     ##       An error happened in TLS stack.  ngtcp2_conn_get_tls_alert
                     ##       returns TLS alert if set.
-                    ##
+                    ##   
                     ##    If any other negative error is returned, call
                     ##    ngtcp2_conn_write_connection_close to get terminal packet, and
                     ##    sending it makes QUIC connection enter the closing state.
@@ -2088,7 +3667,7 @@ proc ngtcp2_conn_write_pkt_versioned*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_write_pkt is equivalent to calling
                     ##    ngtcp2_conn_writev_stream with -1 as |stream_id|, no stream data,
                     ##    and :macro:NGTCP2_WRITE_STREAM_FLAG_NONE as flags.
@@ -2097,7 +3676,7 @@ proc ngtcp2_conn_tls_handshake_completed*(conn: ptr ngtcp2_conn) {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_tls_handshake_completed tells |conn| that the TLS
            ##    stack declares TLS handshake completion.  This does not mean QUIC
            ##    handshake has completed.  The library needs extra conditions to be
@@ -2107,7 +3686,7 @@ proc ngtcp2_conn_get_handshake_completed*(conn: ptr ngtcp2_conn): cint {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_handshake_completed returns nonzero if QUIC
                     ##    handshake has completed.
                     ## ```
@@ -2121,7 +3700,7 @@ proc ngtcp2_conn_install_initial_key*(conn: ptr ngtcp2_conn;
                                       ivlen: uint): cint {.importc, cdecl.}
   ## ```
                                                                            ##   @function
-                                                                           ##
+                                                                           ##   
                                                                            ##    ngtcp2_conn_install_initial_key installs packet protection keying
                                                                            ##    materials for Initial packets.  |rx_aead_ctx| is AEAD cipher
                                                                            ##    context object, and must be initialized with a decryption key.
@@ -2131,26 +3710,26 @@ proc ngtcp2_conn_install_initial_key*(conn: ptr ngtcp2_conn;
                                                                            ##    encrypting outgoing packets, and are the same length with the
                                                                            ##    decryption counterpart .  If they have already been set, they are
                                                                            ##    overwritten.
-                                                                           ##
+                                                                           ##   
                                                                            ##    |ivlen| must be the minimum length of AEAD nonce, or 8 bytes if
                                                                            ##    that is larger.
-                                                                           ##
+                                                                           ##   
                                                                            ##    If this function succeeds, |conn| takes ownership of |rx_aead_ctx|,
                                                                            ##    |rx_hp_ctx|, |tx_aead_ctx|, and |tx_hp_ctx|.
                                                                            ##    :member:ngtcp2_callbacks.delete_crypto_aead_ctx and
                                                                            ##    :member:ngtcp2_callbacks.delete_crypto_cipher_ctx will be called
                                                                            ##    to delete these objects when they are no longer used.  If this
                                                                            ##    function fails, the caller is responsible to delete them.
-                                                                           ##
+                                                                           ##   
                                                                            ##    After receiving Retry packet, a Destination Connection ID that
                                                                            ##    client sends in Initial packet most likely changes.  In that case,
                                                                            ##    client application must generate these keying materials again based
                                                                            ##    on new Destination Connection ID, and install them again with this
                                                                            ##    function.
-                                                                           ##
+                                                                           ##   
                                                                            ##    This function returns 0 if it succeeds, or one of the following
                                                                            ##    negative error codes:
-                                                                           ##
+                                                                           ##   
                                                                            ##    :macro:NGTCP2_ERR_NOMEM
                                                                            ##        Out of memory.
                                                                            ## ```
@@ -2161,7 +3740,7 @@ proc ngtcp2_conn_install_vneg_initial_key*(conn: ptr ngtcp2_conn;
     tx_hp_ctx: ptr ngtcp2_crypto_cipher_ctx; ivlen: uint): cint {.importc, cdecl.}
   ## ```
                                                                                   ##   @function
-                                                                                  ##
+                                                                                  ##   
                                                                                   ##    ngtcp2_conn_install_vneg_initial_key installs packet protection
                                                                                   ##    keying materials for Initial packets on compatible version
                                                                                   ##    negotiation for |version|.  |rx_aead_ctx| is AEAD cipher context
@@ -2171,20 +3750,20 @@ proc ngtcp2_conn_install_vneg_initial_key*(conn: ptr ngtcp2_conn;
                                                                                   ##    |tx_aead_ctx|, |tx_iv| and |tx_hp_ctx| are for encrypting outgoing
                                                                                   ##    packets, and are the same length with the decryption counterpart.
                                                                                   ##    If they have already been set, they are overwritten.
-                                                                                  ##
+                                                                                  ##   
                                                                                   ##    |ivlen| must be the minimum length of AEAD nonce, or 8 bytes if
                                                                                   ##    that is larger.
-                                                                                  ##
+                                                                                  ##   
                                                                                   ##    If this function succeeds, |conn| takes ownership of |rx_aead_ctx|,
                                                                                   ##    |rx_hp_ctx|, |tx_aead_ctx|, and |tx_hp_ctx|.
                                                                                   ##    :member:ngtcp2_callbacks.delete_crypto_aead_ctx and
                                                                                   ##    :member:ngtcp2_callbacks.delete_crypto_cipher_ctx will be called
                                                                                   ##    to delete these objects when they are no longer used.  If this
                                                                                   ##    function fails, the caller is responsible to delete them.
-                                                                                  ##
+                                                                                  ##   
                                                                                   ##    This function returns 0 if it succeeds, or one of the following
                                                                                   ##    negative error codes:
-                                                                                  ##
+                                                                                  ##   
                                                                                   ##    :macro:NGTCP2_ERR_NOMEM
                                                                                   ##        Out of memory.
                                                                                   ## ```
@@ -2193,25 +3772,25 @@ proc ngtcp2_conn_install_rx_handshake_key*(conn: ptr ngtcp2_conn;
     hp_ctx: ptr ngtcp2_crypto_cipher_ctx): cint {.importc, cdecl.}
   ## ```
                                                                   ##   @function
-                                                                  ##
+                                                                  ##   
                                                                   ##    ngtcp2_conn_install_rx_handshake_key installs packet protection
                                                                   ##    keying materials for decrypting incoming Handshake packets.
                                                                   ##    |aead_ctx| is AEAD cipher context object which must be initialized
                                                                   ##    with a decryption key.  |iv| is IV of length |ivlen|.  |hp_ctx| is
                                                                   ##    a packet header protection cipher context object.
-                                                                  ##
+                                                                  ##   
                                                                   ##    |ivlen| must be the minimum length of AEAD nonce, or 8 bytes if
                                                                   ##    that is larger.
-                                                                  ##
+                                                                  ##   
                                                                   ##    If this function succeeds, |conn| takes ownership of |aead_ctx|,
                                                                   ##    and |hp_ctx|.  :member:ngtcp2_callbacks.delete_crypto_aead_ctx
                                                                   ##    and :member:ngtcp2_callbacks.delete_crypto_cipher_ctx will be
                                                                   ##    called to delete these objects when they are no longer used.  If
                                                                   ##    this function fails, the caller is responsible to delete them.
-                                                                  ##
+                                                                  ##   
                                                                   ##    This function returns 0 if it succeeds, or one of the following
                                                                   ##    negative error codes:
-                                                                  ##
+                                                                  ##   
                                                                   ##    :macro:NGTCP2_ERR_NOMEM
                                                                   ##        Out of memory.
                                                                   ## ```
@@ -2220,25 +3799,25 @@ proc ngtcp2_conn_install_tx_handshake_key*(conn: ptr ngtcp2_conn;
     hp_ctx: ptr ngtcp2_crypto_cipher_ctx): cint {.importc, cdecl.}
   ## ```
                                                                   ##   @function
-                                                                  ##
+                                                                  ##   
                                                                   ##    ngtcp2_conn_install_tx_handshake_key installs packet protection
                                                                   ##    keying materials for encrypting outgoing Handshake packets.
                                                                   ##    |aead_ctx| is AEAD cipher context object which must be initialized
                                                                   ##    with an encryption key.  |iv| is IV of length |ivlen|.  |hp_ctx| is
                                                                   ##    a packet header protection cipher context object.
-                                                                  ##
+                                                                  ##   
                                                                   ##    |ivlen| must be the minimum length of AEAD nonce, or 8 bytes if
                                                                   ##    that is larger.
-                                                                  ##
+                                                                  ##   
                                                                   ##    If this function succeeds, |conn| takes ownership of |aead_ctx| and
                                                                   ##    |hp_ctx|.  :member:ngtcp2_callbacks.delete_crypto_aead_ctx and
                                                                   ##    :member:ngtcp2_callbacks.delete_crypto_cipher_ctx will be called
                                                                   ##    to delete these objects when they are no longer used.  If this
                                                                   ##    function fails, the caller is responsible to delete them.
-                                                                  ##
+                                                                  ##   
                                                                   ##    This function returns 0 if it succeeds, or one of the following
                                                                   ##    negative error codes:
-                                                                  ##
+                                                                  ##   
                                                                   ##    :macro:NGTCP2_ERR_NOMEM
                                                                   ##        Out of memory.
                                                                   ## ```
@@ -2249,24 +3828,24 @@ proc ngtcp2_conn_install_0rtt_key*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_install_0rtt_key installs packet protection AEAD
                     ##    cipher context object |aead_ctx|, IV |iv| of length |ivlen|, and
                     ##    packet header protection cipher context object |hp_ctx| to encrypt
                     ##    (for client) or decrypt (for server) 0-RTT packets.
-                    ##
+                    ##   
                     ##    |ivlen| must be the minimum length of AEAD nonce, or 8 bytes if
                     ##    that is larger.
-                    ##
+                    ##   
                     ##    If this function succeeds, |conn| takes ownership of |aead_ctx| and
                     ##    |hp_ctx|.  :member:ngtcp2_callbacks.delete_crypto_aead_ctx and
                     ##    :member:ngtcp2_callbacks.delete_crypto_cipher_ctx will be called
                     ##    to delete these objects when they are no longer used.  If this
                     ##    function fails, the caller is responsible to delete them.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory.
                     ## ```
@@ -2278,7 +3857,7 @@ proc ngtcp2_conn_install_rx_key*(conn: ptr ngtcp2_conn; secret: ptr uint8;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_install_rx_key installs packet protection keying
                     ##    materials for decrypting 1-RTT packets.  |secret| of length
                     ##    |secretlen| is the decryption secret which is used to derive keying
@@ -2286,19 +3865,19 @@ proc ngtcp2_conn_install_rx_key*(conn: ptr ngtcp2_conn; secret: ptr uint8;
                     ##    context object which must be initialized with a decryption key.
                     ##    |iv| is IV of length |ivlen|.  |hp_ctx| is a packet header
                     ##    protection cipher context object.
-                    ##
+                    ##   
                     ##    |ivlen| must be the minimum length of AEAD nonce, or 8 bytes if
                     ##    that is larger.
-                    ##
+                    ##   
                     ##    If this function succeeds, |conn| takes ownership of |aead_ctx| and
                     ##    |hp_ctx|.  :member:ngtcp2_callbacks.delete_crypto_aead_ctx and
                     ##    :member:ngtcp2_callbacks.delete_crypto_cipher_ctx will be called
                     ##    to delete these objects when they are no longer used.  If this
                     ##    function fails, the caller is responsible to delete them.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory.
                     ## ```
@@ -2310,7 +3889,7 @@ proc ngtcp2_conn_install_tx_key*(conn: ptr ngtcp2_conn; secret: ptr uint8;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_install_tx_key installs packet protection keying
                     ##    materials for encrypting 1-RTT packets.  |secret| of length
                     ##    |secretlen| is the encryption secret which is used to derive keying
@@ -2318,19 +3897,19 @@ proc ngtcp2_conn_install_tx_key*(conn: ptr ngtcp2_conn; secret: ptr uint8;
                     ##    context object which must be initialized with an encryption key.
                     ##    |iv| is IV of length |ivlen|.  |hp_ctx| is a packet header
                     ##    protection cipher context object.
-                    ##
+                    ##   
                     ##    |ivlen| must be the minimum length of AEAD nonce, or 8 bytes if
                     ##    that is larger.
-                    ##
+                    ##   
                     ##    If this function succeeds, |conn| takes ownership of |aead_ctx| and
                     ##    |hp_ctx|.  :member:ngtcp2_callbacks.delete_crypto_aead_ctx and
                     ##    :member:ngtcp2_callbacks.delete_crypto_cipher_ctx will be called
                     ##    to delete these objects when they are no longer used.  If this
                     ##    function fails, the caller is responsible to delete them.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory.
                     ## ```
@@ -2338,12 +3917,12 @@ proc ngtcp2_conn_initiate_key_update*(conn: ptr ngtcp2_conn; ts: ngtcp2_tstamp):
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_initiate_key_update initiates the key update.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_INVALID_STATE
                     ##        The previous key update has not been confirmed yet; or key
                     ##        update is too frequent; or new keys are not available yet.
@@ -2352,7 +3931,7 @@ proc ngtcp2_conn_set_tls_error*(conn: ptr ngtcp2_conn; liberr: cint) {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_set_tls_error sets the TLS related error |liberr| in
            ##    |conn|.  |liberr| must be one of ngtcp2 library error codes (which
            ##    is defined as NGTCP2_ERR_* macro, such as
@@ -2362,13 +3941,13 @@ proc ngtcp2_conn_set_tls_error*(conn: ptr ngtcp2_conn; liberr: cint) {.importc,
            ##    return ngtcp2 error code directly.  In this case, implementation
            ##    can set the error code (e.g.,
            ##    :macro:NGTCP2_ERR_MALFORMED_TRANSPORT_PARAM) using this function.
-           ##
+           ##   
            ##    See also ngtcp2_conn_get_tls_error.
            ## ```
 proc ngtcp2_conn_get_tls_error*(conn: ptr ngtcp2_conn): cint {.importc, cdecl.}
   ## ```
                                                                                ##   @function
-                                                                               ##
+                                                                               ##   
                                                                                ##    ngtcp2_conn_get_tls_error returns the value set by
                                                                                ##    ngtcp2_conn_set_tls_error.  If no value is set, this function
                                                                                ##    returns 0.
@@ -2377,16 +3956,16 @@ proc ngtcp2_conn_set_tls_alert*(conn: ptr ngtcp2_conn; alert: uint8) {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_set_tls_alert sets a TLS alert |alert| generated by a
            ##    TLS stack of a local endpoint to |conn|.
-           ##
+           ##   
            ##    See also ngtcp2_conn_get_tls_alert.
            ## ```
 proc ngtcp2_conn_get_tls_alert*(conn: ptr ngtcp2_conn): uint8 {.importc, cdecl.}
   ## ```
                                                                                 ##   @function
-                                                                                ##
+                                                                                ##   
                                                                                 ##    ngtcp2_conn_get_tls_alert returns the value set by
                                                                                 ##    ngtcp2_conn_set_tls_alert.  If no value is set, this function
                                                                                 ##    returns 0.
@@ -2395,7 +3974,7 @@ proc ngtcp2_conn_set_keep_alive_timeout*(conn: ptr ngtcp2_conn;
     timeout: ngtcp2_duration) {.importc, cdecl.}
   ## ```
                                                 ##   @function
-                                                ##
+                                                ##   
                                                 ##    ngtcp2_conn_set_keep_alive_timeout sets keep-alive timeout.  If
                                                 ##    nonzero value is given, after a connection is idle at least in a
                                                 ##    given amount of time, a keep-alive packet is sent.  If UINT64_MAX
@@ -2407,10 +3986,10 @@ proc ngtcp2_conn_get_expiry*(conn: ptr ngtcp2_conn): ngtcp2_tstamp {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_get_expiry returns the next expiry time.  It returns
            ##    UINT64_MAX if there is no next expiry.
-           ##
+           ##   
            ##    Call ngtcp2_conn_handle_expiry and then
            ##    ngtcp2_conn_writev_stream (or ngtcp2_conn_writev_datagram) when
            ##    the expiry time has passed.
@@ -2419,28 +3998,28 @@ proc ngtcp2_conn_handle_expiry*(conn: ptr ngtcp2_conn; ts: ngtcp2_tstamp): cint 
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_handle_expiry handles expired timer.
                     ## ```
 proc ngtcp2_conn_get_pto*(conn: ptr ngtcp2_conn): ngtcp2_duration {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_get_pto returns Probe Timeout (PTO).
            ## ```
 proc ngtcp2_conn_decode_and_set_remote_transport_params*(conn: ptr ngtcp2_conn;
     data: ptr uint8; datalen: uint): cint {.importc, cdecl.}
   ## ```
                                                             ##   @function
-                                                            ##
+                                                            ##   
                                                             ##    ngtcp2_conn_decode_and_set_remote_transport_params decodes QUIC
                                                             ##    transport parameters from the buffer pointed by |data| of length
                                                             ##    |datalen|, and sets the result to |conn|.
-                                                            ##
+                                                            ##   
                                                             ##    This function returns 0 if it succeeds, or one of the following
                                                             ##    negative error codes:
-                                                            ##
+                                                            ##   
                                                             ##    :macro:NGTCP2_ERR_REQUIRED_TRANSPORT_PARAM
                                                             ##        The required parameter is missing.
                                                             ##    :macro:NGTCP2_ERR_MALFORMED_TRANSPORT_PARAM
@@ -2456,7 +4035,7 @@ proc ngtcp2_conn_get_remote_transport_params*(conn: ptr ngtcp2_conn): ptr ngtcp2
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_remote_transport_params returns a pointer to the
                     ##    remote QUIC transport parameters.  If no remote transport
                     ##    parameters are set, it returns NULL.
@@ -2467,16 +4046,16 @@ proc ngtcp2_conn_decode_and_set_0rtt_transport_params*(conn: ptr ngtcp2_conn;
     data: ptr uint8; datalen: uint): cint {.importc, cdecl.}
   ## ```
                                                             ##   @function
-                                                            ##
+                                                            ##   
                                                             ##    ngtcp2_conn_decode_and_set_0rtt_transport_params decodes QUIC
                                                             ##    transport parameters from |data| of length |datalen|, which is
                                                             ##    assumed to be the parameters received from the server in the
                                                             ##    previous connection, and sets it to |conn|.  These parameters are
                                                             ##    used to send 0-RTT data.  QUIC requires that client application
                                                             ##    should remember transport parameters along with a session ticket.
-                                                            ##
+                                                            ##   
                                                             ##    At least following fields should be included:
-                                                            ##
+                                                            ##   
                                                             ##    - :member:ngtcp2_transport_params.initial_max_streams_bidi
                                                             ##    - :member:ngtcp2_transport_params.initial_max_streams_uni
                                                             ##    - :member:ngtcp2_transport_params.initial_max_stream_data_bidi_local
@@ -2486,12 +4065,12 @@ proc ngtcp2_conn_decode_and_set_0rtt_transport_params*(conn: ptr ngtcp2_conn;
                                                             ##    - :member:ngtcp2_transport_params.active_connection_id_limit
                                                             ##    - :member:ngtcp2_transport_params.max_datagram_frame_size (if
                                                             ##      DATAGRAM extension was negotiated)
-                                                            ##
+                                                            ##   
                                                             ##    This function must only be used by client.
-                                                            ##
+                                                            ##   
                                                             ##    This function returns 0 if it succeeds, or one of the following
                                                             ##    negative error codes:
-                                                            ##
+                                                            ##   
                                                             ##    :macro:NGTCP2_ERR_NOMEM
                                                             ##        Out of memory.
                                                             ##    :macro:NGTCP2_ERR_MALFORMED_TRANSPORT_PARAM
@@ -2502,7 +4081,7 @@ proc ngtcp2_conn_set_local_transport_params_versioned*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_set_local_transport_params sets the local transport
                     ##    parameters |params|.  This function can only be called by server.
                     ##    Although the local transport parameters are passed to
@@ -2510,10 +4089,10 @@ proc ngtcp2_conn_set_local_transport_params_versioned*(conn: ptr ngtcp2_conn;
                     ##    ALPN is chosen.  In that case, server can update the transport
                     ##    parameters with this function.  Server must call this function
                     ##    before calling ngtcp2_conn_install_tx_handshake_key.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_INVALID_STATE
                     ##        ngtcp2_conn_install_tx_handshake_key has been called.
                     ## ```
@@ -2521,7 +4100,7 @@ proc ngtcp2_conn_get_local_transport_params*(conn: ptr ngtcp2_conn): ptr ngtcp2_
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_local_transport_params returns a pointer to the
                     ##    local QUIC transport parameters.
                     ## ```
@@ -2529,13 +4108,13 @@ proc ngtcp2_conn_encode_local_transport_params*(conn: ptr ngtcp2_conn;
     dest: ptr uint8; destlen: uint): ngtcp2_ssize {.importc, cdecl.}
   ## ```
                                                                     ##   @function
-                                                                    ##
+                                                                    ##   
                                                                     ##    ngtcp2_conn_encode_local_transport_params encodes the local QUIC
                                                                     ##    transport parameters in |dest| of length |destlen|.
-                                                                    ##
+                                                                    ##   
                                                                     ##    This function returns the number of bytes written, or one of the
                                                                     ##    following negative error codes:
-                                                                    ##
+                                                                    ##   
                                                                     ##    :macro:NGTCP2_ERR_NOBUF
                                                                     ##        Buffer is too small.
                                                                     ## ```
@@ -2544,11 +4123,11 @@ proc ngtcp2_conn_open_bidi_stream*(conn: ptr ngtcp2_conn; pstream_id: ptr int64;
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_open_bidi_stream opens new bidirectional stream.  The
            ##    |stream_user_data| is the user data specific to the stream.  The
            ##    stream ID of the opened stream is stored in |*pstream_id|.
-           ##
+           ##   
            ##    Application can call this function before handshake completes.  For
            ##    0-RTT packet, application can call this function after calling
            ##    ngtcp2_conn_decode_and_set_0rtt_transport_params.  For 1-RTT
@@ -2557,10 +4136,10 @@ proc ngtcp2_conn_open_bidi_stream*(conn: ptr ngtcp2_conn; pstream_id: ptr int64;
            ##    ngtcp2_conn_install_tx_key.  If ngtcp2 crypto support library is
            ##    used, application can call this function after calling
            ##    ngtcp2_crypto_derive_and_install_tx_key for 1-RTT packet.
-           ##
+           ##   
            ##    This function returns 0 if it succeeds, or one of the following
            ##    negative error codes:
-           ##
+           ##   
            ##    :macro:NGTCP2_ERR_NOMEM
            ##        Out of memory
            ##    :macro:NGTCP2_ERR_STREAM_ID_BLOCKED
@@ -2571,11 +4150,11 @@ proc ngtcp2_conn_open_uni_stream*(conn: ptr ngtcp2_conn; pstream_id: ptr int64;
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_open_uni_stream opens new unidirectional stream.  The
            ##    |stream_user_data| is the user data specific to the stream.  The
            ##    stream ID of the opened stream is stored in |*pstream_id|.
-           ##
+           ##   
            ##    Application can call this function before handshake completes.  For
            ##    0-RTT packet, application can call this function after calling
            ##    ngtcp2_conn_decode_and_set_0rtt_transport_params.  For 1-RTT
@@ -2584,10 +4163,10 @@ proc ngtcp2_conn_open_uni_stream*(conn: ptr ngtcp2_conn; pstream_id: ptr int64;
            ##    ngtcp2_conn_install_tx_key.  If ngtcp2 crypto support library is
            ##    used, application can call this function after calling
            ##    ngtcp2_crypto_derive_and_install_tx_key for 1-RTT packet.
-           ##
+           ##   
            ##    This function returns 0 if it succeeds, or one of the following
            ##    negative error codes:
-           ##
+           ##   
            ##    :macro:NGTCP2_ERR_NOMEM
            ##        Out of memory
            ##    :macro:NGTCP2_ERR_STREAM_ID_BLOCKED
@@ -2598,7 +4177,7 @@ proc ngtcp2_conn_shutdown_stream*(conn: ptr ngtcp2_conn; flags: uint32;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_shutdown_stream closes a stream denoted by
                     ##    |stream_id| abruptly.  |app_error_code| is one of application error
                     ##    codes, and indicates the reason of shutdown.  Successful call of
@@ -2611,15 +4190,15 @@ proc ngtcp2_conn_shutdown_stream*(conn: ptr ngtcp2_conn; flags: uint32;
                     ##    stream, this function only shutdowns write side of the stream.  If
                     ##    |stream_id| refers to a remote unidirectional stream, this function
                     ##    only shutdowns read side of the stream.
-                    ##
+                    ##   
                     ##    |flags| is currently unused, and should be set to 0.
-                    ##
+                    ##   
                     ##    This function returns 0 if a stream denoted by |stream_id| is not
                     ##    found.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory
                     ## ```
@@ -2628,22 +4207,22 @@ proc ngtcp2_conn_shutdown_stream_write*(conn: ptr ngtcp2_conn; flags: uint32;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_shutdown_stream_write closes write-side of a stream
                     ##    denoted by |stream_id| abruptly.  |app_error_code| is one of
                     ##    application error codes, and indicates the reason of shutdown.  If
                     ##    this function succeeds, no further application data is sent to the
                     ##    remote endpoint.  It discards all data which has not been
                     ##    acknowledged yet.
-                    ##
+                    ##   
                     ##    |flags| is currently unused, and should be set to 0.
-                    ##
+                    ##   
                     ##    This function returns 0 if a stream denoted by |stream_id| is not
                     ##    found.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory
                     ##    :macro:NGTCP2_ERR_INVALID_ARGUMENT
@@ -2654,21 +4233,21 @@ proc ngtcp2_conn_shutdown_stream_read*(conn: ptr ngtcp2_conn; flags: uint32;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_shutdown_stream_read closes read-side of a stream
                     ##    denoted by |stream_id| abruptly.  |app_error_code| is one of
                     ##    application error codes, and indicates the reason of shutdown.  If
                     ##    this function succeeds, no further application data is forwarded to
                     ##    an application layer.
-                    ##
+                    ##   
                     ##    |flags| is currently unused, and should be set to 0.
-                    ##
+                    ##   
                     ##    This function returns 0 if a stream denoted by |stream_id| is not
                     ##    found.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory
                     ##    :macro:NGTCP2_ERR_INVALID_ARGUMENT
@@ -2681,7 +4260,7 @@ proc ngtcp2_conn_write_stream_versioned*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_write_stream is just like
                     ##    ngtcp2_conn_writev_stream.  The only difference is that it
                     ##    conveniently accepts a single buffer.
@@ -2693,56 +4272,56 @@ proc ngtcp2_conn_writev_stream_versioned*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_writev_stream writes a packet containing stream data
                     ##    of a stream denoted by |stream_id|.  The buffer of the packet is
                     ##    pointed by |dest| of length |destlen|.  This function performs QUIC
                     ##    handshake as well.
-                    ##
+                    ##   
                     ##    |destlen| should be at least
                     ##    :member:ngtcp2_settings.max_tx_udp_payload_size.  It must be at
                     ##    least :macro:NGTCP2_MAX_UDP_PAYLOAD_SIZE.
-                    ##
+                    ##   
                     ##    Specifying -1 to |stream_id| means no new stream data to send.
-                    ##
+                    ##   
                     ##    If |path| is not NULL, this function stores the network path
                     ##    with which the packet should be sent.  Each addr field
                     ##    (:member:ngtcp2_path.local and :member:ngtcp2_path.remote) must
                     ##    point to the buffer which should be at least
                     ##    sizeof(:type:sockaddr_union) bytes long.  The assignment might
                     ##    not be done if nothing is written to |dest|.
-                    ##
+                    ##   
                     ##    If |pi| is not NULL, this function stores packet metadata in it
                     ##    if it succeeds.  The metadata includes ECN markings.  When calling
                     ##    this function again after it returns
                     ##    :macro:NGTCP2_ERR_WRITE_MORE, caller must pass the same |pi| to
                     ##    this function.
-                    ##
+                    ##   
                     ##    Stream data is specified as vector of data |datav|.  |datavcnt|
                     ##    specifies the number of :type:ngtcp2_vec that |datav| includes.
-                    ##
+                    ##   
                     ##    If all given data is encoded as STREAM frame in |dest|, and if
                     ##    |flags| & :macro:NGTCP2_WRITE_STREAM_FLAG_FIN is nonzero, fin
                     ##    flag is set to outgoing STREAM frame.  Otherwise, fin flag in
                     ##    STREAM frame is not set.
-                    ##
+                    ##   
                     ##    This packet may contain frames other than STREAM frame.  The packet
                     ##    might not contain STREAM frame if other frames occupy the packet.
                     ##    In that case, |*pdatalen| would be -1 if |pdatalen| is not
                     ##    NULL.
-                    ##
+                    ##   
                     ##    Empty data is treated specially, and it is only accepted if no
                     ##    data, including the empty data, is submitted to a stream or
                     ##    :macro:NGTCP2_WRITE_STREAM_FLAG_FIN is set in |flags|.  If 0
                     ##    length STREAM frame is successfully serialized, |*pdatalen| would
                     ##    be 0.
-                    ##
+                    ##   
                     ##    The number of data encoded in STREAM frame is stored in |*pdatalen|
                     ##    if it is not NULL.  The caller must keep the portion of data
                     ##    covered by |*pdatalen| bytes in tact until
                     ##    :member:ngtcp2_callbacks.acked_stream_data_offset indicates that
                     ##    they are acknowledged by a remote endpoint or the stream is closed.
-                    ##
+                    ##   
                     ##    If the given stream data is small (e.g., few bytes), the packet
                     ##    might be severely under filled.  Too many small packet might
                     ##    increase overall packet processing costs.  Unless there are
@@ -2753,14 +4332,14 @@ proc ngtcp2_conn_writev_stream_versioned*(conn: ptr ngtcp2_conn;
                     ##    analogous to MSG_MORE flag in :manpage:send(2).  If the
                     ##    :macro:NGTCP2_WRITE_STREAM_FLAG_MORE is used, there are 4
                     ##    outcomes:
-                    ##
+                    ##   
                     ##    - The function returns the written length of packet just like
                     ##      without :macro:NGTCP2_WRITE_STREAM_FLAG_MORE.  This is because
                     ##      packet is nearly full, and the library decided to make a complete
                     ##      packet.  |*pdatalen| might be -1 or >= 0.  It may return 0 which
                     ##      indicates that no packet transmission is possible at the moment
                     ##      for some reason.
-                    ##
+                    ##   
                     ##    - The function returns :macro:NGTCP2_ERR_WRITE_MORE.  In this
                     ##      case, |*pdatalen| >= 0 is asserted.  It indicates that
                     ##      application can still call this function with different stream
@@ -2769,7 +4348,7 @@ proc ngtcp2_conn_writev_stream_versioned*(conn: ptr ngtcp2_conn;
                     ##      Application has to specify the same |conn|, |path|, |pi|, |dest|,
                     ##      |destlen|, and |ts| parameters, otherwise the behaviour is
                     ##      undefined.  The application can change |flags|.
-                    ##
+                    ##   
                     ##    - The function returns one of the following negative error codes:
                     ##      :macro:NGTCP2_ERR_STREAM_DATA_BLOCKED,
                     ##      :macro:NGTCP2_ERR_STREAM_NOT_FOUND, or
@@ -2781,11 +4360,11 @@ proc ngtcp2_conn_writev_stream_versioned*(conn: ptr ngtcp2_conn;
                     ##      Application has to specify the same |conn|, |path|, |pi|, |dest|,
                     ##      |destlen|, and |ts| parameters, otherwise the behaviour is
                     ##      undefined.  The application can change |flags|.
-                    ##
+                    ##   
                     ##    - The other negative error codes might be returned just like
                     ##      without :macro:NGTCP2_WRITE_STREAM_FLAG_MORE.  These errors
                     ##      should be treated as a connection error.
-                    ##
+                    ##   
                     ##    When application uses :macro:NGTCP2_WRITE_STREAM_FLAG_MORE at
                     ##    least once, it must not call other ngtcp2 API functions
                     ##    (application can still call ngtcp2_conn_write_connection_close to
@@ -2801,21 +4380,21 @@ proc ngtcp2_conn_writev_stream_versioned*(conn: ptr ngtcp2_conn;
                     ##    :macro:NGTCP2_ERR_STREAM_SHUT_WR.  If there is no stream data to
                     ##    include, call this function with |stream_id| as -1 to stop
                     ##    coalescing and write a packet.
-                    ##
+                    ##   
                     ##    This function returns 0 if it cannot write any frame because buffer
                     ##    is too small, or packet is congestion limited.  Application should
                     ##    keep reading and wait for congestion window to grow.
-                    ##
+                    ##   
                     ##    This function must not be called from inside the callback
                     ##    functions.
-                    ##
+                    ##   
                     ##    ngtcp2_conn_update_pkt_tx_time must be called after this
                     ##    function.  Application may call this function multiple times before
                     ##    calling ngtcp2_conn_update_pkt_tx_time.
-                    ##
+                    ##   
                     ##    This function returns the number of bytes written in |dest| if it
                     ##    succeeds, or one of the following negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory
                     ##    :macro:NGTCP2_ERR_STREAM_NOT_FOUND
@@ -2834,7 +4413,7 @@ proc ngtcp2_conn_writev_stream_versioned*(conn: ptr ngtcp2_conn;
                     ##        (Only when :macro:NGTCP2_WRITE_STREAM_FLAG_MORE is specified)
                     ##        Application can call this function to pack more stream data
                     ##        into the same packet.  See above to know how it works.
-                    ##
+                    ##   
                     ##    If any other negative error is returned, call
                     ##    ngtcp2_conn_write_connection_close to get terminal packet, and
                     ##    sending it makes QUIC connection enter the closing state.
@@ -2846,7 +4425,7 @@ proc ngtcp2_conn_write_datagram_versioned*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_write_datagram is just like
                     ##    ngtcp2_conn_writev_datagram.  The only difference is that it
                     ##    conveniently accepts a single buffer.
@@ -2858,26 +4437,26 @@ proc ngtcp2_conn_writev_datagram_versioned*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_writev_datagram writes a packet containing unreliable
                     ##    data in DATAGRAM frame.  The buffer of the packet is pointed by
                     ##    |dest| of length |destlen|.  This function performs QUIC handshake
                     ##    as well.
-                    ##
+                    ##   
                     ##    |destlen| should be at least
                     ##    :member:ngtcp2_settings.max_tx_udp_payload_size.  It must be at
                     ##    least :macro:NGTCP2_MAX_UDP_PAYLOAD_SIZE.
-                    ##
+                    ##   
                     ##    For |path| and |pi| parameters, refer to
                     ##    ngtcp2_conn_writev_stream.
-                    ##
+                    ##   
                     ##    Stream data is specified as vector of data |datav|.  |datavcnt|
                     ##    specifies the number of :type:ngtcp2_vec that |datav| includes.
-                    ##
+                    ##   
                     ##    If the given data is written to the buffer, nonzero value is
                     ##    assigned to |*paccepted| if it is not NULL.  The data in DATAGRAM
                     ##    frame cannot be fragmented; writing partial data is not possible.
-                    ##
+                    ##   
                     ##    |dgram_id| is an opaque identifier which should uniquely identify
                     ##    the given DATAGRAM data.  It is passed to
                     ##    :member:ngtcp2_callbacks.ack_datagram callback when a packet that
@@ -2885,24 +4464,24 @@ proc ngtcp2_conn_writev_datagram_versioned*(conn: ptr ngtcp2_conn;
                     ##    :member:ngtcp2_callbacks.lost_datagram callback when a packet
                     ##    that contains DATAGRAM frame is declared lost.  If an application
                     ##    uses neither of those callbacks, it can sets 0 to this parameter.
-                    ##
+                    ##   
                     ##    This function might write other frames other than DATAGRAM frame,
                     ##    just like ngtcp2_conn_writev_stream.
-                    ##
+                    ##   
                     ##    If the function returns 0, it means that no more data cannot be
                     ##    sent because of congestion control limit; or, data does not fit
                     ##    into the provided buffer; or, a local endpoint, as a server, is
                     ##    unable to send data because of its amplification limit.  In this
                     ##    case, |*paccepted| is assigned zero if it is not NULL.
-                    ##
+                    ##   
                     ##    If :macro:NGTCP2_WRITE_DATAGRAM_FLAG_MORE is set in |flags|,
                     ##    there are 3 outcomes:
-                    ##
+                    ##   
                     ##    - The function returns the written length of packet just like
                     ##      without :macro:NGTCP2_WRITE_DATAGRAM_FLAG_MORE.  This is
                     ##      because packet is nearly full and the library decided to make a
                     ##      complete packet.  |*paccepted| might be zero or nonzero.
-                    ##
+                    ##   
                     ##    - The function returns :macro:NGTCP2_ERR_WRITE_MORE.  In this
                     ##      case, |*paccepted| != 0 is asserted.  This indicates that
                     ##      application can call this function with another unreliable data
@@ -2911,10 +4490,10 @@ proc ngtcp2_conn_writev_datagram_versioned*(conn: ptr ngtcp2_conn;
                     ##      same |conn|, |path|, |pi|, |dest|, |destlen|, and |ts|
                     ##      parameters, otherwise the behaviour is undefined.  The
                     ##      application can change |flags|.
-                    ##
+                    ##   
                     ##    - The other error might be returned just like without
                     ##      :macro:NGTCP2_WRITE_DATAGRAM_FLAG_MORE.
-                    ##
+                    ##   
                     ##    When application sees :macro:NGTCP2_ERR_WRITE_MORE, it must not
                     ##    call other ngtcp2 API functions (application can still call
                     ##    ngtcp2_conn_write_connection_close to handle error from this
@@ -2923,10 +4502,10 @@ proc ngtcp2_conn_writev_datagram_versioned*(conn: ptr ngtcp2_conn;
                     ##    ngtcp2_conn_shutdown_stream).  Just keep calling this function
                     ##    (or ngtcp2_conn_writev_stream) until it returns a positive number
                     ##    (which indicates a complete packet is ready).
-                    ##
+                    ##   
                     ##    This function returns the number of bytes written in |dest| if it
                     ##    succeeds, or one of the following negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory
                     ##    :macro:NGTCP2_ERR_PKT_NUM_EXHAUSTED
@@ -2942,7 +4521,7 @@ proc ngtcp2_conn_writev_datagram_versioned*(conn: ptr ngtcp2_conn;
                     ##    :macro:NGTCP2_ERR_INVALID_ARGUMENT
                     ##        The provisional DATAGRAM frame size exceeds the maximum
                     ##        DATAGRAM frame size that a remote endpoint can receive.
-                    ##
+                    ##   
                     ##    If any other negative error is returned, call
                     ##    ngtcp2_conn_write_connection_close to get terminal packet, and
                     ##    sending it makes QUIC connection enter the closing state.
@@ -2951,7 +4530,7 @@ proc ngtcp2_conn_in_closing_period*(conn: ptr ngtcp2_conn): cint {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_in_closing_period returns nonzero if |conn| is in the
            ##    closing period.
            ## ```
@@ -2959,7 +4538,7 @@ proc ngtcp2_conn_in_draining_period*(conn: ptr ngtcp2_conn): cint {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_in_draining_period returns nonzero if |conn| is in
            ##    the draining period.
            ## ```
@@ -2967,18 +4546,18 @@ proc ngtcp2_conn_extend_max_stream_offset*(conn: ptr ngtcp2_conn;
     stream_id: int64; datalen: uint64): cint {.importc, cdecl.}
   ## ```
                                                                ##   @function
-                                                               ##
+                                                               ##   
                                                                ##    ngtcp2_conn_extend_max_stream_offset extends the maximum stream
                                                                ##    data that a remote endpoint can send by |datalen|.  |stream_id|
                                                                ##    specifies the stream ID.  This function only extends stream-level
                                                                ##    flow control window.
-                                                               ##
+                                                               ##   
                                                                ##    This function returns 0 if a stream denoted by |stream_id| is not
                                                                ##    found.
-                                                               ##
+                                                               ##   
                                                                ##    This function returns 0 if it succeeds, or one of the following
                                                                ##    negative error codes:
-                                                               ##
+                                                               ##   
                                                                ##    :macro:NGTCP2_ERR_NOMEM
                                                                ##        Out of memory.
                                                                ##    :macro:NGTCP2_ERR_INVALID_ARGUMENT
@@ -2988,7 +4567,7 @@ proc ngtcp2_conn_extend_max_offset*(conn: ptr ngtcp2_conn; datalen: uint64) {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_extend_max_offset extends max data offset by
                     ##    |datalen|.  This function only extends connection-level flow
                     ##    control window.
@@ -2997,11 +4576,11 @@ proc ngtcp2_conn_extend_max_streams_bidi*(conn: ptr ngtcp2_conn; n: uint) {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_extend_max_streams_bidi extends the number of maximum
                     ##    remote bidirectional streams that a remote endpoint can open by
                     ##    |n|.
-                    ##
+                    ##   
                     ##    The library does not increase maximum stream limit automatically.
                     ##    The exception is when a stream is closed without
                     ##    :member:ngtcp2_callbacks.stream_open callback being called.  In
@@ -3011,11 +4590,11 @@ proc ngtcp2_conn_extend_max_streams_uni*(conn: ptr ngtcp2_conn; n: uint) {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_extend_max_streams_uni extends the number of maximum
                     ##    remote unidirectional streams that a remote endpoint can open by
                     ##    |n|.
-                    ##
+                    ##   
                     ##    The library does not increase maximum stream limit automatically.
                     ##    The exception is when a stream is closed without
                     ##    :member:ngtcp2_callbacks.stream_open callback being called.  In
@@ -3025,7 +4604,7 @@ proc ngtcp2_conn_get_dcid*(conn: ptr ngtcp2_conn): ptr ngtcp2_cid {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_get_dcid returns the non-NULL pointer to the current
            ##    Destination Connection ID.  If no Destination Connection ID is
            ##    present, the return value is not NULL, and its :member:datalen
@@ -3035,7 +4614,7 @@ proc ngtcp2_conn_get_client_initial_dcid*(conn: ptr ngtcp2_conn): ptr ngtcp2_cid
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_client_initial_dcid returns the non-NULL pointer
                     ##    to the Destination Connection ID that client sent in its Initial
                     ##    packet.  If the Destination Connection ID is not present, the
@@ -3046,7 +4625,7 @@ proc ngtcp2_conn_get_scid*(conn: ptr ngtcp2_conn; dest: ptr ngtcp2_cid): uint {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_scid writes the all Source Connection IDs which a
                     ##    local endpoint has provided to a remote endpoint, and are not
                     ##    retired in |dest|.  If |dest| is NULL, this function does not write
@@ -3061,7 +4640,7 @@ proc ngtcp2_conn_get_active_dcid*(conn: ptr ngtcp2_conn;
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_get_active_dcid writes the all active Destination
            ##    Connection IDs and their tokens to |dest|.  Before handshake
            ##    completes, this function returns 0.  If |dest| is NULL, this
@@ -3076,7 +4655,7 @@ proc ngtcp2_conn_get_client_chosen_version*(conn: ptr ngtcp2_conn): uint32 {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_client_chosen_version returns the client chosen
                     ##    version.
                     ## ```
@@ -3084,34 +4663,34 @@ proc ngtcp2_conn_get_negotiated_version*(conn: ptr ngtcp2_conn): uint32 {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_negotiated_version returns the negotiated
                     ##    version.
-                    ##
+                    ##   
                     ##    Until the version is negotiated, this function returns 0.
                     ## ```
 proc ngtcp2_conn_tls_early_data_rejected*(conn: ptr ngtcp2_conn): cint {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_tls_early_data_rejected tells |conn| that early data
                     ##    was rejected by a server during TLS handshake, or client decided
                     ##    not to attempt early data for some reason.  |conn| discards the
                     ##    following connection states:
-                    ##
+                    ##   
                     ##    - Any opened streams.
                     ##    - Stream identifier allocations.
                     ##    - Max data extended by ngtcp2_conn_extend_max_offset.
                     ##    - Max bidi streams extended by ngtcp2_conn_extend_max_streams_bidi.
                     ##    - Max uni streams extended by ngtcp2_conn_extend_max_streams_uni.
-                    ##
+                    ##   
                     ##    Application which wishes to retransmit early data, it has to open
                     ##    streams, and send stream data again.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_CALLBACK_FAILURE
                     ##        User callback failed
                     ## ```
@@ -3119,7 +4698,7 @@ proc ngtcp2_conn_get_tls_early_data_rejected*(conn: ptr ngtcp2_conn): cint {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_tls_early_data_rejected returns nonzero if
                     ##    ngtcp2_conn_tls_early_data_rejected has been called.
                     ## ```
@@ -3127,7 +4706,7 @@ proc ngtcp2_conn_get_conn_info_versioned*(conn: ptr ngtcp2_conn;
     conn_info_version: cint; cinfo: ptr ngtcp2_conn_info) {.importc, cdecl.}
   ## ```
                                                                             ##   @function
-                                                                            ##
+                                                                            ##   
                                                                             ##    ngtcp2_conn_get_conn_info assigns connection statistics data to
                                                                             ##    |*cinfo|.
                                                                             ## ```
@@ -3137,11 +4716,11 @@ proc ngtcp2_conn_submit_crypto_data*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_submit_crypto_data submits crypto data |data| of
                     ##    length |datalen| to the library for transmission.
                     ##    |encryption_level| specifies the encryption level of data.
-                    ##
+                    ##   
                     ##    The library makes a copy of the buffer pointed by |data| of length
                     ##    |datalen|.  Application can discard |data|.
                     ## ```
@@ -3149,17 +4728,17 @@ proc ngtcp2_conn_submit_new_token*(conn: ptr ngtcp2_conn; token: ptr uint8;
                                    tokenlen: uint): cint {.importc, cdecl.}
   ## ```
                                                                            ##   @function
-                                                                           ##
+                                                                           ##   
                                                                            ##    ngtcp2_conn_submit_new_token submits address validation token.
                                                                            ##    It is sent in NEW_TOKEN frame.  Only server can call this function.
                                                                            ##    |tokenlen| must not be 0.
-                                                                           ##
+                                                                           ##   
                                                                            ##    This function makes a copy of the buffer pointed by |token| of
                                                                            ##    length |tokenlen|.
-                                                                           ##
+                                                                           ##   
                                                                            ##    This function returns 0 if it succeeds, or one of the following
                                                                            ##    negative error codes:
-                                                                           ##
+                                                                           ##   
                                                                            ##    :macro:NGTCP2_ERR_NOMEM
                                                                            ##        Out of memory.
                                                                            ## ```
@@ -3167,7 +4746,7 @@ proc ngtcp2_conn_set_local_addr*(conn: ptr ngtcp2_conn; `addr`: ptr ngtcp2_addr)
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_set_local_addr sets local endpoint address |addr| to
                     ##    the current path of |conn|.  This function is provided for testing
                     ##    purpose only.
@@ -3176,7 +4755,7 @@ proc ngtcp2_conn_set_path_user_data*(conn: ptr ngtcp2_conn;
                                      path_user_data: pointer) {.importc, cdecl.}
   ## ```
                                                                                 ##   @function
-                                                                                ##
+                                                                                ##   
                                                                                 ##    ngtcp2_conn_set_path_user_data sets the |path_user_data| to the
                                                                                 ##    current path (see :member:ngtcp2_path.user_data).
                                                                                 ## ```
@@ -3184,14 +4763,14 @@ proc ngtcp2_conn_get_path*(conn: ptr ngtcp2_conn): ptr ngtcp2_path {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_get_path returns the current path.
            ## ```
 proc ngtcp2_conn_get_max_tx_udp_payload_size*(conn: ptr ngtcp2_conn): uint {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_max_tx_udp_payload_size returns the maximum UDP
                     ##    payload size that this local endpoint would send.  This is the
                     ##    value of :member:ngtcp2_settings.max_tx_udp_payload_size that is
@@ -3201,7 +4780,7 @@ proc ngtcp2_conn_get_path_max_tx_udp_payload_size*(conn: ptr ngtcp2_conn): uint 
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_path_max_tx_udp_payload_size returns the maximum
                     ##    UDP payload size for the current path.  If
                     ##    :member:ngtcp2_settings.no_tx_udp_payload_size_shaping is set to
@@ -3213,16 +4792,16 @@ proc ngtcp2_conn_initiate_immediate_migration*(conn: ptr ngtcp2_conn;
     path: ptr ngtcp2_path; ts: ngtcp2_tstamp): cint {.importc, cdecl.}
   ## ```
                                                                       ##   @function
-                                                                      ##
+                                                                      ##   
                                                                       ##    ngtcp2_conn_initiate_immediate_migration starts connection
                                                                       ##    migration to the given |path|.  Only client can initiate migration.
                                                                       ##    This function does immediate migration; while the path validation
                                                                       ##    is nonetheless performed, this function does not wait for it to
                                                                       ##    succeed.
-                                                                      ##
+                                                                      ##   
                                                                       ##    This function returns 0 if it succeeds, or one of the following
                                                                       ##    negative error codes:
-                                                                      ##
+                                                                      ##   
                                                                       ##    :macro:NGTCP2_ERR_INVALID_STATE
                                                                       ##        Migration is disabled; or handshake is not yet confirmed; or
                                                                       ##        client is migrating to server's preferred address.
@@ -3239,16 +4818,16 @@ proc ngtcp2_conn_initiate_migration*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_initiate_migration starts connection migration to the
                     ##    given |path|.  Only client can initiate migration.  Unlike
                     ##    ngtcp2_conn_initiate_immediate_migration, this function starts a
                     ##    path validation with a new path, and migrate to the new path after
                     ##    successful path validation.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_INVALID_STATE
                     ##        Migration is disabled; or handshake is not yet confirmed; or
                     ##        client is migrating to server's preferred address.
@@ -3264,7 +4843,7 @@ proc ngtcp2_conn_get_max_data_left*(conn: ptr ngtcp2_conn): uint64 {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_get_max_data_left returns the number of bytes that
            ##    this local endpoint can send in this connection without violating
            ##    connection-level flow control.
@@ -3273,7 +4852,7 @@ proc ngtcp2_conn_get_max_stream_data_left*(conn: ptr ngtcp2_conn;
     stream_id: int64): uint64 {.importc, cdecl.}
   ## ```
                                                 ##   @function
-                                                ##
+                                                ##   
                                                 ##    ngtcp2_conn_get_max_stream_data_left returns the number of bytes
                                                 ##    that this local endpoint can send to a stream identified by
                                                 ##    |stream_id| without violating stream-level flow control.  If no
@@ -3283,7 +4862,7 @@ proc ngtcp2_conn_get_streams_bidi_left*(conn: ptr ngtcp2_conn): uint64 {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_streams_bidi_left returns the number of
                     ##    bidirectional streams which the local endpoint can open without
                     ##    violating stream concurrency limit.
@@ -3292,7 +4871,7 @@ proc ngtcp2_conn_get_streams_uni_left*(conn: ptr ngtcp2_conn): uint64 {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_get_streams_uni_left returns the number of
            ##    unidirectional streams which the local endpoint can open without
            ##    violating stream concurrency limit.
@@ -3300,7 +4879,7 @@ proc ngtcp2_conn_get_streams_uni_left*(conn: ptr ngtcp2_conn): uint64 {.importc,
 proc ngtcp2_conn_get_cwnd_left*(conn: ptr ngtcp2_conn): uint64 {.importc, cdecl.}
   ## ```
                                                                                  ##   @function
-                                                                                 ##
+                                                                                 ##   
                                                                                  ##    ngtcp2_conn_get_cwnd_left returns the cwnd minus the number of
                                                                                  ##    bytes in flight on the current path.  If the former is smaller than
                                                                                  ##    the latter, this function returns 0.
@@ -3309,7 +4888,7 @@ proc ngtcp2_conn_set_initial_crypto_ctx*(conn: ptr ngtcp2_conn;
     ctx: ptr ngtcp2_crypto_ctx) {.importc, cdecl.}
   ## ```
                                                   ##   @function
-                                                  ##
+                                                  ##   
                                                   ##    ngtcp2_conn_set_initial_crypto_ctx sets |ctx| for Initial packet
                                                   ##    encryption.  The passed data will be passed to
                                                   ##    :type:ngtcp2_encrypt, :type:ngtcp2_decrypt and
@@ -3319,7 +4898,7 @@ proc ngtcp2_conn_get_initial_crypto_ctx*(conn: ptr ngtcp2_conn): ptr ngtcp2_cryp
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_initial_crypto_ctx returns
                     ##    :type:ngtcp2_crypto_ctx object for Initial packet encryption.
                     ## ```
@@ -3327,7 +4906,7 @@ proc ngtcp2_conn_set_crypto_ctx*(conn: ptr ngtcp2_conn;
                                  ctx: ptr ngtcp2_crypto_ctx) {.importc, cdecl.}
   ## ```
                                                                                ##   @function
-                                                                               ##
+                                                                               ##   
                                                                                ##    ngtcp2_conn_set_crypto_ctx sets |ctx| for Handshake/1-RTT packet
                                                                                ##    encryption.  The passed data will be passed to
                                                                                ##    :type:ngtcp2_encrypt, :type:ngtcp2_decrypt and
@@ -3337,7 +4916,7 @@ proc ngtcp2_conn_get_crypto_ctx*(conn: ptr ngtcp2_conn): ptr ngtcp2_crypto_ctx {
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_crypto_ctx returns :type:ngtcp2_crypto_ctx
                     ##    object for Handshake/1-RTT packet encryption.
                     ## ```
@@ -3346,7 +4925,7 @@ proc ngtcp2_conn_set_0rtt_crypto_ctx*(conn: ptr ngtcp2_conn;
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_set_0rtt_crypto_ctx sets |ctx| for 0-RTT packet
            ##    encryption.  The passed data will be passed to
            ##    :type:ngtcp2_encrypt, :type:ngtcp2_decrypt and
@@ -3356,7 +4935,7 @@ proc ngtcp2_conn_get_0rtt_crypto_ctx*(conn: ptr ngtcp2_conn): ptr ngtcp2_crypto_
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_0rtt_crypto_ctx returns :type:ngtcp2_crypto_ctx
                     ##    object for 0-RTT packet encryption.
                     ## ```
@@ -3364,7 +4943,7 @@ proc ngtcp2_conn_get_tls_native_handle*(conn: ptr ngtcp2_conn): pointer {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_tls_native_handle returns TLS native handle set
                     ##    by ngtcp2_conn_set_tls_native_handle.
                     ## ```
@@ -3373,7 +4952,7 @@ proc ngtcp2_conn_set_tls_native_handle*(conn: ptr ngtcp2_conn;
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_set_tls_native_handle sets TLS native handle
            ##    |tls_native_handle| to |conn|.  Internally, it is used as an opaque
            ##    pointer.
@@ -3384,14 +4963,14 @@ proc ngtcp2_conn_set_retry_aead*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_set_retry_aead sets |aead| and |aead_ctx| for Retry
                     ##    integrity tag verification.  |aead| must be AEAD_AES_128_GCM.
                     ##    |aead_ctx| must be initialized with :macro:NGTCP2_RETRY_KEY as
                     ##    encryption key.  This function must be called if |conn| is
                     ##    initialized as client.  Server does not verify the tag, and has no
                     ##    need to call this function.
-                    ##
+                    ##   
                     ##    |conn| takes ownership of |aead_ctx|.
                     ##    :member:ngtcp2_callbacks.delete_crypto_aead_ctx will be called to
                     ##    delete this object when it is no longer used.
@@ -3399,10 +4978,10 @@ proc ngtcp2_conn_set_retry_aead*(conn: ptr ngtcp2_conn;
 proc ngtcp2_ccerr_default*(ccerr: ptr ngtcp2_ccerr) {.importc, cdecl.}
   ## ```
                                                                       ##   @function
-                                                                      ##
+                                                                      ##   
                                                                       ##    ngtcp2_ccerr_default initializes |ccerr| with the default values.
                                                                       ##    It sets the following fields:
-                                                                      ##
+                                                                      ##   
                                                                       ##    - :member:type <ngtcp2_ccerr.type> =
                                                                       ##      :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_TRANSPORT
                                                                       ##    - :member:error_code <ngtcp2_ccerr.error_code> =
@@ -3416,7 +4995,7 @@ proc ngtcp2_ccerr_set_transport_error*(ccerr: ptr ngtcp2_ccerr;
                                        reasonlen: uint) {.importc, cdecl.}
   ## ```
                                                                           ##   @function
-                                                                          ##
+                                                                          ##   
                                                                           ##    ngtcp2_ccerr_set_transport_error sets :member:ccerr->type
                                                                           ##    <ngtcp2_ccerr.type> to
                                                                           ##    :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_TRANSPORT, and
@@ -3429,37 +5008,37 @@ proc ngtcp2_ccerr_set_liberr*(ccerr: ptr ngtcp2_ccerr; liberr: cint;
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_ccerr_set_liberr sets type and error_code based on
            ##    |liberr|.
-           ##
+           ##   
            ##    |reason| is the reason phrase of length |reasonlen|.  This function
            ##    does not make a copy of the reason phrase.
-           ##
+           ##   
            ##    If |liberr| is :macro:NGTCP2_ERR_RECV_VERSION_NEGOTIATION,
            ##    :member:ccerr->type <ngtcp2_ccerr.type> is set to
            ##    :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_VERSION_NEGOTIATION,
            ##    and :member:ccerr->error_code <ngtcp2_ccerr.error_code> to
            ##    :macro:NGTCP2_NO_ERROR.
-           ##
+           ##   
            ##    If |liberr| is :macro:NGTCP2_ERR_IDLE_CLOSE, :member:ccerr->type
            ##    <ngtcp2_ccerr.type> is set to
            ##    :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_IDLE_CLOSE, and
            ##    :member:ccerr->error_code <ngtcp2_ccerr.error_code> to
            ##    :macro:NGTCP2_NO_ERROR.
-           ##
+           ##   
            ##    If |liberr| is :macro:NGTCP2_ERR_DROP_CONN, :member:ccerr->type
            ##    <ngtcp2_ccerr.type> is set to
            ##    :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_DROP_CONN, and
            ##    :member:ccerr->error_code <ngtcp2_ccerr.error_code> to
            ##    :macro:NGTCP2_NO_ERROR.
-           ##
+           ##   
            ##    If |liberr| is :macro:NGTCP2_ERR_RETRY, :member:ccerr->type
            ##    <ngtcp2_ccerr.type> is set to
            ##    :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_RETRY, and
            ##    :member:ccerr->error_type <ngtcp2_ccerr.error_code> to
            ##    :macro:NGTCP2_NO_ERROR.
-           ##
+           ##   
            ##    Otherwise, :member:ccerr->type <ngtcp2_ccerr.type> is set to
            ##    :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_TRANSPORT, and
            ##    :member:ccerr->error_code <ngtcp2_ccerr.error_code> is set to an
@@ -3471,7 +5050,7 @@ proc ngtcp2_ccerr_set_tls_alert*(ccerr: ptr ngtcp2_ccerr; tls_alert: uint8;
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_ccerr_set_tls_alert sets :member:ccerr->type
            ##    <ngtcp2_ccerr.type> to
            ##    :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_TRANSPORT, and
@@ -3484,7 +5063,7 @@ proc ngtcp2_ccerr_set_application_error*(ccerr: ptr ngtcp2_ccerr;
     error_code: uint64; reason: ptr uint8; reasonlen: uint) {.importc, cdecl.}
   ## ```
                                                                               ##   @function
-                                                                              ##
+                                                                              ##   
                                                                               ##    ngtcp2_ccerr_set_application_error sets :member:ccerr->type
                                                                               ##    <ngtcp2_ccerr.type> to
                                                                               ##    :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_APPLICATION, and
@@ -3498,23 +5077,23 @@ proc ngtcp2_conn_write_connection_close_versioned*(conn: ptr ngtcp2_conn;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_write_connection_close writes a packet which contains
                     ##    CONNECTION_CLOSE frame(s) (type 0x1c or 0x1d) in the buffer pointed
                     ##    by |dest| whose capacity is |destlen|.
-                    ##
+                    ##   
                     ##    For client, |destlen| should be at least
                     ##    :macro:NGTCP2_MAX_UDP_PAYLOAD_SIZE.
-                    ##
+                    ##   
                     ##    If |path| is not NULL, this function stores the network path
                     ##    with which the packet should be sent.  Each addr field must point
                     ##    to the buffer which should be at least
                     ##    sizeof(:type:ngtcp2_sockaddr_union) bytes long.  The assignment
                     ##    might not be done if nothing is written to |dest|.
-                    ##
+                    ##   
                     ##    If |pi| is not NULL, this function stores packet metadata in it
                     ##    if it succeeds.  The metadata includes ECN markings.
-                    ##
+                    ##   
                     ##    If :member:ccerr->type <ngtcp2_ccerr.type> ==
                     ##    :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_TRANSPORT, this
                     ##    function sends CONNECTION_CLOSE (type 0x1c) frame.  If
@@ -3522,22 +5101,22 @@ proc ngtcp2_conn_write_connection_close_versioned*(conn: ptr ngtcp2_conn;
                     ##    :enum:ngtcp2_ccerr_type.NGTCP2_CCERR_TYPE_APPLICATION, it sends
                     ##    CONNECTION_CLOSE (type 0x1d) frame.  Otherwise, it does not produce
                     ##    any data, and returns 0.
-                    ##
+                    ##   
                     ##    |destlen| could be shorten by some factors (e.g., server side
                     ##    amplification limit).  This function returns
                     ##    :macro:NGTCP2_ERR_NOBUF if the resulting buffer is too small even
                     ##    if the given buffer has enough space.
-                    ##
+                    ##   
                     ##    This function must not be called from inside the callback
                     ##    functions.
-                    ##
+                    ##   
                     ##    At the moment, successful call to this function makes connection
                     ##    close.  We may change this behaviour in the future to allow
                     ##    graceful shutdown.
-                    ##
+                    ##   
                     ##    This function returns the number of bytes written in |dest| if it
                     ##    succeeds, or one of the following negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_NOMEM
                     ##        Out of memory
                     ##    :macro:NGTCP2_ERR_NOBUF
@@ -3554,7 +5133,7 @@ proc ngtcp2_conn_get_ccerr*(conn: ptr ngtcp2_conn): ptr ngtcp2_ccerr {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_conn_get_ccerr returns the received connection close
            ##    error.  If no connection error is received, it returns
            ##    :type:ngtcp2_ccerr that is initialized by ngtcp2_ccerr_default.
@@ -3563,21 +5142,21 @@ proc ngtcp2_conn_is_local_stream*(conn: ptr ngtcp2_conn; stream_id: int64): cint
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_is_local_stream returns nonzero if |stream_id|
                     ##    denotes a locally initiated stream.
                     ## ```
 proc ngtcp2_conn_is_server*(conn: ptr ngtcp2_conn): cint {.importc, cdecl.}
   ## ```
                                                                            ##   @function
-                                                                           ##
+                                                                           ##   
                                                                            ##    ngtcp2_conn_is_server returns nonzero if |conn| is initialized as
                                                                            ##    server.
                                                                            ## ```
 proc ngtcp2_conn_after_retry*(conn: ptr ngtcp2_conn): cint {.importc, cdecl.}
   ## ```
                                                                              ##   @function
-                                                                             ##
+                                                                             ##   
                                                                              ##    ngtcp2_conn_after_retry returns nonzero if |conn| as a client has
                                                                              ##    received Retry packet from server, and successfully validated it.
                                                                              ## ```
@@ -3586,13 +5165,13 @@ proc ngtcp2_conn_set_stream_user_data*(conn: ptr ngtcp2_conn; stream_id: int64;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_set_stream_user_data sets |stream_user_data| to the
                     ##    stream identified by |stream_id|.
-                    ##
+                    ##   
                     ##    This function returns 0 if it succeeds, or one of the following
                     ##    negative error codes:
-                    ##
+                    ##   
                     ##    :macro:NGTCP2_ERR_STREAM_NOT_FOUND
                     ##        Stream does not exist
                     ## ```
@@ -3600,7 +5179,7 @@ proc ngtcp2_conn_update_pkt_tx_time*(conn: ptr ngtcp2_conn; ts: ngtcp2_tstamp) {
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_update_pkt_tx_time sets the time instant of the next
                     ##    packet transmission to pace packets.  This function must be called
                     ##    after (multiple invocation of) ngtcp2_conn_writev_stream.  If
@@ -3611,7 +5190,7 @@ proc ngtcp2_conn_update_pkt_tx_time*(conn: ptr ngtcp2_conn; ts: ngtcp2_tstamp) {
 proc ngtcp2_conn_get_send_quantum*(conn: ptr ngtcp2_conn): uint {.importc, cdecl.}
   ## ```
                                                                                   ##   @function
-                                                                                  ##
+                                                                                  ##   
                                                                                   ##    ngtcp2_conn_get_send_quantum returns the maximum number of bytes
                                                                                   ##    that can be sent in one go without packet spacing.
                                                                                   ## ```
@@ -3619,7 +5198,7 @@ proc ngtcp2_conn_get_stream_loss_count*(conn: ptr ngtcp2_conn; stream_id: int64)
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_conn_get_stream_loss_count returns the number of packets
                     ##    that contain STREAM frame for a stream identified by |stream_id|
                     ##    and are declared to be lost.  The number may include the spurious
@@ -3629,7 +5208,7 @@ proc ngtcp2_conn_get_stream_loss_count*(conn: ptr ngtcp2_conn; stream_id: int64)
 proc ngtcp2_strerror*(liberr: cint): cstring {.importc, cdecl.}
   ## ```
                                                                ##   @function
-                                                               ##
+                                                               ##   
                                                                ##    ngtcp2_strerror returns the text representation of |liberr|.
                                                                ##    |liberr| must be one of ngtcp2 library error codes (which is
                                                                ##    defined as :macro:NGTCP2_ERR_* <NGTCP2_ERR_INVALID_ARGUMENT>
@@ -3638,7 +5217,7 @@ proc ngtcp2_strerror*(liberr: cint): cstring {.importc, cdecl.}
 proc ngtcp2_err_is_fatal*(liberr: cint): cint {.importc, cdecl.}
   ## ```
                                                                 ##   @function
-                                                                ##
+                                                                ##   
                                                                 ##    ngtcp2_err_is_fatal returns nonzero if |liberr| is a fatal error.
                                                                 ##    |liberr| must be one of ngtcp2 library error codes (which is
                                                                 ##    defined as :macro:NGTCP2_ERR_* <NGTCP2_ERR_INVALID_ARGUMENT>
@@ -3648,7 +5227,7 @@ proc ngtcp2_err_infer_quic_transport_error_code*(liberr: cint): uint64 {.
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_err_infer_quic_transport_error_code returns a QUIC
                     ##    transport error code which corresponds to |liberr|.  |liberr| must
                     ##    be one of ngtcp2 library error codes (which is defined as
@@ -3659,7 +5238,7 @@ proc ngtcp2_addr_init*(dest: ptr ngtcp2_addr; `addr`: ptr ngtcp2_SockAddr;
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_addr_init initializes |dest| with the given arguments and
            ##    returns |dest|.
            ## ```
@@ -3667,7 +5246,7 @@ proc ngtcp2_addr_copy_byte*(dest: ptr ngtcp2_addr; `addr`: ptr ngtcp2_SockAddr;
                             addrlen: ngtcp2_socklen) {.importc, cdecl.}
   ## ```
                                                                        ##   @function
-                                                                       ##
+                                                                       ##   
                                                                        ##    ngtcp2_addr_copy_byte copies |addr| of length |addrlen| into the
                                                                        ##    buffer pointed by :member:dest->addr <ngtcp2_addr.addr>.
                                                                        ##    :member:dest->addrlen <ngtcp2_addr.addrlen> is updated to have
@@ -3683,14 +5262,14 @@ proc ngtcp2_path_storage_init*(ps: ptr ngtcp2_path_storage;
                                user_data: pointer) {.importc, cdecl.}
   ## ```
                                                                      ##   @function
-                                                                     ##
+                                                                     ##   
                                                                      ##    ngtcp2_path_storage_init initializes |ps| with the given
                                                                      ##    arguments.  This function copies |local_addr| and |remote_addr|.
                                                                      ## ```
 proc ngtcp2_path_storage_zero*(ps: ptr ngtcp2_path_storage) {.importc, cdecl.}
   ## ```
                                                                               ##   @function
-                                                                              ##
+                                                                              ##   
                                                                               ##    ngtcp2_path_storage_zero initializes |ps| with the zero length
                                                                               ##    addresses.
                                                                               ## ```
@@ -3699,11 +5278,11 @@ proc ngtcp2_settings_default_versioned*(settings_version: cint;
     importc, cdecl.}
   ## ```
                     ##   @function
-                    ##
+                    ##   
                     ##    ngtcp2_settings_default initializes |settings| with the default
                     ##    values.  First this function fills |settings| with 0, and set the
                     ##    default value to the following fields:
-                    ##
+                    ##   
                     ##    :type:cc_algo <ngtcp2_settings.cc_algo> =
                     ##      :enum:ngtcp2_cc_algo.NGTCP2_CC_ALGO_CUBIC
                     ##    :type:initial_rtt <ngtcp2_settings.initial_rtt> =
@@ -3718,11 +5297,11 @@ proc ngtcp2_transport_params_default_versioned*(transport_params_version: cint;
     params: ptr ngtcp2_transport_params) {.importc, cdecl.}
   ## ```
                                                            ##   @function
-                                                           ##
+                                                           ##   
                                                            ##    ngtcp2_transport_params_default initializes |params| with the
                                                            ##    default values.  First this function fills |params| with 0, and set
                                                            ##    the default value to the following fields:
-                                                           ##
+                                                           ##   
                                                            ##    :type:max_udp_payload_size
                                                            ##      <ngtcp2_transport_params.max_udp_payload_size> =
                                                            ##      :macro:NGTCP2_DEFAULT_MAX_RECV_UDP_PAYLOAD_SIZE
@@ -3738,14 +5317,14 @@ proc ngtcp2_transport_params_default_versioned*(transport_params_version: cint;
 proc ngtcp2_mem_default*(): ptr ngtcp2_mem {.importc, cdecl.}
   ## ```
                                                              ##   @function
-                                                             ##
+                                                             ##   
                                                              ##    ngtcp2_mem_default returns the default, system standard memory
                                                              ##    allocator.
                                                              ## ```
 proc ngtcp2_version*(least_version: cint): ptr ngtcp2_info {.importc, cdecl.}
   ## ```
                                                                              ##   @function
-                                                                             ##
+                                                                             ##   
                                                                              ##    ngtcp2_version returns a pointer to a :type:ngtcp2_info struct
                                                                              ##    with version information about the run-time library in use.  The
                                                                              ##    |least_version| argument can be set to a 24 bit numerical value for
@@ -3756,7 +5335,7 @@ proc ngtcp2_version*(least_version: cint): ptr ngtcp2_info {.importc, cdecl.}
 proc ngtcp2_is_bidi_stream*(stream_id: int64): cint {.importc, cdecl.}
   ## ```
                                                                       ##   @function
-                                                                      ##
+                                                                      ##   
                                                                       ##    ngtcp2_is_bidi_stream returns nonzero if |stream_id| denotes
                                                                       ##    bidirectional stream.
                                                                       ## ```
@@ -3764,7 +5343,7 @@ proc ngtcp2_path_copy*(dest: ptr ngtcp2_path; src: ptr ngtcp2_path) {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_path_copy copies |src| into |dest|.  This function assumes
            ##    that |dest| has enough buffer to store the deep copy of
            ##    :member:src->local <ngtcp2_path.local> and :member:src->remote
@@ -3774,21 +5353,21 @@ proc ngtcp2_path_eq*(a: ptr ngtcp2_path; b: ptr ngtcp2_path): cint {.importc,
     cdecl.}
   ## ```
            ##   @function
-           ##
+           ##   
            ##    ngtcp2_path_eq returns nonzero if |a| and |b| shares the same
            ##    local and remote addresses.
            ## ```
 proc ngtcp2_is_supported_version*(version: uint32): cint {.importc, cdecl.}
   ## ```
                                                                            ##   @function
-                                                                           ##
+                                                                           ##   
                                                                            ##    ngtcp2_is_supported_version returns nonzero if the library
                                                                            ##    supports QUIC version |version|.
                                                                            ## ```
 proc ngtcp2_is_reserved_version*(version: uint32): cint {.importc, cdecl.}
   ## ```
                                                                           ##   @function
-                                                                          ##
+                                                                          ##   
                                                                           ##    ngtcp2_is_reserved_version returns nonzero if |version| is a
                                                                           ##    reserved version.
                                                                           ## ```
@@ -3798,7 +5377,7 @@ proc ngtcp2_select_version*(preferred_versions: ptr uint32;
                             offered_versionslen: uint): uint32 {.importc, cdecl.}
   ## ```
                                                                                  ##   @function
-                                                                                 ##
+                                                                                 ##   
                                                                                  ##    ngtcp2_select_version selects and returns a version from the
                                                                                  ##    version set |offered_versions| of |offered_versionslen| elements.
                                                                                  ##    |preferred_versions| of |preferred_versionslen| elements specifies
@@ -3810,3 +5389,181 @@ proc ngtcp2_select_version*(preferred_versions: ptr uint32;
                                                                                  ##    Negotiation packet.  If no version is selected, this function
                                                                                  ##    returns 0.
                                                                                  ## ```
+proc ngtcp2_crypto_picotls_ctx_init*(cptls: ptr ngtcp2_crypto_picotls_ctx) {.
+    importc, cdecl.}
+  ## ```
+                    ##   @function
+                    ##   
+                    ##    ngtcp2_crypto_picotls_ctx_init initializes the object pointed by
+                    ##    |cptls|.  |cptls| must not be NULL.
+                    ## ```
+proc ngtcp2_crypto_picotls_from_epoch*(epoch: uint): ngtcp2_encryption_level {.
+    importc, cdecl.}
+  ## ```
+                    ##   @function
+                    ##   
+                    ##    ngtcp2_crypto_picotls_from_epoch translates |epoch| to
+                    ##    :type:ngtcp2_encryption_level.  This function is only available
+                    ##    for Picotls backend.
+                    ## ```
+proc ngtcp2_crypto_picotls_from_ngtcp2_encryption_level*(
+    encryption_level: ngtcp2_encryption_level): uint {.importc, cdecl.}
+  ## ```
+                                                                       ##   @function
+                                                                       ##   
+                                                                       ##    ngtcp2_crypto_picotls_from_ngtcp2_encryption_level translates
+                                                                       ##    |encryption_level| to epoch.  This function is only available for
+                                                                       ##    Picotls backend.
+                                                                       ## ```
+proc ngtcp2_crypto_picotls_configure_server_context*(ctx: ptr ptls_context_t): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   @function
+                    ##   
+                    ##    ngtcp2_crypto_picotls_configure_server_context configures |ctx|
+                    ##    for server side QUIC connection.  It performs the following
+                    ##    modifications:
+                    ##   
+                    ##    - Set max_early_data_size to UINT32_MAX.
+                    ##    - Set omit_end_of_early_data to 1.
+                    ##    - Set update_traffic_key callback.
+                    ##   
+                    ##    Application must set a pointer to :type:ngtcp2_crypto_conn_ref to
+                    ##    ptls_t object by assigning the pointer using ptls_get_data_ptr, and
+                    ##    :type:ngtcp2_crypto_conn_ref object must have
+                    ##    :member:ngtcp2_crypto_conn_ref.get_conn field assigned to get
+                    ##    :type:ngtcp2_conn.
+                    ##   
+                    ##    It returns 0 if it succeeds, or -1.
+                    ## ```
+proc ngtcp2_crypto_picotls_configure_client_context*(ctx: ptr ptls_context_t): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   @function
+                    ##   
+                    ##    ngtcp2_crypto_picotls_configure_client_context configures |ctx|
+                    ##    for client side QUIC connection.  It performs the following
+                    ##    modifications:
+                    ##   
+                    ##    - Set omit_end_of_early_data to 1.
+                    ##    - Set update_traffic_key callback.
+                    ##   
+                    ##    Application must set a pointer to :type:ngtcp2_crypto_conn_ref to
+                    ##    ptls_t object by assigning the pointer using ptls_get_data_ptr, and
+                    ##    :type:ngtcp2_crypto_conn_ref object must have
+                    ##    :member:ngtcp2_crypto_conn_ref.get_conn field assigned to get
+                    ##    :type:ngtcp2_conn.
+                    ##   
+                    ##    It returns 0 if it succeeds, or -1.
+                    ## ```
+proc ngtcp2_crypto_picotls_configure_server_session*(
+    cptls: ptr ngtcp2_crypto_picotls_ctx): cint {.importc, cdecl.}
+  ## ```
+                                                                  ##   @function
+                                                                  ##   
+                                                                  ##    ngtcp2_crypto_picotls_configure_server_session configures |cptls|
+                                                                  ##    for server side QUIC connection.  It performs the following
+                                                                  ##    modifications:
+                                                                  ##   
+                                                                  ##    - Set handshake_properties.collect_extension to
+                                                                  ##      ngtcp2_crypto_picotls_collect_extension.
+                                                                  ##    - Set handshake_properties.collected_extensions to
+                                                                  ##      ngtcp2_crypto_picotls_collected_extensions.
+                                                                  ##   
+                                                                  ##    The callbacks set by this function only handle QUIC Transport
+                                                                  ##    Parameters TLS extension.  If an application needs to handle the
+                                                                  ##    other TLS extensions, set its own callbacks and call
+                                                                  ##    ngtcp2_crypto_picotls_collect_extension and
+                                                                  ##    ngtcp2_crypto_picotls_collected_extensions form them.
+                                                                  ##   
+                                                                  ##    During the QUIC handshake, the first element of
+                                                                  ##    handshake_properties.additional_extensions is assigned to send QUIC
+                                                                  ##    Transport Parameter TLS extension.  Therefore, an application must
+                                                                  ##    allocate at least 2 elements for
+                                                                  ##    handshake_properties.additional_extensions.
+                                                                  ##   
+                                                                  ##    Call ngtcp2_crypto_picotls_deconfigure_session to free up the
+                                                                  ##    resources.
+                                                                  ##   
+                                                                  ##    Application must set a pointer to :type:ngtcp2_crypto_conn_ref to
+                                                                  ##    ptls_t object by assigning the pointer using ptls_get_data_ptr, and
+                                                                  ##    :type:ngtcp2_crypto_conn_ref object must have
+                                                                  ##    :member:ngtcp2_crypto_conn_ref.get_conn field assigned to get
+                                                                  ##    :type:ngtcp2_conn.
+                                                                  ##   
+                                                                  ##    It returns 0 if it succeeds, or -1.
+                                                                  ## ```
+proc ngtcp2_crypto_picotls_configure_client_session*(
+    cptls: ptr ngtcp2_crypto_picotls_ctx; conn: ptr ngtcp2_conn): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   @function
+                    ##   
+                    ##    ngtcp2_crypto_picotls_configure_client_session configures |cptls|
+                    ##    for client side QUIC connection.  It performs the following
+                    ##    modifications:
+                    ##   
+                    ##    - Set handshake_properties.max_early_data_size to a pointer to
+                    ##      uint32_t, which is allocated dynamically by this function.
+                    ##    - Set handshake_properties.collect_extension to
+                    ##      ngtcp2_crypto_picotls_collect_extension.
+                    ##    - Set handshake_properties.collected_extensions to
+                    ##      ngtcp2_crypto_picotls_collected_extensions.
+                    ##    - Set handshake_properties.additional_extensions[0].data to the
+                    ##      dynamically allocated buffer which contains QUIC Transport
+                    ##      Parameters TLS extension.  An application must allocate at least
+                    ##      2 elements for handshake_properties.additional_extensions.
+                    ##   
+                    ##    The callbacks set by this function only handle QUIC Transport
+                    ##    Parameters TLS extension.  If an application needs to handle the
+                    ##    other TLS extensions, set its own callbacks and call
+                    ##    ngtcp2_crypto_picotls_collect_extension and
+                    ##    ngtcp2_crypto_picotls_collected_extensions form them.
+                    ##   
+                    ##    Call ngtcp2_crypto_picotls_deconfigure_session to free up the
+                    ##    resources.
+                    ##   
+                    ##    Application must set a pointer to :type:ngtcp2_crypto_conn_ref to
+                    ##    ptls_t object by assigning the pointer using ptls_get_data_ptr, and
+                    ##    :type:ngtcp2_crypto_conn_ref object must have
+                    ##    :member:ngtcp2_crypto_conn_ref.get_conn field assigned to get
+                    ##    :type:ngtcp2_conn.
+                    ##   
+                    ##    It returns 0 if it succeeds, or -1.
+                    ## ```
+proc ngtcp2_crypto_picotls_deconfigure_session*(
+    cptls: ptr ngtcp2_crypto_picotls_ctx) {.importc, cdecl.}
+  ## ```
+                                                            ##   @function
+                                                            ##   
+                                                            ##    ngtcp2_crypto_picotls_deconfigure_session frees the resources
+                                                            ##    allocated for |cptls| during QUIC connection.  It frees the
+                                                            ##    following data using :manpage:free(3):
+                                                            ##   
+                                                            ##    - handshake_properties.max_early_data_size
+                                                            ##    - handshake_properties.additional_extensions[0].data.base
+                                                            ##   
+                                                            ##    If |cptls| is NULL, this function does nothing.
+                                                            ## ```
+proc ngtcp2_crypto_picotls_collect_extension*(ptls: ptr ptls_t;
+    properties: ptr st_ptls_handshake_properties_t; `type`: uint16): cint {.
+    importc, cdecl.}
+  ## ```
+                    ##   @function
+                    ##   
+                    ##    ngtcp2_crypto_picotls_collect_extension is a callback function
+                    ##    which only returns nonzero if |type| ==
+                    ##    :macro:NGTCP2_TLSEXT_QUIC_TRANSPORT_PARAMETERS_V1.
+                    ## ```
+proc ngtcp2_crypto_picotls_collected_extensions*(ptls: ptr ptls_t;
+    properties: ptr st_ptls_handshake_properties_t;
+    extensions: ptr ptls_raw_extension_t): cint {.importc, cdecl.}
+  ## ```
+                                                                  ##   @function
+                                                                  ##   
+                                                                  ##    ngtcp2_crypto_picotls_collected_extensions is a callback function
+                                                                  ##    which only handles the extension of type
+                                                                  ##    :macro:NGTCP2_TLSEXT_QUIC_TRANSPORT_PARAMETERS_V1.  The other
+                                                                  ##    extensions are ignored.
+                                                                  ## ```
+{.pop.}

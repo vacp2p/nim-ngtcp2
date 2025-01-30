@@ -1,0 +1,6 @@
+[submodule "sources/ngtcp2"]
+	path = sources/ngtcp2
+	url = https://github.com/ngtcp2/ngtcp2.git
+[submodule "sources/picotls"]
+	path = sources/picotls
+	url = https://github.com/h2o/picotls.git
