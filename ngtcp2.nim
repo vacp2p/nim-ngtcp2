@@ -9,8 +9,10 @@ when defined(windows):
 else:
   {.passc: "-DHAVE_UNISTD_H".}
 
-
-{.passl: "-lcrypto".}
+when defined(macosx):
+  {.passl: "-L/opt/homebrew/opt/openssl@3/lib -lcrypto".}
+else:
+  {.passl: "-lcrypto".}
 
 type
   st_ptls_t = object
@@ -26,9 +28,9 @@ type
   st_ptls_log_t = object
   in_addr = object
 
-# Generated @ 2025-01-30T10:43:18-04:00
+# Generated @ 2025-01-30T17:34:36-04:00
 # Command line:
-#   /home/richard/.nimble/pkgs2/nimterop-0.6.13-a93246b2ad5531db11e51de7b2d188c42d95576a/nimterop/toast --compile=./sources/picotls/lib/pembase64.c --compile=./sources/picotls/lib/hpke.c --compile=./sources/picotls/lib/picotls.c --compile=./sources/picotls/lib/openssl.c --compile=./sources/ngtcp2/crypto/shared.c --compile=./sources/ngtcp2/crypto/picotls/picotls.c --compile=./sources/ngtcp2/lib/ngtcp2_acktr.c --compile=./sources/ngtcp2/lib/ngtcp2_addr.c --compile=./sources/ngtcp2/lib/ngtcp2_balloc.c --compile=./sources/ngtcp2/lib/ngtcp2_bbr.c --compile=./sources/ngtcp2/lib/ngtcp2_buf.c --compile=./sources/ngtcp2/lib/ngtcp2_cc.c --compile=./sources/ngtcp2/lib/ngtcp2_cid.c --compile=./sources/ngtcp2/lib/ngtcp2_conn.c --compile=./sources/ngtcp2/lib/ngtcp2_conv.c --compile=./sources/ngtcp2/lib/ngtcp2_crypto.c --compile=./sources/ngtcp2/lib/ngtcp2_dcidtr.c --compile=./sources/ngtcp2/lib/ngtcp2_err.c --compile=./sources/ngtcp2/lib/ngtcp2_frame_chain.c --compile=./sources/ngtcp2/lib/ngtcp2_gaptr.c --compile=./sources/ngtcp2/lib/ngtcp2_idtr.c --compile=./sources/ngtcp2/lib/ngtcp2_ksl.c --compile=./sources/ngtcp2/lib/ngtcp2_log.c --compile=./sources/ngtcp2/lib/ngtcp2_map.c --compile=./sources/ngtcp2/lib/ngtcp2_mem.c --compile=./sources/ngtcp2/lib/ngtcp2_objalloc.c --compile=./sources/ngtcp2/lib/ngtcp2_opl.c --compile=./sources/ngtcp2/lib/ngtcp2_path.c --compile=./sources/ngtcp2/lib/ngtcp2_pkt.c --compile=./sources/ngtcp2/lib/ngtcp2_pmtud.c --compile=./sources/ngtcp2/lib/ngtcp2_ppe.c --compile=./sources/ngtcp2/lib/ngtcp2_pq.c --compile=./sources/ngtcp2/lib/ngtcp2_pv.c --compile=./sources/ngtcp2/lib/ngtcp2_qlog.c --compile=./sources/ngtcp2/lib/ngtcp2_range.c --compile=./sources/ngtcp2/lib/ngtcp2_ringbuf.c --compile=./sources/ngtcp2/lib/ngtcp2_rob.c --compile=./sources/ngtcp2/lib/ngtcp2_rst.c --compile=./sources/ngtcp2/lib/ngtcp2_rtb.c --compile=./sources/ngtcp2/lib/ngtcp2_settings.c --compile=./sources/ngtcp2/lib/ngtcp2_str.c --compile=./sources/ngtcp2/lib/ngtcp2_strm.c --compile=./sources/ngtcp2/lib/ngtcp2_transport_params.c --compile=./sources/ngtcp2/lib/ngtcp2_unreachable.c --compile=./sources/ngtcp2/lib/ngtcp2_vec.c --compile=./sources/ngtcp2/lib/ngtcp2_version.c --compile=./sources/ngtcp2/lib/ngtcp2_window_filter.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --replace=sockaddr=SockAddr,SockAddr_storage=Sockaddr_storage,socklen_t=SockLen --replace=clone_=ptlsXXclone,destroy_=ptlsXXdestroy,random_=ptlsXXrandom,_output=XXoutput,__=xXx --includeDirs=./sources/ngtcp2/crypto --includeDirs=./sources/picotls/include --includeDirs=./sources/ngtcp2/lib --includeDirs=./sources/ngtcp2/crypto/includes --includeDirs=./sources/ngtcp2/lib/includes --includeDirs=./build/lib/includes ./sources/picotls/include/picotls.h ./sources/ngtcp2/lib/includes/ngtcp2/ngtcp2.h ./sources/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_picotls.h
+#   /home/richard/.nimble/pkgs2/nimterop-0.6.13-a93246b2ad5531db11e51de7b2d188c42d95576a/nimterop/toast --compile=./sources/picotls/lib/pembase64.c --compile=./sources/picotls/lib/hpke.c --compile=./sources/picotls/lib/picotls.c --compile=./sources/picotls/lib/openssl.c --compile=./sources/ngtcp2/crypto/shared.c --compile=./sources/ngtcp2/crypto/picotls/picotls.c --compile=./sources/ngtcp2/lib/ngtcp2_acktr.c --compile=./sources/ngtcp2/lib/ngtcp2_addr.c --compile=./sources/ngtcp2/lib/ngtcp2_balloc.c --compile=./sources/ngtcp2/lib/ngtcp2_bbr.c --compile=./sources/ngtcp2/lib/ngtcp2_buf.c --compile=./sources/ngtcp2/lib/ngtcp2_cc.c --compile=./sources/ngtcp2/lib/ngtcp2_cid.c --compile=./sources/ngtcp2/lib/ngtcp2_conn.c --compile=./sources/ngtcp2/lib/ngtcp2_conv.c --compile=./sources/ngtcp2/lib/ngtcp2_crypto.c --compile=./sources/ngtcp2/lib/ngtcp2_dcidtr.c --compile=./sources/ngtcp2/lib/ngtcp2_err.c --compile=./sources/ngtcp2/lib/ngtcp2_frame_chain.c --compile=./sources/ngtcp2/lib/ngtcp2_gaptr.c --compile=./sources/ngtcp2/lib/ngtcp2_idtr.c --compile=./sources/ngtcp2/lib/ngtcp2_ksl.c --compile=./sources/ngtcp2/lib/ngtcp2_log.c --compile=./sources/ngtcp2/lib/ngtcp2_map.c --compile=./sources/ngtcp2/lib/ngtcp2_mem.c --compile=./sources/ngtcp2/lib/ngtcp2_objalloc.c --compile=./sources/ngtcp2/lib/ngtcp2_opl.c --compile=./sources/ngtcp2/lib/ngtcp2_path.c --compile=./sources/ngtcp2/lib/ngtcp2_pkt.c --compile=./sources/ngtcp2/lib/ngtcp2_pmtud.c --compile=./sources/ngtcp2/lib/ngtcp2_ppe.c --compile=./sources/ngtcp2/lib/ngtcp2_pq.c --compile=./sources/ngtcp2/lib/ngtcp2_pv.c --compile=./sources/ngtcp2/lib/ngtcp2_qlog.c --compile=./sources/ngtcp2/lib/ngtcp2_range.c --compile=./sources/ngtcp2/lib/ngtcp2_ringbuf.c --compile=./sources/ngtcp2/lib/ngtcp2_rob.c --compile=./sources/ngtcp2/lib/ngtcp2_rst.c --compile=./sources/ngtcp2/lib/ngtcp2_rtb.c --compile=./sources/ngtcp2/lib/ngtcp2_settings.c --compile=./sources/ngtcp2/lib/ngtcp2_str.c --compile=./sources/ngtcp2/lib/ngtcp2_strm.c --compile=./sources/ngtcp2/lib/ngtcp2_transport_params.c --compile=./sources/ngtcp2/lib/ngtcp2_unreachable.c --compile=./sources/ngtcp2/lib/ngtcp2_vec.c --compile=./sources/ngtcp2/lib/ngtcp2_version.c --compile=./sources/ngtcp2/lib/ngtcp2_window_filter.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --replace=sockaddr=SockAddr,SockAddr_storage=Sockaddr_storage,socklen_t=SockLen --replace=clone_=ptlsXXclone,destroy_=ptlsXXdestroy,random_=ptlsXXrandom,_output=XXoutput,__=xXx --includeDirs=./sources/ngtcp2/crypto --includeDirs=./sources/picotls/include --includeDirs=./sources/ngtcp2/lib --includeDirs=./sources/ngtcp2/crypto/includes --includeDirs=./sources/ngtcp2/lib/includes --includeDirs=./build/lib/includes --includeDirs=/opt/homebrew/Cellar/openssl@3/3.4.0/include ./sources/picotls/include/picotls.h ./sources/ngtcp2/lib/includes/ngtcp2/ngtcp2.h ./sources/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_picotls.h
 
 # const 'PTLS_THREADLOCAL' has unsupported value '__thread'
 # const 'PTLS_AESGCM_INTEGRITY_LIMIT' has unsupported value 'UINT64_C(0x40000000000000) /* 2^54 */'
@@ -125,6 +127,7 @@ macro defineEnum(typ: untyped): untyped =
 {.passc: "-I./sources/ngtcp2/crypto/includes".}
 {.passc: "-I./sources/ngtcp2/lib/includes".}
 {.passc: "-I./build/lib/includes".}
+{.passc: "-I/opt/homebrew/Cellar/openssl@3/3.4.0/include".}
 {.compile: "./sources/picotls/lib/pembase64.c".}
 {.compile: "./sources/picotls/lib/hpke.c".}
 {.compile: "./sources/picotls/lib/picotls.c".}
@@ -440,10 +443,10 @@ const
   NGTCP2_STATELESS_RESET_TOKENLEN* = 16
   NGTCP2_MIN_STATELESS_RESET_RANDLEN* = 5
   NGTCP2_PATH_CHALLENGE_DATALEN* = 8
-  NGTCP2_RETRY_KEY_V1* = "æ\fi\vüfWZ\x1DvkT„h»N"
-  NGTCP2_RETRY_NONCE_V1* = "F\x15ô”]c+Ú#ò%ª"
-  NGTCP2_RETRY_KEY_V2* = "è¥∞\eV¨H‚`˚ÀŒ≠|Ãí"
-  NGTCP2_RETRY_NONCE_V2* = "ÿiiº-|môêÔ∞J"
+  NGTCP2_RETRY_KEY_V1* = "ÔøΩ\fi\vÔøΩfWZ\x1DvkTÔøΩhÔøΩN"
+  NGTCP2_RETRY_NONCE_V1* = "F\x15ÔøΩÔøΩ]c+ÔøΩ#ÔøΩ%ÔøΩ"
+  NGTCP2_RETRY_KEY_V2* = "ÔøΩÔøΩÔøΩ\eVÔøΩHÔøΩ`ÔøΩÔøΩŒ≠|Ãí"
+  NGTCP2_RETRY_NONCE_V2* = "ÔøΩiiÔøΩ-|mÔøΩÔøΩÔøΩJ"
   NGTCP2_HP_MASKLEN* = 5
   NGTCP2_HP_SAMPLELEN* = 16
   NGTCP2_DEFAULT_INITIAL_RTT* = (333 * typeof(333)(NGTCP2_MILLISECONDS))

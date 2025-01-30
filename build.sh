@@ -33,6 +33,8 @@ for file in `ls "${sources}/ngtcp2/lib"/*.c`; do
   compile="${compile} --compile=${file}"
 done
 
+
+
 # generate nim wrapper with nimterop
 toast \
   $compile \
@@ -48,6 +50,7 @@ toast \
   --includeDirs="${sources}/ngtcp2/crypto/includes" \
   --includeDirs="${sources}/ngtcp2/lib/includes" \
   --includeDirs="${root}/build/lib/includes" \
+  --includeDirs="/opt/homebrew/Cellar/openssl@3/3.4.0/include" \
   "${sources}/picotls/include/picotls.h" \
   "${sources}/ngtcp2/lib/includes/ngtcp2/ngtcp2.h" \
   "${sources}/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_picotls.h" \

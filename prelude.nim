@@ -9,8 +9,10 @@ when defined(windows):
 else:
   {.passc: "-DHAVE_UNISTD_H".}
 
-
-{.passl: "-lcrypto".}
+when defined(macosx):
+  {.passl: "-L/opt/homebrew/opt/openssl@3/lib -lcrypto".}
+else:
+  {.passl: "-lcrypto".}
 
 type
   st_ptls_t = object

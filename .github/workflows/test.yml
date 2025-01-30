@@ -90,7 +90,7 @@ jobs:
       - name: Install deps
         if: ${{ steps.deps-cache.outputs.cache-hit != 'true' }}
         run: |
-          nimble install_pinned
+          nimble install
 
       - name: Use gcc 14
         if : ${{ matrix.platform.os == 'linux-gcc-14'}}
@@ -101,11 +101,6 @@ jobs:
           # Set GCC-14 as the default
           sudo update-alternatives --set gcc /usr/bin/gcc-14
 
-      - name: Install build dependencies (macos arm64)
-        if: runner.os == 'macos-14' && matrix.target.cpu == 'arm64'
-        run: |
-          echo "TEST!!!"
-
       - name: Run tests
         run: |
           nim --version
@@ -113,4 +108,4 @@ jobs:
           gcc --version
 
           NIMFLAGS="${NIMFLAGS} --mm:${{ matrix.nim.memory_management }}"
-          nimble test --styleCheck:off
+          nimble test --styleCheck:off --verbose --debug
