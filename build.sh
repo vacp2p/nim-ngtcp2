@@ -1,6 +1,6 @@
 #!/bin/bash
 root=$(dirname "$0")
-sources=${root}/sources
+sources=${root}/libs
 
 # install nimterop, if not already installed
 if ! [ -x "$(command -v toast)" ]; then
@@ -15,6 +15,7 @@ echo >> "${root}/ngtcp2.nim"
 
 # assemble list of C files to be compiled
 picotls=(
+  "${sources}/picotls/picotlsvs/picotls/wintimeofday.c"
   "${sources}/picotls/lib/pembase64.c"
   "${sources}/picotls/lib/hpke.c"
   "${sources}/picotls/lib/picotls.c"
@@ -32,8 +33,6 @@ done
 for file in `ls "${sources}/ngtcp2/lib"/*.c`; do
   compile="${compile} --compile=${file}"
 done
-
-
 
 # generate nim wrapper with nimterop
 toast \
@@ -55,6 +54,5 @@ toast \
   "${sources}/ngtcp2/lib/includes/ngtcp2/ngtcp2.h" \
   "${sources}/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_picotls.h" \
   >> "${root}/ngtcp2.nim"
-
 
 sed -i 's/\bpassC\b/passc/g' ngtcp2.nim
