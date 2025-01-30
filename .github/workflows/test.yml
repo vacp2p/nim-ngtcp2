@@ -101,6 +101,11 @@ jobs:
           # Set GCC-14 as the default
           sudo update-alternatives --set gcc /usr/bin/gcc-14
 
+      - name: Install deps (windows)
+        if : ${{ matrix.platform.os == 'windows'}}
+        run: |
+          pacman -S --noconfirm base-devel gcc
+
       - name: Run tests
         run: |
           nim --version
