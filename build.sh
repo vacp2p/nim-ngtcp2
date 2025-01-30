@@ -1,6 +1,6 @@
 #!/bin/bash
-root=$(realpath "$(dirname "$0")")
-sources=$(realpath "${root}/sources")
+root=$(dirname "$0")
+sources=${root}/sources
 
 # install nimterop, if not already installed
 if ! [ -x "$(command -v toast)" ]; then
@@ -47,6 +47,7 @@ toast \
   --includeDirs="${sources}/ngtcp2/lib" \
   --includeDirs="${sources}/ngtcp2/crypto/includes" \
   --includeDirs="${sources}/ngtcp2/lib/includes" \
+  --includeDirs="${root}/build/lib/includes" \
   "${sources}/picotls/include/picotls.h" \
   "${sources}/ngtcp2/lib/includes/ngtcp2/ngtcp2.h" \
   "${sources}/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_picotls.h" \
