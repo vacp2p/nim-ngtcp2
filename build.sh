@@ -43,6 +43,7 @@ toast \
   --defines=NGTCP2_STATICLIB \
   --replace=sockaddr=SockAddr,SockAddr_storage=Sockaddr_storage,socklen_t=SockLen \
   --replace=clone_=ptlsXXclone,destroy_=ptlsXXdestroy,random_=ptlsXXrandom,_output=XXoutput,__=xXx \
+  --replace=SockAddr_in=Sockaddr_in \
   --includeDirs="${sources}/ngtcp2/crypto" \
   --includeDirs="${sources}/picotls/include" \
   --includeDirs="${sources}/ngtcp2/lib" \
@@ -56,3 +57,9 @@ toast \
   >> "${root}/ngtcp2.nim"
 
 sed -i 's/\bpassC\b/passc/g' ngtcp2.nim
+
+# dividing line
+echo >> "${root}/ngtcp2.nim"
+
+cat "${root}/other_funcs.nim" >> "${root}/ngtcp2.nim"
+
