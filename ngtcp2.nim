@@ -44,9 +44,9 @@ type
   st_ptls_log_t = object
   in_addr = object
 
-# Generated @ 2025-02-03T15:38:00-04:00
+# Generated @ 2025-02-06T16:12:59-04:00
 # Command line:
-#   /home/richard/.nimble/pkgs2/nimterop-0.6.13-a93246b2ad5531db11e51de7b2d188c42d95576a/nimterop/toast --compile=./libs/picotls/picotlsvs/picotls/wintimeofday.c --compile=./libs/picotls/lib/pembase64.c --compile=./libs/picotls/lib/hpke.c --compile=./libs/picotls/lib/picotls.c --compile=./libs/picotls/lib/openssl.c --compile=./libs/ngtcp2/crypto/shared.c --compile=./libs/ngtcp2/crypto/picotls/picotls.c --compile=./libs/ngtcp2/lib/ngtcp2_acktr.c --compile=./libs/ngtcp2/lib/ngtcp2_addr.c --compile=./libs/ngtcp2/lib/ngtcp2_balloc.c --compile=./libs/ngtcp2/lib/ngtcp2_bbr.c --compile=./libs/ngtcp2/lib/ngtcp2_buf.c --compile=./libs/ngtcp2/lib/ngtcp2_cc.c --compile=./libs/ngtcp2/lib/ngtcp2_cid.c --compile=./libs/ngtcp2/lib/ngtcp2_conn.c --compile=./libs/ngtcp2/lib/ngtcp2_conv.c --compile=./libs/ngtcp2/lib/ngtcp2_crypto.c --compile=./libs/ngtcp2/lib/ngtcp2_dcidtr.c --compile=./libs/ngtcp2/lib/ngtcp2_err.c --compile=./libs/ngtcp2/lib/ngtcp2_frame_chain.c --compile=./libs/ngtcp2/lib/ngtcp2_gaptr.c --compile=./libs/ngtcp2/lib/ngtcp2_idtr.c --compile=./libs/ngtcp2/lib/ngtcp2_ksl.c --compile=./libs/ngtcp2/lib/ngtcp2_log.c --compile=./libs/ngtcp2/lib/ngtcp2_map.c --compile=./libs/ngtcp2/lib/ngtcp2_mem.c --compile=./libs/ngtcp2/lib/ngtcp2_objalloc.c --compile=./libs/ngtcp2/lib/ngtcp2_opl.c --compile=./libs/ngtcp2/lib/ngtcp2_path.c --compile=./libs/ngtcp2/lib/ngtcp2_pkt.c --compile=./libs/ngtcp2/lib/ngtcp2_pmtud.c --compile=./libs/ngtcp2/lib/ngtcp2_ppe.c --compile=./libs/ngtcp2/lib/ngtcp2_pq.c --compile=./libs/ngtcp2/lib/ngtcp2_pv.c --compile=./libs/ngtcp2/lib/ngtcp2_qlog.c --compile=./libs/ngtcp2/lib/ngtcp2_range.c --compile=./libs/ngtcp2/lib/ngtcp2_ringbuf.c --compile=./libs/ngtcp2/lib/ngtcp2_rob.c --compile=./libs/ngtcp2/lib/ngtcp2_rst.c --compile=./libs/ngtcp2/lib/ngtcp2_rtb.c --compile=./libs/ngtcp2/lib/ngtcp2_settings.c --compile=./libs/ngtcp2/lib/ngtcp2_str.c --compile=./libs/ngtcp2/lib/ngtcp2_strm.c --compile=./libs/ngtcp2/lib/ngtcp2_transport_params.c --compile=./libs/ngtcp2/lib/ngtcp2_unreachable.c --compile=./libs/ngtcp2/lib/ngtcp2_vec.c --compile=./libs/ngtcp2/lib/ngtcp2_version.c --compile=./libs/ngtcp2/lib/ngtcp2_window_filter.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --replace=sockaddr=SockAddr,SockAddr_storage=Sockaddr_storage,socklen_t=SockLen --replace=clone_=ptlsXXclone,destroy_=ptlsXXdestroy,random_=ptlsXXrandom,_output=XXoutput,__=xXx --includeDirs=./libs/ngtcp2/crypto --includeDirs=./libs/picotls/include --includeDirs=./libs/ngtcp2/lib --includeDirs=./libs/ngtcp2/crypto/includes --includeDirs=./libs/ngtcp2/lib/includes --includeDirs=./build/lib/includes --includeDirs=/opt/homebrew/Cellar/openssl@3/3.4.0/include ./libs/picotls/include/picotls.h ./libs/ngtcp2/lib/includes/ngtcp2/ngtcp2.h ./libs/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_picotls.h
+#   /home/r/.nimble/pkgs2/nimterop-0.6.13-a93246b2ad5531db11e51de7b2d188c42d95576a/nimterop/toast --compile=./libs/picotls/picotlsvs/picotls/wintimeofday.c --compile=./libs/picotls/lib/pembase64.c --compile=./libs/picotls/lib/hpke.c --compile=./libs/picotls/lib/picotls.c --compile=./libs/picotls/lib/openssl.c --compile=./libs/ngtcp2/crypto/shared.c --compile=./libs/ngtcp2/crypto/picotls/picotls.c --compile=./libs/ngtcp2/lib/ngtcp2_acktr.c --compile=./libs/ngtcp2/lib/ngtcp2_addr.c --compile=./libs/ngtcp2/lib/ngtcp2_balloc.c --compile=./libs/ngtcp2/lib/ngtcp2_bbr.c --compile=./libs/ngtcp2/lib/ngtcp2_buf.c --compile=./libs/ngtcp2/lib/ngtcp2_cc.c --compile=./libs/ngtcp2/lib/ngtcp2_cid.c --compile=./libs/ngtcp2/lib/ngtcp2_conn.c --compile=./libs/ngtcp2/lib/ngtcp2_conv.c --compile=./libs/ngtcp2/lib/ngtcp2_crypto.c --compile=./libs/ngtcp2/lib/ngtcp2_dcidtr.c --compile=./libs/ngtcp2/lib/ngtcp2_err.c --compile=./libs/ngtcp2/lib/ngtcp2_frame_chain.c --compile=./libs/ngtcp2/lib/ngtcp2_gaptr.c --compile=./libs/ngtcp2/lib/ngtcp2_idtr.c --compile=./libs/ngtcp2/lib/ngtcp2_ksl.c --compile=./libs/ngtcp2/lib/ngtcp2_log.c --compile=./libs/ngtcp2/lib/ngtcp2_map.c --compile=./libs/ngtcp2/lib/ngtcp2_mem.c --compile=./libs/ngtcp2/lib/ngtcp2_objalloc.c --compile=./libs/ngtcp2/lib/ngtcp2_opl.c --compile=./libs/ngtcp2/lib/ngtcp2_path.c --compile=./libs/ngtcp2/lib/ngtcp2_pkt.c --compile=./libs/ngtcp2/lib/ngtcp2_pmtud.c --compile=./libs/ngtcp2/lib/ngtcp2_ppe.c --compile=./libs/ngtcp2/lib/ngtcp2_pq.c --compile=./libs/ngtcp2/lib/ngtcp2_pv.c --compile=./libs/ngtcp2/lib/ngtcp2_qlog.c --compile=./libs/ngtcp2/lib/ngtcp2_range.c --compile=./libs/ngtcp2/lib/ngtcp2_ringbuf.c --compile=./libs/ngtcp2/lib/ngtcp2_rob.c --compile=./libs/ngtcp2/lib/ngtcp2_rst.c --compile=./libs/ngtcp2/lib/ngtcp2_rtb.c --compile=./libs/ngtcp2/lib/ngtcp2_settings.c --compile=./libs/ngtcp2/lib/ngtcp2_str.c --compile=./libs/ngtcp2/lib/ngtcp2_strm.c --compile=./libs/ngtcp2/lib/ngtcp2_transport_params.c --compile=./libs/ngtcp2/lib/ngtcp2_unreachable.c --compile=./libs/ngtcp2/lib/ngtcp2_vec.c --compile=./libs/ngtcp2/lib/ngtcp2_version.c --compile=./libs/ngtcp2/lib/ngtcp2_window_filter.c --pnim --preprocess --noHeader --defines=NGTCP2_STATICLIB --replace=sockaddr=SockAddr,SockAddr_storage=Sockaddr_storage,socklen_t=SockLen --replace=clone_=ptlsXXclone,destroy_=ptlsXXdestroy,random_=ptlsXXrandom,_output=XXoutput,__=xXx --replace=SockAddr_in=Sockaddr_in --includeDirs=./libs/ngtcp2/crypto --includeDirs=./libs/picotls/include --includeDirs=./libs/ngtcp2/lib --includeDirs=./libs/ngtcp2/crypto/includes --includeDirs=./libs/ngtcp2/lib/includes --includeDirs=./build/lib/includes --includeDirs=/opt/homebrew/Cellar/openssl@3/3.4.0/include ./libs/picotls/include/picotls.h ./libs/ngtcp2/lib/includes/ngtcp2/ngtcp2.h ./libs/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_picotls.h
 
 # const 'PTLS_THREADLOCAL' has unsupported value '__thread'
 # const 'PTLS_AESGCM_INTEGRITY_LIMIT' has unsupported value 'UINT64_C(0x40000000000000) /* 2^54 */'
@@ -1579,14 +1579,14 @@ type
                               ##    :macro:NGTCP2_USE_GENERIC_SOCKADDR is defined, it is typedefed to
                               ##    the generic struct sockaddr defined in ngtcp2.h.
                               ## ```
-  ngtcp2_SockAddr_in* = SockAddr_in ## ```
+  ngtcp2_Sockaddr_in* = Sockaddr_in ## ```
                                     ##   @typedef
                                     ##   
                                     ##    :type:ngtcp2_sockaddr_in is typedefed to struct sockaddr_in.  If
                                     ##    :macro:NGTCP2_USE_GENERIC_SOCKADDR is defined, it is typedefed to
                                     ##    the generic struct sockaddr_in defined in ngtcp2.h.
                                     ## ```
-  ngtcp2_SockAddr_in6* = SockAddr_in6 ## ```
+  ngtcp2_Sockaddr_in6* = Sockaddr_in6 ## ```
                                       ##   @typedef
                                       ##   
                                       ##    :type:ngtcp2_sockaddr_in6 is typedefed to struct sockaddr_in6.
@@ -1607,8 +1607,8 @@ type
                                                      ##    address types.
                                                      ## ```
     sa*: ngtcp2_SockAddr
-    `in`*: ngtcp2_SockAddr_in
-    in6*: ngtcp2_SockAddr_in6
+    `in`*: ngtcp2_Sockaddr_in
+    in6*: ngtcp2_Sockaddr_in6
   ngtcp2_preferred_addr* {.bycopy.} = object ## ```
                                               ##   @struct
                                               ##   
@@ -1618,10 +1618,10 @@ type
     cid*: ngtcp2_cid         ## ```
                              ##   :member:cid is a Connection ID.
                              ## ```
-    ipv4*: ngtcp2_SockAddr_in ## ```
+    ipv4*: ngtcp2_Sockaddr_in ## ```
                               ##   :member:ipv4 contains IPv4 address and port.
                               ## ```
-    ipv6*: ngtcp2_SockAddr_in6 ## ```
+    ipv6*: ngtcp2_Sockaddr_in6 ## ```
                                ##   :member:ipv6 contains IPv6 address and port.
                                ## ```
     ipv4_present*: uint8 ## ```
@@ -5588,3 +5588,52 @@ proc ngtcp2_crypto_picotls_collected_extensions*(ptls: ptr ptls_t;
                                                                   ##    extensions are ignored.
                                                                   ## ```
 {.pop.}
+
+# Shared callbacks
+
+proc ngtcp2_crypto_recv_crypto_data_cb*(conn: ptr ngtcp2_conn; encryption_level: ngtcp2_encryption_level, 
+                                        offset: uint64; data: ptr uint8; datalen: uint;
+                                        user_data: pointer): cint {.importc, cdecl.}
+
+proc ngtcp2_crypto_recv_retry_cb*(conn: ptr ngtcp2_conn; hd: ptr ngtcp2_pkt_hd; user_data: pointer): cint {.importc, cdecl.}
+
+proc ngtcp2_crypto_delete_crypto_aead_ctx_cb*(conn: ptr ngtcp2_conn; aead_ctx: ptr ngtcp2_crypto_aead_ctx;
+                                              user_data: pointer) {.importc, cdecl.}
+
+proc ngtcp2_crypto_delete_crypto_cipher_ctx_cb*(conn: ptr ngtcp2_conn; cipher_ctx: ptr ngtcp2_crypto_cipher_ctx;
+                                                user_data: pointer) {.importc, cdecl.}
+
+proc ngtcp2_crypto_get_path_challenge_data_cb*(conn: ptr ngtcp2_conn; data: ptr uint8; user_data: pointer): cint {.importc, cdecl.}
+
+proc ngtcp2_crypto_version_negotiation_cb*(conn: ptr ngtcp2_conn; version: uint32; client_dcid: ptr ngtcp2_cid; 
+                                           user_data: pointer): cint {.importc, cdecl.}
+
+# Client callbacks
+
+proc ngtcp2_crypto_client_initial_cb*(conn: ptr ngtcp2_conn; user_data: pointer): cint {.importc, cdecl.}
+
+# Server callbacks
+
+proc ngtcp2_crypto_recv_client_initial_cb*(conn: ptr ngtcp2_conn; dcid: ptr ngtcp2_cid; user_data: pointer) {.importc, cdecl.}
+
+# Crypto callbacks
+
+proc ngtcp2_crypto_encrypt_cb*(dest: ptr uint8; aead: ptr ngtcp2_crypto_aead; aead_ctx: ptr ngtcp2_crypto_aead_ctx;
+                               plaintext: ptr uint8; plaintextlen: uint; nonce: ptr uint8; noncelen: uint; aad: ptr uint8;
+                               aadlen: uint): cint {.importc, cdecl.}
+
+proc ngtcp2_crypto_decrypt_cb*(dest: ptr uint8; aead: ptr ngtcp2_crypto_aead; aead_ctx: ptr ngtcp2_crypto_aead_ctx;
+                               ciphertext: ptr uint8; ciphertextlen: uint; nonce: ptr uint8; noncelen: uint; aad: ptr uint8;
+                               aadlen: uint): cint {.importc, cdecl.}
+
+proc ngtcp2_crypto_hp_mask_cb*(dest: ptr uint8; hp: ptr ngtcp2_crypto_cipher; hp_ctx: ptr ngtcp2_crypto_cipher_ctx;
+                               sample: ptr uint8): cint {.importc, cdecl.}
+
+proc ngtcp2_crypto_update_key_cb*(conn: ptr ngtcp2_conn; rx_secret: ptr uint8;
+                                  tx_secret: ptr uint8;
+                                  rx_aead_ctx: ptr ngtcp2_crypto_aead_ctx;
+                                  rx_iv: ptr uint8;
+                                  tx_aead_ctx: ptr ngtcp2_crypto_aead_ctx;
+                                  tx_iv: ptr uint8; current_rx_secret: ptr uint8;
+                                  current_tx_secret: ptr uint8; secretlen: uint;
+                                  user_data: pointer): cint {.importc, cdecl.}
