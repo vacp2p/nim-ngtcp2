@@ -8,10 +8,6 @@ if ! [ -x "$(command -v toast)" ]; then
 fi
 
 rm ngtcp2.nim
-rm ngtcp2_crypto.nim
-rm ngtcp2_crypto_picotls.nim
-rm picotls.nim
-rm picotls_openssl.nim
 
 # assemble list of C files to be compiled
 toCompile=(
@@ -34,7 +30,7 @@ done
 
 # "/opt/homebrew/Cellar/openssl@3/3.4.0/include" 
 
-nim c generate_ngtcp2.nim
+nim c --maxLoopIterationsVM:100000000 generate_ngtcp2.nim
 
 # add prelude
 cat "${root}/prelude.nim" > ngtcp2.nim
@@ -45,8 +41,3 @@ done
 
 cat tmp_ngtcp2.nim >> ngtcp2.nim
 rm tmp_ngtcp2.nim
-
-nim c generate_ngtcp2_crypto.nim
-nim c generate_picotls.nim
-nim c --maxLoopIterationsVM:100000000 generate_picotls_openssl.nim
-nim c generate_ngtcp2_crypto_picotls.nim
