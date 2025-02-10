@@ -4,62 +4,49 @@ sources=${root}/libs
 
 # install nimterop, if not already installed
 if ! [ -x "$(command -v toast)" ]; then
-  nimble install -y nimterop@0.6.13
+  nimble install -y futhark@0.14.1
 fi
 
-# add prelude
-cat "${root}/prelude.nim" > "${root}/ngtcp2.nim"
-
-# dividing line
-echo >> "${root}/ngtcp2.nim"
+rm ngtcp2.nim
+rm ngtcp2_crypto.nim
+rm ngtcp2_crypto_picotls.nim
+rm picotls.nim
+rm picotls_openssl.nim
 
 # assemble list of C files to be compiled
-picotls=(
+toCompile=(
   "${sources}/picotls/picotlsvs/picotls/wintimeofday.c"
   "${sources}/picotls/lib/pembase64.c"
   "${sources}/picotls/lib/hpke.c"
   "${sources}/picotls/lib/picotls.c"
   "${sources}/picotls/lib/openssl.c"
 )
-for file in "${picotls[@]}"; do
-  compile="${compile} --compile=${file}"
-done
+
 for file in `ls "${sources}/ngtcp2/crypto"/*.c`; do
-  compile="${compile} --compile=${file}"
+  toCompile+=("$file")
 done
 for file in `ls "${sources}/ngtcp2/crypto/picotls"/*.c`; do
-  compile="${compile} --compile=${file}"
+  toCompile+=("$file")
 done
 for file in `ls "${sources}/ngtcp2/lib"/*.c`; do
-  compile="${compile} --compile=${file}"
+  toCompile+=("$file")
 done
 
-# generate nim wrapper with nimterop
-toast \
-  $compile \
-  --pnim \
-  --preprocess \
-  --noHeader \
-  --defines=NGTCP2_STATICLIB \
-  --replace=sockaddr=SockAddr,SockAddr_storage=Sockaddr_storage,socklen_t=SockLen \
-  --replace=clone_=ptlsXXclone,destroy_=ptlsXXdestroy,random_=ptlsXXrandom,_output=XXoutput,__=xXx \
-  --replace=SockAddr_in=Sockaddr_in \
-  --includeDirs="${sources}/ngtcp2/crypto" \
-  --includeDirs="${sources}/picotls/include" \
-  --includeDirs="${sources}/ngtcp2/lib" \
-  --includeDirs="${sources}/ngtcp2/crypto/includes" \
-  --includeDirs="${sources}/ngtcp2/lib/includes" \
-  --includeDirs="${root}/build/lib/includes" \
-  --includeDirs="/opt/homebrew/Cellar/openssl@3/3.4.0/include" \
-  "${sources}/picotls/include/picotls.h" \
-  "${sources}/ngtcp2/lib/includes/ngtcp2/ngtcp2.h" \
-  "${sources}/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_picotls.h" \
-  >> "${root}/ngtcp2.nim"
+# "/opt/homebrew/Cellar/openssl@3/3.4.0/include" 
 
-sed -i 's/\bpassC\b/passc/g' ngtcp2.nim
+nim c generate_ngtcp2.nim
 
-# dividing line
-echo >> "${root}/ngtcp2.nim"
+# add prelude
+cat "${root}/prelude.nim" > ngtcp2.nim
 
-cat "${root}/other_funcs.nim" >> "${root}/ngtcp2.nim"
+for file in "${toCompile[@]}"; do
+    echo "{.compile: \"$file\".}" >> ngtcp2.nim
+done
 
+cat tmp_ngtcp2.nim >> ngtcp2.nim
+rm tmp_ngtcp2.nim
+
+nim c generate_ngtcp2_crypto.nim
+nim c generate_picotls.nim
+nim c --maxLoopIterationsVM:100000000 generate_picotls_openssl.nim
+nim c generate_ngtcp2_crypto_picotls.nim
