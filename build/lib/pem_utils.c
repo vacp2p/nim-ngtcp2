@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include <picotls.h>
-#include <pembase64.h>
-include "utils/pem_utils.h"
+#include <picotls/pembase64.h>
+#include "utils/pem_utils.h"
+
 
 static int ptls_compare_separator_line(const char *line, const char *begin_or_end, const char *label)
 {
@@ -34,7 +35,6 @@ static int ptls_compare_separator_line(const char *line, const char *begin_or_en
 
 // Extracted from https://github.com/h2o/picotls/pull/284/
 // Remove both pem.c/h and cred_buffer.c/h once that PR gets merged
-
 static int ptls_get_pem_object_from_memory(ptls_cred_buffer_t *mem, const char *label, ptls_buffer_t *buf)
 {
     int ret = PTLS_ERROR_PEM_LABEL_NOT_FOUND;
@@ -125,4 +125,27 @@ int ptls_load_certificates_from_memory(ptls_context_t *ctx, ptls_cred_buffer_t *
     }
 
     return ret;
+}
+
+
+int ptls_openssl_init_sign_certificate_with_mem_key(ptls_openssl_sign_certificate_t *self, const void *buf, int len) {
+    BIO *bio = BIO_new_mem_buf(buf, len);
+    if (!bio) {
+        return 1;
+    }
+
+    EVP_PKEY *pkey = PEM_read_bio_PrivateKey(bio, NULL, NULL, NULL);
+    BIO_free(bio);
+
+    if (!pkey) {
+        fprintf(stderr, "Failed to read private key from memory\n");
+        return 2;
+    }
+
+    // Initialize the certificate signing structure
+    ptls_openssl_init_sign_certificate(self, pkey);
+    
+    EVP_PKEY_free(pkey);
+
+    return 0;
 }

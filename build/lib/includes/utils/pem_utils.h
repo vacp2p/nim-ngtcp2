@@ -18,10 +18,11 @@
 #define PTLS_PEM_UTILS
 
 #include <picotls.h>
+#include <picotls/openssl.h>
 #include "cred_buffer.h"
 
-int ptls_load_pem_objects_from_memory(ptls_cred_buffer_t *mem, const char *label, ptls_iovec_t *list, size_t list_max, size_t *nb_objects);
-
 int ptls_load_certificates_from_memory(ptls_context_t *ctx, ptls_cred_buffer_t *mem);
+
+int ptls_openssl_init_sign_certificate_with_mem_key(ptls_openssl_sign_certificate_t *self, const void *buf, int len);
 
 #endif /* PTLS_PEM_UTILS */

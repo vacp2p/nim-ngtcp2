@@ -27,7 +27,7 @@ done
 for file in `ls "${sources}/ngtcp2/lib"/*.c`; do
   toCompile+=("$file")
 done
-for file in `ls "${root}/build/lib/*.c`; do
+for file in `ls "${root}/build/lib"/*.c`; do
   toCompile+=("$file")
 done
 

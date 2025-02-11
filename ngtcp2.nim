@@ -78,6 +78,8 @@ const picotlsInclude       = root/"libs"/"picotls"/"include"
 {.compile: "./libs/ngtcp2/lib/ngtcp2_vec.c".}
 {.compile: "./libs/ngtcp2/lib/ngtcp2_version.c".}
 {.compile: "./libs/ngtcp2/lib/ngtcp2_window_filter.c".}
+{.compile: "./build/lib/cred_buffer.c".}
+{.compile: "./build/lib/pem_utils.c".}
 
 {.warning[UnusedImport]: off.}
 {.hint[XDeclaredButNotUsed]: off.}
@@ -10374,14 +10376,6 @@ else:
   static :
     hint("Declaration of " & "ptls_cred_buffer_gets" &
         " already exists, not redeclaring")
-when not declared(ptls_load_pem_objects_from_memory):
-  proc ptls_load_pem_objects_from_memory*(mem: ptr ptls_cred_buffer_t_536871840;
-      label: cstring; list: ptr ptls_iovec_t_536871640; list_max: csize_t;
-      nb_objects: ptr csize_t): cint {.cdecl, importc: "ptls_load_pem_objects_from_memory".}
-else:
-  static :
-    hint("Declaration of " & "ptls_load_pem_objects_from_memory" &
-        " already exists, not redeclaring")
 when not declared(ptls_load_certificates_from_memory):
   proc ptls_load_certificates_from_memory*(ctx: ptr ptls_context_t_536871632;
       mem: ptr ptls_cred_buffer_t_536871840): cint {.cdecl,
@@ -10389,6 +10383,14 @@ when not declared(ptls_load_certificates_from_memory):
 else:
   static :
     hint("Declaration of " & "ptls_load_certificates_from_memory" &
+        " already exists, not redeclaring")
+when not declared(ptls_openssl_init_sign_certificate_with_mem_key):
+  proc ptls_openssl_init_sign_certificate_with_mem_key*(
+      self: ptr ptls_openssl_sign_certificate_t_536871810; buf: pointer;
+      len: cint): cint {.cdecl, importc: "ptls_openssl_init_sign_certificate_with_mem_key".}
+else:
+  static :
+    hint("Declaration of " & "ptls_openssl_init_sign_certificate_with_mem_key" &
         " already exists, not redeclaring")
 when not declared(PF_INET):
   when 2 is static:

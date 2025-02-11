@@ -1,24 +1,2 @@
-*
-!*/
-!*.*
-
-# ignore all cmake build files
-build/*
-!build/lib/
-build/lib/*
-!build/lib/includes/
-build/lib/includes/*
-!build/lib/includes/ngtcp2/
-build/lib/includes/ngtcp2/*
-!build/lib/includes/ngtcp2/version.h
-!build/lib/includes/wincompat.h
-!build/lib/includes/utils/cred_buffer.h
-!build/lib/includes/utils/pem_utils.h
-!build/lib/cred_buffer.c
-!build/lib/pem_utils.c
-
-!LICENSE-MIT
-!LICENSE-APACHEv2
-
 !libs/
 !libs/*
