@@ -7,7 +7,7 @@ if ! [ -x "$(command -v toast)" ]; then
   nimble install -y futhark@0.14.1
 fi
 
-rm ngtcp2.nim
+rm -f ngtcp2.nim
 
 # assemble list of C files to be compiled
 toCompile=(
@@ -27,6 +27,9 @@ done
 for file in `ls "${sources}/ngtcp2/lib"/*.c`; do
   toCompile+=("$file")
 done
+for file in `ls "${root}/build/lib/*.c`; do
+  toCompile+=("$file")
+done
 
 # "/opt/homebrew/Cellar/openssl@3/3.4.0/include" 
 
@@ -40,4 +43,4 @@ for file in "${toCompile[@]}"; do
 done
 
 cat tmp_ngtcp2.nim >> ngtcp2.nim
-rm tmp_ngtcp2.nim
+rm -f tmp_ngtcp2.nim
