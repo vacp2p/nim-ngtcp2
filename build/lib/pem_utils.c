@@ -2,7 +2,10 @@
 #include <picotls.h>
 #include <picotls/pembase64.h>
 #include "utils/pem_utils.h"
-
+#include <openssl/pem.h>
+#include <openssl/evp.h>
+#include <openssl/ec.h>
+#include <openssl/err.h>
 
 static int ptls_compare_separator_line(const char *line, const char *begin_or_end, const char *label)
 {
@@ -128,24 +131,22 @@ int ptls_load_certificates_from_memory(ptls_context_t *ctx, ptls_cred_buffer_t *
 }
 
 
-int ptls_openssl_init_sign_certificate_with_mem_key(ptls_openssl_sign_certificate_t *self, const void *buf, int len) {
+int ptls_openssl_init_sign_certificate_with_mem_key(ptls_openssl_sign_certificate_t *self, const void *buf, int len) {   
     BIO *bio = BIO_new_mem_buf(buf, len);
-    if (!bio) {
-        return 1;
+    if (bio == NULL) {
+        return 8880;
     }
 
-    EVP_PKEY *pkey = PEM_read_bio_PrivateKey(bio, NULL, NULL, NULL);
+    EVP_PKEY *evp_key = PEM_read_bio_PrivateKey(bio, NULL, NULL, NULL);
     BIO_free(bio);
-
-    if (!pkey) {
-        fprintf(stderr, "Failed to read private key from memory\n");
-        return 2;
+    if (evp_key == NULL) {
+        return 8881;
     }
 
     // Initialize the certificate signing structure
-    ptls_openssl_init_sign_certificate(self, pkey);
-    
-    EVP_PKEY_free(pkey);
+    int ret = ptls_openssl_init_sign_certificate(self, evp_key);
 
-    return 0;
+    EVP_PKEY_free(evp_key);
+
+    return ret;
 }
