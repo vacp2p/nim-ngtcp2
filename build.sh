@@ -2,11 +2,6 @@
 root=$(dirname "$0")
 sources=${root}/libs
 
-# install nimterop, if not already installed
-if ! [ -x "$(command -v toast)" ]; then
-  nimble install -y futhark@0.14.1
-fi
-
 rm -f ngtcp2.nim
 
 # assemble list of C files to be compiled
