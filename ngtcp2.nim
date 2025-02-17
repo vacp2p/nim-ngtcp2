@@ -4,6 +4,8 @@ import strformat
 # Socket definitions
 import nativesockets
 
+{.passc: "-DNGTCP2_STATICLIB".}
+
 when defined(windows):
   {.passl: "-lws2_32".}
   {.passc: "-D_WINDOWS".}
@@ -12,6 +14,7 @@ else:
 
 when defined(macosx):
   {.passl: "-L/opt/homebrew/opt/openssl@3/lib -lcrypto".}
+  {.passc: "-I/opt/homebrew/opt/openssl@3/include".}
 else:
   {.passl: "-lcrypto".}
 

@@ -26,8 +26,6 @@ for file in `ls "${root}/build/lib"/*.c`; do
   toCompile+=("$file")
 done
 
-# "/opt/homebrew/Cellar/openssl@3/3.4.0/include" 
-
 nim c --maxLoopIterationsVM:100000000 generate_ngtcp2.nim
 
 # add prelude

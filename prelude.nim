@@ -12,6 +12,7 @@ else:
 
 when defined(macosx):
   {.passl: "-L/opt/homebrew/opt/openssl@3/lib -lcrypto".}
+  {.passc: "-I/opt/homebrew/opt/openssl@3/include".}
 else:
   {.passl: "-lcrypto".}
 
