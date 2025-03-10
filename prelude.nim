@@ -4,6 +4,8 @@ import strformat
 # Socket definitions
 import nativesockets
 
+{.passc: "-DNGTCP2_STATICLIB".}
+
 when defined(windows):
   {.passl: "-lws2_32".}
   {.passc: "-D_WINDOWS".}
@@ -30,4 +32,3 @@ const picotlsInclude       = root/"libs"/"picotls"/"include"
 {.passc: fmt"-I{ngtcp2Lib}".}
 {.passc: fmt"-I{ngtcp2LibIncludes}".}
 {.passc: fmt"-I{picotlsInclude}".}
-

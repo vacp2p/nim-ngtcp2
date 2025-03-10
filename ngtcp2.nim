@@ -4799,21 +4799,21 @@ else:
     hint("Declaration of " & "struct_ngtcp2_version_info" &
         " already exists, not redeclaring")
 when not declared(NGTCP2_VERSION):
-  when "1.6.0" is static:
+  when "1.11.0-DEV" is static:
     const
-      NGTCP2_VERSION* = "1.6.0" ## Generated based on /home/r/vacp2p/nim-ngtcp2/build/lib/includes/ngtcp2/version.h:39:9
+      NGTCP2_VERSION* = "1.11.0-DEV" ## Generated based on /home/r/vacp2p/nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:39:9
   else:
-    let NGTCP2_VERSION* = "1.6.0" ## Generated based on /home/r/vacp2p/nim-ngtcp2/build/lib/includes/ngtcp2/version.h:39:9
+    let NGTCP2_VERSION* = "1.11.0-DEV" ## Generated based on /home/r/vacp2p/nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:39:9
 else:
   static :
     hint("Declaration of " & "NGTCP2_VERSION" &
         " already exists, not redeclaring")
 when not declared(NGTCP2_VERSION_NUM):
-  when 67072 is static:
+  when 68352 is static:
     const
-      NGTCP2_VERSION_NUM* = 67072 ## Generated based on /home/r/vacp2p/nim-ngtcp2/build/lib/includes/ngtcp2/version.h:49:9
+      NGTCP2_VERSION_NUM* = 68352 ## Generated based on /home/r/vacp2p/nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:49:9
   else:
-    let NGTCP2_VERSION_NUM* = 67072 ## Generated based on /home/r/vacp2p/nim-ngtcp2/build/lib/includes/ngtcp2/version.h:49:9
+    let NGTCP2_VERSION_NUM* = 68352 ## Generated based on /home/r/vacp2p/nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:49:9
 else:
   static :
     hint("Declaration of " & "NGTCP2_VERSION_NUM" &
@@ -10413,3 +10413,17 @@ when not declared(PF_INET6):
 else:
   static :
     hint("Declaration of " & "PF_INET6" & " already exists, not redeclaring")
+type
+  ptls_handshake_properties_t_anon0_t* = struct_st_ptls_handshake_properties_t_anon0_t
+  ptls_handshake_properties_t_anon0_t_client_t* =
+    struct_st_ptls_handshake_properties_t_anon0_t_client_t
+  ptls_handshake_properties_t_anon0_t_client_t_negotiated_protocols_t* =
+    struct_st_ptls_handshake_properties_t_anon0_t_client_t_negotiated_protocols_t
+  ptls_handshake_properties_t_anon0_t_client_t_ech_t* =
+    struct_st_ptls_handshake_properties_t_anon0_t_client_t_ech_t
+  ptls_handshake_properties_t_anon0_t_server_t* =
+    struct_st_ptls_handshake_properties_t_anon0_t_server_t
+  ptls_handshake_properties_t_anon0_t_server_t_selected_psk_binder_t* =
+    struct_st_ptls_handshake_properties_t_anon0_t_server_t_selected_psk_binder_t
+  ptls_handshake_properties_t_anon0_t_server_t_cookie_t* =
+    struct_st_ptls_handshake_properties_t_anon0_t_server_t_cookie_t

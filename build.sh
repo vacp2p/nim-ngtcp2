@@ -28,12 +28,18 @@ done
 
 nim c --maxLoopIterationsVM:100000000 generate_ngtcp2.nim
 
-# add prelude
 cat "${root}/prelude.nim" > ngtcp2.nim
+
+echo >> ngtcp2.nim # linebreak
 
 for file in "${toCompile[@]}"; do
     echo "{.compile: \"$file\".}" >> ngtcp2.nim
 done
 
 cat tmp_ngtcp2.nim >> ngtcp2.nim
+
+echo >> ngtcp2.nim # linebreak
+
+cat "${root}/extras.nim" >> ngtcp2.nim
+
 rm -f tmp_ngtcp2.nim
