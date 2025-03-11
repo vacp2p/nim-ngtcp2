@@ -38,5 +38,8 @@ for file in "${toCompile[@]}"; do
     echo "{.compile: \"$file\".}" >> ngtcp2.nim
 done
 
+# removes absolute path prefix from comments "Generated based on"
+sed -i 's/Generated based on.*\/nim-ngtcp2\/libs\//Generated based on \/nim-ngtcp2\/libs\//g' tmp_ngtcp2.nim
+
 cat tmp_ngtcp2.nim >> ngtcp2.nim
 rm -f tmp_ngtcp2.nim
