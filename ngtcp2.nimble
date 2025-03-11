@@ -7,4 +7,3 @@ installDirs = @["libs", "build"]
 installFiles = @["ngtcp2.nim"]
 
 requires "nim >= 1.6.0"
-requires "futhark >= 0.15.0"
