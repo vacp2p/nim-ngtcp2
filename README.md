@@ -16,7 +16,8 @@ Updating to a newer version
 
 Follow these steps when updating the wrapper to a newer version of ngtcp2:
 
-   1. update the git submodule in `sources/` to point to the new version
-   2. run `build.sh` (requires Nim and CMake to be installed)
-   3. update the version in `ngtcp2.nimble`
-   4. commit the changes
+- update the git submodule in `libs/` to point to the new version
+  - `git submodule update --init --recursive`
+- run `build.sh` (requires Nim, CMake and clang to be installed)
+- increase the `version` property in the `ngtcp2.nimble` file
+- commit the changes

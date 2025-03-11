@@ -26,6 +26,9 @@ for file in `ls "${root}/build/lib"/*.c`; do
   toCompile+=("$file")
 done
 
+# futhark is required by generate_ngtcp2.nim
+nimble install futhark@0.15.0
+
 nim c --maxLoopIterationsVM:100000000 generate_ngtcp2.nim
 
 # add prelude
