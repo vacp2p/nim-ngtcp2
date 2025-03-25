@@ -9,6 +9,7 @@ import nativesockets
 when defined(windows):
   {.passl: "-lws2_32".}
   {.passc: "-D_WINDOWS".}
+  {.passc: "-D__CRT__NO_INLINE".}
 else:
   {.passc: "-DHAVE_UNISTD_H".}
 
