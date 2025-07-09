@@ -5,8 +5,11 @@ when not defined(windows):
   else:
     switch("gcc.linkerexe", "g++")
 
---styleCheck:usages
+--styleCheck:
+  usages
 if (NimMajor, NimMinor) < (1, 6):
-  --styleCheck:hint
+  --styleCheck:
+    hint
 else:
-  --styleCheck:error
+  --styleCheck:
+    error

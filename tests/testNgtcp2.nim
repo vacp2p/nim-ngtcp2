@@ -17,5 +17,5 @@ test "boringssl_instantiation":
     clientMethod = TLS_client_method()
     ssl_ctx = SSL_CTX_new(clientMethod)
     ssl = SSL_new(ssl_ctx)
-  
+
   check ssl != nil
