@@ -7,3 +7,23 @@ installDirs = @["libs", "build"]
 installFiles = @["ngtcp2.nim"]
 
 requires "nim >= 1.6.0"
+
+template build() =
+  when defined(windows):
+    echo "TODO"
+  else:
+    exec "./build_libs.sh"
+
+before install:
+  build()
+
+task format, "Format nim code using nph":
+  exec "nimble install nph"
+  exec "nph ."
+
+task test, "Run tests":
+  build()
+  when defined(windows):
+    exec "nim c -d:nimDebugDlOpen -r --threads:on tests/testNgtcp2.nim"
+  else:
+    exec "nim c -r --threads:on tests/testNgtcp2.nim"
