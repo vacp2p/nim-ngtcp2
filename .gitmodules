@@ -1,3 +1,6 @@
 [submodule "libs/ngtcp2"]
 	path = libs/ngtcp2
 	url = https://github.com/ngtcp2/ngtcp2
+[submodule "libs/aws-lc"]
+	path = libs/aws-lc
+	url = https://github.com/aws/aws-lc
