@@ -8,14 +8,11 @@ installFiles = @["ngtcp2.nim"]
 
 requires "nim >= 1.6.0"
 
-import os, system
-
 template build() =
   when defined(windows):
     echo "TODO"
   else:
     let targetCpu = getEnv("TARGET_CPU", hostCPU)
-    echo "TARGET CPU!!!!!!!!", targetCpu
     if targetCpu == "i386":
       exec "./build_libs.sh --i386"
     else:
