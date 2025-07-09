@@ -90,6 +90,7 @@ jobs:
       - name: Install deps
         if: ${{ steps.deps-cache.outputs.cache-hit != 'true' }}
         run: |
+          TARGET_CPU=${{ matrix.platform.cpu }}
           nimble install
 
       - name: Install multilib support
@@ -118,5 +119,6 @@ jobs:
           nimble --version
           gcc --version
 
+          TARGET_CPU=${{ matrix.platform.cpu }}
           NIMFLAGS="${NIMFLAGS} --mm:${{ matrix.nim.memory_management }}"
           nimble test --styleCheck:off --verbose --debug
