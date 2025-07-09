@@ -10,7 +10,7 @@ requires "nim >= 1.6.0"
 
 template build() =
   when defined(windows):
-    echo "TODO"
+    exec "./build_libs.sh"
   else:
     let targetCpu = getEnv("TARGET_CPU", hostCPU)
     if targetCpu == "i386":
