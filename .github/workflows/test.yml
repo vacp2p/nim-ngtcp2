@@ -92,6 +92,12 @@ jobs:
         run: |
           nimble install
 
+      - name: Install multilib support
+        if: ${{ matrix.platform.cpu == 'i386' && contains(matrix.platform.os, 'linux') }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-multilib g++-multilib
+
       - name: Use gcc 14
         if : ${{ matrix.platform.os == 'linux-gcc-14'}}
         run: |
