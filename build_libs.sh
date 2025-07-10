@@ -42,7 +42,10 @@ EOF
 fi
 
 # build aws-lc
+echo "TEST1"
 cmake -S ./libs/aws-lc -B "$tmpdir" "${cmake_args[@]}"
-cmake --build "$tmpdir" --target all
+echo "TEST2"
+cmake --build $tmpdir --target all
+echo "TEST3"
 cp "$tmpdir"/ssl/libssl.a ./build/.
 cp "$tmpdir"/crypto/libcrypto.a ./build/.
