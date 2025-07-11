@@ -43,9 +43,13 @@ fi
 
 # build aws-lc
 echo "TEST1"
-cmake -S ./libs/aws-lc -B "$tmpdir" "${cmake_args[@]}"
+mkdir -p ./libs/aws-lc/build
+pushd ./libs/aws-lc/build
+echo "TEST4"
+cmake ../ "${cmake_args[@]}"
 echo "TEST2"
-cmake --build $tmpdir --target all
+make
 echo "TEST3"
-cp "$tmpdir"/ssl/libssl.a ./build/.
-cp "$tmpdir"/crypto/libcrypto.a ./build/.
+popd
+cp ./libs/aws-lc/build/ssl/libssl.a ./build/.
+cp ./libs/aws-lc/build/crypto/libcrypto.a ./build/.
