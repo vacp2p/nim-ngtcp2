@@ -33,3 +33,7 @@ const picotlsInclude       = root/"libs"/"picotls"/"include"
 {.passc: fmt"-I{ngtcp2Lib}".}
 {.passc: fmt"-I{ngtcp2LibIncludes}".}
 {.passc: fmt"-I{picotlsInclude}".}
+
+# QuicTLS/OpenSSL crypto support
+{.passc: "-DNGTCP2_CRYPTO_QUICTLS".}
+{.passc: "-I/usr/include/openssl".}
