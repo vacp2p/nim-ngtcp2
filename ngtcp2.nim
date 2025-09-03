@@ -20,12 +20,12 @@ else:
   {.passl: "-lcrypto".}
 
 const root = currentSourcePath.parentDir
-const libIncludes          = root/"build"/"lib"/"includes"
-const ngtcp2Crypto         = root/"libs"/"ngtcp2"/"crypto"
-const ngtcp2CryptoIncludes = root/"libs"/"ngtcp2"/"crypto"/"includes"
-const ngtcp2Lib            = root/"libs"/"ngtcp2"/"lib"
-const ngtcp2LibIncludes    = root/"libs"/"ngtcp2"/"lib"/"includes"
-const picotlsInclude       = root/"libs"/"picotls"/"include"
+const libIncludes = root / "build" / "lib" / "includes"
+const ngtcp2Crypto = root / "libs" / "ngtcp2" / "crypto"
+const ngtcp2CryptoIncludes = root / "libs" / "ngtcp2" / "crypto" / "includes"
+const ngtcp2Lib = root / "libs" / "ngtcp2" / "lib"
+const ngtcp2LibIncludes = root / "libs" / "ngtcp2" / "lib" / "includes"
+const picotlsInclude = root / "libs" / "picotls" / "include"
 
 {.passc: fmt"-I{libIncludes}".}
 {.passc: fmt"-I{ngtcp2Crypto}".}
@@ -34,9 +34,10 @@ const picotlsInclude       = root/"libs"/"picotls"/"include"
 {.passc: fmt"-I{ngtcp2LibIncludes}".}
 {.passc: fmt"-I{picotlsInclude}".}
 
-# QuicTLS/OpenSSL crypto support
-{.passc: "-DNGTCP2_CRYPTO_QUICTLS".}
-{.passc: "-I/usr/include/openssl".}
+when defined(ngtcp2_enable_quictls):
+  # QuicTLS/OpenSSL crypto support
+  {.localpassc: "-DNGTCP2_CRYPTO_QUICTLS".}
+  {.localpassc: "-I/usr/include/openssl".}
 
 {.compile: "./libs/picotls/picotlsvs/picotls/wintimeofday.c".}
 {.compile: "./libs/picotls/lib/pembase64.c".}
@@ -1056,11 +1057,11 @@ type
     handshake_properties*: ptls_handshake_properties_t_553648999
   ngtcp2_crypto_picotls_ctx_553649050 = struct_ngtcp2_crypto_picotls_ctx_553649049 ## Generated based on /nim-ngtcp2/libs/ngtcp2/crypto/includes/ngtcp2/ngtcp2_crypto_picotls.h:53:3
   struct_ptls_cred_buffer_s_553649052 {.pure, inheritable, bycopy.} = object
-    base*: cstring           ## Generated based on /home/andrew/opensource/Vac/nim-ngtcp2/build/lib/includes/utils/cred_buffer.h:8:16
+    base*: cstring           ## Generated based on /home/r/vacp2p/nim-ngtcp2/build/lib/includes/utils/cred_buffer.h:8:16
     len*: csize_t
     off*: csize_t
     owns_base*: cint
-  ptls_cred_buffer_t_553649054 = struct_ptls_cred_buffer_s_553649053 ## Generated based on /home/andrew/opensource/Vac/nim-ngtcp2/build/lib/includes/utils/cred_buffer.h:16:3
+  ptls_cred_buffer_t_553649054 = struct_ptls_cred_buffer_s_553649053 ## Generated based on /home/r/vacp2p/nim-ngtcp2/build/lib/includes/utils/cred_buffer.h:16:3
   sa_family_t_553649056 = cushort ## Generated based on /usr/include/x86_64-linux-gnu/bits/sockaddr.h:28:28
   in_port_t_553649058 = uint16 ## Generated based on /usr/include/netinet/in.h:125:18
   compiler_socklen_t_553649060 = cuint ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:210:23
@@ -4804,21 +4805,21 @@ else:
     hint("Declaration of " & "struct_ngtcp2_ccerr" &
         " already exists, not redeclaring")
 when not declared(NGTCP2_VERSION):
-  when "1.6.0" is static:
+  when "1.11.0-DEV" is static:
     const
-      NGTCP2_VERSION* = "1.6.0" ## Generated based on /home/andrew/opensource/Vac/nim-ngtcp2/build/lib/includes/ngtcp2/version.h:39:9
+      NGTCP2_VERSION* = "1.11.0-DEV" ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:39:9
   else:
-    let NGTCP2_VERSION* = "1.6.0" ## Generated based on /home/andrew/opensource/Vac/nim-ngtcp2/build/lib/includes/ngtcp2/version.h:39:9
+    let NGTCP2_VERSION* = "1.11.0-DEV" ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:39:9
 else:
   static :
     hint("Declaration of " & "NGTCP2_VERSION" &
         " already exists, not redeclaring")
 when not declared(NGTCP2_VERSION_NUM):
-  when 67072 is static:
+  when 68352 is static:
     const
-      NGTCP2_VERSION_NUM* = 67072 ## Generated based on /home/andrew/opensource/Vac/nim-ngtcp2/build/lib/includes/ngtcp2/version.h:49:9
+      NGTCP2_VERSION_NUM* = 68352 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:49:9
   else:
-    let NGTCP2_VERSION_NUM* = 67072 ## Generated based on /home/andrew/opensource/Vac/nim-ngtcp2/build/lib/includes/ngtcp2/version.h:49:9
+    let NGTCP2_VERSION_NUM* = 68352 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:49:9
 else:
   static :
     hint("Declaration of " & "NGTCP2_VERSION_NUM" &
@@ -10433,60 +10434,83 @@ type
   ptls_handshake_properties_t_anon0_t_server_t_cookie_t* =
     struct_st_ptls_handshake_properties_t_anon0_t_server_t_cookie_t
 
-# OpenSSL/QuicTLS crypto support
-# OpenSSL/QuicTLS type definitions
-type
-  SSL_CTX* = pointer
-  OSSL_ENCRYPTION_LEVEL* = enum
-    OSSL_ENCRYPTION_LEVEL_INITIAL = 0
-    OSSL_ENCRYPTION_LEVEL_EARLY_DATA = 1
-    OSSL_ENCRYPTION_LEVEL_HANDSHAKE = 2
-    OSSL_ENCRYPTION_LEVEL_APPLICATION = 3
+when defined(ngtcp2_enable_quictls):
+  # OpenSSL/QuicTLS crypto support
+  # OpenSSL/QuicTLS type definitions
+  type
+    SSL_CTX* = pointer
+    OSSL_ENCRYPTION_LEVEL* = enum
+      OSSL_ENCRYPTION_LEVEL_INITIAL = 0
+      OSSL_ENCRYPTION_LEVEL_EARLY_DATA = 1
+      OSSL_ENCRYPTION_LEVEL_HANDSHAKE = 2
+      OSSL_ENCRYPTION_LEVEL_APPLICATION = 3
 
-# ngtcp2_crypto_quictls error constants
-const
-  NGTCP2_CRYPTO_QUICTLS_ERR_TLS_WANT_X509_LOOKUP* = -10001
-  NGTCP2_CRYPTO_QUICTLS_ERR_TLS_WANT_CLIENT_HELLO_CB* = -10002
+  # ngtcp2_crypto_quictls error constants
+  const
+    NGTCP2_CRYPTO_QUICTLS_ERR_TLS_WANT_X509_LOOKUP* = -10001
+    NGTCP2_CRYPTO_QUICTLS_ERR_TLS_WANT_CLIENT_HELLO_CB* = -10002
 
-# ngtcp2_crypto_quictls function bindings
-when not declared(ngtcp2_crypto_quictls_init):
-  proc ngtcp2_crypto_quictls_init*(): cint {.
-      cdecl, importc: "ngtcp2_crypto_quictls_init".}
-else:
-  static :
-    hint("Declaration of " & "ngtcp2_crypto_quictls_init" &
-        " already exists, not redeclaring")
+  # ngtcp2_crypto_quictls function bindings
+  when not declared(ngtcp2_crypto_quictls_init):
+    proc ngtcp2_crypto_quictls_init*(): cint {.
+      cdecl, importc: "ngtcp2_crypto_quictls_init"
+    .}
 
-when not declared(ngtcp2_crypto_quictls_from_ossl_encryption_level):
-  proc ngtcp2_crypto_quictls_from_ossl_encryption_level*(
-      ossl_level: OSSL_ENCRYPTION_LEVEL): ngtcp2_encryption_level_553648745 {.
-      cdecl, importc: "ngtcp2_crypto_quictls_from_ossl_encryption_level".}
-else:
-  static :
-    hint("Declaration of " & "ngtcp2_crypto_quictls_from_ossl_encryption_level" &
-        " already exists, not redeclaring")
+  else:
+    static:
+      hint(
+        "Declaration of " & "ngtcp2_crypto_quictls_init" &
+          " already exists, not redeclaring"
+      )
 
-when not declared(ngtcp2_crypto_quictls_from_ngtcp2_encryption_level):
-  proc ngtcp2_crypto_quictls_from_ngtcp2_encryption_level*(
-      encryption_level: ngtcp2_encryption_level_553648745): OSSL_ENCRYPTION_LEVEL {.
-      cdecl, importc: "ngtcp2_crypto_quictls_from_ngtcp2_encryption_level".}
-else:
-  static :
-    hint("Declaration of " & "ngtcp2_crypto_quictls_from_ngtcp2_encryption_level" &
-        " already exists, not redeclaring")
+  when not declared(ngtcp2_crypto_quictls_from_ossl_encryption_level):
+    proc ngtcp2_crypto_quictls_from_ossl_encryption_level*(
+      ossl_level: OSSL_ENCRYPTION_LEVEL
+    ): ngtcp2_encryption_level_553648745 {.
+      cdecl, importc: "ngtcp2_crypto_quictls_from_ossl_encryption_level"
+    .}
 
-when not declared(ngtcp2_crypto_quictls_configure_server_context):
-  proc ngtcp2_crypto_quictls_configure_server_context*(ssl_ctx: SSL_CTX): cint {.
-      cdecl, importc: "ngtcp2_crypto_quictls_configure_server_context".}
-else:
-  static :
-    hint("Declaration of " & "ngtcp2_crypto_quictls_configure_server_context" &
-        " already exists, not redeclaring")
+  else:
+    static:
+      hint(
+        "Declaration of " & "ngtcp2_crypto_quictls_from_ossl_encryption_level" &
+          " already exists, not redeclaring"
+      )
 
-when not declared(ngtcp2_crypto_quictls_configure_client_context):
-  proc ngtcp2_crypto_quictls_configure_client_context*(ssl_ctx: SSL_CTX): cint {.
-      cdecl, importc: "ngtcp2_crypto_quictls_configure_client_context".}
-else:
-  static :
-    hint("Declaration of " & "ngtcp2_crypto_quictls_configure_client_context" &
-        " already exists, not redeclaring")
+  when not declared(ngtcp2_crypto_quictls_from_ngtcp2_encryption_level):
+    proc ngtcp2_crypto_quictls_from_ngtcp2_encryption_level*(
+      encryption_level: ngtcp2_encryption_level_553648745
+    ): OSSL_ENCRYPTION_LEVEL {.
+      cdecl, importc: "ngtcp2_crypto_quictls_from_ngtcp2_encryption_level"
+    .}
+
+  else:
+    static:
+      hint(
+        "Declaration of " & "ngtcp2_crypto_quictls_from_ngtcp2_encryption_level" &
+          " already exists, not redeclaring"
+      )
+
+  when not declared(ngtcp2_crypto_quictls_configure_server_context):
+    proc ngtcp2_crypto_quictls_configure_server_context*(
+      ssl_ctx: SSL_CTX
+    ): cint {.cdecl, importc: "ngtcp2_crypto_quictls_configure_server_context".}
+
+  else:
+    static:
+      hint(
+        "Declaration of " & "ngtcp2_crypto_quictls_configure_server_context" &
+          " already exists, not redeclaring"
+      )
+
+  when not declared(ngtcp2_crypto_quictls_configure_client_context):
+    proc ngtcp2_crypto_quictls_configure_client_context*(
+      ssl_ctx: SSL_CTX
+    ): cint {.cdecl, importc: "ngtcp2_crypto_quictls_configure_client_context".}
+
+  else:
+    static:
+      hint(
+        "Declaration of " & "ngtcp2_crypto_quictls_configure_client_context" &
+          " already exists, not redeclaring"
+      )
