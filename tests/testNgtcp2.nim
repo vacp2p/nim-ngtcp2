@@ -23,16 +23,17 @@ test "ptls_instantiation":
   var tls: ptr ptls_t = ptls_client_new(addr ctx)
   check tls != nil
 
-test "QuicTLS bindings":
-  # Test error constants
-  check NGTCP2_CRYPTO_QUICTLS_ERR_TLS_WANT_X509_LOOKUP == -10001
-  check NGTCP2_CRYPTO_QUICTLS_ERR_TLS_WANT_CLIENT_HELLO_CB == -10002
+when defined(ngtcp2_enable_quictls):
+  test "QuicTLS bindings":
+    # Test error constants
+    check NGTCP2_CRYPTO_QUICTLS_ERR_TLS_WANT_X509_LOOKUP == -10001
+    check NGTCP2_CRYPTO_QUICTLS_ERR_TLS_WANT_CLIENT_HELLO_CB == -10002
 
-  # Test OSSL_ENCRYPTION_LEVEL enum values
-  check ord(OSSL_ENCRYPTION_LEVEL_INITIAL) == 0
-  check ord(OSSL_ENCRYPTION_LEVEL_EARLY_DATA) == 1
-  check ord(OSSL_ENCRYPTION_LEVEL_HANDSHAKE) == 2
-  check ord(OSSL_ENCRYPTION_LEVEL_APPLICATION) == 3
+    # Test OSSL_ENCRYPTION_LEVEL enum values
+    check ord(OSSL_ENCRYPTION_LEVEL_INITIAL) == 0
+    check ord(OSSL_ENCRYPTION_LEVEL_EARLY_DATA) == 1
+    check ord(OSSL_ENCRYPTION_LEVEL_HANDSHAKE) == 2
+    check ord(OSSL_ENCRYPTION_LEVEL_APPLICATION) == 3
 
-  # Test that SSL_CTX type is properly defined as pointer
-  check sizeof(SSL_CTX) == sizeof(pointer)
+    # Test that SSL_CTX type is properly defined as pointer
+    check sizeof(SSL_CTX) == sizeof(pointer)
