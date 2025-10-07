@@ -6,25 +6,26 @@ rm -f ngtcp2.nim
 
 # assemble list of C files to be compiled
 toCompile=(
-  "${sources}/picotls/picotlsvs/picotls/wintimeofday.c"
-  "${sources}/picotls/lib/pembase64.c"
-  "${sources}/picotls/lib/hpke.c"
-  "${sources}/picotls/lib/picotls.c"
-  "${sources}/picotls/lib/openssl.c"
+  # "${sources}/path/to/file.c"
 )
 
 for file in `ls "${sources}/ngtcp2/crypto"/*.c`; do
   toCompile+=("$file")
 done
-for file in `ls "${sources}/ngtcp2/crypto/picotls"/*.c`; do
+for file in `ls "${sources}/ngtcp2/crypto/boringssl"/*.c`; do
   toCompile+=("$file")
 done
 for file in `ls "${sources}/ngtcp2/lib"/*.c`; do
   toCompile+=("$file")
 done
-for file in `ls "${root}/build/lib"/*.c`; do
-  toCompile+=("$file")
-done
+
+# build aws-lc
+# TODO: look into building this without requiring CMAKE
+tmpdir=$(mktemp -d)
+cmake -S ./libs/aws-lc -B "$tmpdir" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DBUILD_TESTING=OFF -DBUILD_TOOL=OFF -DDISABLE_PERL=ON -DDISABLE_GO=ON -DOPENSSL_NO_ASM=ON
+cmake --build "$tmpdir" --target all
+cp "$tmpdir"/ssl/libssl.a ./build/.
+cp "$tmpdir"/crypto/libcrypto.a ./build/.
 
 # futhark is required by generate_ngtcp2.nim
 nimble install futhark@0.15.0
