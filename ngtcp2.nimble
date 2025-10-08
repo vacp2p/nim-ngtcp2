@@ -4,22 +4,9 @@ author = "Status Research & Development GmbH"
 description = "Nim wrapper around the ngtcp2 library"
 license = "MIT"
 installDirs = @["libs", "build"]
-installFiles = @["ngtcp2.nim"]
+installFiles = @["ngtcp2.nim", "awslc.nim"]
 
-requires "nim >= 1.6.0"
-
-template build() =
-  when defined(windows):
-    exec "./build_libs.sh"
-  else:
-    let targetCpu = getEnv("TARGET_CPU", hostCPU)
-    if targetCpu == "i386":
-      exec "./build_libs.sh --i386"
-    else:
-      exec "./build_libs.sh"
-
-before install:
-  build()
+requires "nim >= 2.0.0"
 
 task format, "Format nim code using nph":
   exec "nimble install nph"
@@ -27,6 +14,6 @@ task format, "Format nim code using nph":
 
 task test, "Run tests":
   when defined(windows):
-    exec "nim c -d:nimDebugDlOpen -r --threads:on tests/testNgtcp2.nim"
+    exec "nim cpp -d:nimDebugDlOpen -r --threads:on tests/testNgtcp2.nim"
   else:
-    exec "nim c -r --threads:on tests/testNgtcp2.nim"
+    exec "nim cpp -r --threads:on tests/testNgtcp2.nim"
