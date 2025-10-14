@@ -126,43 +126,43 @@ type
     NGTCP2_CCERR_TYPE_VERSION_NEGOTIATION = 2, NGTCP2_CCERR_TYPE_IDLE_CLOSE = 3,
     NGTCP2_CCERR_TYPE_DROP_CONN = 4, NGTCP2_CCERR_TYPE_RETRY = 5
 type
-  enum_fips_counter_t_553649257* {.size: sizeof(cuint).} = enum
+  enum_fips_counter_t_553649259* {.size: sizeof(cuint).} = enum
     fips_counter_evp_aes_128_gcm = 0, fips_counter_evp_aes_256_gcm = 1,
     fips_counter_evp_aes_128_ctr = 2, fips_counter_evp_aes_256_ctr = 3
 when not declared(fips_counter_max):
   const
-    fips_counter_max* = enum_fips_counter_t_553649257.fips_counter_evp_aes_256_ctr
+    fips_counter_max* = enum_fips_counter_t_553649259.fips_counter_evp_aes_256_ctr
 else:
   static :
     hint("Declaration of " & "fips_counter_max" &
         " already exists, not redeclaring")
 type
-  enum_evp_aead_direction_t_553649333* {.size: sizeof(cuint).} = enum
+  enum_evp_aead_direction_t_553649335* {.size: sizeof(cuint).} = enum
     evp_aead_open = 0, evp_aead_seal = 1
 type
-  enum_bn_primality_result_t_553649347* {.size: sizeof(cuint).} = enum
+  enum_bn_primality_result_t_553649349* {.size: sizeof(cuint).} = enum
     bn_probably_prime = 0, bn_composite = 1, bn_non_prime_power_composite = 2
 type
-  enum_point_conversion_form_t_553649417* {.size: sizeof(cuint).} = enum
+  enum_point_conversion_form_t_553649419* {.size: sizeof(cuint).} = enum
     POINT_CONVERSION_COMPRESSED = 2, POINT_CONVERSION_UNCOMPRESSED = 4,
     POINT_CONVERSION_HYBRID = 6
 type
-  enum_ssl_private_key_result_t_553649689* {.size: sizeof(cuint).} = enum
+  enum_ssl_private_key_result_t_553649691* {.size: sizeof(cuint).} = enum
     ssl_private_key_success = 0, ssl_private_key_retry = 1,
     ssl_private_key_failure = 2
 type
-  enum_ssl_ticket_aead_result_t_553649705* {.size: sizeof(cuint).} = enum
+  enum_ssl_ticket_aead_result_t_553649707* {.size: sizeof(cuint).} = enum
     ssl_ticket_aead_success = 0, ssl_ticket_aead_retry = 1,
     ssl_ticket_aead_ignore_ticket = 2, ssl_ticket_aead_error = 3
 type
-  enum_ssl_verify_result_t_553649707* {.size: sizeof(cuint).} = enum
+  enum_ssl_verify_result_t_553649709* {.size: sizeof(cuint).} = enum
     ssl_verify_ok = 0, ssl_verify_invalid = 1, ssl_verify_retry = 2
 type
-  enum_ssl_encryption_level_t_553649725* {.size: sizeof(cuint).} = enum
+  enum_ssl_encryption_level_t_553649727* {.size: sizeof(cuint).} = enum
     ssl_encryption_initial = 0, ssl_encryption_early_data = 1,
     ssl_encryption_handshake = 2, ssl_encryption_application = 3
 type
-  enum_ssl_early_data_reason_t_553649727* {.size: sizeof(cuint).} = enum
+  enum_ssl_early_data_reason_t_553649729* {.size: sizeof(cuint).} = enum
     ssl_early_data_unknown = 0, ssl_early_data_disabled = 1,
     ssl_early_data_accepted = 2, ssl_early_data_protocol_version = 3,
     ssl_early_data_peer_declined = 4, ssl_early_data_no_session_offered = 5,
@@ -175,22 +175,22 @@ type
     ssl_early_data_unsupported_with_custom_extension = 15
 when not declared(ssl_early_data_reason_max_value):
   const
-    ssl_early_data_reason_max_value* = enum_ssl_early_data_reason_t_553649727.ssl_early_data_unsupported_with_custom_extension
+    ssl_early_data_reason_max_value* = enum_ssl_early_data_reason_t_553649729.ssl_early_data_unsupported_with_custom_extension
 else:
   static :
     hint("Declaration of " & "ssl_early_data_reason_max_value" &
         " already exists, not redeclaring")
 type
-  enum_ssl_renegotiate_mode_t_553649729* {.size: sizeof(cuint).} = enum
+  enum_ssl_renegotiate_mode_t_553649731* {.size: sizeof(cuint).} = enum
     ssl_renegotiate_never = 0, ssl_renegotiate_once = 1,
     ssl_renegotiate_freely = 2, ssl_renegotiate_ignore = 3,
     ssl_renegotiate_explicit = 4
 type
-  enum_ssl_select_cert_result_t_553649731* {.size: sizeof(cint).} = enum
+  enum_ssl_select_cert_result_t_553649733* {.size: sizeof(cint).} = enum
     ssl_select_cert_error = -1, ssl_select_cert_retry = 0,
     ssl_select_cert_success = 1
 type
-  enum_OSSL_HANDSHAKE_STATE_553649733* {.size: sizeof(cuint).} = enum
+  enum_OSSL_HANDSHAKE_STATE_553649735* {.size: sizeof(cuint).} = enum
     TLS_ST_OK = 3, TLS_ST_BEFORE = 12288
 when not declared(struct_ssl_st):
   type
@@ -737,13 +737,6 @@ else:
   static :
     hint("Declaration of " & "struct_stack_st_X509_EXTENSION" &
         " already exists, not redeclaring")
-when not declared(struct_rand_meth_st):
-  type
-    struct_rand_meth_st* = object
-else:
-  static :
-    hint("Declaration of " & "struct_rand_meth_st" &
-        " already exists, not redeclaring")
 when not declared(struct_rsa_meth_st):
   type
     struct_rsa_meth_st* = object
@@ -1101,23 +1094,23 @@ type
   ngtcp2_pkt_stateless_reset_553648638 = struct_ngtcp2_pkt_stateless_reset_553648637 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/ngtcp2.h:1191:3
   ngtcp2_sockaddr_553648640 = struct_sockaddr_553648643 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/ngtcp2.h:1293:25
   struct_sockaddr_553648642 {.pure, inheritable, bycopy.} = object
-    sa_family*: sa_family_t_553649754 ## Generated based on /usr/include/x86_64-linux-gnu/bits/socket.h:183:8
+    sa_family*: sa_family_t_553649756 ## Generated based on /usr/include/x86_64-linux-gnu/bits/socket.h:183:8
     sa_data*: array[14'i64, cschar]
   ngtcp2_sockaddr_in_553648644 = struct_sockaddr_in_553648647 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/ngtcp2.h:1301:28
   struct_sockaddr_in_553648646 {.pure, inheritable, bycopy.} = object
-    sin_family*: sa_family_t_553649754 ## Generated based on /usr/include/netinet/in.h:247:8
-    sin_port*: in_port_t_553649756
-    sin_addr*: struct_in_addr_553649758
+    sin_family*: sa_family_t_553649756 ## Generated based on /usr/include/netinet/in.h:247:8
+    sin_port*: in_port_t_553649758
+    sin_addr*: struct_in_addr_553649760
     sin_zero*: array[8'i64, uint8]
   ngtcp2_sockaddr_in6_553648648 = struct_sockaddr_in6_553648651 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/ngtcp2.h:1309:29
   struct_sockaddr_in6_553648650 {.pure, inheritable, bycopy.} = object
-    sin6_family*: sa_family_t_553649754 ## Generated based on /usr/include/netinet/in.h:262:8
-    sin6_port*: in_port_t_553649756
+    sin6_family*: sa_family_t_553649756 ## Generated based on /usr/include/netinet/in.h:262:8
+    sin6_port*: in_port_t_553649758
     sin6_flowinfo*: uint32
-    sin6_addr*: struct_in6_addr_553649760
+    sin6_addr*: struct_in6_addr_553649762
     sin6_scope_id*: uint32
   ngtcp2_socklen_553648652 = socklen_t_553648655 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/ngtcp2.h:1317:19
-  socklen_t_553648654 = compiler_socklen_t_553649762 ## Generated based on /usr/include/x86_64-linux-gnu/bits/socket.h:33:21
+  socklen_t_553648654 = compiler_socklen_t_553649764 ## Generated based on /usr/include/x86_64-linux-gnu/bits/socket.h:33:21
   union_ngtcp2_sockaddr_union_553648656 {.union, bycopy.} = object
     sa*: ngtcp2_sockaddr_553648641 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/ngtcp2.h:1326:15
     in_field*: ngtcp2_sockaddr_in_553648645
@@ -1490,14 +1483,14 @@ type
     utf8string*: ptr ASN1_UTF8STRING_553648902
     set*: ptr ASN1_STRING_553648892
     sequence*: ptr ASN1_STRING_553648892
-    asn1_value*: ptr ASN1_VALUE_553649356
+    asn1_value*: ptr ASN1_VALUE_553649358
   struct_asn1_type_st_553648907 {.pure, inheritable, bycopy.} = object
     type_field*: cint        ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1602:8
     value*: struct_asn1_type_st_value_t
   AUTHORITY_KEYID_553648909 = struct_AUTHORITY_KEYID_st_553648912 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:314:35
   struct_AUTHORITY_KEYID_st_553648911 {.pure, inheritable, bycopy.} = object
     keyid*: ptr ASN1_OCTET_STRING_553648888 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5279:8
-    issuer*: ptr GENERAL_NAMES_553649452
+    issuer*: ptr GENERAL_NAMES_553649454
     serial*: ptr ASN1_INTEGER_553648886
   BASIC_CONSTRAINTS_553648913 = struct_BASIC_CONSTRAINTS_st_553648916 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:315:37
   struct_BASIC_CONSTRAINTS_st_553648915 {.pure, inheritable, bycopy.} = object
@@ -1505,9 +1498,9 @@ type
     pathlen*: ptr ASN1_INTEGER_553648886
   DIST_POINT_553648917 = struct_DIST_POINT_st_553648920 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:316:30
   struct_DIST_POINT_st_553648919 {.pure, inheritable, bycopy.} = object
-    distpoint*: ptr DIST_POINT_NAME_553649604 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5267:8
+    distpoint*: ptr DIST_POINT_NAME_553649606 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5267:8
     reasons*: ptr ASN1_BIT_STRING_553648872
-    CRLissuer*: ptr GENERAL_NAMES_553649452
+    CRLissuer*: ptr GENERAL_NAMES_553649454
   DSA_SIG_553648921 = struct_DSA_SIG_st_553648924 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:317:27
   struct_DSA_SIG_st_553648923 {.pure, inheritable, bycopy.} = object
     r*: ptr BIGNUM_553648976 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/dsa.h:200:8
@@ -1515,12 +1508,12 @@ type
   GENERAL_NAME_553648925 = struct_GENERAL_NAME_st_553648928 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:318:32
   struct_GENERAL_NAME_st_d_t {.union, bycopy.} = object
     ptr_field*: cstring
-    otherName*: ptr OTHERNAME_553649498
+    otherName*: ptr OTHERNAME_553649500
     rfc822Name*: ptr ASN1_IA5STRING_553648884
     dNSName*: ptr ASN1_IA5STRING_553648884
     x400Address*: ptr ASN1_STRING_553648892
     directoryName*: ptr X509_NAME_553648964
-    ediPartyName*: ptr EDIPARTYNAME_553649502
+    ediPartyName*: ptr EDIPARTYNAME_553649504
     uniformResourceIdentifier*: ptr ASN1_IA5STRING_553648884
     iPAddress*: ptr ASN1_OCTET_STRING_553648888
     registeredID*: ptr ASN1_OBJECT_553648868
@@ -1533,7 +1526,7 @@ type
     d*: struct_GENERAL_NAME_st_d_t
   ISSUING_DIST_POINT_553648929 = struct_ISSUING_DIST_POINT_st_553648932 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:319:38
   struct_ISSUING_DIST_POINT_st_553648931 {.pure, inheritable, bycopy.} = object
-    distpoint*: ptr DIST_POINT_NAME_553649604 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5361:8
+    distpoint*: ptr DIST_POINT_NAME_553649606 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5361:8
     onlyuser*: ASN1_BOOLEAN_553648864
     onlyCA*: ASN1_BOOLEAN_553648864
     onlysomereasons*: ptr ASN1_BIT_STRING_553648872
@@ -1562,10 +1555,10 @@ type
   X509_EXTENSION_553648955 = struct_X509_extension_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:327:34
   X509_INFO_553648957 = struct_X509_info_st_553648960 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:328:29
   struct_X509_info_st_553648959 {.pure, inheritable, bycopy.} = object
-    x509*: ptr X509_553649236 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4527:8
+    x509*: ptr X509_553649238 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4527:8
     crl*: ptr X509_CRL_553648954
     x_pkey*: ptr X509_PKEY_553649144
-    enc_cipher*: EVP_CIPHER_INFO_553649330
+    enc_cipher*: EVP_CIPHER_INFO_553649332
     enc_len*: cint
     enc_data*: cstring
   X509_NAME_ENTRY_553648961 = struct_X509_name_entry_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:329:35
@@ -1577,7 +1570,7 @@ type
   BN_CTX_553648973 = struct_bignum_ctx ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:335:27
   BIGNUM_553648975 = struct_bignum_st_553648978 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:336:26
   struct_bignum_st_553648977 {.pure, inheritable, bycopy.} = object
-    d*: ptr BN_ULONG_553649346 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bn.h:1047:8
+    d*: ptr BN_ULONG_553649348 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bn.h:1047:8
     width*: cint
     dmax*: cint
     neg*: cint
@@ -1594,21 +1587,21 @@ type
         cdecl.}
     create*: proc (a0: ptr BIO_553648984): cint {.cdecl.}
     destroy*: proc (a0: ptr BIO_553648984): cint {.cdecl.}
-    callback_ctrl*: proc (a0: ptr BIO_553648984; a1: cint; a2: bio_info_cb_553649320): clong {.
+    callback_ctrl*: proc (a0: ptr BIO_553648984; a1: cint; a2: bio_info_cb_553649322): clong {.
         cdecl.}
   BIO_553648983 = struct_bio_st_553648986 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:338:23
   struct_bio_st_553648985 {.pure, inheritable, bycopy.} = object
     method_field*: ptr BIO_METHOD_553648980 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:1136:8
-    ex_data*: CRYPTO_EX_DATA_553649302
-    callback_ex*: BIO_callback_fn_ex_553649322
-    callback*: BIO_callback_fn_553649324
+    ex_data*: CRYPTO_EX_DATA_553649304
+    callback_ex*: BIO_callback_fn_ex_553649324
+    callback*: BIO_callback_fn_553649326
     cb_arg*: cstring
     init*: cint
     shutdown*: cint
     flags*: cint
     retry_reason*: cint
     num*: cint
-    references*: CRYPTO_refcount_t_553649252
+    references*: CRYPTO_refcount_t_553649254
     ptr_field*: pointer
     next_bio*: ptr BIO_553648984
     num_read*: uint64
@@ -1627,7 +1620,7 @@ type
   struct_bn_mont_ctx_st_553648995 {.pure, inheritable, bycopy.} = object
     RR*: BIGNUM_553648976    ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bn.h:1074:8
     N*: BIGNUM_553648976
-    n0*: array[2'i64, BN_ULONG_553649346]
+    n0*: array[2'i64, BN_ULONG_553649348]
   BUF_MEM_553648997 = struct_buf_mem_st_553649000 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:342:27
   struct_buf_mem_st_553648999 {.pure, inheritable, bycopy.} = object
     length*: csize_t         ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/buf.h:71:8
@@ -1636,8 +1629,8 @@ type
   CAST_KEY_553649001 = struct_cast_key_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:343:28
   CBB_553649003 = struct_cbb_st_553649006 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:344:23
   struct_cbb_st_u_t {.union, bycopy.} = object
-    base*: struct_cbb_buffer_st_553649338
-    child*: struct_cbb_child_st_553649340
+    base*: struct_cbb_buffer_st_553649340
+    child*: struct_cbb_child_st_553649342
   struct_cbb_st_553649005 {.pure, inheritable, bycopy.} = object
     child*: ptr CBB_553649004 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bytestring.h:446:8
     is_child*: cschar
@@ -1683,7 +1676,7 @@ type
   EVP_AEAD_CTX_553649053 = struct_evp_aead_ctx_st_553649056 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:363:32
   struct_evp_aead_ctx_st_553649055 {.pure, inheritable, bycopy.} = object
     aead*: ptr EVP_AEAD_553649052 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/aead.h:221:8
-    state*: union_evp_aead_ctx_st_state_553649332
+    state*: union_evp_aead_ctx_st_state_553649334
     state_offset*: uint8
     tag_len*: uint8
   EVP_CIPHER_CTX_553649057 = struct_evp_cipher_ctx_st_553649060 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:364:34
@@ -1723,10 +1716,10 @@ type
   HMAC_CTX_553649089 = struct_hmac_ctx_st_553649092 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:378:28
   struct_hmac_ctx_st_553649091 {.pure, inheritable, bycopy.} = object
     md*: ptr EVP_MD_553649050 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/hmac.h:266:8
-    methods*: ptr HmacMethods_553649386
-    md_ctx*: union_md_ctx_union_553649388
-    i_ctx*: union_md_ctx_union_553649388
-    o_ctx*: union_md_ctx_union_553649388
+    methods*: ptr HmacMethods_553649388
+    md_ctx*: union_md_ctx_union_553649390
+    i_ctx*: union_md_ctx_union_553649390
+    o_ctx*: union_md_ctx_union_553649390
     state*: int8
   MD4_CTX_553649093 = struct_md4_state_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:379:29
   MD5_CTX_553649095 = struct_md5_state_st_553649098 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:380:29
@@ -1757,7 +1750,7 @@ type
     issuer_and_serial*: ptr PKCS7_ISSUER_AND_SERIAL_553649116
     key_enc_algor*: ptr X509_ALGOR_553648950
     enc_key*: ptr ASN1_OCTET_STRING_553648888
-    cert*: ptr X509_553649236
+    cert*: ptr X509_553649238
   PKCS7_SIGN_ENVELOPE_553649123 = struct_pkcs7_sign_envelope_st_553649126 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:390:39
   struct_pkcs7_sign_envelope_st_553649125 {.pure, inheritable, bycopy.} = object
     version*: ptr ASN1_INTEGER_553648886 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pkcs7.h:232:8
@@ -1803,51 +1796,58 @@ type
   X509_PKEY_553649143 = struct_private_key_st_553649146 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:396:31
   struct_private_key_st_553649145 {.pure, inheritable, bycopy.} = object
     dec_pkey*: ptr EVP_PKEY_553649086 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4523:8
-  RAND_METHOD_553649147 = struct_rand_meth_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:397:29
-  RC4_KEY_553649149 = struct_rc4_key_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:398:27
-  RSA_METHOD_553649151 = struct_rsa_meth_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:399:28
-  RSASSA_PSS_PARAMS_553649153 = struct_rsassa_pss_params_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:400:37
-  RSA_PSS_PARAMS_553649155 = struct_rsa_pss_params_st_553649158 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:401:34
-  struct_rsa_pss_params_st_553649157 {.pure, inheritable, bycopy.} = object
+  RAND_METHOD_553649147 = struct_rand_meth_st_553649150 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:397:29
+  struct_rand_meth_st_553649149 {.pure, inheritable, bycopy.} = object
+    seed*: proc (a0: pointer; a1: cint): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/rand.h:118:8
+    bytes*: proc (a0: ptr uint8; a1: csize_t): cint {.cdecl.}
+    cleanup*: proc (): void {.cdecl.}
+    add*: proc (a0: pointer; a1: cint; a2: cdouble): void {.cdecl.}
+    pseudorand*: proc (a0: ptr uint8; a1: csize_t): cint {.cdecl.}
+    status*: proc (): cint {.cdecl.}
+  RC4_KEY_553649151 = struct_rc4_key_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:398:27
+  RSA_METHOD_553649153 = struct_rsa_meth_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:399:28
+  RSASSA_PSS_PARAMS_553649155 = struct_rsassa_pss_params_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:400:37
+  RSA_PSS_PARAMS_553649157 = struct_rsa_pss_params_st_553649160 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:401:34
+  struct_rsa_pss_params_st_553649159 {.pure, inheritable, bycopy.} = object
     hashAlgorithm*: ptr X509_ALGOR_553648950 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:3639:8
     maskGenAlgorithm*: ptr X509_ALGOR_553648950
     saltLength*: ptr ASN1_INTEGER_553648886
     trailerField*: ptr ASN1_INTEGER_553648886
     maskHash*: ptr X509_ALGOR_553648950
-  RSA_553649159 = struct_rsa_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:402:23
-  SHA256_CTX_553649161 = struct_sha256_state_st_553649164 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:403:32
-  struct_sha256_state_st_553649163 {.pure, inheritable, bycopy.} = object
+  RSA_553649161 = struct_rsa_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:402:23
+  SHA256_CTX_553649163 = struct_sha256_state_st_553649166 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:403:32
+  struct_sha256_state_st_553649165 {.pure, inheritable, bycopy.} = object
     h*: array[8'i64, uint32] ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/sha.h:174:8
     Nl*: uint32
     Nh*: uint32
     data*: array[64'i64, uint8]
     num*: cuint
     md_len*: cuint
-  SHA512_CTX_553649165 = struct_sha512_state_st_553649168 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:404:32
-  struct_sha512_state_st_553649167 {.pure, inheritable, bycopy.} = object
+  SHA512_CTX_553649167 = struct_sha512_state_st_553649170 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:404:32
+  struct_sha512_state_st_553649169 {.pure, inheritable, bycopy.} = object
     h*: array[8'i64, uint64] ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/sha.h:241:8
     Nl*: uint64
     Nh*: uint64
     p*: array[128'i64, uint8]
     num*: cuint
     md_len*: cuint
-  SHA_CTX_553649169 = struct_sha_state_st_553649172 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:405:29
-  struct_sha_state_st_553649171 {.pure, inheritable, bycopy.} = object
+  SHA_CTX_553649171 = struct_sha_state_st_553649174 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:405:29
+  struct_sha_state_st_553649173 {.pure, inheritable, bycopy.} = object
     h*: array[5'i64, uint32] ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/sha.h:99:8
     Nl*: uint32
     Nh*: uint32
     data*: array[64'i64, uint8]
     num*: cuint
-  SPAKE2_CTX_553649173 = struct_spake2_ctx_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:406:30
-  SRTP_PROTECTION_PROFILE_553649175 = struct_srtp_protection_profile_st_553649178 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:407:43
-  struct_srtp_protection_profile_st_553649177 {.pure, inheritable, bycopy.} = object
+  SPAKE2_CTX_553649175 = struct_spake2_ctx_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:406:30
+  SRTP_PROTECTION_PROFILE_553649177 = struct_srtp_protection_profile_st_553649180 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:407:43
+  struct_srtp_protection_profile_st_553649179 {.pure, inheritable, bycopy.} = object
     name*: cstring           ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3728:8
     id*: culong
-  SSL_CIPHER_553649179 = struct_ssl_cipher_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:408:30
-  SSL_CTX_553649181 = struct_ssl_ctx_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:409:27
-  SSL_CLIENT_HELLO_553649183 = struct_ssl_early_callback_ctx_553649186 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:410:39
-  struct_ssl_early_callback_ctx_553649185 {.pure, inheritable, bycopy.} = object
-    ssl*: ptr SSL_553649202  ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:4924:8
+  SSL_CIPHER_553649181 = struct_ssl_cipher_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:408:30
+  SSL_CTX_553649183 = struct_ssl_ctx_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:409:27
+  SSL_CLIENT_HELLO_553649185 = struct_ssl_early_callback_ctx_553649188 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:410:39
+  struct_ssl_early_callback_ctx_553649187 {.pure, inheritable, bycopy.} = object
+    ssl*: ptr SSL_553649204  ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:4924:8
     client_hello*: ptr uint8
     client_hello_len*: csize_t
     version*: uint16
@@ -1861,171 +1861,171 @@ type
     compression_methods_len*: csize_t
     extensions*: ptr uint8
     extensions_len*: csize_t
-  SSL_ECH_KEYS_553649187 = struct_ssl_ech_keys_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:411:32
-  SSL_METHOD_553649189 = struct_ssl_method_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:412:30
-  SSL_PRIVATE_KEY_METHOD_553649191 = struct_ssl_private_key_method_st_553649194 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:413:42
-  struct_ssl_private_key_method_st_553649193 {.pure, inheritable, bycopy.} = object
-    sign*: proc (a0: ptr SSL_553649202; a1: ptr uint8; a2: ptr csize_t;
-                 a3: csize_t; a4: uint16; a5: ptr uint8; a6: csize_t): enum_ssl_private_key_result_t_553649690 {.
+  SSL_ECH_KEYS_553649189 = struct_ssl_ech_keys_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:411:32
+  SSL_METHOD_553649191 = struct_ssl_method_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:412:30
+  SSL_PRIVATE_KEY_METHOD_553649193 = struct_ssl_private_key_method_st_553649196 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:413:42
+  struct_ssl_private_key_method_st_553649195 {.pure, inheritable, bycopy.} = object
+    sign*: proc (a0: ptr SSL_553649204; a1: ptr uint8; a2: ptr csize_t;
+                 a3: csize_t; a4: uint16; a5: ptr uint8; a6: csize_t): enum_ssl_private_key_result_t_553649692 {.
         cdecl.}              ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:1494:8
-    decrypt*: proc (a0: ptr SSL_553649202; a1: ptr uint8; a2: ptr csize_t;
-                    a3: csize_t; a4: ptr uint8; a5: csize_t): enum_ssl_private_key_result_t_553649690 {.
+    decrypt*: proc (a0: ptr SSL_553649204; a1: ptr uint8; a2: ptr csize_t;
+                    a3: csize_t; a4: ptr uint8; a5: csize_t): enum_ssl_private_key_result_t_553649692 {.
         cdecl.}
-    complete*: proc (a0: ptr SSL_553649202; a1: ptr uint8; a2: ptr csize_t;
-                     a3: csize_t): enum_ssl_private_key_result_t_553649690 {.
+    complete*: proc (a0: ptr SSL_553649204; a1: ptr uint8; a2: ptr csize_t;
+                     a3: csize_t): enum_ssl_private_key_result_t_553649692 {.
         cdecl.}
-  SSL_QUIC_METHOD_553649195 = struct_ssl_quic_method_st_553649198 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:414:35
-  struct_ssl_quic_method_st_553649197 {.pure, inheritable, bycopy.} = object
-    set_read_secret*: proc (a0: ptr SSL_553649202;
-                            a1: enum_ssl_encryption_level_t_553649726;
-                            a2: ptr SSL_CIPHER_553649180; a3: ptr uint8;
+  SSL_QUIC_METHOD_553649197 = struct_ssl_quic_method_st_553649200 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:414:35
+  struct_ssl_quic_method_st_553649199 {.pure, inheritable, bycopy.} = object
+    set_read_secret*: proc (a0: ptr SSL_553649204;
+                            a1: enum_ssl_encryption_level_t_553649728;
+                            a2: ptr SSL_CIPHER_553649182; a3: ptr uint8;
                             a4: csize_t): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3964:8
-    set_write_secret*: proc (a0: ptr SSL_553649202;
-                             a1: enum_ssl_encryption_level_t_553649726;
-                             a2: ptr SSL_CIPHER_553649180; a3: ptr uint8;
+    set_write_secret*: proc (a0: ptr SSL_553649204;
+                             a1: enum_ssl_encryption_level_t_553649728;
+                             a2: ptr SSL_CIPHER_553649182; a3: ptr uint8;
                              a4: csize_t): cint {.cdecl.}
-    add_handshake_data*: proc (a0: ptr SSL_553649202;
-                               a1: enum_ssl_encryption_level_t_553649726;
+    add_handshake_data*: proc (a0: ptr SSL_553649204;
+                               a1: enum_ssl_encryption_level_t_553649728;
                                a2: ptr uint8; a3: csize_t): cint {.cdecl.}
-    flush_flight*: proc (a0: ptr SSL_553649202): cint {.cdecl.}
-    send_alert*: proc (a0: ptr SSL_553649202; a1: enum_ssl_encryption_level_t_553649726;
+    flush_flight*: proc (a0: ptr SSL_553649204): cint {.cdecl.}
+    send_alert*: proc (a0: ptr SSL_553649204; a1: enum_ssl_encryption_level_t_553649728;
                        a2: uint8): cint {.cdecl.}
-  SSL_SESSION_553649199 = struct_ssl_session_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:415:31
-  SSL_553649201 = struct_ssl_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:416:23
-  SSL_TICKET_AEAD_METHOD_553649203 = struct_ssl_ticket_aead_method_st_553649206 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:417:42
-  struct_ssl_ticket_aead_method_st_553649205 {.pure, inheritable, bycopy.} = object
-    max_overhead*: proc (a0: ptr SSL_553649202): csize_t {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:2684:8
-    seal*: proc (a0: ptr SSL_553649202; a1: ptr uint8; a2: ptr csize_t;
+  SSL_SESSION_553649201 = struct_ssl_session_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:415:31
+  SSL_553649203 = struct_ssl_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:416:23
+  SSL_TICKET_AEAD_METHOD_553649205 = struct_ssl_ticket_aead_method_st_553649208 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:417:42
+  struct_ssl_ticket_aead_method_st_553649207 {.pure, inheritable, bycopy.} = object
+    max_overhead*: proc (a0: ptr SSL_553649204): csize_t {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:2684:8
+    seal*: proc (a0: ptr SSL_553649204; a1: ptr uint8; a2: ptr csize_t;
                  a3: csize_t; a4: ptr uint8; a5: csize_t): cint {.cdecl.}
-    open*: proc (a0: ptr SSL_553649202; a1: ptr uint8; a2: ptr csize_t;
-                 a3: csize_t; a4: ptr uint8; a5: csize_t): enum_ssl_ticket_aead_result_t_553649706 {.
+    open*: proc (a0: ptr SSL_553649204; a1: ptr uint8; a2: ptr csize_t;
+                 a3: csize_t; a4: ptr uint8; a5: csize_t): enum_ssl_ticket_aead_result_t_553649708 {.
         cdecl.}
-  ERR_FNS_553649207 = struct_st_ERR_FNS ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:418:27
-  TRUST_TOKEN_553649209 = struct_trust_token_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:419:31
-  TRUST_TOKEN_CLIENT_553649211 = struct_trust_token_client_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:420:38
-  TRUST_TOKEN_ISSUER_553649213 = struct_trust_token_issuer_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:421:38
-  TRUST_TOKEN_METHOD_553649215 = struct_trust_token_method_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:422:38
-  X509V3_CTX_553649217 = struct_v3_ext_ctx_553649220 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:423:27
-  struct_v3_ext_ctx_553649219 {.pure, inheritable, bycopy.} = object
+  ERR_FNS_553649209 = struct_st_ERR_FNS ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:418:27
+  TRUST_TOKEN_553649211 = struct_trust_token_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:419:31
+  TRUST_TOKEN_CLIENT_553649213 = struct_trust_token_client_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:420:38
+  TRUST_TOKEN_ISSUER_553649215 = struct_trust_token_issuer_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:421:38
+  TRUST_TOKEN_METHOD_553649217 = struct_trust_token_method_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:422:38
+  X509V3_CTX_553649219 = struct_v3_ext_ctx_553649222 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:423:27
+  struct_v3_ext_ctx_553649221 {.pure, inheritable, bycopy.} = object
     flags*: cint             ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4680:8
-    issuer_cert*: ptr X509_553649236
-    subject_cert*: ptr X509_553649236
+    issuer_cert*: ptr X509_553649238
+    subject_cert*: ptr X509_553649238
     subject_req*: ptr X509_REQ_553648968
     crl*: ptr X509_CRL_553648954
     db*: ptr CONF_553649014
-  X509V3_EXT_METHOD_553649221 = struct_v3_ext_method_553649224 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:424:30
-  struct_v3_ext_method_553649223 {.pure, inheritable, bycopy.} = object
+  X509V3_EXT_METHOD_553649223 = struct_v3_ext_method_553649226 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:424:30
+  struct_v3_ext_method_553649225 {.pure, inheritable, bycopy.} = object
     ext_nid*: cint           ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4578:8
     ext_flags*: cint
-    it*: ptr ASN1_ITEM_EXP_553649354
-    ext_new*: X509V3_EXT_NEW_553649540
-    ext_free*: X509V3_EXT_FREE_typedef_553649542
-    d2i*: X509V3_EXT_D2I_typedef_553649544
-    i2d*: X509V3_EXT_I2D_typedef_553649546
-    i2s*: X509V3_EXT_I2S_553649552
-    s2i*: X509V3_EXT_S2I_553649554
-    i2v*: X509V3_EXT_I2V_553649548
-    v2i*: X509V3_EXT_V2I_553649550
-    i2r*: X509V3_EXT_I2R_553649556
-    r2i*: X509V3_EXT_R2I_553649558
+    it*: ptr ASN1_ITEM_EXP_553649356
+    ext_new*: X509V3_EXT_NEW_553649542
+    ext_free*: X509V3_EXT_FREE_typedef_553649544
+    d2i*: X509V3_EXT_D2I_typedef_553649546
+    i2d*: X509V3_EXT_I2D_typedef_553649548
+    i2s*: X509V3_EXT_I2S_553649554
+    s2i*: X509V3_EXT_S2I_553649556
+    i2v*: X509V3_EXT_I2V_553649550
+    v2i*: X509V3_EXT_V2I_553649552
+    i2r*: X509V3_EXT_I2R_553649558
+    r2i*: X509V3_EXT_R2I_553649560
     usr_data*: pointer
-  X509_ATTRIBUTE_553649225 = struct_x509_attributes_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:425:35
-  X509_LOOKUP_553649227 = struct_x509_lookup_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:426:31
-  X509_LOOKUP_METHOD_553649229 = struct_x509_lookup_method_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:427:38
-  X509_OBJECT_553649231 = struct_x509_object_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:428:31
-  X509_REVOKED_553649233 = struct_x509_revoked_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:429:32
-  X509_553649235 = struct_x509_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:430:24
-  X509_STORE_CTX_553649237 = struct_x509_store_ctx_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:431:34
-  X509_STORE_553649239 = struct_x509_store_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:432:30
-  X509_TRUST_553649241 = struct_x509_trust_st_553649244 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:433:30
-  struct_x509_trust_st_553649243 {.pure, inheritable, bycopy.} = object
+  X509_ATTRIBUTE_553649227 = struct_x509_attributes_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:425:35
+  X509_LOOKUP_553649229 = struct_x509_lookup_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:426:31
+  X509_LOOKUP_METHOD_553649231 = struct_x509_lookup_method_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:427:38
+  X509_OBJECT_553649233 = struct_x509_object_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:428:31
+  X509_REVOKED_553649235 = struct_x509_revoked_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:429:32
+  X509_553649237 = struct_x509_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:430:24
+  X509_STORE_CTX_553649239 = struct_x509_store_ctx_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:431:34
+  X509_STORE_553649241 = struct_x509_store_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:432:30
+  X509_TRUST_553649243 = struct_x509_trust_st_553649246 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:433:30
+  struct_x509_trust_st_553649245 {.pure, inheritable, bycopy.} = object
     trust*: cint             ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5153:8
     flags*: cint
-    check_trust*: proc (a0: ptr X509_TRUST_553649242; a1: ptr X509_553649236): cint {.
+    check_trust*: proc (a0: ptr X509_TRUST_553649244; a1: ptr X509_553649238): cint {.
         cdecl.}
     name*: cstring
     arg1*: cint
     arg2*: pointer
-  OPENSSL_BLOCK_553649245 = pointer ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:435:15
-  union_crypto_mutex_st_553649247 {.union, bycopy.} = object
+  OPENSSL_BLOCK_553649247 = pointer ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/base.h:435:15
+  union_crypto_mutex_st_553649249 {.union, bycopy.} = object
     alignment*: cdouble      ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/thread.h:90:15
     padding*: array[56'i64, uint8]
-  CRYPTO_MUTEX_553649249 = union_crypto_mutex_st_553649248 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/thread.h:93:3
-  CRYPTO_refcount_t_553649251 = uint32 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/thread.h:103:18
-  struct_CRYPTO_dynlock_553649253 {.pure, inheritable, bycopy.} = object
+  CRYPTO_MUTEX_553649251 = union_crypto_mutex_st_553649250 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/thread.h:93:3
+  CRYPTO_refcount_t_553649253 = uint32 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/thread.h:103:18
+  struct_CRYPTO_dynlock_553649255 {.pure, inheritable, bycopy.} = object
     references*: cint        ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/thread.h:173:9
     data*: ptr struct_CRYPTO_dynlock_value
-  CRYPTO_dynlock_553649255 = struct_CRYPTO_dynlock_553649254 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/thread.h:176:3
-  ERR_print_errors_callback_t_553649259 = proc (a0: cstring; a1: csize_t;
+  CRYPTO_dynlock_553649257 = struct_CRYPTO_dynlock_553649256 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/thread.h:176:3
+  ERR_print_errors_callback_t_553649261 = proc (a0: cstring; a1: csize_t;
       a2: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/err.h:259:15
-  Cfile_553649261 = struct_IO_FILE_553649764 ## Generated based on /usr/include/x86_64-linux-gnu/bits/types/FILE.h:7:25
-  OPENSSL_sk_free_func_553649263 = proc (a0: pointer): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:272:16
-  OPENSSL_sk_copy_func_553649265 = proc (a0: pointer): pointer {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:277:17
-  OPENSSL_sk_cmp_func_553649267 = proc (a0: ptr pointer; a1: ptr pointer): cint {.
+  Cfile_553649263 = struct_IO_FILE_553649766 ## Generated based on /usr/include/x86_64-linux-gnu/bits/types/FILE.h:7:25
+  OPENSSL_sk_free_func_553649265 = proc (a0: pointer): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:272:16
+  OPENSSL_sk_copy_func_553649267 = proc (a0: pointer): pointer {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:277:17
+  OPENSSL_sk_cmp_func_553649269 = proc (a0: ptr pointer; a1: ptr pointer): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:287:15
-  OPENSSL_sk_delete_if_func_553649269 = proc (a0: pointer; a1: pointer): cint {.
+  OPENSSL_sk_delete_if_func_553649271 = proc (a0: pointer; a1: pointer): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:291:15
-  OPENSSL_sk_call_free_func_553649271 = proc (a0: OPENSSL_sk_free_func_553649264;
+  OPENSSL_sk_call_free_func_553649273 = proc (a0: OPENSSL_sk_free_func_553649266;
       a1: pointer): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:295:16
-  OPENSSL_sk_call_copy_func_553649273 = proc (a0: OPENSSL_sk_copy_func_553649266;
+  OPENSSL_sk_call_copy_func_553649275 = proc (a0: OPENSSL_sk_copy_func_553649268;
       a1: pointer): pointer {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:296:17
-  OPENSSL_sk_call_cmp_func_553649275 = proc (a0: OPENSSL_sk_cmp_func_553649268;
+  OPENSSL_sk_call_cmp_func_553649277 = proc (a0: OPENSSL_sk_cmp_func_553649270;
       a1: pointer; a2: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:297:15
-  OPENSSL_sk_call_delete_if_func_553649277 = proc (
-      a0: OPENSSL_sk_delete_if_func_553649270; a1: pointer; a2: pointer): cint {.
+  OPENSSL_sk_call_delete_if_func_553649279 = proc (
+      a0: OPENSSL_sk_delete_if_func_553649272; a1: pointer; a2: pointer): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:299:15
-  OPENSSL_STACK_553649279 = struct_stack_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:304:25
-  internal_STACK_553649281 = OPENSSL_STACK_553649280 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:350:23
-  OPENSSL_STRING_553649283 = cstring ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:581:15
-  sk_void_free_func_553649285 = proc (a0: pointer): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:583:1
-  sk_void_copy_func_553649287 = proc (a0: pointer): pointer {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:583:1
-  sk_void_cmp_func_553649289 = proc (a0: ptr pointer; a1: ptr pointer): cint {.
+  OPENSSL_STACK_553649281 = struct_stack_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:304:25
+  internal_STACK_553649283 = OPENSSL_STACK_553649282 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:350:23
+  OPENSSL_STRING_553649285 = cstring ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:581:15
+  sk_void_free_func_553649287 = proc (a0: pointer): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:583:1
+  sk_void_copy_func_553649289 = proc (a0: pointer): pointer {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:583:1
+  sk_void_cmp_func_553649291 = proc (a0: ptr pointer; a1: ptr pointer): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:583:1
-  sk_void_delete_if_func_553649291 = proc (a0: pointer; a1: pointer): cint {.
+  sk_void_delete_if_func_553649293 = proc (a0: pointer; a1: pointer): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:583:1
-  sk_OPENSSL_STRING_free_func_553649293 = proc (a0: cstring): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:584:1
-  sk_OPENSSL_STRING_copy_func_553649295 = proc (a0: cstring): cstring {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:584:1
-  sk_OPENSSL_STRING_cmp_func_553649297 = proc (a0: ptr cstring; a1: ptr cstring): cint {.
+  sk_OPENSSL_STRING_free_func_553649295 = proc (a0: cstring): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:584:1
+  sk_OPENSSL_STRING_copy_func_553649297 = proc (a0: cstring): cstring {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:584:1
+  sk_OPENSSL_STRING_cmp_func_553649299 = proc (a0: ptr cstring; a1: ptr cstring): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:584:1
-  sk_OPENSSL_STRING_delete_if_func_553649299 = proc (a0: cstring; a1: pointer): cint {.
+  sk_OPENSSL_STRING_delete_if_func_553649301 = proc (a0: cstring; a1: pointer): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/stack.h:584:1
-  CRYPTO_EX_DATA_553649301 = struct_crypto_ex_data_st_553649304 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ex_data.h:128:34
-  struct_crypto_ex_data_st_553649303 {.pure, inheritable, bycopy.} = object
+  CRYPTO_EX_DATA_553649303 = struct_crypto_ex_data_st_553649306 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ex_data.h:128:34
+  struct_crypto_ex_data_st_553649305 {.pure, inheritable, bycopy.} = object
     sk*: ptr struct_stack_st_void ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ex_data.h:207:8
-  CRYPTO_EX_free_553649305 = proc (a0: pointer; a1: pointer;
-                                   a2: ptr CRYPTO_EX_DATA_553649302; a3: cint;
+  CRYPTO_EX_free_553649307 = proc (a0: pointer; a1: pointer;
+                                   a2: ptr CRYPTO_EX_DATA_553649304; a3: cint;
                                    a4: clong; a5: pointer): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ex_data.h:187:14
-  CRYPTO_EX_dup_553649307 = proc (a0: ptr CRYPTO_EX_DATA_553649302;
-                                  a1: ptr CRYPTO_EX_DATA_553649302;
+  CRYPTO_EX_dup_553649309 = proc (a0: ptr CRYPTO_EX_DATA_553649304;
+                                  a1: ptr CRYPTO_EX_DATA_553649304;
                                   a2: ptr pointer; a3: cint; a4: clong;
                                   a5: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ex_data.h:197:13
-  CRYPTO_EX_unused_553649309 = cint ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ex_data.h:205:13
-  sk_BIO_free_func_553649311 = proc (a0: ptr BIO_553648984): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:80:1
-  sk_BIO_copy_func_553649313 = proc (a0: ptr BIO_553648984): ptr BIO_553648984 {.
+  CRYPTO_EX_unused_553649311 = cint ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ex_data.h:205:13
+  sk_BIO_free_func_553649313 = proc (a0: ptr BIO_553648984): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:80:1
+  sk_BIO_copy_func_553649315 = proc (a0: ptr BIO_553648984): ptr BIO_553648984 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:80:1
-  sk_BIO_cmp_func_553649315 = proc (a0: ptr ptr BIO_553648984; a1: ptr ptr BIO_553648984): cint {.
+  sk_BIO_cmp_func_553649317 = proc (a0: ptr ptr BIO_553648984; a1: ptr ptr BIO_553648984): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:80:1
-  sk_BIO_delete_if_func_553649317 = proc (a0: ptr BIO_553648984; a1: pointer): cint {.
+  sk_BIO_delete_if_func_553649319 = proc (a0: ptr BIO_553648984; a1: pointer): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:80:1
-  bio_info_cb_553649319 = proc (a0: ptr BIO_553648984; a1: cint; a2: cint): clong {.
+  bio_info_cb_553649321 = proc (a0: ptr BIO_553648984; a1: cint; a2: cint): clong {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:283:16
-  BIO_callback_fn_ex_553649321 = proc (a0: ptr BIO_553648984; a1: cint;
+  BIO_callback_fn_ex_553649323 = proc (a0: ptr BIO_553648984; a1: cint;
                                        a2: cstring; a3: csize_t; a4: cint;
                                        a5: clong; a6: cint; a7: ptr csize_t): clong {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:294:16
-  BIO_callback_fn_553649323 = proc (a0: ptr BIO_553648984; a1: cint;
+  BIO_callback_fn_553649325 = proc (a0: ptr BIO_553648984; a1: cint;
                                     a2: cstring; a3: cint; a4: clong; a5: clong): clong {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:306:16
-  BIO_ADDR_553649325 = union_bio_addr_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:757:27
-  struct_evp_cipher_info_st_553649327 {.pure, inheritable, bycopy.} = object
+  BIO_ADDR_553649327 = union_bio_addr_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bio.h:757:27
+  struct_evp_cipher_info_st_553649329 {.pure, inheritable, bycopy.} = object
     cipher*: ptr EVP_CIPHER_553649062 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/cipher.h:667:16
     iv*: array[16'i64, uint8]
-  EVP_CIPHER_INFO_553649329 = struct_evp_cipher_info_st_553649328 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/cipher.h:670:3
-  union_evp_aead_ctx_st_state_553649331 {.union, bycopy.} = object
+  EVP_CIPHER_INFO_553649331 = struct_evp_cipher_info_st_553649330 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/cipher.h:670:3
+  union_evp_aead_ctx_st_state_553649333 {.union, bycopy.} = object
     opaque*: array[564'i64, uint8] ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/aead.h:213:7
     alignment*: uint64
     ptr_field*: pointer
-  struct_tm_553649335 {.pure, inheritable, bycopy.} = object
+  struct_tm_553649337 {.pure, inheritable, bycopy.} = object
     tm_sec*: cint            ## Generated based on /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:7:8
     tm_min*: cint
     tm_hour*: cint
@@ -2037,433 +2037,433 @@ type
     tm_isdst*: cint
     tm_gmtoff*: clong
     tm_zone*: cstring
-  struct_cbb_buffer_st_553649337 {.pure, inheritable, bycopy.} = object
+  struct_cbb_buffer_st_553649339 {.pure, inheritable, bycopy.} = object
     buf*: ptr uint8          ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bytestring.h:420:8
     len*: csize_t
     cap*: csize_t
     can_resize* {.bitsize: 1'i64.}: cuint
     error* {.bitsize: 1'i64.}: cuint
-  struct_cbb_child_st_553649339 {.pure, inheritable, bycopy.} = object
-    base*: ptr struct_cbb_buffer_st_553649338 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bytestring.h:434:8
+  struct_cbb_child_st_553649341 {.pure, inheritable, bycopy.} = object
+    base*: ptr struct_cbb_buffer_st_553649340 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bytestring.h:434:8
     offset*: csize_t
     pending_len_len*: uint8
     pending_is_asn1* {.bitsize: 1'i64.}: cuint
-  struct_obj_name_st_553649341 {.pure, inheritable, bycopy.} = object
+  struct_obj_name_st_553649343 {.pure, inheritable, bycopy.} = object
     type_field*: cint        ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/obj.h:231:16
     alias*: cint
     name*: cstring
     data*: cstring
-  OBJ_NAME_553649343 = struct_obj_name_st_553649342 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/obj.h:236:3
-  BN_ULONG_553649345 = uint64 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bn.h:164:18
-  d2i_of_void_553649349 = proc (a0: ptr pointer; a1: ptr ptr uint8; a2: clong): pointer {.
+  OBJ_NAME_553649345 = struct_obj_name_st_553649344 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/obj.h:236:3
+  BN_ULONG_553649347 = uint64 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/bn.h:164:18
+  d2i_of_void_553649351 = proc (a0: ptr pointer; a1: ptr ptr uint8; a2: clong): pointer {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:284:15
-  i2d_of_void_553649351 = proc (a0: pointer; a1: ptr ptr uint8): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:285:13
-  ASN1_ITEM_EXP_553649353 = ASN1_ITEM_553648866 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:319:25
-  ASN1_VALUE_553649355 = struct_ASN1_VALUE_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:330:30
-  sk_ASN1_INTEGER_free_func_553649357 = proc (a0: ptr ASN1_INTEGER_553648886): void {.
+  i2d_of_void_553649353 = proc (a0: pointer; a1: ptr ptr uint8): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:285:13
+  ASN1_ITEM_EXP_553649355 = ASN1_ITEM_553648866 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:319:25
+  ASN1_VALUE_553649357 = struct_ASN1_VALUE_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:330:30
+  sk_ASN1_INTEGER_free_func_553649359 = proc (a0: ptr ASN1_INTEGER_553648886): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1084:1
-  sk_ASN1_INTEGER_copy_func_553649359 = proc (a0: ptr ASN1_INTEGER_553648886): ptr ASN1_INTEGER_553648886 {.
+  sk_ASN1_INTEGER_copy_func_553649361 = proc (a0: ptr ASN1_INTEGER_553648886): ptr ASN1_INTEGER_553648886 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1084:1
-  sk_ASN1_INTEGER_cmp_func_553649361 = proc (a0: ptr ptr ASN1_INTEGER_553648886;
+  sk_ASN1_INTEGER_cmp_func_553649363 = proc (a0: ptr ptr ASN1_INTEGER_553648886;
       a1: ptr ptr ASN1_INTEGER_553648886): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1084:1
-  sk_ASN1_INTEGER_delete_if_func_553649363 = proc (a0: ptr ASN1_INTEGER_553648886;
+  sk_ASN1_INTEGER_delete_if_func_553649365 = proc (a0: ptr ASN1_INTEGER_553648886;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1084:1
-  time_t_553649365 = compiler_time_t_553649766 ## Generated based on /usr/include/x86_64-linux-gnu/bits/types/time_t.h:10:18
-  sk_ASN1_OBJECT_free_func_553649367 = proc (a0: ptr ASN1_OBJECT_553648868): void {.
+  time_t_553649367 = compiler_time_t_553649768 ## Generated based on /usr/include/x86_64-linux-gnu/bits/types/time_t.h:10:18
+  sk_ASN1_OBJECT_free_func_553649369 = proc (a0: ptr ASN1_OBJECT_553648868): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1518:1
-  sk_ASN1_OBJECT_copy_func_553649369 = proc (a0: ptr ASN1_OBJECT_553648868): ptr ASN1_OBJECT_553648868 {.
+  sk_ASN1_OBJECT_copy_func_553649371 = proc (a0: ptr ASN1_OBJECT_553648868): ptr ASN1_OBJECT_553648868 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1518:1
-  sk_ASN1_OBJECT_cmp_func_553649371 = proc (a0: ptr ptr ASN1_OBJECT_553648868;
+  sk_ASN1_OBJECT_cmp_func_553649373 = proc (a0: ptr ptr ASN1_OBJECT_553648868;
       a1: ptr ptr ASN1_OBJECT_553648868): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1518:1
-  sk_ASN1_OBJECT_delete_if_func_553649373 = proc (a0: ptr ASN1_OBJECT_553648868;
+  sk_ASN1_OBJECT_delete_if_func_553649375 = proc (a0: ptr ASN1_OBJECT_553648868;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1518:1
-  sk_ASN1_TYPE_free_func_553649375 = proc (a0: ptr ASN1_TYPE_553648906): void {.
+  sk_ASN1_TYPE_free_func_553649377 = proc (a0: ptr ASN1_TYPE_553648906): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1630:1
-  sk_ASN1_TYPE_copy_func_553649377 = proc (a0: ptr ASN1_TYPE_553648906): ptr ASN1_TYPE_553648906 {.
+  sk_ASN1_TYPE_copy_func_553649379 = proc (a0: ptr ASN1_TYPE_553648906): ptr ASN1_TYPE_553648906 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1630:1
-  sk_ASN1_TYPE_cmp_func_553649379 = proc (a0: ptr ptr ASN1_TYPE_553648906;
+  sk_ASN1_TYPE_cmp_func_553649381 = proc (a0: ptr ptr ASN1_TYPE_553648906;
       a1: ptr ptr ASN1_TYPE_553648906): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1630:1
-  sk_ASN1_TYPE_delete_if_func_553649381 = proc (a0: ptr ASN1_TYPE_553648906;
+  sk_ASN1_TYPE_delete_if_func_553649383 = proc (a0: ptr ASN1_TYPE_553648906;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1630:1
-  ASN1_SEQUENCE_ANY_553649383 = struct_stack_st_ASN1_TYPE ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1685:29
-  HmacMethods_553649385 = struct_hmac_methods_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/hmac.h:251:32
-  union_md_ctx_union_553649387 {.union, bycopy.} = object
+  ASN1_SEQUENCE_ANY_553649385 = struct_stack_st_ASN1_TYPE ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/asn1.h:1685:29
+  HmacMethods_553649387 = struct_hmac_methods_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/hmac.h:251:32
+  union_md_ctx_union_553649389 {.union, bycopy.} = object
     md5*: MD5_CTX_553649096  ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/hmac.h:258:7
-    sha1*: SHA_CTX_553649170
-    sha256*: SHA256_CTX_553649162
-    sha512*: SHA512_CTX_553649166
+    sha1*: SHA_CTX_553649172
+    sha256*: SHA256_CTX_553649164
+    sha512*: SHA512_CTX_553649168
     sha3*: array[400'i64, uint8]
-  EVP_PKEY_gen_cb_553649389 = proc (a0: ptr EVP_PKEY_CTX_553649082): cint {.
+  EVP_PKEY_gen_cb_553649391 = proc (a0: ptr EVP_PKEY_CTX_553649082): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/evp.h:1119:13
-  sk_PKCS7_RECIP_INFO_free_func_553649391 = proc (a0: ptr PKCS7_RECIP_INFO_553649120): void {.
+  sk_PKCS7_RECIP_INFO_free_func_553649393 = proc (a0: ptr PKCS7_RECIP_INFO_553649120): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pkcs7.h:291:1
-  sk_PKCS7_RECIP_INFO_copy_func_553649393 = proc (a0: ptr PKCS7_RECIP_INFO_553649120): ptr PKCS7_RECIP_INFO_553649120 {.
+  sk_PKCS7_RECIP_INFO_copy_func_553649395 = proc (a0: ptr PKCS7_RECIP_INFO_553649120): ptr PKCS7_RECIP_INFO_553649120 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pkcs7.h:291:1
-  sk_PKCS7_RECIP_INFO_cmp_func_553649395 = proc (a0: ptr ptr PKCS7_RECIP_INFO_553649120;
+  sk_PKCS7_RECIP_INFO_cmp_func_553649397 = proc (a0: ptr ptr PKCS7_RECIP_INFO_553649120;
       a1: ptr ptr PKCS7_RECIP_INFO_553649120): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pkcs7.h:291:1
-  sk_PKCS7_RECIP_INFO_delete_if_func_553649397 = proc (a0: ptr PKCS7_RECIP_INFO_553649120;
+  sk_PKCS7_RECIP_INFO_delete_if_func_553649399 = proc (a0: ptr PKCS7_RECIP_INFO_553649120;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pkcs7.h:291:1
-  sk_PKCS7_SIGNER_INFO_free_func_553649399 = proc (a0: ptr PKCS7_SIGNER_INFO_553649132): void {.
+  sk_PKCS7_SIGNER_INFO_free_func_553649401 = proc (a0: ptr PKCS7_SIGNER_INFO_553649132): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pkcs7.h:292:1
-  sk_PKCS7_SIGNER_INFO_copy_func_553649401 = proc (a0: ptr PKCS7_SIGNER_INFO_553649132): ptr PKCS7_SIGNER_INFO_553649132 {.
+  sk_PKCS7_SIGNER_INFO_copy_func_553649403 = proc (a0: ptr PKCS7_SIGNER_INFO_553649132): ptr PKCS7_SIGNER_INFO_553649132 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pkcs7.h:292:1
-  sk_PKCS7_SIGNER_INFO_cmp_func_553649403 = proc (a0: ptr ptr PKCS7_SIGNER_INFO_553649132;
+  sk_PKCS7_SIGNER_INFO_cmp_func_553649405 = proc (a0: ptr ptr PKCS7_SIGNER_INFO_553649132;
       a1: ptr ptr PKCS7_SIGNER_INFO_553649132): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pkcs7.h:292:1
-  sk_PKCS7_SIGNER_INFO_delete_if_func_553649405 = proc (
+  sk_PKCS7_SIGNER_INFO_delete_if_func_553649407 = proc (
       a0: ptr PKCS7_SIGNER_INFO_553649132; a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pkcs7.h:292:1
-  internal_LHASH_553649407 = struct_lhash_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/lhash.h:66:25
-  sk_CONF_VALUE_free_func_553649409 = proc (a0: ptr CONF_VALUE_553649018): void {.
+  internal_LHASH_553649409 = struct_lhash_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/lhash.h:66:25
+  sk_CONF_VALUE_free_func_553649411 = proc (a0: ptr CONF_VALUE_553649018): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/conf.h:94:1
-  sk_CONF_VALUE_copy_func_553649411 = proc (a0: ptr CONF_VALUE_553649018): ptr CONF_VALUE_553649018 {.
+  sk_CONF_VALUE_copy_func_553649413 = proc (a0: ptr CONF_VALUE_553649018): ptr CONF_VALUE_553649018 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/conf.h:94:1
-  sk_CONF_VALUE_cmp_func_553649413 = proc (a0: ptr ptr CONF_VALUE_553649018;
+  sk_CONF_VALUE_cmp_func_553649415 = proc (a0: ptr ptr CONF_VALUE_553649018;
       a1: ptr ptr CONF_VALUE_553649018): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/conf.h:94:1
-  sk_CONF_VALUE_delete_if_func_553649415 = proc (a0: ptr CONF_VALUE_553649018;
+  sk_CONF_VALUE_delete_if_func_553649417 = proc (a0: ptr CONF_VALUE_553649018;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/conf.h:94:1
-  point_conversion_form_t_553649419 = enum_point_conversion_form_t_553649418 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ec.h:96:3
-  struct_EC_builtin_curve_553649421 {.pure, inheritable, bycopy.} = object
+  point_conversion_form_t_553649421 = enum_point_conversion_form_t_553649420 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ec.h:96:3
+  struct_EC_builtin_curve_553649423 {.pure, inheritable, bycopy.} = object
     nid*: cint               ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ec.h:457:9
     comment*: cstring
-  EC_builtin_curve_553649423 = struct_EC_builtin_curve_553649422 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ec.h:460:3
-  EC_METHOD_553649425 = struct_ec_method_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ec.h:563:29
-  sk_CRYPTO_BUFFER_free_func_553649427 = proc (a0: ptr CRYPTO_BUFFER_553649024): void {.
+  EC_builtin_curve_553649425 = struct_EC_builtin_curve_553649424 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ec.h:460:3
+  EC_METHOD_553649427 = struct_ec_method_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ec.h:563:29
+  sk_CRYPTO_BUFFER_free_func_553649429 = proc (a0: ptr CRYPTO_BUFFER_553649024): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pool.h:34:1
-  sk_CRYPTO_BUFFER_copy_func_553649429 = proc (a0: ptr CRYPTO_BUFFER_553649024): ptr CRYPTO_BUFFER_553649024 {.
+  sk_CRYPTO_BUFFER_copy_func_553649431 = proc (a0: ptr CRYPTO_BUFFER_553649024): ptr CRYPTO_BUFFER_553649024 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pool.h:34:1
-  sk_CRYPTO_BUFFER_cmp_func_553649431 = proc (a0: ptr ptr CRYPTO_BUFFER_553649024;
+  sk_CRYPTO_BUFFER_cmp_func_553649433 = proc (a0: ptr ptr CRYPTO_BUFFER_553649024;
       a1: ptr ptr CRYPTO_BUFFER_553649024): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pool.h:34:1
-  sk_CRYPTO_BUFFER_delete_if_func_553649433 = proc (a0: ptr CRYPTO_BUFFER_553649024;
+  sk_CRYPTO_BUFFER_delete_if_func_553649435 = proc (a0: ptr CRYPTO_BUFFER_553649024;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pool.h:34:1
-  sk_X509_free_func_553649435 = proc (a0: ptr X509_553649236): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:120:1
-  sk_X509_copy_func_553649437 = proc (a0: ptr X509_553649236): ptr X509_553649236 {.
+  sk_X509_free_func_553649437 = proc (a0: ptr X509_553649238): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:120:1
+  sk_X509_copy_func_553649439 = proc (a0: ptr X509_553649238): ptr X509_553649238 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:120:1
-  sk_X509_cmp_func_553649439 = proc (a0: ptr ptr X509_553649236;
-                                     a1: ptr ptr X509_553649236): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:120:1
-  sk_X509_delete_if_func_553649441 = proc (a0: ptr X509_553649236; a1: pointer): cint {.
+  sk_X509_cmp_func_553649441 = proc (a0: ptr ptr X509_553649238;
+                                     a1: ptr ptr X509_553649238): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:120:1
+  sk_X509_delete_if_func_553649443 = proc (a0: ptr X509_553649238; a1: pointer): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:120:1
-  sk_GENERAL_NAME_free_func_553649443 = proc (a0: ptr GENERAL_NAME_553648926): void {.
+  sk_GENERAL_NAME_free_func_553649445 = proc (a0: ptr GENERAL_NAME_553648926): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:349:1
-  sk_GENERAL_NAME_copy_func_553649445 = proc (a0: ptr GENERAL_NAME_553648926): ptr GENERAL_NAME_553648926 {.
+  sk_GENERAL_NAME_copy_func_553649447 = proc (a0: ptr GENERAL_NAME_553648926): ptr GENERAL_NAME_553648926 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:349:1
-  sk_GENERAL_NAME_cmp_func_553649447 = proc (a0: ptr ptr GENERAL_NAME_553648926;
+  sk_GENERAL_NAME_cmp_func_553649449 = proc (a0: ptr ptr GENERAL_NAME_553648926;
       a1: ptr ptr GENERAL_NAME_553648926): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:349:1
-  sk_GENERAL_NAME_delete_if_func_553649449 = proc (a0: ptr GENERAL_NAME_553648926;
+  sk_GENERAL_NAME_delete_if_func_553649451 = proc (a0: ptr GENERAL_NAME_553648926;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:349:1
-  GENERAL_NAMES_553649451 = struct_stack_st_GENERAL_NAME ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:350:32
-  sk_X509_CRL_free_func_553649453 = proc (a0: ptr X509_CRL_553648954): void {.
+  GENERAL_NAMES_553649453 = struct_stack_st_GENERAL_NAME ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:350:32
+  sk_X509_CRL_free_func_553649455 = proc (a0: ptr X509_CRL_553648954): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:737:1
-  sk_X509_CRL_copy_func_553649455 = proc (a0: ptr X509_CRL_553648954): ptr X509_CRL_553648954 {.
+  sk_X509_CRL_copy_func_553649457 = proc (a0: ptr X509_CRL_553648954): ptr X509_CRL_553648954 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:737:1
-  sk_X509_CRL_cmp_func_553649457 = proc (a0: ptr ptr X509_CRL_553648954;
+  sk_X509_CRL_cmp_func_553649459 = proc (a0: ptr ptr X509_CRL_553648954;
       a1: ptr ptr X509_CRL_553648954): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:737:1
-  sk_X509_CRL_delete_if_func_553649459 = proc (a0: ptr X509_CRL_553648954;
+  sk_X509_CRL_delete_if_func_553649461 = proc (a0: ptr X509_CRL_553648954;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:737:1
-  sk_X509_REVOKED_free_func_553649461 = proc (a0: ptr X509_REVOKED_553649234): void {.
+  sk_X509_REVOKED_free_func_553649463 = proc (a0: ptr X509_REVOKED_553649236): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:738:1
-  sk_X509_REVOKED_copy_func_553649463 = proc (a0: ptr X509_REVOKED_553649234): ptr X509_REVOKED_553649234 {.
+  sk_X509_REVOKED_copy_func_553649465 = proc (a0: ptr X509_REVOKED_553649236): ptr X509_REVOKED_553649236 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:738:1
-  sk_X509_REVOKED_cmp_func_553649465 = proc (a0: ptr ptr X509_REVOKED_553649234;
-      a1: ptr ptr X509_REVOKED_553649234): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:738:1
-  sk_X509_REVOKED_delete_if_func_553649467 = proc (a0: ptr X509_REVOKED_553649234;
+  sk_X509_REVOKED_cmp_func_553649467 = proc (a0: ptr ptr X509_REVOKED_553649236;
+      a1: ptr ptr X509_REVOKED_553649236): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:738:1
+  sk_X509_REVOKED_delete_if_func_553649469 = proc (a0: ptr X509_REVOKED_553649236;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:738:1
-  sk_X509_NAME_ENTRY_free_func_553649469 = proc (a0: ptr X509_NAME_ENTRY_553648962): void {.
+  sk_X509_NAME_ENTRY_free_func_553649471 = proc (a0: ptr X509_NAME_ENTRY_553648962): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1421:1
-  sk_X509_NAME_ENTRY_copy_func_553649471 = proc (a0: ptr X509_NAME_ENTRY_553648962): ptr X509_NAME_ENTRY_553648962 {.
+  sk_X509_NAME_ENTRY_copy_func_553649473 = proc (a0: ptr X509_NAME_ENTRY_553648962): ptr X509_NAME_ENTRY_553648962 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1421:1
-  sk_X509_NAME_ENTRY_cmp_func_553649473 = proc (a0: ptr ptr X509_NAME_ENTRY_553648962;
+  sk_X509_NAME_ENTRY_cmp_func_553649475 = proc (a0: ptr ptr X509_NAME_ENTRY_553648962;
       a1: ptr ptr X509_NAME_ENTRY_553648962): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1421:1
-  sk_X509_NAME_ENTRY_delete_if_func_553649475 = proc (a0: ptr X509_NAME_ENTRY_553648962;
+  sk_X509_NAME_ENTRY_delete_if_func_553649477 = proc (a0: ptr X509_NAME_ENTRY_553648962;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1421:1
-  sk_X509_NAME_free_func_553649477 = proc (a0: ptr X509_NAME_553648964): void {.
+  sk_X509_NAME_free_func_553649479 = proc (a0: ptr X509_NAME_553648964): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1422:1
-  sk_X509_NAME_copy_func_553649479 = proc (a0: ptr X509_NAME_553648964): ptr X509_NAME_553648964 {.
+  sk_X509_NAME_copy_func_553649481 = proc (a0: ptr X509_NAME_553648964): ptr X509_NAME_553648964 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1422:1
-  sk_X509_NAME_cmp_func_553649481 = proc (a0: ptr ptr X509_NAME_553648964;
+  sk_X509_NAME_cmp_func_553649483 = proc (a0: ptr ptr X509_NAME_553648964;
       a1: ptr ptr X509_NAME_553648964): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1422:1
-  sk_X509_NAME_delete_if_func_553649483 = proc (a0: ptr X509_NAME_553648964;
+  sk_X509_NAME_delete_if_func_553649485 = proc (a0: ptr X509_NAME_553648964;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1422:1
-  sk_X509_EXTENSION_free_func_553649485 = proc (a0: ptr X509_EXTENSION_553648956): void {.
+  sk_X509_EXTENSION_free_func_553649487 = proc (a0: ptr X509_EXTENSION_553648956): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1826:1
-  sk_X509_EXTENSION_copy_func_553649487 = proc (a0: ptr X509_EXTENSION_553648956): ptr X509_EXTENSION_553648956 {.
+  sk_X509_EXTENSION_copy_func_553649489 = proc (a0: ptr X509_EXTENSION_553648956): ptr X509_EXTENSION_553648956 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1826:1
-  sk_X509_EXTENSION_cmp_func_553649489 = proc (a0: ptr ptr X509_EXTENSION_553648956;
+  sk_X509_EXTENSION_cmp_func_553649491 = proc (a0: ptr ptr X509_EXTENSION_553648956;
       a1: ptr ptr X509_EXTENSION_553648956): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1826:1
-  sk_X509_EXTENSION_delete_if_func_553649491 = proc (a0: ptr X509_EXTENSION_553648956;
+  sk_X509_EXTENSION_delete_if_func_553649493 = proc (a0: ptr X509_EXTENSION_553648956;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1826:1
-  X509_EXTENSIONS_553649493 = struct_stack_st_X509_EXTENSION ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1827:34
-  struct_otherName_st_553649495 {.pure, inheritable, bycopy.} = object
+  X509_EXTENSIONS_553649495 = struct_stack_st_X509_EXTENSION ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:1827:34
+  struct_otherName_st_553649497 {.pure, inheritable, bycopy.} = object
     type_id*: ptr ASN1_OBJECT_553648868 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2072:16
     value*: ptr ASN1_TYPE_553648906
-  OTHERNAME_553649497 = struct_otherName_st_553649496 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2075:3
-  struct_EDIPartyName_st_553649499 {.pure, inheritable, bycopy.} = object
+  OTHERNAME_553649499 = struct_otherName_st_553649498 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2075:3
+  struct_EDIPartyName_st_553649501 {.pure, inheritable, bycopy.} = object
     nameAssigner*: ptr ASN1_STRING_553648892 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2077:16
     partyName*: ptr ASN1_STRING_553648892
-  EDIPARTYNAME_553649501 = struct_EDIPartyName_st_553649500 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2080:3
-  sk_X509_ALGOR_free_func_553649503 = proc (a0: ptr X509_ALGOR_553648950): void {.
+  EDIPARTYNAME_553649503 = struct_EDIPartyName_st_553649502 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2080:3
+  sk_X509_ALGOR_free_func_553649505 = proc (a0: ptr X509_ALGOR_553648950): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2240:1
-  sk_X509_ALGOR_copy_func_553649505 = proc (a0: ptr X509_ALGOR_553648950): ptr X509_ALGOR_553648950 {.
+  sk_X509_ALGOR_copy_func_553649507 = proc (a0: ptr X509_ALGOR_553648950): ptr X509_ALGOR_553648950 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2240:1
-  sk_X509_ALGOR_cmp_func_553649507 = proc (a0: ptr ptr X509_ALGOR_553648950;
+  sk_X509_ALGOR_cmp_func_553649509 = proc (a0: ptr ptr X509_ALGOR_553648950;
       a1: ptr ptr X509_ALGOR_553648950): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2240:1
-  sk_X509_ALGOR_delete_if_func_553649509 = proc (a0: ptr X509_ALGOR_553648950;
+  sk_X509_ALGOR_delete_if_func_553649511 = proc (a0: ptr X509_ALGOR_553648950;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2240:1
-  sk_X509_ATTRIBUTE_free_func_553649511 = proc (a0: ptr X509_ATTRIBUTE_553649226): void {.
+  sk_X509_ATTRIBUTE_free_func_553649513 = proc (a0: ptr X509_ATTRIBUTE_553649228): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2333:1
-  sk_X509_ATTRIBUTE_copy_func_553649513 = proc (a0: ptr X509_ATTRIBUTE_553649226): ptr X509_ATTRIBUTE_553649226 {.
+  sk_X509_ATTRIBUTE_copy_func_553649515 = proc (a0: ptr X509_ATTRIBUTE_553649228): ptr X509_ATTRIBUTE_553649228 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2333:1
-  sk_X509_ATTRIBUTE_cmp_func_553649515 = proc (a0: ptr ptr X509_ATTRIBUTE_553649226;
-      a1: ptr ptr X509_ATTRIBUTE_553649226): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2333:1
-  sk_X509_ATTRIBUTE_delete_if_func_553649517 = proc (a0: ptr X509_ATTRIBUTE_553649226;
+  sk_X509_ATTRIBUTE_cmp_func_553649517 = proc (a0: ptr ptr X509_ATTRIBUTE_553649228;
+      a1: ptr ptr X509_ATTRIBUTE_553649228): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2333:1
+  sk_X509_ATTRIBUTE_delete_if_func_553649519 = proc (a0: ptr X509_ATTRIBUTE_553649228;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2333:1
-  sk_X509_OBJECT_free_func_553649519 = proc (a0: ptr X509_OBJECT_553649232): void {.
+  sk_X509_OBJECT_free_func_553649521 = proc (a0: ptr X509_OBJECT_553649234): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2585:1
-  sk_X509_OBJECT_copy_func_553649521 = proc (a0: ptr X509_OBJECT_553649232): ptr X509_OBJECT_553649232 {.
+  sk_X509_OBJECT_copy_func_553649523 = proc (a0: ptr X509_OBJECT_553649234): ptr X509_OBJECT_553649234 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2585:1
-  sk_X509_OBJECT_cmp_func_553649523 = proc (a0: ptr ptr X509_OBJECT_553649232;
-      a1: ptr ptr X509_OBJECT_553649232): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2585:1
-  sk_X509_OBJECT_delete_if_func_553649525 = proc (a0: ptr X509_OBJECT_553649232;
+  sk_X509_OBJECT_cmp_func_553649525 = proc (a0: ptr ptr X509_OBJECT_553649234;
+      a1: ptr ptr X509_OBJECT_553649234): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2585:1
+  sk_X509_OBJECT_delete_if_func_553649527 = proc (a0: ptr X509_OBJECT_553649234;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2585:1
-  X509_STORE_CTX_lookup_crls_fn_553649527 = proc (a0: ptr X509_STORE_CTX_553649238;
+  X509_STORE_CTX_lookup_crls_fn_553649529 = proc (a0: ptr X509_STORE_CTX_553649240;
       a1: ptr X509_NAME_553648964): ptr struct_stack_st_X509_CRL {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2602:31
-  X509_STORE_CTX_verify_crit_oids_cb_553649529 = proc (a0: ptr X509_STORE_CTX_553649238;
-      a1: ptr X509_553649236; a2: ptr struct_stack_st_ASN1_OBJECT): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2938:15
-  sk_X509_INFO_free_func_553649531 = proc (a0: ptr X509_INFO_553648958): void {.
+  X509_STORE_CTX_verify_crit_oids_cb_553649531 = proc (a0: ptr X509_STORE_CTX_553649240;
+      a1: ptr X509_553649238; a2: ptr struct_stack_st_ASN1_OBJECT): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:2938:15
+  sk_X509_INFO_free_func_553649533 = proc (a0: ptr X509_INFO_553648958): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4537:1
-  sk_X509_INFO_copy_func_553649533 = proc (a0: ptr X509_INFO_553648958): ptr X509_INFO_553648958 {.
+  sk_X509_INFO_copy_func_553649535 = proc (a0: ptr X509_INFO_553648958): ptr X509_INFO_553648958 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4537:1
-  sk_X509_INFO_cmp_func_553649535 = proc (a0: ptr ptr X509_INFO_553648958;
+  sk_X509_INFO_cmp_func_553649537 = proc (a0: ptr ptr X509_INFO_553648958;
       a1: ptr ptr X509_INFO_553648958): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4537:1
-  sk_X509_INFO_delete_if_func_553649537 = proc (a0: ptr X509_INFO_553648958;
+  sk_X509_INFO_delete_if_func_553649539 = proc (a0: ptr X509_INFO_553648958;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4537:1
-  X509V3_EXT_NEW_553649539 = proc (): pointer {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4558:17
-  X509V3_EXT_FREE_typedef_553649541 = proc (a0: pointer): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4559:16
-  X509V3_EXT_D2I_typedef_553649543 = proc (a0: pointer; a1: ptr ptr uint8;
+  X509V3_EXT_NEW_553649541 = proc (): pointer {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4558:17
+  X509V3_EXT_FREE_typedef_553649543 = proc (a0: pointer): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4559:16
+  X509V3_EXT_D2I_typedef_553649545 = proc (a0: pointer; a1: ptr ptr uint8;
       a2: clong): pointer {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4560:17
-  X509V3_EXT_I2D_typedef_553649545 = proc (a0: pointer; a1: ptr ptr uint8): cint {.
+  X509V3_EXT_I2D_typedef_553649547 = proc (a0: pointer; a1: ptr ptr uint8): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4561:15
-  X509V3_EXT_I2V_553649547 = proc (a0: ptr X509V3_EXT_METHOD_553649222;
+  X509V3_EXT_I2V_553649549 = proc (a0: ptr X509V3_EXT_METHOD_553649224;
                                    a1: pointer;
                                    a2: ptr struct_stack_st_CONF_VALUE): ptr struct_stack_st_CONF_VALUE {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4562:33
-  X509V3_EXT_V2I_553649549 = proc (a0: ptr X509V3_EXT_METHOD_553649222;
-                                   a1: ptr X509V3_CTX_553649218;
+  X509V3_EXT_V2I_553649551 = proc (a0: ptr X509V3_EXT_METHOD_553649224;
+                                   a1: ptr X509V3_CTX_553649220;
                                    a2: ptr struct_stack_st_CONF_VALUE): pointer {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4565:17
-  X509V3_EXT_I2S_553649551 = proc (a0: ptr X509V3_EXT_METHOD_553649222;
+  X509V3_EXT_I2S_553649553 = proc (a0: ptr X509V3_EXT_METHOD_553649224;
                                    a1: pointer): cstring {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4568:17
-  X509V3_EXT_S2I_553649553 = proc (a0: ptr X509V3_EXT_METHOD_553649222;
-                                   a1: ptr X509V3_CTX_553649218; a2: cstring): pointer {.
+  X509V3_EXT_S2I_553649555 = proc (a0: ptr X509V3_EXT_METHOD_553649224;
+                                   a1: ptr X509V3_CTX_553649220; a2: cstring): pointer {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4569:17
-  X509V3_EXT_I2R_553649555 = proc (a0: ptr X509V3_EXT_METHOD_553649222;
+  X509V3_EXT_I2R_553649557 = proc (a0: ptr X509V3_EXT_METHOD_553649224;
                                    a1: pointer; a2: ptr BIO_553648984; a3: cint): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4571:15
-  X509V3_EXT_R2I_553649557 = proc (a0: ptr X509V3_EXT_METHOD_553649222;
-                                   a1: ptr X509V3_CTX_553649218; a2: cstring): pointer {.
+  X509V3_EXT_R2I_553649559 = proc (a0: ptr X509V3_EXT_METHOD_553649224;
+                                   a1: ptr X509V3_CTX_553649220; a2: cstring): pointer {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4573:17
-  X509_STORE_CTX_verify_cb_553649559 = proc (a0: cint; a1: ptr X509_STORE_CTX_553649238): cint {.
+  X509_STORE_CTX_verify_cb_553649561 = proc (a0: cint; a1: ptr X509_STORE_CTX_553649240): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:4984:15
-  X509_STORE_CTX_get_crl_fn_553649561 = proc (a0: ptr X509_STORE_CTX_553649238;
-      a1: ptr ptr X509_CRL_553648954; a2: ptr X509_553649236): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5023:15
-  X509_STORE_CTX_check_crl_fn_553649563 = proc (a0: ptr X509_STORE_CTX_553649238;
+  X509_STORE_CTX_get_crl_fn_553649563 = proc (a0: ptr X509_STORE_CTX_553649240;
+      a1: ptr ptr X509_CRL_553648954; a2: ptr X509_553649238): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5023:15
+  X509_STORE_CTX_check_crl_fn_553649565 = proc (a0: ptr X509_STORE_CTX_553649240;
       a1: ptr X509_CRL_553648954): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5025:15
-  struct_x509_purpose_st_553649565 {.pure, inheritable, bycopy.} = object
+  struct_x509_purpose_st_553649567 {.pure, inheritable, bycopy.} = object
     purpose*: cint           ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5084:20
     trust*: cint
     flags*: cint
-    check_purpose*: proc (a0: ptr struct_x509_purpose_st_553649566;
-                          a1: ptr X509_553649236; a2: cint): cint {.cdecl.}
+    check_purpose*: proc (a0: ptr struct_x509_purpose_st_553649568;
+                          a1: ptr X509_553649238; a2: cint): cint {.cdecl.}
     name*: cstring
     sname*: cstring
     usr_data*: pointer
-  X509_PURPOSE_553649567 = struct_x509_purpose_st_553649566 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5092:7
-  sk_X509_PURPOSE_free_func_553649569 = proc (a0: ptr X509_PURPOSE_553649568): void {.
+  X509_PURPOSE_553649569 = struct_x509_purpose_st_553649568 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5092:7
+  sk_X509_PURPOSE_free_func_553649571 = proc (a0: ptr X509_PURPOSE_553649570): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5094:5
-  sk_X509_PURPOSE_copy_func_553649571 = proc (a0: ptr X509_PURPOSE_553649568): ptr X509_PURPOSE_553649568 {.
+  sk_X509_PURPOSE_copy_func_553649573 = proc (a0: ptr X509_PURPOSE_553649570): ptr X509_PURPOSE_553649570 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5094:5
-  sk_X509_PURPOSE_cmp_func_553649573 = proc (a0: ptr ptr X509_PURPOSE_553649568;
-      a1: ptr ptr X509_PURPOSE_553649568): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5094:5
-  sk_X509_PURPOSE_delete_if_func_553649575 = proc (a0: ptr X509_PURPOSE_553649568;
+  sk_X509_PURPOSE_cmp_func_553649575 = proc (a0: ptr ptr X509_PURPOSE_553649570;
+      a1: ptr ptr X509_PURPOSE_553649570): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5094:5
+  sk_X509_PURPOSE_delete_if_func_553649577 = proc (a0: ptr X509_PURPOSE_553649570;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5094:5
-  sk_X509_TRUST_free_func_553649577 = proc (a0: ptr X509_TRUST_553649242): void {.
+  sk_X509_TRUST_free_func_553649579 = proc (a0: ptr X509_TRUST_553649244): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5162:1
-  sk_X509_TRUST_copy_func_553649579 = proc (a0: ptr X509_TRUST_553649242): ptr X509_TRUST_553649242 {.
+  sk_X509_TRUST_copy_func_553649581 = proc (a0: ptr X509_TRUST_553649244): ptr X509_TRUST_553649244 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5162:1
-  sk_X509_TRUST_cmp_func_553649581 = proc (a0: ptr ptr X509_TRUST_553649242;
-      a1: ptr ptr X509_TRUST_553649242): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5162:1
-  sk_X509_TRUST_delete_if_func_553649583 = proc (a0: ptr X509_TRUST_553649242;
+  sk_X509_TRUST_cmp_func_553649583 = proc (a0: ptr ptr X509_TRUST_553649244;
+      a1: ptr ptr X509_TRUST_553649244): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5162:1
+  sk_X509_TRUST_delete_if_func_553649585 = proc (a0: ptr X509_TRUST_553649244;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5162:1
-  struct_ACCESS_DESCRIPTION_st_553649585 {.pure, inheritable, bycopy.} = object
+  struct_ACCESS_DESCRIPTION_st_553649587 {.pure, inheritable, bycopy.} = object
     method_field*: ptr ASN1_OBJECT_553648868 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5237:16
     location*: ptr GENERAL_NAME_553648926
-  ACCESS_DESCRIPTION_553649587 = struct_ACCESS_DESCRIPTION_st_553649586 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5240:3
-  sk_ACCESS_DESCRIPTION_free_func_553649589 = proc (a0: ptr ACCESS_DESCRIPTION_553649588): void {.
+  ACCESS_DESCRIPTION_553649589 = struct_ACCESS_DESCRIPTION_st_553649588 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5240:3
+  sk_ACCESS_DESCRIPTION_free_func_553649591 = proc (a0: ptr ACCESS_DESCRIPTION_553649590): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5242:1
-  sk_ACCESS_DESCRIPTION_copy_func_553649591 = proc (a0: ptr ACCESS_DESCRIPTION_553649588): ptr ACCESS_DESCRIPTION_553649588 {.
+  sk_ACCESS_DESCRIPTION_copy_func_553649593 = proc (a0: ptr ACCESS_DESCRIPTION_553649590): ptr ACCESS_DESCRIPTION_553649590 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5242:1
-  sk_ACCESS_DESCRIPTION_cmp_func_553649593 = proc (
-      a0: ptr ptr ACCESS_DESCRIPTION_553649588; a1: ptr ptr ACCESS_DESCRIPTION_553649588): cint {.
+  sk_ACCESS_DESCRIPTION_cmp_func_553649595 = proc (
+      a0: ptr ptr ACCESS_DESCRIPTION_553649590; a1: ptr ptr ACCESS_DESCRIPTION_553649590): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5242:1
-  sk_ACCESS_DESCRIPTION_delete_if_func_553649595 = proc (
-      a0: ptr ACCESS_DESCRIPTION_553649588; a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5242:1
-  AUTHORITY_INFO_ACCESS_553649597 = struct_stack_st_ACCESS_DESCRIPTION ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5244:38
-  EXTENDED_KEY_USAGE_553649599 = struct_stack_st_ASN1_OBJECT ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5246:31
+  sk_ACCESS_DESCRIPTION_delete_if_func_553649597 = proc (
+      a0: ptr ACCESS_DESCRIPTION_553649590; a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5242:1
+  AUTHORITY_INFO_ACCESS_553649599 = struct_stack_st_ACCESS_DESCRIPTION ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5244:38
+  EXTENDED_KEY_USAGE_553649601 = struct_stack_st_ASN1_OBJECT ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5246:31
   struct_DIST_POINT_NAME_st_name_t {.union, bycopy.} = object
-    fullname*: ptr GENERAL_NAMES_553649452
+    fullname*: ptr GENERAL_NAMES_553649454
     relativename*: ptr struct_stack_st_X509_NAME_ENTRY
-  struct_DIST_POINT_NAME_st_553649601 {.pure, inheritable, bycopy.} = object
+  struct_DIST_POINT_NAME_st_553649603 {.pure, inheritable, bycopy.} = object
     type_field*: cint        ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5255:16
     name*: struct_DIST_POINT_NAME_st_name_t
     dpname*: ptr X509_NAME_553648964
-  DIST_POINT_NAME_553649603 = struct_DIST_POINT_NAME_st_553649602 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5263:3
-  CRL_DIST_POINTS_553649605 = struct_stack_st_DIST_POINT ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5273:30
-  sk_DIST_POINT_free_func_553649607 = proc (a0: ptr DIST_POINT_553648918): void {.
+  DIST_POINT_NAME_553649605 = struct_DIST_POINT_NAME_st_553649604 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5263:3
+  CRL_DIST_POINTS_553649607 = struct_stack_st_DIST_POINT ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5273:30
+  sk_DIST_POINT_free_func_553649609 = proc (a0: ptr DIST_POINT_553648918): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5275:1
-  sk_DIST_POINT_copy_func_553649609 = proc (a0: ptr DIST_POINT_553648918): ptr DIST_POINT_553648918 {.
+  sk_DIST_POINT_copy_func_553649611 = proc (a0: ptr DIST_POINT_553648918): ptr DIST_POINT_553648918 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5275:1
-  sk_DIST_POINT_cmp_func_553649611 = proc (a0: ptr ptr DIST_POINT_553648918;
+  sk_DIST_POINT_cmp_func_553649613 = proc (a0: ptr ptr DIST_POINT_553648918;
       a1: ptr ptr DIST_POINT_553648918): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5275:1
-  sk_DIST_POINT_delete_if_func_553649613 = proc (a0: ptr DIST_POINT_553648918;
+  sk_DIST_POINT_delete_if_func_553649615 = proc (a0: ptr DIST_POINT_553648918;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5275:1
-  struct_NOTICEREF_st_553649615 {.pure, inheritable, bycopy.} = object
+  struct_NOTICEREF_st_553649617 {.pure, inheritable, bycopy.} = object
     organization*: ptr ASN1_STRING_553648892 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5286:16
     noticenos*: ptr struct_stack_st_ASN1_INTEGER
-  NOTICEREF_553649617 = struct_NOTICEREF_st_553649616 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5289:3
-  struct_USERNOTICE_st_553649619 {.pure, inheritable, bycopy.} = object
-    noticeref*: ptr NOTICEREF_553649618 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5292:16
+  NOTICEREF_553649619 = struct_NOTICEREF_st_553649618 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5289:3
+  struct_USERNOTICE_st_553649621 {.pure, inheritable, bycopy.} = object
+    noticeref*: ptr NOTICEREF_553649620 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5292:16
     exptext*: ptr ASN1_STRING_553648892
-  USERNOTICE_553649621 = struct_USERNOTICE_st_553649620 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5295:3
+  USERNOTICE_553649623 = struct_USERNOTICE_st_553649622 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5295:3
   struct_POLICYQUALINFO_st_d_t {.union, bycopy.} = object
     cpsuri*: ptr ASN1_IA5STRING_553648884
-    usernotice*: ptr USERNOTICE_553649622
+    usernotice*: ptr USERNOTICE_553649624
     other*: ptr ASN1_TYPE_553648906
-  struct_POLICYQUALINFO_st_553649623 {.pure, inheritable, bycopy.} = object
+  struct_POLICYQUALINFO_st_553649625 {.pure, inheritable, bycopy.} = object
     pqualid*: ptr ASN1_OBJECT_553648868 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5305:16
     d*: struct_POLICYQUALINFO_st_d_t
-  POLICYQUALINFO_553649625 = struct_POLICYQUALINFO_st_553649624 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5312:3
-  sk_POLICYQUALINFO_free_func_553649627 = proc (a0: ptr POLICYQUALINFO_553649626): void {.
+  POLICYQUALINFO_553649627 = struct_POLICYQUALINFO_st_553649626 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5312:3
+  sk_POLICYQUALINFO_free_func_553649629 = proc (a0: ptr POLICYQUALINFO_553649628): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5314:1
-  sk_POLICYQUALINFO_copy_func_553649629 = proc (a0: ptr POLICYQUALINFO_553649626): ptr POLICYQUALINFO_553649626 {.
+  sk_POLICYQUALINFO_copy_func_553649631 = proc (a0: ptr POLICYQUALINFO_553649628): ptr POLICYQUALINFO_553649628 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5314:1
-  sk_POLICYQUALINFO_cmp_func_553649631 = proc (a0: ptr ptr POLICYQUALINFO_553649626;
-      a1: ptr ptr POLICYQUALINFO_553649626): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5314:1
-  sk_POLICYQUALINFO_delete_if_func_553649633 = proc (a0: ptr POLICYQUALINFO_553649626;
+  sk_POLICYQUALINFO_cmp_func_553649633 = proc (a0: ptr ptr POLICYQUALINFO_553649628;
+      a1: ptr ptr POLICYQUALINFO_553649628): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5314:1
+  sk_POLICYQUALINFO_delete_if_func_553649635 = proc (a0: ptr POLICYQUALINFO_553649628;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5314:1
-  struct_POLICYINFO_st_553649635 {.pure, inheritable, bycopy.} = object
+  struct_POLICYINFO_st_553649637 {.pure, inheritable, bycopy.} = object
     policyid*: ptr ASN1_OBJECT_553648868 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5317:16
     qualifiers*: ptr struct_stack_st_POLICYQUALINFO
-  POLICYINFO_553649637 = struct_POLICYINFO_st_553649636 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5320:3
-  CERTIFICATEPOLICIES_553649639 = struct_stack_st_POLICYINFO ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5322:30
-  sk_POLICYINFO_free_func_553649641 = proc (a0: ptr POLICYINFO_553649638): void {.
+  POLICYINFO_553649639 = struct_POLICYINFO_st_553649638 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5320:3
+  CERTIFICATEPOLICIES_553649641 = struct_stack_st_POLICYINFO ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5322:30
+  sk_POLICYINFO_free_func_553649643 = proc (a0: ptr POLICYINFO_553649640): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5324:1
-  sk_POLICYINFO_copy_func_553649643 = proc (a0: ptr POLICYINFO_553649638): ptr POLICYINFO_553649638 {.
+  sk_POLICYINFO_copy_func_553649645 = proc (a0: ptr POLICYINFO_553649640): ptr POLICYINFO_553649640 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5324:1
-  sk_POLICYINFO_cmp_func_553649645 = proc (a0: ptr ptr POLICYINFO_553649638;
-      a1: ptr ptr POLICYINFO_553649638): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5324:1
-  sk_POLICYINFO_delete_if_func_553649647 = proc (a0: ptr POLICYINFO_553649638;
+  sk_POLICYINFO_cmp_func_553649647 = proc (a0: ptr ptr POLICYINFO_553649640;
+      a1: ptr ptr POLICYINFO_553649640): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5324:1
+  sk_POLICYINFO_delete_if_func_553649649 = proc (a0: ptr POLICYINFO_553649640;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5324:1
-  struct_POLICY_MAPPING_st_553649649 {.pure, inheritable, bycopy.} = object
+  struct_POLICY_MAPPING_st_553649651 {.pure, inheritable, bycopy.} = object
     issuerDomainPolicy*: ptr ASN1_OBJECT_553648868 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5328:16
     subjectDomainPolicy*: ptr ASN1_OBJECT_553648868
-  POLICY_MAPPING_553649651 = struct_POLICY_MAPPING_st_553649650 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5331:3
-  sk_POLICY_MAPPING_free_func_553649653 = proc (a0: ptr POLICY_MAPPING_553649652): void {.
+  POLICY_MAPPING_553649653 = struct_POLICY_MAPPING_st_553649652 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5331:3
+  sk_POLICY_MAPPING_free_func_553649655 = proc (a0: ptr POLICY_MAPPING_553649654): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5333:1
-  sk_POLICY_MAPPING_copy_func_553649655 = proc (a0: ptr POLICY_MAPPING_553649652): ptr POLICY_MAPPING_553649652 {.
+  sk_POLICY_MAPPING_copy_func_553649657 = proc (a0: ptr POLICY_MAPPING_553649654): ptr POLICY_MAPPING_553649654 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5333:1
-  sk_POLICY_MAPPING_cmp_func_553649657 = proc (a0: ptr ptr POLICY_MAPPING_553649652;
-      a1: ptr ptr POLICY_MAPPING_553649652): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5333:1
-  sk_POLICY_MAPPING_delete_if_func_553649659 = proc (a0: ptr POLICY_MAPPING_553649652;
+  sk_POLICY_MAPPING_cmp_func_553649659 = proc (a0: ptr ptr POLICY_MAPPING_553649654;
+      a1: ptr ptr POLICY_MAPPING_553649654): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5333:1
+  sk_POLICY_MAPPING_delete_if_func_553649661 = proc (a0: ptr POLICY_MAPPING_553649654;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5333:1
-  POLICY_MAPPINGS_553649661 = struct_stack_st_POLICY_MAPPING ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5335:34
-  struct_GENERAL_SUBTREE_st_553649663 {.pure, inheritable, bycopy.} = object
+  POLICY_MAPPINGS_553649663 = struct_stack_st_POLICY_MAPPING ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5335:34
+  struct_GENERAL_SUBTREE_st_553649665 {.pure, inheritable, bycopy.} = object
     base*: ptr GENERAL_NAME_553648926 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5338:16
     minimum*: ptr ASN1_INTEGER_553648886
     maximum*: ptr ASN1_INTEGER_553648886
-  GENERAL_SUBTREE_553649665 = struct_GENERAL_SUBTREE_st_553649664 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5342:3
-  sk_GENERAL_SUBTREE_free_func_553649667 = proc (a0: ptr GENERAL_SUBTREE_553649666): void {.
+  GENERAL_SUBTREE_553649667 = struct_GENERAL_SUBTREE_st_553649666 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5342:3
+  sk_GENERAL_SUBTREE_free_func_553649669 = proc (a0: ptr GENERAL_SUBTREE_553649668): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5344:1
-  sk_GENERAL_SUBTREE_copy_func_553649669 = proc (a0: ptr GENERAL_SUBTREE_553649666): ptr GENERAL_SUBTREE_553649666 {.
+  sk_GENERAL_SUBTREE_copy_func_553649671 = proc (a0: ptr GENERAL_SUBTREE_553649668): ptr GENERAL_SUBTREE_553649668 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5344:1
-  sk_GENERAL_SUBTREE_cmp_func_553649671 = proc (a0: ptr ptr GENERAL_SUBTREE_553649666;
-      a1: ptr ptr GENERAL_SUBTREE_553649666): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5344:1
-  sk_GENERAL_SUBTREE_delete_if_func_553649673 = proc (a0: ptr GENERAL_SUBTREE_553649666;
+  sk_GENERAL_SUBTREE_cmp_func_553649673 = proc (a0: ptr ptr GENERAL_SUBTREE_553649668;
+      a1: ptr ptr GENERAL_SUBTREE_553649668): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5344:1
+  sk_GENERAL_SUBTREE_delete_if_func_553649675 = proc (a0: ptr GENERAL_SUBTREE_553649668;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5344:1
-  struct_POLICY_CONSTRAINTS_st_553649675 {.pure, inheritable, bycopy.} = object
+  struct_POLICY_CONSTRAINTS_st_553649677 {.pure, inheritable, bycopy.} = object
     requireExplicitPolicy*: ptr ASN1_INTEGER_553648886 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5354:16
     inhibitPolicyMapping*: ptr ASN1_INTEGER_553648886
-  POLICY_CONSTRAINTS_553649677 = struct_POLICY_CONSTRAINTS_st_553649676 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5357:3
-  pem_password_cb_553649679 = proc (a0: cstring; a1: cint; a2: cint; a3: pointer): cint {.
+  POLICY_CONSTRAINTS_553649679 = struct_POLICY_CONSTRAINTS_st_553649678 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/x509.h:5357:3
+  pem_password_cb_553649681 = proc (a0: cstring; a1: cint; a2: cint; a3: pointer): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/pem.h:318:13
-  struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649681 {.
+  struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649683 {.
       pure, inheritable, bycopy.} = object
     static_assertion_at_line_255_error_is_max_overheads_are_inconsistent*
         {.bitsize: 1'i64.}: cuint ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl3.h:253:1
-  static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649683 = struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649682 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl3.h:253:1
-  struct_timeval_553649685 {.pure, inheritable, bycopy.} = object
-    tv_sec*: compiler_time_t_553649766 ## Generated based on /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:8:8
-    tv_usec*: compiler_suseconds_t_553649768
-  SSL_client_hello_cb_fn_553649687 = proc (a0: ptr SSL_553649202; a1: ptr cint;
+  static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649685 = struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649684 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl3.h:253:1
+  struct_timeval_553649687 {.pure, inheritable, bycopy.} = object
+    tv_sec*: compiler_time_t_553649768 ## Generated based on /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:8:8
+    tv_usec*: compiler_suseconds_t_553649770
+  SSL_client_hello_cb_fn_553649689 = proc (a0: ptr SSL_553649204; a1: ptr cint;
       a2: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:1125:15
-  sk_SSL_CIPHER_free_func_553649691 = proc (a0: ptr SSL_CIPHER_553649180): void {.
+  sk_SSL_CIPHER_free_func_553649693 = proc (a0: ptr SSL_CIPHER_553649182): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:1569:1
-  sk_SSL_CIPHER_copy_func_553649693 = proc (a0: ptr SSL_CIPHER_553649180): ptr SSL_CIPHER_553649180 {.
+  sk_SSL_CIPHER_copy_func_553649695 = proc (a0: ptr SSL_CIPHER_553649182): ptr SSL_CIPHER_553649182 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:1569:1
-  sk_SSL_CIPHER_cmp_func_553649695 = proc (a0: ptr ptr SSL_CIPHER_553649180;
-      a1: ptr ptr SSL_CIPHER_553649180): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:1569:1
-  sk_SSL_CIPHER_delete_if_func_553649697 = proc (a0: ptr SSL_CIPHER_553649180;
+  sk_SSL_CIPHER_cmp_func_553649697 = proc (a0: ptr ptr SSL_CIPHER_553649182;
+      a1: ptr ptr SSL_CIPHER_553649182): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:1569:1
+  sk_SSL_CIPHER_delete_if_func_553649699 = proc (a0: ptr SSL_CIPHER_553649182;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:1569:1
-  SSL_custom_ext_add_cb_553649699 = proc (a0: ptr SSL_553649202; a1: cuint;
+  SSL_custom_ext_add_cb_553649701 = proc (a0: ptr SSL_553649204; a1: cuint;
       a2: ptr ptr uint8; a3: ptr csize_t; a4: ptr cint; a5: pointer): cint {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:2045:15
-  SSL_custom_ext_free_cb_553649701 = proc (a0: ptr SSL_553649202; a1: cuint;
+  SSL_custom_ext_free_cb_553649703 = proc (a0: ptr SSL_553649204; a1: cuint;
       a2: ptr uint8; a3: pointer): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:2054:16
-  SSL_custom_ext_parse_cb_553649703 = proc (a0: ptr SSL_553649202; a1: cuint;
+  SSL_custom_ext_parse_cb_553649705 = proc (a0: ptr SSL_553649204; a1: cuint;
       a2: ptr uint8; a3: csize_t; a4: ptr cint; a5: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:2067:15
-  ssl_cert_compression_func_t_553649709 = proc (a0: ptr SSL_553649202;
+  ssl_cert_compression_func_t_553649711 = proc (a0: ptr SSL_553649204;
       a1: ptr CBB_553649004; a2: ptr uint8; a3: csize_t): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3558:15
-  ssl_cert_decompression_func_t_553649711 = proc (a0: ptr SSL_553649202;
+  ssl_cert_decompression_func_t_553649713 = proc (a0: ptr SSL_553649204;
       a1: ptr ptr CRYPTO_BUFFER_553649024; a2: csize_t; a3: ptr uint8;
       a4: csize_t): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3570:15
-  sk_SRTP_PROTECTION_PROFILE_free_func_553649713 = proc (
-      a0: ptr SRTP_PROTECTION_PROFILE_553649176): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3733:1
-  sk_SRTP_PROTECTION_PROFILE_copy_func_553649715 = proc (
-      a0: ptr SRTP_PROTECTION_PROFILE_553649176): ptr SRTP_PROTECTION_PROFILE_553649176 {.
+  sk_SRTP_PROTECTION_PROFILE_free_func_553649715 = proc (
+      a0: ptr SRTP_PROTECTION_PROFILE_553649178): void {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3733:1
+  sk_SRTP_PROTECTION_PROFILE_copy_func_553649717 = proc (
+      a0: ptr SRTP_PROTECTION_PROFILE_553649178): ptr SRTP_PROTECTION_PROFILE_553649178 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3733:1
-  sk_SRTP_PROTECTION_PROFILE_cmp_func_553649717 = proc (
-      a0: ptr ptr SRTP_PROTECTION_PROFILE_553649176;
-      a1: ptr ptr SRTP_PROTECTION_PROFILE_553649176): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3733:1
-  sk_SRTP_PROTECTION_PROFILE_delete_if_func_553649719 = proc (
-      a0: ptr SRTP_PROTECTION_PROFILE_553649176; a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3733:1
-  SSL_psk_client_cb_func_553649721 = proc (a0: ptr SSL_553649202; a1: cstring;
+  sk_SRTP_PROTECTION_PROFILE_cmp_func_553649719 = proc (
+      a0: ptr ptr SRTP_PROTECTION_PROFILE_553649178;
+      a1: ptr ptr SRTP_PROTECTION_PROFILE_553649178): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3733:1
+  sk_SRTP_PROTECTION_PROFILE_delete_if_func_553649721 = proc (
+      a0: ptr SRTP_PROTECTION_PROFILE_553649178; a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3733:1
+  SSL_psk_client_cb_func_553649723 = proc (a0: ptr SSL_553649204; a1: cstring;
       a2: cstring; a3: cuint; a4: ptr uint8; a5: cuint): cuint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3784:24
-  SSL_psk_server_cb_func_553649723 = proc (a0: ptr SSL_553649202; a1: cstring;
+  SSL_psk_server_cb_func_553649725 = proc (a0: ptr SSL_553649204; a1: cstring;
       a2: ptr uint8; a3: cuint): cuint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:3812:20
-  OSSL_HANDSHAKE_STATE_553649735 = enum_OSSL_HANDSHAKE_STATE_553649734 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:5030:3
-  SSL_CONF_CTX_553649737 = struct_ssl_conf_ctx_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:5649:32
-  SSL_COMP_553649741 = struct_ssl_comp_st_553649744 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:5994:28
-  struct_ssl_comp_st_553649743 {.pure, inheritable, bycopy.} = object
+  OSSL_HANDSHAKE_STATE_553649737 = enum_OSSL_HANDSHAKE_STATE_553649736 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:5030:3
+  SSL_CONF_CTX_553649739 = struct_ssl_conf_ctx_st ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:5649:32
+  SSL_COMP_553649743 = struct_ssl_comp_st_553649746 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:5994:28
+  struct_ssl_comp_st_553649745 {.pure, inheritable, bycopy.} = object
     id*: cint                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:6026:8
     name*: cstring
     method_field*: cstring
-  sk_SSL_COMP_free_func_553649745 = proc (a0: ptr SSL_COMP_553649742): void {.
+  sk_SSL_COMP_free_func_553649747 = proc (a0: ptr SSL_COMP_553649744): void {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:6032:1
-  sk_SSL_COMP_copy_func_553649747 = proc (a0: ptr SSL_COMP_553649742): ptr SSL_COMP_553649742 {.
+  sk_SSL_COMP_copy_func_553649749 = proc (a0: ptr SSL_COMP_553649744): ptr SSL_COMP_553649744 {.
       cdecl.}                ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:6032:1
-  sk_SSL_COMP_cmp_func_553649749 = proc (a0: ptr ptr SSL_COMP_553649742;
-      a1: ptr ptr SSL_COMP_553649742): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:6032:1
-  sk_SSL_COMP_delete_if_func_553649751 = proc (a0: ptr SSL_COMP_553649742;
+  sk_SSL_COMP_cmp_func_553649751 = proc (a0: ptr ptr SSL_COMP_553649744;
+      a1: ptr ptr SSL_COMP_553649744): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:6032:1
+  sk_SSL_COMP_delete_if_func_553649753 = proc (a0: ptr SSL_COMP_553649744;
       a1: pointer): cint {.cdecl.} ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/ssl.h:6032:1
-  sa_family_t_553649753 = cushort ## Generated based on /usr/include/x86_64-linux-gnu/bits/sockaddr.h:28:28
-  in_port_t_553649755 = uint16 ## Generated based on /usr/include/netinet/in.h:125:18
-  struct_in_addr_553649757 {.pure, inheritable, bycopy.} = object
-    s_addr*: in_addr_t_553649770 ## Generated based on /usr/include/netinet/in.h:31:8
+  sa_family_t_553649755 = cushort ## Generated based on /usr/include/x86_64-linux-gnu/bits/sockaddr.h:28:28
+  in_port_t_553649757 = uint16 ## Generated based on /usr/include/netinet/in.h:125:18
+  struct_in_addr_553649759 {.pure, inheritable, bycopy.} = object
+    s_addr*: in_addr_t_553649772 ## Generated based on /usr/include/netinet/in.h:31:8
   struct_in6_addr_compiler_in6_u_t {.union, bycopy.} = object
     compiler_u6_addr8*: array[16'i64, uint8]
     compiler_u6_addr16*: array[8'i64, uint16]
     compiler_u6_addr32*: array[4'i64, uint32]
-  struct_in6_addr_553649759 {.pure, inheritable, bycopy.} = object
+  struct_in6_addr_553649761 {.pure, inheritable, bycopy.} = object
     compiler_in6_u*: struct_in6_addr_compiler_in6_u_t ## Generated based on /usr/include/netinet/in.h:221:8
-  compiler_socklen_t_553649761 = cuint ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:210:23
-  struct_IO_FILE_553649763 {.pure, inheritable, bycopy.} = object
+  compiler_socklen_t_553649763 = cuint ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:210:23
+  struct_IO_FILE_553649765 {.pure, inheritable, bycopy.} = object
     internal_flags*: cint    ## Generated based on /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:49:8
     internal_IO_read_ptr*: cstring
     internal_IO_read_end*: cstring
@@ -2477,62 +2477,62 @@ type
     internal_IO_backup_base*: cstring
     internal_IO_save_end*: cstring
     internal_markers*: ptr struct_IO_marker
-    internal_chain*: ptr struct_IO_FILE_553649764
+    internal_chain*: ptr struct_IO_FILE_553649766
     internal_fileno*: cint
     internal_flags2*: cint
-    internal_old_offset*: compiler_off_t_553649772
+    internal_old_offset*: compiler_off_t_553649774
     internal_cur_column*: cushort
     internal_vtable_offset*: cschar
     internal_shortbuf*: array[1'i64, cschar]
     internal_lock*: pointer
-    internal_offset*: compiler_off64_t_553649776
+    internal_offset*: compiler_off64_t_553649778
     internal_codecvt*: ptr struct_IO_codecvt
     internal_wide_data*: ptr struct_IO_wide_data
-    internal_freeres_list*: ptr struct_IO_FILE_553649764
+    internal_freeres_list*: ptr struct_IO_FILE_553649766
     internal_freeres_buf*: pointer
     compiler_pad5*: csize_t
     internal_mode*: cint
     internal_unused2*: array[20'i64, cschar]
-  compiler_time_t_553649765 = clong ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:160:26
-  compiler_suseconds_t_553649767 = clong ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:162:31
-  in_addr_t_553649769 = uint32 ## Generated based on /usr/include/netinet/in.h:30:18
-  compiler_off_t_553649771 = clong ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:152:25
-  compiler_off64_t_553649775 = clong ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:153:27
-  sk_ASN1_OBJECT_delete_if_func_553649374 = (when declared(
+  compiler_time_t_553649767 = clong ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:160:26
+  compiler_suseconds_t_553649769 = clong ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:162:31
+  in_addr_t_553649771 = uint32 ## Generated based on /usr/include/netinet/in.h:30:18
+  compiler_off_t_553649773 = clong ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:152:25
+  compiler_off64_t_553649777 = clong ## Generated based on /usr/include/x86_64-linux-gnu/bits/types.h:153:27
+  sk_ASN1_OBJECT_delete_if_func_553649376 = (when declared(
       sk_ASN1_OBJECT_delete_if_func):
     when ownSizeof(sk_ASN1_OBJECT_delete_if_func) !=
-        ownSizeof(sk_ASN1_OBJECT_delete_if_func_553649373):
+        ownSizeof(sk_ASN1_OBJECT_delete_if_func_553649375):
       static :
         warning("Declaration of " & "sk_ASN1_OBJECT_delete_if_func" &
             " exists but with different size")
     sk_ASN1_OBJECT_delete_if_func
   else:
-    sk_ASN1_OBJECT_delete_if_func_553649373)
-  struct_v3_ext_ctx_553649220 = (when declared(struct_v3_ext_ctx):
-    when ownSizeof(struct_v3_ext_ctx) != ownSizeof(struct_v3_ext_ctx_553649219):
+    sk_ASN1_OBJECT_delete_if_func_553649375)
+  struct_v3_ext_ctx_553649222 = (when declared(struct_v3_ext_ctx):
+    when ownSizeof(struct_v3_ext_ctx) != ownSizeof(struct_v3_ext_ctx_553649221):
       static :
         warning("Declaration of " & "struct_v3_ext_ctx" &
             " exists but with different size")
     struct_v3_ext_ctx
   else:
-    struct_v3_ext_ctx_553649219)
-  X509_553649236 = (when declared(X509):
-    when ownSizeof(X509) != ownSizeof(X509_553649235):
+    struct_v3_ext_ctx_553649221)
+  X509_553649238 = (when declared(X509):
+    when ownSizeof(X509) != ownSizeof(X509_553649237):
       static :
         warning("Declaration of " & "X509" & " exists but with different size")
     X509
   else:
-    X509_553649235)
-  sk_PKCS7_RECIP_INFO_free_func_553649392 = (when declared(
+    X509_553649237)
+  sk_PKCS7_RECIP_INFO_free_func_553649394 = (when declared(
       sk_PKCS7_RECIP_INFO_free_func):
     when ownSizeof(sk_PKCS7_RECIP_INFO_free_func) !=
-        ownSizeof(sk_PKCS7_RECIP_INFO_free_func_553649391):
+        ownSizeof(sk_PKCS7_RECIP_INFO_free_func_553649393):
       static :
         warning("Declaration of " & "sk_PKCS7_RECIP_INFO_free_func" &
             " exists but with different size")
     sk_PKCS7_RECIP_INFO_free_func
   else:
-    sk_PKCS7_RECIP_INFO_free_func_553649391)
+    sk_PKCS7_RECIP_INFO_free_func_553649393)
   ngtcp2_sockaddr_in_553648645 = (when declared(ngtcp2_sockaddr_in):
     when ownSizeof(ngtcp2_sockaddr_in) != ownSizeof(ngtcp2_sockaddr_in_553648644):
       static :
@@ -2541,24 +2541,24 @@ type
     ngtcp2_sockaddr_in
   else:
     ngtcp2_sockaddr_in_553648644)
-  OPENSSL_sk_call_copy_func_553649274 = (when declared(OPENSSL_sk_call_copy_func):
+  OPENSSL_sk_call_copy_func_553649276 = (when declared(OPENSSL_sk_call_copy_func):
     when ownSizeof(OPENSSL_sk_call_copy_func) !=
-        ownSizeof(OPENSSL_sk_call_copy_func_553649273):
+        ownSizeof(OPENSSL_sk_call_copy_func_553649275):
       static :
         warning("Declaration of " & "OPENSSL_sk_call_copy_func" &
             " exists but with different size")
     OPENSSL_sk_call_copy_func
   else:
-    OPENSSL_sk_call_copy_func_553649273)
-  sk_CONF_VALUE_copy_func_553649412 = (when declared(sk_CONF_VALUE_copy_func):
+    OPENSSL_sk_call_copy_func_553649275)
+  sk_CONF_VALUE_copy_func_553649414 = (when declared(sk_CONF_VALUE_copy_func):
     when ownSizeof(sk_CONF_VALUE_copy_func) !=
-        ownSizeof(sk_CONF_VALUE_copy_func_553649411):
+        ownSizeof(sk_CONF_VALUE_copy_func_553649413):
       static :
         warning("Declaration of " & "sk_CONF_VALUE_copy_func" &
             " exists but with different size")
     sk_CONF_VALUE_copy_func
   else:
-    sk_CONF_VALUE_copy_func_553649411)
+    sk_CONF_VALUE_copy_func_553649413)
   struct_ngtcp2_transport_params_553648669 = (when declared(
       struct_ngtcp2_transport_params):
     when ownSizeof(struct_ngtcp2_transport_params) !=
@@ -2569,102 +2569,102 @@ type
     struct_ngtcp2_transport_params
   else:
     struct_ngtcp2_transport_params_553648668)
-  enum_ssl_private_key_result_t_553649690 = (when declared(
+  enum_ssl_private_key_result_t_553649692 = (when declared(
       enum_ssl_private_key_result_t):
     when ownSizeof(enum_ssl_private_key_result_t) !=
-        ownSizeof(enum_ssl_private_key_result_t_553649689):
+        ownSizeof(enum_ssl_private_key_result_t_553649691):
       static :
         warning("Declaration of " & "enum_ssl_private_key_result_t" &
             " exists but with different size")
     enum_ssl_private_key_result_t
   else:
-    enum_ssl_private_key_result_t_553649689)
-  OPENSSL_sk_delete_if_func_553649270 = (when declared(OPENSSL_sk_delete_if_func):
+    enum_ssl_private_key_result_t_553649691)
+  OPENSSL_sk_delete_if_func_553649272 = (when declared(OPENSSL_sk_delete_if_func):
     when ownSizeof(OPENSSL_sk_delete_if_func) !=
-        ownSizeof(OPENSSL_sk_delete_if_func_553649269):
+        ownSizeof(OPENSSL_sk_delete_if_func_553649271):
       static :
         warning("Declaration of " & "OPENSSL_sk_delete_if_func" &
             " exists but with different size")
     OPENSSL_sk_delete_if_func
   else:
-    OPENSSL_sk_delete_if_func_553649269)
-  sk_X509_ALGOR_cmp_func_553649508 = (when declared(sk_X509_ALGOR_cmp_func):
-    when ownSizeof(sk_X509_ALGOR_cmp_func) != ownSizeof(sk_X509_ALGOR_cmp_func_553649507):
+    OPENSSL_sk_delete_if_func_553649271)
+  sk_X509_ALGOR_cmp_func_553649510 = (when declared(sk_X509_ALGOR_cmp_func):
+    when ownSizeof(sk_X509_ALGOR_cmp_func) != ownSizeof(sk_X509_ALGOR_cmp_func_553649509):
       static :
         warning("Declaration of " & "sk_X509_ALGOR_cmp_func" &
             " exists but with different size")
     sk_X509_ALGOR_cmp_func
   else:
-    sk_X509_ALGOR_cmp_func_553649507)
-  BIO_ADDR_553649326 = (when declared(BIO_ADDR):
-    when ownSizeof(BIO_ADDR) != ownSizeof(BIO_ADDR_553649325):
+    sk_X509_ALGOR_cmp_func_553649509)
+  BIO_ADDR_553649328 = (when declared(BIO_ADDR):
+    when ownSizeof(BIO_ADDR) != ownSizeof(BIO_ADDR_553649327):
       static :
         warning("Declaration of " & "BIO_ADDR" &
             " exists but with different size")
     BIO_ADDR
   else:
-    BIO_ADDR_553649325)
-  DIST_POINT_NAME_553649604 = (when declared(DIST_POINT_NAME):
-    when ownSizeof(DIST_POINT_NAME) != ownSizeof(DIST_POINT_NAME_553649603):
+    BIO_ADDR_553649327)
+  DIST_POINT_NAME_553649606 = (when declared(DIST_POINT_NAME):
+    when ownSizeof(DIST_POINT_NAME) != ownSizeof(DIST_POINT_NAME_553649605):
       static :
         warning("Declaration of " & "DIST_POINT_NAME" &
             " exists but with different size")
     DIST_POINT_NAME
   else:
-    DIST_POINT_NAME_553649603)
-  POLICYQUALINFO_553649626 = (when declared(POLICYQUALINFO):
-    when ownSizeof(POLICYQUALINFO) != ownSizeof(POLICYQUALINFO_553649625):
+    DIST_POINT_NAME_553649605)
+  POLICYQUALINFO_553649628 = (when declared(POLICYQUALINFO):
+    when ownSizeof(POLICYQUALINFO) != ownSizeof(POLICYQUALINFO_553649627):
       static :
         warning("Declaration of " & "POLICYQUALINFO" &
             " exists but with different size")
     POLICYQUALINFO
   else:
-    POLICYQUALINFO_553649625)
-  X509_STORE_CTX_verify_cb_553649560 = (when declared(X509_STORE_CTX_verify_cb):
+    POLICYQUALINFO_553649627)
+  X509_STORE_CTX_verify_cb_553649562 = (when declared(X509_STORE_CTX_verify_cb):
     when ownSizeof(X509_STORE_CTX_verify_cb) !=
-        ownSizeof(X509_STORE_CTX_verify_cb_553649559):
+        ownSizeof(X509_STORE_CTX_verify_cb_553649561):
       static :
         warning("Declaration of " & "X509_STORE_CTX_verify_cb" &
             " exists but with different size")
     X509_STORE_CTX_verify_cb
   else:
-    X509_STORE_CTX_verify_cb_553649559)
-  sk_X509_ATTRIBUTE_cmp_func_553649516 = (when declared(
+    X509_STORE_CTX_verify_cb_553649561)
+  sk_X509_ATTRIBUTE_cmp_func_553649518 = (when declared(
       sk_X509_ATTRIBUTE_cmp_func):
     when ownSizeof(sk_X509_ATTRIBUTE_cmp_func) !=
-        ownSizeof(sk_X509_ATTRIBUTE_cmp_func_553649515):
+        ownSizeof(sk_X509_ATTRIBUTE_cmp_func_553649517):
       static :
         warning("Declaration of " & "sk_X509_ATTRIBUTE_cmp_func" &
             " exists but with different size")
     sk_X509_ATTRIBUTE_cmp_func
   else:
-    sk_X509_ATTRIBUTE_cmp_func_553649515)
-  sk_CRYPTO_BUFFER_cmp_func_553649432 = (when declared(sk_CRYPTO_BUFFER_cmp_func):
+    sk_X509_ATTRIBUTE_cmp_func_553649517)
+  sk_CRYPTO_BUFFER_cmp_func_553649434 = (when declared(sk_CRYPTO_BUFFER_cmp_func):
     when ownSizeof(sk_CRYPTO_BUFFER_cmp_func) !=
-        ownSizeof(sk_CRYPTO_BUFFER_cmp_func_553649431):
+        ownSizeof(sk_CRYPTO_BUFFER_cmp_func_553649433):
       static :
         warning("Declaration of " & "sk_CRYPTO_BUFFER_cmp_func" &
             " exists but with different size")
     sk_CRYPTO_BUFFER_cmp_func
   else:
-    sk_CRYPTO_BUFFER_cmp_func_553649431)
-  sk_X509_INFO_copy_func_553649534 = (when declared(sk_X509_INFO_copy_func):
-    when ownSizeof(sk_X509_INFO_copy_func) != ownSizeof(sk_X509_INFO_copy_func_553649533):
+    sk_CRYPTO_BUFFER_cmp_func_553649433)
+  sk_X509_INFO_copy_func_553649536 = (when declared(sk_X509_INFO_copy_func):
+    when ownSizeof(sk_X509_INFO_copy_func) != ownSizeof(sk_X509_INFO_copy_func_553649535):
       static :
         warning("Declaration of " & "sk_X509_INFO_copy_func" &
             " exists but with different size")
     sk_X509_INFO_copy_func
   else:
-    sk_X509_INFO_copy_func_553649533)
-  sk_GENERAL_NAME_copy_func_553649446 = (when declared(sk_GENERAL_NAME_copy_func):
+    sk_X509_INFO_copy_func_553649535)
+  sk_GENERAL_NAME_copy_func_553649448 = (when declared(sk_GENERAL_NAME_copy_func):
     when ownSizeof(sk_GENERAL_NAME_copy_func) !=
-        ownSizeof(sk_GENERAL_NAME_copy_func_553649445):
+        ownSizeof(sk_GENERAL_NAME_copy_func_553649447):
       static :
         warning("Declaration of " & "sk_GENERAL_NAME_copy_func" &
             " exists but with different size")
     sk_GENERAL_NAME_copy_func
   else:
-    sk_GENERAL_NAME_copy_func_553649445)
+    sk_GENERAL_NAME_copy_func_553649447)
   ngtcp2_path_validation_result_553648619 = (when declared(
       ngtcp2_path_validation_result):
     when ownSizeof(ngtcp2_path_validation_result) !=
@@ -2691,14 +2691,14 @@ type
     ngtcp2_ack_datagram
   else:
     ngtcp2_ack_datagram_553648813)
-  SHA256_CTX_553649162 = (when declared(SHA256_CTX):
-    when ownSizeof(SHA256_CTX) != ownSizeof(SHA256_CTX_553649161):
+  SHA256_CTX_553649164 = (when declared(SHA256_CTX):
+    when ownSizeof(SHA256_CTX) != ownSizeof(SHA256_CTX_553649163):
       static :
         warning("Declaration of " & "SHA256_CTX" &
             " exists but with different size")
     SHA256_CTX
   else:
-    SHA256_CTX_553649161)
+    SHA256_CTX_553649163)
   ASN1_NULL_553648862 = (when declared(ASN1_NULL):
     when ownSizeof(ASN1_NULL) != ownSizeof(ASN1_NULL_553648861):
       static :
@@ -2715,24 +2715,24 @@ type
     CRYPTO_BUFFER
   else:
     CRYPTO_BUFFER_553649023)
-  ASN1_SEQUENCE_ANY_553649384 = (when declared(ASN1_SEQUENCE_ANY):
-    when ownSizeof(ASN1_SEQUENCE_ANY) != ownSizeof(ASN1_SEQUENCE_ANY_553649383):
+  ASN1_SEQUENCE_ANY_553649386 = (when declared(ASN1_SEQUENCE_ANY):
+    when ownSizeof(ASN1_SEQUENCE_ANY) != ownSizeof(ASN1_SEQUENCE_ANY_553649385):
       static :
         warning("Declaration of " & "ASN1_SEQUENCE_ANY" &
             " exists but with different size")
     ASN1_SEQUENCE_ANY
   else:
-    ASN1_SEQUENCE_ANY_553649383)
-  sk_SRTP_PROTECTION_PROFILE_cmp_func_553649718 = (when declared(
+    ASN1_SEQUENCE_ANY_553649385)
+  sk_SRTP_PROTECTION_PROFILE_cmp_func_553649720 = (when declared(
       sk_SRTP_PROTECTION_PROFILE_cmp_func):
     when ownSizeof(sk_SRTP_PROTECTION_PROFILE_cmp_func) !=
-        ownSizeof(sk_SRTP_PROTECTION_PROFILE_cmp_func_553649717):
+        ownSizeof(sk_SRTP_PROTECTION_PROFILE_cmp_func_553649719):
       static :
         warning("Declaration of " & "sk_SRTP_PROTECTION_PROFILE_cmp_func" &
             " exists but with different size")
     sk_SRTP_PROTECTION_PROFILE_cmp_func
   else:
-    sk_SRTP_PROTECTION_PROFILE_cmp_func_553649717)
+    sk_SRTP_PROTECTION_PROFILE_cmp_func_553649719)
   ngtcp2_stream_close_553648774 = (when declared(ngtcp2_stream_close):
     when ownSizeof(ngtcp2_stream_close) != ownSizeof(ngtcp2_stream_close_553648773):
       static :
@@ -2741,22 +2741,22 @@ type
     ngtcp2_stream_close
   else:
     ngtcp2_stream_close_553648773)
-  OBJ_NAME_553649344 = (when declared(OBJ_NAME):
-    when ownSizeof(OBJ_NAME) != ownSizeof(OBJ_NAME_553649343):
+  OBJ_NAME_553649346 = (when declared(OBJ_NAME):
+    when ownSizeof(OBJ_NAME) != ownSizeof(OBJ_NAME_553649345):
       static :
         warning("Declaration of " & "OBJ_NAME" &
             " exists but with different size")
     OBJ_NAME
   else:
-    OBJ_NAME_553649343)
-  X509_STORE_553649240 = (when declared(X509_STORE):
-    when ownSizeof(X509_STORE) != ownSizeof(X509_STORE_553649239):
+    OBJ_NAME_553649345)
+  X509_STORE_553649242 = (when declared(X509_STORE):
+    when ownSizeof(X509_STORE) != ownSizeof(X509_STORE_553649241):
       static :
         warning("Declaration of " & "X509_STORE" &
             " exists but with different size")
     X509_STORE
   else:
-    X509_STORE_553649239)
+    X509_STORE_553649241)
   RIPEMD160_CTX_553648946 = (when declared(RIPEMD160_CTX):
     when ownSizeof(RIPEMD160_CTX) != ownSizeof(RIPEMD160_CTX_553648945):
       static :
@@ -2773,22 +2773,22 @@ type
     ASN1_OCTET_STRING
   else:
     ASN1_OCTET_STRING_553648887)
-  i2d_of_void_553649352 = (when declared(i2d_of_void):
-    when ownSizeof(i2d_of_void) != ownSizeof(i2d_of_void_553649351):
+  i2d_of_void_553649354 = (when declared(i2d_of_void):
+    when ownSizeof(i2d_of_void) != ownSizeof(i2d_of_void_553649353):
       static :
         warning("Declaration of " & "i2d_of_void" &
             " exists but with different size")
     i2d_of_void
   else:
-    i2d_of_void_553649351)
-  compiler_suseconds_t_553649768 = (when declared(compiler_suseconds_t):
-    when ownSizeof(compiler_suseconds_t) != ownSizeof(compiler_suseconds_t_553649767):
+    i2d_of_void_553649353)
+  compiler_suseconds_t_553649770 = (when declared(compiler_suseconds_t):
+    when ownSizeof(compiler_suseconds_t) != ownSizeof(compiler_suseconds_t_553649769):
       static :
         warning("Declaration of " & "compiler_suseconds_t" &
             " exists but with different size")
     compiler_suseconds_t
   else:
-    compiler_suseconds_t_553649767)
+    compiler_suseconds_t_553649769)
   CRYPTO_THREADID_553648860 = (when declared(CRYPTO_THREADID):
     when ownSizeof(CRYPTO_THREADID) != ownSizeof(CRYPTO_THREADID_553648859):
       static :
@@ -2797,72 +2797,72 @@ type
     CRYPTO_THREADID
   else:
     CRYPTO_THREADID_553648859)
-  OPENSSL_sk_copy_func_553649266 = (when declared(OPENSSL_sk_copy_func):
-    when ownSizeof(OPENSSL_sk_copy_func) != ownSizeof(OPENSSL_sk_copy_func_553649265):
+  OPENSSL_sk_copy_func_553649268 = (when declared(OPENSSL_sk_copy_func):
+    when ownSizeof(OPENSSL_sk_copy_func) != ownSizeof(OPENSSL_sk_copy_func_553649267):
       static :
         warning("Declaration of " & "OPENSSL_sk_copy_func" &
             " exists but with different size")
     OPENSSL_sk_copy_func
   else:
-    OPENSSL_sk_copy_func_553649265)
-  struct_cbb_child_st_553649340 = (when declared(struct_cbb_child_st):
-    when ownSizeof(struct_cbb_child_st) != ownSizeof(struct_cbb_child_st_553649339):
+    OPENSSL_sk_copy_func_553649267)
+  struct_cbb_child_st_553649342 = (when declared(struct_cbb_child_st):
+    when ownSizeof(struct_cbb_child_st) != ownSizeof(struct_cbb_child_st_553649341):
       static :
         warning("Declaration of " & "struct_cbb_child_st" &
             " exists but with different size")
     struct_cbb_child_st
   else:
-    struct_cbb_child_st_553649339)
-  compiler_off64_t_553649776 = (when declared(compiler_off64_t):
-    when ownSizeof(compiler_off64_t) != ownSizeof(compiler_off64_t_553649775):
+    struct_cbb_child_st_553649341)
+  compiler_off64_t_553649778 = (when declared(compiler_off64_t):
+    when ownSizeof(compiler_off64_t) != ownSizeof(compiler_off64_t_553649777):
       static :
         warning("Declaration of " & "compiler_off64_t" &
             " exists but with different size")
     compiler_off64_t
   else:
-    compiler_off64_t_553649775)
-  enum_ssl_verify_result_t_553649708 = (when declared(enum_ssl_verify_result_t):
+    compiler_off64_t_553649777)
+  enum_ssl_verify_result_t_553649710 = (when declared(enum_ssl_verify_result_t):
     when ownSizeof(enum_ssl_verify_result_t) !=
-        ownSizeof(enum_ssl_verify_result_t_553649707):
+        ownSizeof(enum_ssl_verify_result_t_553649709):
       static :
         warning("Declaration of " & "enum_ssl_verify_result_t" &
             " exists but with different size")
     enum_ssl_verify_result_t
   else:
-    enum_ssl_verify_result_t_553649707)
-  X509V3_EXT_I2S_553649552 = (when declared(X509V3_EXT_I2S):
-    when ownSizeof(X509V3_EXT_I2S) != ownSizeof(X509V3_EXT_I2S_553649551):
+    enum_ssl_verify_result_t_553649709)
+  X509V3_EXT_I2S_553649554 = (when declared(X509V3_EXT_I2S):
+    when ownSizeof(X509V3_EXT_I2S) != ownSizeof(X509V3_EXT_I2S_553649553):
       static :
         warning("Declaration of " & "X509V3_EXT_I2S" &
             " exists but with different size")
     X509V3_EXT_I2S
   else:
-    X509V3_EXT_I2S_553649551)
-  ERR_FNS_553649208 = (when declared(ERR_FNS):
-    when ownSizeof(ERR_FNS) != ownSizeof(ERR_FNS_553649207):
+    X509V3_EXT_I2S_553649553)
+  ERR_FNS_553649210 = (when declared(ERR_FNS):
+    when ownSizeof(ERR_FNS) != ownSizeof(ERR_FNS_553649209):
       static :
         warning("Declaration of " & "ERR_FNS" &
             " exists but with different size")
     ERR_FNS
   else:
-    ERR_FNS_553649207)
-  sk_SSL_COMP_copy_func_553649748 = (when declared(sk_SSL_COMP_copy_func):
-    when ownSizeof(sk_SSL_COMP_copy_func) != ownSizeof(sk_SSL_COMP_copy_func_553649747):
+    ERR_FNS_553649209)
+  sk_SSL_COMP_copy_func_553649750 = (when declared(sk_SSL_COMP_copy_func):
+    when ownSizeof(sk_SSL_COMP_copy_func) != ownSizeof(sk_SSL_COMP_copy_func_553649749):
       static :
         warning("Declaration of " & "sk_SSL_COMP_copy_func" &
             " exists but with different size")
     sk_SSL_COMP_copy_func
   else:
-    sk_SSL_COMP_copy_func_553649747)
-  sk_POLICYINFO_copy_func_553649644 = (when declared(sk_POLICYINFO_copy_func):
+    sk_SSL_COMP_copy_func_553649749)
+  sk_POLICYINFO_copy_func_553649646 = (when declared(sk_POLICYINFO_copy_func):
     when ownSizeof(sk_POLICYINFO_copy_func) !=
-        ownSizeof(sk_POLICYINFO_copy_func_553649643):
+        ownSizeof(sk_POLICYINFO_copy_func_553649645):
       static :
         warning("Declaration of " & "sk_POLICYINFO_copy_func" &
             " exists but with different size")
     sk_POLICYINFO_copy_func
   else:
-    sk_POLICYINFO_copy_func_553649643)
+    sk_POLICYINFO_copy_func_553649645)
   struct_ngtcp2_version_info_553648665 = (when declared(
       struct_ngtcp2_version_info):
     when ownSizeof(struct_ngtcp2_version_info) !=
@@ -2900,14 +2900,14 @@ type
     ngtcp2_connection_id_status
   else:
     ngtcp2_connection_id_status_553648803)
-  OPENSSL_STRING_553649284 = (when declared(OPENSSL_STRING):
-    when ownSizeof(OPENSSL_STRING) != ownSizeof(OPENSSL_STRING_553649283):
+  OPENSSL_STRING_553649286 = (when declared(OPENSSL_STRING):
+    when ownSizeof(OPENSSL_STRING) != ownSizeof(OPENSSL_STRING_553649285):
       static :
         warning("Declaration of " & "OPENSSL_STRING" &
             " exists but with different size")
     OPENSSL_STRING
   else:
-    OPENSSL_STRING_553649283)
+    OPENSSL_STRING_553649285)
   struct_ngtcp2_crypto_aead_ctx_553648728 = (when declared(
       struct_ngtcp2_crypto_aead_ctx):
     when ownSizeof(struct_ngtcp2_crypto_aead_ctx) !=
@@ -2933,23 +2933,23 @@ type
     DH
   else:
     DH_553649027)
-  struct_EC_builtin_curve_553649422 = (when declared(struct_EC_builtin_curve):
+  struct_EC_builtin_curve_553649424 = (when declared(struct_EC_builtin_curve):
     when ownSizeof(struct_EC_builtin_curve) !=
-        ownSizeof(struct_EC_builtin_curve_553649421):
+        ownSizeof(struct_EC_builtin_curve_553649423):
       static :
         warning("Declaration of " & "struct_EC_builtin_curve" &
             " exists but with different size")
     struct_EC_builtin_curve
   else:
-    struct_EC_builtin_curve_553649421)
-  SSL_ECH_KEYS_553649188 = (when declared(SSL_ECH_KEYS):
-    when ownSizeof(SSL_ECH_KEYS) != ownSizeof(SSL_ECH_KEYS_553649187):
+    struct_EC_builtin_curve_553649423)
+  SSL_ECH_KEYS_553649190 = (when declared(SSL_ECH_KEYS):
+    when ownSizeof(SSL_ECH_KEYS) != ownSizeof(SSL_ECH_KEYS_553649189):
       static :
         warning("Declaration of " & "SSL_ECH_KEYS" &
             " exists but with different size")
     SSL_ECH_KEYS
   else:
-    SSL_ECH_KEYS_553649187)
+    SSL_ECH_KEYS_553649189)
   ngtcp2_duration_553648623 = (when declared(ngtcp2_duration):
     when ownSizeof(ngtcp2_duration) != ownSizeof(ngtcp2_duration_553648622):
       static :
@@ -2967,14 +2967,14 @@ type
     struct_Netscape_spkac_st
   else:
     struct_Netscape_spkac_st_553648939)
-  ACCESS_DESCRIPTION_553649588 = (when declared(ACCESS_DESCRIPTION):
-    when ownSizeof(ACCESS_DESCRIPTION) != ownSizeof(ACCESS_DESCRIPTION_553649587):
+  ACCESS_DESCRIPTION_553649590 = (when declared(ACCESS_DESCRIPTION):
+    when ownSizeof(ACCESS_DESCRIPTION) != ownSizeof(ACCESS_DESCRIPTION_553649589):
       static :
         warning("Declaration of " & "ACCESS_DESCRIPTION" &
             " exists but with different size")
     ACCESS_DESCRIPTION
   else:
-    ACCESS_DESCRIPTION_553649587)
+    ACCESS_DESCRIPTION_553649589)
   BIO_METHOD_553648980 = (when declared(BIO_METHOD):
     when ownSizeof(BIO_METHOD) != ownSizeof(BIO_METHOD_553648979):
       static :
@@ -2983,16 +2983,16 @@ type
     BIO_METHOD
   else:
     BIO_METHOD_553648979)
-  sk_ACCESS_DESCRIPTION_cmp_func_553649594 = (when declared(
+  sk_ACCESS_DESCRIPTION_cmp_func_553649596 = (when declared(
       sk_ACCESS_DESCRIPTION_cmp_func):
     when ownSizeof(sk_ACCESS_DESCRIPTION_cmp_func) !=
-        ownSizeof(sk_ACCESS_DESCRIPTION_cmp_func_553649593):
+        ownSizeof(sk_ACCESS_DESCRIPTION_cmp_func_553649595):
       static :
         warning("Declaration of " & "sk_ACCESS_DESCRIPTION_cmp_func" &
             " exists but with different size")
     sk_ACCESS_DESCRIPTION_cmp_func
   else:
-    sk_ACCESS_DESCRIPTION_cmp_func_553649593)
+    sk_ACCESS_DESCRIPTION_cmp_func_553649595)
   EVP_CIPHER_553649062 = (when declared(EVP_CIPHER):
     when ownSizeof(EVP_CIPHER) != ownSizeof(EVP_CIPHER_553649061):
       static :
@@ -3024,22 +3024,22 @@ type
     ENGINE
   else:
     ENGINE_553649043)
-  struct_x509_purpose_st_553649566 = (when declared(struct_x509_purpose_st):
-    when ownSizeof(struct_x509_purpose_st) != ownSizeof(struct_x509_purpose_st_553649565):
+  struct_x509_purpose_st_553649568 = (when declared(struct_x509_purpose_st):
+    when ownSizeof(struct_x509_purpose_st) != ownSizeof(struct_x509_purpose_st_553649567):
       static :
         warning("Declaration of " & "struct_x509_purpose_st" &
             " exists but with different size")
     struct_x509_purpose_st
   else:
-    struct_x509_purpose_st_553649565)
-  sk_SSL_COMP_cmp_func_553649750 = (when declared(sk_SSL_COMP_cmp_func):
-    when ownSizeof(sk_SSL_COMP_cmp_func) != ownSizeof(sk_SSL_COMP_cmp_func_553649749):
+    struct_x509_purpose_st_553649567)
+  sk_SSL_COMP_cmp_func_553649752 = (when declared(sk_SSL_COMP_cmp_func):
+    when ownSizeof(sk_SSL_COMP_cmp_func) != ownSizeof(sk_SSL_COMP_cmp_func_553649751):
       static :
         warning("Declaration of " & "sk_SSL_COMP_cmp_func" &
             " exists but with different size")
     sk_SSL_COMP_cmp_func
   else:
-    sk_SSL_COMP_cmp_func_553649749)
+    sk_SSL_COMP_cmp_func_553649751)
   PKCS7_ENVELOPE_553649112 = (when declared(PKCS7_ENVELOPE):
     when ownSizeof(PKCS7_ENVELOPE) != ownSizeof(PKCS7_ENVELOPE_553649111):
       static :
@@ -3056,16 +3056,16 @@ type
     ngtcp2_tstamp
   else:
     ngtcp2_tstamp_553648620)
-  sk_ACCESS_DESCRIPTION_free_func_553649590 = (when declared(
+  sk_ACCESS_DESCRIPTION_free_func_553649592 = (when declared(
       sk_ACCESS_DESCRIPTION_free_func):
     when ownSizeof(sk_ACCESS_DESCRIPTION_free_func) !=
-        ownSizeof(sk_ACCESS_DESCRIPTION_free_func_553649589):
+        ownSizeof(sk_ACCESS_DESCRIPTION_free_func_553649591):
       static :
         warning("Declaration of " & "sk_ACCESS_DESCRIPTION_free_func" &
             " exists but with different size")
     sk_ACCESS_DESCRIPTION_free_func
   else:
-    sk_ACCESS_DESCRIPTION_free_func_553649589)
+    sk_ACCESS_DESCRIPTION_free_func_553649591)
   ngtcp2_crypto_conn_ref_553648850 = (when declared(ngtcp2_crypto_conn_ref):
     when ownSizeof(ngtcp2_crypto_conn_ref) != ownSizeof(ngtcp2_crypto_conn_ref_553648849):
       static :
@@ -3084,40 +3084,40 @@ type
     ngtcp2_recv_version_negotiation
   else:
     ngtcp2_recv_version_negotiation_553648759)
-  SSL_client_hello_cb_fn_553649688 = (when declared(SSL_client_hello_cb_fn):
-    when ownSizeof(SSL_client_hello_cb_fn) != ownSizeof(SSL_client_hello_cb_fn_553649687):
+  SSL_client_hello_cb_fn_553649690 = (when declared(SSL_client_hello_cb_fn):
+    when ownSizeof(SSL_client_hello_cb_fn) != ownSizeof(SSL_client_hello_cb_fn_553649689):
       static :
         warning("Declaration of " & "SSL_client_hello_cb_fn" &
             " exists but with different size")
     SSL_client_hello_cb_fn
   else:
-    SSL_client_hello_cb_fn_553649687)
-  sk_POLICYQUALINFO_free_func_553649628 = (when declared(
+    SSL_client_hello_cb_fn_553649689)
+  sk_POLICYQUALINFO_free_func_553649630 = (when declared(
       sk_POLICYQUALINFO_free_func):
     when ownSizeof(sk_POLICYQUALINFO_free_func) !=
-        ownSizeof(sk_POLICYQUALINFO_free_func_553649627):
+        ownSizeof(sk_POLICYQUALINFO_free_func_553649629):
       static :
         warning("Declaration of " & "sk_POLICYQUALINFO_free_func" &
             " exists but with different size")
     sk_POLICYQUALINFO_free_func
   else:
-    sk_POLICYQUALINFO_free_func_553649627)
-  sk_SSL_CIPHER_cmp_func_553649696 = (when declared(sk_SSL_CIPHER_cmp_func):
-    when ownSizeof(sk_SSL_CIPHER_cmp_func) != ownSizeof(sk_SSL_CIPHER_cmp_func_553649695):
+    sk_POLICYQUALINFO_free_func_553649629)
+  sk_SSL_CIPHER_cmp_func_553649698 = (when declared(sk_SSL_CIPHER_cmp_func):
+    when ownSizeof(sk_SSL_CIPHER_cmp_func) != ownSizeof(sk_SSL_CIPHER_cmp_func_553649697):
       static :
         warning("Declaration of " & "sk_SSL_CIPHER_cmp_func" &
             " exists but with different size")
     sk_SSL_CIPHER_cmp_func
   else:
-    sk_SSL_CIPHER_cmp_func_553649695)
-  SSL_psk_client_cb_func_553649722 = (when declared(SSL_psk_client_cb_func):
-    when ownSizeof(SSL_psk_client_cb_func) != ownSizeof(SSL_psk_client_cb_func_553649721):
+    sk_SSL_CIPHER_cmp_func_553649697)
+  SSL_psk_client_cb_func_553649724 = (when declared(SSL_psk_client_cb_func):
+    when ownSizeof(SSL_psk_client_cb_func) != ownSizeof(SSL_psk_client_cb_func_553649723):
       static :
         warning("Declaration of " & "SSL_psk_client_cb_func" &
             " exists but with different size")
     SSL_psk_client_cb_func
   else:
-    SSL_psk_client_cb_func_553649721)
+    SSL_psk_client_cb_func_553649723)
   ngtcp2_crypto_aead_553648722 = (when declared(ngtcp2_crypto_aead):
     when ownSizeof(ngtcp2_crypto_aead) != ownSizeof(ngtcp2_crypto_aead_553648721):
       static :
@@ -3126,16 +3126,16 @@ type
     ngtcp2_crypto_aead
   else:
     ngtcp2_crypto_aead_553648721)
-  sk_OPENSSL_STRING_cmp_func_553649298 = (when declared(
+  sk_OPENSSL_STRING_cmp_func_553649300 = (when declared(
       sk_OPENSSL_STRING_cmp_func):
     when ownSizeof(sk_OPENSSL_STRING_cmp_func) !=
-        ownSizeof(sk_OPENSSL_STRING_cmp_func_553649297):
+        ownSizeof(sk_OPENSSL_STRING_cmp_func_553649299):
       static :
         warning("Declaration of " & "sk_OPENSSL_STRING_cmp_func" &
             " exists but with different size")
     sk_OPENSSL_STRING_cmp_func
   else:
-    sk_OPENSSL_STRING_cmp_func_553649297)
+    sk_OPENSSL_STRING_cmp_func_553649299)
   CBS_ASN1_TAG_553648858 = (when declared(CBS_ASN1_TAG):
     when ownSizeof(CBS_ASN1_TAG) != ownSizeof(CBS_ASN1_TAG_553648857):
       static :
@@ -3144,14 +3144,14 @@ type
     CBS_ASN1_TAG
   else:
     CBS_ASN1_TAG_553648857)
-  sk_X509_NAME_copy_func_553649480 = (when declared(sk_X509_NAME_copy_func):
-    when ownSizeof(sk_X509_NAME_copy_func) != ownSizeof(sk_X509_NAME_copy_func_553649479):
+  sk_X509_NAME_copy_func_553649482 = (when declared(sk_X509_NAME_copy_func):
+    when ownSizeof(sk_X509_NAME_copy_func) != ownSizeof(sk_X509_NAME_copy_func_553649481):
       static :
         warning("Declaration of " & "sk_X509_NAME_copy_func" &
             " exists but with different size")
     sk_X509_NAME_copy_func
   else:
-    sk_X509_NAME_copy_func_553649479)
+    sk_X509_NAME_copy_func_553649481)
   BIGNUM_553648976 = (when declared(BIGNUM):
     when ownSizeof(BIGNUM) != ownSizeof(BIGNUM_553648975):
       static :
@@ -3159,120 +3159,120 @@ type
     BIGNUM
   else:
     BIGNUM_553648975)
-  sk_DIST_POINT_copy_func_553649610 = (when declared(sk_DIST_POINT_copy_func):
+  sk_DIST_POINT_copy_func_553649612 = (when declared(sk_DIST_POINT_copy_func):
     when ownSizeof(sk_DIST_POINT_copy_func) !=
-        ownSizeof(sk_DIST_POINT_copy_func_553649609):
+        ownSizeof(sk_DIST_POINT_copy_func_553649611):
       static :
         warning("Declaration of " & "sk_DIST_POINT_copy_func" &
             " exists but with different size")
     sk_DIST_POINT_copy_func
   else:
-    sk_DIST_POINT_copy_func_553649609)
-  sk_GENERAL_SUBTREE_delete_if_func_553649674 = (when declared(
+    sk_DIST_POINT_copy_func_553649611)
+  sk_GENERAL_SUBTREE_delete_if_func_553649676 = (when declared(
       sk_GENERAL_SUBTREE_delete_if_func):
     when ownSizeof(sk_GENERAL_SUBTREE_delete_if_func) !=
-        ownSizeof(sk_GENERAL_SUBTREE_delete_if_func_553649673):
+        ownSizeof(sk_GENERAL_SUBTREE_delete_if_func_553649675):
       static :
         warning("Declaration of " & "sk_GENERAL_SUBTREE_delete_if_func" &
             " exists but with different size")
     sk_GENERAL_SUBTREE_delete_if_func
   else:
-    sk_GENERAL_SUBTREE_delete_if_func_553649673)
-  CRYPTO_dynlock_553649256 = (when declared(CRYPTO_dynlock):
-    when ownSizeof(CRYPTO_dynlock) != ownSizeof(CRYPTO_dynlock_553649255):
+    sk_GENERAL_SUBTREE_delete_if_func_553649675)
+  CRYPTO_dynlock_553649258 = (when declared(CRYPTO_dynlock):
+    when ownSizeof(CRYPTO_dynlock) != ownSizeof(CRYPTO_dynlock_553649257):
       static :
         warning("Declaration of " & "CRYPTO_dynlock" &
             " exists but with different size")
     CRYPTO_dynlock
   else:
-    CRYPTO_dynlock_553649255)
-  SSL_SESSION_553649200 = (when declared(SSL_SESSION):
-    when ownSizeof(SSL_SESSION) != ownSizeof(SSL_SESSION_553649199):
+    CRYPTO_dynlock_553649257)
+  SSL_SESSION_553649202 = (when declared(SSL_SESSION):
+    when ownSizeof(SSL_SESSION) != ownSizeof(SSL_SESSION_553649201):
       static :
         warning("Declaration of " & "SSL_SESSION" &
             " exists but with different size")
     SSL_SESSION
   else:
-    SSL_SESSION_553649199)
-  sk_ASN1_INTEGER_delete_if_func_553649364 = (when declared(
+    SSL_SESSION_553649201)
+  sk_ASN1_INTEGER_delete_if_func_553649366 = (when declared(
       sk_ASN1_INTEGER_delete_if_func):
     when ownSizeof(sk_ASN1_INTEGER_delete_if_func) !=
-        ownSizeof(sk_ASN1_INTEGER_delete_if_func_553649363):
+        ownSizeof(sk_ASN1_INTEGER_delete_if_func_553649365):
       static :
         warning("Declaration of " & "sk_ASN1_INTEGER_delete_if_func" &
             " exists but with different size")
     sk_ASN1_INTEGER_delete_if_func
   else:
-    sk_ASN1_INTEGER_delete_if_func_553649363)
-  sk_CONF_VALUE_free_func_553649410 = (when declared(sk_CONF_VALUE_free_func):
+    sk_ASN1_INTEGER_delete_if_func_553649365)
+  sk_CONF_VALUE_free_func_553649412 = (when declared(sk_CONF_VALUE_free_func):
     when ownSizeof(sk_CONF_VALUE_free_func) !=
-        ownSizeof(sk_CONF_VALUE_free_func_553649409):
+        ownSizeof(sk_CONF_VALUE_free_func_553649411):
       static :
         warning("Declaration of " & "sk_CONF_VALUE_free_func" &
             " exists but with different size")
     sk_CONF_VALUE_free_func
   else:
-    sk_CONF_VALUE_free_func_553649409)
-  X509_PURPOSE_553649568 = (when declared(X509_PURPOSE):
-    when ownSizeof(X509_PURPOSE) != ownSizeof(X509_PURPOSE_553649567):
+    sk_CONF_VALUE_free_func_553649411)
+  X509_PURPOSE_553649570 = (when declared(X509_PURPOSE):
+    when ownSizeof(X509_PURPOSE) != ownSizeof(X509_PURPOSE_553649569):
       static :
         warning("Declaration of " & "X509_PURPOSE" &
             " exists but with different size")
     X509_PURPOSE
   else:
-    X509_PURPOSE_553649567)
-  sk_ASN1_TYPE_copy_func_553649378 = (when declared(sk_ASN1_TYPE_copy_func):
-    when ownSizeof(sk_ASN1_TYPE_copy_func) != ownSizeof(sk_ASN1_TYPE_copy_func_553649377):
+    X509_PURPOSE_553649569)
+  sk_ASN1_TYPE_copy_func_553649380 = (when declared(sk_ASN1_TYPE_copy_func):
+    when ownSizeof(sk_ASN1_TYPE_copy_func) != ownSizeof(sk_ASN1_TYPE_copy_func_553649379):
       static :
         warning("Declaration of " & "sk_ASN1_TYPE_copy_func" &
             " exists but with different size")
     sk_ASN1_TYPE_copy_func
   else:
-    sk_ASN1_TYPE_copy_func_553649377)
-  struct_IO_FILE_553649764 = (when declared(struct_IO_FILE):
-    when ownSizeof(struct_IO_FILE) != ownSizeof(struct_IO_FILE_553649763):
+    sk_ASN1_TYPE_copy_func_553649379)
+  struct_IO_FILE_553649766 = (when declared(struct_IO_FILE):
+    when ownSizeof(struct_IO_FILE) != ownSizeof(struct_IO_FILE_553649765):
       static :
         warning("Declaration of " & "struct_IO_FILE" &
             " exists but with different size")
     struct_IO_FILE
   else:
-    struct_IO_FILE_553649763)
-  EXTENDED_KEY_USAGE_553649600 = (when declared(EXTENDED_KEY_USAGE):
-    when ownSizeof(EXTENDED_KEY_USAGE) != ownSizeof(EXTENDED_KEY_USAGE_553649599):
+    struct_IO_FILE_553649765)
+  EXTENDED_KEY_USAGE_553649602 = (when declared(EXTENDED_KEY_USAGE):
+    when ownSizeof(EXTENDED_KEY_USAGE) != ownSizeof(EXTENDED_KEY_USAGE_553649601):
       static :
         warning("Declaration of " & "EXTENDED_KEY_USAGE" &
             " exists but with different size")
     EXTENDED_KEY_USAGE
   else:
-    EXTENDED_KEY_USAGE_553649599)
-  union_evp_aead_ctx_st_state_553649332 = (when declared(
+    EXTENDED_KEY_USAGE_553649601)
+  union_evp_aead_ctx_st_state_553649334 = (when declared(
       union_evp_aead_ctx_st_state):
     when ownSizeof(union_evp_aead_ctx_st_state) !=
-        ownSizeof(union_evp_aead_ctx_st_state_553649331):
+        ownSizeof(union_evp_aead_ctx_st_state_553649333):
       static :
         warning("Declaration of " & "union_evp_aead_ctx_st_state" &
             " exists but with different size")
     union_evp_aead_ctx_st_state
   else:
-    union_evp_aead_ctx_st_state_553649331)
-  sk_POLICY_MAPPING_free_func_553649654 = (when declared(
+    union_evp_aead_ctx_st_state_553649333)
+  sk_POLICY_MAPPING_free_func_553649656 = (when declared(
       sk_POLICY_MAPPING_free_func):
     when ownSizeof(sk_POLICY_MAPPING_free_func) !=
-        ownSizeof(sk_POLICY_MAPPING_free_func_553649653):
+        ownSizeof(sk_POLICY_MAPPING_free_func_553649655):
       static :
         warning("Declaration of " & "sk_POLICY_MAPPING_free_func" &
             " exists but with different size")
     sk_POLICY_MAPPING_free_func
   else:
-    sk_POLICY_MAPPING_free_func_553649653)
-  SSL_CIPHER_553649180 = (when declared(SSL_CIPHER):
-    when ownSizeof(SSL_CIPHER) != ownSizeof(SSL_CIPHER_553649179):
+    sk_POLICY_MAPPING_free_func_553649655)
+  SSL_CIPHER_553649182 = (when declared(SSL_CIPHER):
+    when ownSizeof(SSL_CIPHER) != ownSizeof(SSL_CIPHER_553649181):
       static :
         warning("Declaration of " & "SSL_CIPHER" &
             " exists but with different size")
     SSL_CIPHER
   else:
-    SSL_CIPHER_553649179)
+    SSL_CIPHER_553649181)
   ngtcp2_recv_new_token_553648806 = (when declared(ngtcp2_recv_new_token):
     when ownSizeof(ngtcp2_recv_new_token) != ownSizeof(ngtcp2_recv_new_token_553648805):
       static :
@@ -3281,24 +3281,24 @@ type
     ngtcp2_recv_new_token
   else:
     ngtcp2_recv_new_token_553648805)
-  struct_ssl_private_key_method_st_553649194 = (when declared(
+  struct_ssl_private_key_method_st_553649196 = (when declared(
       struct_ssl_private_key_method_st):
     when ownSizeof(struct_ssl_private_key_method_st) !=
-        ownSizeof(struct_ssl_private_key_method_st_553649193):
+        ownSizeof(struct_ssl_private_key_method_st_553649195):
       static :
         warning("Declaration of " & "struct_ssl_private_key_method_st" &
             " exists but with different size")
     struct_ssl_private_key_method_st
   else:
-    struct_ssl_private_key_method_st_553649193)
-  X509V3_EXT_NEW_553649540 = (when declared(X509V3_EXT_NEW):
-    when ownSizeof(X509V3_EXT_NEW) != ownSizeof(X509V3_EXT_NEW_553649539):
+    struct_ssl_private_key_method_st_553649195)
+  X509V3_EXT_NEW_553649542 = (when declared(X509V3_EXT_NEW):
+    when ownSizeof(X509V3_EXT_NEW) != ownSizeof(X509V3_EXT_NEW_553649541):
       static :
         warning("Declaration of " & "X509V3_EXT_NEW" &
             " exists but with different size")
     X509V3_EXT_NEW
   else:
-    X509V3_EXT_NEW_553649539)
+    X509V3_EXT_NEW_553649541)
   struct_ngtcp2_vec_553648629 = (when declared(struct_ngtcp2_vec):
     when ownSizeof(struct_ngtcp2_vec) != ownSizeof(struct_ngtcp2_vec_553648628):
       static :
@@ -3307,14 +3307,14 @@ type
     struct_ngtcp2_vec
   else:
     struct_ngtcp2_vec_553648628)
-  EC_builtin_curve_553649424 = (when declared(EC_builtin_curve):
-    when ownSizeof(EC_builtin_curve) != ownSizeof(EC_builtin_curve_553649423):
+  EC_builtin_curve_553649426 = (when declared(EC_builtin_curve):
+    when ownSizeof(EC_builtin_curve) != ownSizeof(EC_builtin_curve_553649425):
       static :
         warning("Declaration of " & "EC_builtin_curve" &
             " exists but with different size")
     EC_builtin_curve
   else:
-    EC_builtin_curve_553649423)
+    EC_builtin_curve_553649425)
   ASN1_UNIVERSALSTRING_553648898 = (when declared(ASN1_UNIVERSALSTRING):
     when ownSizeof(ASN1_UNIVERSALSTRING) != ownSizeof(ASN1_UNIVERSALSTRING_553648897):
       static :
@@ -3331,14 +3331,14 @@ type
     BLAKE2B_CTX
   else:
     BLAKE2B_CTX_553648987)
-  GENERAL_SUBTREE_553649666 = (when declared(GENERAL_SUBTREE):
-    when ownSizeof(GENERAL_SUBTREE) != ownSizeof(GENERAL_SUBTREE_553649665):
+  GENERAL_SUBTREE_553649668 = (when declared(GENERAL_SUBTREE):
+    when ownSizeof(GENERAL_SUBTREE) != ownSizeof(GENERAL_SUBTREE_553649667):
       static :
         warning("Declaration of " & "GENERAL_SUBTREE" &
             " exists but with different size")
     GENERAL_SUBTREE
   else:
-    GENERAL_SUBTREE_553649665)
+    GENERAL_SUBTREE_553649667)
   ASN1_VISIBLESTRING_553648904 = (when declared(ASN1_VISIBLESTRING):
     when ownSizeof(ASN1_VISIBLESTRING) != ownSizeof(ASN1_VISIBLESTRING_553648903):
       static :
@@ -3371,32 +3371,32 @@ type
     X509_REQ
   else:
     X509_REQ_553648967)
-  OPENSSL_BLOCK_553649246 = (when declared(OPENSSL_BLOCK):
-    when ownSizeof(OPENSSL_BLOCK) != ownSizeof(OPENSSL_BLOCK_553649245):
+  OPENSSL_BLOCK_553649248 = (when declared(OPENSSL_BLOCK):
+    when ownSizeof(OPENSSL_BLOCK) != ownSizeof(OPENSSL_BLOCK_553649247):
       static :
         warning("Declaration of " & "OPENSSL_BLOCK" &
             " exists but with different size")
     OPENSSL_BLOCK
   else:
-    OPENSSL_BLOCK_553649245)
-  sk_ASN1_TYPE_delete_if_func_553649382 = (when declared(
+    OPENSSL_BLOCK_553649247)
+  sk_ASN1_TYPE_delete_if_func_553649384 = (when declared(
       sk_ASN1_TYPE_delete_if_func):
     when ownSizeof(sk_ASN1_TYPE_delete_if_func) !=
-        ownSizeof(sk_ASN1_TYPE_delete_if_func_553649381):
+        ownSizeof(sk_ASN1_TYPE_delete_if_func_553649383):
       static :
         warning("Declaration of " & "sk_ASN1_TYPE_delete_if_func" &
             " exists but with different size")
     sk_ASN1_TYPE_delete_if_func
   else:
-    sk_ASN1_TYPE_delete_if_func_553649381)
-  struct_obj_name_st_553649342 = (when declared(struct_obj_name_st):
-    when ownSizeof(struct_obj_name_st) != ownSizeof(struct_obj_name_st_553649341):
+    sk_ASN1_TYPE_delete_if_func_553649383)
+  struct_obj_name_st_553649344 = (when declared(struct_obj_name_st):
+    when ownSizeof(struct_obj_name_st) != ownSizeof(struct_obj_name_st_553649343):
       static :
         warning("Declaration of " & "struct_obj_name_st" &
             " exists but with different size")
     struct_obj_name_st
   else:
-    struct_obj_name_st_553649341)
+    struct_obj_name_st_553649343)
   RAND_METHOD_553649148 = (when declared(RAND_METHOD):
     when ownSizeof(RAND_METHOD) != ownSizeof(RAND_METHOD_553649147):
       static :
@@ -3405,14 +3405,14 @@ type
     RAND_METHOD
   else:
     RAND_METHOD_553649147)
-  RSA_METHOD_553649152 = (when declared(RSA_METHOD):
-    when ownSizeof(RSA_METHOD) != ownSizeof(RSA_METHOD_553649151):
+  RSA_METHOD_553649154 = (when declared(RSA_METHOD):
+    when ownSizeof(RSA_METHOD) != ownSizeof(RSA_METHOD_553649153):
       static :
         warning("Declaration of " & "RSA_METHOD" &
             " exists but with different size")
     RSA_METHOD
   else:
-    RSA_METHOD_553649151)
+    RSA_METHOD_553649153)
   enum_ngtcp2_connection_id_status_type_553648800 = (when declared(
       enum_ngtcp2_connection_id_status_type):
     when ownSizeof(enum_ngtcp2_connection_id_status_type) !=
@@ -3423,24 +3423,24 @@ type
     enum_ngtcp2_connection_id_status_type
   else:
     enum_ngtcp2_connection_id_status_type_553648799)
-  ERR_print_errors_callback_t_553649260 = (when declared(
+  ERR_print_errors_callback_t_553649262 = (when declared(
       ERR_print_errors_callback_t):
     when ownSizeof(ERR_print_errors_callback_t) !=
-        ownSizeof(ERR_print_errors_callback_t_553649259):
+        ownSizeof(ERR_print_errors_callback_t_553649261):
       static :
         warning("Declaration of " & "ERR_print_errors_callback_t" &
             " exists but with different size")
     ERR_print_errors_callback_t
   else:
-    ERR_print_errors_callback_t_553649259)
-  struct_v3_ext_method_553649224 = (when declared(struct_v3_ext_method):
-    when ownSizeof(struct_v3_ext_method) != ownSizeof(struct_v3_ext_method_553649223):
+    ERR_print_errors_callback_t_553649261)
+  struct_v3_ext_method_553649226 = (when declared(struct_v3_ext_method):
+    when ownSizeof(struct_v3_ext_method) != ownSizeof(struct_v3_ext_method_553649225):
       static :
         warning("Declaration of " & "struct_v3_ext_method" &
             " exists but with different size")
     struct_v3_ext_method
   else:
-    struct_v3_ext_method_553649223)
+    struct_v3_ext_method_553649225)
   BN_CTX_553648974 = (when declared(BN_CTX):
     when ownSizeof(BN_CTX) != ownSizeof(BN_CTX_553648973):
       static :
@@ -3448,34 +3448,34 @@ type
     BN_CTX
   else:
     BN_CTX_553648973)
-  sk_SSL_CIPHER_free_func_553649692 = (when declared(sk_SSL_CIPHER_free_func):
+  sk_SSL_CIPHER_free_func_553649694 = (when declared(sk_SSL_CIPHER_free_func):
     when ownSizeof(sk_SSL_CIPHER_free_func) !=
-        ownSizeof(sk_SSL_CIPHER_free_func_553649691):
+        ownSizeof(sk_SSL_CIPHER_free_func_553649693):
       static :
         warning("Declaration of " & "sk_SSL_CIPHER_free_func" &
             " exists but with different size")
     sk_SSL_CIPHER_free_func
   else:
-    sk_SSL_CIPHER_free_func_553649691)
-  struct_crypto_ex_data_st_553649304 = (when declared(struct_crypto_ex_data_st):
+    sk_SSL_CIPHER_free_func_553649693)
+  struct_crypto_ex_data_st_553649306 = (when declared(struct_crypto_ex_data_st):
     when ownSizeof(struct_crypto_ex_data_st) !=
-        ownSizeof(struct_crypto_ex_data_st_553649303):
+        ownSizeof(struct_crypto_ex_data_st_553649305):
       static :
         warning("Declaration of " & "struct_crypto_ex_data_st" &
             " exists but with different size")
     struct_crypto_ex_data_st
   else:
-    struct_crypto_ex_data_st_553649303)
-  sk_PKCS7_SIGNER_INFO_cmp_func_553649404 = (when declared(
+    struct_crypto_ex_data_st_553649305)
+  sk_PKCS7_SIGNER_INFO_cmp_func_553649406 = (when declared(
       sk_PKCS7_SIGNER_INFO_cmp_func):
     when ownSizeof(sk_PKCS7_SIGNER_INFO_cmp_func) !=
-        ownSizeof(sk_PKCS7_SIGNER_INFO_cmp_func_553649403):
+        ownSizeof(sk_PKCS7_SIGNER_INFO_cmp_func_553649405):
       static :
         warning("Declaration of " & "sk_PKCS7_SIGNER_INFO_cmp_func" &
             " exists but with different size")
     sk_PKCS7_SIGNER_INFO_cmp_func
   else:
-    sk_PKCS7_SIGNER_INFO_cmp_func_553649403)
+    sk_PKCS7_SIGNER_INFO_cmp_func_553649405)
   ngtcp2_update_key_553648792 = (when declared(ngtcp2_update_key):
     when ownSizeof(ngtcp2_update_key) != ownSizeof(ngtcp2_update_key_553648791):
       static :
@@ -3484,14 +3484,14 @@ type
     ngtcp2_update_key
   else:
     ngtcp2_update_key_553648791)
-  SPAKE2_CTX_553649174 = (when declared(SPAKE2_CTX):
-    when ownSizeof(SPAKE2_CTX) != ownSizeof(SPAKE2_CTX_553649173):
+  SPAKE2_CTX_553649176 = (when declared(SPAKE2_CTX):
+    when ownSizeof(SPAKE2_CTX) != ownSizeof(SPAKE2_CTX_553649175):
       static :
         warning("Declaration of " & "SPAKE2_CTX" &
             " exists but with different size")
     SPAKE2_CTX
   else:
-    SPAKE2_CTX_553649173)
+    SPAKE2_CTX_553649175)
   ngtcp2_get_new_connection_id_553648788 = (when declared(
       ngtcp2_get_new_connection_id):
     when ownSizeof(ngtcp2_get_new_connection_id) !=
@@ -3502,51 +3502,51 @@ type
     ngtcp2_get_new_connection_id
   else:
     ngtcp2_get_new_connection_id_553648787)
-  struct_sha256_state_st_553649164 = (when declared(struct_sha256_state_st):
-    when ownSizeof(struct_sha256_state_st) != ownSizeof(struct_sha256_state_st_553649163):
+  struct_sha256_state_st_553649166 = (when declared(struct_sha256_state_st):
+    when ownSizeof(struct_sha256_state_st) != ownSizeof(struct_sha256_state_st_553649165):
       static :
         warning("Declaration of " & "struct_sha256_state_st" &
             " exists but with different size")
     struct_sha256_state_st
   else:
-    struct_sha256_state_st_553649163)
-  sk_PKCS7_SIGNER_INFO_free_func_553649400 = (when declared(
+    struct_sha256_state_st_553649165)
+  sk_PKCS7_SIGNER_INFO_free_func_553649402 = (when declared(
       sk_PKCS7_SIGNER_INFO_free_func):
     when ownSizeof(sk_PKCS7_SIGNER_INFO_free_func) !=
-        ownSizeof(sk_PKCS7_SIGNER_INFO_free_func_553649399):
+        ownSizeof(sk_PKCS7_SIGNER_INFO_free_func_553649401):
       static :
         warning("Declaration of " & "sk_PKCS7_SIGNER_INFO_free_func" &
             " exists but with different size")
     sk_PKCS7_SIGNER_INFO_free_func
   else:
-    sk_PKCS7_SIGNER_INFO_free_func_553649399)
-  sk_GENERAL_SUBTREE_free_func_553649668 = (when declared(
+    sk_PKCS7_SIGNER_INFO_free_func_553649401)
+  sk_GENERAL_SUBTREE_free_func_553649670 = (when declared(
       sk_GENERAL_SUBTREE_free_func):
     when ownSizeof(sk_GENERAL_SUBTREE_free_func) !=
-        ownSizeof(sk_GENERAL_SUBTREE_free_func_553649667):
+        ownSizeof(sk_GENERAL_SUBTREE_free_func_553649669):
       static :
         warning("Declaration of " & "sk_GENERAL_SUBTREE_free_func" &
             " exists but with different size")
     sk_GENERAL_SUBTREE_free_func
   else:
-    sk_GENERAL_SUBTREE_free_func_553649667)
-  sk_X509_ALGOR_free_func_553649504 = (when declared(sk_X509_ALGOR_free_func):
+    sk_GENERAL_SUBTREE_free_func_553649669)
+  sk_X509_ALGOR_free_func_553649506 = (when declared(sk_X509_ALGOR_free_func):
     when ownSizeof(sk_X509_ALGOR_free_func) !=
-        ownSizeof(sk_X509_ALGOR_free_func_553649503):
+        ownSizeof(sk_X509_ALGOR_free_func_553649505):
       static :
         warning("Declaration of " & "sk_X509_ALGOR_free_func" &
             " exists but with different size")
     sk_X509_ALGOR_free_func
   else:
-    sk_X509_ALGOR_free_func_553649503)
-  struct_timeval_553649686 = (when declared(struct_timeval):
-    when ownSizeof(struct_timeval) != ownSizeof(struct_timeval_553649685):
+    sk_X509_ALGOR_free_func_553649505)
+  struct_timeval_553649688 = (when declared(struct_timeval):
+    when ownSizeof(struct_timeval) != ownSizeof(struct_timeval_553649687):
       static :
         warning("Declaration of " & "struct_timeval" &
             " exists but with different size")
     struct_timeval
   else:
-    struct_timeval_553649685)
+    struct_timeval_553649687)
   struct_sockaddr_553648643 = (when declared(struct_sockaddr):
     when ownSizeof(struct_sockaddr) != ownSizeof(struct_sockaddr_553648642):
       static :
@@ -3571,26 +3571,26 @@ type
     ASN1_TYPE
   else:
     ASN1_TYPE_553648905)
-  sk_CRYPTO_BUFFER_delete_if_func_553649434 = (when declared(
+  sk_CRYPTO_BUFFER_delete_if_func_553649436 = (when declared(
       sk_CRYPTO_BUFFER_delete_if_func):
     when ownSizeof(sk_CRYPTO_BUFFER_delete_if_func) !=
-        ownSizeof(sk_CRYPTO_BUFFER_delete_if_func_553649433):
+        ownSizeof(sk_CRYPTO_BUFFER_delete_if_func_553649435):
       static :
         warning("Declaration of " & "sk_CRYPTO_BUFFER_delete_if_func" &
             " exists but with different size")
     sk_CRYPTO_BUFFER_delete_if_func
   else:
-    sk_CRYPTO_BUFFER_delete_if_func_553649433)
-  sk_POLICY_MAPPING_copy_func_553649656 = (when declared(
+    sk_CRYPTO_BUFFER_delete_if_func_553649435)
+  sk_POLICY_MAPPING_copy_func_553649658 = (when declared(
       sk_POLICY_MAPPING_copy_func):
     when ownSizeof(sk_POLICY_MAPPING_copy_func) !=
-        ownSizeof(sk_POLICY_MAPPING_copy_func_553649655):
+        ownSizeof(sk_POLICY_MAPPING_copy_func_553649657):
       static :
         warning("Declaration of " & "sk_POLICY_MAPPING_copy_func" &
             " exists but with different size")
     sk_POLICY_MAPPING_copy_func
   else:
-    sk_POLICY_MAPPING_copy_func_553649655)
+    sk_POLICY_MAPPING_copy_func_553649657)
   ASN1_INTEGER_553648886 = (when declared(ASN1_INTEGER):
     when ownSizeof(ASN1_INTEGER) != ownSizeof(ASN1_INTEGER_553648885):
       static :
@@ -3625,14 +3625,14 @@ type
     ngtcp2_path_validation
   else:
     ngtcp2_path_validation_553648795)
-  X509V3_EXT_I2V_553649548 = (when declared(X509V3_EXT_I2V):
-    when ownSizeof(X509V3_EXT_I2V) != ownSizeof(X509V3_EXT_I2V_553649547):
+  X509V3_EXT_I2V_553649550 = (when declared(X509V3_EXT_I2V):
+    when ownSizeof(X509V3_EXT_I2V) != ownSizeof(X509V3_EXT_I2V_553649549):
       static :
         warning("Declaration of " & "X509V3_EXT_I2V" &
             " exists but with different size")
     X509V3_EXT_I2V
   else:
-    X509V3_EXT_I2V_553649547)
+    X509V3_EXT_I2V_553649549)
   PKCS7_DIGEST_553649106 = (when declared(PKCS7_DIGEST):
     when ownSizeof(PKCS7_DIGEST) != ownSizeof(PKCS7_DIGEST_553649105):
       static :
@@ -3641,16 +3641,16 @@ type
     PKCS7_DIGEST
   else:
     PKCS7_DIGEST_553649105)
-  sk_X509_PURPOSE_delete_if_func_553649576 = (when declared(
+  sk_X509_PURPOSE_delete_if_func_553649578 = (when declared(
       sk_X509_PURPOSE_delete_if_func):
     when ownSizeof(sk_X509_PURPOSE_delete_if_func) !=
-        ownSizeof(sk_X509_PURPOSE_delete_if_func_553649575):
+        ownSizeof(sk_X509_PURPOSE_delete_if_func_553649577):
       static :
         warning("Declaration of " & "sk_X509_PURPOSE_delete_if_func" &
             " exists but with different size")
     sk_X509_PURPOSE_delete_if_func
   else:
-    sk_X509_PURPOSE_delete_if_func_553649575)
+    sk_X509_PURPOSE_delete_if_func_553649577)
   enum_ngtcp2_token_type_553648696 = (when declared(enum_ngtcp2_token_type):
     when ownSizeof(enum_ngtcp2_token_type) != ownSizeof(enum_ngtcp2_token_type_553648695):
       static :
@@ -3668,24 +3668,24 @@ type
     ngtcp2_recv_stream_data
   else:
     ngtcp2_recv_stream_data_553648769)
-  CRYPTO_refcount_t_553649252 = (when declared(CRYPTO_refcount_t):
-    when ownSizeof(CRYPTO_refcount_t) != ownSizeof(CRYPTO_refcount_t_553649251):
+  CRYPTO_refcount_t_553649254 = (when declared(CRYPTO_refcount_t):
+    when ownSizeof(CRYPTO_refcount_t) != ownSizeof(CRYPTO_refcount_t_553649253):
       static :
         warning("Declaration of " & "CRYPTO_refcount_t" &
             " exists but with different size")
     CRYPTO_refcount_t
   else:
-    CRYPTO_refcount_t_553649251)
-  struct_POLICY_CONSTRAINTS_st_553649676 = (when declared(
+    CRYPTO_refcount_t_553649253)
+  struct_POLICY_CONSTRAINTS_st_553649678 = (when declared(
       struct_POLICY_CONSTRAINTS_st):
     when ownSizeof(struct_POLICY_CONSTRAINTS_st) !=
-        ownSizeof(struct_POLICY_CONSTRAINTS_st_553649675):
+        ownSizeof(struct_POLICY_CONSTRAINTS_st_553649677):
       static :
         warning("Declaration of " & "struct_POLICY_CONSTRAINTS_st" &
             " exists but with different size")
     struct_POLICY_CONSTRAINTS_st
   else:
-    struct_POLICY_CONSTRAINTS_st_553649675)
+    struct_POLICY_CONSTRAINTS_st_553649677)
   ASN1_BIT_STRING_553648872 = (when declared(ASN1_BIT_STRING):
     when ownSizeof(ASN1_BIT_STRING) != ownSizeof(ASN1_BIT_STRING_553648871):
       static :
@@ -3694,22 +3694,22 @@ type
     ASN1_BIT_STRING
   else:
     ASN1_BIT_STRING_553648871)
-  sa_family_t_553649754 = (when declared(sa_family_t):
-    when ownSizeof(sa_family_t) != ownSizeof(sa_family_t_553649753):
+  sa_family_t_553649756 = (when declared(sa_family_t):
+    when ownSizeof(sa_family_t) != ownSizeof(sa_family_t_553649755):
       static :
         warning("Declaration of " & "sa_family_t" &
             " exists but with different size")
     sa_family_t
   else:
-    sa_family_t_553649753)
-  sk_X509_CRL_cmp_func_553649458 = (when declared(sk_X509_CRL_cmp_func):
-    when ownSizeof(sk_X509_CRL_cmp_func) != ownSizeof(sk_X509_CRL_cmp_func_553649457):
+    sa_family_t_553649755)
+  sk_X509_CRL_cmp_func_553649460 = (when declared(sk_X509_CRL_cmp_func):
+    when ownSizeof(sk_X509_CRL_cmp_func) != ownSizeof(sk_X509_CRL_cmp_func_553649459):
       static :
         warning("Declaration of " & "sk_X509_CRL_cmp_func" &
             " exists but with different size")
     sk_X509_CRL_cmp_func
   else:
-    sk_X509_CRL_cmp_func_553649457)
+    sk_X509_CRL_cmp_func_553649459)
   OPENSSL_INIT_SETTINGS_553649104 = (when declared(OPENSSL_INIT_SETTINGS):
     when ownSizeof(OPENSSL_INIT_SETTINGS) != ownSizeof(OPENSSL_INIT_SETTINGS_553649103):
       static :
@@ -3726,15 +3726,15 @@ type
     EVP_HPKE_AEAD
   else:
     EVP_HPKE_AEAD_553649067)
-  sk_X509_REVOKED_free_func_553649462 = (when declared(sk_X509_REVOKED_free_func):
+  sk_X509_REVOKED_free_func_553649464 = (when declared(sk_X509_REVOKED_free_func):
     when ownSizeof(sk_X509_REVOKED_free_func) !=
-        ownSizeof(sk_X509_REVOKED_free_func_553649461):
+        ownSizeof(sk_X509_REVOKED_free_func_553649463):
       static :
         warning("Declaration of " & "sk_X509_REVOKED_free_func" &
             " exists but with different size")
     sk_X509_REVOKED_free_func
   else:
-    sk_X509_REVOKED_free_func_553649461)
+    sk_X509_REVOKED_free_func_553649463)
   ngtcp2_stream_reset_553648776 = (when declared(ngtcp2_stream_reset):
     when ownSizeof(ngtcp2_stream_reset) != ownSizeof(ngtcp2_stream_reset_553648775):
       static :
@@ -3743,15 +3743,15 @@ type
     ngtcp2_stream_reset
   else:
     ngtcp2_stream_reset_553648775)
-  sk_X509_REVOKED_copy_func_553649464 = (when declared(sk_X509_REVOKED_copy_func):
+  sk_X509_REVOKED_copy_func_553649466 = (when declared(sk_X509_REVOKED_copy_func):
     when ownSizeof(sk_X509_REVOKED_copy_func) !=
-        ownSizeof(sk_X509_REVOKED_copy_func_553649463):
+        ownSizeof(sk_X509_REVOKED_copy_func_553649465):
       static :
         warning("Declaration of " & "sk_X509_REVOKED_copy_func" &
             " exists but with different size")
     sk_X509_REVOKED_copy_func
   else:
-    sk_X509_REVOKED_copy_func_553649463)
+    sk_X509_REVOKED_copy_func_553649465)
   struct_ngtcp2_conn_info_553648673 = (when declared(struct_ngtcp2_conn_info):
     when ownSizeof(struct_ngtcp2_conn_info) !=
         ownSizeof(struct_ngtcp2_conn_info_553648672):
@@ -3769,16 +3769,16 @@ type
     struct_ngtcp2_pkt_info
   else:
     struct_ngtcp2_pkt_info_553648608)
-  struct_srtp_protection_profile_st_553649178 = (when declared(
+  struct_srtp_protection_profile_st_553649180 = (when declared(
       struct_srtp_protection_profile_st):
     when ownSizeof(struct_srtp_protection_profile_st) !=
-        ownSizeof(struct_srtp_protection_profile_st_553649177):
+        ownSizeof(struct_srtp_protection_profile_st_553649179):
       static :
         warning("Declaration of " & "struct_srtp_protection_profile_st" &
             " exists but with different size")
     struct_srtp_protection_profile_st
   else:
-    struct_srtp_protection_profile_st_553649177)
+    struct_srtp_protection_profile_st_553649179)
   GENERAL_NAME_553648926 = (when declared(GENERAL_NAME):
     when ownSizeof(GENERAL_NAME) != ownSizeof(GENERAL_NAME_553648925):
       static :
@@ -3803,74 +3803,74 @@ type
     X509_PUBKEY
   else:
     X509_PUBKEY_553648965)
-  enum_ssl_ticket_aead_result_t_553649706 = (when declared(
+  enum_ssl_ticket_aead_result_t_553649708 = (when declared(
       enum_ssl_ticket_aead_result_t):
     when ownSizeof(enum_ssl_ticket_aead_result_t) !=
-        ownSizeof(enum_ssl_ticket_aead_result_t_553649705):
+        ownSizeof(enum_ssl_ticket_aead_result_t_553649707):
       static :
         warning("Declaration of " & "enum_ssl_ticket_aead_result_t" &
             " exists but with different size")
     enum_ssl_ticket_aead_result_t
   else:
-    enum_ssl_ticket_aead_result_t_553649705)
-  CRYPTO_MUTEX_553649250 = (when declared(CRYPTO_MUTEX):
-    when ownSizeof(CRYPTO_MUTEX) != ownSizeof(CRYPTO_MUTEX_553649249):
+    enum_ssl_ticket_aead_result_t_553649707)
+  CRYPTO_MUTEX_553649252 = (when declared(CRYPTO_MUTEX):
+    when ownSizeof(CRYPTO_MUTEX) != ownSizeof(CRYPTO_MUTEX_553649251):
       static :
         warning("Declaration of " & "CRYPTO_MUTEX" &
             " exists but with different size")
     CRYPTO_MUTEX
   else:
-    CRYPTO_MUTEX_553649249)
-  sk_X509_INFO_free_func_553649532 = (when declared(sk_X509_INFO_free_func):
-    when ownSizeof(sk_X509_INFO_free_func) != ownSizeof(sk_X509_INFO_free_func_553649531):
+    CRYPTO_MUTEX_553649251)
+  sk_X509_INFO_free_func_553649534 = (when declared(sk_X509_INFO_free_func):
+    when ownSizeof(sk_X509_INFO_free_func) != ownSizeof(sk_X509_INFO_free_func_553649533):
       static :
         warning("Declaration of " & "sk_X509_INFO_free_func" &
             " exists but with different size")
     sk_X509_INFO_free_func
   else:
-    sk_X509_INFO_free_func_553649531)
-  X509V3_EXT_V2I_553649550 = (when declared(X509V3_EXT_V2I):
-    when ownSizeof(X509V3_EXT_V2I) != ownSizeof(X509V3_EXT_V2I_553649549):
+    sk_X509_INFO_free_func_553649533)
+  X509V3_EXT_V2I_553649552 = (when declared(X509V3_EXT_V2I):
+    when ownSizeof(X509V3_EXT_V2I) != ownSizeof(X509V3_EXT_V2I_553649551):
       static :
         warning("Declaration of " & "X509V3_EXT_V2I" &
             " exists but with different size")
     X509V3_EXT_V2I
   else:
-    X509V3_EXT_V2I_553649549)
-  struct_x509_trust_st_553649244 = (when declared(struct_x509_trust_st):
-    when ownSizeof(struct_x509_trust_st) != ownSizeof(struct_x509_trust_st_553649243):
+    X509V3_EXT_V2I_553649551)
+  struct_x509_trust_st_553649246 = (when declared(struct_x509_trust_st):
+    when ownSizeof(struct_x509_trust_st) != ownSizeof(struct_x509_trust_st_553649245):
       static :
         warning("Declaration of " & "struct_x509_trust_st" &
             " exists but with different size")
     struct_x509_trust_st
   else:
-    struct_x509_trust_st_553649243)
-  Cfile_553649262 = (when declared(Cfile):
-    when ownSizeof(Cfile) != ownSizeof(Cfile_553649261):
+    struct_x509_trust_st_553649245)
+  Cfile_553649264 = (when declared(Cfile):
+    when ownSizeof(Cfile) != ownSizeof(Cfile_553649263):
       static :
         warning("Declaration of " & "Cfile" & " exists but with different size")
     Cfile
   else:
-    Cfile_553649261)
-  static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649684 = (when declared(
+    Cfile_553649263)
+  static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649686 = (when declared(
       static_assertion_at_line_255_error_is_max_overheads_are_inconsistent):
     when ownSizeof(static_assertion_at_line_255_error_is_max_overheads_are_inconsistent) !=
-        ownSizeof(static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649683):
+        ownSizeof(static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649685):
       static :
         warning("Declaration of " &
             "static_assertion_at_line_255_error_is_max_overheads_are_inconsistent" &
             " exists but with different size")
     static_assertion_at_line_255_error_is_max_overheads_are_inconsistent
   else:
-    static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649683)
-  struct_ssl_comp_st_553649744 = (when declared(struct_ssl_comp_st):
-    when ownSizeof(struct_ssl_comp_st) != ownSizeof(struct_ssl_comp_st_553649743):
+    static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649685)
+  struct_ssl_comp_st_553649746 = (when declared(struct_ssl_comp_st):
+    when ownSizeof(struct_ssl_comp_st) != ownSizeof(struct_ssl_comp_st_553649745):
       static :
         warning("Declaration of " & "struct_ssl_comp_st" &
             " exists but with different size")
     struct_ssl_comp_st
   else:
-    struct_ssl_comp_st_553649743)
+    struct_ssl_comp_st_553649745)
   CBS_553649008 = (when declared(CBS):
     when ownSizeof(CBS) != ownSizeof(CBS_553649007):
       static :
@@ -3886,31 +3886,31 @@ type
     ngtcp2_client_initial
   else:
     ngtcp2_client_initial_553648745)
-  POLICYINFO_553649638 = (when declared(POLICYINFO):
-    when ownSizeof(POLICYINFO) != ownSizeof(POLICYINFO_553649637):
+  POLICYINFO_553649640 = (when declared(POLICYINFO):
+    when ownSizeof(POLICYINFO) != ownSizeof(POLICYINFO_553649639):
       static :
         warning("Declaration of " & "POLICYINFO" &
             " exists but with different size")
     POLICYINFO
   else:
-    POLICYINFO_553649637)
-  sk_X509_PURPOSE_cmp_func_553649574 = (when declared(sk_X509_PURPOSE_cmp_func):
+    POLICYINFO_553649639)
+  sk_X509_PURPOSE_cmp_func_553649576 = (when declared(sk_X509_PURPOSE_cmp_func):
     when ownSizeof(sk_X509_PURPOSE_cmp_func) !=
-        ownSizeof(sk_X509_PURPOSE_cmp_func_553649573):
+        ownSizeof(sk_X509_PURPOSE_cmp_func_553649575):
       static :
         warning("Declaration of " & "sk_X509_PURPOSE_cmp_func" &
             " exists but with different size")
     sk_X509_PURPOSE_cmp_func
   else:
-    sk_X509_PURPOSE_cmp_func_553649573)
-  struct_tm_553649336 = (when declared(struct_tm):
-    when ownSizeof(struct_tm) != ownSizeof(struct_tm_553649335):
+    sk_X509_PURPOSE_cmp_func_553649575)
+  struct_tm_553649338 = (when declared(struct_tm):
+    when ownSizeof(struct_tm) != ownSizeof(struct_tm_553649337):
       static :
         warning("Declaration of " & "struct_tm" &
             " exists but with different size")
     struct_tm
   else:
-    struct_tm_553649335)
+    struct_tm_553649337)
   ngtcp2_calloc_553648601 = (when declared(ngtcp2_calloc):
     when ownSizeof(ngtcp2_calloc) != ownSizeof(ngtcp2_calloc_553648600):
       static :
@@ -3927,14 +3927,14 @@ type
     X509_INFO
   else:
     X509_INFO_553648957)
-  SHA_CTX_553649170 = (when declared(SHA_CTX):
-    when ownSizeof(SHA_CTX) != ownSizeof(SHA_CTX_553649169):
+  SHA_CTX_553649172 = (when declared(SHA_CTX):
+    when ownSizeof(SHA_CTX) != ownSizeof(SHA_CTX_553649171):
       static :
         warning("Declaration of " & "SHA_CTX" &
             " exists but with different size")
     SHA_CTX
   else:
-    SHA_CTX_553649169)
+    SHA_CTX_553649171)
   struct_GENERAL_NAME_st_553648928 = (when declared(struct_GENERAL_NAME_st):
     when ownSizeof(struct_GENERAL_NAME_st) != ownSizeof(struct_GENERAL_NAME_st_553648927):
       static :
@@ -3959,16 +3959,16 @@ type
     MD5_CTX
   else:
     MD5_CTX_553649095)
-  sk_OPENSSL_STRING_free_func_553649294 = (when declared(
+  sk_OPENSSL_STRING_free_func_553649296 = (when declared(
       sk_OPENSSL_STRING_free_func):
     when ownSizeof(sk_OPENSSL_STRING_free_func) !=
-        ownSizeof(sk_OPENSSL_STRING_free_func_553649293):
+        ownSizeof(sk_OPENSSL_STRING_free_func_553649295):
       static :
         warning("Declaration of " & "sk_OPENSSL_STRING_free_func" &
             " exists but with different size")
     sk_OPENSSL_STRING_free_func
   else:
-    sk_OPENSSL_STRING_free_func_553649293)
+    sk_OPENSSL_STRING_free_func_553649295)
   ngtcp2_ccerr_553648842 = (when declared(ngtcp2_ccerr):
     when ownSizeof(ngtcp2_ccerr) != ownSizeof(ngtcp2_ccerr_553648841):
       static :
@@ -4001,22 +4001,22 @@ type
     struct_pkcs7_st
   else:
     struct_pkcs7_st_553649137)
-  CRYPTO_EX_dup_553649308 = (when declared(CRYPTO_EX_dup):
-    when ownSizeof(CRYPTO_EX_dup) != ownSizeof(CRYPTO_EX_dup_553649307):
+  CRYPTO_EX_dup_553649310 = (when declared(CRYPTO_EX_dup):
+    when ownSizeof(CRYPTO_EX_dup) != ownSizeof(CRYPTO_EX_dup_553649309):
       static :
         warning("Declaration of " & "CRYPTO_EX_dup" &
             " exists but with different size")
     CRYPTO_EX_dup
   else:
-    CRYPTO_EX_dup_553649307)
-  CRYPTO_EX_unused_553649310 = (when declared(CRYPTO_EX_unused):
-    when ownSizeof(CRYPTO_EX_unused) != ownSizeof(CRYPTO_EX_unused_553649309):
+    CRYPTO_EX_dup_553649309)
+  CRYPTO_EX_unused_553649312 = (when declared(CRYPTO_EX_unused):
+    when ownSizeof(CRYPTO_EX_unused) != ownSizeof(CRYPTO_EX_unused_553649311):
       static :
         warning("Declaration of " & "CRYPTO_EX_unused" &
             " exists but with different size")
     CRYPTO_EX_unused
   else:
-    CRYPTO_EX_unused_553649309)
+    CRYPTO_EX_unused_553649311)
   BASIC_CONSTRAINTS_553648914 = (when declared(BASIC_CONSTRAINTS):
     when ownSizeof(BASIC_CONSTRAINTS) != ownSizeof(BASIC_CONSTRAINTS_553648913):
       static :
@@ -4025,30 +4025,30 @@ type
     BASIC_CONSTRAINTS
   else:
     BASIC_CONSTRAINTS_553648913)
-  CRYPTO_EX_DATA_553649302 = (when declared(CRYPTO_EX_DATA):
-    when ownSizeof(CRYPTO_EX_DATA) != ownSizeof(CRYPTO_EX_DATA_553649301):
+  CRYPTO_EX_DATA_553649304 = (when declared(CRYPTO_EX_DATA):
+    when ownSizeof(CRYPTO_EX_DATA) != ownSizeof(CRYPTO_EX_DATA_553649303):
       static :
         warning("Declaration of " & "CRYPTO_EX_DATA" &
             " exists but with different size")
     CRYPTO_EX_DATA
   else:
-    CRYPTO_EX_DATA_553649301)
-  sk_X509_cmp_func_553649440 = (when declared(sk_X509_cmp_func):
-    when ownSizeof(sk_X509_cmp_func) != ownSizeof(sk_X509_cmp_func_553649439):
+    CRYPTO_EX_DATA_553649303)
+  sk_X509_cmp_func_553649442 = (when declared(sk_X509_cmp_func):
+    when ownSizeof(sk_X509_cmp_func) != ownSizeof(sk_X509_cmp_func_553649441):
       static :
         warning("Declaration of " & "sk_X509_cmp_func" &
             " exists but with different size")
     sk_X509_cmp_func
   else:
-    sk_X509_cmp_func_553649439)
-  sk_X509_NAME_free_func_553649478 = (when declared(sk_X509_NAME_free_func):
-    when ownSizeof(sk_X509_NAME_free_func) != ownSizeof(sk_X509_NAME_free_func_553649477):
+    sk_X509_cmp_func_553649441)
+  sk_X509_NAME_free_func_553649480 = (when declared(sk_X509_NAME_free_func):
+    when ownSizeof(sk_X509_NAME_free_func) != ownSizeof(sk_X509_NAME_free_func_553649479):
       static :
         warning("Declaration of " & "sk_X509_NAME_free_func" &
             " exists but with different size")
     sk_X509_NAME_free_func
   else:
-    sk_X509_NAME_free_func_553649477)
+    sk_X509_NAME_free_func_553649479)
   ASN1_PRINTABLESTRING_553648890 = (when declared(ASN1_PRINTABLESTRING):
     when ownSizeof(ASN1_PRINTABLESTRING) != ownSizeof(ASN1_PRINTABLESTRING_553648889):
       static :
@@ -4065,14 +4065,14 @@ type
     ngtcp2_write_pkt
   else:
     ngtcp2_write_pkt_553648843)
-  SSL_custom_ext_free_cb_553649702 = (when declared(SSL_custom_ext_free_cb):
-    when ownSizeof(SSL_custom_ext_free_cb) != ownSizeof(SSL_custom_ext_free_cb_553649701):
+  SSL_custom_ext_free_cb_553649704 = (when declared(SSL_custom_ext_free_cb):
+    when ownSizeof(SSL_custom_ext_free_cb) != ownSizeof(SSL_custom_ext_free_cb_553649703):
       static :
         warning("Declaration of " & "SSL_custom_ext_free_cb" &
             " exists but with different size")
     SSL_custom_ext_free_cb
   else:
-    SSL_custom_ext_free_cb_553649701)
+    SSL_custom_ext_free_cb_553649703)
   ngtcp2_pkt_type_553648615 = (when declared(ngtcp2_pkt_type):
     when ownSizeof(ngtcp2_pkt_type) != ownSizeof(ngtcp2_pkt_type_553648614):
       static :
@@ -4081,41 +4081,41 @@ type
     ngtcp2_pkt_type
   else:
     ngtcp2_pkt_type_553648614)
-  SSL_TICKET_AEAD_METHOD_553649204 = (when declared(SSL_TICKET_AEAD_METHOD):
-    when ownSizeof(SSL_TICKET_AEAD_METHOD) != ownSizeof(SSL_TICKET_AEAD_METHOD_553649203):
+  SSL_TICKET_AEAD_METHOD_553649206 = (when declared(SSL_TICKET_AEAD_METHOD):
+    when ownSizeof(SSL_TICKET_AEAD_METHOD) != ownSizeof(SSL_TICKET_AEAD_METHOD_553649205):
       static :
         warning("Declaration of " & "SSL_TICKET_AEAD_METHOD" &
             " exists but with different size")
     SSL_TICKET_AEAD_METHOD
   else:
-    SSL_TICKET_AEAD_METHOD_553649203)
-  enum_ssl_select_cert_result_t_553649732 = (when declared(
+    SSL_TICKET_AEAD_METHOD_553649205)
+  enum_ssl_select_cert_result_t_553649734 = (when declared(
       enum_ssl_select_cert_result_t):
     when ownSizeof(enum_ssl_select_cert_result_t) !=
-        ownSizeof(enum_ssl_select_cert_result_t_553649731):
+        ownSizeof(enum_ssl_select_cert_result_t_553649733):
       static :
         warning("Declaration of " & "enum_ssl_select_cert_result_t" &
             " exists but with different size")
     enum_ssl_select_cert_result_t
   else:
-    enum_ssl_select_cert_result_t_553649731)
-  struct_cbb_buffer_st_553649338 = (when declared(struct_cbb_buffer_st):
-    when ownSizeof(struct_cbb_buffer_st) != ownSizeof(struct_cbb_buffer_st_553649337):
+    enum_ssl_select_cert_result_t_553649733)
+  struct_cbb_buffer_st_553649340 = (when declared(struct_cbb_buffer_st):
+    when ownSizeof(struct_cbb_buffer_st) != ownSizeof(struct_cbb_buffer_st_553649339):
       static :
         warning("Declaration of " & "struct_cbb_buffer_st" &
             " exists but with different size")
     struct_cbb_buffer_st
   else:
-    struct_cbb_buffer_st_553649337)
-  struct_DIST_POINT_NAME_st_553649602 = (when declared(struct_DIST_POINT_NAME_st):
+    struct_cbb_buffer_st_553649339)
+  struct_DIST_POINT_NAME_st_553649604 = (when declared(struct_DIST_POINT_NAME_st):
     when ownSizeof(struct_DIST_POINT_NAME_st) !=
-        ownSizeof(struct_DIST_POINT_NAME_st_553649601):
+        ownSizeof(struct_DIST_POINT_NAME_st_553649603):
       static :
         warning("Declaration of " & "struct_DIST_POINT_NAME_st" &
             " exists but with different size")
     struct_DIST_POINT_NAME_st
   else:
-    struct_DIST_POINT_NAME_st_553649601)
+    struct_DIST_POINT_NAME_st_553649603)
   struct_evp_encode_ctx_st_553649066 = (when declared(struct_evp_encode_ctx_st):
     when ownSizeof(struct_evp_encode_ctx_st) !=
         ownSizeof(struct_evp_encode_ctx_st_553649065):
@@ -4207,15 +4207,15 @@ type
     CBB
   else:
     CBB_553649003)
-  sk_X509_OBJECT_copy_func_553649522 = (when declared(sk_X509_OBJECT_copy_func):
+  sk_X509_OBJECT_copy_func_553649524 = (when declared(sk_X509_OBJECT_copy_func):
     when ownSizeof(sk_X509_OBJECT_copy_func) !=
-        ownSizeof(sk_X509_OBJECT_copy_func_553649521):
+        ownSizeof(sk_X509_OBJECT_copy_func_553649523):
       static :
         warning("Declaration of " & "sk_X509_OBJECT_copy_func" &
             " exists but with different size")
     sk_X509_OBJECT_copy_func
   else:
-    sk_X509_OBJECT_copy_func_553649521)
+    sk_X509_OBJECT_copy_func_553649523)
   struct_ngtcp2_crypto_cipher_ctx_553648732 = (when declared(
       struct_ngtcp2_crypto_cipher_ctx):
     when ownSizeof(struct_ngtcp2_crypto_cipher_ctx) !=
@@ -4226,16 +4226,16 @@ type
     struct_ngtcp2_crypto_cipher_ctx
   else:
     struct_ngtcp2_crypto_cipher_ctx_553648731)
-  sk_X509_EXTENSION_cmp_func_553649490 = (when declared(
+  sk_X509_EXTENSION_cmp_func_553649492 = (when declared(
       sk_X509_EXTENSION_cmp_func):
     when ownSizeof(sk_X509_EXTENSION_cmp_func) !=
-        ownSizeof(sk_X509_EXTENSION_cmp_func_553649489):
+        ownSizeof(sk_X509_EXTENSION_cmp_func_553649491):
       static :
         warning("Declaration of " & "sk_X509_EXTENSION_cmp_func" &
             " exists but with different size")
     sk_X509_EXTENSION_cmp_func
   else:
-    sk_X509_EXTENSION_cmp_func_553649489)
+    sk_X509_EXTENSION_cmp_func_553649491)
   ngtcp2_version_negotiation_553648822 = (when declared(
       ngtcp2_version_negotiation):
     when ownSizeof(ngtcp2_version_negotiation) !=
@@ -4278,14 +4278,14 @@ type
     ngtcp2_addr
   else:
     ngtcp2_addr_553648705)
-  SSL_METHOD_553649190 = (when declared(SSL_METHOD):
-    when ownSizeof(SSL_METHOD) != ownSizeof(SSL_METHOD_553649189):
+  SSL_METHOD_553649192 = (when declared(SSL_METHOD):
+    when ownSizeof(SSL_METHOD) != ownSizeof(SSL_METHOD_553649191):
       static :
         warning("Declaration of " & "SSL_METHOD" &
             " exists but with different size")
     SSL_METHOD
   else:
-    SSL_METHOD_553649189)
+    SSL_METHOD_553649191)
   ngtcp2_qlog_write_553648694 = (when declared(ngtcp2_qlog_write):
     when ownSizeof(ngtcp2_qlog_write) != ownSizeof(ngtcp2_qlog_write_553648693):
       static :
@@ -4302,14 +4302,14 @@ type
     PKCS8_PRIV_KEY_INFO
   else:
     PKCS8_PRIV_KEY_INFO_553649141)
-  sk_X509_CRL_copy_func_553649456 = (when declared(sk_X509_CRL_copy_func):
-    when ownSizeof(sk_X509_CRL_copy_func) != ownSizeof(sk_X509_CRL_copy_func_553649455):
+  sk_X509_CRL_copy_func_553649458 = (when declared(sk_X509_CRL_copy_func):
+    when ownSizeof(sk_X509_CRL_copy_func) != ownSizeof(sk_X509_CRL_copy_func_553649457):
       static :
         warning("Declaration of " & "sk_X509_CRL_copy_func" &
             " exists but with different size")
     sk_X509_CRL_copy_func
   else:
-    sk_X509_CRL_copy_func_553649455)
+    sk_X509_CRL_copy_func_553649457)
   struct_ISSUING_DIST_POINT_st_553648932 = (when declared(
       struct_ISSUING_DIST_POINT_st):
     when ownSizeof(struct_ISSUING_DIST_POINT_st) !=
@@ -4320,14 +4320,14 @@ type
     struct_ISSUING_DIST_POINT_st
   else:
     struct_ISSUING_DIST_POINT_st_553648931)
-  SSL_psk_server_cb_func_553649724 = (when declared(SSL_psk_server_cb_func):
-    when ownSizeof(SSL_psk_server_cb_func) != ownSizeof(SSL_psk_server_cb_func_553649723):
+  SSL_psk_server_cb_func_553649726 = (when declared(SSL_psk_server_cb_func):
+    when ownSizeof(SSL_psk_server_cb_func) != ownSizeof(SSL_psk_server_cb_func_553649725):
       static :
         warning("Declaration of " & "SSL_psk_server_cb_func" &
             " exists but with different size")
     SSL_psk_server_cb_func
   else:
-    SSL_psk_server_cb_func_553649723)
+    SSL_psk_server_cb_func_553649725)
   ngtcp2_rand_ctx_553648692 = (when declared(ngtcp2_rand_ctx):
     when ownSizeof(ngtcp2_rand_ctx) != ownSizeof(ngtcp2_rand_ctx_553648691):
       static :
@@ -4336,14 +4336,14 @@ type
     ngtcp2_rand_ctx
   else:
     ngtcp2_rand_ctx_553648691)
-  X509V3_CTX_553649218 = (when declared(X509V3_CTX):
-    when ownSizeof(X509V3_CTX) != ownSizeof(X509V3_CTX_553649217):
+  X509V3_CTX_553649220 = (when declared(X509V3_CTX):
+    when ownSizeof(X509V3_CTX) != ownSizeof(X509V3_CTX_553649219):
       static :
         warning("Declaration of " & "X509V3_CTX" &
             " exists but with different size")
     X509V3_CTX
   else:
-    X509V3_CTX_553649217)
+    X509V3_CTX_553649219)
   struct_ngtcp2_settings_553648700 = (when declared(struct_ngtcp2_settings):
     when ownSizeof(struct_ngtcp2_settings) != ownSizeof(struct_ngtcp2_settings_553648699):
       static :
@@ -4352,16 +4352,16 @@ type
     struct_ngtcp2_settings
   else:
     struct_ngtcp2_settings_553648699)
-  struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649682 = (when declared(struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent):
+  struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649684 = (when declared(struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent):
     when ownSizeof(struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent) !=
-        ownSizeof(struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649681):
+        ownSizeof(struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649683):
       static :
         warning("Declaration of " &
             "struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent" &
             " exists but with different size")
     struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent
   else:
-    struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649681)
+    struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649683)
   EC_KEY_METHOD_553649038 = (when declared(EC_KEY_METHOD):
     when ownSizeof(EC_KEY_METHOD) != ownSizeof(EC_KEY_METHOD_553649037):
       static :
@@ -4370,16 +4370,16 @@ type
     EC_KEY_METHOD
   else:
     EC_KEY_METHOD_553649037)
-  sk_SRTP_PROTECTION_PROFILE_copy_func_553649716 = (when declared(
+  sk_SRTP_PROTECTION_PROFILE_copy_func_553649718 = (when declared(
       sk_SRTP_PROTECTION_PROFILE_copy_func):
     when ownSizeof(sk_SRTP_PROTECTION_PROFILE_copy_func) !=
-        ownSizeof(sk_SRTP_PROTECTION_PROFILE_copy_func_553649715):
+        ownSizeof(sk_SRTP_PROTECTION_PROFILE_copy_func_553649717):
       static :
         warning("Declaration of " & "sk_SRTP_PROTECTION_PROFILE_copy_func" &
             " exists but with different size")
     sk_SRTP_PROTECTION_PROFILE_copy_func
   else:
-    sk_SRTP_PROTECTION_PROFILE_copy_func_553649715)
+    sk_SRTP_PROTECTION_PROFILE_copy_func_553649717)
   EVP_PKEY_CTX_SIGNATURE_CONTEXT_PARAMS_553649088 = (when declared(
       EVP_PKEY_CTX_SIGNATURE_CONTEXT_PARAMS):
     when ownSizeof(EVP_PKEY_CTX_SIGNATURE_CONTEXT_PARAMS) !=
@@ -4398,23 +4398,23 @@ type
     ASN1_BOOLEAN
   else:
     ASN1_BOOLEAN_553648863)
-  sk_DIST_POINT_free_func_553649608 = (when declared(sk_DIST_POINT_free_func):
+  sk_DIST_POINT_free_func_553649610 = (when declared(sk_DIST_POINT_free_func):
     when ownSizeof(sk_DIST_POINT_free_func) !=
-        ownSizeof(sk_DIST_POINT_free_func_553649607):
+        ownSizeof(sk_DIST_POINT_free_func_553649609):
       static :
         warning("Declaration of " & "sk_DIST_POINT_free_func" &
             " exists but with different size")
     sk_DIST_POINT_free_func
   else:
-    sk_DIST_POINT_free_func_553649607)
-  BIO_callback_fn_553649324 = (when declared(BIO_callback_fn):
-    when ownSizeof(BIO_callback_fn) != ownSizeof(BIO_callback_fn_553649323):
+    sk_DIST_POINT_free_func_553649609)
+  BIO_callback_fn_553649326 = (when declared(BIO_callback_fn):
+    when ownSizeof(BIO_callback_fn) != ownSizeof(BIO_callback_fn_553649325):
       static :
         warning("Declaration of " & "BIO_callback_fn" &
             " exists but with different size")
     BIO_callback_fn
   else:
-    BIO_callback_fn_553649323)
+    BIO_callback_fn_553649325)
   OCSP_REQ_CTX_553649102 = (when declared(OCSP_REQ_CTX):
     when ownSizeof(OCSP_REQ_CTX) != ownSizeof(OCSP_REQ_CTX_553649101):
       static :
@@ -4423,49 +4423,49 @@ type
     OCSP_REQ_CTX
   else:
     OCSP_REQ_CTX_553649101)
-  sk_X509_REVOKED_delete_if_func_553649468 = (when declared(
+  sk_X509_REVOKED_delete_if_func_553649470 = (when declared(
       sk_X509_REVOKED_delete_if_func):
     when ownSizeof(sk_X509_REVOKED_delete_if_func) !=
-        ownSizeof(sk_X509_REVOKED_delete_if_func_553649467):
+        ownSizeof(sk_X509_REVOKED_delete_if_func_553649469):
       static :
         warning("Declaration of " & "sk_X509_REVOKED_delete_if_func" &
             " exists but with different size")
     sk_X509_REVOKED_delete_if_func
   else:
-    sk_X509_REVOKED_delete_if_func_553649467)
-  SSL_CONF_CTX_553649738 = (when declared(SSL_CONF_CTX):
-    when ownSizeof(SSL_CONF_CTX) != ownSizeof(SSL_CONF_CTX_553649737):
+    sk_X509_REVOKED_delete_if_func_553649469)
+  SSL_CONF_CTX_553649740 = (when declared(SSL_CONF_CTX):
+    when ownSizeof(SSL_CONF_CTX) != ownSizeof(SSL_CONF_CTX_553649739):
       static :
         warning("Declaration of " & "SSL_CONF_CTX" &
             " exists but with different size")
     SSL_CONF_CTX
   else:
-    SSL_CONF_CTX_553649737)
-  sk_ASN1_INTEGER_cmp_func_553649362 = (when declared(sk_ASN1_INTEGER_cmp_func):
+    SSL_CONF_CTX_553649739)
+  sk_ASN1_INTEGER_cmp_func_553649364 = (when declared(sk_ASN1_INTEGER_cmp_func):
     when ownSizeof(sk_ASN1_INTEGER_cmp_func) !=
-        ownSizeof(sk_ASN1_INTEGER_cmp_func_553649361):
+        ownSizeof(sk_ASN1_INTEGER_cmp_func_553649363):
       static :
         warning("Declaration of " & "sk_ASN1_INTEGER_cmp_func" &
             " exists but with different size")
     sk_ASN1_INTEGER_cmp_func
   else:
-    sk_ASN1_INTEGER_cmp_func_553649361)
-  EC_METHOD_553649426 = (when declared(EC_METHOD):
-    when ownSizeof(EC_METHOD) != ownSizeof(EC_METHOD_553649425):
+    sk_ASN1_INTEGER_cmp_func_553649363)
+  EC_METHOD_553649428 = (when declared(EC_METHOD):
+    when ownSizeof(EC_METHOD) != ownSizeof(EC_METHOD_553649427):
       static :
         warning("Declaration of " & "EC_METHOD" &
             " exists but with different size")
     EC_METHOD
   else:
-    EC_METHOD_553649425)
-  OTHERNAME_553649498 = (when declared(OTHERNAME):
-    when ownSizeof(OTHERNAME) != ownSizeof(OTHERNAME_553649497):
+    EC_METHOD_553649427)
+  OTHERNAME_553649500 = (when declared(OTHERNAME):
+    when ownSizeof(OTHERNAME) != ownSizeof(OTHERNAME_553649499):
       static :
         warning("Declaration of " & "OTHERNAME" &
             " exists but with different size")
     OTHERNAME
   else:
-    OTHERNAME_553649497)
+    OTHERNAME_553649499)
   BN_GENCB_553648990 = (when declared(BN_GENCB):
     when ownSizeof(BN_GENCB) != ownSizeof(BN_GENCB_553648989):
       static :
@@ -4490,56 +4490,64 @@ type
     ngtcp2_cid_token
   else:
     ngtcp2_cid_token_553648833)
-  sk_GENERAL_SUBTREE_cmp_func_553649672 = (when declared(
+  sk_GENERAL_SUBTREE_cmp_func_553649674 = (when declared(
       sk_GENERAL_SUBTREE_cmp_func):
     when ownSizeof(sk_GENERAL_SUBTREE_cmp_func) !=
-        ownSizeof(sk_GENERAL_SUBTREE_cmp_func_553649671):
+        ownSizeof(sk_GENERAL_SUBTREE_cmp_func_553649673):
       static :
         warning("Declaration of " & "sk_GENERAL_SUBTREE_cmp_func" &
             " exists but with different size")
     sk_GENERAL_SUBTREE_cmp_func
   else:
-    sk_GENERAL_SUBTREE_cmp_func_553649671)
-  sk_POLICYINFO_cmp_func_553649646 = (when declared(sk_POLICYINFO_cmp_func):
-    when ownSizeof(sk_POLICYINFO_cmp_func) != ownSizeof(sk_POLICYINFO_cmp_func_553649645):
+    sk_GENERAL_SUBTREE_cmp_func_553649673)
+  sk_POLICYINFO_cmp_func_553649648 = (when declared(sk_POLICYINFO_cmp_func):
+    when ownSizeof(sk_POLICYINFO_cmp_func) != ownSizeof(sk_POLICYINFO_cmp_func_553649647):
       static :
         warning("Declaration of " & "sk_POLICYINFO_cmp_func" &
             " exists but with different size")
     sk_POLICYINFO_cmp_func
   else:
-    sk_POLICYINFO_cmp_func_553649645)
-  SSL_553649202 = (when declared(SSL):
-    when ownSizeof(SSL) != ownSizeof(SSL_553649201):
+    sk_POLICYINFO_cmp_func_553649647)
+  struct_rand_meth_st_553649150 = (when declared(struct_rand_meth_st):
+    when ownSizeof(struct_rand_meth_st) != ownSizeof(struct_rand_meth_st_553649149):
+      static :
+        warning("Declaration of " & "struct_rand_meth_st" &
+            " exists but with different size")
+    struct_rand_meth_st
+  else:
+    struct_rand_meth_st_553649149)
+  SSL_553649204 = (when declared(SSL):
+    when ownSizeof(SSL) != ownSizeof(SSL_553649203):
       static :
         warning("Declaration of " & "SSL" & " exists but with different size")
     SSL
   else:
-    SSL_553649201)
-  struct_rsa_pss_params_st_553649158 = (when declared(struct_rsa_pss_params_st):
+    SSL_553649203)
+  struct_rsa_pss_params_st_553649160 = (when declared(struct_rsa_pss_params_st):
     when ownSizeof(struct_rsa_pss_params_st) !=
-        ownSizeof(struct_rsa_pss_params_st_553649157):
+        ownSizeof(struct_rsa_pss_params_st_553649159):
       static :
         warning("Declaration of " & "struct_rsa_pss_params_st" &
             " exists but with different size")
     struct_rsa_pss_params_st
   else:
-    struct_rsa_pss_params_st_553649157)
-  X509_STORE_CTX_553649238 = (when declared(X509_STORE_CTX):
-    when ownSizeof(X509_STORE_CTX) != ownSizeof(X509_STORE_CTX_553649237):
+    struct_rsa_pss_params_st_553649159)
+  X509_STORE_CTX_553649240 = (when declared(X509_STORE_CTX):
+    when ownSizeof(X509_STORE_CTX) != ownSizeof(X509_STORE_CTX_553649239):
       static :
         warning("Declaration of " & "X509_STORE_CTX" &
             " exists but with different size")
     X509_STORE_CTX
   else:
-    X509_STORE_CTX_553649237)
-  OPENSSL_STACK_553649280 = (when declared(OPENSSL_STACK):
-    when ownSizeof(OPENSSL_STACK) != ownSizeof(OPENSSL_STACK_553649279):
+    X509_STORE_CTX_553649239)
+  OPENSSL_STACK_553649282 = (when declared(OPENSSL_STACK):
+    when ownSizeof(OPENSSL_STACK) != ownSizeof(OPENSSL_STACK_553649281):
       static :
         warning("Declaration of " & "OPENSSL_STACK" &
             " exists but with different size")
     OPENSSL_STACK
   else:
-    OPENSSL_STACK_553649279)
+    OPENSSL_STACK_553649281)
   struct_bn_mont_ctx_st_553648996 = (when declared(struct_bn_mont_ctx_st):
     when ownSizeof(struct_bn_mont_ctx_st) != ownSizeof(struct_bn_mont_ctx_st_553648995):
       static :
@@ -4566,15 +4574,15 @@ type
     struct_md5_state_st
   else:
     struct_md5_state_st_553649097)
-  X509_STORE_CTX_get_crl_fn_553649562 = (when declared(X509_STORE_CTX_get_crl_fn):
+  X509_STORE_CTX_get_crl_fn_553649564 = (when declared(X509_STORE_CTX_get_crl_fn):
     when ownSizeof(X509_STORE_CTX_get_crl_fn) !=
-        ownSizeof(X509_STORE_CTX_get_crl_fn_553649561):
+        ownSizeof(X509_STORE_CTX_get_crl_fn_553649563):
       static :
         warning("Declaration of " & "X509_STORE_CTX_get_crl_fn" &
             " exists but with different size")
     X509_STORE_CTX_get_crl_fn
   else:
-    X509_STORE_CTX_get_crl_fn_553649561)
+    X509_STORE_CTX_get_crl_fn_553649563)
   ngtcp2_sockaddr_in6_553648649 = (when declared(ngtcp2_sockaddr_in6):
     when ownSizeof(ngtcp2_sockaddr_in6) != ownSizeof(ngtcp2_sockaddr_in6_553648648):
       static :
@@ -4599,25 +4607,25 @@ type
     ECDSA_SIG
   else:
     ECDSA_SIG_553649039)
-  enum_evp_aead_direction_t_553649334 = (when declared(enum_evp_aead_direction_t):
+  enum_evp_aead_direction_t_553649336 = (when declared(enum_evp_aead_direction_t):
     when ownSizeof(enum_evp_aead_direction_t) !=
-        ownSizeof(enum_evp_aead_direction_t_553649333):
+        ownSizeof(enum_evp_aead_direction_t_553649335):
       static :
         warning("Declaration of " & "enum_evp_aead_direction_t" &
             " exists but with different size")
     enum_evp_aead_direction_t
   else:
-    enum_evp_aead_direction_t_553649333)
-  sk_SRTP_PROTECTION_PROFILE_free_func_553649714 = (when declared(
+    enum_evp_aead_direction_t_553649335)
+  sk_SRTP_PROTECTION_PROFILE_free_func_553649716 = (when declared(
       sk_SRTP_PROTECTION_PROFILE_free_func):
     when ownSizeof(sk_SRTP_PROTECTION_PROFILE_free_func) !=
-        ownSizeof(sk_SRTP_PROTECTION_PROFILE_free_func_553649713):
+        ownSizeof(sk_SRTP_PROTECTION_PROFILE_free_func_553649715):
       static :
         warning("Declaration of " & "sk_SRTP_PROTECTION_PROFILE_free_func" &
             " exists but with different size")
     sk_SRTP_PROTECTION_PROFILE_free_func
   else:
-    sk_SRTP_PROTECTION_PROFILE_free_func_553649713)
+    sk_SRTP_PROTECTION_PROFILE_free_func_553649715)
   ngtcp2_pkt_info_553648611 = (when declared(ngtcp2_pkt_info):
     when ownSizeof(ngtcp2_pkt_info) != ownSizeof(ngtcp2_pkt_info_553648610):
       static :
@@ -4649,32 +4657,32 @@ type
     ngtcp2_realloc
   else:
     ngtcp2_realloc_553648602)
-  SRTP_PROTECTION_PROFILE_553649176 = (when declared(SRTP_PROTECTION_PROFILE):
+  SRTP_PROTECTION_PROFILE_553649178 = (when declared(SRTP_PROTECTION_PROFILE):
     when ownSizeof(SRTP_PROTECTION_PROFILE) !=
-        ownSizeof(SRTP_PROTECTION_PROFILE_553649175):
+        ownSizeof(SRTP_PROTECTION_PROFILE_553649177):
       static :
         warning("Declaration of " & "SRTP_PROTECTION_PROFILE" &
             " exists but with different size")
     SRTP_PROTECTION_PROFILE
   else:
-    SRTP_PROTECTION_PROFILE_553649175)
-  sk_SSL_CIPHER_copy_func_553649694 = (when declared(sk_SSL_CIPHER_copy_func):
+    SRTP_PROTECTION_PROFILE_553649177)
+  sk_SSL_CIPHER_copy_func_553649696 = (when declared(sk_SSL_CIPHER_copy_func):
     when ownSizeof(sk_SSL_CIPHER_copy_func) !=
-        ownSizeof(sk_SSL_CIPHER_copy_func_553649693):
+        ownSizeof(sk_SSL_CIPHER_copy_func_553649695):
       static :
         warning("Declaration of " & "sk_SSL_CIPHER_copy_func" &
             " exists but with different size")
     sk_SSL_CIPHER_copy_func
   else:
-    sk_SSL_CIPHER_copy_func_553649693)
-  sk_SSL_COMP_free_func_553649746 = (when declared(sk_SSL_COMP_free_func):
-    when ownSizeof(sk_SSL_COMP_free_func) != ownSizeof(sk_SSL_COMP_free_func_553649745):
+    sk_SSL_CIPHER_copy_func_553649695)
+  sk_SSL_COMP_free_func_553649748 = (when declared(sk_SSL_COMP_free_func):
+    when ownSizeof(sk_SSL_COMP_free_func) != ownSizeof(sk_SSL_COMP_free_func_553649747):
       static :
         warning("Declaration of " & "sk_SSL_COMP_free_func" &
             " exists but with different size")
     sk_SSL_COMP_free_func
   else:
-    sk_SSL_COMP_free_func_553649745)
+    sk_SSL_COMP_free_func_553649747)
   ngtcp2_version_cid_553648742 = (when declared(ngtcp2_version_cid):
     when ownSizeof(ngtcp2_version_cid) != ownSizeof(ngtcp2_version_cid_553648741):
       static :
@@ -4724,40 +4732,40 @@ type
     ngtcp2_vec
   else:
     ngtcp2_vec_553648630)
-  X509V3_EXT_METHOD_553649222 = (when declared(X509V3_EXT_METHOD):
-    when ownSizeof(X509V3_EXT_METHOD) != ownSizeof(X509V3_EXT_METHOD_553649221):
+  X509V3_EXT_METHOD_553649224 = (when declared(X509V3_EXT_METHOD):
+    when ownSizeof(X509V3_EXT_METHOD) != ownSizeof(X509V3_EXT_METHOD_553649223):
       static :
         warning("Declaration of " & "X509V3_EXT_METHOD" &
             " exists but with different size")
     X509V3_EXT_METHOD
   else:
-    X509V3_EXT_METHOD_553649221)
-  sk_CONF_VALUE_cmp_func_553649414 = (when declared(sk_CONF_VALUE_cmp_func):
-    when ownSizeof(sk_CONF_VALUE_cmp_func) != ownSizeof(sk_CONF_VALUE_cmp_func_553649413):
+    X509V3_EXT_METHOD_553649223)
+  sk_CONF_VALUE_cmp_func_553649416 = (when declared(sk_CONF_VALUE_cmp_func):
+    when ownSizeof(sk_CONF_VALUE_cmp_func) != ownSizeof(sk_CONF_VALUE_cmp_func_553649415):
       static :
         warning("Declaration of " & "sk_CONF_VALUE_cmp_func" &
             " exists but with different size")
     sk_CONF_VALUE_cmp_func
   else:
-    sk_CONF_VALUE_cmp_func_553649413)
-  sk_X509_ATTRIBUTE_copy_func_553649514 = (when declared(
+    sk_CONF_VALUE_cmp_func_553649415)
+  sk_X509_ATTRIBUTE_copy_func_553649516 = (when declared(
       sk_X509_ATTRIBUTE_copy_func):
     when ownSizeof(sk_X509_ATTRIBUTE_copy_func) !=
-        ownSizeof(sk_X509_ATTRIBUTE_copy_func_553649513):
+        ownSizeof(sk_X509_ATTRIBUTE_copy_func_553649515):
       static :
         warning("Declaration of " & "sk_X509_ATTRIBUTE_copy_func" &
             " exists but with different size")
     sk_X509_ATTRIBUTE_copy_func
   else:
-    sk_X509_ATTRIBUTE_copy_func_553649513)
-  NOTICEREF_553649618 = (when declared(NOTICEREF):
-    when ownSizeof(NOTICEREF) != ownSizeof(NOTICEREF_553649617):
+    sk_X509_ATTRIBUTE_copy_func_553649515)
+  NOTICEREF_553649620 = (when declared(NOTICEREF):
+    when ownSizeof(NOTICEREF) != ownSizeof(NOTICEREF_553649619):
       static :
         warning("Declaration of " & "NOTICEREF" &
             " exists but with different size")
     NOTICEREF
   else:
-    NOTICEREF_553649617)
+    NOTICEREF_553649619)
   X509_SIG_553648972 = (when declared(X509_SIG):
     when ownSizeof(X509_SIG) != ownSizeof(X509_SIG_553648971):
       static :
@@ -4776,14 +4784,14 @@ type
     union_ngtcp2_sockaddr_union
   else:
     union_ngtcp2_sockaddr_union_553648656)
-  sk_void_cmp_func_553649290 = (when declared(sk_void_cmp_func):
-    when ownSizeof(sk_void_cmp_func) != ownSizeof(sk_void_cmp_func_553649289):
+  sk_void_cmp_func_553649292 = (when declared(sk_void_cmp_func):
+    when ownSizeof(sk_void_cmp_func) != ownSizeof(sk_void_cmp_func_553649291):
       static :
         warning("Declaration of " & "sk_void_cmp_func" &
             " exists but with different size")
     sk_void_cmp_func
   else:
-    sk_void_cmp_func_553649289)
+    sk_void_cmp_func_553649291)
   ngtcp2_rand_553648786 = (when declared(ngtcp2_rand):
     when ownSizeof(ngtcp2_rand) != ownSizeof(ngtcp2_rand_553648785):
       static :
@@ -4808,16 +4816,16 @@ type
     enum_ngtcp2_pkt_type
   else:
     enum_ngtcp2_pkt_type_553648612)
-  sk_X509_NAME_ENTRY_free_func_553649470 = (when declared(
+  sk_X509_NAME_ENTRY_free_func_553649472 = (when declared(
       sk_X509_NAME_ENTRY_free_func):
     when ownSizeof(sk_X509_NAME_ENTRY_free_func) !=
-        ownSizeof(sk_X509_NAME_ENTRY_free_func_553649469):
+        ownSizeof(sk_X509_NAME_ENTRY_free_func_553649471):
       static :
         warning("Declaration of " & "sk_X509_NAME_ENTRY_free_func" &
             " exists but with different size")
     sk_X509_NAME_ENTRY_free_func
   else:
-    sk_X509_NAME_ENTRY_free_func_553649469)
+    sk_X509_NAME_ENTRY_free_func_553649471)
   struct_AUTHORITY_KEYID_st_553648912 = (when declared(struct_AUTHORITY_KEYID_st):
     when ownSizeof(struct_AUTHORITY_KEYID_st) !=
         ownSizeof(struct_AUTHORITY_KEYID_st_553648911):
@@ -4836,34 +4844,34 @@ type
     struct_pkcs7_envelope_st
   else:
     struct_pkcs7_envelope_st_553649113)
-  struct_ACCESS_DESCRIPTION_st_553649586 = (when declared(
+  struct_ACCESS_DESCRIPTION_st_553649588 = (when declared(
       struct_ACCESS_DESCRIPTION_st):
     when ownSizeof(struct_ACCESS_DESCRIPTION_st) !=
-        ownSizeof(struct_ACCESS_DESCRIPTION_st_553649585):
+        ownSizeof(struct_ACCESS_DESCRIPTION_st_553649587):
       static :
         warning("Declaration of " & "struct_ACCESS_DESCRIPTION_st" &
             " exists but with different size")
     struct_ACCESS_DESCRIPTION_st
   else:
-    struct_ACCESS_DESCRIPTION_st_553649585)
-  sk_BIO_free_func_553649312 = (when declared(sk_BIO_free_func):
-    when ownSizeof(sk_BIO_free_func) != ownSizeof(sk_BIO_free_func_553649311):
+    struct_ACCESS_DESCRIPTION_st_553649587)
+  sk_BIO_free_func_553649314 = (when declared(sk_BIO_free_func):
+    when ownSizeof(sk_BIO_free_func) != ownSizeof(sk_BIO_free_func_553649313):
       static :
         warning("Declaration of " & "sk_BIO_free_func" &
             " exists but with different size")
     sk_BIO_free_func
   else:
-    sk_BIO_free_func_553649311)
-  sk_X509_NAME_delete_if_func_553649484 = (when declared(
+    sk_BIO_free_func_553649313)
+  sk_X509_NAME_delete_if_func_553649486 = (when declared(
       sk_X509_NAME_delete_if_func):
     when ownSizeof(sk_X509_NAME_delete_if_func) !=
-        ownSizeof(sk_X509_NAME_delete_if_func_553649483):
+        ownSizeof(sk_X509_NAME_delete_if_func_553649485):
       static :
         warning("Declaration of " & "sk_X509_NAME_delete_if_func" &
             " exists but with different size")
     sk_X509_NAME_delete_if_func
   else:
-    sk_X509_NAME_delete_if_func_553649483)
+    sk_X509_NAME_delete_if_func_553649485)
   enum_ngtcp2_cc_algo_553648684 = (when declared(enum_ngtcp2_cc_algo):
     when ownSizeof(enum_ngtcp2_cc_algo) != ownSizeof(enum_ngtcp2_cc_algo_553648683):
       static :
@@ -4872,22 +4880,22 @@ type
     enum_ngtcp2_cc_algo
   else:
     enum_ngtcp2_cc_algo_553648683)
-  pem_password_cb_553649680 = (when declared(pem_password_cb):
-    when ownSizeof(pem_password_cb) != ownSizeof(pem_password_cb_553649679):
+  pem_password_cb_553649682 = (when declared(pem_password_cb):
+    when ownSizeof(pem_password_cb) != ownSizeof(pem_password_cb_553649681):
       static :
         warning("Declaration of " & "pem_password_cb" &
             " exists but with different size")
     pem_password_cb
   else:
-    pem_password_cb_553649679)
-  OPENSSL_sk_free_func_553649264 = (when declared(OPENSSL_sk_free_func):
-    when ownSizeof(OPENSSL_sk_free_func) != ownSizeof(OPENSSL_sk_free_func_553649263):
+    pem_password_cb_553649681)
+  OPENSSL_sk_free_func_553649266 = (when declared(OPENSSL_sk_free_func):
+    when ownSizeof(OPENSSL_sk_free_func) != ownSizeof(OPENSSL_sk_free_func_553649265):
       static :
         warning("Declaration of " & "OPENSSL_sk_free_func" &
             " exists but with different size")
     OPENSSL_sk_free_func
   else:
-    OPENSSL_sk_free_func_553649263)
+    OPENSSL_sk_free_func_553649265)
   ngtcp2_extend_max_stream_data_553648784 = (when declared(
       ngtcp2_extend_max_stream_data):
     when ownSizeof(ngtcp2_extend_max_stream_data) !=
@@ -4906,36 +4914,36 @@ type
     struct_cbb_st
   else:
     struct_cbb_st_553649005)
-  sk_X509_EXTENSION_delete_if_func_553649492 = (when declared(
+  sk_X509_EXTENSION_delete_if_func_553649494 = (when declared(
       sk_X509_EXTENSION_delete_if_func):
     when ownSizeof(sk_X509_EXTENSION_delete_if_func) !=
-        ownSizeof(sk_X509_EXTENSION_delete_if_func_553649491):
+        ownSizeof(sk_X509_EXTENSION_delete_if_func_553649493):
       static :
         warning("Declaration of " & "sk_X509_EXTENSION_delete_if_func" &
             " exists but with different size")
     sk_X509_EXTENSION_delete_if_func
   else:
-    sk_X509_EXTENSION_delete_if_func_553649491)
-  sk_X509_ATTRIBUTE_free_func_553649512 = (when declared(
+    sk_X509_EXTENSION_delete_if_func_553649493)
+  sk_X509_ATTRIBUTE_free_func_553649514 = (when declared(
       sk_X509_ATTRIBUTE_free_func):
     when ownSizeof(sk_X509_ATTRIBUTE_free_func) !=
-        ownSizeof(sk_X509_ATTRIBUTE_free_func_553649511):
+        ownSizeof(sk_X509_ATTRIBUTE_free_func_553649513):
       static :
         warning("Declaration of " & "sk_X509_ATTRIBUTE_free_func" &
             " exists but with different size")
     sk_X509_ATTRIBUTE_free_func
   else:
-    sk_X509_ATTRIBUTE_free_func_553649511)
-  sk_POLICY_MAPPING_delete_if_func_553649660 = (when declared(
+    sk_X509_ATTRIBUTE_free_func_553649513)
+  sk_POLICY_MAPPING_delete_if_func_553649662 = (when declared(
       sk_POLICY_MAPPING_delete_if_func):
     when ownSizeof(sk_POLICY_MAPPING_delete_if_func) !=
-        ownSizeof(sk_POLICY_MAPPING_delete_if_func_553649659):
+        ownSizeof(sk_POLICY_MAPPING_delete_if_func_553649661):
       static :
         warning("Declaration of " & "sk_POLICY_MAPPING_delete_if_func" &
             " exists but with different size")
     sk_POLICY_MAPPING_delete_if_func
   else:
-    sk_POLICY_MAPPING_delete_if_func_553649659)
+    sk_POLICY_MAPPING_delete_if_func_553649661)
   ngtcp2_handshake_confirmed_553648758 = (when declared(
       ngtcp2_handshake_confirmed):
     when ownSizeof(ngtcp2_handshake_confirmed) !=
@@ -4954,32 +4962,32 @@ type
     X509_VERIFY_PARAM
   else:
     X509_VERIFY_PARAM_553648947)
-  SSL_QUIC_METHOD_553649196 = (when declared(SSL_QUIC_METHOD):
-    when ownSizeof(SSL_QUIC_METHOD) != ownSizeof(SSL_QUIC_METHOD_553649195):
+  SSL_QUIC_METHOD_553649198 = (when declared(SSL_QUIC_METHOD):
+    when ownSizeof(SSL_QUIC_METHOD) != ownSizeof(SSL_QUIC_METHOD_553649197):
       static :
         warning("Declaration of " & "SSL_QUIC_METHOD" &
             " exists but with different size")
     SSL_QUIC_METHOD
   else:
-    SSL_QUIC_METHOD_553649195)
-  struct_in6_addr_553649760 = (when declared(struct_in6_addr):
-    when ownSizeof(struct_in6_addr) != ownSizeof(struct_in6_addr_553649759):
+    SSL_QUIC_METHOD_553649197)
+  struct_in6_addr_553649762 = (when declared(struct_in6_addr):
+    when ownSizeof(struct_in6_addr) != ownSizeof(struct_in6_addr_553649761):
       static :
         warning("Declaration of " & "struct_in6_addr" &
             " exists but with different size")
     struct_in6_addr
   else:
-    struct_in6_addr_553649759)
-  sk_POLICYINFO_delete_if_func_553649648 = (when declared(
+    struct_in6_addr_553649761)
+  sk_POLICYINFO_delete_if_func_553649650 = (when declared(
       sk_POLICYINFO_delete_if_func):
     when ownSizeof(sk_POLICYINFO_delete_if_func) !=
-        ownSizeof(sk_POLICYINFO_delete_if_func_553649647):
+        ownSizeof(sk_POLICYINFO_delete_if_func_553649649):
       static :
         warning("Declaration of " & "sk_POLICYINFO_delete_if_func" &
             " exists but with different size")
     sk_POLICYINFO_delete_if_func
   else:
-    sk_POLICYINFO_delete_if_func_553649647)
+    sk_POLICYINFO_delete_if_func_553649649)
   struct_ngtcp2_crypto_conn_ref_553648852 = (when declared(
       struct_ngtcp2_crypto_conn_ref):
     when ownSizeof(struct_ngtcp2_crypto_conn_ref) !=
@@ -5014,22 +5022,22 @@ type
     EVP_ENCODE_CTX
   else:
     EVP_ENCODE_CTX_553649063)
-  X509_OBJECT_553649232 = (when declared(X509_OBJECT):
-    when ownSizeof(X509_OBJECT) != ownSizeof(X509_OBJECT_553649231):
+  X509_OBJECT_553649234 = (when declared(X509_OBJECT):
+    when ownSizeof(X509_OBJECT) != ownSizeof(X509_OBJECT_553649233):
       static :
         warning("Declaration of " & "X509_OBJECT" &
             " exists but with different size")
     X509_OBJECT
   else:
-    X509_OBJECT_553649231)
-  SHA512_CTX_553649166 = (when declared(SHA512_CTX):
-    when ownSizeof(SHA512_CTX) != ownSizeof(SHA512_CTX_553649165):
+    X509_OBJECT_553649233)
+  SHA512_CTX_553649168 = (when declared(SHA512_CTX):
+    when ownSizeof(SHA512_CTX) != ownSizeof(SHA512_CTX_553649167):
       static :
         warning("Declaration of " & "SHA512_CTX" &
             " exists but with different size")
     SHA512_CTX
   else:
-    SHA512_CTX_553649165)
+    SHA512_CTX_553649167)
   struct_buf_mem_st_553649000 = (when declared(struct_buf_mem_st):
     when ownSizeof(struct_buf_mem_st) != ownSizeof(struct_buf_mem_st_553648999):
       static :
@@ -5046,39 +5054,39 @@ type
     ngtcp2_recv_retry
   else:
     ngtcp2_recv_retry_553648761)
-  sk_X509_free_func_553649436 = (when declared(sk_X509_free_func):
-    when ownSizeof(sk_X509_free_func) != ownSizeof(sk_X509_free_func_553649435):
+  sk_X509_free_func_553649438 = (when declared(sk_X509_free_func):
+    when ownSizeof(sk_X509_free_func) != ownSizeof(sk_X509_free_func_553649437):
       static :
         warning("Declaration of " & "sk_X509_free_func" &
             " exists but with different size")
     sk_X509_free_func
   else:
-    sk_X509_free_func_553649435)
-  X509V3_EXT_I2D_typedef_553649546 = (when declared(X509V3_EXT_I2D_typedef):
-    when ownSizeof(X509V3_EXT_I2D_typedef) != ownSizeof(X509V3_EXT_I2D_typedef_553649545):
+    sk_X509_free_func_553649437)
+  X509V3_EXT_I2D_typedef_553649548 = (when declared(X509V3_EXT_I2D_typedef):
+    when ownSizeof(X509V3_EXT_I2D_typedef) != ownSizeof(X509V3_EXT_I2D_typedef_553649547):
       static :
         warning("Declaration of " & "X509V3_EXT_I2D_typedef" &
             " exists but with different size")
     X509V3_EXT_I2D_typedef
   else:
-    X509V3_EXT_I2D_typedef_553649545)
-  sk_void_delete_if_func_553649292 = (when declared(sk_void_delete_if_func):
-    when ownSizeof(sk_void_delete_if_func) != ownSizeof(sk_void_delete_if_func_553649291):
+    X509V3_EXT_I2D_typedef_553649547)
+  sk_void_delete_if_func_553649294 = (when declared(sk_void_delete_if_func):
+    when ownSizeof(sk_void_delete_if_func) != ownSizeof(sk_void_delete_if_func_553649293):
       static :
         warning("Declaration of " & "sk_void_delete_if_func" &
             " exists but with different size")
     sk_void_delete_if_func
   else:
-    sk_void_delete_if_func_553649291)
-  sk_X509_OBJECT_free_func_553649520 = (when declared(sk_X509_OBJECT_free_func):
+    sk_void_delete_if_func_553649293)
+  sk_X509_OBJECT_free_func_553649522 = (when declared(sk_X509_OBJECT_free_func):
     when ownSizeof(sk_X509_OBJECT_free_func) !=
-        ownSizeof(sk_X509_OBJECT_free_func_553649519):
+        ownSizeof(sk_X509_OBJECT_free_func_553649521):
       static :
         warning("Declaration of " & "sk_X509_OBJECT_free_func" &
             " exists but with different size")
     sk_X509_OBJECT_free_func
   else:
-    sk_X509_OBJECT_free_func_553649519)
+    sk_X509_OBJECT_free_func_553649521)
   DIST_POINT_553648918 = (when declared(DIST_POINT):
     when ownSizeof(DIST_POINT) != ownSizeof(DIST_POINT_553648917):
       static :
@@ -5087,52 +5095,52 @@ type
     DIST_POINT
   else:
     DIST_POINT_553648917)
-  OPENSSL_sk_cmp_func_553649268 = (when declared(OPENSSL_sk_cmp_func):
-    when ownSizeof(OPENSSL_sk_cmp_func) != ownSizeof(OPENSSL_sk_cmp_func_553649267):
+  OPENSSL_sk_cmp_func_553649270 = (when declared(OPENSSL_sk_cmp_func):
+    when ownSizeof(OPENSSL_sk_cmp_func) != ownSizeof(OPENSSL_sk_cmp_func_553649269):
       static :
         warning("Declaration of " & "OPENSSL_sk_cmp_func" &
             " exists but with different size")
     OPENSSL_sk_cmp_func
   else:
-    OPENSSL_sk_cmp_func_553649267)
-  CRL_DIST_POINTS_553649606 = (when declared(CRL_DIST_POINTS):
-    when ownSizeof(CRL_DIST_POINTS) != ownSizeof(CRL_DIST_POINTS_553649605):
+    OPENSSL_sk_cmp_func_553649269)
+  CRL_DIST_POINTS_553649608 = (when declared(CRL_DIST_POINTS):
+    when ownSizeof(CRL_DIST_POINTS) != ownSizeof(CRL_DIST_POINTS_553649607):
       static :
         warning("Declaration of " & "CRL_DIST_POINTS" &
             " exists but with different size")
     CRL_DIST_POINTS
   else:
-    CRL_DIST_POINTS_553649605)
-  OPENSSL_sk_call_delete_if_func_553649278 = (when declared(
+    CRL_DIST_POINTS_553649607)
+  OPENSSL_sk_call_delete_if_func_553649280 = (when declared(
       OPENSSL_sk_call_delete_if_func):
     when ownSizeof(OPENSSL_sk_call_delete_if_func) !=
-        ownSizeof(OPENSSL_sk_call_delete_if_func_553649277):
+        ownSizeof(OPENSSL_sk_call_delete_if_func_553649279):
       static :
         warning("Declaration of " & "OPENSSL_sk_call_delete_if_func" &
             " exists but with different size")
     OPENSSL_sk_call_delete_if_func
   else:
-    OPENSSL_sk_call_delete_if_func_553649277)
-  X509_STORE_CTX_verify_crit_oids_cb_553649530 = (when declared(
+    OPENSSL_sk_call_delete_if_func_553649279)
+  X509_STORE_CTX_verify_crit_oids_cb_553649532 = (when declared(
       X509_STORE_CTX_verify_crit_oids_cb):
     when ownSizeof(X509_STORE_CTX_verify_crit_oids_cb) !=
-        ownSizeof(X509_STORE_CTX_verify_crit_oids_cb_553649529):
+        ownSizeof(X509_STORE_CTX_verify_crit_oids_cb_553649531):
       static :
         warning("Declaration of " & "X509_STORE_CTX_verify_crit_oids_cb" &
             " exists but with different size")
     X509_STORE_CTX_verify_crit_oids_cb
   else:
-    X509_STORE_CTX_verify_crit_oids_cb_553649529)
-  sk_PKCS7_SIGNER_INFO_copy_func_553649402 = (when declared(
+    X509_STORE_CTX_verify_crit_oids_cb_553649531)
+  sk_PKCS7_SIGNER_INFO_copy_func_553649404 = (when declared(
       sk_PKCS7_SIGNER_INFO_copy_func):
     when ownSizeof(sk_PKCS7_SIGNER_INFO_copy_func) !=
-        ownSizeof(sk_PKCS7_SIGNER_INFO_copy_func_553649401):
+        ownSizeof(sk_PKCS7_SIGNER_INFO_copy_func_553649403):
       static :
         warning("Declaration of " & "sk_PKCS7_SIGNER_INFO_copy_func" &
             " exists but with different size")
     sk_PKCS7_SIGNER_INFO_copy_func
   else:
-    sk_PKCS7_SIGNER_INFO_copy_func_553649401)
+    sk_PKCS7_SIGNER_INFO_copy_func_553649403)
   ngtcp2_info_553648848 = (when declared(ngtcp2_info):
     when ownSizeof(ngtcp2_info) != ownSizeof(ngtcp2_info_553648847):
       static :
@@ -5141,15 +5149,15 @@ type
     ngtcp2_info
   else:
     ngtcp2_info_553648847)
-  sk_POLICYINFO_free_func_553649642 = (when declared(sk_POLICYINFO_free_func):
+  sk_POLICYINFO_free_func_553649644 = (when declared(sk_POLICYINFO_free_func):
     when ownSizeof(sk_POLICYINFO_free_func) !=
-        ownSizeof(sk_POLICYINFO_free_func_553649641):
+        ownSizeof(sk_POLICYINFO_free_func_553649643):
       static :
         warning("Declaration of " & "sk_POLICYINFO_free_func" &
             " exists but with different size")
     sk_POLICYINFO_free_func
   else:
-    sk_POLICYINFO_free_func_553649641)
+    sk_POLICYINFO_free_func_553649643)
   X509_ALGOR_553648950 = (when declared(X509_ALGOR):
     when ownSizeof(X509_ALGOR) != ownSizeof(X509_ALGOR_553648949):
       static :
@@ -5166,16 +5174,16 @@ type
     EVP_AEAD
   else:
     EVP_AEAD_553649051)
-  sk_X509_ALGOR_delete_if_func_553649510 = (when declared(
+  sk_X509_ALGOR_delete_if_func_553649512 = (when declared(
       sk_X509_ALGOR_delete_if_func):
     when ownSizeof(sk_X509_ALGOR_delete_if_func) !=
-        ownSizeof(sk_X509_ALGOR_delete_if_func_553649509):
+        ownSizeof(sk_X509_ALGOR_delete_if_func_553649511):
       static :
         warning("Declaration of " & "sk_X509_ALGOR_delete_if_func" &
             " exists but with different size")
     sk_X509_ALGOR_delete_if_func
   else:
-    sk_X509_ALGOR_delete_if_func_553649509)
+    sk_X509_ALGOR_delete_if_func_553649511)
   ASN1_UTF8STRING_553648902 = (when declared(ASN1_UTF8STRING):
     when ownSizeof(ASN1_UTF8STRING) != ownSizeof(ASN1_UTF8STRING_553648901):
       static :
@@ -5191,24 +5199,24 @@ type
     BIO
   else:
     BIO_553648983)
-  sk_POLICYQUALINFO_copy_func_553649630 = (when declared(
+  sk_POLICYQUALINFO_copy_func_553649632 = (when declared(
       sk_POLICYQUALINFO_copy_func):
     when ownSizeof(sk_POLICYQUALINFO_copy_func) !=
-        ownSizeof(sk_POLICYQUALINFO_copy_func_553649629):
+        ownSizeof(sk_POLICYQUALINFO_copy_func_553649631):
       static :
         warning("Declaration of " & "sk_POLICYQUALINFO_copy_func" &
             " exists but with different size")
     sk_POLICYQUALINFO_copy_func
   else:
-    sk_POLICYQUALINFO_copy_func_553649629)
-  HmacMethods_553649386 = (when declared(HmacMethods):
-    when ownSizeof(HmacMethods) != ownSizeof(HmacMethods_553649385):
+    sk_POLICYQUALINFO_copy_func_553649631)
+  HmacMethods_553649388 = (when declared(HmacMethods):
+    when ownSizeof(HmacMethods) != ownSizeof(HmacMethods_553649387):
       static :
         warning("Declaration of " & "HmacMethods" &
             " exists but with different size")
     HmacMethods
   else:
-    HmacMethods_553649385)
+    HmacMethods_553649387)
   struct_ngtcp2_callbacks_553648828 = (when declared(struct_ngtcp2_callbacks):
     when ownSizeof(struct_ngtcp2_callbacks) !=
         ownSizeof(struct_ngtcp2_callbacks_553648827):
@@ -5218,51 +5226,51 @@ type
     struct_ngtcp2_callbacks
   else:
     struct_ngtcp2_callbacks_553648827)
-  ASN1_VALUE_553649356 = (when declared(ASN1_VALUE):
-    when ownSizeof(ASN1_VALUE) != ownSizeof(ASN1_VALUE_553649355):
+  ASN1_VALUE_553649358 = (when declared(ASN1_VALUE):
+    when ownSizeof(ASN1_VALUE) != ownSizeof(ASN1_VALUE_553649357):
       static :
         warning("Declaration of " & "ASN1_VALUE" &
             " exists but with different size")
     ASN1_VALUE
   else:
-    ASN1_VALUE_553649355)
-  sk_ASN1_OBJECT_cmp_func_553649372 = (when declared(sk_ASN1_OBJECT_cmp_func):
+    ASN1_VALUE_553649357)
+  sk_ASN1_OBJECT_cmp_func_553649374 = (when declared(sk_ASN1_OBJECT_cmp_func):
     when ownSizeof(sk_ASN1_OBJECT_cmp_func) !=
-        ownSizeof(sk_ASN1_OBJECT_cmp_func_553649371):
+        ownSizeof(sk_ASN1_OBJECT_cmp_func_553649373):
       static :
         warning("Declaration of " & "sk_ASN1_OBJECT_cmp_func" &
             " exists but with different size")
     sk_ASN1_OBJECT_cmp_func
   else:
-    sk_ASN1_OBJECT_cmp_func_553649371)
-  sk_BIO_cmp_func_553649316 = (when declared(sk_BIO_cmp_func):
-    when ownSizeof(sk_BIO_cmp_func) != ownSizeof(sk_BIO_cmp_func_553649315):
+    sk_ASN1_OBJECT_cmp_func_553649373)
+  sk_BIO_cmp_func_553649318 = (when declared(sk_BIO_cmp_func):
+    when ownSizeof(sk_BIO_cmp_func) != ownSizeof(sk_BIO_cmp_func_553649317):
       static :
         warning("Declaration of " & "sk_BIO_cmp_func" &
             " exists but with different size")
     sk_BIO_cmp_func
   else:
-    sk_BIO_cmp_func_553649315)
-  sk_X509_INFO_delete_if_func_553649538 = (when declared(
+    sk_BIO_cmp_func_553649317)
+  sk_X509_INFO_delete_if_func_553649540 = (when declared(
       sk_X509_INFO_delete_if_func):
     when ownSizeof(sk_X509_INFO_delete_if_func) !=
-        ownSizeof(sk_X509_INFO_delete_if_func_553649537):
+        ownSizeof(sk_X509_INFO_delete_if_func_553649539):
       static :
         warning("Declaration of " & "sk_X509_INFO_delete_if_func" &
             " exists but with different size")
     sk_X509_INFO_delete_if_func
   else:
-    sk_X509_INFO_delete_if_func_553649537)
-  sk_POLICYQUALINFO_delete_if_func_553649634 = (when declared(
+    sk_X509_INFO_delete_if_func_553649539)
+  sk_POLICYQUALINFO_delete_if_func_553649636 = (when declared(
       sk_POLICYQUALINFO_delete_if_func):
     when ownSizeof(sk_POLICYQUALINFO_delete_if_func) !=
-        ownSizeof(sk_POLICYQUALINFO_delete_if_func_553649633):
+        ownSizeof(sk_POLICYQUALINFO_delete_if_func_553649635):
       static :
         warning("Declaration of " & "sk_POLICYQUALINFO_delete_if_func" &
             " exists but with different size")
     sk_POLICYQUALINFO_delete_if_func
   else:
-    sk_POLICYQUALINFO_delete_if_func_553649633)
+    sk_POLICYQUALINFO_delete_if_func_553649635)
   struct_ngtcp2_info_553648846 = (when declared(struct_ngtcp2_info):
     when ownSizeof(struct_ngtcp2_info) != ownSizeof(struct_ngtcp2_info_553648845):
       static :
@@ -5297,16 +5305,16 @@ type
     struct_bio_st
   else:
     struct_bio_st_553648985)
-  sk_SSL_CIPHER_delete_if_func_553649698 = (when declared(
+  sk_SSL_CIPHER_delete_if_func_553649700 = (when declared(
       sk_SSL_CIPHER_delete_if_func):
     when ownSizeof(sk_SSL_CIPHER_delete_if_func) !=
-        ownSizeof(sk_SSL_CIPHER_delete_if_func_553649697):
+        ownSizeof(sk_SSL_CIPHER_delete_if_func_553649699):
       static :
         warning("Declaration of " & "sk_SSL_CIPHER_delete_if_func" &
             " exists but with different size")
     sk_SSL_CIPHER_delete_if_func
   else:
-    sk_SSL_CIPHER_delete_if_func_553649697)
+    sk_SSL_CIPHER_delete_if_func_553649699)
   ngtcp2_select_preferred_addr_553648798 = (when declared(
       ngtcp2_select_preferred_addr):
     when ownSizeof(ngtcp2_select_preferred_addr) !=
@@ -5317,31 +5325,31 @@ type
     ngtcp2_select_preferred_addr
   else:
     ngtcp2_select_preferred_addr_553648797)
-  SSL_COMP_553649742 = (when declared(SSL_COMP):
-    when ownSizeof(SSL_COMP) != ownSizeof(SSL_COMP_553649741):
+  SSL_COMP_553649744 = (when declared(SSL_COMP):
+    when ownSizeof(SSL_COMP) != ownSizeof(SSL_COMP_553649743):
       static :
         warning("Declaration of " & "SSL_COMP" &
             " exists but with different size")
     SSL_COMP
   else:
-    SSL_COMP_553649741)
-  d2i_of_void_553649350 = (when declared(d2i_of_void):
-    when ownSizeof(d2i_of_void) != ownSizeof(d2i_of_void_553649349):
+    SSL_COMP_553649743)
+  d2i_of_void_553649352 = (when declared(d2i_of_void):
+    when ownSizeof(d2i_of_void) != ownSizeof(d2i_of_void_553649351):
       static :
         warning("Declaration of " & "d2i_of_void" &
             " exists but with different size")
     d2i_of_void
   else:
-    d2i_of_void_553649349)
-  sk_ASN1_INTEGER_copy_func_553649360 = (when declared(sk_ASN1_INTEGER_copy_func):
+    d2i_of_void_553649351)
+  sk_ASN1_INTEGER_copy_func_553649362 = (when declared(sk_ASN1_INTEGER_copy_func):
     when ownSizeof(sk_ASN1_INTEGER_copy_func) !=
-        ownSizeof(sk_ASN1_INTEGER_copy_func_553649359):
+        ownSizeof(sk_ASN1_INTEGER_copy_func_553649361):
       static :
         warning("Declaration of " & "sk_ASN1_INTEGER_copy_func" &
             " exists but with different size")
     sk_ASN1_INTEGER_copy_func
   else:
-    sk_ASN1_INTEGER_copy_func_553649359)
+    sk_ASN1_INTEGER_copy_func_553649361)
   ASN1_BMPSTRING_553648876 = (when declared(ASN1_BMPSTRING):
     when ownSizeof(ASN1_BMPSTRING) != ownSizeof(ASN1_BMPSTRING_553648875):
       static :
@@ -5382,23 +5390,23 @@ type
     struct_X509_info_st
   else:
     struct_X509_info_st_553648959)
-  sk_GENERAL_NAME_cmp_func_553649448 = (when declared(sk_GENERAL_NAME_cmp_func):
+  sk_GENERAL_NAME_cmp_func_553649450 = (when declared(sk_GENERAL_NAME_cmp_func):
     when ownSizeof(sk_GENERAL_NAME_cmp_func) !=
-        ownSizeof(sk_GENERAL_NAME_cmp_func_553649447):
+        ownSizeof(sk_GENERAL_NAME_cmp_func_553649449):
       static :
         warning("Declaration of " & "sk_GENERAL_NAME_cmp_func" &
             " exists but with different size")
     sk_GENERAL_NAME_cmp_func
   else:
-    sk_GENERAL_NAME_cmp_func_553649447)
-  sk_X509_TRUST_cmp_func_553649582 = (when declared(sk_X509_TRUST_cmp_func):
-    when ownSizeof(sk_X509_TRUST_cmp_func) != ownSizeof(sk_X509_TRUST_cmp_func_553649581):
+    sk_GENERAL_NAME_cmp_func_553649449)
+  sk_X509_TRUST_cmp_func_553649584 = (when declared(sk_X509_TRUST_cmp_func):
+    when ownSizeof(sk_X509_TRUST_cmp_func) != ownSizeof(sk_X509_TRUST_cmp_func_553649583):
       static :
         warning("Declaration of " & "sk_X509_TRUST_cmp_func" &
             " exists but with different size")
     sk_X509_TRUST_cmp_func
   else:
-    sk_X509_TRUST_cmp_func_553649581)
+    sk_X509_TRUST_cmp_func_553649583)
   ngtcp2_recv_key_553648824 = (when declared(ngtcp2_recv_key):
     when ownSizeof(ngtcp2_recv_key) != ownSizeof(ngtcp2_recv_key_553648823):
       static :
@@ -5407,14 +5415,14 @@ type
     ngtcp2_recv_key
   else:
     ngtcp2_recv_key_553648823)
-  sk_BIO_delete_if_func_553649318 = (when declared(sk_BIO_delete_if_func):
-    when ownSizeof(sk_BIO_delete_if_func) != ownSizeof(sk_BIO_delete_if_func_553649317):
+  sk_BIO_delete_if_func_553649320 = (when declared(sk_BIO_delete_if_func):
+    when ownSizeof(sk_BIO_delete_if_func) != ownSizeof(sk_BIO_delete_if_func_553649319):
       static :
         warning("Declaration of " & "sk_BIO_delete_if_func" &
             " exists but with different size")
     sk_BIO_delete_if_func
   else:
-    sk_BIO_delete_if_func_553649317)
+    sk_BIO_delete_if_func_553649319)
   BUF_MEM_553648998 = (when declared(BUF_MEM):
     when ownSizeof(BUF_MEM) != ownSizeof(BUF_MEM_553648997):
       static :
@@ -5423,16 +5431,16 @@ type
     BUF_MEM
   else:
     BUF_MEM_553648997)
-  sk_ACCESS_DESCRIPTION_copy_func_553649592 = (when declared(
+  sk_ACCESS_DESCRIPTION_copy_func_553649594 = (when declared(
       sk_ACCESS_DESCRIPTION_copy_func):
     when ownSizeof(sk_ACCESS_DESCRIPTION_copy_func) !=
-        ownSizeof(sk_ACCESS_DESCRIPTION_copy_func_553649591):
+        ownSizeof(sk_ACCESS_DESCRIPTION_copy_func_553649593):
       static :
         warning("Declaration of " & "sk_ACCESS_DESCRIPTION_copy_func" &
             " exists but with different size")
     sk_ACCESS_DESCRIPTION_copy_func
   else:
-    sk_ACCESS_DESCRIPTION_copy_func_553649591)
+    sk_ACCESS_DESCRIPTION_copy_func_553649593)
   struct_DSA_SIG_st_553648924 = (when declared(struct_DSA_SIG_st):
     when ownSizeof(struct_DSA_SIG_st) != ownSizeof(struct_DSA_SIG_st_553648923):
       static :
@@ -5449,24 +5457,24 @@ type
     struct_sockaddr_in
   else:
     struct_sockaddr_in_553648646)
-  sk_SRTP_PROTECTION_PROFILE_delete_if_func_553649720 = (when declared(
+  sk_SRTP_PROTECTION_PROFILE_delete_if_func_553649722 = (when declared(
       sk_SRTP_PROTECTION_PROFILE_delete_if_func):
     when ownSizeof(sk_SRTP_PROTECTION_PROFILE_delete_if_func) !=
-        ownSizeof(sk_SRTP_PROTECTION_PROFILE_delete_if_func_553649719):
+        ownSizeof(sk_SRTP_PROTECTION_PROFILE_delete_if_func_553649721):
       static :
         warning("Declaration of " & "sk_SRTP_PROTECTION_PROFILE_delete_if_func" &
             " exists but with different size")
     sk_SRTP_PROTECTION_PROFILE_delete_if_func
   else:
-    sk_SRTP_PROTECTION_PROFILE_delete_if_func_553649719)
-  compiler_socklen_t_553649762 = (when declared(compiler_socklen_t):
-    when ownSizeof(compiler_socklen_t) != ownSizeof(compiler_socklen_t_553649761):
+    sk_SRTP_PROTECTION_PROFILE_delete_if_func_553649721)
+  compiler_socklen_t_553649764 = (when declared(compiler_socklen_t):
+    when ownSizeof(compiler_socklen_t) != ownSizeof(compiler_socklen_t_553649763):
       static :
         warning("Declaration of " & "compiler_socklen_t" &
             " exists but with different size")
     compiler_socklen_t
   else:
-    compiler_socklen_t_553649761)
+    compiler_socklen_t_553649763)
   ngtcp2_cc_algo_553648686 = (when declared(ngtcp2_cc_algo):
     when ownSizeof(ngtcp2_cc_algo) != ownSizeof(ngtcp2_cc_algo_553648685):
       static :
@@ -5475,25 +5483,25 @@ type
     ngtcp2_cc_algo
   else:
     ngtcp2_cc_algo_553648685)
-  sk_PKCS7_RECIP_INFO_copy_func_553649394 = (when declared(
+  sk_PKCS7_RECIP_INFO_copy_func_553649396 = (when declared(
       sk_PKCS7_RECIP_INFO_copy_func):
     when ownSizeof(sk_PKCS7_RECIP_INFO_copy_func) !=
-        ownSizeof(sk_PKCS7_RECIP_INFO_copy_func_553649393):
+        ownSizeof(sk_PKCS7_RECIP_INFO_copy_func_553649395):
       static :
         warning("Declaration of " & "sk_PKCS7_RECIP_INFO_copy_func" &
             " exists but with different size")
     sk_PKCS7_RECIP_INFO_copy_func
   else:
-    sk_PKCS7_RECIP_INFO_copy_func_553649393)
-  sk_GENERAL_NAME_free_func_553649444 = (when declared(sk_GENERAL_NAME_free_func):
+    sk_PKCS7_RECIP_INFO_copy_func_553649395)
+  sk_GENERAL_NAME_free_func_553649446 = (when declared(sk_GENERAL_NAME_free_func):
     when ownSizeof(sk_GENERAL_NAME_free_func) !=
-        ownSizeof(sk_GENERAL_NAME_free_func_553649443):
+        ownSizeof(sk_GENERAL_NAME_free_func_553649445):
       static :
         warning("Declaration of " & "sk_GENERAL_NAME_free_func" &
             " exists but with different size")
     sk_GENERAL_NAME_free_func
   else:
-    sk_GENERAL_NAME_free_func_553649443)
+    sk_GENERAL_NAME_free_func_553649445)
   ASN1_IA5STRING_553648884 = (when declared(ASN1_IA5STRING):
     when ownSizeof(ASN1_IA5STRING) != ownSizeof(ASN1_IA5STRING_553648883):
       static :
@@ -5502,22 +5510,22 @@ type
     ASN1_IA5STRING
   else:
     ASN1_IA5STRING_553648883)
-  CERTIFICATEPOLICIES_553649640 = (when declared(CERTIFICATEPOLICIES):
-    when ownSizeof(CERTIFICATEPOLICIES) != ownSizeof(CERTIFICATEPOLICIES_553649639):
+  CERTIFICATEPOLICIES_553649642 = (when declared(CERTIFICATEPOLICIES):
+    when ownSizeof(CERTIFICATEPOLICIES) != ownSizeof(CERTIFICATEPOLICIES_553649641):
       static :
         warning("Declaration of " & "CERTIFICATEPOLICIES" &
             " exists but with different size")
     CERTIFICATEPOLICIES
   else:
-    CERTIFICATEPOLICIES_553649639)
-  TRUST_TOKEN_ISSUER_553649214 = (when declared(TRUST_TOKEN_ISSUER):
-    when ownSizeof(TRUST_TOKEN_ISSUER) != ownSizeof(TRUST_TOKEN_ISSUER_553649213):
+    CERTIFICATEPOLICIES_553649641)
+  TRUST_TOKEN_ISSUER_553649216 = (when declared(TRUST_TOKEN_ISSUER):
+    when ownSizeof(TRUST_TOKEN_ISSUER) != ownSizeof(TRUST_TOKEN_ISSUER_553649215):
       static :
         warning("Declaration of " & "TRUST_TOKEN_ISSUER" &
             " exists but with different size")
     TRUST_TOKEN_ISSUER
   else:
-    TRUST_TOKEN_ISSUER_553649213)
+    TRUST_TOKEN_ISSUER_553649215)
   struct_evp_aead_ctx_st_553649056 = (when declared(struct_evp_aead_ctx_st):
     when ownSizeof(struct_evp_aead_ctx_st) != ownSizeof(struct_evp_aead_ctx_st_553649055):
       static :
@@ -5526,14 +5534,14 @@ type
     struct_evp_aead_ctx_st
   else:
     struct_evp_aead_ctx_st_553649055)
-  POLICY_MAPPING_553649652 = (when declared(POLICY_MAPPING):
-    when ownSizeof(POLICY_MAPPING) != ownSizeof(POLICY_MAPPING_553649651):
+  POLICY_MAPPING_553649654 = (when declared(POLICY_MAPPING):
+    when ownSizeof(POLICY_MAPPING) != ownSizeof(POLICY_MAPPING_553649653):
       static :
         warning("Declaration of " & "POLICY_MAPPING" &
             " exists but with different size")
     POLICY_MAPPING
   else:
-    POLICY_MAPPING_553649651)
+    POLICY_MAPPING_553649653)
   EVP_HPKE_KEM_553649074 = (when declared(EVP_HPKE_KEM):
     when ownSizeof(EVP_HPKE_KEM) != ownSizeof(EVP_HPKE_KEM_553649073):
       static :
@@ -5558,52 +5566,52 @@ type
     ngtcp2_decrypt
   else:
     ngtcp2_decrypt_553648765)
-  sk_PKCS7_RECIP_INFO_cmp_func_553649396 = (when declared(
+  sk_PKCS7_RECIP_INFO_cmp_func_553649398 = (when declared(
       sk_PKCS7_RECIP_INFO_cmp_func):
     when ownSizeof(sk_PKCS7_RECIP_INFO_cmp_func) !=
-        ownSizeof(sk_PKCS7_RECIP_INFO_cmp_func_553649395):
+        ownSizeof(sk_PKCS7_RECIP_INFO_cmp_func_553649397):
       static :
         warning("Declaration of " & "sk_PKCS7_RECIP_INFO_cmp_func" &
             " exists but with different size")
     sk_PKCS7_RECIP_INFO_cmp_func
   else:
-    sk_PKCS7_RECIP_INFO_cmp_func_553649395)
-  struct_GENERAL_SUBTREE_st_553649664 = (when declared(struct_GENERAL_SUBTREE_st):
+    sk_PKCS7_RECIP_INFO_cmp_func_553649397)
+  struct_GENERAL_SUBTREE_st_553649666 = (when declared(struct_GENERAL_SUBTREE_st):
     when ownSizeof(struct_GENERAL_SUBTREE_st) !=
-        ownSizeof(struct_GENERAL_SUBTREE_st_553649663):
+        ownSizeof(struct_GENERAL_SUBTREE_st_553649665):
       static :
         warning("Declaration of " & "struct_GENERAL_SUBTREE_st" &
             " exists but with different size")
     struct_GENERAL_SUBTREE_st
   else:
-    struct_GENERAL_SUBTREE_st_553649663)
-  sk_X509_NAME_ENTRY_copy_func_553649472 = (when declared(
+    struct_GENERAL_SUBTREE_st_553649665)
+  sk_X509_NAME_ENTRY_copy_func_553649474 = (when declared(
       sk_X509_NAME_ENTRY_copy_func):
     when ownSizeof(sk_X509_NAME_ENTRY_copy_func) !=
-        ownSizeof(sk_X509_NAME_ENTRY_copy_func_553649471):
+        ownSizeof(sk_X509_NAME_ENTRY_copy_func_553649473):
       static :
         warning("Declaration of " & "sk_X509_NAME_ENTRY_copy_func" &
             " exists but with different size")
     sk_X509_NAME_ENTRY_copy_func
   else:
-    sk_X509_NAME_ENTRY_copy_func_553649471)
-  sk_X509_PURPOSE_free_func_553649570 = (when declared(sk_X509_PURPOSE_free_func):
+    sk_X509_NAME_ENTRY_copy_func_553649473)
+  sk_X509_PURPOSE_free_func_553649572 = (when declared(sk_X509_PURPOSE_free_func):
     when ownSizeof(sk_X509_PURPOSE_free_func) !=
-        ownSizeof(sk_X509_PURPOSE_free_func_553649569):
+        ownSizeof(sk_X509_PURPOSE_free_func_553649571):
       static :
         warning("Declaration of " & "sk_X509_PURPOSE_free_func" &
             " exists but with different size")
     sk_X509_PURPOSE_free_func
   else:
-    sk_X509_PURPOSE_free_func_553649569)
-  struct_otherName_st_553649496 = (when declared(struct_otherName_st):
-    when ownSizeof(struct_otherName_st) != ownSizeof(struct_otherName_st_553649495):
+    sk_X509_PURPOSE_free_func_553649571)
+  struct_otherName_st_553649498 = (when declared(struct_otherName_st):
+    when ownSizeof(struct_otherName_st) != ownSizeof(struct_otherName_st_553649497):
       static :
         warning("Declaration of " & "struct_otherName_st" &
             " exists but with different size")
     struct_otherName_st
   else:
-    struct_otherName_st_553649495)
+    struct_otherName_st_553649497)
   ASN1_STRING_553648892 = (when declared(ASN1_STRING):
     when ownSizeof(ASN1_STRING) != ownSizeof(ASN1_STRING_553648891):
       static :
@@ -5612,14 +5620,14 @@ type
     ASN1_STRING
   else:
     ASN1_STRING_553648891)
-  X509V3_EXT_I2R_553649556 = (when declared(X509V3_EXT_I2R):
-    when ownSizeof(X509V3_EXT_I2R) != ownSizeof(X509V3_EXT_I2R_553649555):
+  X509V3_EXT_I2R_553649558 = (when declared(X509V3_EXT_I2R):
+    when ownSizeof(X509V3_EXT_I2R) != ownSizeof(X509V3_EXT_I2R_553649557):
       static :
         warning("Declaration of " & "X509V3_EXT_I2R" &
             " exists but with different size")
     X509V3_EXT_I2R
   else:
-    X509V3_EXT_I2R_553649555)
+    X509V3_EXT_I2R_553649557)
   struct_asn1_string_st_553648874 = (when declared(struct_asn1_string_st):
     when ownSizeof(struct_asn1_string_st) != ownSizeof(struct_asn1_string_st_553648873):
       static :
@@ -5628,30 +5636,30 @@ type
     struct_asn1_string_st
   else:
     struct_asn1_string_st_553648873)
-  GENERAL_NAMES_553649452 = (when declared(GENERAL_NAMES):
-    when ownSizeof(GENERAL_NAMES) != ownSizeof(GENERAL_NAMES_553649451):
+  GENERAL_NAMES_553649454 = (when declared(GENERAL_NAMES):
+    when ownSizeof(GENERAL_NAMES) != ownSizeof(GENERAL_NAMES_553649453):
       static :
         warning("Declaration of " & "GENERAL_NAMES" &
             " exists but with different size")
     GENERAL_NAMES
   else:
-    GENERAL_NAMES_553649451)
-  sk_void_copy_func_553649288 = (when declared(sk_void_copy_func):
-    when ownSizeof(sk_void_copy_func) != ownSizeof(sk_void_copy_func_553649287):
+    GENERAL_NAMES_553649453)
+  sk_void_copy_func_553649290 = (when declared(sk_void_copy_func):
+    when ownSizeof(sk_void_copy_func) != ownSizeof(sk_void_copy_func_553649289):
       static :
         warning("Declaration of " & "sk_void_copy_func" &
             " exists but with different size")
     sk_void_copy_func
   else:
-    sk_void_copy_func_553649287)
-  struct_CRYPTO_dynlock_553649254 = (when declared(struct_CRYPTO_dynlock):
-    when ownSizeof(struct_CRYPTO_dynlock) != ownSizeof(struct_CRYPTO_dynlock_553649253):
+    sk_void_copy_func_553649289)
+  struct_CRYPTO_dynlock_553649256 = (when declared(struct_CRYPTO_dynlock):
+    when ownSizeof(struct_CRYPTO_dynlock) != ownSizeof(struct_CRYPTO_dynlock_553649255):
       static :
         warning("Declaration of " & "struct_CRYPTO_dynlock" &
             " exists but with different size")
     struct_CRYPTO_dynlock
   else:
-    struct_CRYPTO_dynlock_553649253)
+    struct_CRYPTO_dynlock_553649255)
   ngtcp2_settings_553648702 = (when declared(ngtcp2_settings):
     when ownSizeof(ngtcp2_settings) != ownSizeof(ngtcp2_settings_553648701):
       static :
@@ -5678,24 +5686,24 @@ type
     struct_pkcs7_recip_info_st
   else:
     struct_pkcs7_recip_info_st_553649121)
-  POLICY_MAPPINGS_553649662 = (when declared(POLICY_MAPPINGS):
-    when ownSizeof(POLICY_MAPPINGS) != ownSizeof(POLICY_MAPPINGS_553649661):
+  POLICY_MAPPINGS_553649664 = (when declared(POLICY_MAPPINGS):
+    when ownSizeof(POLICY_MAPPINGS) != ownSizeof(POLICY_MAPPINGS_553649663):
       static :
         warning("Declaration of " & "POLICY_MAPPINGS" &
             " exists but with different size")
     POLICY_MAPPINGS
   else:
-    POLICY_MAPPINGS_553649661)
-  sk_POLICY_MAPPING_cmp_func_553649658 = (when declared(
+    POLICY_MAPPINGS_553649663)
+  sk_POLICY_MAPPING_cmp_func_553649660 = (when declared(
       sk_POLICY_MAPPING_cmp_func):
     when ownSizeof(sk_POLICY_MAPPING_cmp_func) !=
-        ownSizeof(sk_POLICY_MAPPING_cmp_func_553649657):
+        ownSizeof(sk_POLICY_MAPPING_cmp_func_553649659):
       static :
         warning("Declaration of " & "sk_POLICY_MAPPING_cmp_func" &
             " exists but with different size")
     sk_POLICY_MAPPING_cmp_func
   else:
-    sk_POLICY_MAPPING_cmp_func_553649657)
+    sk_POLICY_MAPPING_cmp_func_553649659)
   struct_ecdsa_sig_st_553649042 = (when declared(struct_ecdsa_sig_st):
     when ownSizeof(struct_ecdsa_sig_st) != ownSizeof(struct_ecdsa_sig_st_553649041):
       static :
@@ -5704,16 +5712,16 @@ type
     struct_ecdsa_sig_st
   else:
     struct_ecdsa_sig_st_553649041)
-  sk_PKCS7_SIGNER_INFO_delete_if_func_553649406 = (when declared(
+  sk_PKCS7_SIGNER_INFO_delete_if_func_553649408 = (when declared(
       sk_PKCS7_SIGNER_INFO_delete_if_func):
     when ownSizeof(sk_PKCS7_SIGNER_INFO_delete_if_func) !=
-        ownSizeof(sk_PKCS7_SIGNER_INFO_delete_if_func_553649405):
+        ownSizeof(sk_PKCS7_SIGNER_INFO_delete_if_func_553649407):
       static :
         warning("Declaration of " & "sk_PKCS7_SIGNER_INFO_delete_if_func" &
             " exists but with different size")
     sk_PKCS7_SIGNER_INFO_delete_if_func
   else:
-    sk_PKCS7_SIGNER_INFO_delete_if_func_553649405)
+    sk_PKCS7_SIGNER_INFO_delete_if_func_553649407)
   ngtcp2_hp_mask_553648768 = (when declared(ngtcp2_hp_mask):
     when ownSizeof(ngtcp2_hp_mask) != ownSizeof(ngtcp2_hp_mask_553648767):
       static :
@@ -5737,24 +5745,24 @@ type
     struct_env_md_ctx_st
   else:
     struct_env_md_ctx_st_553649047)
-  TRUST_TOKEN_CLIENT_553649212 = (when declared(TRUST_TOKEN_CLIENT):
-    when ownSizeof(TRUST_TOKEN_CLIENT) != ownSizeof(TRUST_TOKEN_CLIENT_553649211):
+  TRUST_TOKEN_CLIENT_553649214 = (when declared(TRUST_TOKEN_CLIENT):
+    when ownSizeof(TRUST_TOKEN_CLIENT) != ownSizeof(TRUST_TOKEN_CLIENT_553649213):
       static :
         warning("Declaration of " & "TRUST_TOKEN_CLIENT" &
             " exists but with different size")
     TRUST_TOKEN_CLIENT
   else:
-    TRUST_TOKEN_CLIENT_553649211)
-  sk_X509_ATTRIBUTE_delete_if_func_553649518 = (when declared(
+    TRUST_TOKEN_CLIENT_553649213)
+  sk_X509_ATTRIBUTE_delete_if_func_553649520 = (when declared(
       sk_X509_ATTRIBUTE_delete_if_func):
     when ownSizeof(sk_X509_ATTRIBUTE_delete_if_func) !=
-        ownSizeof(sk_X509_ATTRIBUTE_delete_if_func_553649517):
+        ownSizeof(sk_X509_ATTRIBUTE_delete_if_func_553649519):
       static :
         warning("Declaration of " & "sk_X509_ATTRIBUTE_delete_if_func" &
             " exists but with different size")
     sk_X509_ATTRIBUTE_delete_if_func
   else:
-    sk_X509_ATTRIBUTE_delete_if_func_553649517)
+    sk_X509_ATTRIBUTE_delete_if_func_553649519)
   CTR_DRBG_STATE_553649026 = (when declared(CTR_DRBG_STATE):
     when ownSizeof(CTR_DRBG_STATE) != ownSizeof(CTR_DRBG_STATE_553649025):
       static :
@@ -5789,22 +5797,22 @@ type
     socklen_t
   else:
     socklen_t_553648654)
-  in_port_t_553649756 = (when declared(in_port_t):
-    when ownSizeof(in_port_t) != ownSizeof(in_port_t_553649755):
+  in_port_t_553649758 = (when declared(in_port_t):
+    when ownSizeof(in_port_t) != ownSizeof(in_port_t_553649757):
       static :
         warning("Declaration of " & "in_port_t" &
             " exists but with different size")
     in_port_t
   else:
-    in_port_t_553649755)
-  struct_EDIPartyName_st_553649500 = (when declared(struct_EDIPartyName_st):
-    when ownSizeof(struct_EDIPartyName_st) != ownSizeof(struct_EDIPartyName_st_553649499):
+    in_port_t_553649757)
+  struct_EDIPartyName_st_553649502 = (when declared(struct_EDIPartyName_st):
+    when ownSizeof(struct_EDIPartyName_st) != ownSizeof(struct_EDIPartyName_st_553649501):
       static :
         warning("Declaration of " & "struct_EDIPartyName_st" &
             " exists but with different size")
     struct_EDIPartyName_st
   else:
-    struct_EDIPartyName_st_553649499)
+    struct_EDIPartyName_st_553649501)
   ngtcp2_ccerr_type_553648838 = (when declared(ngtcp2_ccerr_type):
     when ownSizeof(ngtcp2_ccerr_type) != ownSizeof(ngtcp2_ccerr_type_553648837):
       static :
@@ -5831,14 +5839,14 @@ type
     X509_CRL
   else:
     X509_CRL_553648953)
-  X509_REVOKED_553649234 = (when declared(X509_REVOKED):
-    when ownSizeof(X509_REVOKED) != ownSizeof(X509_REVOKED_553649233):
+  X509_REVOKED_553649236 = (when declared(X509_REVOKED):
+    when ownSizeof(X509_REVOKED) != ownSizeof(X509_REVOKED_553649235):
       static :
         warning("Declaration of " & "X509_REVOKED" &
             " exists but with different size")
     X509_REVOKED
   else:
-    X509_REVOKED_553649233)
+    X509_REVOKED_553649235)
   ASN1_OBJECT_553648868 = (when declared(ASN1_OBJECT):
     when ownSizeof(ASN1_OBJECT) != ownSizeof(ASN1_OBJECT_553648867):
       static :
@@ -5855,15 +5863,15 @@ type
     KEM_KEY
   else:
     KEM_KEY_553649079)
-  struct_ssl_quic_method_st_553649198 = (when declared(struct_ssl_quic_method_st):
+  struct_ssl_quic_method_st_553649200 = (when declared(struct_ssl_quic_method_st):
     when ownSizeof(struct_ssl_quic_method_st) !=
-        ownSizeof(struct_ssl_quic_method_st_553649197):
+        ownSizeof(struct_ssl_quic_method_st_553649199):
       static :
         warning("Declaration of " & "struct_ssl_quic_method_st" &
             " exists but with different size")
     struct_ssl_quic_method_st
   else:
-    struct_ssl_quic_method_st_553649197)
+    struct_ssl_quic_method_st_553649199)
   ngtcp2_transport_params_553648671 = (when declared(ngtcp2_transport_params):
     when ownSizeof(ngtcp2_transport_params) !=
         ownSizeof(ngtcp2_transport_params_553648670):
@@ -5873,14 +5881,14 @@ type
     ngtcp2_transport_params
   else:
     ngtcp2_transport_params_553648670)
-  TRUST_TOKEN_METHOD_553649216 = (when declared(TRUST_TOKEN_METHOD):
-    when ownSizeof(TRUST_TOKEN_METHOD) != ownSizeof(TRUST_TOKEN_METHOD_553649215):
+  TRUST_TOKEN_METHOD_553649218 = (when declared(TRUST_TOKEN_METHOD):
+    when ownSizeof(TRUST_TOKEN_METHOD) != ownSizeof(TRUST_TOKEN_METHOD_553649217):
       static :
         warning("Declaration of " & "TRUST_TOKEN_METHOD" &
             " exists but with different size")
     TRUST_TOKEN_METHOD
   else:
-    TRUST_TOKEN_METHOD_553649215)
+    TRUST_TOKEN_METHOD_553649217)
   ngtcp2_acked_stream_data_offset_553648778 = (when declared(
       ngtcp2_acked_stream_data_offset):
     when ownSizeof(ngtcp2_acked_stream_data_offset) !=
@@ -5891,23 +5899,23 @@ type
     ngtcp2_acked_stream_data_offset
   else:
     ngtcp2_acked_stream_data_offset_553648777)
-  X509_TRUST_553649242 = (when declared(X509_TRUST):
-    when ownSizeof(X509_TRUST) != ownSizeof(X509_TRUST_553649241):
+  X509_TRUST_553649244 = (when declared(X509_TRUST):
+    when ownSizeof(X509_TRUST) != ownSizeof(X509_TRUST_553649243):
       static :
         warning("Declaration of " & "X509_TRUST" &
             " exists but with different size")
     X509_TRUST
   else:
-    X509_TRUST_553649241)
-  OPENSSL_sk_call_free_func_553649272 = (when declared(OPENSSL_sk_call_free_func):
+    X509_TRUST_553649243)
+  OPENSSL_sk_call_free_func_553649274 = (when declared(OPENSSL_sk_call_free_func):
     when ownSizeof(OPENSSL_sk_call_free_func) !=
-        ownSizeof(OPENSSL_sk_call_free_func_553649271):
+        ownSizeof(OPENSSL_sk_call_free_func_553649273):
       static :
         warning("Declaration of " & "OPENSSL_sk_call_free_func" &
             " exists but with different size")
     OPENSSL_sk_call_free_func
   else:
-    OPENSSL_sk_call_free_func_553649271)
+    OPENSSL_sk_call_free_func_553649273)
   ngtcp2_free_553648599 = (when declared(ngtcp2_free):
     when ownSizeof(ngtcp2_free) != ownSizeof(ngtcp2_free_553648598):
       static :
@@ -5916,33 +5924,33 @@ type
     ngtcp2_free
   else:
     ngtcp2_free_553648598)
-  sk_X509_TRUST_free_func_553649578 = (when declared(sk_X509_TRUST_free_func):
+  sk_X509_TRUST_free_func_553649580 = (when declared(sk_X509_TRUST_free_func):
     when ownSizeof(sk_X509_TRUST_free_func) !=
-        ownSizeof(sk_X509_TRUST_free_func_553649577):
+        ownSizeof(sk_X509_TRUST_free_func_553649579):
       static :
         warning("Declaration of " & "sk_X509_TRUST_free_func" &
             " exists but with different size")
     sk_X509_TRUST_free_func
   else:
-    sk_X509_TRUST_free_func_553649577)
-  sk_DIST_POINT_delete_if_func_553649614 = (when declared(
+    sk_X509_TRUST_free_func_553649579)
+  sk_DIST_POINT_delete_if_func_553649616 = (when declared(
       sk_DIST_POINT_delete_if_func):
     when ownSizeof(sk_DIST_POINT_delete_if_func) !=
-        ownSizeof(sk_DIST_POINT_delete_if_func_553649613):
+        ownSizeof(sk_DIST_POINT_delete_if_func_553649615):
       static :
         warning("Declaration of " & "sk_DIST_POINT_delete_if_func" &
             " exists but with different size")
     sk_DIST_POINT_delete_if_func
   else:
-    sk_DIST_POINT_delete_if_func_553649613)
-  OSSL_HANDSHAKE_STATE_553649736 = (when declared(OSSL_HANDSHAKE_STATE):
-    when ownSizeof(OSSL_HANDSHAKE_STATE) != ownSizeof(OSSL_HANDSHAKE_STATE_553649735):
+    sk_DIST_POINT_delete_if_func_553649615)
+  OSSL_HANDSHAKE_STATE_553649738 = (when declared(OSSL_HANDSHAKE_STATE):
+    when ownSizeof(OSSL_HANDSHAKE_STATE) != ownSizeof(OSSL_HANDSHAKE_STATE_553649737):
       static :
         warning("Declaration of " & "OSSL_HANDSHAKE_STATE" &
             " exists but with different size")
     OSSL_HANDSHAKE_STATE
   else:
-    OSSL_HANDSHAKE_STATE_553649735)
+    OSSL_HANDSHAKE_STATE_553649737)
   EVP_MD_CTX_553649046 = (when declared(EVP_MD_CTX):
     when ownSizeof(EVP_MD_CTX) != ownSizeof(EVP_MD_CTX_553649045):
       static :
@@ -5951,24 +5959,24 @@ type
     EVP_MD_CTX
   else:
     EVP_MD_CTX_553649045)
-  RC4_KEY_553649150 = (when declared(RC4_KEY):
-    when ownSizeof(RC4_KEY) != ownSizeof(RC4_KEY_553649149):
+  RC4_KEY_553649152 = (when declared(RC4_KEY):
+    when ownSizeof(RC4_KEY) != ownSizeof(RC4_KEY_553649151):
       static :
         warning("Declaration of " & "RC4_KEY" &
             " exists but with different size")
     RC4_KEY
   else:
-    RC4_KEY_553649149)
-  sk_CONF_VALUE_delete_if_func_553649416 = (when declared(
+    RC4_KEY_553649151)
+  sk_CONF_VALUE_delete_if_func_553649418 = (when declared(
       sk_CONF_VALUE_delete_if_func):
     when ownSizeof(sk_CONF_VALUE_delete_if_func) !=
-        ownSizeof(sk_CONF_VALUE_delete_if_func_553649415):
+        ownSizeof(sk_CONF_VALUE_delete_if_func_553649417):
       static :
         warning("Declaration of " & "sk_CONF_VALUE_delete_if_func" &
             " exists but with different size")
     sk_CONF_VALUE_delete_if_func
   else:
-    sk_CONF_VALUE_delete_if_func_553649415)
+    sk_CONF_VALUE_delete_if_func_553649417)
   ngtcp2_crypto_aead_ctx_553648730 = (when declared(ngtcp2_crypto_aead_ctx):
     when ownSizeof(ngtcp2_crypto_aead_ctx) != ownSizeof(ngtcp2_crypto_aead_ctx_553648729):
       static :
@@ -5995,14 +6003,14 @@ type
     ngtcp2_crypto_get_conn
   else:
     ngtcp2_crypto_get_conn_553648853)
-  ASN1_ITEM_EXP_553649354 = (when declared(ASN1_ITEM_EXP):
-    when ownSizeof(ASN1_ITEM_EXP) != ownSizeof(ASN1_ITEM_EXP_553649353):
+  ASN1_ITEM_EXP_553649356 = (when declared(ASN1_ITEM_EXP):
+    when ownSizeof(ASN1_ITEM_EXP) != ownSizeof(ASN1_ITEM_EXP_553649355):
       static :
         warning("Declaration of " & "ASN1_ITEM_EXP" &
             " exists but with different size")
     ASN1_ITEM_EXP
   else:
-    ASN1_ITEM_EXP_553649353)
+    ASN1_ITEM_EXP_553649355)
   ngtcp2_sockaddr_553648641 = (when declared(ngtcp2_sockaddr):
     when ownSizeof(ngtcp2_sockaddr) != ownSizeof(ngtcp2_sockaddr_553648640):
       static :
@@ -6035,45 +6043,45 @@ type
     EVP_HPKE_KEY
   else:
     EVP_HPKE_KEY_553649075)
-  sk_ASN1_OBJECT_free_func_553649368 = (when declared(sk_ASN1_OBJECT_free_func):
+  sk_ASN1_OBJECT_free_func_553649370 = (when declared(sk_ASN1_OBJECT_free_func):
     when ownSizeof(sk_ASN1_OBJECT_free_func) !=
-        ownSizeof(sk_ASN1_OBJECT_free_func_553649367):
+        ownSizeof(sk_ASN1_OBJECT_free_func_553649369):
       static :
         warning("Declaration of " & "sk_ASN1_OBJECT_free_func" &
             " exists but with different size")
     sk_ASN1_OBJECT_free_func
   else:
-    sk_ASN1_OBJECT_free_func_553649367)
-  sk_CRYPTO_BUFFER_free_func_553649428 = (when declared(
+    sk_ASN1_OBJECT_free_func_553649369)
+  sk_CRYPTO_BUFFER_free_func_553649430 = (when declared(
       sk_CRYPTO_BUFFER_free_func):
     when ownSizeof(sk_CRYPTO_BUFFER_free_func) !=
-        ownSizeof(sk_CRYPTO_BUFFER_free_func_553649427):
+        ownSizeof(sk_CRYPTO_BUFFER_free_func_553649429):
       static :
         warning("Declaration of " & "sk_CRYPTO_BUFFER_free_func" &
             " exists but with different size")
     sk_CRYPTO_BUFFER_free_func
   else:
-    sk_CRYPTO_BUFFER_free_func_553649427)
-  sk_X509_TRUST_delete_if_func_553649584 = (when declared(
+    sk_CRYPTO_BUFFER_free_func_553649429)
+  sk_X509_TRUST_delete_if_func_553649586 = (when declared(
       sk_X509_TRUST_delete_if_func):
     when ownSizeof(sk_X509_TRUST_delete_if_func) !=
-        ownSizeof(sk_X509_TRUST_delete_if_func_553649583):
+        ownSizeof(sk_X509_TRUST_delete_if_func_553649585):
       static :
         warning("Declaration of " & "sk_X509_TRUST_delete_if_func" &
             " exists but with different size")
     sk_X509_TRUST_delete_if_func
   else:
-    sk_X509_TRUST_delete_if_func_553649583)
-  enum_bn_primality_result_t_553649348 = (when declared(
+    sk_X509_TRUST_delete_if_func_553649585)
+  enum_bn_primality_result_t_553649350 = (when declared(
       enum_bn_primality_result_t):
     when ownSizeof(enum_bn_primality_result_t) !=
-        ownSizeof(enum_bn_primality_result_t_553649347):
+        ownSizeof(enum_bn_primality_result_t_553649349):
       static :
         warning("Declaration of " & "enum_bn_primality_result_t" &
             " exists but with different size")
     enum_bn_primality_result_t
   else:
-    enum_bn_primality_result_t_553649347)
+    enum_bn_primality_result_t_553649349)
   ngtcp2_encrypt_553648764 = (when declared(ngtcp2_encrypt):
     when ownSizeof(ngtcp2_encrypt) != ownSizeof(ngtcp2_encrypt_553648763):
       static :
@@ -6082,14 +6090,14 @@ type
     ngtcp2_encrypt
   else:
     ngtcp2_encrypt_553648763)
-  CRYPTO_EX_free_553649306 = (when declared(CRYPTO_EX_free):
-    when ownSizeof(CRYPTO_EX_free) != ownSizeof(CRYPTO_EX_free_553649305):
+  CRYPTO_EX_free_553649308 = (when declared(CRYPTO_EX_free):
+    when ownSizeof(CRYPTO_EX_free) != ownSizeof(CRYPTO_EX_free_553649307):
       static :
         warning("Declaration of " & "CRYPTO_EX_free" &
             " exists but with different size")
     CRYPTO_EX_free
   else:
-    CRYPTO_EX_free_553649305)
+    CRYPTO_EX_free_553649307)
   ngtcp2_stream_open_553648772 = (when declared(ngtcp2_stream_open):
     when ownSizeof(ngtcp2_stream_open) != ownSizeof(ngtcp2_stream_open_553648771):
       static :
@@ -6098,14 +6106,14 @@ type
     ngtcp2_stream_open
   else:
     ngtcp2_stream_open_553648771)
-  sk_X509_NAME_cmp_func_553649482 = (when declared(sk_X509_NAME_cmp_func):
-    when ownSizeof(sk_X509_NAME_cmp_func) != ownSizeof(sk_X509_NAME_cmp_func_553649481):
+  sk_X509_NAME_cmp_func_553649484 = (when declared(sk_X509_NAME_cmp_func):
+    when ownSizeof(sk_X509_NAME_cmp_func) != ownSizeof(sk_X509_NAME_cmp_func_553649483):
       static :
         warning("Declaration of " & "sk_X509_NAME_cmp_func" &
             " exists but with different size")
     sk_X509_NAME_cmp_func
   else:
-    sk_X509_NAME_cmp_func_553649481)
+    sk_X509_NAME_cmp_func_553649483)
   struct_cbs_st_553649010 = (when declared(struct_cbs_st):
     when ownSizeof(struct_cbs_st) != ownSizeof(struct_cbs_st_553649009):
       static :
@@ -6122,32 +6130,32 @@ type
     PQDSA_KEY
   else:
     PQDSA_KEY_553649099)
-  sk_ASN1_OBJECT_copy_func_553649370 = (when declared(sk_ASN1_OBJECT_copy_func):
+  sk_ASN1_OBJECT_copy_func_553649372 = (when declared(sk_ASN1_OBJECT_copy_func):
     when ownSizeof(sk_ASN1_OBJECT_copy_func) !=
-        ownSizeof(sk_ASN1_OBJECT_copy_func_553649369):
+        ownSizeof(sk_ASN1_OBJECT_copy_func_553649371):
       static :
         warning("Declaration of " & "sk_ASN1_OBJECT_copy_func" &
             " exists but with different size")
     sk_ASN1_OBJECT_copy_func
   else:
-    sk_ASN1_OBJECT_copy_func_553649369)
-  sk_X509_copy_func_553649438 = (when declared(sk_X509_copy_func):
-    when ownSizeof(sk_X509_copy_func) != ownSizeof(sk_X509_copy_func_553649437):
+    sk_ASN1_OBJECT_copy_func_553649371)
+  sk_X509_copy_func_553649440 = (when declared(sk_X509_copy_func):
+    when ownSizeof(sk_X509_copy_func) != ownSizeof(sk_X509_copy_func_553649439):
       static :
         warning("Declaration of " & "sk_X509_copy_func" &
             " exists but with different size")
     sk_X509_copy_func
   else:
-    sk_X509_copy_func_553649437)
-  sk_X509_REVOKED_cmp_func_553649466 = (when declared(sk_X509_REVOKED_cmp_func):
+    sk_X509_copy_func_553649439)
+  sk_X509_REVOKED_cmp_func_553649468 = (when declared(sk_X509_REVOKED_cmp_func):
     when ownSizeof(sk_X509_REVOKED_cmp_func) !=
-        ownSizeof(sk_X509_REVOKED_cmp_func_553649465):
+        ownSizeof(sk_X509_REVOKED_cmp_func_553649467):
       static :
         warning("Declaration of " & "sk_X509_REVOKED_cmp_func" &
             " exists but with different size")
     sk_X509_REVOKED_cmp_func
   else:
-    sk_X509_REVOKED_cmp_func_553649465)
+    sk_X509_REVOKED_cmp_func_553649467)
   ngtcp2_extend_max_streams_553648782 = (when declared(ngtcp2_extend_max_streams):
     when ownSizeof(ngtcp2_extend_max_streams) !=
         ownSizeof(ngtcp2_extend_max_streams_553648781):
@@ -6157,41 +6165,41 @@ type
     ngtcp2_extend_max_streams
   else:
     ngtcp2_extend_max_streams_553648781)
-  X509V3_EXT_D2I_typedef_553649544 = (when declared(X509V3_EXT_D2I_typedef):
-    when ownSizeof(X509V3_EXT_D2I_typedef) != ownSizeof(X509V3_EXT_D2I_typedef_553649543):
+  X509V3_EXT_D2I_typedef_553649546 = (when declared(X509V3_EXT_D2I_typedef):
+    when ownSizeof(X509V3_EXT_D2I_typedef) != ownSizeof(X509V3_EXT_D2I_typedef_553649545):
       static :
         warning("Declaration of " & "X509V3_EXT_D2I_typedef" &
             " exists but with different size")
     X509V3_EXT_D2I_typedef
   else:
-    X509V3_EXT_D2I_typedef_553649543)
-  sk_X509_ALGOR_copy_func_553649506 = (when declared(sk_X509_ALGOR_copy_func):
+    X509V3_EXT_D2I_typedef_553649545)
+  sk_X509_ALGOR_copy_func_553649508 = (when declared(sk_X509_ALGOR_copy_func):
     when ownSizeof(sk_X509_ALGOR_copy_func) !=
-        ownSizeof(sk_X509_ALGOR_copy_func_553649505):
+        ownSizeof(sk_X509_ALGOR_copy_func_553649507):
       static :
         warning("Declaration of " & "sk_X509_ALGOR_copy_func" &
             " exists but with different size")
     sk_X509_ALGOR_copy_func
   else:
-    sk_X509_ALGOR_copy_func_553649505)
-  sk_DIST_POINT_cmp_func_553649612 = (when declared(sk_DIST_POINT_cmp_func):
-    when ownSizeof(sk_DIST_POINT_cmp_func) != ownSizeof(sk_DIST_POINT_cmp_func_553649611):
+    sk_X509_ALGOR_copy_func_553649507)
+  sk_DIST_POINT_cmp_func_553649614 = (when declared(sk_DIST_POINT_cmp_func):
+    when ownSizeof(sk_DIST_POINT_cmp_func) != ownSizeof(sk_DIST_POINT_cmp_func_553649613):
       static :
         warning("Declaration of " & "sk_DIST_POINT_cmp_func" &
             " exists but with different size")
     sk_DIST_POINT_cmp_func
   else:
-    sk_DIST_POINT_cmp_func_553649611)
-  ssl_cert_decompression_func_t_553649712 = (when declared(
+    sk_DIST_POINT_cmp_func_553649613)
+  ssl_cert_decompression_func_t_553649714 = (when declared(
       ssl_cert_decompression_func_t):
     when ownSizeof(ssl_cert_decompression_func_t) !=
-        ownSizeof(ssl_cert_decompression_func_t_553649711):
+        ownSizeof(ssl_cert_decompression_func_t_553649713):
       static :
         warning("Declaration of " & "ssl_cert_decompression_func_t" &
             " exists but with different size")
     ssl_cert_decompression_func_t
   else:
-    ssl_cert_decompression_func_t_553649711)
+    ssl_cert_decompression_func_t_553649713)
   struct_sockaddr_in6_553648651 = (when declared(struct_sockaddr_in6):
     when ownSizeof(struct_sockaddr_in6) != ownSizeof(struct_sockaddr_in6_553648650):
       static :
@@ -6208,41 +6216,41 @@ type
     struct_ngtcp2_cid
   else:
     struct_ngtcp2_cid_553648624)
-  struct_ssl_early_callback_ctx_553649186 = (when declared(
+  struct_ssl_early_callback_ctx_553649188 = (when declared(
       struct_ssl_early_callback_ctx):
     when ownSizeof(struct_ssl_early_callback_ctx) !=
-        ownSizeof(struct_ssl_early_callback_ctx_553649185):
+        ownSizeof(struct_ssl_early_callback_ctx_553649187):
       static :
         warning("Declaration of " & "struct_ssl_early_callback_ctx" &
             " exists but with different size")
     struct_ssl_early_callback_ctx
   else:
-    struct_ssl_early_callback_ctx_553649185)
-  X509V3_EXT_R2I_553649558 = (when declared(X509V3_EXT_R2I):
-    when ownSizeof(X509V3_EXT_R2I) != ownSizeof(X509V3_EXT_R2I_553649557):
+    struct_ssl_early_callback_ctx_553649187)
+  X509V3_EXT_R2I_553649560 = (when declared(X509V3_EXT_R2I):
+    when ownSizeof(X509V3_EXT_R2I) != ownSizeof(X509V3_EXT_R2I_553649559):
       static :
         warning("Declaration of " & "X509V3_EXT_R2I" &
             " exists but with different size")
     X509V3_EXT_R2I
   else:
-    X509V3_EXT_R2I_553649557)
-  struct_NOTICEREF_st_553649616 = (when declared(struct_NOTICEREF_st):
-    when ownSizeof(struct_NOTICEREF_st) != ownSizeof(struct_NOTICEREF_st_553649615):
+    X509V3_EXT_R2I_553649559)
+  struct_NOTICEREF_st_553649618 = (when declared(struct_NOTICEREF_st):
+    when ownSizeof(struct_NOTICEREF_st) != ownSizeof(struct_NOTICEREF_st_553649617):
       static :
         warning("Declaration of " & "struct_NOTICEREF_st" &
             " exists but with different size")
     struct_NOTICEREF_st
   else:
-    struct_NOTICEREF_st_553649615)
-  enum_OSSL_HANDSHAKE_STATE_553649734 = (when declared(enum_OSSL_HANDSHAKE_STATE):
+    struct_NOTICEREF_st_553649617)
+  enum_OSSL_HANDSHAKE_STATE_553649736 = (when declared(enum_OSSL_HANDSHAKE_STATE):
     when ownSizeof(enum_OSSL_HANDSHAKE_STATE) !=
-        ownSizeof(enum_OSSL_HANDSHAKE_STATE_553649733):
+        ownSizeof(enum_OSSL_HANDSHAKE_STATE_553649735):
       static :
         warning("Declaration of " & "enum_OSSL_HANDSHAKE_STATE" &
             " exists but with different size")
     enum_OSSL_HANDSHAKE_STATE
   else:
-    enum_OSSL_HANDSHAKE_STATE_553649733)
+    enum_OSSL_HANDSHAKE_STATE_553649735)
   ngtcp2_pkt_hd_553648635 = (when declared(ngtcp2_pkt_hd):
     when ownSizeof(ngtcp2_pkt_hd) != ownSizeof(ngtcp2_pkt_hd_553648634):
       static :
@@ -6251,16 +6259,16 @@ type
     ngtcp2_pkt_hd
   else:
     ngtcp2_pkt_hd_553648634)
-  sk_CRYPTO_BUFFER_copy_func_553649430 = (when declared(
+  sk_CRYPTO_BUFFER_copy_func_553649432 = (when declared(
       sk_CRYPTO_BUFFER_copy_func):
     when ownSizeof(sk_CRYPTO_BUFFER_copy_func) !=
-        ownSizeof(sk_CRYPTO_BUFFER_copy_func_553649429):
+        ownSizeof(sk_CRYPTO_BUFFER_copy_func_553649431):
       static :
         warning("Declaration of " & "sk_CRYPTO_BUFFER_copy_func" &
             " exists but with different size")
     sk_CRYPTO_BUFFER_copy_func
   else:
-    sk_CRYPTO_BUFFER_copy_func_553649429)
+    sk_CRYPTO_BUFFER_copy_func_553649431)
   PKCS7_ENC_CONTENT_553649108 = (when declared(PKCS7_ENC_CONTENT):
     when ownSizeof(PKCS7_ENC_CONTENT) != ownSizeof(PKCS7_ENC_CONTENT_553649107):
       static :
@@ -6276,23 +6284,23 @@ type
     PKCS7
   else:
     PKCS7_553649135)
-  SSL_CLIENT_HELLO_553649184 = (when declared(SSL_CLIENT_HELLO):
-    when ownSizeof(SSL_CLIENT_HELLO) != ownSizeof(SSL_CLIENT_HELLO_553649183):
+  SSL_CLIENT_HELLO_553649186 = (when declared(SSL_CLIENT_HELLO):
+    when ownSizeof(SSL_CLIENT_HELLO) != ownSizeof(SSL_CLIENT_HELLO_553649185):
       static :
         warning("Declaration of " & "SSL_CLIENT_HELLO" &
             " exists but with different size")
     SSL_CLIENT_HELLO
   else:
-    SSL_CLIENT_HELLO_553649183)
-  sk_X509_OBJECT_cmp_func_553649524 = (when declared(sk_X509_OBJECT_cmp_func):
+    SSL_CLIENT_HELLO_553649185)
+  sk_X509_OBJECT_cmp_func_553649526 = (when declared(sk_X509_OBJECT_cmp_func):
     when ownSizeof(sk_X509_OBJECT_cmp_func) !=
-        ownSizeof(sk_X509_OBJECT_cmp_func_553649523):
+        ownSizeof(sk_X509_OBJECT_cmp_func_553649525):
       static :
         warning("Declaration of " & "sk_X509_OBJECT_cmp_func" &
             " exists but with different size")
     sk_X509_OBJECT_cmp_func
   else:
-    sk_X509_OBJECT_cmp_func_553649523)
+    sk_X509_OBJECT_cmp_func_553649525)
   ASN1_UTCTIME_553648900 = (when declared(ASN1_UTCTIME):
     when ownSizeof(ASN1_UTCTIME) != ownSizeof(ASN1_UTCTIME_553648899):
       static :
@@ -6301,14 +6309,14 @@ type
     ASN1_UTCTIME
   else:
     ASN1_UTCTIME_553648899)
-  SSL_CTX_553649182 = (when declared(SSL_CTX):
-    when ownSizeof(SSL_CTX) != ownSizeof(SSL_CTX_553649181):
+  SSL_CTX_553649184 = (when declared(SSL_CTX):
+    when ownSizeof(SSL_CTX) != ownSizeof(SSL_CTX_553649183):
       static :
         warning("Declaration of " & "SSL_CTX" &
             " exists but with different size")
     SSL_CTX
   else:
-    SSL_CTX_553649181)
+    SSL_CTX_553649183)
   struct_pkcs7_signer_info_st_553649134 = (when declared(
       struct_pkcs7_signer_info_st):
     when ownSizeof(struct_pkcs7_signer_info_st) !=
@@ -6327,14 +6335,14 @@ type
     ngtcp2_callbacks
   else:
     ngtcp2_callbacks_553648829)
-  SSL_PRIVATE_KEY_METHOD_553649192 = (when declared(SSL_PRIVATE_KEY_METHOD):
-    when ownSizeof(SSL_PRIVATE_KEY_METHOD) != ownSizeof(SSL_PRIVATE_KEY_METHOD_553649191):
+  SSL_PRIVATE_KEY_METHOD_553649194 = (when declared(SSL_PRIVATE_KEY_METHOD):
+    when ownSizeof(SSL_PRIVATE_KEY_METHOD) != ownSizeof(SSL_PRIVATE_KEY_METHOD_553649193):
       static :
         warning("Declaration of " & "SSL_PRIVATE_KEY_METHOD" &
             " exists but with different size")
     SSL_PRIVATE_KEY_METHOD
   else:
-    SSL_PRIVATE_KEY_METHOD_553649191)
+    SSL_PRIVATE_KEY_METHOD_553649193)
   EVP_HPKE_CTX_553649070 = (when declared(EVP_HPKE_CTX):
     when ownSizeof(EVP_HPKE_CTX) != ownSizeof(EVP_HPKE_CTX_553649069):
       static :
@@ -6353,32 +6361,32 @@ type
     ngtcp2_tls_early_data_rejected
   else:
     ngtcp2_tls_early_data_rejected_553648825)
-  bio_info_cb_553649320 = (when declared(bio_info_cb):
-    when ownSizeof(bio_info_cb) != ownSizeof(bio_info_cb_553649319):
+  bio_info_cb_553649322 = (when declared(bio_info_cb):
+    when ownSizeof(bio_info_cb) != ownSizeof(bio_info_cb_553649321):
       static :
         warning("Declaration of " & "bio_info_cb" &
             " exists but with different size")
     bio_info_cb
   else:
-    bio_info_cb_553649319)
-  EVP_CIPHER_INFO_553649330 = (when declared(EVP_CIPHER_INFO):
-    when ownSizeof(EVP_CIPHER_INFO) != ownSizeof(EVP_CIPHER_INFO_553649329):
+    bio_info_cb_553649321)
+  EVP_CIPHER_INFO_553649332 = (when declared(EVP_CIPHER_INFO):
+    when ownSizeof(EVP_CIPHER_INFO) != ownSizeof(EVP_CIPHER_INFO_553649331):
       static :
         warning("Declaration of " & "EVP_CIPHER_INFO" &
             " exists but with different size")
     EVP_CIPHER_INFO
   else:
-    EVP_CIPHER_INFO_553649329)
-  sk_OPENSSL_STRING_delete_if_func_553649300 = (when declared(
+    EVP_CIPHER_INFO_553649331)
+  sk_OPENSSL_STRING_delete_if_func_553649302 = (when declared(
       sk_OPENSSL_STRING_delete_if_func):
     when ownSizeof(sk_OPENSSL_STRING_delete_if_func) !=
-        ownSizeof(sk_OPENSSL_STRING_delete_if_func_553649299):
+        ownSizeof(sk_OPENSSL_STRING_delete_if_func_553649301):
       static :
         warning("Declaration of " & "sk_OPENSSL_STRING_delete_if_func" &
             " exists but with different size")
     sk_OPENSSL_STRING_delete_if_func
   else:
-    sk_OPENSSL_STRING_delete_if_func_553649299)
+    sk_OPENSSL_STRING_delete_if_func_553649301)
   struct_ngtcp2_path_storage_553648712 = (when declared(
       struct_ngtcp2_path_storage):
     when ownSizeof(struct_ngtcp2_path_storage) !=
@@ -6389,47 +6397,47 @@ type
     struct_ngtcp2_path_storage
   else:
     struct_ngtcp2_path_storage_553648711)
-  sk_X509_TRUST_copy_func_553649580 = (when declared(sk_X509_TRUST_copy_func):
+  sk_X509_TRUST_copy_func_553649582 = (when declared(sk_X509_TRUST_copy_func):
     when ownSizeof(sk_X509_TRUST_copy_func) !=
-        ownSizeof(sk_X509_TRUST_copy_func_553649579):
+        ownSizeof(sk_X509_TRUST_copy_func_553649581):
       static :
         warning("Declaration of " & "sk_X509_TRUST_copy_func" &
             " exists but with different size")
     sk_X509_TRUST_copy_func
   else:
-    sk_X509_TRUST_copy_func_553649579)
-  sk_X509_CRL_free_func_553649454 = (when declared(sk_X509_CRL_free_func):
-    when ownSizeof(sk_X509_CRL_free_func) != ownSizeof(sk_X509_CRL_free_func_553649453):
+    sk_X509_TRUST_copy_func_553649581)
+  sk_X509_CRL_free_func_553649456 = (when declared(sk_X509_CRL_free_func):
+    when ownSizeof(sk_X509_CRL_free_func) != ownSizeof(sk_X509_CRL_free_func_553649455):
       static :
         warning("Declaration of " & "sk_X509_CRL_free_func" &
             " exists but with different size")
     sk_X509_CRL_free_func
   else:
-    sk_X509_CRL_free_func_553649453)
-  X509_EXTENSIONS_553649494 = (when declared(X509_EXTENSIONS):
-    when ownSizeof(X509_EXTENSIONS) != ownSizeof(X509_EXTENSIONS_553649493):
+    sk_X509_CRL_free_func_553649455)
+  X509_EXTENSIONS_553649496 = (when declared(X509_EXTENSIONS):
+    when ownSizeof(X509_EXTENSIONS) != ownSizeof(X509_EXTENSIONS_553649495):
       static :
         warning("Declaration of " & "X509_EXTENSIONS" &
             " exists but with different size")
     X509_EXTENSIONS
   else:
-    X509_EXTENSIONS_553649493)
-  enum_fips_counter_t_553649258 = (when declared(enum_fips_counter_t):
-    when ownSizeof(enum_fips_counter_t) != ownSizeof(enum_fips_counter_t_553649257):
+    X509_EXTENSIONS_553649495)
+  enum_fips_counter_t_553649260 = (when declared(enum_fips_counter_t):
+    when ownSizeof(enum_fips_counter_t) != ownSizeof(enum_fips_counter_t_553649259):
       static :
         warning("Declaration of " & "enum_fips_counter_t" &
             " exists but with different size")
     enum_fips_counter_t
   else:
-    enum_fips_counter_t_553649257)
-  struct_USERNOTICE_st_553649620 = (when declared(struct_USERNOTICE_st):
-    when ownSizeof(struct_USERNOTICE_st) != ownSizeof(struct_USERNOTICE_st_553649619):
+    enum_fips_counter_t_553649259)
+  struct_USERNOTICE_st_553649622 = (when declared(struct_USERNOTICE_st):
+    when ownSizeof(struct_USERNOTICE_st) != ownSizeof(struct_USERNOTICE_st_553649621):
       static :
         warning("Declaration of " & "struct_USERNOTICE_st" &
             " exists but with different size")
     struct_USERNOTICE_st
   else:
-    struct_USERNOTICE_st_553649619)
+    struct_USERNOTICE_st_553649621)
   EVP_AEAD_CTX_553649054 = (when declared(EVP_AEAD_CTX):
     when ownSizeof(EVP_AEAD_CTX) != ownSizeof(EVP_AEAD_CTX_553649053):
       static :
@@ -6448,16 +6456,16 @@ type
     struct_pkcs7_sign_envelope_st
   else:
     struct_pkcs7_sign_envelope_st_553649125)
-  sk_X509_EXTENSION_copy_func_553649488 = (when declared(
+  sk_X509_EXTENSION_copy_func_553649490 = (when declared(
       sk_X509_EXTENSION_copy_func):
     when ownSizeof(sk_X509_EXTENSION_copy_func) !=
-        ownSizeof(sk_X509_EXTENSION_copy_func_553649487):
+        ownSizeof(sk_X509_EXTENSION_copy_func_553649489):
       static :
         warning("Declaration of " & "sk_X509_EXTENSION_copy_func" &
             " exists but with different size")
     sk_X509_EXTENSION_copy_func
   else:
-    sk_X509_EXTENSION_copy_func_553649487)
+    sk_X509_EXTENSION_copy_func_553649489)
   struct_X509_algor_st_553648952 = (when declared(struct_X509_algor_st):
     when ownSizeof(struct_X509_algor_st) != ownSizeof(struct_X509_algor_st_553648951):
       static :
@@ -6491,24 +6499,24 @@ type
     struct_conf_st
   else:
     struct_conf_st_553649015)
-  struct_sha512_state_st_553649168 = (when declared(struct_sha512_state_st):
-    when ownSizeof(struct_sha512_state_st) != ownSizeof(struct_sha512_state_st_553649167):
+  struct_sha512_state_st_553649170 = (when declared(struct_sha512_state_st):
+    when ownSizeof(struct_sha512_state_st) != ownSizeof(struct_sha512_state_st_553649169):
       static :
         warning("Declaration of " & "struct_sha512_state_st" &
             " exists but with different size")
     struct_sha512_state_st
   else:
-    struct_sha512_state_st_553649167)
-  sk_X509_NAME_ENTRY_cmp_func_553649474 = (when declared(
+    struct_sha512_state_st_553649169)
+  sk_X509_NAME_ENTRY_cmp_func_553649476 = (when declared(
       sk_X509_NAME_ENTRY_cmp_func):
     when ownSizeof(sk_X509_NAME_ENTRY_cmp_func) !=
-        ownSizeof(sk_X509_NAME_ENTRY_cmp_func_553649473):
+        ownSizeof(sk_X509_NAME_ENTRY_cmp_func_553649475):
       static :
         warning("Declaration of " & "sk_X509_NAME_ENTRY_cmp_func" &
             " exists but with different size")
     sk_X509_NAME_ENTRY_cmp_func
   else:
-    sk_X509_NAME_ENTRY_cmp_func_553649473)
+    sk_X509_NAME_ENTRY_cmp_func_553649475)
   DSA_SIG_553648922 = (when declared(DSA_SIG):
     when ownSizeof(DSA_SIG) != ownSizeof(DSA_SIG_553648921):
       static :
@@ -6525,16 +6533,16 @@ type
     X509_EXTENSION
   else:
     X509_EXTENSION_553648955)
-  sk_X509_EXTENSION_free_func_553649486 = (when declared(
+  sk_X509_EXTENSION_free_func_553649488 = (when declared(
       sk_X509_EXTENSION_free_func):
     when ownSizeof(sk_X509_EXTENSION_free_func) !=
-        ownSizeof(sk_X509_EXTENSION_free_func_553649485):
+        ownSizeof(sk_X509_EXTENSION_free_func_553649487):
       static :
         warning("Declaration of " & "sk_X509_EXTENSION_free_func" &
             " exists but with different size")
     sk_X509_EXTENSION_free_func
   else:
-    sk_X509_EXTENSION_free_func_553649485)
+    sk_X509_EXTENSION_free_func_553649487)
   ngtcp2_conn_info_553648682 = (when declared(ngtcp2_conn_info):
     when ownSizeof(ngtcp2_conn_info) != ownSizeof(ngtcp2_conn_info_553648681):
       static :
@@ -6605,14 +6613,14 @@ type
     struct_ngtcp2_pkt_stateless_reset
   else:
     struct_ngtcp2_pkt_stateless_reset_553648636)
-  struct_sha_state_st_553649172 = (when declared(struct_sha_state_st):
-    when ownSizeof(struct_sha_state_st) != ownSizeof(struct_sha_state_st_553649171):
+  struct_sha_state_st_553649174 = (when declared(struct_sha_state_st):
+    when ownSizeof(struct_sha_state_st) != ownSizeof(struct_sha_state_st_553649173):
       static :
         warning("Declaration of " & "struct_sha_state_st" &
             " exists but with different size")
     struct_sha_state_st
   else:
-    struct_sha_state_st_553649171)
+    struct_sha_state_st_553649173)
   MD4_CTX_553649094 = (when declared(MD4_CTX):
     when ownSizeof(MD4_CTX) != ownSizeof(MD4_CTX_553649093):
       static :
@@ -6621,40 +6629,40 @@ type
     MD4_CTX
   else:
     MD4_CTX_553649093)
-  TRUST_TOKEN_553649210 = (when declared(TRUST_TOKEN):
-    when ownSizeof(TRUST_TOKEN) != ownSizeof(TRUST_TOKEN_553649209):
+  TRUST_TOKEN_553649212 = (when declared(TRUST_TOKEN):
+    when ownSizeof(TRUST_TOKEN) != ownSizeof(TRUST_TOKEN_553649211):
       static :
         warning("Declaration of " & "TRUST_TOKEN" &
             " exists but with different size")
     TRUST_TOKEN
   else:
-    TRUST_TOKEN_553649209)
-  X509V3_EXT_S2I_553649554 = (when declared(X509V3_EXT_S2I):
-    when ownSizeof(X509V3_EXT_S2I) != ownSizeof(X509V3_EXT_S2I_553649553):
+    TRUST_TOKEN_553649211)
+  X509V3_EXT_S2I_553649556 = (when declared(X509V3_EXT_S2I):
+    when ownSizeof(X509V3_EXT_S2I) != ownSizeof(X509V3_EXT_S2I_553649555):
       static :
         warning("Declaration of " & "X509V3_EXT_S2I" &
             " exists but with different size")
     X509V3_EXT_S2I
   else:
-    X509V3_EXT_S2I_553649553)
-  sk_ACCESS_DESCRIPTION_delete_if_func_553649596 = (when declared(
+    X509V3_EXT_S2I_553649555)
+  sk_ACCESS_DESCRIPTION_delete_if_func_553649598 = (when declared(
       sk_ACCESS_DESCRIPTION_delete_if_func):
     when ownSizeof(sk_ACCESS_DESCRIPTION_delete_if_func) !=
-        ownSizeof(sk_ACCESS_DESCRIPTION_delete_if_func_553649595):
+        ownSizeof(sk_ACCESS_DESCRIPTION_delete_if_func_553649597):
       static :
         warning("Declaration of " & "sk_ACCESS_DESCRIPTION_delete_if_func" &
             " exists but with different size")
     sk_ACCESS_DESCRIPTION_delete_if_func
   else:
-    sk_ACCESS_DESCRIPTION_delete_if_func_553649595)
-  SSL_custom_ext_add_cb_553649700 = (when declared(SSL_custom_ext_add_cb):
-    when ownSizeof(SSL_custom_ext_add_cb) != ownSizeof(SSL_custom_ext_add_cb_553649699):
+    sk_ACCESS_DESCRIPTION_delete_if_func_553649597)
+  SSL_custom_ext_add_cb_553649702 = (when declared(SSL_custom_ext_add_cb):
+    when ownSizeof(SSL_custom_ext_add_cb) != ownSizeof(SSL_custom_ext_add_cb_553649701):
       static :
         warning("Declaration of " & "SSL_custom_ext_add_cb" &
             " exists but with different size")
     SSL_custom_ext_add_cb
   else:
-    SSL_custom_ext_add_cb_553649699)
+    SSL_custom_ext_add_cb_553649701)
   struct_ngtcp2_crypto_cipher_553648724 = (when declared(
       struct_ngtcp2_crypto_cipher):
     when ownSizeof(struct_ngtcp2_crypto_cipher) !=
@@ -6665,49 +6673,49 @@ type
     struct_ngtcp2_crypto_cipher
   else:
     struct_ngtcp2_crypto_cipher_553648723)
-  union_crypto_mutex_st_553649248 = (when declared(union_crypto_mutex_st):
-    when ownSizeof(union_crypto_mutex_st) != ownSizeof(union_crypto_mutex_st_553649247):
+  union_crypto_mutex_st_553649250 = (when declared(union_crypto_mutex_st):
+    when ownSizeof(union_crypto_mutex_st) != ownSizeof(union_crypto_mutex_st_553649249):
       static :
         warning("Declaration of " & "union_crypto_mutex_st" &
             " exists but with different size")
     union_crypto_mutex_st
   else:
-    union_crypto_mutex_st_553649247)
-  X509_ATTRIBUTE_553649226 = (when declared(X509_ATTRIBUTE):
-    when ownSizeof(X509_ATTRIBUTE) != ownSizeof(X509_ATTRIBUTE_553649225):
+    union_crypto_mutex_st_553649249)
+  X509_ATTRIBUTE_553649228 = (when declared(X509_ATTRIBUTE):
+    when ownSizeof(X509_ATTRIBUTE) != ownSizeof(X509_ATTRIBUTE_553649227):
       static :
         warning("Declaration of " & "X509_ATTRIBUTE" &
             " exists but with different size")
     X509_ATTRIBUTE
   else:
-    X509_ATTRIBUTE_553649225)
-  sk_ASN1_TYPE_cmp_func_553649380 = (when declared(sk_ASN1_TYPE_cmp_func):
-    when ownSizeof(sk_ASN1_TYPE_cmp_func) != ownSizeof(sk_ASN1_TYPE_cmp_func_553649379):
+    X509_ATTRIBUTE_553649227)
+  sk_ASN1_TYPE_cmp_func_553649382 = (when declared(sk_ASN1_TYPE_cmp_func):
+    when ownSizeof(sk_ASN1_TYPE_cmp_func) != ownSizeof(sk_ASN1_TYPE_cmp_func_553649381):
       static :
         warning("Declaration of " & "sk_ASN1_TYPE_cmp_func" &
             " exists but with different size")
     sk_ASN1_TYPE_cmp_func
   else:
-    sk_ASN1_TYPE_cmp_func_553649379)
-  OPENSSL_sk_call_cmp_func_553649276 = (when declared(OPENSSL_sk_call_cmp_func):
+    sk_ASN1_TYPE_cmp_func_553649381)
+  OPENSSL_sk_call_cmp_func_553649278 = (when declared(OPENSSL_sk_call_cmp_func):
     when ownSizeof(OPENSSL_sk_call_cmp_func) !=
-        ownSizeof(OPENSSL_sk_call_cmp_func_553649275):
+        ownSizeof(OPENSSL_sk_call_cmp_func_553649277):
       static :
         warning("Declaration of " & "OPENSSL_sk_call_cmp_func" &
             " exists but with different size")
     OPENSSL_sk_call_cmp_func
   else:
-    OPENSSL_sk_call_cmp_func_553649275)
-  enum_ssl_renegotiate_mode_t_553649730 = (when declared(
+    OPENSSL_sk_call_cmp_func_553649277)
+  enum_ssl_renegotiate_mode_t_553649732 = (when declared(
       enum_ssl_renegotiate_mode_t):
     when ownSizeof(enum_ssl_renegotiate_mode_t) !=
-        ownSizeof(enum_ssl_renegotiate_mode_t_553649729):
+        ownSizeof(enum_ssl_renegotiate_mode_t_553649731):
       static :
         warning("Declaration of " & "enum_ssl_renegotiate_mode_t" &
             " exists but with different size")
     enum_ssl_renegotiate_mode_t
   else:
-    enum_ssl_renegotiate_mode_t_553649729)
+    enum_ssl_renegotiate_mode_t_553649731)
   struct_ngtcp2_preferred_addr_553648661 = (when declared(
       struct_ngtcp2_preferred_addr):
     when ownSizeof(struct_ngtcp2_preferred_addr) !=
@@ -6762,24 +6770,24 @@ type
     ngtcp2_token_type
   else:
     ngtcp2_token_type_553648697)
-  sk_OPENSSL_STRING_copy_func_553649296 = (when declared(
+  sk_OPENSSL_STRING_copy_func_553649298 = (when declared(
       sk_OPENSSL_STRING_copy_func):
     when ownSizeof(sk_OPENSSL_STRING_copy_func) !=
-        ownSizeof(sk_OPENSSL_STRING_copy_func_553649295):
+        ownSizeof(sk_OPENSSL_STRING_copy_func_553649297):
       static :
         warning("Declaration of " & "sk_OPENSSL_STRING_copy_func" &
             " exists but with different size")
     sk_OPENSSL_STRING_copy_func
   else:
-    sk_OPENSSL_STRING_copy_func_553649295)
-  BIO_callback_fn_ex_553649322 = (when declared(BIO_callback_fn_ex):
-    when ownSizeof(BIO_callback_fn_ex) != ownSizeof(BIO_callback_fn_ex_553649321):
+    sk_OPENSSL_STRING_copy_func_553649297)
+  BIO_callback_fn_ex_553649324 = (when declared(BIO_callback_fn_ex):
+    when ownSizeof(BIO_callback_fn_ex) != ownSizeof(BIO_callback_fn_ex_553649323):
       static :
         warning("Declaration of " & "BIO_callback_fn_ex" &
             " exists but with different size")
     BIO_callback_fn_ex
   else:
-    BIO_callback_fn_ex_553649321)
+    BIO_callback_fn_ex_553649323)
   ngtcp2_crypto_cipher_553648726 = (when declared(ngtcp2_crypto_cipher):
     when ownSizeof(ngtcp2_crypto_cipher) != ownSizeof(ngtcp2_crypto_cipher_553648725):
       static :
@@ -6788,25 +6796,25 @@ type
     ngtcp2_crypto_cipher
   else:
     ngtcp2_crypto_cipher_553648725)
-  sk_X509_OBJECT_delete_if_func_553649526 = (when declared(
+  sk_X509_OBJECT_delete_if_func_553649528 = (when declared(
       sk_X509_OBJECT_delete_if_func):
     when ownSizeof(sk_X509_OBJECT_delete_if_func) !=
-        ownSizeof(sk_X509_OBJECT_delete_if_func_553649525):
+        ownSizeof(sk_X509_OBJECT_delete_if_func_553649527):
       static :
         warning("Declaration of " & "sk_X509_OBJECT_delete_if_func" &
             " exists but with different size")
     sk_X509_OBJECT_delete_if_func
   else:
-    sk_X509_OBJECT_delete_if_func_553649525)
-  struct_POLICY_MAPPING_st_553649650 = (when declared(struct_POLICY_MAPPING_st):
+    sk_X509_OBJECT_delete_if_func_553649527)
+  struct_POLICY_MAPPING_st_553649652 = (when declared(struct_POLICY_MAPPING_st):
     when ownSizeof(struct_POLICY_MAPPING_st) !=
-        ownSizeof(struct_POLICY_MAPPING_st_553649649):
+        ownSizeof(struct_POLICY_MAPPING_st_553649651):
       static :
         warning("Declaration of " & "struct_POLICY_MAPPING_st" &
             " exists but with different size")
     struct_POLICY_MAPPING_st
   else:
-    struct_POLICY_MAPPING_st_553649649)
+    struct_POLICY_MAPPING_st_553649651)
   ngtcp2_path_553648710 = (when declared(ngtcp2_path):
     when ownSizeof(ngtcp2_path) != ownSizeof(ngtcp2_path_553648709):
       static :
@@ -6823,14 +6831,14 @@ type
     ngtcp2_version_info
   else:
     ngtcp2_version_info_553648666)
-  EDIPARTYNAME_553649502 = (when declared(EDIPARTYNAME):
-    when ownSizeof(EDIPARTYNAME) != ownSizeof(EDIPARTYNAME_553649501):
+  EDIPARTYNAME_553649504 = (when declared(EDIPARTYNAME):
+    when ownSizeof(EDIPARTYNAME) != ownSizeof(EDIPARTYNAME_553649503):
       static :
         warning("Declaration of " & "EDIPARTYNAME" &
             " exists but with different size")
     EDIPARTYNAME
   else:
-    EDIPARTYNAME_553649501)
+    EDIPARTYNAME_553649503)
   DSA_553649030 = (when declared(DSA):
     when ownSizeof(DSA) != ownSizeof(DSA_553649029):
       static :
@@ -6838,26 +6846,26 @@ type
     DSA
   else:
     DSA_553649029)
-  enum_ssl_early_data_reason_t_553649728 = (when declared(
+  enum_ssl_early_data_reason_t_553649730 = (when declared(
       enum_ssl_early_data_reason_t):
     when ownSizeof(enum_ssl_early_data_reason_t) !=
-        ownSizeof(enum_ssl_early_data_reason_t_553649727):
+        ownSizeof(enum_ssl_early_data_reason_t_553649729):
       static :
         warning("Declaration of " & "enum_ssl_early_data_reason_t" &
             " exists but with different size")
     enum_ssl_early_data_reason_t
   else:
-    enum_ssl_early_data_reason_t_553649727)
-  sk_X509_NAME_ENTRY_delete_if_func_553649476 = (when declared(
+    enum_ssl_early_data_reason_t_553649729)
+  sk_X509_NAME_ENTRY_delete_if_func_553649478 = (when declared(
       sk_X509_NAME_ENTRY_delete_if_func):
     when ownSizeof(sk_X509_NAME_ENTRY_delete_if_func) !=
-        ownSizeof(sk_X509_NAME_ENTRY_delete_if_func_553649475):
+        ownSizeof(sk_X509_NAME_ENTRY_delete_if_func_553649477):
       static :
         warning("Declaration of " & "sk_X509_NAME_ENTRY_delete_if_func" &
             " exists but with different size")
     sk_X509_NAME_ENTRY_delete_if_func
   else:
-    sk_X509_NAME_ENTRY_delete_if_func_553649475)
+    sk_X509_NAME_ENTRY_delete_if_func_553649477)
   ngtcp2_remove_connection_id_553648790 = (when declared(
       ngtcp2_remove_connection_id):
     when ownSizeof(ngtcp2_remove_connection_id) !=
@@ -6877,37 +6885,37 @@ type
     struct_ngtcp2_cid_token
   else:
     struct_ngtcp2_cid_token_553648831)
-  time_t_553649366 = (when declared(time_t):
-    when ownSizeof(time_t) != ownSizeof(time_t_553649365):
+  time_t_553649368 = (when declared(time_t):
+    when ownSizeof(time_t) != ownSizeof(time_t_553649367):
       static :
         warning("Declaration of " & "time_t" & " exists but with different size")
     time_t
   else:
-    time_t_553649365)
-  internal_LHASH_553649408 = (when declared(internal_LHASH):
-    when ownSizeof(internal_LHASH) != ownSizeof(internal_LHASH_553649407):
+    time_t_553649367)
+  internal_LHASH_553649410 = (when declared(internal_LHASH):
+    when ownSizeof(internal_LHASH) != ownSizeof(internal_LHASH_553649409):
       static :
         warning("Declaration of " & "internal_LHASH" &
             " exists but with different size")
     internal_LHASH
   else:
-    internal_LHASH_553649407)
-  X509_LOOKUP_553649228 = (when declared(X509_LOOKUP):
-    when ownSizeof(X509_LOOKUP) != ownSizeof(X509_LOOKUP_553649227):
+    internal_LHASH_553649409)
+  X509_LOOKUP_553649230 = (when declared(X509_LOOKUP):
+    when ownSizeof(X509_LOOKUP) != ownSizeof(X509_LOOKUP_553649229):
       static :
         warning("Declaration of " & "X509_LOOKUP" &
             " exists but with different size")
     X509_LOOKUP
   else:
-    X509_LOOKUP_553649227)
-  internal_STACK_553649282 = (when declared(internal_STACK):
-    when ownSizeof(internal_STACK) != ownSizeof(internal_STACK_553649281):
+    X509_LOOKUP_553649229)
+  internal_STACK_553649284 = (when declared(internal_STACK):
+    when ownSizeof(internal_STACK) != ownSizeof(internal_STACK_553649283):
       static :
         warning("Declaration of " & "internal_STACK" &
             " exists but with different size")
     internal_STACK
   else:
-    internal_STACK_553649281)
+    internal_STACK_553649283)
   ngtcp2_get_path_challenge_data_553648818 = (when declared(
       ngtcp2_get_path_challenge_data):
     when ownSizeof(ngtcp2_get_path_challenge_data) !=
@@ -6926,33 +6934,33 @@ type
     EVP_PKEY
   else:
     EVP_PKEY_553649085)
-  struct_ssl_ticket_aead_method_st_553649206 = (when declared(
+  struct_ssl_ticket_aead_method_st_553649208 = (when declared(
       struct_ssl_ticket_aead_method_st):
     when ownSizeof(struct_ssl_ticket_aead_method_st) !=
-        ownSizeof(struct_ssl_ticket_aead_method_st_553649205):
+        ownSizeof(struct_ssl_ticket_aead_method_st_553649207):
       static :
         warning("Declaration of " & "struct_ssl_ticket_aead_method_st" &
             " exists but with different size")
     struct_ssl_ticket_aead_method_st
   else:
-    struct_ssl_ticket_aead_method_st_553649205)
-  AUTHORITY_INFO_ACCESS_553649598 = (when declared(AUTHORITY_INFO_ACCESS):
-    when ownSizeof(AUTHORITY_INFO_ACCESS) != ownSizeof(AUTHORITY_INFO_ACCESS_553649597):
+    struct_ssl_ticket_aead_method_st_553649207)
+  AUTHORITY_INFO_ACCESS_553649600 = (when declared(AUTHORITY_INFO_ACCESS):
+    when ownSizeof(AUTHORITY_INFO_ACCESS) != ownSizeof(AUTHORITY_INFO_ACCESS_553649599):
       static :
         warning("Declaration of " & "AUTHORITY_INFO_ACCESS" &
             " exists but with different size")
     AUTHORITY_INFO_ACCESS
   else:
-    AUTHORITY_INFO_ACCESS_553649597)
-  struct_evp_cipher_info_st_553649328 = (when declared(struct_evp_cipher_info_st):
+    AUTHORITY_INFO_ACCESS_553649599)
+  struct_evp_cipher_info_st_553649330 = (when declared(struct_evp_cipher_info_st):
     when ownSizeof(struct_evp_cipher_info_st) !=
-        ownSizeof(struct_evp_cipher_info_st_553649327):
+        ownSizeof(struct_evp_cipher_info_st_553649329):
       static :
         warning("Declaration of " & "struct_evp_cipher_info_st" &
             " exists but with different size")
     struct_evp_cipher_info_st
   else:
-    struct_evp_cipher_info_st_553649327)
+    struct_evp_cipher_info_st_553649329)
   struct_ngtcp2_version_cid_553648740 = (when declared(struct_ngtcp2_version_cid):
     when ownSizeof(struct_ngtcp2_version_cid) !=
         ownSizeof(struct_ngtcp2_version_cid_553648739):
@@ -6970,13 +6978,13 @@ type
     ASN1_ENUMERATED
   else:
     ASN1_ENUMERATED_553648877)
-  RSA_553649160 = (when declared(RSA):
-    when ownSizeof(RSA) != ownSizeof(RSA_553649159):
+  RSA_553649162 = (when declared(RSA):
+    when ownSizeof(RSA) != ownSizeof(RSA_553649161):
       static :
         warning("Declaration of " & "RSA" & " exists but with different size")
     RSA
   else:
-    RSA_553649159)
+    RSA_553649161)
   CMAC_CTX_553649012 = (when declared(CMAC_CTX):
     when ownSizeof(CMAC_CTX) != ownSizeof(CMAC_CTX_553649011):
       static :
@@ -6993,41 +7001,41 @@ type
     struct_bn_gencb_st
   else:
     struct_bn_gencb_st_553648991)
-  point_conversion_form_t_553649420 = (when declared(point_conversion_form_t):
+  point_conversion_form_t_553649422 = (when declared(point_conversion_form_t):
     when ownSizeof(point_conversion_form_t) !=
-        ownSizeof(point_conversion_form_t_553649419):
+        ownSizeof(point_conversion_form_t_553649421):
       static :
         warning("Declaration of " & "point_conversion_form_t" &
             " exists but with different size")
     point_conversion_form_t
   else:
-    point_conversion_form_t_553649419)
-  enum_ssl_encryption_level_t_553649726 = (when declared(
+    point_conversion_form_t_553649421)
+  enum_ssl_encryption_level_t_553649728 = (when declared(
       enum_ssl_encryption_level_t):
     when ownSizeof(enum_ssl_encryption_level_t) !=
-        ownSizeof(enum_ssl_encryption_level_t_553649725):
+        ownSizeof(enum_ssl_encryption_level_t_553649727):
       static :
         warning("Declaration of " & "enum_ssl_encryption_level_t" &
             " exists but with different size")
     enum_ssl_encryption_level_t
   else:
-    enum_ssl_encryption_level_t_553649725)
-  in_addr_t_553649770 = (when declared(in_addr_t):
-    when ownSizeof(in_addr_t) != ownSizeof(in_addr_t_553649769):
+    enum_ssl_encryption_level_t_553649727)
+  in_addr_t_553649772 = (when declared(in_addr_t):
+    when ownSizeof(in_addr_t) != ownSizeof(in_addr_t_553649771):
       static :
         warning("Declaration of " & "in_addr_t" &
             " exists but with different size")
     in_addr_t
   else:
-    in_addr_t_553649769)
-  compiler_off_t_553649772 = (when declared(compiler_off_t):
-    when ownSizeof(compiler_off_t) != ownSizeof(compiler_off_t_553649771):
+    in_addr_t_553649771)
+  compiler_off_t_553649774 = (when declared(compiler_off_t):
+    when ownSizeof(compiler_off_t) != ownSizeof(compiler_off_t_553649773):
       static :
         warning("Declaration of " & "compiler_off_t" &
             " exists but with different size")
     compiler_off_t
   else:
-    compiler_off_t_553649771)
+    compiler_off_t_553649773)
   ngtcp2_connection_id_status_type_553648802 = (when declared(
       ngtcp2_connection_id_status_type):
     when ownSizeof(ngtcp2_connection_id_status_type) !=
@@ -7047,16 +7055,16 @@ type
     struct_Netscape_spki_st
   else:
     struct_Netscape_spki_st_553648943)
-  enum_point_conversion_form_t_553649418 = (when declared(
+  enum_point_conversion_form_t_553649420 = (when declared(
       enum_point_conversion_form_t):
     when ownSizeof(enum_point_conversion_form_t) !=
-        ownSizeof(enum_point_conversion_form_t_553649417):
+        ownSizeof(enum_point_conversion_form_t_553649419):
       static :
         warning("Declaration of " & "enum_point_conversion_form_t" &
             " exists but with different size")
     enum_point_conversion_form_t
   else:
-    enum_point_conversion_form_t_553649417)
+    enum_point_conversion_form_t_553649419)
   struct_evp_cipher_ctx_st_553649060 = (when declared(struct_evp_cipher_ctx_st):
     when ownSizeof(struct_evp_cipher_ctx_st) !=
         ownSizeof(struct_evp_cipher_ctx_st_553649059):
@@ -7074,41 +7082,41 @@ type
     EVP_PKEY_ASN1_METHOD
   else:
     EVP_PKEY_ASN1_METHOD_553649083)
-  sk_ASN1_INTEGER_free_func_553649358 = (when declared(sk_ASN1_INTEGER_free_func):
+  sk_ASN1_INTEGER_free_func_553649360 = (when declared(sk_ASN1_INTEGER_free_func):
     when ownSizeof(sk_ASN1_INTEGER_free_func) !=
-        ownSizeof(sk_ASN1_INTEGER_free_func_553649357):
+        ownSizeof(sk_ASN1_INTEGER_free_func_553649359):
       static :
         warning("Declaration of " & "sk_ASN1_INTEGER_free_func" &
             " exists but with different size")
     sk_ASN1_INTEGER_free_func
   else:
-    sk_ASN1_INTEGER_free_func_553649357)
-  sk_ASN1_TYPE_free_func_553649376 = (when declared(sk_ASN1_TYPE_free_func):
-    when ownSizeof(sk_ASN1_TYPE_free_func) != ownSizeof(sk_ASN1_TYPE_free_func_553649375):
+    sk_ASN1_INTEGER_free_func_553649359)
+  sk_ASN1_TYPE_free_func_553649378 = (when declared(sk_ASN1_TYPE_free_func):
+    when ownSizeof(sk_ASN1_TYPE_free_func) != ownSizeof(sk_ASN1_TYPE_free_func_553649377):
       static :
         warning("Declaration of " & "sk_ASN1_TYPE_free_func" &
             " exists but with different size")
     sk_ASN1_TYPE_free_func
   else:
-    sk_ASN1_TYPE_free_func_553649375)
-  sk_X509_delete_if_func_553649442 = (when declared(sk_X509_delete_if_func):
-    when ownSizeof(sk_X509_delete_if_func) != ownSizeof(sk_X509_delete_if_func_553649441):
+    sk_ASN1_TYPE_free_func_553649377)
+  sk_X509_delete_if_func_553649444 = (when declared(sk_X509_delete_if_func):
+    when ownSizeof(sk_X509_delete_if_func) != ownSizeof(sk_X509_delete_if_func_553649443):
       static :
         warning("Declaration of " & "sk_X509_delete_if_func" &
             " exists but with different size")
     sk_X509_delete_if_func
   else:
-    sk_X509_delete_if_func_553649441)
-  sk_PKCS7_RECIP_INFO_delete_if_func_553649398 = (when declared(
+    sk_X509_delete_if_func_553649443)
+  sk_PKCS7_RECIP_INFO_delete_if_func_553649400 = (when declared(
       sk_PKCS7_RECIP_INFO_delete_if_func):
     when ownSizeof(sk_PKCS7_RECIP_INFO_delete_if_func) !=
-        ownSizeof(sk_PKCS7_RECIP_INFO_delete_if_func_553649397):
+        ownSizeof(sk_PKCS7_RECIP_INFO_delete_if_func_553649399):
       static :
         warning("Declaration of " & "sk_PKCS7_RECIP_INFO_delete_if_func" &
             " exists but with different size")
     sk_PKCS7_RECIP_INFO_delete_if_func
   else:
-    sk_PKCS7_RECIP_INFO_delete_if_func_553649397)
+    sk_PKCS7_RECIP_INFO_delete_if_func_553649399)
   EC_GROUP_553649032 = (when declared(EC_GROUP):
     when ownSizeof(EC_GROUP) != ownSizeof(EC_GROUP_553649031):
       static :
@@ -7117,24 +7125,24 @@ type
     EC_GROUP
   else:
     EC_GROUP_553649031)
-  BN_ULONG_553649346 = (when declared(BN_ULONG):
-    when ownSizeof(BN_ULONG) != ownSizeof(BN_ULONG_553649345):
+  BN_ULONG_553649348 = (when declared(BN_ULONG):
+    when ownSizeof(BN_ULONG) != ownSizeof(BN_ULONG_553649347):
       static :
         warning("Declaration of " & "BN_ULONG" &
             " exists but with different size")
     BN_ULONG
   else:
-    BN_ULONG_553649345)
-  sk_GENERAL_NAME_delete_if_func_553649450 = (when declared(
+    BN_ULONG_553649347)
+  sk_GENERAL_NAME_delete_if_func_553649452 = (when declared(
       sk_GENERAL_NAME_delete_if_func):
     when ownSizeof(sk_GENERAL_NAME_delete_if_func) !=
-        ownSizeof(sk_GENERAL_NAME_delete_if_func_553649449):
+        ownSizeof(sk_GENERAL_NAME_delete_if_func_553649451):
       static :
         warning("Declaration of " & "sk_GENERAL_NAME_delete_if_func" &
             " exists but with different size")
     sk_GENERAL_NAME_delete_if_func
   else:
-    sk_GENERAL_NAME_delete_if_func_553649449)
+    sk_GENERAL_NAME_delete_if_func_553649451)
   ngtcp2_ssize_553648593 = (when declared(ngtcp2_ssize):
     when ownSizeof(ngtcp2_ssize) != ownSizeof(ngtcp2_ssize_553648592):
       static :
@@ -7143,39 +7151,39 @@ type
     ngtcp2_ssize
   else:
     ngtcp2_ssize_553648592)
-  sk_X509_INFO_cmp_func_553649536 = (when declared(sk_X509_INFO_cmp_func):
-    when ownSizeof(sk_X509_INFO_cmp_func) != ownSizeof(sk_X509_INFO_cmp_func_553649535):
+  sk_X509_INFO_cmp_func_553649538 = (when declared(sk_X509_INFO_cmp_func):
+    when ownSizeof(sk_X509_INFO_cmp_func) != ownSizeof(sk_X509_INFO_cmp_func_553649537):
       static :
         warning("Declaration of " & "sk_X509_INFO_cmp_func" &
             " exists but with different size")
     sk_X509_INFO_cmp_func
   else:
-    sk_X509_INFO_cmp_func_553649535)
-  struct_POLICYINFO_st_553649636 = (when declared(struct_POLICYINFO_st):
-    when ownSizeof(struct_POLICYINFO_st) != ownSizeof(struct_POLICYINFO_st_553649635):
+    sk_X509_INFO_cmp_func_553649537)
+  struct_POLICYINFO_st_553649638 = (when declared(struct_POLICYINFO_st):
+    when ownSizeof(struct_POLICYINFO_st) != ownSizeof(struct_POLICYINFO_st_553649637):
       static :
         warning("Declaration of " & "struct_POLICYINFO_st" &
             " exists but with different size")
     struct_POLICYINFO_st
   else:
-    struct_POLICYINFO_st_553649635)
-  RSA_PSS_PARAMS_553649156 = (when declared(RSA_PSS_PARAMS):
-    when ownSizeof(RSA_PSS_PARAMS) != ownSizeof(RSA_PSS_PARAMS_553649155):
+    struct_POLICYINFO_st_553649637)
+  RSA_PSS_PARAMS_553649158 = (when declared(RSA_PSS_PARAMS):
+    when ownSizeof(RSA_PSS_PARAMS) != ownSizeof(RSA_PSS_PARAMS_553649157):
       static :
         warning("Declaration of " & "RSA_PSS_PARAMS" &
             " exists but with different size")
     RSA_PSS_PARAMS
   else:
-    RSA_PSS_PARAMS_553649155)
-  X509V3_EXT_FREE_typedef_553649542 = (when declared(X509V3_EXT_FREE_typedef):
+    RSA_PSS_PARAMS_553649157)
+  X509V3_EXT_FREE_typedef_553649544 = (when declared(X509V3_EXT_FREE_typedef):
     when ownSizeof(X509V3_EXT_FREE_typedef) !=
-        ownSizeof(X509V3_EXT_FREE_typedef_553649541):
+        ownSizeof(X509V3_EXT_FREE_typedef_553649543):
       static :
         warning("Declaration of " & "X509V3_EXT_FREE_typedef" &
             " exists but with different size")
     X509V3_EXT_FREE_typedef
   else:
-    X509V3_EXT_FREE_typedef_553649541)
+    X509V3_EXT_FREE_typedef_553649543)
   struct_bignum_st_553648978 = (when declared(struct_bignum_st):
     when ownSizeof(struct_bignum_st) != ownSizeof(struct_bignum_st_553648977):
       static :
@@ -7184,14 +7192,14 @@ type
     struct_bignum_st
   else:
     struct_bignum_st_553648977)
-  RSASSA_PSS_PARAMS_553649154 = (when declared(RSASSA_PSS_PARAMS):
-    when ownSizeof(RSASSA_PSS_PARAMS) != ownSizeof(RSASSA_PSS_PARAMS_553649153):
+  RSASSA_PSS_PARAMS_553649156 = (when declared(RSASSA_PSS_PARAMS):
+    when ownSizeof(RSASSA_PSS_PARAMS) != ownSizeof(RSASSA_PSS_PARAMS_553649155):
       static :
         warning("Declaration of " & "RSASSA_PSS_PARAMS" &
             " exists but with different size")
     RSASSA_PSS_PARAMS
   else:
-    RSASSA_PSS_PARAMS_553649153)
+    RSASSA_PSS_PARAMS_553649155)
   ngtcp2_preferred_addr_553648663 = (when declared(ngtcp2_preferred_addr):
     when ownSizeof(ngtcp2_preferred_addr) != ownSizeof(ngtcp2_preferred_addr_553648662):
       static :
@@ -7200,16 +7208,16 @@ type
     ngtcp2_preferred_addr
   else:
     ngtcp2_preferred_addr_553648662)
-  X509_STORE_CTX_check_crl_fn_553649564 = (when declared(
+  X509_STORE_CTX_check_crl_fn_553649566 = (when declared(
       X509_STORE_CTX_check_crl_fn):
     when ownSizeof(X509_STORE_CTX_check_crl_fn) !=
-        ownSizeof(X509_STORE_CTX_check_crl_fn_553649563):
+        ownSizeof(X509_STORE_CTX_check_crl_fn_553649565):
       static :
         warning("Declaration of " & "X509_STORE_CTX_check_crl_fn" &
             " exists but with different size")
     X509_STORE_CTX_check_crl_fn
   else:
-    X509_STORE_CTX_check_crl_fn_553649563)
+    X509_STORE_CTX_check_crl_fn_553649565)
   ngtcp2_crypto_cipher_ctx_553648734 = (when declared(ngtcp2_crypto_cipher_ctx):
     when ownSizeof(ngtcp2_crypto_cipher_ctx) !=
         ownSizeof(ngtcp2_crypto_cipher_ctx_553648733):
@@ -7219,15 +7227,15 @@ type
     ngtcp2_crypto_cipher_ctx
   else:
     ngtcp2_crypto_cipher_ctx_553648733)
-  sk_X509_PURPOSE_copy_func_553649572 = (when declared(sk_X509_PURPOSE_copy_func):
+  sk_X509_PURPOSE_copy_func_553649574 = (when declared(sk_X509_PURPOSE_copy_func):
     when ownSizeof(sk_X509_PURPOSE_copy_func) !=
-        ownSizeof(sk_X509_PURPOSE_copy_func_553649571):
+        ownSizeof(sk_X509_PURPOSE_copy_func_553649573):
       static :
         warning("Declaration of " & "sk_X509_PURPOSE_copy_func" &
             " exists but with different size")
     sk_X509_PURPOSE_copy_func
   else:
-    sk_X509_PURPOSE_copy_func_553649571)
+    sk_X509_PURPOSE_copy_func_553649573)
   struct_BASIC_CONSTRAINTS_st_553648916 = (when declared(
       struct_BASIC_CONSTRAINTS_st):
     when ownSizeof(struct_BASIC_CONSTRAINTS_st) !=
@@ -7238,36 +7246,36 @@ type
     struct_BASIC_CONSTRAINTS_st
   else:
     struct_BASIC_CONSTRAINTS_st_553648915)
-  X509_STORE_CTX_lookup_crls_fn_553649528 = (when declared(
+  X509_STORE_CTX_lookup_crls_fn_553649530 = (when declared(
       X509_STORE_CTX_lookup_crls_fn):
     when ownSizeof(X509_STORE_CTX_lookup_crls_fn) !=
-        ownSizeof(X509_STORE_CTX_lookup_crls_fn_553649527):
+        ownSizeof(X509_STORE_CTX_lookup_crls_fn_553649529):
       static :
         warning("Declaration of " & "X509_STORE_CTX_lookup_crls_fn" &
             " exists but with different size")
     X509_STORE_CTX_lookup_crls_fn
   else:
-    X509_STORE_CTX_lookup_crls_fn_553649527)
-  sk_POLICYQUALINFO_cmp_func_553649632 = (when declared(
+    X509_STORE_CTX_lookup_crls_fn_553649529)
+  sk_POLICYQUALINFO_cmp_func_553649634 = (when declared(
       sk_POLICYQUALINFO_cmp_func):
     when ownSizeof(sk_POLICYQUALINFO_cmp_func) !=
-        ownSizeof(sk_POLICYQUALINFO_cmp_func_553649631):
+        ownSizeof(sk_POLICYQUALINFO_cmp_func_553649633):
       static :
         warning("Declaration of " & "sk_POLICYQUALINFO_cmp_func" &
             " exists but with different size")
     sk_POLICYQUALINFO_cmp_func
   else:
-    sk_POLICYQUALINFO_cmp_func_553649631)
-  sk_SSL_COMP_delete_if_func_553649752 = (when declared(
+    sk_POLICYQUALINFO_cmp_func_553649633)
+  sk_SSL_COMP_delete_if_func_553649754 = (when declared(
       sk_SSL_COMP_delete_if_func):
     when ownSizeof(sk_SSL_COMP_delete_if_func) !=
-        ownSizeof(sk_SSL_COMP_delete_if_func_553649751):
+        ownSizeof(sk_SSL_COMP_delete_if_func_553649753):
       static :
         warning("Declaration of " & "sk_SSL_COMP_delete_if_func" &
             " exists but with different size")
     sk_SSL_COMP_delete_if_func
   else:
-    sk_SSL_COMP_delete_if_func_553649751)
+    sk_SSL_COMP_delete_if_func_553649753)
   ossl_ssize_t_553648856 = (when declared(ossl_ssize_t):
     when ownSizeof(ossl_ssize_t) != ownSizeof(ossl_ssize_t_553648855):
       static :
@@ -7284,32 +7292,32 @@ type
     PKCS7_RECIP_INFO
   else:
     PKCS7_RECIP_INFO_553649119)
-  EVP_PKEY_gen_cb_553649390 = (when declared(EVP_PKEY_gen_cb):
-    when ownSizeof(EVP_PKEY_gen_cb) != ownSizeof(EVP_PKEY_gen_cb_553649389):
+  EVP_PKEY_gen_cb_553649392 = (when declared(EVP_PKEY_gen_cb):
+    when ownSizeof(EVP_PKEY_gen_cb) != ownSizeof(EVP_PKEY_gen_cb_553649391):
       static :
         warning("Declaration of " & "EVP_PKEY_gen_cb" &
             " exists but with different size")
     EVP_PKEY_gen_cb
   else:
-    EVP_PKEY_gen_cb_553649389)
-  struct_in_addr_553649758 = (when declared(struct_in_addr):
-    when ownSizeof(struct_in_addr) != ownSizeof(struct_in_addr_553649757):
+    EVP_PKEY_gen_cb_553649391)
+  struct_in_addr_553649760 = (when declared(struct_in_addr):
+    when ownSizeof(struct_in_addr) != ownSizeof(struct_in_addr_553649759):
       static :
         warning("Declaration of " & "struct_in_addr" &
             " exists but with different size")
     struct_in_addr
   else:
-    struct_in_addr_553649757)
-  sk_X509_CRL_delete_if_func_553649460 = (when declared(
+    struct_in_addr_553649759)
+  sk_X509_CRL_delete_if_func_553649462 = (when declared(
       sk_X509_CRL_delete_if_func):
     when ownSizeof(sk_X509_CRL_delete_if_func) !=
-        ownSizeof(sk_X509_CRL_delete_if_func_553649459):
+        ownSizeof(sk_X509_CRL_delete_if_func_553649461):
       static :
         warning("Declaration of " & "sk_X509_CRL_delete_if_func" &
             " exists but with different size")
     sk_X509_CRL_delete_if_func
   else:
-    sk_X509_CRL_delete_if_func_553649459)
+    sk_X509_CRL_delete_if_func_553649461)
   NETSCAPE_SPKI_553648942 = (when declared(NETSCAPE_SPKI):
     when ownSizeof(NETSCAPE_SPKI) != ownSizeof(NETSCAPE_SPKI_553648941):
       static :
@@ -7334,14 +7342,14 @@ type
     struct_asn1_type_st
   else:
     struct_asn1_type_st_553648907)
-  union_md_ctx_union_553649388 = (when declared(union_md_ctx_union):
-    when ownSizeof(union_md_ctx_union) != ownSizeof(union_md_ctx_union_553649387):
+  union_md_ctx_union_553649390 = (when declared(union_md_ctx_union):
+    when ownSizeof(union_md_ctx_union) != ownSizeof(union_md_ctx_union_553649389):
       static :
         warning("Declaration of " & "union_md_ctx_union" &
             " exists but with different size")
     union_md_ctx_union
   else:
-    union_md_ctx_union_553649387)
+    union_md_ctx_union_553649389)
   ASN1_T61STRING_553648894 = (when declared(ASN1_T61STRING):
     when ownSizeof(ASN1_T61STRING) != ownSizeof(ASN1_T61STRING_553648893):
       static :
@@ -7350,14 +7358,14 @@ type
     ASN1_T61STRING
   else:
     ASN1_T61STRING_553648893)
-  POLICY_CONSTRAINTS_553649678 = (when declared(POLICY_CONSTRAINTS):
-    when ownSizeof(POLICY_CONSTRAINTS) != ownSizeof(POLICY_CONSTRAINTS_553649677):
+  POLICY_CONSTRAINTS_553649680 = (when declared(POLICY_CONSTRAINTS):
+    when ownSizeof(POLICY_CONSTRAINTS) != ownSizeof(POLICY_CONSTRAINTS_553649679):
       static :
         warning("Declaration of " & "POLICY_CONSTRAINTS" &
             " exists but with different size")
     POLICY_CONSTRAINTS
   else:
-    POLICY_CONSTRAINTS_553649677)
+    POLICY_CONSTRAINTS_553649679)
   struct_ngtcp2_crypto_ctx_553648736 = (when declared(struct_ngtcp2_crypto_ctx):
     when ownSizeof(struct_ngtcp2_crypto_ctx) !=
         ownSizeof(struct_ngtcp2_crypto_ctx_553648735):
@@ -7382,14 +7390,14 @@ type
     PKCS12
   else:
     PKCS12_553649139)
-  X509_LOOKUP_METHOD_553649230 = (when declared(X509_LOOKUP_METHOD):
-    when ownSizeof(X509_LOOKUP_METHOD) != ownSizeof(X509_LOOKUP_METHOD_553649229):
+  X509_LOOKUP_METHOD_553649232 = (when declared(X509_LOOKUP_METHOD):
+    when ownSizeof(X509_LOOKUP_METHOD) != ownSizeof(X509_LOOKUP_METHOD_553649231):
       static :
         warning("Declaration of " & "X509_LOOKUP_METHOD" &
             " exists but with different size")
     X509_LOOKUP_METHOD
   else:
-    X509_LOOKUP_METHOD_553649229)
+    X509_LOOKUP_METHOD_553649231)
   ngtcp2_recv_crypto_data_553648754 = (when declared(ngtcp2_recv_crypto_data):
     when ownSizeof(ngtcp2_recv_crypto_data) !=
         ownSizeof(ngtcp2_recv_crypto_data_553648753):
@@ -7399,34 +7407,34 @@ type
     ngtcp2_recv_crypto_data
   else:
     ngtcp2_recv_crypto_data_553648753)
-  sk_GENERAL_SUBTREE_copy_func_553649670 = (when declared(
+  sk_GENERAL_SUBTREE_copy_func_553649672 = (when declared(
       sk_GENERAL_SUBTREE_copy_func):
     when ownSizeof(sk_GENERAL_SUBTREE_copy_func) !=
-        ownSizeof(sk_GENERAL_SUBTREE_copy_func_553649669):
+        ownSizeof(sk_GENERAL_SUBTREE_copy_func_553649671):
       static :
         warning("Declaration of " & "sk_GENERAL_SUBTREE_copy_func" &
             " exists but with different size")
     sk_GENERAL_SUBTREE_copy_func
   else:
-    sk_GENERAL_SUBTREE_copy_func_553649669)
-  SSL_custom_ext_parse_cb_553649704 = (when declared(SSL_custom_ext_parse_cb):
+    sk_GENERAL_SUBTREE_copy_func_553649671)
+  SSL_custom_ext_parse_cb_553649706 = (when declared(SSL_custom_ext_parse_cb):
     when ownSizeof(SSL_custom_ext_parse_cb) !=
-        ownSizeof(SSL_custom_ext_parse_cb_553649703):
+        ownSizeof(SSL_custom_ext_parse_cb_553649705):
       static :
         warning("Declaration of " & "SSL_custom_ext_parse_cb" &
             " exists but with different size")
     SSL_custom_ext_parse_cb
   else:
-    SSL_custom_ext_parse_cb_553649703)
-  struct_POLICYQUALINFO_st_553649624 = (when declared(struct_POLICYQUALINFO_st):
+    SSL_custom_ext_parse_cb_553649705)
+  struct_POLICYQUALINFO_st_553649626 = (when declared(struct_POLICYQUALINFO_st):
     when ownSizeof(struct_POLICYQUALINFO_st) !=
-        ownSizeof(struct_POLICYQUALINFO_st_553649623):
+        ownSizeof(struct_POLICYQUALINFO_st_553649625):
       static :
         warning("Declaration of " & "struct_POLICYQUALINFO_st" &
             " exists but with different size")
     struct_POLICYQUALINFO_st
   else:
-    struct_POLICYQUALINFO_st_553649623)
+    struct_POLICYQUALINFO_st_553649625)
   ngtcp2_printf_553648688 = (when declared(ngtcp2_printf):
     when ownSizeof(ngtcp2_printf) != ownSizeof(ngtcp2_printf_553648687):
       static :
@@ -7444,22 +7452,22 @@ type
     struct_ngtcp2_crypto_md
   else:
     struct_ngtcp2_crypto_md_553648715)
-  compiler_time_t_553649766 = (when declared(compiler_time_t):
-    when ownSizeof(compiler_time_t) != ownSizeof(compiler_time_t_553649765):
+  compiler_time_t_553649768 = (when declared(compiler_time_t):
+    when ownSizeof(compiler_time_t) != ownSizeof(compiler_time_t_553649767):
       static :
         warning("Declaration of " & "compiler_time_t" &
             " exists but with different size")
     compiler_time_t
   else:
-    compiler_time_t_553649765)
-  USERNOTICE_553649622 = (when declared(USERNOTICE):
-    when ownSizeof(USERNOTICE) != ownSizeof(USERNOTICE_553649621):
+    compiler_time_t_553649767)
+  USERNOTICE_553649624 = (when declared(USERNOTICE):
+    when ownSizeof(USERNOTICE) != ownSizeof(USERNOTICE_553649623):
       static :
         warning("Declaration of " & "USERNOTICE" &
             " exists but with different size")
     USERNOTICE
   else:
-    USERNOTICE_553649621)
+    USERNOTICE_553649623)
   X509_NAME_ENTRY_553648962 = (when declared(X509_NAME_ENTRY):
     when ownSizeof(X509_NAME_ENTRY) != ownSizeof(X509_NAME_ENTRY_553648961):
       static :
@@ -7476,32 +7484,32 @@ type
     struct_DIST_POINT_st
   else:
     struct_DIST_POINT_st_553648919)
-  sk_void_free_func_553649286 = (when declared(sk_void_free_func):
-    when ownSizeof(sk_void_free_func) != ownSizeof(sk_void_free_func_553649285):
+  sk_void_free_func_553649288 = (when declared(sk_void_free_func):
+    when ownSizeof(sk_void_free_func) != ownSizeof(sk_void_free_func_553649287):
       static :
         warning("Declaration of " & "sk_void_free_func" &
             " exists but with different size")
     sk_void_free_func
   else:
-    sk_void_free_func_553649285)
-  ssl_cert_compression_func_t_553649710 = (when declared(
+    sk_void_free_func_553649287)
+  ssl_cert_compression_func_t_553649712 = (when declared(
       ssl_cert_compression_func_t):
     when ownSizeof(ssl_cert_compression_func_t) !=
-        ownSizeof(ssl_cert_compression_func_t_553649709):
+        ownSizeof(ssl_cert_compression_func_t_553649711):
       static :
         warning("Declaration of " & "ssl_cert_compression_func_t" &
             " exists but with different size")
     ssl_cert_compression_func_t
   else:
-    ssl_cert_compression_func_t_553649709)
-  sk_BIO_copy_func_553649314 = (when declared(sk_BIO_copy_func):
-    when ownSizeof(sk_BIO_copy_func) != ownSizeof(sk_BIO_copy_func_553649313):
+    ssl_cert_compression_func_t_553649711)
+  sk_BIO_copy_func_553649316 = (when declared(sk_BIO_copy_func):
+    when ownSizeof(sk_BIO_copy_func) != ownSizeof(sk_BIO_copy_func_553649315):
       static :
         warning("Declaration of " & "sk_BIO_copy_func" &
             " exists but with different size")
     sk_BIO_copy_func
   else:
-    sk_BIO_copy_func_553649313)
+    sk_BIO_copy_func_553649315)
   struct_ngtcp2_ccerr_553648840 = (when declared(struct_ngtcp2_ccerr):
     when ownSizeof(struct_ngtcp2_ccerr) != ownSizeof(struct_ngtcp2_ccerr_553648839):
       static :
@@ -7512,27 +7520,27 @@ type
     struct_ngtcp2_ccerr_553648839)
 when not declared(sk_ASN1_OBJECT_delete_if_func):
   type
-    sk_ASN1_OBJECT_delete_if_func* = sk_ASN1_OBJECT_delete_if_func_553649373
+    sk_ASN1_OBJECT_delete_if_func* = sk_ASN1_OBJECT_delete_if_func_553649375
 else:
   static :
     hint("Declaration of " & "sk_ASN1_OBJECT_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(struct_v3_ext_ctx):
   type
-    struct_v3_ext_ctx* = struct_v3_ext_ctx_553649219
+    struct_v3_ext_ctx* = struct_v3_ext_ctx_553649221
 else:
   static :
     hint("Declaration of " & "struct_v3_ext_ctx" &
         " already exists, not redeclaring")
 when not declared(X509):
   type
-    X509* = X509_553649235
+    X509* = X509_553649237
 else:
   static :
     hint("Declaration of " & "X509" & " already exists, not redeclaring")
 when not declared(sk_PKCS7_RECIP_INFO_free_func):
   type
-    sk_PKCS7_RECIP_INFO_free_func* = sk_PKCS7_RECIP_INFO_free_func_553649391
+    sk_PKCS7_RECIP_INFO_free_func* = sk_PKCS7_RECIP_INFO_free_func_553649393
 else:
   static :
     hint("Declaration of " & "sk_PKCS7_RECIP_INFO_free_func" &
@@ -7546,14 +7554,14 @@ else:
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_call_copy_func):
   type
-    OPENSSL_sk_call_copy_func* = OPENSSL_sk_call_copy_func_553649273
+    OPENSSL_sk_call_copy_func* = OPENSSL_sk_call_copy_func_553649275
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_call_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_CONF_VALUE_copy_func):
   type
-    sk_CONF_VALUE_copy_func* = sk_CONF_VALUE_copy_func_553649411
+    sk_CONF_VALUE_copy_func* = sk_CONF_VALUE_copy_func_553649413
 else:
   static :
     hint("Declaration of " & "sk_CONF_VALUE_copy_func" &
@@ -7567,76 +7575,76 @@ else:
         " already exists, not redeclaring")
 when not declared(enum_ssl_private_key_result_t):
   type
-    enum_ssl_private_key_result_t* = enum_ssl_private_key_result_t_553649689
+    enum_ssl_private_key_result_t* = enum_ssl_private_key_result_t_553649691
 else:
   static :
     hint("Declaration of " & "enum_ssl_private_key_result_t" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_delete_if_func):
   type
-    OPENSSL_sk_delete_if_func* = OPENSSL_sk_delete_if_func_553649269
+    OPENSSL_sk_delete_if_func* = OPENSSL_sk_delete_if_func_553649271
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_ALGOR_cmp_func):
   type
-    sk_X509_ALGOR_cmp_func* = sk_X509_ALGOR_cmp_func_553649507
+    sk_X509_ALGOR_cmp_func* = sk_X509_ALGOR_cmp_func_553649509
 else:
   static :
     hint("Declaration of " & "sk_X509_ALGOR_cmp_func" &
         " already exists, not redeclaring")
 when not declared(BIO_ADDR):
   type
-    BIO_ADDR* = BIO_ADDR_553649325
+    BIO_ADDR* = BIO_ADDR_553649327
 else:
   static :
     hint("Declaration of " & "BIO_ADDR" & " already exists, not redeclaring")
 when not declared(DIST_POINT_NAME):
   type
-    DIST_POINT_NAME* = DIST_POINT_NAME_553649603
+    DIST_POINT_NAME* = DIST_POINT_NAME_553649605
 else:
   static :
     hint("Declaration of " & "DIST_POINT_NAME" &
         " already exists, not redeclaring")
 when not declared(POLICYQUALINFO):
   type
-    POLICYQUALINFO* = POLICYQUALINFO_553649625
+    POLICYQUALINFO* = POLICYQUALINFO_553649627
 else:
   static :
     hint("Declaration of " & "POLICYQUALINFO" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_verify_cb):
   type
-    X509_STORE_CTX_verify_cb* = X509_STORE_CTX_verify_cb_553649559
+    X509_STORE_CTX_verify_cb* = X509_STORE_CTX_verify_cb_553649561
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_verify_cb" &
         " already exists, not redeclaring")
 when not declared(sk_X509_ATTRIBUTE_cmp_func):
   type
-    sk_X509_ATTRIBUTE_cmp_func* = sk_X509_ATTRIBUTE_cmp_func_553649515
+    sk_X509_ATTRIBUTE_cmp_func* = sk_X509_ATTRIBUTE_cmp_func_553649517
 else:
   static :
     hint("Declaration of " & "sk_X509_ATTRIBUTE_cmp_func" &
         " already exists, not redeclaring")
 when not declared(sk_CRYPTO_BUFFER_cmp_func):
   type
-    sk_CRYPTO_BUFFER_cmp_func* = sk_CRYPTO_BUFFER_cmp_func_553649431
+    sk_CRYPTO_BUFFER_cmp_func* = sk_CRYPTO_BUFFER_cmp_func_553649433
 else:
   static :
     hint("Declaration of " & "sk_CRYPTO_BUFFER_cmp_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_INFO_copy_func):
   type
-    sk_X509_INFO_copy_func* = sk_X509_INFO_copy_func_553649533
+    sk_X509_INFO_copy_func* = sk_X509_INFO_copy_func_553649535
 else:
   static :
     hint("Declaration of " & "sk_X509_INFO_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_GENERAL_NAME_copy_func):
   type
-    sk_GENERAL_NAME_copy_func* = sk_GENERAL_NAME_copy_func_553649445
+    sk_GENERAL_NAME_copy_func* = sk_GENERAL_NAME_copy_func_553649447
 else:
   static :
     hint("Declaration of " & "sk_GENERAL_NAME_copy_func" &
@@ -7664,7 +7672,7 @@ else:
         " already exists, not redeclaring")
 when not declared(SHA256_CTX):
   type
-    SHA256_CTX* = SHA256_CTX_553649161
+    SHA256_CTX* = SHA256_CTX_553649163
 else:
   static :
     hint("Declaration of " & "SHA256_CTX" & " already exists, not redeclaring")
@@ -7683,14 +7691,14 @@ else:
         " already exists, not redeclaring")
 when not declared(ASN1_SEQUENCE_ANY):
   type
-    ASN1_SEQUENCE_ANY* = ASN1_SEQUENCE_ANY_553649383
+    ASN1_SEQUENCE_ANY* = ASN1_SEQUENCE_ANY_553649385
 else:
   static :
     hint("Declaration of " & "ASN1_SEQUENCE_ANY" &
         " already exists, not redeclaring")
 when not declared(sk_SRTP_PROTECTION_PROFILE_cmp_func):
   type
-    sk_SRTP_PROTECTION_PROFILE_cmp_func* = sk_SRTP_PROTECTION_PROFILE_cmp_func_553649717
+    sk_SRTP_PROTECTION_PROFILE_cmp_func* = sk_SRTP_PROTECTION_PROFILE_cmp_func_553649719
 else:
   static :
     hint("Declaration of " & "sk_SRTP_PROTECTION_PROFILE_cmp_func" &
@@ -7704,13 +7712,13 @@ else:
         " already exists, not redeclaring")
 when not declared(OBJ_NAME):
   type
-    OBJ_NAME* = OBJ_NAME_553649343
+    OBJ_NAME* = OBJ_NAME_553649345
 else:
   static :
     hint("Declaration of " & "OBJ_NAME" & " already exists, not redeclaring")
 when not declared(X509_STORE):
   type
-    X509_STORE* = X509_STORE_553649239
+    X509_STORE* = X509_STORE_553649241
 else:
   static :
     hint("Declaration of " & "X509_STORE" & " already exists, not redeclaring")
@@ -7730,13 +7738,13 @@ else:
         " already exists, not redeclaring")
 when not declared(i2d_of_void):
   type
-    i2d_of_void* = i2d_of_void_553649351
+    i2d_of_void* = i2d_of_void_553649353
 else:
   static :
     hint("Declaration of " & "i2d_of_void" & " already exists, not redeclaring")
 when not declared(compiler_suseconds_t):
   type
-    compiler_suseconds_t* = compiler_suseconds_t_553649767
+    compiler_suseconds_t* = compiler_suseconds_t_553649769
 else:
   static :
     hint("Declaration of " & "compiler_suseconds_t" &
@@ -7750,55 +7758,55 @@ else:
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_copy_func):
   type
-    OPENSSL_sk_copy_func* = OPENSSL_sk_copy_func_553649265
+    OPENSSL_sk_copy_func* = OPENSSL_sk_copy_func_553649267
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_copy_func" &
         " already exists, not redeclaring")
 when not declared(struct_cbb_child_st):
   type
-    struct_cbb_child_st* = struct_cbb_child_st_553649339
+    struct_cbb_child_st* = struct_cbb_child_st_553649341
 else:
   static :
     hint("Declaration of " & "struct_cbb_child_st" &
         " already exists, not redeclaring")
 when not declared(compiler_off64_t):
   type
-    compiler_off64_t* = compiler_off64_t_553649775
+    compiler_off64_t* = compiler_off64_t_553649777
 else:
   static :
     hint("Declaration of " & "compiler_off64_t" &
         " already exists, not redeclaring")
 when not declared(enum_ssl_verify_result_t):
   type
-    enum_ssl_verify_result_t* = enum_ssl_verify_result_t_553649707
+    enum_ssl_verify_result_t* = enum_ssl_verify_result_t_553649709
 else:
   static :
     hint("Declaration of " & "enum_ssl_verify_result_t" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_I2S):
   type
-    X509V3_EXT_I2S* = X509V3_EXT_I2S_553649551
+    X509V3_EXT_I2S* = X509V3_EXT_I2S_553649553
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_I2S" &
         " already exists, not redeclaring")
 when not declared(ERR_FNS):
   type
-    ERR_FNS* = ERR_FNS_553649207
+    ERR_FNS* = ERR_FNS_553649209
 else:
   static :
     hint("Declaration of " & "ERR_FNS" & " already exists, not redeclaring")
 when not declared(sk_SSL_COMP_copy_func):
   type
-    sk_SSL_COMP_copy_func* = sk_SSL_COMP_copy_func_553649747
+    sk_SSL_COMP_copy_func* = sk_SSL_COMP_copy_func_553649749
 else:
   static :
     hint("Declaration of " & "sk_SSL_COMP_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_POLICYINFO_copy_func):
   type
-    sk_POLICYINFO_copy_func* = sk_POLICYINFO_copy_func_553649643
+    sk_POLICYINFO_copy_func* = sk_POLICYINFO_copy_func_553649645
 else:
   static :
     hint("Declaration of " & "sk_POLICYINFO_copy_func" &
@@ -7833,7 +7841,7 @@ else:
         " already exists, not redeclaring")
 when not declared(OPENSSL_STRING):
   type
-    OPENSSL_STRING* = OPENSSL_STRING_553649283
+    OPENSSL_STRING* = OPENSSL_STRING_553649285
 else:
   static :
     hint("Declaration of " & "OPENSSL_STRING" &
@@ -7860,14 +7868,14 @@ else:
     hint("Declaration of " & "DH" & " already exists, not redeclaring")
 when not declared(struct_EC_builtin_curve):
   type
-    struct_EC_builtin_curve* = struct_EC_builtin_curve_553649421
+    struct_EC_builtin_curve* = struct_EC_builtin_curve_553649423
 else:
   static :
     hint("Declaration of " & "struct_EC_builtin_curve" &
         " already exists, not redeclaring")
 when not declared(SSL_ECH_KEYS):
   type
-    SSL_ECH_KEYS* = SSL_ECH_KEYS_553649187
+    SSL_ECH_KEYS* = SSL_ECH_KEYS_553649189
 else:
   static :
     hint("Declaration of " & "SSL_ECH_KEYS" & " already exists, not redeclaring")
@@ -7887,7 +7895,7 @@ else:
         " already exists, not redeclaring")
 when not declared(ACCESS_DESCRIPTION):
   type
-    ACCESS_DESCRIPTION* = ACCESS_DESCRIPTION_553649587
+    ACCESS_DESCRIPTION* = ACCESS_DESCRIPTION_553649589
 else:
   static :
     hint("Declaration of " & "ACCESS_DESCRIPTION" &
@@ -7900,7 +7908,7 @@ else:
     hint("Declaration of " & "BIO_METHOD" & " already exists, not redeclaring")
 when not declared(sk_ACCESS_DESCRIPTION_cmp_func):
   type
-    sk_ACCESS_DESCRIPTION_cmp_func* = sk_ACCESS_DESCRIPTION_cmp_func_553649593
+    sk_ACCESS_DESCRIPTION_cmp_func* = sk_ACCESS_DESCRIPTION_cmp_func_553649595
 else:
   static :
     hint("Declaration of " & "sk_ACCESS_DESCRIPTION_cmp_func" &
@@ -7932,14 +7940,14 @@ else:
     hint("Declaration of " & "ENGINE" & " already exists, not redeclaring")
 when not declared(struct_x509_purpose_st):
   type
-    struct_x509_purpose_st* = struct_x509_purpose_st_553649565
+    struct_x509_purpose_st* = struct_x509_purpose_st_553649567
 else:
   static :
     hint("Declaration of " & "struct_x509_purpose_st" &
         " already exists, not redeclaring")
 when not declared(sk_SSL_COMP_cmp_func):
   type
-    sk_SSL_COMP_cmp_func* = sk_SSL_COMP_cmp_func_553649749
+    sk_SSL_COMP_cmp_func* = sk_SSL_COMP_cmp_func_553649751
 else:
   static :
     hint("Declaration of " & "sk_SSL_COMP_cmp_func" &
@@ -7960,7 +7968,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_ACCESS_DESCRIPTION_free_func):
   type
-    sk_ACCESS_DESCRIPTION_free_func* = sk_ACCESS_DESCRIPTION_free_func_553649589
+    sk_ACCESS_DESCRIPTION_free_func* = sk_ACCESS_DESCRIPTION_free_func_553649591
 else:
   static :
     hint("Declaration of " & "sk_ACCESS_DESCRIPTION_free_func" &
@@ -7981,28 +7989,28 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_client_hello_cb_fn):
   type
-    SSL_client_hello_cb_fn* = SSL_client_hello_cb_fn_553649687
+    SSL_client_hello_cb_fn* = SSL_client_hello_cb_fn_553649689
 else:
   static :
     hint("Declaration of " & "SSL_client_hello_cb_fn" &
         " already exists, not redeclaring")
 when not declared(sk_POLICYQUALINFO_free_func):
   type
-    sk_POLICYQUALINFO_free_func* = sk_POLICYQUALINFO_free_func_553649627
+    sk_POLICYQUALINFO_free_func* = sk_POLICYQUALINFO_free_func_553649629
 else:
   static :
     hint("Declaration of " & "sk_POLICYQUALINFO_free_func" &
         " already exists, not redeclaring")
 when not declared(sk_SSL_CIPHER_cmp_func):
   type
-    sk_SSL_CIPHER_cmp_func* = sk_SSL_CIPHER_cmp_func_553649695
+    sk_SSL_CIPHER_cmp_func* = sk_SSL_CIPHER_cmp_func_553649697
 else:
   static :
     hint("Declaration of " & "sk_SSL_CIPHER_cmp_func" &
         " already exists, not redeclaring")
 when not declared(SSL_psk_client_cb_func):
   type
-    SSL_psk_client_cb_func* = SSL_psk_client_cb_func_553649721
+    SSL_psk_client_cb_func* = SSL_psk_client_cb_func_553649723
 else:
   static :
     hint("Declaration of " & "SSL_psk_client_cb_func" &
@@ -8016,7 +8024,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_OPENSSL_STRING_cmp_func):
   type
-    sk_OPENSSL_STRING_cmp_func* = sk_OPENSSL_STRING_cmp_func_553649297
+    sk_OPENSSL_STRING_cmp_func* = sk_OPENSSL_STRING_cmp_func_553649299
 else:
   static :
     hint("Declaration of " & "sk_OPENSSL_STRING_cmp_func" &
@@ -8029,7 +8037,7 @@ else:
     hint("Declaration of " & "CBS_ASN1_TAG" & " already exists, not redeclaring")
 when not declared(sk_X509_NAME_copy_func):
   type
-    sk_X509_NAME_copy_func* = sk_X509_NAME_copy_func_553649479
+    sk_X509_NAME_copy_func* = sk_X509_NAME_copy_func_553649481
 else:
   static :
     hint("Declaration of " & "sk_X509_NAME_copy_func" &
@@ -8042,89 +8050,89 @@ else:
     hint("Declaration of " & "BIGNUM" & " already exists, not redeclaring")
 when not declared(sk_DIST_POINT_copy_func):
   type
-    sk_DIST_POINT_copy_func* = sk_DIST_POINT_copy_func_553649609
+    sk_DIST_POINT_copy_func* = sk_DIST_POINT_copy_func_553649611
 else:
   static :
     hint("Declaration of " & "sk_DIST_POINT_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_GENERAL_SUBTREE_delete_if_func):
   type
-    sk_GENERAL_SUBTREE_delete_if_func* = sk_GENERAL_SUBTREE_delete_if_func_553649673
+    sk_GENERAL_SUBTREE_delete_if_func* = sk_GENERAL_SUBTREE_delete_if_func_553649675
 else:
   static :
     hint("Declaration of " & "sk_GENERAL_SUBTREE_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(CRYPTO_dynlock):
   type
-    CRYPTO_dynlock* = CRYPTO_dynlock_553649255
+    CRYPTO_dynlock* = CRYPTO_dynlock_553649257
 else:
   static :
     hint("Declaration of " & "CRYPTO_dynlock" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION):
   type
-    SSL_SESSION* = SSL_SESSION_553649199
+    SSL_SESSION* = SSL_SESSION_553649201
 else:
   static :
     hint("Declaration of " & "SSL_SESSION" & " already exists, not redeclaring")
 when not declared(sk_ASN1_INTEGER_delete_if_func):
   type
-    sk_ASN1_INTEGER_delete_if_func* = sk_ASN1_INTEGER_delete_if_func_553649363
+    sk_ASN1_INTEGER_delete_if_func* = sk_ASN1_INTEGER_delete_if_func_553649365
 else:
   static :
     hint("Declaration of " & "sk_ASN1_INTEGER_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(sk_CONF_VALUE_free_func):
   type
-    sk_CONF_VALUE_free_func* = sk_CONF_VALUE_free_func_553649409
+    sk_CONF_VALUE_free_func* = sk_CONF_VALUE_free_func_553649411
 else:
   static :
     hint("Declaration of " & "sk_CONF_VALUE_free_func" &
         " already exists, not redeclaring")
 when not declared(X509_PURPOSE):
   type
-    X509_PURPOSE* = X509_PURPOSE_553649567
+    X509_PURPOSE* = X509_PURPOSE_553649569
 else:
   static :
     hint("Declaration of " & "X509_PURPOSE" & " already exists, not redeclaring")
 when not declared(sk_ASN1_TYPE_copy_func):
   type
-    sk_ASN1_TYPE_copy_func* = sk_ASN1_TYPE_copy_func_553649377
+    sk_ASN1_TYPE_copy_func* = sk_ASN1_TYPE_copy_func_553649379
 else:
   static :
     hint("Declaration of " & "sk_ASN1_TYPE_copy_func" &
         " already exists, not redeclaring")
 when not declared(struct_IO_FILE):
   type
-    struct_IO_FILE* = struct_IO_FILE_553649763
+    struct_IO_FILE* = struct_IO_FILE_553649765
 else:
   static :
     hint("Declaration of " & "struct_IO_FILE" &
         " already exists, not redeclaring")
 when not declared(EXTENDED_KEY_USAGE):
   type
-    EXTENDED_KEY_USAGE* = EXTENDED_KEY_USAGE_553649599
+    EXTENDED_KEY_USAGE* = EXTENDED_KEY_USAGE_553649601
 else:
   static :
     hint("Declaration of " & "EXTENDED_KEY_USAGE" &
         " already exists, not redeclaring")
 when not declared(union_evp_aead_ctx_st_state):
   type
-    union_evp_aead_ctx_st_state* = union_evp_aead_ctx_st_state_553649331
+    union_evp_aead_ctx_st_state* = union_evp_aead_ctx_st_state_553649333
 else:
   static :
     hint("Declaration of " & "union_evp_aead_ctx_st_state" &
         " already exists, not redeclaring")
 when not declared(sk_POLICY_MAPPING_free_func):
   type
-    sk_POLICY_MAPPING_free_func* = sk_POLICY_MAPPING_free_func_553649653
+    sk_POLICY_MAPPING_free_func* = sk_POLICY_MAPPING_free_func_553649655
 else:
   static :
     hint("Declaration of " & "sk_POLICY_MAPPING_free_func" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER):
   type
-    SSL_CIPHER* = SSL_CIPHER_553649179
+    SSL_CIPHER* = SSL_CIPHER_553649181
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER" & " already exists, not redeclaring")
@@ -8137,14 +8145,14 @@ else:
         " already exists, not redeclaring")
 when not declared(struct_ssl_private_key_method_st):
   type
-    struct_ssl_private_key_method_st* = struct_ssl_private_key_method_st_553649193
+    struct_ssl_private_key_method_st* = struct_ssl_private_key_method_st_553649195
 else:
   static :
     hint("Declaration of " & "struct_ssl_private_key_method_st" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_NEW):
   type
-    X509V3_EXT_NEW* = X509V3_EXT_NEW_553649539
+    X509V3_EXT_NEW* = X509V3_EXT_NEW_553649541
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_NEW" &
@@ -8158,7 +8166,7 @@ else:
         " already exists, not redeclaring")
 when not declared(EC_builtin_curve):
   type
-    EC_builtin_curve* = EC_builtin_curve_553649423
+    EC_builtin_curve* = EC_builtin_curve_553649425
 else:
   static :
     hint("Declaration of " & "EC_builtin_curve" &
@@ -8178,7 +8186,7 @@ else:
     hint("Declaration of " & "BLAKE2B_CTX" & " already exists, not redeclaring")
 when not declared(GENERAL_SUBTREE):
   type
-    GENERAL_SUBTREE* = GENERAL_SUBTREE_553649665
+    GENERAL_SUBTREE* = GENERAL_SUBTREE_553649667
 else:
   static :
     hint("Declaration of " & "GENERAL_SUBTREE" &
@@ -8212,21 +8220,21 @@ else:
     hint("Declaration of " & "X509_REQ" & " already exists, not redeclaring")
 when not declared(OPENSSL_BLOCK):
   type
-    OPENSSL_BLOCK* = OPENSSL_BLOCK_553649245
+    OPENSSL_BLOCK* = OPENSSL_BLOCK_553649247
 else:
   static :
     hint("Declaration of " & "OPENSSL_BLOCK" &
         " already exists, not redeclaring")
 when not declared(sk_ASN1_TYPE_delete_if_func):
   type
-    sk_ASN1_TYPE_delete_if_func* = sk_ASN1_TYPE_delete_if_func_553649381
+    sk_ASN1_TYPE_delete_if_func* = sk_ASN1_TYPE_delete_if_func_553649383
 else:
   static :
     hint("Declaration of " & "sk_ASN1_TYPE_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(struct_obj_name_st):
   type
-    struct_obj_name_st* = struct_obj_name_st_553649341
+    struct_obj_name_st* = struct_obj_name_st_553649343
 else:
   static :
     hint("Declaration of " & "struct_obj_name_st" &
@@ -8239,7 +8247,7 @@ else:
     hint("Declaration of " & "RAND_METHOD" & " already exists, not redeclaring")
 when not declared(RSA_METHOD):
   type
-    RSA_METHOD* = RSA_METHOD_553649151
+    RSA_METHOD* = RSA_METHOD_553649153
 else:
   static :
     hint("Declaration of " & "RSA_METHOD" & " already exists, not redeclaring")
@@ -8252,14 +8260,14 @@ else:
         " already exists, not redeclaring")
 when not declared(ERR_print_errors_callback_t):
   type
-    ERR_print_errors_callback_t* = ERR_print_errors_callback_t_553649259
+    ERR_print_errors_callback_t* = ERR_print_errors_callback_t_553649261
 else:
   static :
     hint("Declaration of " & "ERR_print_errors_callback_t" &
         " already exists, not redeclaring")
 when not declared(struct_v3_ext_method):
   type
-    struct_v3_ext_method* = struct_v3_ext_method_553649223
+    struct_v3_ext_method* = struct_v3_ext_method_553649225
 else:
   static :
     hint("Declaration of " & "struct_v3_ext_method" &
@@ -8272,21 +8280,21 @@ else:
     hint("Declaration of " & "BN_CTX" & " already exists, not redeclaring")
 when not declared(sk_SSL_CIPHER_free_func):
   type
-    sk_SSL_CIPHER_free_func* = sk_SSL_CIPHER_free_func_553649691
+    sk_SSL_CIPHER_free_func* = sk_SSL_CIPHER_free_func_553649693
 else:
   static :
     hint("Declaration of " & "sk_SSL_CIPHER_free_func" &
         " already exists, not redeclaring")
 when not declared(struct_crypto_ex_data_st):
   type
-    struct_crypto_ex_data_st* = struct_crypto_ex_data_st_553649303
+    struct_crypto_ex_data_st* = struct_crypto_ex_data_st_553649305
 else:
   static :
     hint("Declaration of " & "struct_crypto_ex_data_st" &
         " already exists, not redeclaring")
 when not declared(sk_PKCS7_SIGNER_INFO_cmp_func):
   type
-    sk_PKCS7_SIGNER_INFO_cmp_func* = sk_PKCS7_SIGNER_INFO_cmp_func_553649403
+    sk_PKCS7_SIGNER_INFO_cmp_func* = sk_PKCS7_SIGNER_INFO_cmp_func_553649405
 else:
   static :
     hint("Declaration of " & "sk_PKCS7_SIGNER_INFO_cmp_func" &
@@ -8300,7 +8308,7 @@ else:
         " already exists, not redeclaring")
 when not declared(SPAKE2_CTX):
   type
-    SPAKE2_CTX* = SPAKE2_CTX_553649173
+    SPAKE2_CTX* = SPAKE2_CTX_553649175
 else:
   static :
     hint("Declaration of " & "SPAKE2_CTX" & " already exists, not redeclaring")
@@ -8313,35 +8321,35 @@ else:
         " already exists, not redeclaring")
 when not declared(struct_sha256_state_st):
   type
-    struct_sha256_state_st* = struct_sha256_state_st_553649163
+    struct_sha256_state_st* = struct_sha256_state_st_553649165
 else:
   static :
     hint("Declaration of " & "struct_sha256_state_st" &
         " already exists, not redeclaring")
 when not declared(sk_PKCS7_SIGNER_INFO_free_func):
   type
-    sk_PKCS7_SIGNER_INFO_free_func* = sk_PKCS7_SIGNER_INFO_free_func_553649399
+    sk_PKCS7_SIGNER_INFO_free_func* = sk_PKCS7_SIGNER_INFO_free_func_553649401
 else:
   static :
     hint("Declaration of " & "sk_PKCS7_SIGNER_INFO_free_func" &
         " already exists, not redeclaring")
 when not declared(sk_GENERAL_SUBTREE_free_func):
   type
-    sk_GENERAL_SUBTREE_free_func* = sk_GENERAL_SUBTREE_free_func_553649667
+    sk_GENERAL_SUBTREE_free_func* = sk_GENERAL_SUBTREE_free_func_553649669
 else:
   static :
     hint("Declaration of " & "sk_GENERAL_SUBTREE_free_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_ALGOR_free_func):
   type
-    sk_X509_ALGOR_free_func* = sk_X509_ALGOR_free_func_553649503
+    sk_X509_ALGOR_free_func* = sk_X509_ALGOR_free_func_553649505
 else:
   static :
     hint("Declaration of " & "sk_X509_ALGOR_free_func" &
         " already exists, not redeclaring")
 when not declared(struct_timeval):
   type
-    struct_timeval* = struct_timeval_553649685
+    struct_timeval* = struct_timeval_553649687
 else:
   static :
     hint("Declaration of " & "struct_timeval" &
@@ -8368,14 +8376,14 @@ else:
     hint("Declaration of " & "ASN1_TYPE" & " already exists, not redeclaring")
 when not declared(sk_CRYPTO_BUFFER_delete_if_func):
   type
-    sk_CRYPTO_BUFFER_delete_if_func* = sk_CRYPTO_BUFFER_delete_if_func_553649433
+    sk_CRYPTO_BUFFER_delete_if_func* = sk_CRYPTO_BUFFER_delete_if_func_553649435
 else:
   static :
     hint("Declaration of " & "sk_CRYPTO_BUFFER_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(sk_POLICY_MAPPING_copy_func):
   type
-    sk_POLICY_MAPPING_copy_func* = sk_POLICY_MAPPING_copy_func_553649655
+    sk_POLICY_MAPPING_copy_func* = sk_POLICY_MAPPING_copy_func_553649657
 else:
   static :
     hint("Declaration of " & "sk_POLICY_MAPPING_copy_func" &
@@ -8408,7 +8416,7 @@ else:
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_I2V):
   type
-    X509V3_EXT_I2V* = X509V3_EXT_I2V_553649547
+    X509V3_EXT_I2V* = X509V3_EXT_I2V_553649549
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_I2V" &
@@ -8421,7 +8429,7 @@ else:
     hint("Declaration of " & "PKCS7_DIGEST" & " already exists, not redeclaring")
 when not declared(sk_X509_PURPOSE_delete_if_func):
   type
-    sk_X509_PURPOSE_delete_if_func* = sk_X509_PURPOSE_delete_if_func_553649575
+    sk_X509_PURPOSE_delete_if_func* = sk_X509_PURPOSE_delete_if_func_553649577
 else:
   static :
     hint("Declaration of " & "sk_X509_PURPOSE_delete_if_func" &
@@ -8442,14 +8450,14 @@ else:
         " already exists, not redeclaring")
 when not declared(CRYPTO_refcount_t):
   type
-    CRYPTO_refcount_t* = CRYPTO_refcount_t_553649251
+    CRYPTO_refcount_t* = CRYPTO_refcount_t_553649253
 else:
   static :
     hint("Declaration of " & "CRYPTO_refcount_t" &
         " already exists, not redeclaring")
 when not declared(struct_POLICY_CONSTRAINTS_st):
   type
-    struct_POLICY_CONSTRAINTS_st* = struct_POLICY_CONSTRAINTS_st_553649675
+    struct_POLICY_CONSTRAINTS_st* = struct_POLICY_CONSTRAINTS_st_553649677
 else:
   static :
     hint("Declaration of " & "struct_POLICY_CONSTRAINTS_st" &
@@ -8463,13 +8471,13 @@ else:
         " already exists, not redeclaring")
 when not declared(sa_family_t):
   type
-    sa_family_t* = sa_family_t_553649753
+    sa_family_t* = sa_family_t_553649755
 else:
   static :
     hint("Declaration of " & "sa_family_t" & " already exists, not redeclaring")
 when not declared(sk_X509_CRL_cmp_func):
   type
-    sk_X509_CRL_cmp_func* = sk_X509_CRL_cmp_func_553649457
+    sk_X509_CRL_cmp_func* = sk_X509_CRL_cmp_func_553649459
 else:
   static :
     hint("Declaration of " & "sk_X509_CRL_cmp_func" &
@@ -8490,7 +8498,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_REVOKED_free_func):
   type
-    sk_X509_REVOKED_free_func* = sk_X509_REVOKED_free_func_553649461
+    sk_X509_REVOKED_free_func* = sk_X509_REVOKED_free_func_553649463
 else:
   static :
     hint("Declaration of " & "sk_X509_REVOKED_free_func" &
@@ -8504,7 +8512,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_REVOKED_copy_func):
   type
-    sk_X509_REVOKED_copy_func* = sk_X509_REVOKED_copy_func_553649463
+    sk_X509_REVOKED_copy_func* = sk_X509_REVOKED_copy_func_553649465
 else:
   static :
     hint("Declaration of " & "sk_X509_REVOKED_copy_func" &
@@ -8525,7 +8533,7 @@ else:
         " already exists, not redeclaring")
 when not declared(struct_srtp_protection_profile_st):
   type
-    struct_srtp_protection_profile_st* = struct_srtp_protection_profile_st_553649177
+    struct_srtp_protection_profile_st* = struct_srtp_protection_profile_st_553649179
 else:
   static :
     hint("Declaration of " & "struct_srtp_protection_profile_st" &
@@ -8550,47 +8558,47 @@ else:
     hint("Declaration of " & "X509_PUBKEY" & " already exists, not redeclaring")
 when not declared(enum_ssl_ticket_aead_result_t):
   type
-    enum_ssl_ticket_aead_result_t* = enum_ssl_ticket_aead_result_t_553649705
+    enum_ssl_ticket_aead_result_t* = enum_ssl_ticket_aead_result_t_553649707
 else:
   static :
     hint("Declaration of " & "enum_ssl_ticket_aead_result_t" &
         " already exists, not redeclaring")
 when not declared(CRYPTO_MUTEX):
   type
-    CRYPTO_MUTEX* = CRYPTO_MUTEX_553649249
+    CRYPTO_MUTEX* = CRYPTO_MUTEX_553649251
 else:
   static :
     hint("Declaration of " & "CRYPTO_MUTEX" & " already exists, not redeclaring")
 when not declared(sk_X509_INFO_free_func):
   type
-    sk_X509_INFO_free_func* = sk_X509_INFO_free_func_553649531
+    sk_X509_INFO_free_func* = sk_X509_INFO_free_func_553649533
 else:
   static :
     hint("Declaration of " & "sk_X509_INFO_free_func" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_V2I):
   type
-    X509V3_EXT_V2I* = X509V3_EXT_V2I_553649549
+    X509V3_EXT_V2I* = X509V3_EXT_V2I_553649551
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_V2I" &
         " already exists, not redeclaring")
 when not declared(struct_x509_trust_st):
   type
-    struct_x509_trust_st* = struct_x509_trust_st_553649243
+    struct_x509_trust_st* = struct_x509_trust_st_553649245
 else:
   static :
     hint("Declaration of " & "struct_x509_trust_st" &
         " already exists, not redeclaring")
 when not declared(Cfile):
   type
-    Cfile* = Cfile_553649261
+    Cfile* = Cfile_553649263
 else:
   static :
     hint("Declaration of " & "Cfile" & " already exists, not redeclaring")
 when not declared(static_assertion_at_line_255_error_is_max_overheads_are_inconsistent):
   type
-    static_assertion_at_line_255_error_is_max_overheads_are_inconsistent* = static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649683
+    static_assertion_at_line_255_error_is_max_overheads_are_inconsistent* = static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649685
 else:
   static :
     hint("Declaration of " &
@@ -8598,7 +8606,7 @@ else:
         " already exists, not redeclaring")
 when not declared(struct_ssl_comp_st):
   type
-    struct_ssl_comp_st* = struct_ssl_comp_st_553649743
+    struct_ssl_comp_st* = struct_ssl_comp_st_553649745
 else:
   static :
     hint("Declaration of " & "struct_ssl_comp_st" &
@@ -8618,20 +8626,20 @@ else:
         " already exists, not redeclaring")
 when not declared(POLICYINFO):
   type
-    POLICYINFO* = POLICYINFO_553649637
+    POLICYINFO* = POLICYINFO_553649639
 else:
   static :
     hint("Declaration of " & "POLICYINFO" & " already exists, not redeclaring")
 when not declared(sk_X509_PURPOSE_cmp_func):
   type
-    sk_X509_PURPOSE_cmp_func* = sk_X509_PURPOSE_cmp_func_553649573
+    sk_X509_PURPOSE_cmp_func* = sk_X509_PURPOSE_cmp_func_553649575
 else:
   static :
     hint("Declaration of " & "sk_X509_PURPOSE_cmp_func" &
         " already exists, not redeclaring")
 when not declared(struct_tm):
   type
-    struct_tm* = struct_tm_553649335
+    struct_tm* = struct_tm_553649337
 else:
   static :
     hint("Declaration of " & "struct_tm" & " already exists, not redeclaring")
@@ -8650,7 +8658,7 @@ else:
     hint("Declaration of " & "X509_INFO" & " already exists, not redeclaring")
 when not declared(SHA_CTX):
   type
-    SHA_CTX* = SHA_CTX_553649169
+    SHA_CTX* = SHA_CTX_553649171
 else:
   static :
     hint("Declaration of " & "SHA_CTX" & " already exists, not redeclaring")
@@ -8675,7 +8683,7 @@ else:
     hint("Declaration of " & "MD5_CTX" & " already exists, not redeclaring")
 when not declared(sk_OPENSSL_STRING_free_func):
   type
-    sk_OPENSSL_STRING_free_func* = sk_OPENSSL_STRING_free_func_553649293
+    sk_OPENSSL_STRING_free_func* = sk_OPENSSL_STRING_free_func_553649295
 else:
   static :
     hint("Declaration of " & "sk_OPENSSL_STRING_free_func" &
@@ -8707,14 +8715,14 @@ else:
         " already exists, not redeclaring")
 when not declared(CRYPTO_EX_dup):
   type
-    CRYPTO_EX_dup* = CRYPTO_EX_dup_553649307
+    CRYPTO_EX_dup* = CRYPTO_EX_dup_553649309
 else:
   static :
     hint("Declaration of " & "CRYPTO_EX_dup" &
         " already exists, not redeclaring")
 when not declared(CRYPTO_EX_unused):
   type
-    CRYPTO_EX_unused* = CRYPTO_EX_unused_553649309
+    CRYPTO_EX_unused* = CRYPTO_EX_unused_553649311
 else:
   static :
     hint("Declaration of " & "CRYPTO_EX_unused" &
@@ -8728,21 +8736,21 @@ else:
         " already exists, not redeclaring")
 when not declared(CRYPTO_EX_DATA):
   type
-    CRYPTO_EX_DATA* = CRYPTO_EX_DATA_553649301
+    CRYPTO_EX_DATA* = CRYPTO_EX_DATA_553649303
 else:
   static :
     hint("Declaration of " & "CRYPTO_EX_DATA" &
         " already exists, not redeclaring")
 when not declared(sk_X509_cmp_func):
   type
-    sk_X509_cmp_func* = sk_X509_cmp_func_553649439
+    sk_X509_cmp_func* = sk_X509_cmp_func_553649441
 else:
   static :
     hint("Declaration of " & "sk_X509_cmp_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_NAME_free_func):
   type
-    sk_X509_NAME_free_func* = sk_X509_NAME_free_func_553649477
+    sk_X509_NAME_free_func* = sk_X509_NAME_free_func_553649479
 else:
   static :
     hint("Declaration of " & "sk_X509_NAME_free_func" &
@@ -8763,7 +8771,7 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_custom_ext_free_cb):
   type
-    SSL_custom_ext_free_cb* = SSL_custom_ext_free_cb_553649701
+    SSL_custom_ext_free_cb* = SSL_custom_ext_free_cb_553649703
 else:
   static :
     hint("Declaration of " & "SSL_custom_ext_free_cb" &
@@ -8777,28 +8785,28 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_TICKET_AEAD_METHOD):
   type
-    SSL_TICKET_AEAD_METHOD* = SSL_TICKET_AEAD_METHOD_553649203
+    SSL_TICKET_AEAD_METHOD* = SSL_TICKET_AEAD_METHOD_553649205
 else:
   static :
     hint("Declaration of " & "SSL_TICKET_AEAD_METHOD" &
         " already exists, not redeclaring")
 when not declared(enum_ssl_select_cert_result_t):
   type
-    enum_ssl_select_cert_result_t* = enum_ssl_select_cert_result_t_553649731
+    enum_ssl_select_cert_result_t* = enum_ssl_select_cert_result_t_553649733
 else:
   static :
     hint("Declaration of " & "enum_ssl_select_cert_result_t" &
         " already exists, not redeclaring")
 when not declared(struct_cbb_buffer_st):
   type
-    struct_cbb_buffer_st* = struct_cbb_buffer_st_553649337
+    struct_cbb_buffer_st* = struct_cbb_buffer_st_553649339
 else:
   static :
     hint("Declaration of " & "struct_cbb_buffer_st" &
         " already exists, not redeclaring")
 when not declared(struct_DIST_POINT_NAME_st):
   type
-    struct_DIST_POINT_NAME_st* = struct_DIST_POINT_NAME_st_553649601
+    struct_DIST_POINT_NAME_st* = struct_DIST_POINT_NAME_st_553649603
 else:
   static :
     hint("Declaration of " & "struct_DIST_POINT_NAME_st" &
@@ -8878,7 +8886,7 @@ else:
     hint("Declaration of " & "CBB" & " already exists, not redeclaring")
 when not declared(sk_X509_OBJECT_copy_func):
   type
-    sk_X509_OBJECT_copy_func* = sk_X509_OBJECT_copy_func_553649521
+    sk_X509_OBJECT_copy_func* = sk_X509_OBJECT_copy_func_553649523
 else:
   static :
     hint("Declaration of " & "sk_X509_OBJECT_copy_func" &
@@ -8892,7 +8900,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_EXTENSION_cmp_func):
   type
-    sk_X509_EXTENSION_cmp_func* = sk_X509_EXTENSION_cmp_func_553649489
+    sk_X509_EXTENSION_cmp_func* = sk_X509_EXTENSION_cmp_func_553649491
 else:
   static :
     hint("Declaration of " & "sk_X509_EXTENSION_cmp_func" &
@@ -8932,7 +8940,7 @@ else:
     hint("Declaration of " & "ngtcp2_addr" & " already exists, not redeclaring")
 when not declared(SSL_METHOD):
   type
-    SSL_METHOD* = SSL_METHOD_553649189
+    SSL_METHOD* = SSL_METHOD_553649191
 else:
   static :
     hint("Declaration of " & "SSL_METHOD" & " already exists, not redeclaring")
@@ -8952,7 +8960,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_CRL_copy_func):
   type
-    sk_X509_CRL_copy_func* = sk_X509_CRL_copy_func_553649455
+    sk_X509_CRL_copy_func* = sk_X509_CRL_copy_func_553649457
 else:
   static :
     hint("Declaration of " & "sk_X509_CRL_copy_func" &
@@ -8966,7 +8974,7 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_psk_server_cb_func):
   type
-    SSL_psk_server_cb_func* = SSL_psk_server_cb_func_553649723
+    SSL_psk_server_cb_func* = SSL_psk_server_cb_func_553649725
 else:
   static :
     hint("Declaration of " & "SSL_psk_server_cb_func" &
@@ -8980,7 +8988,7 @@ else:
         " already exists, not redeclaring")
 when not declared(X509V3_CTX):
   type
-    X509V3_CTX* = X509V3_CTX_553649217
+    X509V3_CTX* = X509V3_CTX_553649219
 else:
   static :
     hint("Declaration of " & "X509V3_CTX" & " already exists, not redeclaring")
@@ -8993,7 +9001,7 @@ else:
         " already exists, not redeclaring")
 when not declared(struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent):
   type
-    struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent* = struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649681
+    struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent* = struct_static_assertion_at_line_255_error_is_max_overheads_are_inconsistent_553649683
 else:
   static :
     hint("Declaration of " &
@@ -9008,7 +9016,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_SRTP_PROTECTION_PROFILE_copy_func):
   type
-    sk_SRTP_PROTECTION_PROFILE_copy_func* = sk_SRTP_PROTECTION_PROFILE_copy_func_553649715
+    sk_SRTP_PROTECTION_PROFILE_copy_func* = sk_SRTP_PROTECTION_PROFILE_copy_func_553649717
 else:
   static :
     hint("Declaration of " & "sk_SRTP_PROTECTION_PROFILE_copy_func" &
@@ -9028,14 +9036,14 @@ else:
     hint("Declaration of " & "ASN1_BOOLEAN" & " already exists, not redeclaring")
 when not declared(sk_DIST_POINT_free_func):
   type
-    sk_DIST_POINT_free_func* = sk_DIST_POINT_free_func_553649607
+    sk_DIST_POINT_free_func* = sk_DIST_POINT_free_func_553649609
 else:
   static :
     hint("Declaration of " & "sk_DIST_POINT_free_func" &
         " already exists, not redeclaring")
 when not declared(BIO_callback_fn):
   type
-    BIO_callback_fn* = BIO_callback_fn_553649323
+    BIO_callback_fn* = BIO_callback_fn_553649325
 else:
   static :
     hint("Declaration of " & "BIO_callback_fn" &
@@ -9048,33 +9056,33 @@ else:
     hint("Declaration of " & "OCSP_REQ_CTX" & " already exists, not redeclaring")
 when not declared(sk_X509_REVOKED_delete_if_func):
   type
-    sk_X509_REVOKED_delete_if_func* = sk_X509_REVOKED_delete_if_func_553649467
+    sk_X509_REVOKED_delete_if_func* = sk_X509_REVOKED_delete_if_func_553649469
 else:
   static :
     hint("Declaration of " & "sk_X509_REVOKED_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(SSL_CONF_CTX):
   type
-    SSL_CONF_CTX* = SSL_CONF_CTX_553649737
+    SSL_CONF_CTX* = SSL_CONF_CTX_553649739
 else:
   static :
     hint("Declaration of " & "SSL_CONF_CTX" & " already exists, not redeclaring")
 when not declared(sk_ASN1_INTEGER_cmp_func):
   type
-    sk_ASN1_INTEGER_cmp_func* = sk_ASN1_INTEGER_cmp_func_553649361
+    sk_ASN1_INTEGER_cmp_func* = sk_ASN1_INTEGER_cmp_func_553649363
 else:
   static :
     hint("Declaration of " & "sk_ASN1_INTEGER_cmp_func" &
         " already exists, not redeclaring")
 when not declared(EC_METHOD):
   type
-    EC_METHOD* = EC_METHOD_553649425
+    EC_METHOD* = EC_METHOD_553649427
 else:
   static :
     hint("Declaration of " & "EC_METHOD" & " already exists, not redeclaring")
 when not declared(OTHERNAME):
   type
-    OTHERNAME* = OTHERNAME_553649497
+    OTHERNAME* = OTHERNAME_553649499
 else:
   static :
     hint("Declaration of " & "OTHERNAME" & " already exists, not redeclaring")
@@ -9100,41 +9108,48 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_GENERAL_SUBTREE_cmp_func):
   type
-    sk_GENERAL_SUBTREE_cmp_func* = sk_GENERAL_SUBTREE_cmp_func_553649671
+    sk_GENERAL_SUBTREE_cmp_func* = sk_GENERAL_SUBTREE_cmp_func_553649673
 else:
   static :
     hint("Declaration of " & "sk_GENERAL_SUBTREE_cmp_func" &
         " already exists, not redeclaring")
 when not declared(sk_POLICYINFO_cmp_func):
   type
-    sk_POLICYINFO_cmp_func* = sk_POLICYINFO_cmp_func_553649645
+    sk_POLICYINFO_cmp_func* = sk_POLICYINFO_cmp_func_553649647
 else:
   static :
     hint("Declaration of " & "sk_POLICYINFO_cmp_func" &
         " already exists, not redeclaring")
+when not declared(struct_rand_meth_st):
+  type
+    struct_rand_meth_st* = struct_rand_meth_st_553649149
+else:
+  static :
+    hint("Declaration of " & "struct_rand_meth_st" &
+        " already exists, not redeclaring")
 when not declared(SSL):
   type
-    SSL* = SSL_553649201
+    SSL* = SSL_553649203
 else:
   static :
     hint("Declaration of " & "SSL" & " already exists, not redeclaring")
 when not declared(struct_rsa_pss_params_st):
   type
-    struct_rsa_pss_params_st* = struct_rsa_pss_params_st_553649157
+    struct_rsa_pss_params_st* = struct_rsa_pss_params_st_553649159
 else:
   static :
     hint("Declaration of " & "struct_rsa_pss_params_st" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX):
   type
-    X509_STORE_CTX* = X509_STORE_CTX_553649237
+    X509_STORE_CTX* = X509_STORE_CTX_553649239
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_STACK):
   type
-    OPENSSL_STACK* = OPENSSL_STACK_553649279
+    OPENSSL_STACK* = OPENSSL_STACK_553649281
 else:
   static :
     hint("Declaration of " & "OPENSSL_STACK" &
@@ -9162,7 +9177,7 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get_crl_fn):
   type
-    X509_STORE_CTX_get_crl_fn* = X509_STORE_CTX_get_crl_fn_553649561
+    X509_STORE_CTX_get_crl_fn* = X509_STORE_CTX_get_crl_fn_553649563
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get_crl_fn" &
@@ -9188,14 +9203,14 @@ else:
     hint("Declaration of " & "ECDSA_SIG" & " already exists, not redeclaring")
 when not declared(enum_evp_aead_direction_t):
   type
-    enum_evp_aead_direction_t* = enum_evp_aead_direction_t_553649333
+    enum_evp_aead_direction_t* = enum_evp_aead_direction_t_553649335
 else:
   static :
     hint("Declaration of " & "enum_evp_aead_direction_t" &
         " already exists, not redeclaring")
 when not declared(sk_SRTP_PROTECTION_PROFILE_free_func):
   type
-    sk_SRTP_PROTECTION_PROFILE_free_func* = sk_SRTP_PROTECTION_PROFILE_free_func_553649713
+    sk_SRTP_PROTECTION_PROFILE_free_func* = sk_SRTP_PROTECTION_PROFILE_free_func_553649715
 else:
   static :
     hint("Declaration of " & "sk_SRTP_PROTECTION_PROFILE_free_func" &
@@ -9228,21 +9243,21 @@ else:
         " already exists, not redeclaring")
 when not declared(SRTP_PROTECTION_PROFILE):
   type
-    SRTP_PROTECTION_PROFILE* = SRTP_PROTECTION_PROFILE_553649175
+    SRTP_PROTECTION_PROFILE* = SRTP_PROTECTION_PROFILE_553649177
 else:
   static :
     hint("Declaration of " & "SRTP_PROTECTION_PROFILE" &
         " already exists, not redeclaring")
 when not declared(sk_SSL_CIPHER_copy_func):
   type
-    sk_SSL_CIPHER_copy_func* = sk_SSL_CIPHER_copy_func_553649693
+    sk_SSL_CIPHER_copy_func* = sk_SSL_CIPHER_copy_func_553649695
 else:
   static :
     hint("Declaration of " & "sk_SSL_CIPHER_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_SSL_COMP_free_func):
   type
-    sk_SSL_COMP_free_func* = sk_SSL_COMP_free_func_553649745
+    sk_SSL_COMP_free_func* = sk_SSL_COMP_free_func_553649747
 else:
   static :
     hint("Declaration of " & "sk_SSL_COMP_free_func" &
@@ -9288,28 +9303,28 @@ else:
     hint("Declaration of " & "ngtcp2_vec" & " already exists, not redeclaring")
 when not declared(X509V3_EXT_METHOD):
   type
-    X509V3_EXT_METHOD* = X509V3_EXT_METHOD_553649221
+    X509V3_EXT_METHOD* = X509V3_EXT_METHOD_553649223
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_METHOD" &
         " already exists, not redeclaring")
 when not declared(sk_CONF_VALUE_cmp_func):
   type
-    sk_CONF_VALUE_cmp_func* = sk_CONF_VALUE_cmp_func_553649413
+    sk_CONF_VALUE_cmp_func* = sk_CONF_VALUE_cmp_func_553649415
 else:
   static :
     hint("Declaration of " & "sk_CONF_VALUE_cmp_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_ATTRIBUTE_copy_func):
   type
-    sk_X509_ATTRIBUTE_copy_func* = sk_X509_ATTRIBUTE_copy_func_553649513
+    sk_X509_ATTRIBUTE_copy_func* = sk_X509_ATTRIBUTE_copy_func_553649515
 else:
   static :
     hint("Declaration of " & "sk_X509_ATTRIBUTE_copy_func" &
         " already exists, not redeclaring")
 when not declared(NOTICEREF):
   type
-    NOTICEREF* = NOTICEREF_553649617
+    NOTICEREF* = NOTICEREF_553649619
 else:
   static :
     hint("Declaration of " & "NOTICEREF" & " already exists, not redeclaring")
@@ -9328,7 +9343,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_void_cmp_func):
   type
-    sk_void_cmp_func* = sk_void_cmp_func_553649289
+    sk_void_cmp_func* = sk_void_cmp_func_553649291
 else:
   static :
     hint("Declaration of " & "sk_void_cmp_func" &
@@ -9354,7 +9369,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_NAME_ENTRY_free_func):
   type
-    sk_X509_NAME_ENTRY_free_func* = sk_X509_NAME_ENTRY_free_func_553649469
+    sk_X509_NAME_ENTRY_free_func* = sk_X509_NAME_ENTRY_free_func_553649471
 else:
   static :
     hint("Declaration of " & "sk_X509_NAME_ENTRY_free_func" &
@@ -9375,21 +9390,21 @@ else:
         " already exists, not redeclaring")
 when not declared(struct_ACCESS_DESCRIPTION_st):
   type
-    struct_ACCESS_DESCRIPTION_st* = struct_ACCESS_DESCRIPTION_st_553649585
+    struct_ACCESS_DESCRIPTION_st* = struct_ACCESS_DESCRIPTION_st_553649587
 else:
   static :
     hint("Declaration of " & "struct_ACCESS_DESCRIPTION_st" &
         " already exists, not redeclaring")
 when not declared(sk_BIO_free_func):
   type
-    sk_BIO_free_func* = sk_BIO_free_func_553649311
+    sk_BIO_free_func* = sk_BIO_free_func_553649313
 else:
   static :
     hint("Declaration of " & "sk_BIO_free_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_NAME_delete_if_func):
   type
-    sk_X509_NAME_delete_if_func* = sk_X509_NAME_delete_if_func_553649483
+    sk_X509_NAME_delete_if_func* = sk_X509_NAME_delete_if_func_553649485
 else:
   static :
     hint("Declaration of " & "sk_X509_NAME_delete_if_func" &
@@ -9403,14 +9418,14 @@ else:
         " already exists, not redeclaring")
 when not declared(pem_password_cb):
   type
-    pem_password_cb* = pem_password_cb_553649679
+    pem_password_cb* = pem_password_cb_553649681
 else:
   static :
     hint("Declaration of " & "pem_password_cb" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_free_func):
   type
-    OPENSSL_sk_free_func* = OPENSSL_sk_free_func_553649263
+    OPENSSL_sk_free_func* = OPENSSL_sk_free_func_553649265
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_free_func" &
@@ -9431,21 +9446,21 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_EXTENSION_delete_if_func):
   type
-    sk_X509_EXTENSION_delete_if_func* = sk_X509_EXTENSION_delete_if_func_553649491
+    sk_X509_EXTENSION_delete_if_func* = sk_X509_EXTENSION_delete_if_func_553649493
 else:
   static :
     hint("Declaration of " & "sk_X509_EXTENSION_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_ATTRIBUTE_free_func):
   type
-    sk_X509_ATTRIBUTE_free_func* = sk_X509_ATTRIBUTE_free_func_553649511
+    sk_X509_ATTRIBUTE_free_func* = sk_X509_ATTRIBUTE_free_func_553649513
 else:
   static :
     hint("Declaration of " & "sk_X509_ATTRIBUTE_free_func" &
         " already exists, not redeclaring")
 when not declared(sk_POLICY_MAPPING_delete_if_func):
   type
-    sk_POLICY_MAPPING_delete_if_func* = sk_POLICY_MAPPING_delete_if_func_553649659
+    sk_POLICY_MAPPING_delete_if_func* = sk_POLICY_MAPPING_delete_if_func_553649661
 else:
   static :
     hint("Declaration of " & "sk_POLICY_MAPPING_delete_if_func" &
@@ -9466,21 +9481,21 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_QUIC_METHOD):
   type
-    SSL_QUIC_METHOD* = SSL_QUIC_METHOD_553649195
+    SSL_QUIC_METHOD* = SSL_QUIC_METHOD_553649197
 else:
   static :
     hint("Declaration of " & "SSL_QUIC_METHOD" &
         " already exists, not redeclaring")
 when not declared(struct_in6_addr):
   type
-    struct_in6_addr* = struct_in6_addr_553649759
+    struct_in6_addr* = struct_in6_addr_553649761
 else:
   static :
     hint("Declaration of " & "struct_in6_addr" &
         " already exists, not redeclaring")
 when not declared(sk_POLICYINFO_delete_if_func):
   type
-    sk_POLICYINFO_delete_if_func* = sk_POLICYINFO_delete_if_func_553649647
+    sk_POLICYINFO_delete_if_func* = sk_POLICYINFO_delete_if_func_553649649
 else:
   static :
     hint("Declaration of " & "sk_POLICYINFO_delete_if_func" &
@@ -9515,13 +9530,13 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_OBJECT):
   type
-    X509_OBJECT* = X509_OBJECT_553649231
+    X509_OBJECT* = X509_OBJECT_553649233
 else:
   static :
     hint("Declaration of " & "X509_OBJECT" & " already exists, not redeclaring")
 when not declared(SHA512_CTX):
   type
-    SHA512_CTX* = SHA512_CTX_553649165
+    SHA512_CTX* = SHA512_CTX_553649167
 else:
   static :
     hint("Declaration of " & "SHA512_CTX" & " already exists, not redeclaring")
@@ -9541,28 +9556,28 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_free_func):
   type
-    sk_X509_free_func* = sk_X509_free_func_553649435
+    sk_X509_free_func* = sk_X509_free_func_553649437
 else:
   static :
     hint("Declaration of " & "sk_X509_free_func" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_I2D_typedef):
   type
-    X509V3_EXT_I2D_typedef* = X509V3_EXT_I2D_typedef_553649545
+    X509V3_EXT_I2D_typedef* = X509V3_EXT_I2D_typedef_553649547
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_I2D_typedef" &
         " already exists, not redeclaring")
 when not declared(sk_void_delete_if_func):
   type
-    sk_void_delete_if_func* = sk_void_delete_if_func_553649291
+    sk_void_delete_if_func* = sk_void_delete_if_func_553649293
 else:
   static :
     hint("Declaration of " & "sk_void_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_OBJECT_free_func):
   type
-    sk_X509_OBJECT_free_func* = sk_X509_OBJECT_free_func_553649519
+    sk_X509_OBJECT_free_func* = sk_X509_OBJECT_free_func_553649521
 else:
   static :
     hint("Declaration of " & "sk_X509_OBJECT_free_func" &
@@ -9575,35 +9590,35 @@ else:
     hint("Declaration of " & "DIST_POINT" & " already exists, not redeclaring")
 when not declared(OPENSSL_sk_cmp_func):
   type
-    OPENSSL_sk_cmp_func* = OPENSSL_sk_cmp_func_553649267
+    OPENSSL_sk_cmp_func* = OPENSSL_sk_cmp_func_553649269
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_cmp_func" &
         " already exists, not redeclaring")
 when not declared(CRL_DIST_POINTS):
   type
-    CRL_DIST_POINTS* = CRL_DIST_POINTS_553649605
+    CRL_DIST_POINTS* = CRL_DIST_POINTS_553649607
 else:
   static :
     hint("Declaration of " & "CRL_DIST_POINTS" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_call_delete_if_func):
   type
-    OPENSSL_sk_call_delete_if_func* = OPENSSL_sk_call_delete_if_func_553649277
+    OPENSSL_sk_call_delete_if_func* = OPENSSL_sk_call_delete_if_func_553649279
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_call_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_verify_crit_oids_cb):
   type
-    X509_STORE_CTX_verify_crit_oids_cb* = X509_STORE_CTX_verify_crit_oids_cb_553649529
+    X509_STORE_CTX_verify_crit_oids_cb* = X509_STORE_CTX_verify_crit_oids_cb_553649531
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_verify_crit_oids_cb" &
         " already exists, not redeclaring")
 when not declared(sk_PKCS7_SIGNER_INFO_copy_func):
   type
-    sk_PKCS7_SIGNER_INFO_copy_func* = sk_PKCS7_SIGNER_INFO_copy_func_553649401
+    sk_PKCS7_SIGNER_INFO_copy_func* = sk_PKCS7_SIGNER_INFO_copy_func_553649403
 else:
   static :
     hint("Declaration of " & "sk_PKCS7_SIGNER_INFO_copy_func" &
@@ -9616,7 +9631,7 @@ else:
     hint("Declaration of " & "ngtcp2_info" & " already exists, not redeclaring")
 when not declared(sk_POLICYINFO_free_func):
   type
-    sk_POLICYINFO_free_func* = sk_POLICYINFO_free_func_553649641
+    sk_POLICYINFO_free_func* = sk_POLICYINFO_free_func_553649643
 else:
   static :
     hint("Declaration of " & "sk_POLICYINFO_free_func" &
@@ -9635,7 +9650,7 @@ else:
     hint("Declaration of " & "EVP_AEAD" & " already exists, not redeclaring")
 when not declared(sk_X509_ALGOR_delete_if_func):
   type
-    sk_X509_ALGOR_delete_if_func* = sk_X509_ALGOR_delete_if_func_553649509
+    sk_X509_ALGOR_delete_if_func* = sk_X509_ALGOR_delete_if_func_553649511
 else:
   static :
     hint("Declaration of " & "sk_X509_ALGOR_delete_if_func" &
@@ -9655,14 +9670,14 @@ else:
     hint("Declaration of " & "BIO" & " already exists, not redeclaring")
 when not declared(sk_POLICYQUALINFO_copy_func):
   type
-    sk_POLICYQUALINFO_copy_func* = sk_POLICYQUALINFO_copy_func_553649629
+    sk_POLICYQUALINFO_copy_func* = sk_POLICYQUALINFO_copy_func_553649631
 else:
   static :
     hint("Declaration of " & "sk_POLICYQUALINFO_copy_func" &
         " already exists, not redeclaring")
 when not declared(HmacMethods):
   type
-    HmacMethods* = HmacMethods_553649385
+    HmacMethods* = HmacMethods_553649387
 else:
   static :
     hint("Declaration of " & "HmacMethods" & " already exists, not redeclaring")
@@ -9675,34 +9690,34 @@ else:
         " already exists, not redeclaring")
 when not declared(ASN1_VALUE):
   type
-    ASN1_VALUE* = ASN1_VALUE_553649355
+    ASN1_VALUE* = ASN1_VALUE_553649357
 else:
   static :
     hint("Declaration of " & "ASN1_VALUE" & " already exists, not redeclaring")
 when not declared(sk_ASN1_OBJECT_cmp_func):
   type
-    sk_ASN1_OBJECT_cmp_func* = sk_ASN1_OBJECT_cmp_func_553649371
+    sk_ASN1_OBJECT_cmp_func* = sk_ASN1_OBJECT_cmp_func_553649373
 else:
   static :
     hint("Declaration of " & "sk_ASN1_OBJECT_cmp_func" &
         " already exists, not redeclaring")
 when not declared(sk_BIO_cmp_func):
   type
-    sk_BIO_cmp_func* = sk_BIO_cmp_func_553649315
+    sk_BIO_cmp_func* = sk_BIO_cmp_func_553649317
 else:
   static :
     hint("Declaration of " & "sk_BIO_cmp_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_INFO_delete_if_func):
   type
-    sk_X509_INFO_delete_if_func* = sk_X509_INFO_delete_if_func_553649537
+    sk_X509_INFO_delete_if_func* = sk_X509_INFO_delete_if_func_553649539
 else:
   static :
     hint("Declaration of " & "sk_X509_INFO_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(sk_POLICYQUALINFO_delete_if_func):
   type
-    sk_POLICYQUALINFO_delete_if_func* = sk_POLICYQUALINFO_delete_if_func_553649633
+    sk_POLICYQUALINFO_delete_if_func* = sk_POLICYQUALINFO_delete_if_func_553649635
 else:
   static :
     hint("Declaration of " & "sk_POLICYQUALINFO_delete_if_func" &
@@ -9737,7 +9752,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_SSL_CIPHER_delete_if_func):
   type
-    sk_SSL_CIPHER_delete_if_func* = sk_SSL_CIPHER_delete_if_func_553649697
+    sk_SSL_CIPHER_delete_if_func* = sk_SSL_CIPHER_delete_if_func_553649699
 else:
   static :
     hint("Declaration of " & "sk_SSL_CIPHER_delete_if_func" &
@@ -9751,19 +9766,19 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_COMP):
   type
-    SSL_COMP* = SSL_COMP_553649741
+    SSL_COMP* = SSL_COMP_553649743
 else:
   static :
     hint("Declaration of " & "SSL_COMP" & " already exists, not redeclaring")
 when not declared(d2i_of_void):
   type
-    d2i_of_void* = d2i_of_void_553649349
+    d2i_of_void* = d2i_of_void_553649351
 else:
   static :
     hint("Declaration of " & "d2i_of_void" & " already exists, not redeclaring")
 when not declared(sk_ASN1_INTEGER_copy_func):
   type
-    sk_ASN1_INTEGER_copy_func* = sk_ASN1_INTEGER_copy_func_553649359
+    sk_ASN1_INTEGER_copy_func* = sk_ASN1_INTEGER_copy_func_553649361
 else:
   static :
     hint("Declaration of " & "sk_ASN1_INTEGER_copy_func" &
@@ -9804,14 +9819,14 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_GENERAL_NAME_cmp_func):
   type
-    sk_GENERAL_NAME_cmp_func* = sk_GENERAL_NAME_cmp_func_553649447
+    sk_GENERAL_NAME_cmp_func* = sk_GENERAL_NAME_cmp_func_553649449
 else:
   static :
     hint("Declaration of " & "sk_GENERAL_NAME_cmp_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_TRUST_cmp_func):
   type
-    sk_X509_TRUST_cmp_func* = sk_X509_TRUST_cmp_func_553649581
+    sk_X509_TRUST_cmp_func* = sk_X509_TRUST_cmp_func_553649583
 else:
   static :
     hint("Declaration of " & "sk_X509_TRUST_cmp_func" &
@@ -9825,7 +9840,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_BIO_delete_if_func):
   type
-    sk_BIO_delete_if_func* = sk_BIO_delete_if_func_553649317
+    sk_BIO_delete_if_func* = sk_BIO_delete_if_func_553649319
 else:
   static :
     hint("Declaration of " & "sk_BIO_delete_if_func" &
@@ -9838,7 +9853,7 @@ else:
     hint("Declaration of " & "BUF_MEM" & " already exists, not redeclaring")
 when not declared(sk_ACCESS_DESCRIPTION_copy_func):
   type
-    sk_ACCESS_DESCRIPTION_copy_func* = sk_ACCESS_DESCRIPTION_copy_func_553649591
+    sk_ACCESS_DESCRIPTION_copy_func* = sk_ACCESS_DESCRIPTION_copy_func_553649593
 else:
   static :
     hint("Declaration of " & "sk_ACCESS_DESCRIPTION_copy_func" &
@@ -9859,14 +9874,14 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_SRTP_PROTECTION_PROFILE_delete_if_func):
   type
-    sk_SRTP_PROTECTION_PROFILE_delete_if_func* = sk_SRTP_PROTECTION_PROFILE_delete_if_func_553649719
+    sk_SRTP_PROTECTION_PROFILE_delete_if_func* = sk_SRTP_PROTECTION_PROFILE_delete_if_func_553649721
 else:
   static :
     hint("Declaration of " & "sk_SRTP_PROTECTION_PROFILE_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(compiler_socklen_t):
   type
-    compiler_socklen_t* = compiler_socklen_t_553649761
+    compiler_socklen_t* = compiler_socklen_t_553649763
 else:
   static :
     hint("Declaration of " & "compiler_socklen_t" &
@@ -9880,14 +9895,14 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_PKCS7_RECIP_INFO_copy_func):
   type
-    sk_PKCS7_RECIP_INFO_copy_func* = sk_PKCS7_RECIP_INFO_copy_func_553649393
+    sk_PKCS7_RECIP_INFO_copy_func* = sk_PKCS7_RECIP_INFO_copy_func_553649395
 else:
   static :
     hint("Declaration of " & "sk_PKCS7_RECIP_INFO_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_GENERAL_NAME_free_func):
   type
-    sk_GENERAL_NAME_free_func* = sk_GENERAL_NAME_free_func_553649443
+    sk_GENERAL_NAME_free_func* = sk_GENERAL_NAME_free_func_553649445
 else:
   static :
     hint("Declaration of " & "sk_GENERAL_NAME_free_func" &
@@ -9901,14 +9916,14 @@ else:
         " already exists, not redeclaring")
 when not declared(CERTIFICATEPOLICIES):
   type
-    CERTIFICATEPOLICIES* = CERTIFICATEPOLICIES_553649639
+    CERTIFICATEPOLICIES* = CERTIFICATEPOLICIES_553649641
 else:
   static :
     hint("Declaration of " & "CERTIFICATEPOLICIES" &
         " already exists, not redeclaring")
 when not declared(TRUST_TOKEN_ISSUER):
   type
-    TRUST_TOKEN_ISSUER* = TRUST_TOKEN_ISSUER_553649213
+    TRUST_TOKEN_ISSUER* = TRUST_TOKEN_ISSUER_553649215
 else:
   static :
     hint("Declaration of " & "TRUST_TOKEN_ISSUER" &
@@ -9922,7 +9937,7 @@ else:
         " already exists, not redeclaring")
 when not declared(POLICY_MAPPING):
   type
-    POLICY_MAPPING* = POLICY_MAPPING_553649651
+    POLICY_MAPPING* = POLICY_MAPPING_553649653
 else:
   static :
     hint("Declaration of " & "POLICY_MAPPING" &
@@ -9949,35 +9964,35 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_PKCS7_RECIP_INFO_cmp_func):
   type
-    sk_PKCS7_RECIP_INFO_cmp_func* = sk_PKCS7_RECIP_INFO_cmp_func_553649395
+    sk_PKCS7_RECIP_INFO_cmp_func* = sk_PKCS7_RECIP_INFO_cmp_func_553649397
 else:
   static :
     hint("Declaration of " & "sk_PKCS7_RECIP_INFO_cmp_func" &
         " already exists, not redeclaring")
 when not declared(struct_GENERAL_SUBTREE_st):
   type
-    struct_GENERAL_SUBTREE_st* = struct_GENERAL_SUBTREE_st_553649663
+    struct_GENERAL_SUBTREE_st* = struct_GENERAL_SUBTREE_st_553649665
 else:
   static :
     hint("Declaration of " & "struct_GENERAL_SUBTREE_st" &
         " already exists, not redeclaring")
 when not declared(sk_X509_NAME_ENTRY_copy_func):
   type
-    sk_X509_NAME_ENTRY_copy_func* = sk_X509_NAME_ENTRY_copy_func_553649471
+    sk_X509_NAME_ENTRY_copy_func* = sk_X509_NAME_ENTRY_copy_func_553649473
 else:
   static :
     hint("Declaration of " & "sk_X509_NAME_ENTRY_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_PURPOSE_free_func):
   type
-    sk_X509_PURPOSE_free_func* = sk_X509_PURPOSE_free_func_553649569
+    sk_X509_PURPOSE_free_func* = sk_X509_PURPOSE_free_func_553649571
 else:
   static :
     hint("Declaration of " & "sk_X509_PURPOSE_free_func" &
         " already exists, not redeclaring")
 when not declared(struct_otherName_st):
   type
-    struct_otherName_st* = struct_otherName_st_553649495
+    struct_otherName_st* = struct_otherName_st_553649497
 else:
   static :
     hint("Declaration of " & "struct_otherName_st" &
@@ -9990,7 +10005,7 @@ else:
     hint("Declaration of " & "ASN1_STRING" & " already exists, not redeclaring")
 when not declared(X509V3_EXT_I2R):
   type
-    X509V3_EXT_I2R* = X509V3_EXT_I2R_553649555
+    X509V3_EXT_I2R* = X509V3_EXT_I2R_553649557
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_I2R" &
@@ -10004,21 +10019,21 @@ else:
         " already exists, not redeclaring")
 when not declared(GENERAL_NAMES):
   type
-    GENERAL_NAMES* = GENERAL_NAMES_553649451
+    GENERAL_NAMES* = GENERAL_NAMES_553649453
 else:
   static :
     hint("Declaration of " & "GENERAL_NAMES" &
         " already exists, not redeclaring")
 when not declared(sk_void_copy_func):
   type
-    sk_void_copy_func* = sk_void_copy_func_553649287
+    sk_void_copy_func* = sk_void_copy_func_553649289
 else:
   static :
     hint("Declaration of " & "sk_void_copy_func" &
         " already exists, not redeclaring")
 when not declared(struct_CRYPTO_dynlock):
   type
-    struct_CRYPTO_dynlock* = struct_CRYPTO_dynlock_553649253
+    struct_CRYPTO_dynlock* = struct_CRYPTO_dynlock_553649255
 else:
   static :
     hint("Declaration of " & "struct_CRYPTO_dynlock" &
@@ -10046,14 +10061,14 @@ else:
         " already exists, not redeclaring")
 when not declared(POLICY_MAPPINGS):
   type
-    POLICY_MAPPINGS* = POLICY_MAPPINGS_553649661
+    POLICY_MAPPINGS* = POLICY_MAPPINGS_553649663
 else:
   static :
     hint("Declaration of " & "POLICY_MAPPINGS" &
         " already exists, not redeclaring")
 when not declared(sk_POLICY_MAPPING_cmp_func):
   type
-    sk_POLICY_MAPPING_cmp_func* = sk_POLICY_MAPPING_cmp_func_553649657
+    sk_POLICY_MAPPING_cmp_func* = sk_POLICY_MAPPING_cmp_func_553649659
 else:
   static :
     hint("Declaration of " & "sk_POLICY_MAPPING_cmp_func" &
@@ -10067,7 +10082,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_PKCS7_SIGNER_INFO_delete_if_func):
   type
-    sk_PKCS7_SIGNER_INFO_delete_if_func* = sk_PKCS7_SIGNER_INFO_delete_if_func_553649405
+    sk_PKCS7_SIGNER_INFO_delete_if_func* = sk_PKCS7_SIGNER_INFO_delete_if_func_553649407
 else:
   static :
     hint("Declaration of " & "sk_PKCS7_SIGNER_INFO_delete_if_func" &
@@ -10094,14 +10109,14 @@ else:
         " already exists, not redeclaring")
 when not declared(TRUST_TOKEN_CLIENT):
   type
-    TRUST_TOKEN_CLIENT* = TRUST_TOKEN_CLIENT_553649211
+    TRUST_TOKEN_CLIENT* = TRUST_TOKEN_CLIENT_553649213
 else:
   static :
     hint("Declaration of " & "TRUST_TOKEN_CLIENT" &
         " already exists, not redeclaring")
 when not declared(sk_X509_ATTRIBUTE_delete_if_func):
   type
-    sk_X509_ATTRIBUTE_delete_if_func* = sk_X509_ATTRIBUTE_delete_if_func_553649517
+    sk_X509_ATTRIBUTE_delete_if_func* = sk_X509_ATTRIBUTE_delete_if_func_553649519
 else:
   static :
     hint("Declaration of " & "sk_X509_ATTRIBUTE_delete_if_func" &
@@ -10135,13 +10150,13 @@ else:
     hint("Declaration of " & "socklen_t" & " already exists, not redeclaring")
 when not declared(in_port_t):
   type
-    in_port_t* = in_port_t_553649755
+    in_port_t* = in_port_t_553649757
 else:
   static :
     hint("Declaration of " & "in_port_t" & " already exists, not redeclaring")
 when not declared(struct_EDIPartyName_st):
   type
-    struct_EDIPartyName_st* = struct_EDIPartyName_st_553649499
+    struct_EDIPartyName_st* = struct_EDIPartyName_st_553649501
 else:
   static :
     hint("Declaration of " & "struct_EDIPartyName_st" &
@@ -10168,7 +10183,7 @@ else:
     hint("Declaration of " & "X509_CRL" & " already exists, not redeclaring")
 when not declared(X509_REVOKED):
   type
-    X509_REVOKED* = X509_REVOKED_553649233
+    X509_REVOKED* = X509_REVOKED_553649235
 else:
   static :
     hint("Declaration of " & "X509_REVOKED" & " already exists, not redeclaring")
@@ -10186,7 +10201,7 @@ else:
     hint("Declaration of " & "KEM_KEY" & " already exists, not redeclaring")
 when not declared(struct_ssl_quic_method_st):
   type
-    struct_ssl_quic_method_st* = struct_ssl_quic_method_st_553649197
+    struct_ssl_quic_method_st* = struct_ssl_quic_method_st_553649199
 else:
   static :
     hint("Declaration of " & "struct_ssl_quic_method_st" &
@@ -10200,7 +10215,7 @@ else:
         " already exists, not redeclaring")
 when not declared(TRUST_TOKEN_METHOD):
   type
-    TRUST_TOKEN_METHOD* = TRUST_TOKEN_METHOD_553649215
+    TRUST_TOKEN_METHOD* = TRUST_TOKEN_METHOD_553649217
 else:
   static :
     hint("Declaration of " & "TRUST_TOKEN_METHOD" &
@@ -10214,13 +10229,13 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_TRUST):
   type
-    X509_TRUST* = X509_TRUST_553649241
+    X509_TRUST* = X509_TRUST_553649243
 else:
   static :
     hint("Declaration of " & "X509_TRUST" & " already exists, not redeclaring")
 when not declared(OPENSSL_sk_call_free_func):
   type
-    OPENSSL_sk_call_free_func* = OPENSSL_sk_call_free_func_553649271
+    OPENSSL_sk_call_free_func* = OPENSSL_sk_call_free_func_553649273
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_call_free_func" &
@@ -10233,21 +10248,21 @@ else:
     hint("Declaration of " & "ngtcp2_free" & " already exists, not redeclaring")
 when not declared(sk_X509_TRUST_free_func):
   type
-    sk_X509_TRUST_free_func* = sk_X509_TRUST_free_func_553649577
+    sk_X509_TRUST_free_func* = sk_X509_TRUST_free_func_553649579
 else:
   static :
     hint("Declaration of " & "sk_X509_TRUST_free_func" &
         " already exists, not redeclaring")
 when not declared(sk_DIST_POINT_delete_if_func):
   type
-    sk_DIST_POINT_delete_if_func* = sk_DIST_POINT_delete_if_func_553649613
+    sk_DIST_POINT_delete_if_func* = sk_DIST_POINT_delete_if_func_553649615
 else:
   static :
     hint("Declaration of " & "sk_DIST_POINT_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(OSSL_HANDSHAKE_STATE):
   type
-    OSSL_HANDSHAKE_STATE* = OSSL_HANDSHAKE_STATE_553649735
+    OSSL_HANDSHAKE_STATE* = OSSL_HANDSHAKE_STATE_553649737
 else:
   static :
     hint("Declaration of " & "OSSL_HANDSHAKE_STATE" &
@@ -10260,13 +10275,13 @@ else:
     hint("Declaration of " & "EVP_MD_CTX" & " already exists, not redeclaring")
 when not declared(RC4_KEY):
   type
-    RC4_KEY* = RC4_KEY_553649149
+    RC4_KEY* = RC4_KEY_553649151
 else:
   static :
     hint("Declaration of " & "RC4_KEY" & " already exists, not redeclaring")
 when not declared(sk_CONF_VALUE_delete_if_func):
   type
-    sk_CONF_VALUE_delete_if_func* = sk_CONF_VALUE_delete_if_func_553649415
+    sk_CONF_VALUE_delete_if_func* = sk_CONF_VALUE_delete_if_func_553649417
 else:
   static :
     hint("Declaration of " & "sk_CONF_VALUE_delete_if_func" &
@@ -10294,7 +10309,7 @@ else:
         " already exists, not redeclaring")
 when not declared(ASN1_ITEM_EXP):
   type
-    ASN1_ITEM_EXP* = ASN1_ITEM_EXP_553649353
+    ASN1_ITEM_EXP* = ASN1_ITEM_EXP_553649355
 else:
   static :
     hint("Declaration of " & "ASN1_ITEM_EXP" &
@@ -10328,28 +10343,28 @@ else:
     hint("Declaration of " & "EVP_HPKE_KEY" & " already exists, not redeclaring")
 when not declared(sk_ASN1_OBJECT_free_func):
   type
-    sk_ASN1_OBJECT_free_func* = sk_ASN1_OBJECT_free_func_553649367
+    sk_ASN1_OBJECT_free_func* = sk_ASN1_OBJECT_free_func_553649369
 else:
   static :
     hint("Declaration of " & "sk_ASN1_OBJECT_free_func" &
         " already exists, not redeclaring")
 when not declared(sk_CRYPTO_BUFFER_free_func):
   type
-    sk_CRYPTO_BUFFER_free_func* = sk_CRYPTO_BUFFER_free_func_553649427
+    sk_CRYPTO_BUFFER_free_func* = sk_CRYPTO_BUFFER_free_func_553649429
 else:
   static :
     hint("Declaration of " & "sk_CRYPTO_BUFFER_free_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_TRUST_delete_if_func):
   type
-    sk_X509_TRUST_delete_if_func* = sk_X509_TRUST_delete_if_func_553649583
+    sk_X509_TRUST_delete_if_func* = sk_X509_TRUST_delete_if_func_553649585
 else:
   static :
     hint("Declaration of " & "sk_X509_TRUST_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(enum_bn_primality_result_t):
   type
-    enum_bn_primality_result_t* = enum_bn_primality_result_t_553649347
+    enum_bn_primality_result_t* = enum_bn_primality_result_t_553649349
 else:
   static :
     hint("Declaration of " & "enum_bn_primality_result_t" &
@@ -10363,7 +10378,7 @@ else:
         " already exists, not redeclaring")
 when not declared(CRYPTO_EX_free):
   type
-    CRYPTO_EX_free* = CRYPTO_EX_free_553649305
+    CRYPTO_EX_free* = CRYPTO_EX_free_553649307
 else:
   static :
     hint("Declaration of " & "CRYPTO_EX_free" &
@@ -10377,7 +10392,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_NAME_cmp_func):
   type
-    sk_X509_NAME_cmp_func* = sk_X509_NAME_cmp_func_553649481
+    sk_X509_NAME_cmp_func* = sk_X509_NAME_cmp_func_553649483
 else:
   static :
     hint("Declaration of " & "sk_X509_NAME_cmp_func" &
@@ -10397,21 +10412,21 @@ else:
     hint("Declaration of " & "PQDSA_KEY" & " already exists, not redeclaring")
 when not declared(sk_ASN1_OBJECT_copy_func):
   type
-    sk_ASN1_OBJECT_copy_func* = sk_ASN1_OBJECT_copy_func_553649369
+    sk_ASN1_OBJECT_copy_func* = sk_ASN1_OBJECT_copy_func_553649371
 else:
   static :
     hint("Declaration of " & "sk_ASN1_OBJECT_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_copy_func):
   type
-    sk_X509_copy_func* = sk_X509_copy_func_553649437
+    sk_X509_copy_func* = sk_X509_copy_func_553649439
 else:
   static :
     hint("Declaration of " & "sk_X509_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_REVOKED_cmp_func):
   type
-    sk_X509_REVOKED_cmp_func* = sk_X509_REVOKED_cmp_func_553649465
+    sk_X509_REVOKED_cmp_func* = sk_X509_REVOKED_cmp_func_553649467
 else:
   static :
     hint("Declaration of " & "sk_X509_REVOKED_cmp_func" &
@@ -10425,28 +10440,28 @@ else:
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_D2I_typedef):
   type
-    X509V3_EXT_D2I_typedef* = X509V3_EXT_D2I_typedef_553649543
+    X509V3_EXT_D2I_typedef* = X509V3_EXT_D2I_typedef_553649545
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_D2I_typedef" &
         " already exists, not redeclaring")
 when not declared(sk_X509_ALGOR_copy_func):
   type
-    sk_X509_ALGOR_copy_func* = sk_X509_ALGOR_copy_func_553649505
+    sk_X509_ALGOR_copy_func* = sk_X509_ALGOR_copy_func_553649507
 else:
   static :
     hint("Declaration of " & "sk_X509_ALGOR_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_DIST_POINT_cmp_func):
   type
-    sk_DIST_POINT_cmp_func* = sk_DIST_POINT_cmp_func_553649611
+    sk_DIST_POINT_cmp_func* = sk_DIST_POINT_cmp_func_553649613
 else:
   static :
     hint("Declaration of " & "sk_DIST_POINT_cmp_func" &
         " already exists, not redeclaring")
 when not declared(ssl_cert_decompression_func_t):
   type
-    ssl_cert_decompression_func_t* = ssl_cert_decompression_func_t_553649711
+    ssl_cert_decompression_func_t* = ssl_cert_decompression_func_t_553649713
 else:
   static :
     hint("Declaration of " & "ssl_cert_decompression_func_t" &
@@ -10467,28 +10482,28 @@ else:
         " already exists, not redeclaring")
 when not declared(struct_ssl_early_callback_ctx):
   type
-    struct_ssl_early_callback_ctx* = struct_ssl_early_callback_ctx_553649185
+    struct_ssl_early_callback_ctx* = struct_ssl_early_callback_ctx_553649187
 else:
   static :
     hint("Declaration of " & "struct_ssl_early_callback_ctx" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_R2I):
   type
-    X509V3_EXT_R2I* = X509V3_EXT_R2I_553649557
+    X509V3_EXT_R2I* = X509V3_EXT_R2I_553649559
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_R2I" &
         " already exists, not redeclaring")
 when not declared(struct_NOTICEREF_st):
   type
-    struct_NOTICEREF_st* = struct_NOTICEREF_st_553649615
+    struct_NOTICEREF_st* = struct_NOTICEREF_st_553649617
 else:
   static :
     hint("Declaration of " & "struct_NOTICEREF_st" &
         " already exists, not redeclaring")
 when not declared(enum_OSSL_HANDSHAKE_STATE):
   type
-    enum_OSSL_HANDSHAKE_STATE* = enum_OSSL_HANDSHAKE_STATE_553649733
+    enum_OSSL_HANDSHAKE_STATE* = enum_OSSL_HANDSHAKE_STATE_553649735
 else:
   static :
     hint("Declaration of " & "enum_OSSL_HANDSHAKE_STATE" &
@@ -10502,7 +10517,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_CRYPTO_BUFFER_copy_func):
   type
-    sk_CRYPTO_BUFFER_copy_func* = sk_CRYPTO_BUFFER_copy_func_553649429
+    sk_CRYPTO_BUFFER_copy_func* = sk_CRYPTO_BUFFER_copy_func_553649431
 else:
   static :
     hint("Declaration of " & "sk_CRYPTO_BUFFER_copy_func" &
@@ -10522,14 +10537,14 @@ else:
     hint("Declaration of " & "PKCS7" & " already exists, not redeclaring")
 when not declared(SSL_CLIENT_HELLO):
   type
-    SSL_CLIENT_HELLO* = SSL_CLIENT_HELLO_553649183
+    SSL_CLIENT_HELLO* = SSL_CLIENT_HELLO_553649185
 else:
   static :
     hint("Declaration of " & "SSL_CLIENT_HELLO" &
         " already exists, not redeclaring")
 when not declared(sk_X509_OBJECT_cmp_func):
   type
-    sk_X509_OBJECT_cmp_func* = sk_X509_OBJECT_cmp_func_553649523
+    sk_X509_OBJECT_cmp_func* = sk_X509_OBJECT_cmp_func_553649525
 else:
   static :
     hint("Declaration of " & "sk_X509_OBJECT_cmp_func" &
@@ -10542,7 +10557,7 @@ else:
     hint("Declaration of " & "ASN1_UTCTIME" & " already exists, not redeclaring")
 when not declared(SSL_CTX):
   type
-    SSL_CTX* = SSL_CTX_553649181
+    SSL_CTX* = SSL_CTX_553649183
 else:
   static :
     hint("Declaration of " & "SSL_CTX" & " already exists, not redeclaring")
@@ -10562,7 +10577,7 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_PRIVATE_KEY_METHOD):
   type
-    SSL_PRIVATE_KEY_METHOD* = SSL_PRIVATE_KEY_METHOD_553649191
+    SSL_PRIVATE_KEY_METHOD* = SSL_PRIVATE_KEY_METHOD_553649193
 else:
   static :
     hint("Declaration of " & "SSL_PRIVATE_KEY_METHOD" &
@@ -10582,20 +10597,20 @@ else:
         " already exists, not redeclaring")
 when not declared(bio_info_cb):
   type
-    bio_info_cb* = bio_info_cb_553649319
+    bio_info_cb* = bio_info_cb_553649321
 else:
   static :
     hint("Declaration of " & "bio_info_cb" & " already exists, not redeclaring")
 when not declared(EVP_CIPHER_INFO):
   type
-    EVP_CIPHER_INFO* = EVP_CIPHER_INFO_553649329
+    EVP_CIPHER_INFO* = EVP_CIPHER_INFO_553649331
 else:
   static :
     hint("Declaration of " & "EVP_CIPHER_INFO" &
         " already exists, not redeclaring")
 when not declared(sk_OPENSSL_STRING_delete_if_func):
   type
-    sk_OPENSSL_STRING_delete_if_func* = sk_OPENSSL_STRING_delete_if_func_553649299
+    sk_OPENSSL_STRING_delete_if_func* = sk_OPENSSL_STRING_delete_if_func_553649301
 else:
   static :
     hint("Declaration of " & "sk_OPENSSL_STRING_delete_if_func" &
@@ -10609,35 +10624,35 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_TRUST_copy_func):
   type
-    sk_X509_TRUST_copy_func* = sk_X509_TRUST_copy_func_553649579
+    sk_X509_TRUST_copy_func* = sk_X509_TRUST_copy_func_553649581
 else:
   static :
     hint("Declaration of " & "sk_X509_TRUST_copy_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_CRL_free_func):
   type
-    sk_X509_CRL_free_func* = sk_X509_CRL_free_func_553649453
+    sk_X509_CRL_free_func* = sk_X509_CRL_free_func_553649455
 else:
   static :
     hint("Declaration of " & "sk_X509_CRL_free_func" &
         " already exists, not redeclaring")
 when not declared(X509_EXTENSIONS):
   type
-    X509_EXTENSIONS* = X509_EXTENSIONS_553649493
+    X509_EXTENSIONS* = X509_EXTENSIONS_553649495
 else:
   static :
     hint("Declaration of " & "X509_EXTENSIONS" &
         " already exists, not redeclaring")
 when not declared(enum_fips_counter_t):
   type
-    enum_fips_counter_t* = enum_fips_counter_t_553649257
+    enum_fips_counter_t* = enum_fips_counter_t_553649259
 else:
   static :
     hint("Declaration of " & "enum_fips_counter_t" &
         " already exists, not redeclaring")
 when not declared(struct_USERNOTICE_st):
   type
-    struct_USERNOTICE_st* = struct_USERNOTICE_st_553649619
+    struct_USERNOTICE_st* = struct_USERNOTICE_st_553649621
 else:
   static :
     hint("Declaration of " & "struct_USERNOTICE_st" &
@@ -10657,7 +10672,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_EXTENSION_copy_func):
   type
-    sk_X509_EXTENSION_copy_func* = sk_X509_EXTENSION_copy_func_553649487
+    sk_X509_EXTENSION_copy_func* = sk_X509_EXTENSION_copy_func_553649489
 else:
   static :
     hint("Declaration of " & "sk_X509_EXTENSION_copy_func" &
@@ -10692,14 +10707,14 @@ else:
         " already exists, not redeclaring")
 when not declared(struct_sha512_state_st):
   type
-    struct_sha512_state_st* = struct_sha512_state_st_553649167
+    struct_sha512_state_st* = struct_sha512_state_st_553649169
 else:
   static :
     hint("Declaration of " & "struct_sha512_state_st" &
         " already exists, not redeclaring")
 when not declared(sk_X509_NAME_ENTRY_cmp_func):
   type
-    sk_X509_NAME_ENTRY_cmp_func* = sk_X509_NAME_ENTRY_cmp_func_553649473
+    sk_X509_NAME_ENTRY_cmp_func* = sk_X509_NAME_ENTRY_cmp_func_553649475
 else:
   static :
     hint("Declaration of " & "sk_X509_NAME_ENTRY_cmp_func" &
@@ -10719,7 +10734,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_EXTENSION_free_func):
   type
-    sk_X509_EXTENSION_free_func* = sk_X509_EXTENSION_free_func_553649485
+    sk_X509_EXTENSION_free_func* = sk_X509_EXTENSION_free_func_553649487
 else:
   static :
     hint("Declaration of " & "sk_X509_EXTENSION_free_func" &
@@ -10781,7 +10796,7 @@ else:
         " already exists, not redeclaring")
 when not declared(struct_sha_state_st):
   type
-    struct_sha_state_st* = struct_sha_state_st_553649171
+    struct_sha_state_st* = struct_sha_state_st_553649173
 else:
   static :
     hint("Declaration of " & "struct_sha_state_st" &
@@ -10794,27 +10809,27 @@ else:
     hint("Declaration of " & "MD4_CTX" & " already exists, not redeclaring")
 when not declared(TRUST_TOKEN):
   type
-    TRUST_TOKEN* = TRUST_TOKEN_553649209
+    TRUST_TOKEN* = TRUST_TOKEN_553649211
 else:
   static :
     hint("Declaration of " & "TRUST_TOKEN" & " already exists, not redeclaring")
 when not declared(X509V3_EXT_S2I):
   type
-    X509V3_EXT_S2I* = X509V3_EXT_S2I_553649553
+    X509V3_EXT_S2I* = X509V3_EXT_S2I_553649555
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_S2I" &
         " already exists, not redeclaring")
 when not declared(sk_ACCESS_DESCRIPTION_delete_if_func):
   type
-    sk_ACCESS_DESCRIPTION_delete_if_func* = sk_ACCESS_DESCRIPTION_delete_if_func_553649595
+    sk_ACCESS_DESCRIPTION_delete_if_func* = sk_ACCESS_DESCRIPTION_delete_if_func_553649597
 else:
   static :
     hint("Declaration of " & "sk_ACCESS_DESCRIPTION_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(SSL_custom_ext_add_cb):
   type
-    SSL_custom_ext_add_cb* = SSL_custom_ext_add_cb_553649699
+    SSL_custom_ext_add_cb* = SSL_custom_ext_add_cb_553649701
 else:
   static :
     hint("Declaration of " & "SSL_custom_ext_add_cb" &
@@ -10828,35 +10843,35 @@ else:
         " already exists, not redeclaring")
 when not declared(union_crypto_mutex_st):
   type
-    union_crypto_mutex_st* = union_crypto_mutex_st_553649247
+    union_crypto_mutex_st* = union_crypto_mutex_st_553649249
 else:
   static :
     hint("Declaration of " & "union_crypto_mutex_st" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE):
   type
-    X509_ATTRIBUTE* = X509_ATTRIBUTE_553649225
+    X509_ATTRIBUTE* = X509_ATTRIBUTE_553649227
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE" &
         " already exists, not redeclaring")
 when not declared(sk_ASN1_TYPE_cmp_func):
   type
-    sk_ASN1_TYPE_cmp_func* = sk_ASN1_TYPE_cmp_func_553649379
+    sk_ASN1_TYPE_cmp_func* = sk_ASN1_TYPE_cmp_func_553649381
 else:
   static :
     hint("Declaration of " & "sk_ASN1_TYPE_cmp_func" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_call_cmp_func):
   type
-    OPENSSL_sk_call_cmp_func* = OPENSSL_sk_call_cmp_func_553649275
+    OPENSSL_sk_call_cmp_func* = OPENSSL_sk_call_cmp_func_553649277
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_call_cmp_func" &
         " already exists, not redeclaring")
 when not declared(enum_ssl_renegotiate_mode_t):
   type
-    enum_ssl_renegotiate_mode_t* = enum_ssl_renegotiate_mode_t_553649729
+    enum_ssl_renegotiate_mode_t* = enum_ssl_renegotiate_mode_t_553649731
 else:
   static :
     hint("Declaration of " & "enum_ssl_renegotiate_mode_t" &
@@ -10904,14 +10919,14 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_OPENSSL_STRING_copy_func):
   type
-    sk_OPENSSL_STRING_copy_func* = sk_OPENSSL_STRING_copy_func_553649295
+    sk_OPENSSL_STRING_copy_func* = sk_OPENSSL_STRING_copy_func_553649297
 else:
   static :
     hint("Declaration of " & "sk_OPENSSL_STRING_copy_func" &
         " already exists, not redeclaring")
 when not declared(BIO_callback_fn_ex):
   type
-    BIO_callback_fn_ex* = BIO_callback_fn_ex_553649321
+    BIO_callback_fn_ex* = BIO_callback_fn_ex_553649323
 else:
   static :
     hint("Declaration of " & "BIO_callback_fn_ex" &
@@ -10925,14 +10940,14 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_OBJECT_delete_if_func):
   type
-    sk_X509_OBJECT_delete_if_func* = sk_X509_OBJECT_delete_if_func_553649525
+    sk_X509_OBJECT_delete_if_func* = sk_X509_OBJECT_delete_if_func_553649527
 else:
   static :
     hint("Declaration of " & "sk_X509_OBJECT_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(struct_POLICY_MAPPING_st):
   type
-    struct_POLICY_MAPPING_st* = struct_POLICY_MAPPING_st_553649649
+    struct_POLICY_MAPPING_st* = struct_POLICY_MAPPING_st_553649651
 else:
   static :
     hint("Declaration of " & "struct_POLICY_MAPPING_st" &
@@ -10952,7 +10967,7 @@ else:
         " already exists, not redeclaring")
 when not declared(EDIPARTYNAME):
   type
-    EDIPARTYNAME* = EDIPARTYNAME_553649501
+    EDIPARTYNAME* = EDIPARTYNAME_553649503
 else:
   static :
     hint("Declaration of " & "EDIPARTYNAME" & " already exists, not redeclaring")
@@ -10964,14 +10979,14 @@ else:
     hint("Declaration of " & "DSA" & " already exists, not redeclaring")
 when not declared(enum_ssl_early_data_reason_t):
   type
-    enum_ssl_early_data_reason_t* = enum_ssl_early_data_reason_t_553649727
+    enum_ssl_early_data_reason_t* = enum_ssl_early_data_reason_t_553649729
 else:
   static :
     hint("Declaration of " & "enum_ssl_early_data_reason_t" &
         " already exists, not redeclaring")
 when not declared(sk_X509_NAME_ENTRY_delete_if_func):
   type
-    sk_X509_NAME_ENTRY_delete_if_func* = sk_X509_NAME_ENTRY_delete_if_func_553649475
+    sk_X509_NAME_ENTRY_delete_if_func* = sk_X509_NAME_ENTRY_delete_if_func_553649477
 else:
   static :
     hint("Declaration of " & "sk_X509_NAME_ENTRY_delete_if_func" &
@@ -10992,26 +11007,26 @@ else:
         " already exists, not redeclaring")
 when not declared(time_t):
   type
-    time_t* = time_t_553649365
+    time_t* = time_t_553649367
 else:
   static :
     hint("Declaration of " & "time_t" & " already exists, not redeclaring")
 when not declared(internal_LHASH):
   type
-    internal_LHASH* = internal_LHASH_553649407
+    internal_LHASH* = internal_LHASH_553649409
 else:
   static :
     hint("Declaration of " & "internal_LHASH" &
         " already exists, not redeclaring")
 when not declared(X509_LOOKUP):
   type
-    X509_LOOKUP* = X509_LOOKUP_553649227
+    X509_LOOKUP* = X509_LOOKUP_553649229
 else:
   static :
     hint("Declaration of " & "X509_LOOKUP" & " already exists, not redeclaring")
 when not declared(internal_STACK):
   type
-    internal_STACK* = internal_STACK_553649281
+    internal_STACK* = internal_STACK_553649283
 else:
   static :
     hint("Declaration of " & "internal_STACK" &
@@ -11031,21 +11046,21 @@ else:
     hint("Declaration of " & "EVP_PKEY" & " already exists, not redeclaring")
 when not declared(struct_ssl_ticket_aead_method_st):
   type
-    struct_ssl_ticket_aead_method_st* = struct_ssl_ticket_aead_method_st_553649205
+    struct_ssl_ticket_aead_method_st* = struct_ssl_ticket_aead_method_st_553649207
 else:
   static :
     hint("Declaration of " & "struct_ssl_ticket_aead_method_st" &
         " already exists, not redeclaring")
 when not declared(AUTHORITY_INFO_ACCESS):
   type
-    AUTHORITY_INFO_ACCESS* = AUTHORITY_INFO_ACCESS_553649597
+    AUTHORITY_INFO_ACCESS* = AUTHORITY_INFO_ACCESS_553649599
 else:
   static :
     hint("Declaration of " & "AUTHORITY_INFO_ACCESS" &
         " already exists, not redeclaring")
 when not declared(struct_evp_cipher_info_st):
   type
-    struct_evp_cipher_info_st* = struct_evp_cipher_info_st_553649327
+    struct_evp_cipher_info_st* = struct_evp_cipher_info_st_553649329
 else:
   static :
     hint("Declaration of " & "struct_evp_cipher_info_st" &
@@ -11066,7 +11081,7 @@ else:
         " already exists, not redeclaring")
 when not declared(RSA):
   type
-    RSA* = RSA_553649159
+    RSA* = RSA_553649161
 else:
   static :
     hint("Declaration of " & "RSA" & " already exists, not redeclaring")
@@ -11085,27 +11100,27 @@ else:
         " already exists, not redeclaring")
 when not declared(point_conversion_form_t):
   type
-    point_conversion_form_t* = point_conversion_form_t_553649419
+    point_conversion_form_t* = point_conversion_form_t_553649421
 else:
   static :
     hint("Declaration of " & "point_conversion_form_t" &
         " already exists, not redeclaring")
 when not declared(enum_ssl_encryption_level_t):
   type
-    enum_ssl_encryption_level_t* = enum_ssl_encryption_level_t_553649725
+    enum_ssl_encryption_level_t* = enum_ssl_encryption_level_t_553649727
 else:
   static :
     hint("Declaration of " & "enum_ssl_encryption_level_t" &
         " already exists, not redeclaring")
 when not declared(in_addr_t):
   type
-    in_addr_t* = in_addr_t_553649769
+    in_addr_t* = in_addr_t_553649771
 else:
   static :
     hint("Declaration of " & "in_addr_t" & " already exists, not redeclaring")
 when not declared(compiler_off_t):
   type
-    compiler_off_t* = compiler_off_t_553649771
+    compiler_off_t* = compiler_off_t_553649773
 else:
   static :
     hint("Declaration of " & "compiler_off_t" &
@@ -11126,7 +11141,7 @@ else:
         " already exists, not redeclaring")
 when not declared(enum_point_conversion_form_t):
   type
-    enum_point_conversion_form_t* = enum_point_conversion_form_t_553649417
+    enum_point_conversion_form_t* = enum_point_conversion_form_t_553649419
 else:
   static :
     hint("Declaration of " & "enum_point_conversion_form_t" &
@@ -11147,28 +11162,28 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_ASN1_INTEGER_free_func):
   type
-    sk_ASN1_INTEGER_free_func* = sk_ASN1_INTEGER_free_func_553649357
+    sk_ASN1_INTEGER_free_func* = sk_ASN1_INTEGER_free_func_553649359
 else:
   static :
     hint("Declaration of " & "sk_ASN1_INTEGER_free_func" &
         " already exists, not redeclaring")
 when not declared(sk_ASN1_TYPE_free_func):
   type
-    sk_ASN1_TYPE_free_func* = sk_ASN1_TYPE_free_func_553649375
+    sk_ASN1_TYPE_free_func* = sk_ASN1_TYPE_free_func_553649377
 else:
   static :
     hint("Declaration of " & "sk_ASN1_TYPE_free_func" &
         " already exists, not redeclaring")
 when not declared(sk_X509_delete_if_func):
   type
-    sk_X509_delete_if_func* = sk_X509_delete_if_func_553649441
+    sk_X509_delete_if_func* = sk_X509_delete_if_func_553649443
 else:
   static :
     hint("Declaration of " & "sk_X509_delete_if_func" &
         " already exists, not redeclaring")
 when not declared(sk_PKCS7_RECIP_INFO_delete_if_func):
   type
-    sk_PKCS7_RECIP_INFO_delete_if_func* = sk_PKCS7_RECIP_INFO_delete_if_func_553649397
+    sk_PKCS7_RECIP_INFO_delete_if_func* = sk_PKCS7_RECIP_INFO_delete_if_func_553649399
 else:
   static :
     hint("Declaration of " & "sk_PKCS7_RECIP_INFO_delete_if_func" &
@@ -11181,13 +11196,13 @@ else:
     hint("Declaration of " & "EC_GROUP" & " already exists, not redeclaring")
 when not declared(BN_ULONG):
   type
-    BN_ULONG* = BN_ULONG_553649345
+    BN_ULONG* = BN_ULONG_553649347
 else:
   static :
     hint("Declaration of " & "BN_ULONG" & " already exists, not redeclaring")
 when not declared(sk_GENERAL_NAME_delete_if_func):
   type
-    sk_GENERAL_NAME_delete_if_func* = sk_GENERAL_NAME_delete_if_func_553649449
+    sk_GENERAL_NAME_delete_if_func* = sk_GENERAL_NAME_delete_if_func_553649451
 else:
   static :
     hint("Declaration of " & "sk_GENERAL_NAME_delete_if_func" &
@@ -11200,28 +11215,28 @@ else:
     hint("Declaration of " & "ngtcp2_ssize" & " already exists, not redeclaring")
 when not declared(sk_X509_INFO_cmp_func):
   type
-    sk_X509_INFO_cmp_func* = sk_X509_INFO_cmp_func_553649535
+    sk_X509_INFO_cmp_func* = sk_X509_INFO_cmp_func_553649537
 else:
   static :
     hint("Declaration of " & "sk_X509_INFO_cmp_func" &
         " already exists, not redeclaring")
 when not declared(struct_POLICYINFO_st):
   type
-    struct_POLICYINFO_st* = struct_POLICYINFO_st_553649635
+    struct_POLICYINFO_st* = struct_POLICYINFO_st_553649637
 else:
   static :
     hint("Declaration of " & "struct_POLICYINFO_st" &
         " already exists, not redeclaring")
 when not declared(RSA_PSS_PARAMS):
   type
-    RSA_PSS_PARAMS* = RSA_PSS_PARAMS_553649155
+    RSA_PSS_PARAMS* = RSA_PSS_PARAMS_553649157
 else:
   static :
     hint("Declaration of " & "RSA_PSS_PARAMS" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_FREE_typedef):
   type
-    X509V3_EXT_FREE_typedef* = X509V3_EXT_FREE_typedef_553649541
+    X509V3_EXT_FREE_typedef* = X509V3_EXT_FREE_typedef_553649543
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_FREE_typedef" &
@@ -11235,7 +11250,7 @@ else:
         " already exists, not redeclaring")
 when not declared(RSASSA_PSS_PARAMS):
   type
-    RSASSA_PSS_PARAMS* = RSASSA_PSS_PARAMS_553649153
+    RSASSA_PSS_PARAMS* = RSASSA_PSS_PARAMS_553649155
 else:
   static :
     hint("Declaration of " & "RSASSA_PSS_PARAMS" &
@@ -11249,7 +11264,7 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_check_crl_fn):
   type
-    X509_STORE_CTX_check_crl_fn* = X509_STORE_CTX_check_crl_fn_553649563
+    X509_STORE_CTX_check_crl_fn* = X509_STORE_CTX_check_crl_fn_553649565
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_check_crl_fn" &
@@ -11263,7 +11278,7 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_X509_PURPOSE_copy_func):
   type
-    sk_X509_PURPOSE_copy_func* = sk_X509_PURPOSE_copy_func_553649571
+    sk_X509_PURPOSE_copy_func* = sk_X509_PURPOSE_copy_func_553649573
 else:
   static :
     hint("Declaration of " & "sk_X509_PURPOSE_copy_func" &
@@ -11277,21 +11292,21 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_lookup_crls_fn):
   type
-    X509_STORE_CTX_lookup_crls_fn* = X509_STORE_CTX_lookup_crls_fn_553649527
+    X509_STORE_CTX_lookup_crls_fn* = X509_STORE_CTX_lookup_crls_fn_553649529
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_lookup_crls_fn" &
         " already exists, not redeclaring")
 when not declared(sk_POLICYQUALINFO_cmp_func):
   type
-    sk_POLICYQUALINFO_cmp_func* = sk_POLICYQUALINFO_cmp_func_553649631
+    sk_POLICYQUALINFO_cmp_func* = sk_POLICYQUALINFO_cmp_func_553649633
 else:
   static :
     hint("Declaration of " & "sk_POLICYQUALINFO_cmp_func" &
         " already exists, not redeclaring")
 when not declared(sk_SSL_COMP_delete_if_func):
   type
-    sk_SSL_COMP_delete_if_func* = sk_SSL_COMP_delete_if_func_553649751
+    sk_SSL_COMP_delete_if_func* = sk_SSL_COMP_delete_if_func_553649753
 else:
   static :
     hint("Declaration of " & "sk_SSL_COMP_delete_if_func" &
@@ -11311,21 +11326,21 @@ else:
         " already exists, not redeclaring")
 when not declared(EVP_PKEY_gen_cb):
   type
-    EVP_PKEY_gen_cb* = EVP_PKEY_gen_cb_553649389
+    EVP_PKEY_gen_cb* = EVP_PKEY_gen_cb_553649391
 else:
   static :
     hint("Declaration of " & "EVP_PKEY_gen_cb" &
         " already exists, not redeclaring")
 when not declared(struct_in_addr):
   type
-    struct_in_addr* = struct_in_addr_553649757
+    struct_in_addr* = struct_in_addr_553649759
 else:
   static :
     hint("Declaration of " & "struct_in_addr" &
         " already exists, not redeclaring")
 when not declared(sk_X509_CRL_delete_if_func):
   type
-    sk_X509_CRL_delete_if_func* = sk_X509_CRL_delete_if_func_553649459
+    sk_X509_CRL_delete_if_func* = sk_X509_CRL_delete_if_func_553649461
 else:
   static :
     hint("Declaration of " & "sk_X509_CRL_delete_if_func" &
@@ -11352,7 +11367,7 @@ else:
         " already exists, not redeclaring")
 when not declared(union_md_ctx_union):
   type
-    union_md_ctx_union* = union_md_ctx_union_553649387
+    union_md_ctx_union* = union_md_ctx_union_553649389
 else:
   static :
     hint("Declaration of " & "union_md_ctx_union" &
@@ -11366,7 +11381,7 @@ else:
         " already exists, not redeclaring")
 when not declared(POLICY_CONSTRAINTS):
   type
-    POLICY_CONSTRAINTS* = POLICY_CONSTRAINTS_553649677
+    POLICY_CONSTRAINTS* = POLICY_CONSTRAINTS_553649679
 else:
   static :
     hint("Declaration of " & "POLICY_CONSTRAINTS" &
@@ -11393,7 +11408,7 @@ else:
     hint("Declaration of " & "PKCS12" & " already exists, not redeclaring")
 when not declared(X509_LOOKUP_METHOD):
   type
-    X509_LOOKUP_METHOD* = X509_LOOKUP_METHOD_553649229
+    X509_LOOKUP_METHOD* = X509_LOOKUP_METHOD_553649231
 else:
   static :
     hint("Declaration of " & "X509_LOOKUP_METHOD" &
@@ -11407,21 +11422,21 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_GENERAL_SUBTREE_copy_func):
   type
-    sk_GENERAL_SUBTREE_copy_func* = sk_GENERAL_SUBTREE_copy_func_553649669
+    sk_GENERAL_SUBTREE_copy_func* = sk_GENERAL_SUBTREE_copy_func_553649671
 else:
   static :
     hint("Declaration of " & "sk_GENERAL_SUBTREE_copy_func" &
         " already exists, not redeclaring")
 when not declared(SSL_custom_ext_parse_cb):
   type
-    SSL_custom_ext_parse_cb* = SSL_custom_ext_parse_cb_553649703
+    SSL_custom_ext_parse_cb* = SSL_custom_ext_parse_cb_553649705
 else:
   static :
     hint("Declaration of " & "SSL_custom_ext_parse_cb" &
         " already exists, not redeclaring")
 when not declared(struct_POLICYQUALINFO_st):
   type
-    struct_POLICYQUALINFO_st* = struct_POLICYQUALINFO_st_553649623
+    struct_POLICYQUALINFO_st* = struct_POLICYQUALINFO_st_553649625
 else:
   static :
     hint("Declaration of " & "struct_POLICYQUALINFO_st" &
@@ -11442,14 +11457,14 @@ else:
         " already exists, not redeclaring")
 when not declared(compiler_time_t):
   type
-    compiler_time_t* = compiler_time_t_553649765
+    compiler_time_t* = compiler_time_t_553649767
 else:
   static :
     hint("Declaration of " & "compiler_time_t" &
         " already exists, not redeclaring")
 when not declared(USERNOTICE):
   type
-    USERNOTICE* = USERNOTICE_553649621
+    USERNOTICE* = USERNOTICE_553649623
 else:
   static :
     hint("Declaration of " & "USERNOTICE" & " already exists, not redeclaring")
@@ -11469,21 +11484,21 @@ else:
         " already exists, not redeclaring")
 when not declared(sk_void_free_func):
   type
-    sk_void_free_func* = sk_void_free_func_553649285
+    sk_void_free_func* = sk_void_free_func_553649287
 else:
   static :
     hint("Declaration of " & "sk_void_free_func" &
         " already exists, not redeclaring")
 when not declared(ssl_cert_compression_func_t):
   type
-    ssl_cert_compression_func_t* = ssl_cert_compression_func_t_553649709
+    ssl_cert_compression_func_t* = ssl_cert_compression_func_t_553649711
 else:
   static :
     hint("Declaration of " & "ssl_cert_compression_func_t" &
         " already exists, not redeclaring")
 when not declared(sk_BIO_copy_func):
   type
-    sk_BIO_copy_func* = sk_BIO_copy_func_553649313
+    sk_BIO_copy_func* = sk_BIO_copy_func_553649315
 else:
   static :
     hint("Declaration of " & "sk_BIO_copy_func" &
@@ -11496,21 +11511,21 @@ else:
     hint("Declaration of " & "struct_ngtcp2_ccerr" &
         " already exists, not redeclaring")
 when not declared(NGTCP2_VERSION):
-  when "1.11.0-DEV" is static:
+  when "1.17.0-DEV" is static:
     const
-      NGTCP2_VERSION* = "1.11.0-DEV" ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:39:9
+      NGTCP2_VERSION* = "1.17.0-DEV" ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:39:9
   else:
-    let NGTCP2_VERSION* = "1.11.0-DEV" ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:39:9
+    let NGTCP2_VERSION* = "1.17.0-DEV" ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:39:9
 else:
   static :
     hint("Declaration of " & "NGTCP2_VERSION" &
         " already exists, not redeclaring")
 when not declared(NGTCP2_VERSION_NUM):
-  when 68352 is static:
+  when 69888 is static:
     const
-      NGTCP2_VERSION_NUM* = 68352 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:49:9
+      NGTCP2_VERSION_NUM* = 69888 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:49:9
   else:
-    let NGTCP2_VERSION_NUM* = 68352 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:49:9
+    let NGTCP2_VERSION_NUM* = 69888 ## Generated based on /nim-ngtcp2/libs/ngtcp2/lib/includes/ngtcp2/version.h:49:9
 else:
   static :
     hint("Declaration of " & "NGTCP2_VERSION_NUM" &
@@ -46540,7 +46555,7 @@ else:
     hint("Declaration of " & "X509_CRL_set1_nextUpdate" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get1_certs):
-  proc X509_STORE_CTX_get1_certs*(st: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_get1_certs*(st: ptr X509_STORE_CTX_553649240;
                                   nm: ptr X509_NAME_553648964): ptr struct_stack_st_X509 {.
       cdecl, importc: "X509_STORE_CTX_get1_certs".}
 else:
@@ -46548,7 +46563,7 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_get1_certs" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get1_crls):
-  proc X509_STORE_CTX_get1_crls*(st: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_get1_crls*(st: ptr X509_STORE_CTX_553649240;
                                  nm: ptr X509_NAME_553648964): ptr struct_stack_st_X509_CRL {.
       cdecl, importc: "X509_STORE_CTX_get1_crls".}
 else:
@@ -46642,9 +46657,9 @@ else:
     hint("Declaration of " & "NS_OBJSIGN_CA" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get_by_subject):
-  proc X509_STORE_CTX_get_by_subject*(vs: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_get_by_subject*(vs: ptr X509_STORE_CTX_553649240;
                                       type_arg: cint; name: ptr X509_NAME_553648964;
-                                      ret: ptr X509_OBJECT_553649232): cint {.
+                                      ret: ptr X509_OBJECT_553649234): cint {.
       cdecl, importc: "X509_STORE_CTX_get_by_subject".}
 else:
   static :
@@ -54301,7 +54316,7 @@ else:
     hint("Declaration of " & "SSL_TXT_CMPDEF" &
         " already exists, not redeclaring")
 when not declared(SSL_get_session):
-  proc SSL_get_session*(ssl: ptr SSL_553649202): ptr SSL_SESSION_553649200 {.
+  proc SSL_get_session*(ssl: ptr SSL_553649204): ptr SSL_SESSION_553649202 {.
       cdecl, importc: "SSL_get_session".}
 else:
   static :
@@ -55617,77 +55632,77 @@ else:
     hint("Declaration of " & "SSL_CTRL_SET_TMP_RSA_CB" &
         " already exists, not redeclaring")
 when not declared(DTLSv1_get_timeout):
-  proc DTLSv1_get_timeout*(ssl: ptr SSL_553649202; out_arg: ptr struct_timeval_553649686): cint {.
+  proc DTLSv1_get_timeout*(ssl: ptr SSL_553649204; out_arg: ptr struct_timeval_553649688): cint {.
       cdecl, importc: "DTLSv1_get_timeout".}
 else:
   static :
     hint("Declaration of " & "DTLSv1_get_timeout" &
         " already exists, not redeclaring")
 when not declared(DTLSv1_handle_timeout):
-  proc DTLSv1_handle_timeout*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc DTLSv1_handle_timeout*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "DTLSv1_handle_timeout".}
 else:
   static :
     hint("Declaration of " & "DTLSv1_handle_timeout" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_add0_chain_cert):
-  proc SSL_CTX_add0_chain_cert*(ctx: ptr SSL_CTX_553649182; x509: ptr X509_553649236): cint {.
+  proc SSL_CTX_add0_chain_cert*(ctx: ptr SSL_CTX_553649184; x509: ptr X509_553649238): cint {.
       cdecl, importc: "SSL_CTX_add0_chain_cert".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_add0_chain_cert" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_add1_chain_cert):
-  proc SSL_CTX_add1_chain_cert*(ctx: ptr SSL_CTX_553649182; x509: ptr X509_553649236): cint {.
+  proc SSL_CTX_add1_chain_cert*(ctx: ptr SSL_CTX_553649184; x509: ptr X509_553649238): cint {.
       cdecl, importc: "SSL_CTX_add1_chain_cert".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_add1_chain_cert" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_add_extra_chain_cert):
-  proc SSL_CTX_add_extra_chain_cert*(ctx: ptr SSL_CTX_553649182; x509: ptr X509_553649236): cint {.
+  proc SSL_CTX_add_extra_chain_cert*(ctx: ptr SSL_CTX_553649184; x509: ptr X509_553649238): cint {.
       cdecl, importc: "SSL_CTX_add_extra_chain_cert".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_add_extra_chain_cert" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_build_cert_chain):
-  proc SSL_CTX_build_cert_chain*(ctx: ptr SSL_CTX_553649182; flags: cint): cint {.
+  proc SSL_CTX_build_cert_chain*(ctx: ptr SSL_CTX_553649184; flags: cint): cint {.
       cdecl, importc: "SSL_CTX_build_cert_chain".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_build_cert_chain" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_clear_extra_chain_certs):
-  proc SSL_CTX_clear_extra_chain_certs*(ctx: ptr SSL_CTX_553649182): cint {.
+  proc SSL_CTX_clear_extra_chain_certs*(ctx: ptr SSL_CTX_553649184): cint {.
       cdecl, importc: "SSL_CTX_clear_extra_chain_certs".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_clear_extra_chain_certs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_clear_chain_certs):
-  proc SSL_CTX_clear_chain_certs*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_clear_chain_certs*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_clear_chain_certs".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_clear_chain_certs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_clear_mode):
-  proc SSL_CTX_clear_mode*(ctx: ptr SSL_CTX_553649182; mode: uint32): uint32 {.
+  proc SSL_CTX_clear_mode*(ctx: ptr SSL_CTX_553649184; mode: uint32): uint32 {.
       cdecl, importc: "SSL_CTX_clear_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_clear_mode" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_clear_options):
-  proc SSL_CTX_clear_options*(ctx: ptr SSL_CTX_553649182; options: uint32): uint32 {.
+  proc SSL_CTX_clear_options*(ctx: ptr SSL_CTX_553649184; options: uint32): uint32 {.
       cdecl, importc: "SSL_CTX_clear_options".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_clear_options" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get0_chain_certs):
-  proc SSL_CTX_get0_chain_certs*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_get0_chain_certs*(ctx: ptr SSL_CTX_553649184;
                                  out_chain: ptr ptr struct_stack_st_X509): cint {.
       cdecl, importc: "SSL_CTX_get0_chain_certs".}
 else:
@@ -55695,7 +55710,7 @@ else:
     hint("Declaration of " & "SSL_CTX_get0_chain_certs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_extra_chain_certs):
-  proc SSL_CTX_get_extra_chain_certs*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_get_extra_chain_certs*(ctx: ptr SSL_CTX_553649184;
                                       out_chain: ptr ptr struct_stack_st_X509): cint {.
       cdecl, importc: "SSL_CTX_get_extra_chain_certs".}
 else:
@@ -55703,50 +55718,50 @@ else:
     hint("Declaration of " & "SSL_CTX_get_extra_chain_certs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_max_cert_list):
-  proc SSL_CTX_get_max_cert_list*(ctx: ptr SSL_CTX_553649182): csize_t {.cdecl,
+  proc SSL_CTX_get_max_cert_list*(ctx: ptr SSL_CTX_553649184): csize_t {.cdecl,
       importc: "SSL_CTX_get_max_cert_list".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_max_cert_list" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_mode):
-  proc SSL_CTX_get_mode*(ctx: ptr SSL_CTX_553649182): uint32 {.cdecl,
+  proc SSL_CTX_get_mode*(ctx: ptr SSL_CTX_553649184): uint32 {.cdecl,
       importc: "SSL_CTX_get_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_mode" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_options):
-  proc SSL_CTX_get_options*(ctx: ptr SSL_CTX_553649182): uint32 {.cdecl,
+  proc SSL_CTX_get_options*(ctx: ptr SSL_CTX_553649184): uint32 {.cdecl,
       importc: "SSL_CTX_get_options".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_options" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_read_ahead):
-  proc SSL_CTX_get_read_ahead*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_get_read_ahead*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_get_read_ahead".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_read_ahead" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_session_cache_mode):
-  proc SSL_CTX_get_session_cache_mode*(ctx: ptr SSL_CTX_553649182): cint {.
+  proc SSL_CTX_get_session_cache_mode*(ctx: ptr SSL_CTX_553649184): cint {.
       cdecl, importc: "SSL_CTX_get_session_cache_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_session_cache_mode" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_tlsext_status_cb):
-  proc SSL_CTX_get_tlsext_status_cb*(ctx: ptr SSL_CTX_553649182; callback: proc (
-      a0: ptr SSL_553649202; a1: pointer): cint {.cdecl.}): cint {.cdecl,
+  proc SSL_CTX_get_tlsext_status_cb*(ctx: ptr SSL_CTX_553649184; callback: proc (
+      a0: ptr SSL_553649204; a1: pointer): cint {.cdecl.}): cint {.cdecl,
       importc: "SSL_CTX_get_tlsext_status_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_tlsext_status_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_tlsext_ticket_keys):
-  proc SSL_CTX_get_tlsext_ticket_keys*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_get_tlsext_ticket_keys*(ctx: ptr SSL_CTX_553649184;
                                        out_arg: pointer; len: csize_t): cint {.
       cdecl, importc: "SSL_CTX_get_tlsext_ticket_keys".}
 else:
@@ -55754,35 +55769,35 @@ else:
     hint("Declaration of " & "SSL_CTX_get_tlsext_ticket_keys" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_need_tmp_RSA):
-  proc SSL_CTX_need_tmp_RSA*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_need_tmp_RSA*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_need_tmp_RSA".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_need_tmp_RSA" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_get_cache_size):
-  proc SSL_CTX_sess_get_cache_size*(ctx: ptr SSL_CTX_553649182): culong {.cdecl,
+  proc SSL_CTX_sess_get_cache_size*(ctx: ptr SSL_CTX_553649184): culong {.cdecl,
       importc: "SSL_CTX_sess_get_cache_size".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_get_cache_size" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_number):
-  proc SSL_CTX_sess_number*(ctx: ptr SSL_CTX_553649182): csize_t {.cdecl,
+  proc SSL_CTX_sess_number*(ctx: ptr SSL_CTX_553649184): csize_t {.cdecl,
       importc: "SSL_CTX_sess_number".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_number" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_set_cache_size):
-  proc SSL_CTX_sess_set_cache_size*(ctx: ptr SSL_CTX_553649182; size: culong): culong {.
+  proc SSL_CTX_sess_set_cache_size*(ctx: ptr SSL_CTX_553649184; size: culong): culong {.
       cdecl, importc: "SSL_CTX_sess_set_cache_size".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_set_cache_size" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set0_chain):
-  proc SSL_CTX_set0_chain*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set0_chain*(ctx: ptr SSL_CTX_553649184;
                            chain: ptr struct_stack_st_X509): cint {.cdecl,
       importc: "SSL_CTX_set0_chain".}
 else:
@@ -55790,7 +55805,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set0_chain" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_chain):
-  proc SSL_CTX_set1_chain*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set1_chain*(ctx: ptr SSL_CTX_553649184;
                            chain: ptr struct_stack_st_X509): cint {.cdecl,
       importc: "SSL_CTX_set1_chain".}
 else:
@@ -55798,7 +55813,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set1_chain" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_curves):
-  proc SSL_CTX_set1_curves*(ctx: ptr SSL_CTX_553649182; curves: ptr cint;
+  proc SSL_CTX_set1_curves*(ctx: ptr SSL_CTX_553649184; curves: ptr cint;
                             num_curves: csize_t): cint {.cdecl,
       importc: "SSL_CTX_set1_curves".}
 else:
@@ -55806,7 +55821,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set1_curves" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_groups):
-  proc SSL_CTX_set1_groups*(ctx: ptr SSL_CTX_553649182; groups: ptr cint;
+  proc SSL_CTX_set1_groups*(ctx: ptr SSL_CTX_553649184; groups: ptr cint;
                             num_groups: csize_t): cint {.cdecl,
       importc: "SSL_CTX_set1_groups".}
 else:
@@ -55814,7 +55829,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set1_groups" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_max_cert_list):
-  proc SSL_CTX_set_max_cert_list*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_max_cert_list*(ctx: ptr SSL_CTX_553649184;
                                   max_cert_list: csize_t): void {.cdecl,
       importc: "SSL_CTX_set_max_cert_list".}
 else:
@@ -55822,7 +55837,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_max_cert_list" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_max_send_fragment):
-  proc SSL_CTX_set_max_send_fragment*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_max_send_fragment*(ctx: ptr SSL_CTX_553649184;
                                       max_send_fragment: csize_t): cint {.cdecl,
       importc: "SSL_CTX_set_max_send_fragment".}
 else:
@@ -55830,7 +55845,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_max_send_fragment" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_min_proto_version):
-  proc SSL_CTX_set_min_proto_version*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_min_proto_version*(ctx: ptr SSL_CTX_553649184;
                                       version: uint16): cint {.cdecl,
       importc: "SSL_CTX_set_min_proto_version".}
 else:
@@ -55838,50 +55853,50 @@ else:
     hint("Declaration of " & "SSL_CTX_set_min_proto_version" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_mode):
-  proc SSL_CTX_set_mode*(ctx: ptr SSL_CTX_553649182; mode: uint32): uint32 {.
+  proc SSL_CTX_set_mode*(ctx: ptr SSL_CTX_553649184; mode: uint32): uint32 {.
       cdecl, importc: "SSL_CTX_set_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_mode" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_msg_callback_arg):
-  proc SSL_CTX_set_msg_callback_arg*(ctx: ptr SSL_CTX_553649182; arg: pointer): void {.
+  proc SSL_CTX_set_msg_callback_arg*(ctx: ptr SSL_CTX_553649184; arg: pointer): void {.
       cdecl, importc: "SSL_CTX_set_msg_callback_arg".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_msg_callback_arg" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_options):
-  proc SSL_CTX_set_options*(ctx: ptr SSL_CTX_553649182; options: uint32): uint32 {.
+  proc SSL_CTX_set_options*(ctx: ptr SSL_CTX_553649184; options: uint32): uint32 {.
       cdecl, importc: "SSL_CTX_set_options".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_options" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_read_ahead):
-  proc SSL_CTX_set_read_ahead*(ctx: ptr SSL_CTX_553649182; yes: cint): cint {.
+  proc SSL_CTX_set_read_ahead*(ctx: ptr SSL_CTX_553649184; yes: cint): cint {.
       cdecl, importc: "SSL_CTX_set_read_ahead".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_read_ahead" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_session_cache_mode):
-  proc SSL_CTX_set_session_cache_mode*(ctx: ptr SSL_CTX_553649182; mode: cint): cint {.
+  proc SSL_CTX_set_session_cache_mode*(ctx: ptr SSL_CTX_553649184; mode: cint): cint {.
       cdecl, importc: "SSL_CTX_set_session_cache_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_session_cache_mode" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tlsext_servername_arg):
-  proc SSL_CTX_set_tlsext_servername_arg*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_tlsext_servername_arg*(ctx: ptr SSL_CTX_553649184;
       arg: pointer): cint {.cdecl, importc: "SSL_CTX_set_tlsext_servername_arg".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_tlsext_servername_arg" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tlsext_ticket_key_cb):
-  proc SSL_CTX_set_tlsext_ticket_key_cb*(ctx: ptr SSL_CTX_553649182; callback: proc (
-      a0: ptr SSL_553649202; a1: ptr uint8; a2: ptr uint8;
+  proc SSL_CTX_set_tlsext_ticket_key_cb*(ctx: ptr SSL_CTX_553649184; callback: proc (
+      a0: ptr SSL_553649204; a1: ptr uint8; a2: ptr uint8;
       a3: ptr EVP_CIPHER_CTX_553649058; a4: ptr HMAC_CTX_553649090; a5: cint): cint {.
       cdecl.}): cint {.cdecl, importc: "SSL_CTX_set_tlsext_ticket_key_cb".}
 else:
@@ -55889,7 +55904,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_tlsext_ticket_key_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tlsext_ticket_keys):
-  proc SSL_CTX_set_tlsext_ticket_keys*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_tlsext_ticket_keys*(ctx: ptr SSL_CTX_553649184;
                                        in_arg: pointer; len: csize_t): cint {.
       cdecl, importc: "SSL_CTX_set_tlsext_ticket_keys".}
 else:
@@ -55897,77 +55912,77 @@ else:
     hint("Declaration of " & "SSL_CTX_set_tlsext_ticket_keys" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tmp_dh):
-  proc SSL_CTX_set_tmp_dh*(ctx: ptr SSL_CTX_553649182; dh: ptr DH_553649028): cint {.
+  proc SSL_CTX_set_tmp_dh*(ctx: ptr SSL_CTX_553649184; dh: ptr DH_553649028): cint {.
       cdecl, importc: "SSL_CTX_set_tmp_dh".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_tmp_dh" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tmp_ecdh):
-  proc SSL_CTX_set_tmp_ecdh*(ctx: ptr SSL_CTX_553649182; ec_key: ptr EC_KEY_553649034): cint {.
+  proc SSL_CTX_set_tmp_ecdh*(ctx: ptr SSL_CTX_553649184; ec_key: ptr EC_KEY_553649034): cint {.
       cdecl, importc: "SSL_CTX_set_tmp_ecdh".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_tmp_ecdh" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tmp_rsa):
-  proc SSL_CTX_set_tmp_rsa*(ctx: ptr SSL_CTX_553649182; rsa: ptr RSA_553649160): cint {.
+  proc SSL_CTX_set_tmp_rsa*(ctx: ptr SSL_CTX_553649184; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "SSL_CTX_set_tmp_rsa".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_tmp_rsa" &
         " already exists, not redeclaring")
 when not declared(SSL_add0_chain_cert):
-  proc SSL_add0_chain_cert*(ssl: ptr SSL_553649202; x509: ptr X509_553649236): cint {.
+  proc SSL_add0_chain_cert*(ssl: ptr SSL_553649204; x509: ptr X509_553649238): cint {.
       cdecl, importc: "SSL_add0_chain_cert".}
 else:
   static :
     hint("Declaration of " & "SSL_add0_chain_cert" &
         " already exists, not redeclaring")
 when not declared(SSL_add1_chain_cert):
-  proc SSL_add1_chain_cert*(ssl: ptr SSL_553649202; x509: ptr X509_553649236): cint {.
+  proc SSL_add1_chain_cert*(ssl: ptr SSL_553649204; x509: ptr X509_553649238): cint {.
       cdecl, importc: "SSL_add1_chain_cert".}
 else:
   static :
     hint("Declaration of " & "SSL_add1_chain_cert" &
         " already exists, not redeclaring")
 when not declared(SSL_build_cert_chain):
-  proc SSL_build_cert_chain*(ssl: ptr SSL_553649202; flags: cint): cint {.cdecl,
+  proc SSL_build_cert_chain*(ssl: ptr SSL_553649204; flags: cint): cint {.cdecl,
       importc: "SSL_build_cert_chain".}
 else:
   static :
     hint("Declaration of " & "SSL_build_cert_chain" &
         " already exists, not redeclaring")
 when not declared(SSL_clear_chain_certs):
-  proc SSL_clear_chain_certs*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_clear_chain_certs*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_clear_chain_certs".}
 else:
   static :
     hint("Declaration of " & "SSL_clear_chain_certs" &
         " already exists, not redeclaring")
 when not declared(SSL_clear_num_renegotiations):
-  proc SSL_clear_num_renegotiations*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_clear_num_renegotiations*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_clear_num_renegotiations".}
 else:
   static :
     hint("Declaration of " & "SSL_clear_num_renegotiations" &
         " already exists, not redeclaring")
 when not declared(SSL_clear_mode):
-  proc SSL_clear_mode*(ssl: ptr SSL_553649202; mode: uint32): uint32 {.cdecl,
+  proc SSL_clear_mode*(ssl: ptr SSL_553649204; mode: uint32): uint32 {.cdecl,
       importc: "SSL_clear_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_clear_mode" &
         " already exists, not redeclaring")
 when not declared(SSL_clear_options):
-  proc SSL_clear_options*(ssl: ptr SSL_553649202; options: uint32): uint32 {.
+  proc SSL_clear_options*(ssl: ptr SSL_553649204; options: uint32): uint32 {.
       cdecl, importc: "SSL_clear_options".}
 else:
   static :
     hint("Declaration of " & "SSL_clear_options" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_certificate_types):
-  proc SSL_get0_certificate_types*(ssl: ptr SSL_553649202;
+  proc SSL_get0_certificate_types*(ssl: ptr SSL_553649204;
                                    out_types: ptr ptr uint8): csize_t {.cdecl,
       importc: "SSL_get0_certificate_types".}
 else:
@@ -55975,7 +55990,7 @@ else:
     hint("Declaration of " & "SSL_get0_certificate_types" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_chain_certs):
-  proc SSL_get0_chain_certs*(ssl: ptr SSL_553649202;
+  proc SSL_get0_chain_certs*(ssl: ptr SSL_553649204;
                              out_chain: ptr ptr struct_stack_st_X509): cint {.
       cdecl, importc: "SSL_get0_chain_certs".}
 else:
@@ -55983,69 +55998,69 @@ else:
     hint("Declaration of " & "SSL_get0_chain_certs" &
         " already exists, not redeclaring")
 when not declared(SSL_get_max_cert_list):
-  proc SSL_get_max_cert_list*(ssl: ptr SSL_553649202): csize_t {.cdecl,
+  proc SSL_get_max_cert_list*(ssl: ptr SSL_553649204): csize_t {.cdecl,
       importc: "SSL_get_max_cert_list".}
 else:
   static :
     hint("Declaration of " & "SSL_get_max_cert_list" &
         " already exists, not redeclaring")
 when not declared(SSL_get_mode):
-  proc SSL_get_mode*(ssl: ptr SSL_553649202): uint32 {.cdecl,
+  proc SSL_get_mode*(ssl: ptr SSL_553649204): uint32 {.cdecl,
       importc: "SSL_get_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_get_mode" & " already exists, not redeclaring")
 when not declared(SSL_get_negotiated_group):
-  proc SSL_get_negotiated_group*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_negotiated_group*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_negotiated_group".}
 else:
   static :
     hint("Declaration of " & "SSL_get_negotiated_group" &
         " already exists, not redeclaring")
 when not declared(SSL_get_options):
-  proc SSL_get_options*(ssl: ptr SSL_553649202): uint32 {.cdecl,
+  proc SSL_get_options*(ssl: ptr SSL_553649204): uint32 {.cdecl,
       importc: "SSL_get_options".}
 else:
   static :
     hint("Declaration of " & "SSL_get_options" &
         " already exists, not redeclaring")
 when not declared(SSL_need_tmp_RSA):
-  proc SSL_need_tmp_RSA*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_need_tmp_RSA*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_need_tmp_RSA".}
 else:
   static :
     hint("Declaration of " & "SSL_need_tmp_RSA" &
         " already exists, not redeclaring")
 when not declared(SSL_num_renegotiations):
-  proc SSL_num_renegotiations*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_num_renegotiations*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_num_renegotiations".}
 else:
   static :
     hint("Declaration of " & "SSL_num_renegotiations" &
         " already exists, not redeclaring")
 when not declared(SSL_session_reused):
-  proc SSL_session_reused*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_session_reused*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_session_reused".}
 else:
   static :
     hint("Declaration of " & "SSL_session_reused" &
         " already exists, not redeclaring")
 when not declared(SSL_set0_chain):
-  proc SSL_set0_chain*(ssl: ptr SSL_553649202; chain: ptr struct_stack_st_X509): cint {.
+  proc SSL_set0_chain*(ssl: ptr SSL_553649204; chain: ptr struct_stack_st_X509): cint {.
       cdecl, importc: "SSL_set0_chain".}
 else:
   static :
     hint("Declaration of " & "SSL_set0_chain" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_chain):
-  proc SSL_set1_chain*(ssl: ptr SSL_553649202; chain: ptr struct_stack_st_X509): cint {.
+  proc SSL_set1_chain*(ssl: ptr SSL_553649204; chain: ptr struct_stack_st_X509): cint {.
       cdecl, importc: "SSL_set1_chain".}
 else:
   static :
     hint("Declaration of " & "SSL_set1_chain" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_curves):
-  proc SSL_set1_curves*(ssl: ptr SSL_553649202; curves: ptr cint;
+  proc SSL_set1_curves*(ssl: ptr SSL_553649204; curves: ptr cint;
                         num_curves: csize_t): cint {.cdecl,
       importc: "SSL_set1_curves".}
 else:
@@ -56053,7 +56068,7 @@ else:
     hint("Declaration of " & "SSL_set1_curves" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_groups):
-  proc SSL_set1_groups*(ssl: ptr SSL_553649202; groups: ptr cint;
+  proc SSL_set1_groups*(ssl: ptr SSL_553649204; groups: ptr cint;
                         num_groups: csize_t): cint {.cdecl,
       importc: "SSL_set1_groups".}
 else:
@@ -56061,14 +56076,14 @@ else:
     hint("Declaration of " & "SSL_set1_groups" &
         " already exists, not redeclaring")
 when not declared(SSL_set_max_cert_list):
-  proc SSL_set_max_cert_list*(ssl: ptr SSL_553649202; max_cert_list: csize_t): void {.
+  proc SSL_set_max_cert_list*(ssl: ptr SSL_553649204; max_cert_list: csize_t): void {.
       cdecl, importc: "SSL_set_max_cert_list".}
 else:
   static :
     hint("Declaration of " & "SSL_set_max_cert_list" &
         " already exists, not redeclaring")
 when not declared(SSL_set_max_send_fragment):
-  proc SSL_set_max_send_fragment*(ssl: ptr SSL_553649202;
+  proc SSL_set_max_send_fragment*(ssl: ptr SSL_553649204;
                                   max_send_fragment: csize_t): cint {.cdecl,
       importc: "SSL_set_max_send_fragment".}
 else:
@@ -56076,75 +56091,75 @@ else:
     hint("Declaration of " & "SSL_set_max_send_fragment" &
         " already exists, not redeclaring")
 when not declared(SSL_set_mode):
-  proc SSL_set_mode*(ssl: ptr SSL_553649202; mode: uint32): uint32 {.cdecl,
+  proc SSL_set_mode*(ssl: ptr SSL_553649204; mode: uint32): uint32 {.cdecl,
       importc: "SSL_set_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_set_mode" & " already exists, not redeclaring")
 when not declared(SSL_set_msg_callback_arg):
-  proc SSL_set_msg_callback_arg*(ssl: ptr SSL_553649202; arg: pointer): void {.
+  proc SSL_set_msg_callback_arg*(ssl: ptr SSL_553649204; arg: pointer): void {.
       cdecl, importc: "SSL_set_msg_callback_arg".}
 else:
   static :
     hint("Declaration of " & "SSL_set_msg_callback_arg" &
         " already exists, not redeclaring")
 when not declared(SSL_set_mtu):
-  proc SSL_set_mtu*(ssl: ptr SSL_553649202; mtu: cuint): cint {.cdecl,
+  proc SSL_set_mtu*(ssl: ptr SSL_553649204; mtu: cuint): cint {.cdecl,
       importc: "SSL_set_mtu".}
 else:
   static :
     hint("Declaration of " & "SSL_set_mtu" & " already exists, not redeclaring")
 when not declared(SSL_set_options):
-  proc SSL_set_options*(ssl: ptr SSL_553649202; options: uint32): uint32 {.
+  proc SSL_set_options*(ssl: ptr SSL_553649204; options: uint32): uint32 {.
       cdecl, importc: "SSL_set_options".}
 else:
   static :
     hint("Declaration of " & "SSL_set_options" &
         " already exists, not redeclaring")
 when not declared(SSL_set_tlsext_host_name):
-  proc SSL_set_tlsext_host_name*(ssl: ptr SSL_553649202; name: cstring): cint {.
+  proc SSL_set_tlsext_host_name*(ssl: ptr SSL_553649204; name: cstring): cint {.
       cdecl, importc: "SSL_set_tlsext_host_name".}
 else:
   static :
     hint("Declaration of " & "SSL_set_tlsext_host_name" &
         " already exists, not redeclaring")
 when not declared(SSL_set_tmp_dh):
-  proc SSL_set_tmp_dh*(ssl: ptr SSL_553649202; dh: ptr DH_553649028): cint {.
+  proc SSL_set_tmp_dh*(ssl: ptr SSL_553649204; dh: ptr DH_553649028): cint {.
       cdecl, importc: "SSL_set_tmp_dh".}
 else:
   static :
     hint("Declaration of " & "SSL_set_tmp_dh" &
         " already exists, not redeclaring")
 when not declared(SSL_set_tmp_ecdh):
-  proc SSL_set_tmp_ecdh*(ssl: ptr SSL_553649202; ec_key: ptr EC_KEY_553649034): cint {.
+  proc SSL_set_tmp_ecdh*(ssl: ptr SSL_553649204; ec_key: ptr EC_KEY_553649034): cint {.
       cdecl, importc: "SSL_set_tmp_ecdh".}
 else:
   static :
     hint("Declaration of " & "SSL_set_tmp_ecdh" &
         " already exists, not redeclaring")
 when not declared(SSL_set_tmp_rsa):
-  proc SSL_set_tmp_rsa*(ssl: ptr SSL_553649202; rsa: ptr RSA_553649160): cint {.
+  proc SSL_set_tmp_rsa*(ssl: ptr SSL_553649204; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "SSL_set_tmp_rsa".}
 else:
   static :
     hint("Declaration of " & "SSL_set_tmp_rsa" &
         " already exists, not redeclaring")
 when not declared(SSL_total_renegotiations):
-  proc SSL_total_renegotiations*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_total_renegotiations*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_total_renegotiations".}
 else:
   static :
     hint("Declaration of " & "SSL_total_renegotiations" &
         " already exists, not redeclaring")
 when not declared(SSL_in_connect_init):
-  proc SSL_in_connect_init*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_in_connect_init*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_in_connect_init".}
 else:
   static :
     hint("Declaration of " & "SSL_in_connect_init" &
         " already exists, not redeclaring")
 when not declared(SSL_in_accept_init):
-  proc SSL_in_accept_init*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_in_accept_init*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_in_accept_init".}
 else:
   static :
@@ -58792,6 +58807,16 @@ else:
   static :
     hint("Declaration of " & "SSL_R_SERIALIZATION_INVALID_SERDE_VERSION" &
         " already exists, not redeclaring")
+when not declared(RAND_PRED_RESISTANCE_LEN):
+  when 32 is static:
+    const
+      RAND_PRED_RESISTANCE_LEN* = 32 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/rand.h:28:9
+  else:
+    let RAND_PRED_RESISTANCE_LEN* = 32 ## Generated based on /nim-ngtcp2/libs/aws-lc/include/openssl/rand.h:28:9
+else:
+  static :
+    hint("Declaration of " & "RAND_PRED_RESISTANCE_LEN" &
+        " already exists, not redeclaring")
 when not declared(ngtcp2_cid_init):
   proc ngtcp2_cid_init*(cid: ptr ngtcp2_cid_553648627; data: ptr uint8;
                         datalen: csize_t): void {.cdecl,
@@ -59935,7 +59960,7 @@ when not declared(ngtcp2_crypto_encrypt_cb):
                                  aad: ptr uint8; aadlen: csize_t): cint {.cdecl,
       importc: "ngtcp2_crypto_encrypt_cb".}
 else:
-  static : 
+  static :
     hint("Declaration of " & "ngtcp2_crypto_encrypt_cb" &
         " already exists, not redeclaring")
 when not declared(ngtcp2_crypto_decrypt):
@@ -60289,19 +60314,19 @@ else:
   static :
     hint("Declaration of " & "BUF_strlcat" & " already exists, not redeclaring")
 when not declared(SHA1_Init):
-  proc SHA1_Init*(sha: ptr SHA_CTX_553649170): cint {.cdecl,
+  proc SHA1_Init*(sha: ptr SHA_CTX_553649172): cint {.cdecl,
       importc: "SHA1_Init".}
 else:
   static :
     hint("Declaration of " & "SHA1_Init" & " already exists, not redeclaring")
 when not declared(SHA1_Update):
-  proc SHA1_Update*(sha: ptr SHA_CTX_553649170; data: pointer; len: csize_t): cint {.
+  proc SHA1_Update*(sha: ptr SHA_CTX_553649172; data: pointer; len: csize_t): cint {.
       cdecl, importc: "SHA1_Update".}
 else:
   static :
     hint("Declaration of " & "SHA1_Update" & " already exists, not redeclaring")
 when not declared(SHA1_Final):
-  proc SHA1_Final*(out_arg: array[20'i64, uint8]; sha: ptr SHA_CTX_553649170): cint {.
+  proc SHA1_Final*(out_arg: array[20'i64, uint8]; sha: ptr SHA_CTX_553649172): cint {.
       cdecl, importc: "SHA1_Final".}
 else:
   static :
@@ -60313,7 +60338,7 @@ else:
   static :
     hint("Declaration of " & "SHA1" & " already exists, not redeclaring")
 when not declared(SHA1_Transform):
-  proc SHA1_Transform*(sha: ptr SHA_CTX_553649170;
+  proc SHA1_Transform*(sha: ptr SHA_CTX_553649172;
                        block_arg: array[64'i64, uint8]): void {.cdecl,
       importc: "SHA1_Transform".}
 else:
@@ -60321,20 +60346,20 @@ else:
     hint("Declaration of " & "SHA1_Transform" &
         " already exists, not redeclaring")
 when not declared(SHA224_Init):
-  proc SHA224_Init*(sha: ptr SHA256_CTX_553649162): cint {.cdecl,
+  proc SHA224_Init*(sha: ptr SHA256_CTX_553649164): cint {.cdecl,
       importc: "SHA224_Init".}
 else:
   static :
     hint("Declaration of " & "SHA224_Init" & " already exists, not redeclaring")
 when not declared(SHA224_Update):
-  proc SHA224_Update*(sha: ptr SHA256_CTX_553649162; data: pointer; len: csize_t): cint {.
+  proc SHA224_Update*(sha: ptr SHA256_CTX_553649164; data: pointer; len: csize_t): cint {.
       cdecl, importc: "SHA224_Update".}
 else:
   static :
     hint("Declaration of " & "SHA224_Update" &
         " already exists, not redeclaring")
 when not declared(SHA224_Final):
-  proc SHA224_Final*(out_arg: array[28'i64, uint8]; sha: ptr SHA256_CTX_553649162): cint {.
+  proc SHA224_Final*(out_arg: array[28'i64, uint8]; sha: ptr SHA256_CTX_553649164): cint {.
       cdecl, importc: "SHA224_Final".}
 else:
   static :
@@ -60346,20 +60371,20 @@ else:
   static :
     hint("Declaration of " & "SHA224" & " already exists, not redeclaring")
 when not declared(SHA256_Init):
-  proc SHA256_Init*(sha: ptr SHA256_CTX_553649162): cint {.cdecl,
+  proc SHA256_Init*(sha: ptr SHA256_CTX_553649164): cint {.cdecl,
       importc: "SHA256_Init".}
 else:
   static :
     hint("Declaration of " & "SHA256_Init" & " already exists, not redeclaring")
 when not declared(SHA256_Update):
-  proc SHA256_Update*(sha: ptr SHA256_CTX_553649162; data: pointer; len: csize_t): cint {.
+  proc SHA256_Update*(sha: ptr SHA256_CTX_553649164; data: pointer; len: csize_t): cint {.
       cdecl, importc: "SHA256_Update".}
 else:
   static :
     hint("Declaration of " & "SHA256_Update" &
         " already exists, not redeclaring")
 when not declared(SHA256_Final):
-  proc SHA256_Final*(out_arg: array[32'i64, uint8]; sha: ptr SHA256_CTX_553649162): cint {.
+  proc SHA256_Final*(out_arg: array[32'i64, uint8]; sha: ptr SHA256_CTX_553649164): cint {.
       cdecl, importc: "SHA256_Final".}
 else:
   static :
@@ -60371,7 +60396,7 @@ else:
   static :
     hint("Declaration of " & "SHA256" & " already exists, not redeclaring")
 when not declared(SHA256_Transform):
-  proc SHA256_Transform*(sha: ptr SHA256_CTX_553649162;
+  proc SHA256_Transform*(sha: ptr SHA256_CTX_553649164;
                          block_arg: array[64'i64, uint8]): void {.cdecl,
       importc: "SHA256_Transform".}
 else:
@@ -60387,20 +60412,20 @@ else:
     hint("Declaration of " & "SHA256_TransformBlocks" &
         " already exists, not redeclaring")
 when not declared(SHA384_Init):
-  proc SHA384_Init*(sha: ptr SHA512_CTX_553649166): cint {.cdecl,
+  proc SHA384_Init*(sha: ptr SHA512_CTX_553649168): cint {.cdecl,
       importc: "SHA384_Init".}
 else:
   static :
     hint("Declaration of " & "SHA384_Init" & " already exists, not redeclaring")
 when not declared(SHA384_Update):
-  proc SHA384_Update*(sha: ptr SHA512_CTX_553649166; data: pointer; len: csize_t): cint {.
+  proc SHA384_Update*(sha: ptr SHA512_CTX_553649168; data: pointer; len: csize_t): cint {.
       cdecl, importc: "SHA384_Update".}
 else:
   static :
     hint("Declaration of " & "SHA384_Update" &
         " already exists, not redeclaring")
 when not declared(SHA384_Final):
-  proc SHA384_Final*(out_arg: array[48'i64, uint8]; sha: ptr SHA512_CTX_553649166): cint {.
+  proc SHA384_Final*(out_arg: array[48'i64, uint8]; sha: ptr SHA512_CTX_553649168): cint {.
       cdecl, importc: "SHA384_Final".}
 else:
   static :
@@ -60412,20 +60437,20 @@ else:
   static :
     hint("Declaration of " & "SHA384" & " already exists, not redeclaring")
 when not declared(SHA512_Init):
-  proc SHA512_Init*(sha: ptr SHA512_CTX_553649166): cint {.cdecl,
+  proc SHA512_Init*(sha: ptr SHA512_CTX_553649168): cint {.cdecl,
       importc: "SHA512_Init".}
 else:
   static :
     hint("Declaration of " & "SHA512_Init" & " already exists, not redeclaring")
 when not declared(SHA512_Update):
-  proc SHA512_Update*(sha: ptr SHA512_CTX_553649166; data: pointer; len: csize_t): cint {.
+  proc SHA512_Update*(sha: ptr SHA512_CTX_553649168; data: pointer; len: csize_t): cint {.
       cdecl, importc: "SHA512_Update".}
 else:
   static :
     hint("Declaration of " & "SHA512_Update" &
         " already exists, not redeclaring")
 when not declared(SHA512_Final):
-  proc SHA512_Final*(out_arg: array[64'i64, uint8]; sha: ptr SHA512_CTX_553649166): cint {.
+  proc SHA512_Final*(out_arg: array[64'i64, uint8]; sha: ptr SHA512_CTX_553649168): cint {.
       cdecl, importc: "SHA512_Final".}
 else:
   static :
@@ -60437,7 +60462,7 @@ else:
   static :
     hint("Declaration of " & "SHA512" & " already exists, not redeclaring")
 when not declared(SHA512_Transform):
-  proc SHA512_Transform*(sha: ptr SHA512_CTX_553649166;
+  proc SHA512_Transform*(sha: ptr SHA512_CTX_553649168;
                          block_arg: array[128'i64, uint8]): void {.cdecl,
       importc: "SHA512_Transform".}
 else:
@@ -60445,14 +60470,14 @@ else:
     hint("Declaration of " & "SHA512_Transform" &
         " already exists, not redeclaring")
 when not declared(SHA512_224_Init):
-  proc SHA512_224_Init*(sha: ptr SHA512_CTX_553649166): cint {.cdecl,
+  proc SHA512_224_Init*(sha: ptr SHA512_CTX_553649168): cint {.cdecl,
       importc: "SHA512_224_Init".}
 else:
   static :
     hint("Declaration of " & "SHA512_224_Init" &
         " already exists, not redeclaring")
 when not declared(SHA512_224_Update):
-  proc SHA512_224_Update*(sha: ptr SHA512_CTX_553649166; data: pointer;
+  proc SHA512_224_Update*(sha: ptr SHA512_CTX_553649168; data: pointer;
                           len: csize_t): cint {.cdecl,
       importc: "SHA512_224_Update".}
 else:
@@ -60460,7 +60485,7 @@ else:
     hint("Declaration of " & "SHA512_224_Update" &
         " already exists, not redeclaring")
 when not declared(SHA512_224_Final):
-  proc SHA512_224_Final*(out_arg: array[28'i64, uint8]; sha: ptr SHA512_CTX_553649166): cint {.
+  proc SHA512_224_Final*(out_arg: array[28'i64, uint8]; sha: ptr SHA512_CTX_553649168): cint {.
       cdecl, importc: "SHA512_224_Final".}
 else:
   static :
@@ -60473,14 +60498,14 @@ else:
   static :
     hint("Declaration of " & "SHA512_224" & " already exists, not redeclaring")
 when not declared(SHA512_256_Init):
-  proc SHA512_256_Init*(sha: ptr SHA512_CTX_553649166): cint {.cdecl,
+  proc SHA512_256_Init*(sha: ptr SHA512_CTX_553649168): cint {.cdecl,
       importc: "SHA512_256_Init".}
 else:
   static :
     hint("Declaration of " & "SHA512_256_Init" &
         " already exists, not redeclaring")
 when not declared(SHA512_256_Update):
-  proc SHA512_256_Update*(sha: ptr SHA512_CTX_553649166; data: pointer;
+  proc SHA512_256_Update*(sha: ptr SHA512_CTX_553649168; data: pointer;
                           len: csize_t): cint {.cdecl,
       importc: "SHA512_256_Update".}
 else:
@@ -60488,7 +60513,7 @@ else:
     hint("Declaration of " & "SHA512_256_Update" &
         " already exists, not redeclaring")
 when not declared(SHA512_256_Final):
-  proc SHA512_256_Final*(out_arg: array[32'i64, uint8]; sha: ptr SHA512_CTX_553649166): cint {.
+  proc SHA512_256_Final*(out_arg: array[32'i64, uint8]; sha: ptr SHA512_CTX_553649168): cint {.
       cdecl, importc: "SHA512_256_Final".}
 else:
   static :
@@ -60956,7 +60981,7 @@ else:
     hint("Declaration of " & "FIPS_is_entropy_cpu_jitter" &
         " already exists, not redeclaring")
 when not declared(FIPS_read_counter):
-  proc FIPS_read_counter*(counter: enum_fips_counter_t_553649258): csize_t {.
+  proc FIPS_read_counter*(counter: enum_fips_counter_t_553649260): csize_t {.
       cdecl, importc: "FIPS_read_counter".}
 else:
   static :
@@ -61194,7 +61219,7 @@ else:
     hint("Declaration of " & "ERR_reason_error_string" &
         " already exists, not redeclaring")
 when not declared(ERR_print_errors_cb):
-  proc ERR_print_errors_cb*(callback: ERR_print_errors_callback_t_553649260;
+  proc ERR_print_errors_cb*(callback: ERR_print_errors_callback_t_553649262;
                             ctx: pointer): void {.cdecl,
       importc: "ERR_print_errors_cb".}
 else:
@@ -61202,7 +61227,7 @@ else:
     hint("Declaration of " & "ERR_print_errors_cb" &
         " already exists, not redeclaring")
 when not declared(ERR_print_errors_fp):
-  proc ERR_print_errors_fp*(file: ptr Cfile_553649262): void {.cdecl,
+  proc ERR_print_errors_fp*(file: ptr Cfile_553649264): void {.cdecl,
       importc: "ERR_print_errors_fp".}
 else:
   static :
@@ -61295,65 +61320,65 @@ else:
     hint("Declaration of " & "ERR_set_error_data" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_new):
-  proc OPENSSL_sk_new*(comp: OPENSSL_sk_cmp_func_553649268): ptr OPENSSL_STACK_553649280 {.
+  proc OPENSSL_sk_new*(comp: OPENSSL_sk_cmp_func_553649270): ptr OPENSSL_STACK_553649282 {.
       cdecl, importc: "OPENSSL_sk_new".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_new" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_new_null):
-  proc OPENSSL_sk_new_null*(): ptr OPENSSL_STACK_553649280 {.cdecl,
+  proc OPENSSL_sk_new_null*(): ptr OPENSSL_STACK_553649282 {.cdecl,
       importc: "OPENSSL_sk_new_null".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_new_null" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_num):
-  proc OPENSSL_sk_num*(sk: ptr OPENSSL_STACK_553649280): csize_t {.cdecl,
+  proc OPENSSL_sk_num*(sk: ptr OPENSSL_STACK_553649282): csize_t {.cdecl,
       importc: "OPENSSL_sk_num".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_num" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_zero):
-  proc OPENSSL_sk_zero*(sk: ptr OPENSSL_STACK_553649280): void {.cdecl,
+  proc OPENSSL_sk_zero*(sk: ptr OPENSSL_STACK_553649282): void {.cdecl,
       importc: "OPENSSL_sk_zero".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_zero" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_value):
-  proc OPENSSL_sk_value*(sk: ptr OPENSSL_STACK_553649280; i: csize_t): pointer {.
+  proc OPENSSL_sk_value*(sk: ptr OPENSSL_STACK_553649282; i: csize_t): pointer {.
       cdecl, importc: "OPENSSL_sk_value".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_value" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_set):
-  proc OPENSSL_sk_set*(sk: ptr OPENSSL_STACK_553649280; i: csize_t; p: pointer): pointer {.
+  proc OPENSSL_sk_set*(sk: ptr OPENSSL_STACK_553649282; i: csize_t; p: pointer): pointer {.
       cdecl, importc: "OPENSSL_sk_set".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_set" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_free):
-  proc OPENSSL_sk_free*(sk: ptr OPENSSL_STACK_553649280): void {.cdecl,
+  proc OPENSSL_sk_free*(sk: ptr OPENSSL_STACK_553649282): void {.cdecl,
       importc: "OPENSSL_sk_free".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_free" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_pop_free_ex):
-  proc OPENSSL_sk_pop_free_ex*(sk: ptr OPENSSL_STACK_553649280;
-                               call_free_func: OPENSSL_sk_call_free_func_553649272;
-                               free_func: OPENSSL_sk_free_func_553649264): void {.
+  proc OPENSSL_sk_pop_free_ex*(sk: ptr OPENSSL_STACK_553649282;
+                               call_free_func: OPENSSL_sk_call_free_func_553649274;
+                               free_func: OPENSSL_sk_free_func_553649266): void {.
       cdecl, importc: "OPENSSL_sk_pop_free_ex".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_pop_free_ex" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_insert):
-  proc OPENSSL_sk_insert*(sk: ptr OPENSSL_STACK_553649280; p: pointer;
+  proc OPENSSL_sk_insert*(sk: ptr OPENSSL_STACK_553649282; p: pointer;
                           where: csize_t): csize_t {.cdecl,
       importc: "OPENSSL_sk_insert".}
 else:
@@ -61361,23 +61386,23 @@ else:
     hint("Declaration of " & "OPENSSL_sk_insert" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_delete):
-  proc OPENSSL_sk_delete*(sk: ptr OPENSSL_STACK_553649280; where: csize_t): pointer {.
+  proc OPENSSL_sk_delete*(sk: ptr OPENSSL_STACK_553649282; where: csize_t): pointer {.
       cdecl, importc: "OPENSSL_sk_delete".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_delete" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_delete_ptr):
-  proc OPENSSL_sk_delete_ptr*(sk: ptr OPENSSL_STACK_553649280; p: pointer): pointer {.
+  proc OPENSSL_sk_delete_ptr*(sk: ptr OPENSSL_STACK_553649282; p: pointer): pointer {.
       cdecl, importc: "OPENSSL_sk_delete_ptr".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_delete_ptr" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_delete_if):
-  proc OPENSSL_sk_delete_if*(sk: ptr OPENSSL_STACK_553649280;
-                             call_func: OPENSSL_sk_call_delete_if_func_553649278;
-                             func_arg: OPENSSL_sk_delete_if_func_553649270;
+  proc OPENSSL_sk_delete_if*(sk: ptr OPENSSL_STACK_553649282;
+                             call_func: OPENSSL_sk_call_delete_if_func_553649280;
+                             func_arg: OPENSSL_sk_delete_if_func_553649272;
                              data: pointer): void {.cdecl,
       importc: "OPENSSL_sk_delete_if".}
 else:
@@ -61385,85 +61410,85 @@ else:
     hint("Declaration of " & "OPENSSL_sk_delete_if" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_find):
-  proc OPENSSL_sk_find*(sk: ptr OPENSSL_STACK_553649280; out_index: ptr csize_t;
-                        p: pointer; call_cmp_func: OPENSSL_sk_call_cmp_func_553649276): cint {.
+  proc OPENSSL_sk_find*(sk: ptr OPENSSL_STACK_553649282; out_index: ptr csize_t;
+                        p: pointer; call_cmp_func: OPENSSL_sk_call_cmp_func_553649278): cint {.
       cdecl, importc: "OPENSSL_sk_find".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_find" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_unshift):
-  proc OPENSSL_sk_unshift*(sk: ptr OPENSSL_STACK_553649280; data: pointer): cint {.
+  proc OPENSSL_sk_unshift*(sk: ptr OPENSSL_STACK_553649282; data: pointer): cint {.
       cdecl, importc: "OPENSSL_sk_unshift".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_unshift" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_shift):
-  proc OPENSSL_sk_shift*(sk: ptr OPENSSL_STACK_553649280): pointer {.cdecl,
+  proc OPENSSL_sk_shift*(sk: ptr OPENSSL_STACK_553649282): pointer {.cdecl,
       importc: "OPENSSL_sk_shift".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_shift" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_push):
-  proc OPENSSL_sk_push*(sk: ptr OPENSSL_STACK_553649280; p: pointer): csize_t {.
+  proc OPENSSL_sk_push*(sk: ptr OPENSSL_STACK_553649282; p: pointer): csize_t {.
       cdecl, importc: "OPENSSL_sk_push".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_push" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_pop):
-  proc OPENSSL_sk_pop*(sk: ptr OPENSSL_STACK_553649280): pointer {.cdecl,
+  proc OPENSSL_sk_pop*(sk: ptr OPENSSL_STACK_553649282): pointer {.cdecl,
       importc: "OPENSSL_sk_pop".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_pop" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_dup):
-  proc OPENSSL_sk_dup*(sk: ptr OPENSSL_STACK_553649280): ptr OPENSSL_STACK_553649280 {.
+  proc OPENSSL_sk_dup*(sk: ptr OPENSSL_STACK_553649282): ptr OPENSSL_STACK_553649282 {.
       cdecl, importc: "OPENSSL_sk_dup".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_dup" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_sort):
-  proc OPENSSL_sk_sort*(sk: ptr OPENSSL_STACK_553649280;
-                        call_cmp_func: OPENSSL_sk_call_cmp_func_553649276): void {.
+  proc OPENSSL_sk_sort*(sk: ptr OPENSSL_STACK_553649282;
+                        call_cmp_func: OPENSSL_sk_call_cmp_func_553649278): void {.
       cdecl, importc: "OPENSSL_sk_sort".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_sort" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_is_sorted):
-  proc OPENSSL_sk_is_sorted*(sk: ptr OPENSSL_STACK_553649280): cint {.cdecl,
+  proc OPENSSL_sk_is_sorted*(sk: ptr OPENSSL_STACK_553649282): cint {.cdecl,
       importc: "OPENSSL_sk_is_sorted".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_is_sorted" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_set_cmp_func):
-  proc OPENSSL_sk_set_cmp_func*(sk: ptr OPENSSL_STACK_553649280;
-                                comp: OPENSSL_sk_cmp_func_553649268): OPENSSL_sk_cmp_func_553649268 {.
+  proc OPENSSL_sk_set_cmp_func*(sk: ptr OPENSSL_STACK_553649282;
+                                comp: OPENSSL_sk_cmp_func_553649270): OPENSSL_sk_cmp_func_553649270 {.
       cdecl, importc: "OPENSSL_sk_set_cmp_func".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_set_cmp_func" &
         " already exists, not redeclaring")
 when not declared(OPENSSL_sk_deep_copy):
-  proc OPENSSL_sk_deep_copy*(sk: ptr OPENSSL_STACK_553649280;
-                             call_copy_func: OPENSSL_sk_call_copy_func_553649274;
-                             copy_func: OPENSSL_sk_copy_func_553649266;
-                             call_free_func: OPENSSL_sk_call_free_func_553649272;
-                             free_func: OPENSSL_sk_free_func_553649264): ptr OPENSSL_STACK_553649280 {.
+  proc OPENSSL_sk_deep_copy*(sk: ptr OPENSSL_STACK_553649282;
+                             call_copy_func: OPENSSL_sk_call_copy_func_553649276;
+                             copy_func: OPENSSL_sk_copy_func_553649268;
+                             call_free_func: OPENSSL_sk_call_free_func_553649274;
+                             free_func: OPENSSL_sk_free_func_553649266): ptr OPENSSL_STACK_553649282 {.
       cdecl, importc: "OPENSSL_sk_deep_copy".}
 else:
   static :
     hint("Declaration of " & "OPENSSL_sk_deep_copy" &
         " already exists, not redeclaring")
 when not declared(sk_pop_free):
-  proc sk_pop_free*(sk: ptr OPENSSL_STACK_553649280;
-                    free_func: OPENSSL_sk_free_func_553649264): void {.cdecl,
+  proc sk_pop_free*(sk: ptr OPENSSL_STACK_553649282;
+                    free_func: OPENSSL_sk_free_func_553649266): void {.cdecl,
       importc: "sk_pop_free".}
 else:
   static :
@@ -61680,7 +61705,7 @@ else:
     hint("Declaration of " & "BIO_method_name" &
         " already exists, not redeclaring")
 when not declared(BIO_callback_ctrl):
-  proc BIO_callback_ctrl*(bio: ptr BIO_553648984; cmd: cint; fp: bio_info_cb_553649320): clong {.
+  proc BIO_callback_ctrl*(bio: ptr BIO_553648984; cmd: cint; fp: bio_info_cb_553649322): clong {.
       cdecl, importc: "BIO_callback_ctrl".}
 else:
   static :
@@ -61735,14 +61760,14 @@ else:
         " already exists, not redeclaring")
 when not declared(BIO_set_callback_ex):
   proc BIO_set_callback_ex*(bio: ptr BIO_553648984;
-                            callback_ex: BIO_callback_fn_ex_553649322): void {.
+                            callback_ex: BIO_callback_fn_ex_553649324): void {.
       cdecl, importc: "BIO_set_callback_ex".}
 else:
   static :
     hint("Declaration of " & "BIO_set_callback_ex" &
         " already exists, not redeclaring")
 when not declared(BIO_set_callback):
-  proc BIO_set_callback*(bio: ptr BIO_553648984; callback: BIO_callback_fn_553649324): void {.
+  proc BIO_set_callback*(bio: ptr BIO_553648984; callback: BIO_callback_fn_553649326): void {.
       cdecl, importc: "BIO_set_callback".}
 else:
   static :
@@ -61916,19 +61941,19 @@ else:
   static :
     hint("Declaration of " & "BIO_new_file" & " already exists, not redeclaring")
 when not declared(BIO_new_fp):
-  proc BIO_new_fp*(stream: ptr Cfile_553649262; close_flag: cint): ptr BIO_553648984 {.
+  proc BIO_new_fp*(stream: ptr Cfile_553649264; close_flag: cint): ptr BIO_553648984 {.
       cdecl, importc: "BIO_new_fp".}
 else:
   static :
     hint("Declaration of " & "BIO_new_fp" & " already exists, not redeclaring")
 when not declared(BIO_get_fp):
-  proc BIO_get_fp*(bio: ptr BIO_553648984; out_file: ptr ptr Cfile_553649262): cint {.
+  proc BIO_get_fp*(bio: ptr BIO_553648984; out_file: ptr ptr Cfile_553649264): cint {.
       cdecl, importc: "BIO_get_fp".}
 else:
   static :
     hint("Declaration of " & "BIO_get_fp" & " already exists, not redeclaring")
 when not declared(BIO_set_fp):
-  proc BIO_set_fp*(bio: ptr BIO_553648984; file: ptr Cfile_553649262;
+  proc BIO_set_fp*(bio: ptr BIO_553648984; file: ptr Cfile_553649264;
                    close_flag: cint): cint {.cdecl, importc: "BIO_set_fp".}
 else:
   static :
@@ -62073,14 +62098,14 @@ else:
     hint("Declaration of " & "BIO_new_dgram" &
         " already exists, not redeclaring")
 when not declared(BIO_ctrl_dgram_connect_proc):
-  proc BIO_ctrl_dgram_connect_proc*(bp: ptr BIO_553648984; peer: ptr BIO_ADDR_553649326): cint {.
+  proc BIO_ctrl_dgram_connect_proc*(bp: ptr BIO_553648984; peer: ptr BIO_ADDR_553649328): cint {.
       cdecl, importc: "BIO_ctrl_dgram_connect".}
 else:
   static :
     hint("Declaration of " & "BIO_ctrl_dgram_connect_proc" &
         " already exists, not redeclaring")
 when not declared(BIO_ctrl_set_connected):
-  proc BIO_ctrl_set_connected*(bp: ptr BIO_553648984; peer: ptr BIO_ADDR_553649326): cint {.
+  proc BIO_ctrl_set_connected*(bp: ptr BIO_553648984; peer: ptr BIO_ADDR_553649328): cint {.
       cdecl, importc: "BIO_ctrl_set_connected".}
 else:
   static :
@@ -62101,53 +62126,53 @@ else:
     hint("Declaration of " & "BIO_dgram_send_timedout" &
         " already exists, not redeclaring")
 when not declared(BIO_dgram_get_peer):
-  proc BIO_dgram_get_peer*(bp: ptr BIO_553648984; peer: ptr BIO_ADDR_553649326): cint {.
+  proc BIO_dgram_get_peer*(bp: ptr BIO_553648984; peer: ptr BIO_ADDR_553649328): cint {.
       cdecl, importc: "BIO_dgram_get_peer".}
 else:
   static :
     hint("Declaration of " & "BIO_dgram_get_peer" &
         " already exists, not redeclaring")
 when not declared(BIO_dgram_set_peer):
-  proc BIO_dgram_set_peer*(bp: ptr BIO_553648984; peer: ptr BIO_ADDR_553649326): cint {.
+  proc BIO_dgram_set_peer*(bp: ptr BIO_553648984; peer: ptr BIO_ADDR_553649328): cint {.
       cdecl, importc: "BIO_dgram_set_peer".}
 else:
   static :
     hint("Declaration of " & "BIO_dgram_set_peer" &
         " already exists, not redeclaring")
 when not declared(BIO_ADDR_new):
-  proc BIO_ADDR_new*(): ptr BIO_ADDR_553649326 {.cdecl, importc: "BIO_ADDR_new".}
+  proc BIO_ADDR_new*(): ptr BIO_ADDR_553649328 {.cdecl, importc: "BIO_ADDR_new".}
 else:
   static :
     hint("Declaration of " & "BIO_ADDR_new" & " already exists, not redeclaring")
 when not declared(BIO_ADDR_copy):
-  proc BIO_ADDR_copy*(dst: ptr BIO_ADDR_553649326; src: ptr BIO_ADDR_553649326): cint {.
+  proc BIO_ADDR_copy*(dst: ptr BIO_ADDR_553649328; src: ptr BIO_ADDR_553649328): cint {.
       cdecl, importc: "BIO_ADDR_copy".}
 else:
   static :
     hint("Declaration of " & "BIO_ADDR_copy" &
         " already exists, not redeclaring")
 when not declared(BIO_ADDR_dup):
-  proc BIO_ADDR_dup*(ap: ptr BIO_ADDR_553649326): ptr BIO_ADDR_553649326 {.
+  proc BIO_ADDR_dup*(ap: ptr BIO_ADDR_553649328): ptr BIO_ADDR_553649328 {.
       cdecl, importc: "BIO_ADDR_dup".}
 else:
   static :
     hint("Declaration of " & "BIO_ADDR_dup" & " already exists, not redeclaring")
 when not declared(BIO_ADDR_free):
-  proc BIO_ADDR_free*(ap: ptr BIO_ADDR_553649326): void {.cdecl,
+  proc BIO_ADDR_free*(ap: ptr BIO_ADDR_553649328): void {.cdecl,
       importc: "BIO_ADDR_free".}
 else:
   static :
     hint("Declaration of " & "BIO_ADDR_free" &
         " already exists, not redeclaring")
 when not declared(BIO_ADDR_clear):
-  proc BIO_ADDR_clear*(ap: ptr BIO_ADDR_553649326): void {.cdecl,
+  proc BIO_ADDR_clear*(ap: ptr BIO_ADDR_553649328): void {.cdecl,
       importc: "BIO_ADDR_clear".}
 else:
   static :
     hint("Declaration of " & "BIO_ADDR_clear" &
         " already exists, not redeclaring")
 when not declared(BIO_ADDR_rawmake):
-  proc BIO_ADDR_rawmake*(ap: ptr BIO_ADDR_553649326; family: cint;
+  proc BIO_ADDR_rawmake*(ap: ptr BIO_ADDR_553649328; family: cint;
                          where: pointer; wherelen: csize_t; port: cushort): cint {.
       cdecl, importc: "BIO_ADDR_rawmake".}
 else:
@@ -62155,14 +62180,14 @@ else:
     hint("Declaration of " & "BIO_ADDR_rawmake" &
         " already exists, not redeclaring")
 when not declared(BIO_ADDR_family):
-  proc BIO_ADDR_family*(ap: ptr BIO_ADDR_553649326): cint {.cdecl,
+  proc BIO_ADDR_family*(ap: ptr BIO_ADDR_553649328): cint {.cdecl,
       importc: "BIO_ADDR_family".}
 else:
   static :
     hint("Declaration of " & "BIO_ADDR_family" &
         " already exists, not redeclaring")
 when not declared(BIO_ADDR_rawaddress):
-  proc BIO_ADDR_rawaddress*(ap: ptr BIO_ADDR_553649326; p: pointer;
+  proc BIO_ADDR_rawaddress*(ap: ptr BIO_ADDR_553649328; p: pointer;
                             l: ptr csize_t): cint {.cdecl,
       importc: "BIO_ADDR_rawaddress".}
 else:
@@ -62170,7 +62195,7 @@ else:
     hint("Declaration of " & "BIO_ADDR_rawaddress" &
         " already exists, not redeclaring")
 when not declared(BIO_ADDR_rawport):
-  proc BIO_ADDR_rawport*(ap: ptr BIO_ADDR_553649326): cushort {.cdecl,
+  proc BIO_ADDR_rawport*(ap: ptr BIO_ADDR_553649328): cushort {.cdecl,
       importc: "BIO_ADDR_rawport".}
 else:
   static :
@@ -62313,7 +62338,7 @@ else:
         " already exists, not redeclaring")
 when not declared(BIO_meth_set_callback_ctrl):
   proc BIO_meth_set_callback_ctrl*(method_arg: ptr BIO_METHOD_553648980;
-      callback_ctrl: proc (a0: ptr BIO_553648984; a1: cint; a2: bio_info_cb_553649320): clong {.
+      callback_ctrl: proc (a0: ptr BIO_553648984; a1: cint; a2: bio_info_cb_553649322): clong {.
       cdecl.}): cint {.cdecl, importc: "BIO_meth_set_callback_ctrl".}
 else:
   static :
@@ -62321,7 +62346,7 @@ else:
         " already exists, not redeclaring")
 when not declared(BIO_meth_get_callback_ctrl):
   proc BIO_meth_get_callback_ctrl*(method_arg: ptr BIO_METHOD_553648980): proc (
-      a0: ptr BIO_553648984; a1: cint; a2: bio_info_cb_553649320): clong {.cdecl.} {.
+      a0: ptr BIO_553648984; a1: cint; a2: bio_info_cb_553649322): clong {.cdecl.} {.
       cdecl, importc: "BIO_meth_get_callback_ctrl".}
 else:
   static :
@@ -62353,9 +62378,9 @@ else:
     hint("Declaration of " & "BIO_get_init" & " already exists, not redeclaring")
 when not declared(BIO_get_ex_new_index):
   proc BIO_get_ex_new_index*(argl: clong; argp: pointer;
-                             unused: ptr CRYPTO_EX_unused_553649310;
-                             dup_unused: CRYPTO_EX_dup_553649308;
-                             free_func: CRYPTO_EX_free_553649306): cint {.cdecl,
+                             unused: ptr CRYPTO_EX_unused_553649312;
+                             dup_unused: CRYPTO_EX_dup_553649310;
+                             free_func: CRYPTO_EX_free_553649308): cint {.cdecl,
       importc: "BIO_get_ex_new_index".}
 else:
   static :
@@ -63958,7 +63983,7 @@ else:
 when not declared(EVP_AEAD_CTX_init_with_direction):
   proc EVP_AEAD_CTX_init_with_direction*(ctx: ptr EVP_AEAD_CTX_553649054;
       aead: ptr EVP_AEAD_553649052; key: ptr uint8; key_len: csize_t;
-      tag_len: csize_t; dir: enum_evp_aead_direction_t_553649334): cint {.cdecl,
+      tag_len: csize_t; dir: enum_evp_aead_direction_t_553649336): cint {.cdecl,
       importc: "EVP_AEAD_CTX_init_with_direction".}
 else:
   static :
@@ -64295,7 +64320,7 @@ else:
         " already exists, not redeclaring")
 when not declared(CBS_parse_generalized_time):
   proc CBS_parse_generalized_time*(cbs: ptr CBS_553649008;
-                                   out_tm: ptr struct_tm_553649336;
+                                   out_tm: ptr struct_tm_553649338;
                                    allow_timezone_offset: cint): cint {.cdecl,
       importc: "CBS_parse_generalized_time".}
 else:
@@ -64303,7 +64328,7 @@ else:
     hint("Declaration of " & "CBS_parse_generalized_time" &
         " already exists, not redeclaring")
 when not declared(CBS_parse_utc_time):
-  proc CBS_parse_utc_time*(cbs: ptr CBS_553649008; out_tm: ptr struct_tm_553649336;
+  proc CBS_parse_utc_time*(cbs: ptr CBS_553649008; out_tm: ptr struct_tm_553649338;
                            allow_timezone_offset: cint): cint {.cdecl,
       importc: "CBS_parse_utc_time".}
 else:
@@ -64724,7 +64749,7 @@ else:
     hint("Declaration of " & "OBJ_find_sigid_by_algs" &
         " already exists, not redeclaring")
 when not declared(OBJ_NAME_do_all_sorted):
-  proc OBJ_NAME_do_all_sorted*(type_arg: cint; callback: proc (a0: ptr OBJ_NAME_553649344;
+  proc OBJ_NAME_do_all_sorted*(type_arg: cint; callback: proc (a0: ptr OBJ_NAME_553649346;
       a1: pointer): void {.cdecl.}; arg: pointer): void {.cdecl,
       importc: "OBJ_NAME_do_all_sorted".}
 else:
@@ -64810,7 +64835,7 @@ else:
   static :
     hint("Declaration of " & "BN_one" & " already exists, not redeclaring")
 when not declared(BN_set_word):
-  proc BN_set_word*(bn: ptr BIGNUM_553648976; value: BN_ULONG_553649346): cint {.
+  proc BN_set_word*(bn: ptr BIGNUM_553648976; value: BN_ULONG_553649348): cint {.
       cdecl, importc: "BN_set_word".}
 else:
   static :
@@ -64912,13 +64937,13 @@ else:
   static :
     hint("Declaration of " & "BN_print" & " already exists, not redeclaring")
 when not declared(BN_print_fp):
-  proc BN_print_fp*(fp: ptr Cfile_553649262; a: ptr BIGNUM_553648976): cint {.
+  proc BN_print_fp*(fp: ptr Cfile_553649264; a: ptr BIGNUM_553648976): cint {.
       cdecl, importc: "BN_print_fp".}
 else:
   static :
     hint("Declaration of " & "BN_print_fp" & " already exists, not redeclaring")
 when not declared(BN_get_word):
-  proc BN_get_word*(bn: ptr BIGNUM_553648976): BN_ULONG_553649346 {.cdecl,
+  proc BN_get_word*(bn: ptr BIGNUM_553648976): BN_ULONG_553649348 {.cdecl,
       importc: "BN_get_word".}
 else:
   static :
@@ -64991,7 +65016,7 @@ else:
   static :
     hint("Declaration of " & "BN_uadd" & " already exists, not redeclaring")
 when not declared(BN_add_word):
-  proc BN_add_word*(a: ptr BIGNUM_553648976; w: BN_ULONG_553649346): cint {.
+  proc BN_add_word*(a: ptr BIGNUM_553648976; w: BN_ULONG_553649348): cint {.
       cdecl, importc: "BN_add_word".}
 else:
   static :
@@ -65009,7 +65034,7 @@ else:
   static :
     hint("Declaration of " & "BN_usub" & " already exists, not redeclaring")
 when not declared(BN_sub_word):
-  proc BN_sub_word*(a: ptr BIGNUM_553648976; w: BN_ULONG_553649346): cint {.
+  proc BN_sub_word*(a: ptr BIGNUM_553648976; w: BN_ULONG_553649348): cint {.
       cdecl, importc: "BN_sub_word".}
 else:
   static :
@@ -65021,7 +65046,7 @@ else:
   static :
     hint("Declaration of " & "BN_mul" & " already exists, not redeclaring")
 when not declared(BN_mul_word):
-  proc BN_mul_word*(bn: ptr BIGNUM_553648976; w: BN_ULONG_553649346): cint {.
+  proc BN_mul_word*(bn: ptr BIGNUM_553648976; w: BN_ULONG_553649348): cint {.
       cdecl, importc: "BN_mul_word".}
 else:
   static :
@@ -65040,7 +65065,7 @@ else:
   static :
     hint("Declaration of " & "BN_div" & " already exists, not redeclaring")
 when not declared(BN_div_word):
-  proc BN_div_word*(numerator: ptr BIGNUM_553648976; divisor: BN_ULONG_553649346): BN_ULONG_553649346 {.
+  proc BN_div_word*(numerator: ptr BIGNUM_553648976; divisor: BN_ULONG_553649348): BN_ULONG_553649348 {.
       cdecl, importc: "BN_div_word".}
 else:
   static :
@@ -65058,7 +65083,7 @@ else:
   static :
     hint("Declaration of " & "BN_cmp" & " already exists, not redeclaring")
 when not declared(BN_cmp_word):
-  proc BN_cmp_word*(a: ptr BIGNUM_553648976; b: BN_ULONG_553649346): cint {.
+  proc BN_cmp_word*(a: ptr BIGNUM_553648976; b: BN_ULONG_553649348): cint {.
       cdecl, importc: "BN_cmp_word".}
 else:
   static :
@@ -65077,7 +65102,7 @@ else:
     hint("Declaration of " & "BN_equal_consttime" &
         " already exists, not redeclaring")
 when not declared(BN_abs_is_word):
-  proc BN_abs_is_word*(bn: ptr BIGNUM_553648976; w: BN_ULONG_553649346): cint {.
+  proc BN_abs_is_word*(bn: ptr BIGNUM_553648976; w: BN_ULONG_553649348): cint {.
       cdecl, importc: "BN_abs_is_word".}
 else:
   static :
@@ -65095,7 +65120,7 @@ else:
   static :
     hint("Declaration of " & "BN_is_one" & " already exists, not redeclaring")
 when not declared(BN_is_word):
-  proc BN_is_word*(bn: ptr BIGNUM_553648976; w: BN_ULONG_553649346): cint {.
+  proc BN_is_word*(bn: ptr BIGNUM_553648976; w: BN_ULONG_553649348): cint {.
       cdecl, importc: "BN_is_word".}
 else:
   static :
@@ -65167,7 +65192,7 @@ else:
     hint("Declaration of " & "BN_count_low_zero_bits" &
         " already exists, not redeclaring")
 when not declared(BN_mod_word):
-  proc BN_mod_word*(a: ptr BIGNUM_553648976; w: BN_ULONG_553649346): BN_ULONG_553649346 {.
+  proc BN_mod_word*(a: ptr BIGNUM_553648976; w: BN_ULONG_553649348): BN_ULONG_553649348 {.
       cdecl, importc: "BN_mod_word".}
 else:
   static :
@@ -65299,7 +65324,7 @@ else:
     hint("Declaration of " & "BN_rand_range" &
         " already exists, not redeclaring")
 when not declared(BN_rand_range_ex):
-  proc BN_rand_range_ex*(r: ptr BIGNUM_553648976; min_inclusive: BN_ULONG_553649346;
+  proc BN_rand_range_ex*(r: ptr BIGNUM_553648976; min_inclusive: BN_ULONG_553649348;
                          max_exclusive: ptr BIGNUM_553648976): cint {.cdecl,
       importc: "BN_rand_range_ex".}
 else:
@@ -65357,7 +65382,7 @@ else:
         " already exists, not redeclaring")
 when not declared(BN_enhanced_miller_rabin_primality_test):
   proc BN_enhanced_miller_rabin_primality_test*(
-      out_result: ptr enum_bn_primality_result_t_553649348; w: ptr BIGNUM_553648976;
+      out_result: ptr enum_bn_primality_result_t_553649350; w: ptr BIGNUM_553648976;
       checks: cint; ctx: ptr BN_CTX_553648974; cb: ptr BN_GENCB_553648990): cint {.
       cdecl, importc: "BN_enhanced_miller_rabin_primality_test".}
 else:
@@ -65531,7 +65556,7 @@ else:
   static :
     hint("Declaration of " & "BN_mpi2bn" & " already exists, not redeclaring")
 when not declared(BN_mod_exp_mont_word):
-  proc BN_mod_exp_mont_word*(r: ptr BIGNUM_553648976; a: BN_ULONG_553649346;
+  proc BN_mod_exp_mont_word*(r: ptr BIGNUM_553648976; a: BN_ULONG_553649348;
                              p: ptr BIGNUM_553648976; m: ptr BIGNUM_553648976;
                              ctx: ptr BN_CTX_553648974; mont: ptr BN_MONT_CTX_553648994): cint {.
       cdecl, importc: "BN_mod_exp_mont_word".}
@@ -65603,7 +65628,7 @@ else:
   static :
     hint("Declaration of " & "BN_set_flags" & " already exists, not redeclaring")
 when not declared(BN_num_bits_word):
-  proc BN_num_bits_word*(l: BN_ULONG_553649346): cuint {.cdecl,
+  proc BN_num_bits_word*(l: BN_ULONG_553649348): cuint {.cdecl,
       importc: "BN_num_bits_word".}
 else:
   static :
@@ -65620,29 +65645,29 @@ else:
   static :
     hint("Declaration of " & "ASN1_tag2str" & " already exists, not redeclaring")
 when not declared(ASN1_item_new):
-  proc ASN1_item_new*(it: ptr ASN1_ITEM_553648866): ptr ASN1_VALUE_553649356 {.
+  proc ASN1_item_new*(it: ptr ASN1_ITEM_553648866): ptr ASN1_VALUE_553649358 {.
       cdecl, importc: "ASN1_item_new".}
 else:
   static :
     hint("Declaration of " & "ASN1_item_new" &
         " already exists, not redeclaring")
 when not declared(ASN1_item_free):
-  proc ASN1_item_free*(val: ptr ASN1_VALUE_553649356; it: ptr ASN1_ITEM_553648866): void {.
+  proc ASN1_item_free*(val: ptr ASN1_VALUE_553649358; it: ptr ASN1_ITEM_553648866): void {.
       cdecl, importc: "ASN1_item_free".}
 else:
   static :
     hint("Declaration of " & "ASN1_item_free" &
         " already exists, not redeclaring")
 when not declared(ASN1_item_d2i):
-  proc ASN1_item_d2i*(out_arg: ptr ptr ASN1_VALUE_553649356; inp: ptr ptr uint8;
-                      len: clong; it: ptr ASN1_ITEM_553648866): ptr ASN1_VALUE_553649356 {.
+  proc ASN1_item_d2i*(out_arg: ptr ptr ASN1_VALUE_553649358; inp: ptr ptr uint8;
+                      len: clong; it: ptr ASN1_ITEM_553648866): ptr ASN1_VALUE_553649358 {.
       cdecl, importc: "ASN1_item_d2i".}
 else:
   static :
     hint("Declaration of " & "ASN1_item_d2i" &
         " already exists, not redeclaring")
 when not declared(ASN1_item_i2d):
-  proc ASN1_item_i2d*(val: ptr ASN1_VALUE_553649356; outp: ptr ptr uint8;
+  proc ASN1_item_i2d*(val: ptr ASN1_VALUE_553649358; outp: ptr ptr uint8;
                       it: ptr ASN1_ITEM_553648866): cint {.cdecl,
       importc: "ASN1_item_i2d".}
 else:
@@ -65650,7 +65675,7 @@ else:
     hint("Declaration of " & "ASN1_item_i2d" &
         " already exists, not redeclaring")
 when not declared(ASN1_dup):
-  proc ASN1_dup*(i2d: i2d_of_void_553649352; d2i: d2i_of_void_553649350;
+  proc ASN1_dup*(i2d: i2d_of_void_553649354; d2i: d2i_of_void_553649352;
                  x: pointer): pointer {.cdecl, importc: "ASN1_dup".}
 else:
   static :
@@ -65663,7 +65688,7 @@ else:
     hint("Declaration of " & "ASN1_item_dup" &
         " already exists, not redeclaring")
 when not declared(ASN1_item_d2i_fp):
-  proc ASN1_item_d2i_fp*(it: ptr ASN1_ITEM_553648866; in_arg: ptr Cfile_553649262;
+  proc ASN1_item_d2i_fp*(it: ptr ASN1_ITEM_553648866; in_arg: ptr Cfile_553649264;
                          out_arg: pointer): pointer {.cdecl,
       importc: "ASN1_item_d2i_fp".}
 else:
@@ -65679,7 +65704,7 @@ else:
     hint("Declaration of " & "ASN1_item_d2i_bio" &
         " already exists, not redeclaring")
 when not declared(ASN1_item_i2d_fp):
-  proc ASN1_item_i2d_fp*(it: ptr ASN1_ITEM_553648866; out_arg: ptr Cfile_553649262;
+  proc ASN1_item_i2d_fp*(it: ptr ASN1_ITEM_553648866; out_arg: ptr Cfile_553649264;
                          in_arg: pointer): cint {.cdecl,
       importc: "ASN1_item_i2d_fp".}
 else:
@@ -65695,7 +65720,7 @@ else:
     hint("Declaration of " & "ASN1_item_i2d_bio" &
         " already exists, not redeclaring")
 when not declared(ASN1_i2d_bio):
-  proc ASN1_i2d_bio*(i2d: i2d_of_void_553649352; out_arg: ptr BIO_553648984;
+  proc ASN1_i2d_bio*(i2d: i2d_of_void_553649354; out_arg: ptr BIO_553648984;
                      in_arg: pointer): cint {.cdecl, importc: "ASN1_i2d_bio".}
 else:
   static :
@@ -66643,7 +66668,7 @@ else:
     hint("Declaration of " & "ASN1_UTCTIME_set_string" &
         " already exists, not redeclaring")
 when not declared(ASN1_UTCTIME_cmp_time_t):
-  proc ASN1_UTCTIME_cmp_time_t*(s: ptr ASN1_UTCTIME_553648900; t: time_t_553649366): cint {.
+  proc ASN1_UTCTIME_cmp_time_t*(s: ptr ASN1_UTCTIME_553648900; t: time_t_553649368): cint {.
       cdecl, importc: "ASN1_UTCTIME_cmp_time_t".}
 else:
   static :
@@ -66767,7 +66792,7 @@ else:
     hint("Declaration of " & "ASN1_TIME_set_posix" &
         " already exists, not redeclaring")
 when not declared(ASN1_TIME_set):
-  proc ASN1_TIME_set*(s: ptr ASN1_TIME_553648896; time: time_t_553649366): ptr ASN1_TIME_553648896 {.
+  proc ASN1_TIME_set*(s: ptr ASN1_TIME_553648896; time: time_t_553649368): ptr ASN1_TIME_553648896 {.
       cdecl, importc: "ASN1_TIME_set".}
 else:
   static :
@@ -66804,7 +66829,7 @@ else:
     hint("Declaration of " & "ASN1_TIME_set_string" &
         " already exists, not redeclaring")
 when not declared(ASN1_TIME_to_tm):
-  proc ASN1_TIME_to_tm*(t: ptr ASN1_TIME_553648896; out_arg: ptr struct_tm_553649336): cint {.
+  proc ASN1_TIME_to_tm*(t: ptr ASN1_TIME_553648896; out_arg: ptr struct_tm_553649338): cint {.
       cdecl, importc: "ASN1_TIME_to_tm".}
 else:
   static :
@@ -66818,7 +66843,7 @@ else:
     hint("Declaration of " & "ASN1_TIME_set_string_X509" &
         " already exists, not redeclaring")
 when not declared(ASN1_TIME_to_time_t):
-  proc ASN1_TIME_to_time_t*(t: ptr ASN1_TIME_553648896; out_arg: ptr time_t_553649366): cint {.
+  proc ASN1_TIME_to_time_t*(t: ptr ASN1_TIME_553648896; out_arg: ptr time_t_553649368): cint {.
       cdecl, importc: "ASN1_TIME_to_time_t".}
 else:
   static :
@@ -66972,15 +66997,15 @@ else:
     hint("Declaration of " & "ASN1_TYPE_cmp" &
         " already exists, not redeclaring")
 when not declared(d2i_ASN1_SEQUENCE_ANY):
-  proc d2i_ASN1_SEQUENCE_ANY*(out_arg: ptr ptr ASN1_SEQUENCE_ANY_553649384;
-                              inp: ptr ptr uint8; len: clong): ptr ASN1_SEQUENCE_ANY_553649384 {.
+  proc d2i_ASN1_SEQUENCE_ANY*(out_arg: ptr ptr ASN1_SEQUENCE_ANY_553649386;
+                              inp: ptr ptr uint8; len: clong): ptr ASN1_SEQUENCE_ANY_553649386 {.
       cdecl, importc: "d2i_ASN1_SEQUENCE_ANY".}
 else:
   static :
     hint("Declaration of " & "d2i_ASN1_SEQUENCE_ANY" &
         " already exists, not redeclaring")
 when not declared(i2d_ASN1_SEQUENCE_ANY):
-  proc i2d_ASN1_SEQUENCE_ANY*(in_arg: ptr ASN1_SEQUENCE_ANY_553649384;
+  proc i2d_ASN1_SEQUENCE_ANY*(in_arg: ptr ASN1_SEQUENCE_ANY_553649386;
                               outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_ASN1_SEQUENCE_ANY".}
 else:
@@ -66988,15 +67013,15 @@ else:
     hint("Declaration of " & "i2d_ASN1_SEQUENCE_ANY" &
         " already exists, not redeclaring")
 when not declared(d2i_ASN1_SET_ANY):
-  proc d2i_ASN1_SET_ANY*(out_arg: ptr ptr ASN1_SEQUENCE_ANY_553649384;
-                         inp: ptr ptr uint8; len: clong): ptr ASN1_SEQUENCE_ANY_553649384 {.
+  proc d2i_ASN1_SET_ANY*(out_arg: ptr ptr ASN1_SEQUENCE_ANY_553649386;
+                         inp: ptr ptr uint8; len: clong): ptr ASN1_SEQUENCE_ANY_553649386 {.
       cdecl, importc: "d2i_ASN1_SET_ANY".}
 else:
   static :
     hint("Declaration of " & "d2i_ASN1_SET_ANY" &
         " already exists, not redeclaring")
 when not declared(i2d_ASN1_SET_ANY):
-  proc i2d_ASN1_SET_ANY*(in_arg: ptr ASN1_SEQUENCE_ANY_553649384;
+  proc i2d_ASN1_SET_ANY*(in_arg: ptr ASN1_SEQUENCE_ANY_553649386;
                          outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_ASN1_SET_ANY".}
 else:
@@ -67041,7 +67066,7 @@ else:
     hint("Declaration of " & "ASN1_STRING_print_ex" &
         " already exists, not redeclaring")
 when not declared(ASN1_STRING_print_ex_fp):
-  proc ASN1_STRING_print_ex_fp*(fp: ptr Cfile_553649262; str: ptr ASN1_STRING_553648892;
+  proc ASN1_STRING_print_ex_fp*(fp: ptr Cfile_553649264; str: ptr ASN1_STRING_553648892;
                                 flags: culong): cint {.cdecl,
       importc: "ASN1_STRING_print_ex_fp".}
 else:
@@ -67457,28 +67482,28 @@ else:
     hint("Declaration of " & "EVP_read_pw_string_min" &
         " already exists, not redeclaring")
 when not declared(EVP_PKEY_set1_RSA):
-  proc EVP_PKEY_set1_RSA*(pkey: ptr EVP_PKEY_553649086; key: ptr RSA_553649160): cint {.
+  proc EVP_PKEY_set1_RSA*(pkey: ptr EVP_PKEY_553649086; key: ptr RSA_553649162): cint {.
       cdecl, importc: "EVP_PKEY_set1_RSA".}
 else:
   static :
     hint("Declaration of " & "EVP_PKEY_set1_RSA" &
         " already exists, not redeclaring")
 when not declared(EVP_PKEY_assign_RSA):
-  proc EVP_PKEY_assign_RSA*(pkey: ptr EVP_PKEY_553649086; key: ptr RSA_553649160): cint {.
+  proc EVP_PKEY_assign_RSA*(pkey: ptr EVP_PKEY_553649086; key: ptr RSA_553649162): cint {.
       cdecl, importc: "EVP_PKEY_assign_RSA".}
 else:
   static :
     hint("Declaration of " & "EVP_PKEY_assign_RSA" &
         " already exists, not redeclaring")
 when not declared(EVP_PKEY_get0_RSA):
-  proc EVP_PKEY_get0_RSA*(pkey: ptr EVP_PKEY_553649086): ptr RSA_553649160 {.
+  proc EVP_PKEY_get0_RSA*(pkey: ptr EVP_PKEY_553649086): ptr RSA_553649162 {.
       cdecl, importc: "EVP_PKEY_get0_RSA".}
 else:
   static :
     hint("Declaration of " & "EVP_PKEY_get0_RSA" &
         " already exists, not redeclaring")
 when not declared(EVP_PKEY_get1_RSA):
-  proc EVP_PKEY_get1_RSA*(pkey: ptr EVP_PKEY_553649086): ptr RSA_553649160 {.
+  proc EVP_PKEY_get1_RSA*(pkey: ptr EVP_PKEY_553649086): ptr RSA_553649162 {.
       cdecl, importc: "EVP_PKEY_get1_RSA".}
 else:
   static :
@@ -68288,7 +68313,7 @@ else:
     hint("Declaration of " & "EVP_PKEY_asn1_get0_info" &
         " already exists, not redeclaring")
 when not declared(EVP_PKEY_CTX_set_cb):
-  proc EVP_PKEY_CTX_set_cb*(ctx: ptr EVP_PKEY_CTX_553649082; cb: EVP_PKEY_gen_cb_553649390): void {.
+  proc EVP_PKEY_CTX_set_cb*(ctx: ptr EVP_PKEY_CTX_553649082; cb: EVP_PKEY_gen_cb_553649392): void {.
       cdecl, importc: "EVP_PKEY_CTX_set_cb".}
 else:
   static :
@@ -68450,15 +68475,15 @@ else:
   static :
     hint("Declaration of " & "d2i_PUBKEY" & " already exists, not redeclaring")
 when not declared(i2d_RSA_PUBKEY):
-  proc i2d_RSA_PUBKEY*(rsa: ptr RSA_553649160; outp: ptr ptr uint8): cint {.
+  proc i2d_RSA_PUBKEY*(rsa: ptr RSA_553649162; outp: ptr ptr uint8): cint {.
       cdecl, importc: "i2d_RSA_PUBKEY".}
 else:
   static :
     hint("Declaration of " & "i2d_RSA_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(d2i_RSA_PUBKEY):
-  proc d2i_RSA_PUBKEY*(out_arg: ptr ptr RSA_553649160; inp: ptr ptr uint8;
-                       len: clong): ptr RSA_553649160 {.cdecl,
+  proc d2i_RSA_PUBKEY*(out_arg: ptr ptr RSA_553649162; inp: ptr ptr uint8;
+                       len: clong): ptr RSA_553649162 {.cdecl,
       importc: "d2i_RSA_PUBKEY".}
 else:
   static :
@@ -68825,7 +68850,7 @@ else:
     hint("Declaration of " & "PKCS7_get_signer_info" &
         " already exists, not redeclaring")
 when not declared(PKCS7_RECIP_INFO_set):
-  proc PKCS7_RECIP_INFO_set*(p7i: ptr PKCS7_RECIP_INFO_553649120; x509: ptr X509_553649236): cint {.
+  proc PKCS7_RECIP_INFO_set*(p7i: ptr PKCS7_RECIP_INFO_553649120; x509: ptr X509_553649238): cint {.
       cdecl, importc: "PKCS7_RECIP_INFO_set".}
 else:
   static :
@@ -68833,7 +68858,7 @@ else:
         " already exists, not redeclaring")
 when not declared(PKCS7_SIGNER_INFO_set):
   proc PKCS7_SIGNER_INFO_set*(p7i: ptr PKCS7_SIGNER_INFO_553649132;
-                              x509: ptr X509_553649236; pkey: ptr EVP_PKEY_553649086;
+                              x509: ptr X509_553649238; pkey: ptr EVP_PKEY_553649086;
                               dgst: ptr EVP_MD_553649050): cint {.cdecl,
       importc: "PKCS7_SIGNER_INFO_set".}
 else:
@@ -68841,7 +68866,7 @@ else:
     hint("Declaration of " & "PKCS7_SIGNER_INFO_set" &
         " already exists, not redeclaring")
 when not declared(PKCS7_add_certificate):
-  proc PKCS7_add_certificate*(p7: ptr PKCS7_553649136; x509: ptr X509_553649236): cint {.
+  proc PKCS7_add_certificate*(p7: ptr PKCS7_553649136; x509: ptr X509_553649238): cint {.
       cdecl, importc: "PKCS7_add_certificate".}
 else:
   static :
@@ -68916,7 +68941,7 @@ else:
     hint("Declaration of " & "PKCS7_SIGNER_INFO_get0_algs" &
         " already exists, not redeclaring")
 when not declared(PKCS7_sign):
-  proc PKCS7_sign*(sign_cert: ptr X509_553649236; pkey: ptr EVP_PKEY_553649086;
+  proc PKCS7_sign*(sign_cert: ptr X509_553649238; pkey: ptr EVP_PKEY_553649086;
                    certs: ptr struct_stack_st_X509; data: ptr BIO_553648984;
                    flags: cint): ptr PKCS7_553649136 {.cdecl,
       importc: "PKCS7_sign".}
@@ -68925,7 +68950,7 @@ else:
     hint("Declaration of " & "PKCS7_sign" & " already exists, not redeclaring")
 when not declared(PKCS7_verify):
   proc PKCS7_verify*(p7: ptr PKCS7_553649136; certs: ptr struct_stack_st_X509;
-                     store: ptr X509_STORE_553649240; indata: ptr BIO_553648984;
+                     store: ptr X509_STORE_553649242; indata: ptr BIO_553648984;
                      outdata: ptr BIO_553648984; flags: cint): cint {.cdecl,
       importc: "PKCS7_verify".}
 else:
@@ -68981,7 +69006,7 @@ else:
     hint("Declaration of " & "PKCS7_get_recipient_info" &
         " already exists, not redeclaring")
 when not declared(PKCS7_add_recipient):
-  proc PKCS7_add_recipient*(p7: ptr PKCS7_553649136; x509: ptr X509_553649236): ptr PKCS7_RECIP_INFO_553649120 {.
+  proc PKCS7_add_recipient*(p7: ptr PKCS7_553649136; x509: ptr X509_553649238): ptr PKCS7_RECIP_INFO_553649120 {.
       cdecl, importc: "PKCS7_add_recipient".}
 else:
   static :
@@ -69005,7 +69030,7 @@ else:
         " already exists, not redeclaring")
 when not declared(PKCS7_decrypt):
   proc PKCS7_decrypt*(p7: ptr PKCS7_553649136; pkey: ptr EVP_PKEY_553649086;
-                      cert: ptr X509_553649236; data: ptr BIO_553648984;
+                      cert: ptr X509_553649238; data: ptr BIO_553648984;
                       flags: cint): cint {.cdecl, importc: "PKCS7_decrypt".}
 else:
   static :
@@ -69035,7 +69060,7 @@ else:
     hint("Declaration of " & "PKCS7_print_ctx" &
         " already exists, not redeclaring")
 when not declared(lh_doall_arg):
-  proc lh_doall_arg*(lh: ptr internal_LHASH_553649408;
+  proc lh_doall_arg*(lh: ptr internal_LHASH_553649410;
                      func_arg: proc (a0: pointer; a1: pointer): void {.cdecl.};
                      arg: pointer): void {.cdecl, importc: "lh_doall_arg".}
 else:
@@ -69420,7 +69445,7 @@ else:
   static :
     hint("Declaration of " & "DSA_print" & " already exists, not redeclaring")
 when not declared(DSA_print_fp):
-  proc DSA_print_fp*(fp: ptr Cfile_553649262; dsa: ptr DSA_553649030;
+  proc DSA_print_fp*(fp: ptr Cfile_553649264; dsa: ptr DSA_553649030;
                      indent: cint): cint {.cdecl, importc: "DSA_print_fp".}
 else:
   static :
@@ -69654,9 +69679,9 @@ else:
     hint("Declaration of " & "DSA_dup_DH" & " already exists, not redeclaring")
 when not declared(DSA_get_ex_new_index):
   proc DSA_get_ex_new_index*(argl: clong; argp: pointer;
-                             unused: ptr CRYPTO_EX_unused_553649310;
-                             dup_unused: CRYPTO_EX_dup_553649308;
-                             free_func: CRYPTO_EX_free_553649306): cint {.cdecl,
+                             unused: ptr CRYPTO_EX_unused_553649312;
+                             dup_unused: CRYPTO_EX_dup_553649310;
+                             free_func: CRYPTO_EX_free_553649308): cint {.cdecl,
       importc: "DSA_get_ex_new_index".}
 else:
   static :
@@ -69953,7 +69978,7 @@ else:
         " already exists, not redeclaring")
 when not declared(EC_POINT_point2oct):
   proc EC_POINT_point2oct*(group: ptr EC_GROUP_553649032; point: ptr EC_POINT_553649036;
-                           form: point_conversion_form_t_553649420;
+                           form: point_conversion_form_t_553649422;
                            buf: ptr uint8; len: csize_t; ctx: ptr BN_CTX_553648974): csize_t {.
       cdecl, importc: "EC_POINT_point2oct".}
 else:
@@ -69963,7 +69988,7 @@ else:
 when not declared(EC_POINT_point2cbb):
   proc EC_POINT_point2cbb*(out_arg: ptr CBB_553649004; group: ptr EC_GROUP_553649032;
                            point: ptr EC_POINT_553649036;
-                           form: point_conversion_form_t_553649420;
+                           form: point_conversion_form_t_553649422;
                            ctx: ptr BN_CTX_553648974): cint {.cdecl,
       importc: "EC_POINT_point2cbb".}
 else:
@@ -70068,7 +70093,7 @@ else:
         " already exists, not redeclaring")
 when not declared(EC_POINT_point2bn):
   proc EC_POINT_point2bn*(group: ptr EC_GROUP_553649032; point: ptr EC_POINT_553649036;
-                          form: point_conversion_form_t_553649420;
+                          form: point_conversion_form_t_553649422;
                           ret: ptr BIGNUM_553648976; ctx: ptr BN_CTX_553648974): ptr BIGNUM_553648976 {.
       cdecl, importc: "EC_POINT_point2bn".}
 else:
@@ -70092,7 +70117,7 @@ else:
     hint("Declaration of " & "EC_GROUP_get_order" &
         " already exists, not redeclaring")
 when not declared(EC_get_builtin_curves):
-  proc EC_get_builtin_curves*(out_curves: ptr EC_builtin_curve_553649424;
+  proc EC_get_builtin_curves*(out_curves: ptr EC_builtin_curve_553649426;
                               max_num_curves: csize_t): csize_t {.cdecl,
       importc: "EC_get_builtin_curves".}
 else:
@@ -70152,14 +70177,14 @@ else:
         " already exists, not redeclaring")
 when not declared(EC_GROUP_set_point_conversion_form):
   proc EC_GROUP_set_point_conversion_form*(group: ptr EC_GROUP_553649032;
-      form: point_conversion_form_t_553649420): void {.cdecl,
+      form: point_conversion_form_t_553649422): void {.cdecl,
       importc: "EC_GROUP_set_point_conversion_form".}
 else:
   static :
     hint("Declaration of " & "EC_GROUP_set_point_conversion_form" &
         " already exists, not redeclaring")
 when not declared(EC_GROUP_get_point_conversion_form):
-  proc EC_GROUP_get_point_conversion_form*(group: ptr EC_GROUP_553649032): point_conversion_form_t_553649420 {.
+  proc EC_GROUP_get_point_conversion_form*(group: ptr EC_GROUP_553649032): point_conversion_form_t_553649422 {.
       cdecl, importc: "EC_GROUP_get_point_conversion_form".}
 else:
   static :
@@ -70173,14 +70198,14 @@ else:
     hint("Declaration of " & "EC_KEY_decoded_from_explicit_params" &
         " already exists, not redeclaring")
 when not declared(EC_GROUP_method_of):
-  proc EC_GROUP_method_of*(group: ptr EC_GROUP_553649032): ptr EC_METHOD_553649426 {.
+  proc EC_GROUP_method_of*(group: ptr EC_GROUP_553649032): ptr EC_METHOD_553649428 {.
       cdecl, importc: "EC_GROUP_method_of".}
 else:
   static :
     hint("Declaration of " & "EC_GROUP_method_of" &
         " already exists, not redeclaring")
 when not declared(EC_METHOD_get_field_type):
-  proc EC_METHOD_get_field_type*(meth: ptr EC_METHOD_553649426): cint {.cdecl,
+  proc EC_METHOD_get_field_type*(meth: ptr EC_METHOD_553649428): cint {.cdecl,
       importc: "EC_METHOD_get_field_type".}
 else:
   static :
@@ -70198,14 +70223,14 @@ else:
   static :
     hint("Declaration of " & "ENGINE_free" & " already exists, not redeclaring")
 when not declared(ENGINE_set_RSA):
-  proc ENGINE_set_RSA*(engine: ptr ENGINE_553649044; method_arg: ptr RSA_METHOD_553649152): cint {.
+  proc ENGINE_set_RSA*(engine: ptr ENGINE_553649044; method_arg: ptr RSA_METHOD_553649154): cint {.
       cdecl, importc: "ENGINE_set_RSA".}
 else:
   static :
     hint("Declaration of " & "ENGINE_set_RSA" &
         " already exists, not redeclaring")
 when not declared(ENGINE_get_RSA):
-  proc ENGINE_get_RSA*(engine: ptr ENGINE_553649044): ptr RSA_METHOD_553649152 {.
+  proc ENGINE_get_RSA*(engine: ptr ENGINE_553649044): ptr RSA_METHOD_553649154 {.
       cdecl, importc: "ENGINE_get_RSA".}
 else:
   static :
@@ -70334,7 +70359,7 @@ else:
     hint("Declaration of " & "EC_KEY_set_enc_flags" &
         " already exists, not redeclaring")
 when not declared(EC_KEY_get_conv_form):
-  proc EC_KEY_get_conv_form*(key: ptr EC_KEY_553649034): point_conversion_form_t_553649420 {.
+  proc EC_KEY_get_conv_form*(key: ptr EC_KEY_553649034): point_conversion_form_t_553649422 {.
       cdecl, importc: "EC_KEY_get_conv_form".}
 else:
   static :
@@ -70342,7 +70367,7 @@ else:
         " already exists, not redeclaring")
 when not declared(EC_KEY_set_conv_form):
   proc EC_KEY_set_conv_form*(key: ptr EC_KEY_553649034;
-                             cform: point_conversion_form_t_553649420): void {.
+                             cform: point_conversion_form_t_553649422): void {.
       cdecl, importc: "EC_KEY_set_conv_form".}
 else:
   static :
@@ -70371,7 +70396,7 @@ else:
     hint("Declaration of " & "EC_KEY_set_public_key_affine_coordinates" &
         " already exists, not redeclaring")
 when not declared(EC_KEY_key2buf):
-  proc EC_KEY_key2buf*(key: ptr EC_KEY_553649034; form: point_conversion_form_t_553649420;
+  proc EC_KEY_key2buf*(key: ptr EC_KEY_553649034; form: point_conversion_form_t_553649422;
                        out_buf: ptr ptr uint8; ctx: ptr BN_CTX_553648974): csize_t {.
       cdecl, importc: "EC_KEY_key2buf".}
 else:
@@ -70438,9 +70463,9 @@ else:
         " already exists, not redeclaring")
 when not declared(EC_KEY_get_ex_new_index):
   proc EC_KEY_get_ex_new_index*(argl: clong; argp: pointer;
-                                unused: ptr CRYPTO_EX_unused_553649310;
-                                dup_unused: CRYPTO_EX_dup_553649308;
-                                free_func: CRYPTO_EX_free_553649306): cint {.
+                                unused: ptr CRYPTO_EX_unused_553649312;
+                                dup_unused: CRYPTO_EX_dup_553649310;
+                                free_func: CRYPTO_EX_free_553649308): cint {.
       cdecl, importc: "EC_KEY_get_ex_new_index".}
 else:
   static :
@@ -70835,7 +70860,7 @@ else:
     hint("Declaration of " & "CRYPTO_BUFFER_init_CBS" &
         " already exists, not redeclaring")
 when not declared(RSA_new_public_key):
-  proc RSA_new_public_key*(n: ptr BIGNUM_553648976; e: ptr BIGNUM_553648976): ptr RSA_553649160 {.
+  proc RSA_new_public_key*(n: ptr BIGNUM_553648976; e: ptr BIGNUM_553648976): ptr RSA_553649162 {.
       cdecl, importc: "RSA_new_public_key".}
 else:
   static :
@@ -70845,99 +70870,99 @@ when not declared(RSA_new_private_key):
   proc RSA_new_private_key*(n: ptr BIGNUM_553648976; e: ptr BIGNUM_553648976;
                             d: ptr BIGNUM_553648976; p: ptr BIGNUM_553648976;
                             q: ptr BIGNUM_553648976; dmp1: ptr BIGNUM_553648976;
-                            dmq1: ptr BIGNUM_553648976; iqmp: ptr BIGNUM_553648976): ptr RSA_553649160 {.
+                            dmq1: ptr BIGNUM_553648976; iqmp: ptr BIGNUM_553648976): ptr RSA_553649162 {.
       cdecl, importc: "RSA_new_private_key".}
 else:
   static :
     hint("Declaration of " & "RSA_new_private_key" &
         " already exists, not redeclaring")
 when not declared(RSA_new):
-  proc RSA_new*(): ptr RSA_553649160 {.cdecl, importc: "RSA_new".}
+  proc RSA_new*(): ptr RSA_553649162 {.cdecl, importc: "RSA_new".}
 else:
   static :
     hint("Declaration of " & "RSA_new" & " already exists, not redeclaring")
 when not declared(RSA_new_method):
-  proc RSA_new_method*(engine: ptr ENGINE_553649044): ptr RSA_553649160 {.cdecl,
+  proc RSA_new_method*(engine: ptr ENGINE_553649044): ptr RSA_553649162 {.cdecl,
       importc: "RSA_new_method".}
 else:
   static :
     hint("Declaration of " & "RSA_new_method" &
         " already exists, not redeclaring")
 when not declared(RSA_free):
-  proc RSA_free*(rsa: ptr RSA_553649160): void {.cdecl, importc: "RSA_free".}
+  proc RSA_free*(rsa: ptr RSA_553649162): void {.cdecl, importc: "RSA_free".}
 else:
   static :
     hint("Declaration of " & "RSA_free" & " already exists, not redeclaring")
 when not declared(RSA_up_ref):
-  proc RSA_up_ref*(rsa: ptr RSA_553649160): cint {.cdecl, importc: "RSA_up_ref".}
+  proc RSA_up_ref*(rsa: ptr RSA_553649162): cint {.cdecl, importc: "RSA_up_ref".}
 else:
   static :
     hint("Declaration of " & "RSA_up_ref" & " already exists, not redeclaring")
 when not declared(RSA_bits):
-  proc RSA_bits*(rsa: ptr RSA_553649160): cuint {.cdecl, importc: "RSA_bits".}
+  proc RSA_bits*(rsa: ptr RSA_553649162): cuint {.cdecl, importc: "RSA_bits".}
 else:
   static :
     hint("Declaration of " & "RSA_bits" & " already exists, not redeclaring")
 when not declared(RSA_get0_n):
-  proc RSA_get0_n*(rsa: ptr RSA_553649160): ptr BIGNUM_553648976 {.cdecl,
+  proc RSA_get0_n*(rsa: ptr RSA_553649162): ptr BIGNUM_553648976 {.cdecl,
       importc: "RSA_get0_n".}
 else:
   static :
     hint("Declaration of " & "RSA_get0_n" & " already exists, not redeclaring")
 when not declared(RSA_get0_e):
-  proc RSA_get0_e*(rsa: ptr RSA_553649160): ptr BIGNUM_553648976 {.cdecl,
+  proc RSA_get0_e*(rsa: ptr RSA_553649162): ptr BIGNUM_553648976 {.cdecl,
       importc: "RSA_get0_e".}
 else:
   static :
     hint("Declaration of " & "RSA_get0_e" & " already exists, not redeclaring")
 when not declared(RSA_get0_d):
-  proc RSA_get0_d*(rsa: ptr RSA_553649160): ptr BIGNUM_553648976 {.cdecl,
+  proc RSA_get0_d*(rsa: ptr RSA_553649162): ptr BIGNUM_553648976 {.cdecl,
       importc: "RSA_get0_d".}
 else:
   static :
     hint("Declaration of " & "RSA_get0_d" & " already exists, not redeclaring")
 when not declared(RSA_get0_p):
-  proc RSA_get0_p*(rsa: ptr RSA_553649160): ptr BIGNUM_553648976 {.cdecl,
+  proc RSA_get0_p*(rsa: ptr RSA_553649162): ptr BIGNUM_553648976 {.cdecl,
       importc: "RSA_get0_p".}
 else:
   static :
     hint("Declaration of " & "RSA_get0_p" & " already exists, not redeclaring")
 when not declared(RSA_get0_q):
-  proc RSA_get0_q*(rsa: ptr RSA_553649160): ptr BIGNUM_553648976 {.cdecl,
+  proc RSA_get0_q*(rsa: ptr RSA_553649162): ptr BIGNUM_553648976 {.cdecl,
       importc: "RSA_get0_q".}
 else:
   static :
     hint("Declaration of " & "RSA_get0_q" & " already exists, not redeclaring")
 when not declared(RSA_get0_dmp1):
-  proc RSA_get0_dmp1*(rsa: ptr RSA_553649160): ptr BIGNUM_553648976 {.cdecl,
+  proc RSA_get0_dmp1*(rsa: ptr RSA_553649162): ptr BIGNUM_553648976 {.cdecl,
       importc: "RSA_get0_dmp1".}
 else:
   static :
     hint("Declaration of " & "RSA_get0_dmp1" &
         " already exists, not redeclaring")
 when not declared(RSA_get0_dmq1):
-  proc RSA_get0_dmq1*(rsa: ptr RSA_553649160): ptr BIGNUM_553648976 {.cdecl,
+  proc RSA_get0_dmq1*(rsa: ptr RSA_553649162): ptr BIGNUM_553648976 {.cdecl,
       importc: "RSA_get0_dmq1".}
 else:
   static :
     hint("Declaration of " & "RSA_get0_dmq1" &
         " already exists, not redeclaring")
 when not declared(RSA_get0_iqmp):
-  proc RSA_get0_iqmp*(rsa: ptr RSA_553649160): ptr BIGNUM_553648976 {.cdecl,
+  proc RSA_get0_iqmp*(rsa: ptr RSA_553649162): ptr BIGNUM_553648976 {.cdecl,
       importc: "RSA_get0_iqmp".}
 else:
   static :
     hint("Declaration of " & "RSA_get0_iqmp" &
         " already exists, not redeclaring")
 when not declared(RSA_get0_key):
-  proc RSA_get0_key*(rsa: ptr RSA_553649160; out_n: ptr ptr BIGNUM_553648976;
+  proc RSA_get0_key*(rsa: ptr RSA_553649162; out_n: ptr ptr BIGNUM_553648976;
                      out_e: ptr ptr BIGNUM_553648976; out_d: ptr ptr BIGNUM_553648976): void {.
       cdecl, importc: "RSA_get0_key".}
 else:
   static :
     hint("Declaration of " & "RSA_get0_key" & " already exists, not redeclaring")
 when not declared(RSA_get0_factors):
-  proc RSA_get0_factors*(rsa: ptr RSA_553649160; out_p: ptr ptr BIGNUM_553648976;
+  proc RSA_get0_factors*(rsa: ptr RSA_553649162; out_p: ptr ptr BIGNUM_553648976;
                          out_q: ptr ptr BIGNUM_553648976): void {.cdecl,
       importc: "RSA_get0_factors".}
 else:
@@ -70945,7 +70970,7 @@ else:
     hint("Declaration of " & "RSA_get0_factors" &
         " already exists, not redeclaring")
 when not declared(RSA_get0_crt_params):
-  proc RSA_get0_crt_params*(rsa: ptr RSA_553649160; out_dmp1: ptr ptr BIGNUM_553648976;
+  proc RSA_get0_crt_params*(rsa: ptr RSA_553649162; out_dmp1: ptr ptr BIGNUM_553648976;
                             out_dmq1: ptr ptr BIGNUM_553648976;
                             out_iqmp: ptr ptr BIGNUM_553648976): void {.cdecl,
       importc: "RSA_get0_crt_params".}
@@ -70954,14 +70979,14 @@ else:
     hint("Declaration of " & "RSA_get0_crt_params" &
         " already exists, not redeclaring")
 when not declared(RSA_set0_key):
-  proc RSA_set0_key*(rsa: ptr RSA_553649160; n: ptr BIGNUM_553648976;
+  proc RSA_set0_key*(rsa: ptr RSA_553649162; n: ptr BIGNUM_553648976;
                      e: ptr BIGNUM_553648976; d: ptr BIGNUM_553648976): cint {.
       cdecl, importc: "RSA_set0_key".}
 else:
   static :
     hint("Declaration of " & "RSA_set0_key" & " already exists, not redeclaring")
 when not declared(RSA_set0_factors):
-  proc RSA_set0_factors*(rsa: ptr RSA_553649160; p: ptr BIGNUM_553648976;
+  proc RSA_set0_factors*(rsa: ptr RSA_553649162; p: ptr BIGNUM_553648976;
                          q: ptr BIGNUM_553648976): cint {.cdecl,
       importc: "RSA_set0_factors".}
 else:
@@ -70969,7 +70994,7 @@ else:
     hint("Declaration of " & "RSA_set0_factors" &
         " already exists, not redeclaring")
 when not declared(RSA_set0_crt_params):
-  proc RSA_set0_crt_params*(rsa: ptr RSA_553649160; dmp1: ptr BIGNUM_553648976;
+  proc RSA_set0_crt_params*(rsa: ptr RSA_553649162; dmp1: ptr BIGNUM_553648976;
                             dmq1: ptr BIGNUM_553648976; iqmp: ptr BIGNUM_553648976): cint {.
       cdecl, importc: "RSA_set0_crt_params".}
 else:
@@ -70977,104 +71002,104 @@ else:
     hint("Declaration of " & "RSA_set0_crt_params" &
         " already exists, not redeclaring")
 when not declared(RSA_get_default_method):
-  proc RSA_get_default_method*(): ptr RSA_METHOD_553649152 {.cdecl,
+  proc RSA_get_default_method*(): ptr RSA_METHOD_553649154 {.cdecl,
       importc: "RSA_get_default_method".}
 else:
   static :
     hint("Declaration of " & "RSA_get_default_method" &
         " already exists, not redeclaring")
 when not declared(RSA_meth_new):
-  proc RSA_meth_new*(name: cstring; flags: cint): ptr RSA_METHOD_553649152 {.
+  proc RSA_meth_new*(name: cstring; flags: cint): ptr RSA_METHOD_553649154 {.
       cdecl, importc: "RSA_meth_new".}
 else:
   static :
     hint("Declaration of " & "RSA_meth_new" & " already exists, not redeclaring")
 when not declared(RSA_set_method):
-  proc RSA_set_method*(rsa: ptr RSA_553649160; meth: ptr RSA_METHOD_553649152): cint {.
+  proc RSA_set_method*(rsa: ptr RSA_553649162; meth: ptr RSA_METHOD_553649154): cint {.
       cdecl, importc: "RSA_set_method".}
 else:
   static :
     hint("Declaration of " & "RSA_set_method" &
         " already exists, not redeclaring")
 when not declared(RSA_get_method):
-  proc RSA_get_method*(rsa: ptr RSA_553649160): ptr RSA_METHOD_553649152 {.
+  proc RSA_get_method*(rsa: ptr RSA_553649162): ptr RSA_METHOD_553649154 {.
       cdecl, importc: "RSA_get_method".}
 else:
   static :
     hint("Declaration of " & "RSA_get_method" &
         " already exists, not redeclaring")
 when not declared(RSA_meth_free):
-  proc RSA_meth_free*(meth: ptr RSA_METHOD_553649152): void {.cdecl,
+  proc RSA_meth_free*(meth: ptr RSA_METHOD_553649154): void {.cdecl,
       importc: "RSA_meth_free".}
 else:
   static :
     hint("Declaration of " & "RSA_meth_free" &
         " already exists, not redeclaring")
 when not declared(RSA_meth_set_init):
-  proc RSA_meth_set_init*(meth: ptr RSA_METHOD_553649152;
-                          init: proc (a0: ptr RSA_553649160): cint {.cdecl.}): cint {.
+  proc RSA_meth_set_init*(meth: ptr RSA_METHOD_553649154;
+                          init: proc (a0: ptr RSA_553649162): cint {.cdecl.}): cint {.
       cdecl, importc: "RSA_meth_set_init".}
 else:
   static :
     hint("Declaration of " & "RSA_meth_set_init" &
         " already exists, not redeclaring")
 when not declared(RSA_meth_set_finish):
-  proc RSA_meth_set_finish*(meth: ptr RSA_METHOD_553649152;
-                            finish: proc (a0: ptr RSA_553649160): cint {.cdecl.}): cint {.
+  proc RSA_meth_set_finish*(meth: ptr RSA_METHOD_553649154;
+                            finish: proc (a0: ptr RSA_553649162): cint {.cdecl.}): cint {.
       cdecl, importc: "RSA_meth_set_finish".}
 else:
   static :
     hint("Declaration of " & "RSA_meth_set_finish" &
         " already exists, not redeclaring")
 when not declared(RSA_meth_set_priv_dec):
-  proc RSA_meth_set_priv_dec*(meth: ptr RSA_METHOD_553649152; priv_dec: proc (
-      a0: cint; a1: ptr uint8; a2: ptr uint8; a3: ptr RSA_553649160; a4: cint): cint {.
+  proc RSA_meth_set_priv_dec*(meth: ptr RSA_METHOD_553649154; priv_dec: proc (
+      a0: cint; a1: ptr uint8; a2: ptr uint8; a3: ptr RSA_553649162; a4: cint): cint {.
       cdecl.}): cint {.cdecl, importc: "RSA_meth_set_priv_dec".}
 else:
   static :
     hint("Declaration of " & "RSA_meth_set_priv_dec" &
         " already exists, not redeclaring")
 when not declared(RSA_meth_set_priv_enc):
-  proc RSA_meth_set_priv_enc*(meth: ptr RSA_METHOD_553649152; priv_enc: proc (
-      a0: cint; a1: ptr uint8; a2: ptr uint8; a3: ptr RSA_553649160; a4: cint): cint {.
+  proc RSA_meth_set_priv_enc*(meth: ptr RSA_METHOD_553649154; priv_enc: proc (
+      a0: cint; a1: ptr uint8; a2: ptr uint8; a3: ptr RSA_553649162; a4: cint): cint {.
       cdecl.}): cint {.cdecl, importc: "RSA_meth_set_priv_enc".}
 else:
   static :
     hint("Declaration of " & "RSA_meth_set_priv_enc" &
         " already exists, not redeclaring")
 when not declared(RSA_meth_set_pub_dec):
-  proc RSA_meth_set_pub_dec*(meth: ptr RSA_METHOD_553649152; pub_dec: proc (
-      a0: cint; a1: ptr uint8; a2: ptr uint8; a3: ptr RSA_553649160; a4: cint): cint {.
+  proc RSA_meth_set_pub_dec*(meth: ptr RSA_METHOD_553649154; pub_dec: proc (
+      a0: cint; a1: ptr uint8; a2: ptr uint8; a3: ptr RSA_553649162; a4: cint): cint {.
       cdecl.}): cint {.cdecl, importc: "RSA_meth_set_pub_dec".}
 else:
   static :
     hint("Declaration of " & "RSA_meth_set_pub_dec" &
         " already exists, not redeclaring")
 when not declared(RSA_meth_set_pub_enc):
-  proc RSA_meth_set_pub_enc*(meth: ptr RSA_METHOD_553649152; pub_enc: proc (
-      a0: cint; a1: ptr uint8; a2: ptr uint8; a3: ptr RSA_553649160; a4: cint): cint {.
+  proc RSA_meth_set_pub_enc*(meth: ptr RSA_METHOD_553649154; pub_enc: proc (
+      a0: cint; a1: ptr uint8; a2: ptr uint8; a3: ptr RSA_553649162; a4: cint): cint {.
       cdecl.}): cint {.cdecl, importc: "RSA_meth_set_pub_enc".}
 else:
   static :
     hint("Declaration of " & "RSA_meth_set_pub_enc" &
         " already exists, not redeclaring")
 when not declared(RSA_meth_set0_app_data):
-  proc RSA_meth_set0_app_data*(meth: ptr RSA_METHOD_553649152; app_data: pointer): cint {.
+  proc RSA_meth_set0_app_data*(meth: ptr RSA_METHOD_553649154; app_data: pointer): cint {.
       cdecl, importc: "RSA_meth_set0_app_data".}
 else:
   static :
     hint("Declaration of " & "RSA_meth_set0_app_data" &
         " already exists, not redeclaring")
 when not declared(RSA_meth_set_sign):
-  proc RSA_meth_set_sign*(meth: ptr RSA_METHOD_553649152; sign: proc (a0: cint;
-      a1: ptr uint8; a2: cuint; a3: ptr uint8; a4: ptr cuint; a5: ptr RSA_553649160): cint {.
+  proc RSA_meth_set_sign*(meth: ptr RSA_METHOD_553649154; sign: proc (a0: cint;
+      a1: ptr uint8; a2: cuint; a3: ptr uint8; a4: ptr cuint; a5: ptr RSA_553649162): cint {.
       cdecl.}): cint {.cdecl, importc: "RSA_meth_set_sign".}
 else:
   static :
     hint("Declaration of " & "RSA_meth_set_sign" &
         " already exists, not redeclaring")
 when not declared(RSA_generate_key_ex):
-  proc RSA_generate_key_ex*(rsa: ptr RSA_553649160; bits: cint; e: ptr BIGNUM_553648976;
+  proc RSA_generate_key_ex*(rsa: ptr RSA_553649162; bits: cint; e: ptr BIGNUM_553648976;
                             cb: ptr BN_GENCB_553648990): cint {.cdecl,
       importc: "RSA_generate_key_ex".}
 else:
@@ -71082,7 +71107,7 @@ else:
     hint("Declaration of " & "RSA_generate_key_ex" &
         " already exists, not redeclaring")
 when not declared(RSA_generate_key_fips):
-  proc RSA_generate_key_fips*(rsa: ptr RSA_553649160; bits: cint;
+  proc RSA_generate_key_fips*(rsa: ptr RSA_553649162; bits: cint;
                               cb: ptr BN_GENCB_553648990): cint {.cdecl,
       importc: "RSA_generate_key_fips".}
 else:
@@ -71090,7 +71115,7 @@ else:
     hint("Declaration of " & "RSA_generate_key_fips" &
         " already exists, not redeclaring")
 when not declared(RSA_encrypt):
-  proc RSA_encrypt*(rsa: ptr RSA_553649160; out_len: ptr csize_t;
+  proc RSA_encrypt*(rsa: ptr RSA_553649162; out_len: ptr csize_t;
                     out_arg: ptr uint8; max_out: csize_t; in_arg: ptr uint8;
                     in_len: csize_t; padding: cint): cint {.cdecl,
       importc: "RSA_encrypt".}
@@ -71098,7 +71123,7 @@ else:
   static :
     hint("Declaration of " & "RSA_encrypt" & " already exists, not redeclaring")
 when not declared(RSA_decrypt):
-  proc RSA_decrypt*(rsa: ptr RSA_553649160; out_len: ptr csize_t;
+  proc RSA_decrypt*(rsa: ptr RSA_553649162; out_len: ptr csize_t;
                     out_arg: ptr uint8; max_out: csize_t; in_arg: ptr uint8;
                     in_len: csize_t; padding: cint): cint {.cdecl,
       importc: "RSA_decrypt".}
@@ -71107,7 +71132,7 @@ else:
     hint("Declaration of " & "RSA_decrypt" & " already exists, not redeclaring")
 when not declared(RSA_public_encrypt):
   proc RSA_public_encrypt*(flen: csize_t; from_arg: ptr uint8; to: ptr uint8;
-                           rsa: ptr RSA_553649160; padding: cint): cint {.cdecl,
+                           rsa: ptr RSA_553649162; padding: cint): cint {.cdecl,
       importc: "RSA_public_encrypt".}
 else:
   static :
@@ -71115,7 +71140,7 @@ else:
         " already exists, not redeclaring")
 when not declared(RSA_private_decrypt):
   proc RSA_private_decrypt*(flen: csize_t; from_arg: ptr uint8; to: ptr uint8;
-                            rsa: ptr RSA_553649160; padding: cint): cint {.
+                            rsa: ptr RSA_553649162; padding: cint): cint {.
       cdecl, importc: "RSA_private_decrypt".}
 else:
   static :
@@ -71123,13 +71148,13 @@ else:
         " already exists, not redeclaring")
 when not declared(RSA_sign):
   proc RSA_sign*(hash_nid: cint; digest: ptr uint8; digest_len: csize_t;
-                 out_arg: ptr uint8; out_len: ptr cuint; rsa: ptr RSA_553649160): cint {.
+                 out_arg: ptr uint8; out_len: ptr cuint; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "RSA_sign".}
 else:
   static :
     hint("Declaration of " & "RSA_sign" & " already exists, not redeclaring")
 when not declared(RSA_sign_pss_mgf1):
-  proc RSA_sign_pss_mgf1*(rsa: ptr RSA_553649160; out_len: ptr csize_t;
+  proc RSA_sign_pss_mgf1*(rsa: ptr RSA_553649162; out_len: ptr csize_t;
                           out_arg: ptr uint8; max_out: csize_t;
                           digest: ptr uint8; digest_len: csize_t;
                           md: ptr EVP_MD_553649050; mgf1_md: ptr EVP_MD_553649050;
@@ -71140,7 +71165,7 @@ else:
     hint("Declaration of " & "RSA_sign_pss_mgf1" &
         " already exists, not redeclaring")
 when not declared(RSA_sign_raw):
-  proc RSA_sign_raw*(rsa: ptr RSA_553649160; out_len: ptr csize_t;
+  proc RSA_sign_raw*(rsa: ptr RSA_553649162; out_len: ptr csize_t;
                      out_arg: ptr uint8; max_out: csize_t; in_arg: ptr uint8;
                      in_len: csize_t; padding: cint): cint {.cdecl,
       importc: "RSA_sign_raw".}
@@ -71149,13 +71174,13 @@ else:
     hint("Declaration of " & "RSA_sign_raw" & " already exists, not redeclaring")
 when not declared(RSA_verify):
   proc RSA_verify*(hash_nid: cint; digest: ptr uint8; digest_len: csize_t;
-                   sig: ptr uint8; sig_len: csize_t; rsa: ptr RSA_553649160): cint {.
+                   sig: ptr uint8; sig_len: csize_t; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "RSA_verify".}
 else:
   static :
     hint("Declaration of " & "RSA_verify" & " already exists, not redeclaring")
 when not declared(RSA_verify_pss_mgf1):
-  proc RSA_verify_pss_mgf1*(rsa: ptr RSA_553649160; digest: ptr uint8;
+  proc RSA_verify_pss_mgf1*(rsa: ptr RSA_553649162; digest: ptr uint8;
                             digest_len: csize_t; md: ptr EVP_MD_553649050;
                             mgf1_md: ptr EVP_MD_553649050; salt_len: cint;
                             sig: ptr uint8; sig_len: csize_t): cint {.cdecl,
@@ -71165,7 +71190,7 @@ else:
     hint("Declaration of " & "RSA_verify_pss_mgf1" &
         " already exists, not redeclaring")
 when not declared(RSA_verify_raw):
-  proc RSA_verify_raw*(rsa: ptr RSA_553649160; out_len: ptr csize_t;
+  proc RSA_verify_raw*(rsa: ptr RSA_553649162; out_len: ptr csize_t;
                        out_arg: ptr uint8; max_out: csize_t; in_arg: ptr uint8;
                        in_len: csize_t; padding: cint): cint {.cdecl,
       importc: "RSA_verify_raw".}
@@ -71175,7 +71200,7 @@ else:
         " already exists, not redeclaring")
 when not declared(RSA_private_encrypt):
   proc RSA_private_encrypt*(flen: csize_t; from_arg: ptr uint8; to: ptr uint8;
-                            rsa: ptr RSA_553649160; padding: cint): cint {.
+                            rsa: ptr RSA_553649162; padding: cint): cint {.
       cdecl, importc: "RSA_private_encrypt".}
 else:
   static :
@@ -71183,54 +71208,54 @@ else:
         " already exists, not redeclaring")
 when not declared(RSA_public_decrypt):
   proc RSA_public_decrypt*(flen: csize_t; from_arg: ptr uint8; to: ptr uint8;
-                           rsa: ptr RSA_553649160; padding: cint): cint {.cdecl,
+                           rsa: ptr RSA_553649162; padding: cint): cint {.cdecl,
       importc: "RSA_public_decrypt".}
 else:
   static :
     hint("Declaration of " & "RSA_public_decrypt" &
         " already exists, not redeclaring")
 when not declared(RSA_size):
-  proc RSA_size*(rsa: ptr RSA_553649160): cuint {.cdecl, importc: "RSA_size".}
+  proc RSA_size*(rsa: ptr RSA_553649162): cuint {.cdecl, importc: "RSA_size".}
 else:
   static :
     hint("Declaration of " & "RSA_size" & " already exists, not redeclaring")
 when not declared(RSA_is_opaque):
-  proc RSA_is_opaque*(rsa: ptr RSA_553649160): cint {.cdecl,
+  proc RSA_is_opaque*(rsa: ptr RSA_553649162): cint {.cdecl,
       importc: "RSA_is_opaque".}
 else:
   static :
     hint("Declaration of " & "RSA_is_opaque" &
         " already exists, not redeclaring")
 when not declared(RSAPublicKey_dup):
-  proc RSAPublicKey_dup*(rsa: ptr RSA_553649160): ptr RSA_553649160 {.cdecl,
+  proc RSAPublicKey_dup*(rsa: ptr RSA_553649162): ptr RSA_553649162 {.cdecl,
       importc: "RSAPublicKey_dup".}
 else:
   static :
     hint("Declaration of " & "RSAPublicKey_dup" &
         " already exists, not redeclaring")
 when not declared(RSAPrivateKey_dup):
-  proc RSAPrivateKey_dup*(rsa: ptr RSA_553649160): ptr RSA_553649160 {.cdecl,
+  proc RSAPrivateKey_dup*(rsa: ptr RSA_553649162): ptr RSA_553649162 {.cdecl,
       importc: "RSAPrivateKey_dup".}
 else:
   static :
     hint("Declaration of " & "RSAPrivateKey_dup" &
         " already exists, not redeclaring")
 when not declared(RSA_check_key):
-  proc RSA_check_key*(rsa: ptr RSA_553649160): cint {.cdecl,
+  proc RSA_check_key*(rsa: ptr RSA_553649162): cint {.cdecl,
       importc: "RSA_check_key".}
 else:
   static :
     hint("Declaration of " & "RSA_check_key" &
         " already exists, not redeclaring")
 when not declared(RSA_check_fips):
-  proc RSA_check_fips*(key: ptr RSA_553649160): cint {.cdecl,
+  proc RSA_check_fips*(key: ptr RSA_553649162): cint {.cdecl,
       importc: "RSA_check_fips".}
 else:
   static :
     hint("Declaration of " & "RSA_check_fips" &
         " already exists, not redeclaring")
 when not declared(RSA_verify_PKCS1_PSS_mgf1):
-  proc RSA_verify_PKCS1_PSS_mgf1*(rsa: ptr RSA_553649160; mHash: ptr uint8;
+  proc RSA_verify_PKCS1_PSS_mgf1*(rsa: ptr RSA_553649162; mHash: ptr uint8;
                                   Hash: ptr EVP_MD_553649050;
                                   mgf1Hash: ptr EVP_MD_553649050; EM: ptr uint8;
                                   sLen: cint): cint {.cdecl,
@@ -71240,7 +71265,7 @@ else:
     hint("Declaration of " & "RSA_verify_PKCS1_PSS_mgf1" &
         " already exists, not redeclaring")
 when not declared(RSA_padding_add_PKCS1_PSS_mgf1):
-  proc RSA_padding_add_PKCS1_PSS_mgf1*(rsa: ptr RSA_553649160; EM: ptr uint8;
+  proc RSA_padding_add_PKCS1_PSS_mgf1*(rsa: ptr RSA_553649162; EM: ptr uint8;
                                        mHash: ptr uint8; Hash: ptr EVP_MD_553649050;
                                        mgf1Hash: ptr EVP_MD_553649050;
                                        sLen: cint): cint {.cdecl,
@@ -71277,21 +71302,21 @@ else:
     hint("Declaration of " & "RSA_add_pkcs1_prefix" &
         " already exists, not redeclaring")
 when not declared(RSA_parse_public_key):
-  proc RSA_parse_public_key*(cbs: ptr CBS_553649008): ptr RSA_553649160 {.cdecl,
+  proc RSA_parse_public_key*(cbs: ptr CBS_553649008): ptr RSA_553649162 {.cdecl,
       importc: "RSA_parse_public_key".}
 else:
   static :
     hint("Declaration of " & "RSA_parse_public_key" &
         " already exists, not redeclaring")
 when not declared(RSA_public_key_from_bytes):
-  proc RSA_public_key_from_bytes*(in_arg: ptr uint8; in_len: csize_t): ptr RSA_553649160 {.
+  proc RSA_public_key_from_bytes*(in_arg: ptr uint8; in_len: csize_t): ptr RSA_553649162 {.
       cdecl, importc: "RSA_public_key_from_bytes".}
 else:
   static :
     hint("Declaration of " & "RSA_public_key_from_bytes" &
         " already exists, not redeclaring")
 when not declared(RSA_marshal_public_key):
-  proc RSA_marshal_public_key*(cbb: ptr CBB_553649004; rsa: ptr RSA_553649160): cint {.
+  proc RSA_marshal_public_key*(cbb: ptr CBB_553649004; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "RSA_marshal_public_key".}
 else:
   static :
@@ -71299,28 +71324,28 @@ else:
         " already exists, not redeclaring")
 when not declared(RSA_public_key_to_bytes):
   proc RSA_public_key_to_bytes*(out_bytes: ptr ptr uint8; out_len: ptr csize_t;
-                                rsa: ptr RSA_553649160): cint {.cdecl,
+                                rsa: ptr RSA_553649162): cint {.cdecl,
       importc: "RSA_public_key_to_bytes".}
 else:
   static :
     hint("Declaration of " & "RSA_public_key_to_bytes" &
         " already exists, not redeclaring")
 when not declared(RSA_parse_private_key):
-  proc RSA_parse_private_key*(cbs: ptr CBS_553649008): ptr RSA_553649160 {.
+  proc RSA_parse_private_key*(cbs: ptr CBS_553649008): ptr RSA_553649162 {.
       cdecl, importc: "RSA_parse_private_key".}
 else:
   static :
     hint("Declaration of " & "RSA_parse_private_key" &
         " already exists, not redeclaring")
 when not declared(RSA_private_key_from_bytes):
-  proc RSA_private_key_from_bytes*(in_arg: ptr uint8; in_len: csize_t): ptr RSA_553649160 {.
+  proc RSA_private_key_from_bytes*(in_arg: ptr uint8; in_len: csize_t): ptr RSA_553649162 {.
       cdecl, importc: "RSA_private_key_from_bytes".}
 else:
   static :
     hint("Declaration of " & "RSA_private_key_from_bytes" &
         " already exists, not redeclaring")
 when not declared(RSA_marshal_private_key):
-  proc RSA_marshal_private_key*(cbb: ptr CBB_553649004; rsa: ptr RSA_553649160): cint {.
+  proc RSA_marshal_private_key*(cbb: ptr CBB_553649004; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "RSA_marshal_private_key".}
 else:
   static :
@@ -71328,7 +71353,7 @@ else:
         " already exists, not redeclaring")
 when not declared(RSA_private_key_to_bytes):
   proc RSA_private_key_to_bytes*(out_bytes: ptr ptr uint8; out_len: ptr csize_t;
-                                 rsa: ptr RSA_553649160): cint {.cdecl,
+                                 rsa: ptr RSA_553649162): cint {.cdecl,
       importc: "RSA_private_key_to_bytes".}
 else:
   static :
@@ -71336,21 +71361,21 @@ else:
         " already exists, not redeclaring")
 when not declared(RSA_new_private_key_no_crt):
   proc RSA_new_private_key_no_crt*(n: ptr BIGNUM_553648976; e: ptr BIGNUM_553648976;
-                                   d: ptr BIGNUM_553648976): ptr RSA_553649160 {.
+                                   d: ptr BIGNUM_553648976): ptr RSA_553649162 {.
       cdecl, importc: "RSA_new_private_key_no_crt".}
 else:
   static :
     hint("Declaration of " & "RSA_new_private_key_no_crt" &
         " already exists, not redeclaring")
 when not declared(RSA_new_private_key_no_e):
-  proc RSA_new_private_key_no_e*(n: ptr BIGNUM_553648976; d: ptr BIGNUM_553648976): ptr RSA_553649160 {.
+  proc RSA_new_private_key_no_e*(n: ptr BIGNUM_553648976; d: ptr BIGNUM_553648976): ptr RSA_553649162 {.
       cdecl, importc: "RSA_new_private_key_no_e".}
 else:
   static :
     hint("Declaration of " & "RSA_new_private_key_no_e" &
         " already exists, not redeclaring")
 when not declared(RSA_new_public_key_large_e):
-  proc RSA_new_public_key_large_e*(n: ptr BIGNUM_553648976; e: ptr BIGNUM_553648976): ptr RSA_553649160 {.
+  proc RSA_new_public_key_large_e*(n: ptr BIGNUM_553648976; e: ptr BIGNUM_553648976): ptr RSA_553649162 {.
       cdecl, importc: "RSA_new_public_key_large_e".}
 else:
   static :
@@ -71360,7 +71385,7 @@ when not declared(RSA_new_private_key_large_e):
   proc RSA_new_private_key_large_e*(n: ptr BIGNUM_553648976; e: ptr BIGNUM_553648976;
                                     d: ptr BIGNUM_553648976; p: ptr BIGNUM_553648976;
                                     q: ptr BIGNUM_553648976; dmp1: ptr BIGNUM_553648976;
-                                    dmq1: ptr BIGNUM_553648976; iqmp: ptr BIGNUM_553648976): ptr RSA_553649160 {.
+                                    dmq1: ptr BIGNUM_553648976; iqmp: ptr BIGNUM_553648976): ptr RSA_553649162 {.
       cdecl, importc: "RSA_new_private_key_large_e".}
 else:
   static :
@@ -71368,56 +71393,56 @@ else:
         " already exists, not redeclaring")
 when not declared(RSA_get_ex_new_index):
   proc RSA_get_ex_new_index*(argl: clong; argp: pointer;
-                             unused: ptr CRYPTO_EX_unused_553649310;
-                             dup_unused: CRYPTO_EX_dup_553649308;
-                             free_func: CRYPTO_EX_free_553649306): cint {.cdecl,
+                             unused: ptr CRYPTO_EX_unused_553649312;
+                             dup_unused: CRYPTO_EX_dup_553649310;
+                             free_func: CRYPTO_EX_free_553649308): cint {.cdecl,
       importc: "RSA_get_ex_new_index".}
 else:
   static :
     hint("Declaration of " & "RSA_get_ex_new_index" &
         " already exists, not redeclaring")
 when not declared(RSA_set_ex_data):
-  proc RSA_set_ex_data*(rsa: ptr RSA_553649160; idx: cint; arg: pointer): cint {.
+  proc RSA_set_ex_data*(rsa: ptr RSA_553649162; idx: cint; arg: pointer): cint {.
       cdecl, importc: "RSA_set_ex_data".}
 else:
   static :
     hint("Declaration of " & "RSA_set_ex_data" &
         " already exists, not redeclaring")
 when not declared(RSA_get_ex_data):
-  proc RSA_get_ex_data*(rsa: ptr RSA_553649160; idx: cint): pointer {.cdecl,
+  proc RSA_get_ex_data*(rsa: ptr RSA_553649162; idx: cint): pointer {.cdecl,
       importc: "RSA_get_ex_data".}
 else:
   static :
     hint("Declaration of " & "RSA_get_ex_data" &
         " already exists, not redeclaring")
 when not declared(RSA_flags):
-  proc RSA_flags*(rsa: ptr RSA_553649160): cint {.cdecl, importc: "RSA_flags".}
+  proc RSA_flags*(rsa: ptr RSA_553649162): cint {.cdecl, importc: "RSA_flags".}
 else:
   static :
     hint("Declaration of " & "RSA_flags" & " already exists, not redeclaring")
 when not declared(RSA_set_flags):
-  proc RSA_set_flags*(rsa: ptr RSA_553649160; flags: cint): void {.cdecl,
+  proc RSA_set_flags*(rsa: ptr RSA_553649162; flags: cint): void {.cdecl,
       importc: "RSA_set_flags".}
 else:
   static :
     hint("Declaration of " & "RSA_set_flags" &
         " already exists, not redeclaring")
 when not declared(RSA_test_flags):
-  proc RSA_test_flags*(rsa: ptr RSA_553649160; flags: cint): cint {.cdecl,
+  proc RSA_test_flags*(rsa: ptr RSA_553649162; flags: cint): cint {.cdecl,
       importc: "RSA_test_flags".}
 else:
   static :
     hint("Declaration of " & "RSA_test_flags" &
         " already exists, not redeclaring")
 when not declared(RSA_blinding_on):
-  proc RSA_blinding_on*(rsa: ptr RSA_553649160; ctx: ptr BN_CTX_553648974): cint {.
+  proc RSA_blinding_on*(rsa: ptr RSA_553649162; ctx: ptr BN_CTX_553648974): cint {.
       cdecl, importc: "RSA_blinding_on".}
 else:
   static :
     hint("Declaration of " & "RSA_blinding_on" &
         " already exists, not redeclaring")
 when not declared(RSA_blinding_off_temp_for_accp_compatibility):
-  proc RSA_blinding_off_temp_for_accp_compatibility*(rsa: ptr RSA_553649160): void {.
+  proc RSA_blinding_off_temp_for_accp_compatibility*(rsa: ptr RSA_553649162): void {.
       cdecl, importc: "RSA_blinding_off_temp_for_accp_compatibility".}
 else:
   static :
@@ -71433,44 +71458,44 @@ else:
         " already exists, not redeclaring")
 when not declared(RSA_generate_key):
   proc RSA_generate_key*(bits: cint; e: uint64; callback: pointer;
-                         cb_arg: pointer): ptr RSA_553649160 {.cdecl,
+                         cb_arg: pointer): ptr RSA_553649162 {.cdecl,
       importc: "RSA_generate_key".}
 else:
   static :
     hint("Declaration of " & "RSA_generate_key" &
         " already exists, not redeclaring")
 when not declared(d2i_RSAPublicKey):
-  proc d2i_RSAPublicKey*(out_arg: ptr ptr RSA_553649160; inp: ptr ptr uint8;
-                         len: clong): ptr RSA_553649160 {.cdecl,
+  proc d2i_RSAPublicKey*(out_arg: ptr ptr RSA_553649162; inp: ptr ptr uint8;
+                         len: clong): ptr RSA_553649162 {.cdecl,
       importc: "d2i_RSAPublicKey".}
 else:
   static :
     hint("Declaration of " & "d2i_RSAPublicKey" &
         " already exists, not redeclaring")
 when not declared(i2d_RSAPublicKey):
-  proc i2d_RSAPublicKey*(in_arg: ptr RSA_553649160; outp: ptr ptr uint8): cint {.
+  proc i2d_RSAPublicKey*(in_arg: ptr RSA_553649162; outp: ptr ptr uint8): cint {.
       cdecl, importc: "i2d_RSAPublicKey".}
 else:
   static :
     hint("Declaration of " & "i2d_RSAPublicKey" &
         " already exists, not redeclaring")
 when not declared(d2i_RSAPrivateKey):
-  proc d2i_RSAPrivateKey*(out_arg: ptr ptr RSA_553649160; inp: ptr ptr uint8;
-                          len: clong): ptr RSA_553649160 {.cdecl,
+  proc d2i_RSAPrivateKey*(out_arg: ptr ptr RSA_553649162; inp: ptr ptr uint8;
+                          len: clong): ptr RSA_553649162 {.cdecl,
       importc: "d2i_RSAPrivateKey".}
 else:
   static :
     hint("Declaration of " & "d2i_RSAPrivateKey" &
         " already exists, not redeclaring")
 when not declared(i2d_RSAPrivateKey):
-  proc i2d_RSAPrivateKey*(in_arg: ptr RSA_553649160; outp: ptr ptr uint8): cint {.
+  proc i2d_RSAPrivateKey*(in_arg: ptr RSA_553649162; outp: ptr ptr uint8): cint {.
       cdecl, importc: "i2d_RSAPrivateKey".}
 else:
   static :
     hint("Declaration of " & "i2d_RSAPrivateKey" &
         " already exists, not redeclaring")
 when not declared(RSA_padding_add_PKCS1_PSS):
-  proc RSA_padding_add_PKCS1_PSS*(rsa: ptr RSA_553649160; EM: ptr uint8;
+  proc RSA_padding_add_PKCS1_PSS*(rsa: ptr RSA_553649162; EM: ptr uint8;
                                   mHash: ptr uint8; Hash: ptr EVP_MD_553649050;
                                   sLen: cint): cint {.cdecl,
       importc: "RSA_padding_add_PKCS1_PSS".}
@@ -71479,7 +71504,7 @@ else:
     hint("Declaration of " & "RSA_padding_add_PKCS1_PSS" &
         " already exists, not redeclaring")
 when not declared(RSA_verify_PKCS1_PSS):
-  proc RSA_verify_PKCS1_PSS*(rsa: ptr RSA_553649160; mHash: ptr uint8;
+  proc RSA_verify_PKCS1_PSS*(rsa: ptr RSA_553649162; mHash: ptr uint8;
                              Hash: ptr EVP_MD_553649050; EM: ptr uint8;
                              sLen: cint): cint {.cdecl,
       importc: "RSA_verify_PKCS1_PSS".}
@@ -71497,26 +71522,26 @@ else:
     hint("Declaration of " & "RSA_padding_add_PKCS1_OAEP" &
         " already exists, not redeclaring")
 when not declared(RSA_print):
-  proc RSA_print*(bio: ptr BIO_553648984; rsa: ptr RSA_553649160; indent: cint): cint {.
+  proc RSA_print*(bio: ptr BIO_553648984; rsa: ptr RSA_553649162; indent: cint): cint {.
       cdecl, importc: "RSA_print".}
 else:
   static :
     hint("Declaration of " & "RSA_print" & " already exists, not redeclaring")
 when not declared(RSA_print_fp):
-  proc RSA_print_fp*(fp: ptr Cfile_553649262; rsa: ptr RSA_553649160;
+  proc RSA_print_fp*(fp: ptr Cfile_553649264; rsa: ptr RSA_553649162;
                      indent: cint): cint {.cdecl, importc: "RSA_print_fp".}
 else:
   static :
     hint("Declaration of " & "RSA_print_fp" & " already exists, not redeclaring")
 when not declared(RSA_get0_pss_params):
-  proc RSA_get0_pss_params*(rsa: ptr RSA_553649160): ptr RSA_PSS_PARAMS_553649156 {.
+  proc RSA_get0_pss_params*(rsa: ptr RSA_553649162): ptr RSA_PSS_PARAMS_553649158 {.
       cdecl, importc: "RSA_get0_pss_params".}
 else:
   static :
     hint("Declaration of " & "RSA_get0_pss_params" &
         " already exists, not redeclaring")
 when not declared(RSA_new_method_no_e):
-  proc RSA_new_method_no_e*(engine: ptr ENGINE_553649044; n: ptr BIGNUM_553648976): ptr RSA_553649160 {.
+  proc RSA_new_method_no_e*(engine: ptr ENGINE_553649044; n: ptr BIGNUM_553648976): ptr RSA_553649162 {.
       cdecl, importc: "RSA_new_method_no_e".}
 else:
   static :
@@ -71528,7 +71553,7 @@ else:
   static :
     hint("Declaration of " & "X509_it" & " already exists, not redeclaring")
 when not declared(X509_up_ref):
-  proc X509_up_ref*(x509: ptr X509_553649236): cint {.cdecl,
+  proc X509_up_ref*(x509: ptr X509_553649238): cint {.cdecl,
       importc: "X509_up_ref".}
 else:
   static :
@@ -71541,114 +71566,114 @@ else:
     hint("Declaration of " & "X509_chain_up_ref" &
         " already exists, not redeclaring")
 when not declared(X509_dup):
-  proc X509_dup*(x509: ptr X509_553649236): ptr X509_553649236 {.cdecl,
+  proc X509_dup*(x509: ptr X509_553649238): ptr X509_553649238 {.cdecl,
       importc: "X509_dup".}
 else:
   static :
     hint("Declaration of " & "X509_dup" & " already exists, not redeclaring")
 when not declared(X509_free):
-  proc X509_free*(x509: ptr X509_553649236): void {.cdecl, importc: "X509_free".}
+  proc X509_free*(x509: ptr X509_553649238): void {.cdecl, importc: "X509_free".}
 else:
   static :
     hint("Declaration of " & "X509_free" & " already exists, not redeclaring")
 when not declared(d2i_X509):
-  proc d2i_X509*(out_arg: ptr ptr X509_553649236; inp: ptr ptr uint8; len: clong): ptr X509_553649236 {.
+  proc d2i_X509*(out_arg: ptr ptr X509_553649238; inp: ptr ptr uint8; len: clong): ptr X509_553649238 {.
       cdecl, importc: "d2i_X509".}
 else:
   static :
     hint("Declaration of " & "d2i_X509" & " already exists, not redeclaring")
 when not declared(X509_parse_from_buffer):
-  proc X509_parse_from_buffer*(buf: ptr CRYPTO_BUFFER_553649024): ptr X509_553649236 {.
+  proc X509_parse_from_buffer*(buf: ptr CRYPTO_BUFFER_553649024): ptr X509_553649238 {.
       cdecl, importc: "X509_parse_from_buffer".}
 else:
   static :
     hint("Declaration of " & "X509_parse_from_buffer" &
         " already exists, not redeclaring")
 when not declared(i2d_X509):
-  proc i2d_X509*(x509: ptr X509_553649236; outp: ptr ptr uint8): cint {.cdecl,
+  proc i2d_X509*(x509: ptr X509_553649238; outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_X509".}
 else:
   static :
     hint("Declaration of " & "i2d_X509" & " already exists, not redeclaring")
 when not declared(X509_get_version):
-  proc X509_get_version*(x509: ptr X509_553649236): clong {.cdecl,
+  proc X509_get_version*(x509: ptr X509_553649238): clong {.cdecl,
       importc: "X509_get_version".}
 else:
   static :
     hint("Declaration of " & "X509_get_version" &
         " already exists, not redeclaring")
 when not declared(X509_get0_serialNumber):
-  proc X509_get0_serialNumber*(x509: ptr X509_553649236): ptr ASN1_INTEGER_553648886 {.
+  proc X509_get0_serialNumber*(x509: ptr X509_553649238): ptr ASN1_INTEGER_553648886 {.
       cdecl, importc: "X509_get0_serialNumber".}
 else:
   static :
     hint("Declaration of " & "X509_get0_serialNumber" &
         " already exists, not redeclaring")
 when not declared(X509_get0_notBefore):
-  proc X509_get0_notBefore*(x509: ptr X509_553649236): ptr ASN1_TIME_553648896 {.
+  proc X509_get0_notBefore*(x509: ptr X509_553649238): ptr ASN1_TIME_553648896 {.
       cdecl, importc: "X509_get0_notBefore".}
 else:
   static :
     hint("Declaration of " & "X509_get0_notBefore" &
         " already exists, not redeclaring")
 when not declared(X509_get0_notAfter):
-  proc X509_get0_notAfter*(x509: ptr X509_553649236): ptr ASN1_TIME_553648896 {.
+  proc X509_get0_notAfter*(x509: ptr X509_553649238): ptr ASN1_TIME_553648896 {.
       cdecl, importc: "X509_get0_notAfter".}
 else:
   static :
     hint("Declaration of " & "X509_get0_notAfter" &
         " already exists, not redeclaring")
 when not declared(X509_get_issuer_name):
-  proc X509_get_issuer_name*(x509: ptr X509_553649236): ptr X509_NAME_553648964 {.
+  proc X509_get_issuer_name*(x509: ptr X509_553649238): ptr X509_NAME_553648964 {.
       cdecl, importc: "X509_get_issuer_name".}
 else:
   static :
     hint("Declaration of " & "X509_get_issuer_name" &
         " already exists, not redeclaring")
 when not declared(X509_get_subject_name):
-  proc X509_get_subject_name*(x509: ptr X509_553649236): ptr X509_NAME_553648964 {.
+  proc X509_get_subject_name*(x509: ptr X509_553649238): ptr X509_NAME_553648964 {.
       cdecl, importc: "X509_get_subject_name".}
 else:
   static :
     hint("Declaration of " & "X509_get_subject_name" &
         " already exists, not redeclaring")
 when not declared(X509_get_X509_PUBKEY):
-  proc X509_get_X509_PUBKEY*(x509: ptr X509_553649236): ptr X509_PUBKEY_553648966 {.
+  proc X509_get_X509_PUBKEY*(x509: ptr X509_553649238): ptr X509_PUBKEY_553648966 {.
       cdecl, importc: "X509_get_X509_PUBKEY".}
 else:
   static :
     hint("Declaration of " & "X509_get_X509_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(X509_get0_pubkey):
-  proc X509_get0_pubkey*(x509: ptr X509_553649236): ptr EVP_PKEY_553649086 {.
+  proc X509_get0_pubkey*(x509: ptr X509_553649238): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "X509_get0_pubkey".}
 else:
   static :
     hint("Declaration of " & "X509_get0_pubkey" &
         " already exists, not redeclaring")
 when not declared(X509_get_pubkey):
-  proc X509_get_pubkey*(x509: ptr X509_553649236): ptr EVP_PKEY_553649086 {.
+  proc X509_get_pubkey*(x509: ptr X509_553649238): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "X509_get_pubkey".}
 else:
   static :
     hint("Declaration of " & "X509_get_pubkey" &
         " already exists, not redeclaring")
 when not declared(X509_get0_pubkey_bitstr):
-  proc X509_get0_pubkey_bitstr*(x509: ptr X509_553649236): ptr ASN1_BIT_STRING_553648872 {.
+  proc X509_get0_pubkey_bitstr*(x509: ptr X509_553649238): ptr ASN1_BIT_STRING_553648872 {.
       cdecl, importc: "X509_get0_pubkey_bitstr".}
 else:
   static :
     hint("Declaration of " & "X509_get0_pubkey_bitstr" &
         " already exists, not redeclaring")
 when not declared(X509_check_private_key):
-  proc X509_check_private_key*(x509: ptr X509_553649236; pkey: ptr EVP_PKEY_553649086): cint {.
+  proc X509_check_private_key*(x509: ptr X509_553649238; pkey: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "X509_check_private_key".}
 else:
   static :
     hint("Declaration of " & "X509_check_private_key" &
         " already exists, not redeclaring")
 when not declared(X509_get0_uids):
-  proc X509_get0_uids*(x509: ptr X509_553649236;
+  proc X509_get0_uids*(x509: ptr X509_553649238;
                        out_issuer_uid: ptr ptr ASN1_BIT_STRING_553648872;
                        out_subject_uid: ptr ptr ASN1_BIT_STRING_553648872): void {.
       cdecl, importc: "X509_get0_uids".}
@@ -71657,84 +71682,84 @@ else:
     hint("Declaration of " & "X509_get0_uids" &
         " already exists, not redeclaring")
 when not declared(X509_get_extension_flags):
-  proc X509_get_extension_flags*(x509: ptr X509_553649236): uint32 {.cdecl,
+  proc X509_get_extension_flags*(x509: ptr X509_553649238): uint32 {.cdecl,
       importc: "X509_get_extension_flags".}
 else:
   static :
     hint("Declaration of " & "X509_get_extension_flags" &
         " already exists, not redeclaring")
 when not declared(X509_get_pathlen):
-  proc X509_get_pathlen*(x509: ptr X509_553649236): clong {.cdecl,
+  proc X509_get_pathlen*(x509: ptr X509_553649238): clong {.cdecl,
       importc: "X509_get_pathlen".}
 else:
   static :
     hint("Declaration of " & "X509_get_pathlen" &
         " already exists, not redeclaring")
 when not declared(X509_get_key_usage):
-  proc X509_get_key_usage*(x509: ptr X509_553649236): uint32 {.cdecl,
+  proc X509_get_key_usage*(x509: ptr X509_553649238): uint32 {.cdecl,
       importc: "X509_get_key_usage".}
 else:
   static :
     hint("Declaration of " & "X509_get_key_usage" &
         " already exists, not redeclaring")
 when not declared(X509_get_extended_key_usage):
-  proc X509_get_extended_key_usage*(x509: ptr X509_553649236): uint32 {.cdecl,
+  proc X509_get_extended_key_usage*(x509: ptr X509_553649238): uint32 {.cdecl,
       importc: "X509_get_extended_key_usage".}
 else:
   static :
     hint("Declaration of " & "X509_get_extended_key_usage" &
         " already exists, not redeclaring")
 when not declared(X509_get0_subject_key_id):
-  proc X509_get0_subject_key_id*(x509: ptr X509_553649236): ptr ASN1_OCTET_STRING_553648888 {.
+  proc X509_get0_subject_key_id*(x509: ptr X509_553649238): ptr ASN1_OCTET_STRING_553648888 {.
       cdecl, importc: "X509_get0_subject_key_id".}
 else:
   static :
     hint("Declaration of " & "X509_get0_subject_key_id" &
         " already exists, not redeclaring")
 when not declared(X509_get0_authority_key_id):
-  proc X509_get0_authority_key_id*(x509: ptr X509_553649236): ptr ASN1_OCTET_STRING_553648888 {.
+  proc X509_get0_authority_key_id*(x509: ptr X509_553649238): ptr ASN1_OCTET_STRING_553648888 {.
       cdecl, importc: "X509_get0_authority_key_id".}
 else:
   static :
     hint("Declaration of " & "X509_get0_authority_key_id" &
         " already exists, not redeclaring")
 when not declared(X509_get0_authority_issuer):
-  proc X509_get0_authority_issuer*(x509: ptr X509_553649236): ptr GENERAL_NAMES_553649452 {.
+  proc X509_get0_authority_issuer*(x509: ptr X509_553649238): ptr GENERAL_NAMES_553649454 {.
       cdecl, importc: "X509_get0_authority_issuer".}
 else:
   static :
     hint("Declaration of " & "X509_get0_authority_issuer" &
         " already exists, not redeclaring")
 when not declared(X509_get0_authority_serial):
-  proc X509_get0_authority_serial*(x509: ptr X509_553649236): ptr ASN1_INTEGER_553648886 {.
+  proc X509_get0_authority_serial*(x509: ptr X509_553649238): ptr ASN1_INTEGER_553648886 {.
       cdecl, importc: "X509_get0_authority_serial".}
 else:
   static :
     hint("Declaration of " & "X509_get0_authority_serial" &
         " already exists, not redeclaring")
 when not declared(X509_get0_extensions):
-  proc X509_get0_extensions*(x509: ptr X509_553649236): ptr struct_stack_st_X509_EXTENSION {.
+  proc X509_get0_extensions*(x509: ptr X509_553649238): ptr struct_stack_st_X509_EXTENSION {.
       cdecl, importc: "X509_get0_extensions".}
 else:
   static :
     hint("Declaration of " & "X509_get0_extensions" &
         " already exists, not redeclaring")
 when not declared(X509_get_ext_count):
-  proc X509_get_ext_count*(x: ptr X509_553649236): cint {.cdecl,
+  proc X509_get_ext_count*(x: ptr X509_553649238): cint {.cdecl,
       importc: "X509_get_ext_count".}
 else:
   static :
     hint("Declaration of " & "X509_get_ext_count" &
         " already exists, not redeclaring")
 when not declared(X509_get_ext_by_NID):
-  proc X509_get_ext_by_NID*(x: ptr X509_553649236; nid: cint; lastpos: cint): cint {.
+  proc X509_get_ext_by_NID*(x: ptr X509_553649238; nid: cint; lastpos: cint): cint {.
       cdecl, importc: "X509_get_ext_by_NID".}
 else:
   static :
     hint("Declaration of " & "X509_get_ext_by_NID" &
         " already exists, not redeclaring")
 when not declared(X509_get_ext_by_OBJ):
-  proc X509_get_ext_by_OBJ*(x: ptr X509_553649236; obj: ptr ASN1_OBJECT_553648868;
+  proc X509_get_ext_by_OBJ*(x: ptr X509_553649238; obj: ptr ASN1_OBJECT_553648868;
                             lastpos: cint): cint {.cdecl,
       importc: "X509_get_ext_by_OBJ".}
 else:
@@ -71742,7 +71767,7 @@ else:
     hint("Declaration of " & "X509_get_ext_by_OBJ" &
         " already exists, not redeclaring")
 when not declared(X509_get_ext_by_critical):
-  proc X509_get_ext_by_critical*(x: ptr X509_553649236; crit: cint;
+  proc X509_get_ext_by_critical*(x: ptr X509_553649238; crit: cint;
                                  lastpos: cint): cint {.cdecl,
       importc: "X509_get_ext_by_critical".}
 else:
@@ -71750,13 +71775,13 @@ else:
     hint("Declaration of " & "X509_get_ext_by_critical" &
         " already exists, not redeclaring")
 when not declared(X509_get_ext):
-  proc X509_get_ext*(x: ptr X509_553649236; loc: cint): ptr X509_EXTENSION_553648956 {.
+  proc X509_get_ext*(x: ptr X509_553649238; loc: cint): ptr X509_EXTENSION_553648956 {.
       cdecl, importc: "X509_get_ext".}
 else:
   static :
     hint("Declaration of " & "X509_get_ext" & " already exists, not redeclaring")
 when not declared(X509_get_ext_d2i):
-  proc X509_get_ext_d2i*(x509: ptr X509_553649236; nid: cint;
+  proc X509_get_ext_d2i*(x509: ptr X509_553649238; nid: cint;
                          out_critical: ptr cint; out_idx: ptr cint): pointer {.
       cdecl, importc: "X509_get_ext_d2i".}
 else:
@@ -71764,14 +71789,14 @@ else:
     hint("Declaration of " & "X509_get_ext_d2i" &
         " already exists, not redeclaring")
 when not declared(X509_get0_tbs_sigalg):
-  proc X509_get0_tbs_sigalg*(x509: ptr X509_553649236): ptr X509_ALGOR_553648950 {.
+  proc X509_get0_tbs_sigalg*(x509: ptr X509_553649238): ptr X509_ALGOR_553648950 {.
       cdecl, importc: "X509_get0_tbs_sigalg".}
 else:
   static :
     hint("Declaration of " & "X509_get0_tbs_sigalg" &
         " already exists, not redeclaring")
 when not declared(X509_get_signature_info):
-  proc X509_get_signature_info*(x509: ptr X509_553649236; digest_nid: ptr cint;
+  proc X509_get_signature_info*(x509: ptr X509_553649238; digest_nid: ptr cint;
                                 pubkey_nid: ptr cint; sec_bits: ptr cint;
                                 flags: ptr uint32): cint {.cdecl,
       importc: "X509_get_signature_info".}
@@ -71782,40 +71807,40 @@ else:
 when not declared(X509_get0_signature):
   proc X509_get0_signature*(out_sig: ptr ptr ASN1_BIT_STRING_553648872;
                             out_alg: ptr ptr X509_ALGOR_553648950;
-                            x509: ptr X509_553649236): void {.cdecl,
+                            x509: ptr X509_553649238): void {.cdecl,
       importc: "X509_get0_signature".}
 else:
   static :
     hint("Declaration of " & "X509_get0_signature" &
         " already exists, not redeclaring")
 when not declared(X509_get_signature_nid):
-  proc X509_get_signature_nid*(x509: ptr X509_553649236): cint {.cdecl,
+  proc X509_get_signature_nid*(x509: ptr X509_553649238): cint {.cdecl,
       importc: "X509_get_signature_nid".}
 else:
   static :
     hint("Declaration of " & "X509_get_signature_nid" &
         " already exists, not redeclaring")
 when not declared(i2d_X509_tbs):
-  proc i2d_X509_tbs*(x509: ptr X509_553649236; outp: ptr ptr uint8): cint {.
+  proc i2d_X509_tbs*(x509: ptr X509_553649238; outp: ptr ptr uint8): cint {.
       cdecl, importc: "i2d_X509_tbs".}
 else:
   static :
     hint("Declaration of " & "i2d_X509_tbs" & " already exists, not redeclaring")
 when not declared(X509_verify):
-  proc X509_verify*(x509: ptr X509_553649236; pkey: ptr EVP_PKEY_553649086): cint {.
+  proc X509_verify*(x509: ptr X509_553649238; pkey: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "X509_verify".}
 else:
   static :
     hint("Declaration of " & "X509_verify" & " already exists, not redeclaring")
 when not declared(X509_get1_email):
-  proc X509_get1_email*(x509: ptr X509_553649236): ptr struct_stack_st_OPENSSL_STRING {.
+  proc X509_get1_email*(x509: ptr X509_553649238): ptr struct_stack_st_OPENSSL_STRING {.
       cdecl, importc: "X509_get1_email".}
 else:
   static :
     hint("Declaration of " & "X509_get1_email" &
         " already exists, not redeclaring")
 when not declared(X509_get1_ocsp):
-  proc X509_get1_ocsp*(x509: ptr X509_553649236): ptr struct_stack_st_OPENSSL_STRING {.
+  proc X509_get1_ocsp*(x509: ptr X509_553649238): ptr struct_stack_st_OPENSSL_STRING {.
       cdecl, importc: "X509_get1_ocsp".}
 else:
   static :
@@ -71829,94 +71854,94 @@ else:
     hint("Declaration of " & "X509_email_free" &
         " already exists, not redeclaring")
 when not declared(X509_cmp):
-  proc X509_cmp*(a: ptr X509_553649236; b: ptr X509_553649236): cint {.cdecl,
+  proc X509_cmp*(a: ptr X509_553649238; b: ptr X509_553649238): cint {.cdecl,
       importc: "X509_cmp".}
 else:
   static :
     hint("Declaration of " & "X509_cmp" & " already exists, not redeclaring")
 when not declared(X509_new):
-  proc X509_new*(): ptr X509_553649236 {.cdecl, importc: "X509_new".}
+  proc X509_new*(): ptr X509_553649238 {.cdecl, importc: "X509_new".}
 else:
   static :
     hint("Declaration of " & "X509_new" & " already exists, not redeclaring")
 when not declared(X509_set_version):
-  proc X509_set_version*(x509: ptr X509_553649236; version: clong): cint {.
+  proc X509_set_version*(x509: ptr X509_553649238; version: clong): cint {.
       cdecl, importc: "X509_set_version".}
 else:
   static :
     hint("Declaration of " & "X509_set_version" &
         " already exists, not redeclaring")
 when not declared(X509_set_serialNumber):
-  proc X509_set_serialNumber*(x509: ptr X509_553649236; serial: ptr ASN1_INTEGER_553648886): cint {.
+  proc X509_set_serialNumber*(x509: ptr X509_553649238; serial: ptr ASN1_INTEGER_553648886): cint {.
       cdecl, importc: "X509_set_serialNumber".}
 else:
   static :
     hint("Declaration of " & "X509_set_serialNumber" &
         " already exists, not redeclaring")
 when not declared(X509_set1_notBefore):
-  proc X509_set1_notBefore*(x509: ptr X509_553649236; tm: ptr ASN1_TIME_553648896): cint {.
+  proc X509_set1_notBefore*(x509: ptr X509_553649238; tm: ptr ASN1_TIME_553648896): cint {.
       cdecl, importc: "X509_set1_notBefore".}
 else:
   static :
     hint("Declaration of " & "X509_set1_notBefore" &
         " already exists, not redeclaring")
 when not declared(X509_set1_notAfter):
-  proc X509_set1_notAfter*(x509: ptr X509_553649236; tm: ptr ASN1_TIME_553648896): cint {.
+  proc X509_set1_notAfter*(x509: ptr X509_553649238; tm: ptr ASN1_TIME_553648896): cint {.
       cdecl, importc: "X509_set1_notAfter".}
 else:
   static :
     hint("Declaration of " & "X509_set1_notAfter" &
         " already exists, not redeclaring")
 when not declared(X509_getm_notBefore):
-  proc X509_getm_notBefore*(x509: ptr X509_553649236): ptr ASN1_TIME_553648896 {.
+  proc X509_getm_notBefore*(x509: ptr X509_553649238): ptr ASN1_TIME_553648896 {.
       cdecl, importc: "X509_getm_notBefore".}
 else:
   static :
     hint("Declaration of " & "X509_getm_notBefore" &
         " already exists, not redeclaring")
 when not declared(X509_getm_notAfter):
-  proc X509_getm_notAfter*(x: ptr X509_553649236): ptr ASN1_TIME_553648896 {.
+  proc X509_getm_notAfter*(x: ptr X509_553649238): ptr ASN1_TIME_553648896 {.
       cdecl, importc: "X509_getm_notAfter".}
 else:
   static :
     hint("Declaration of " & "X509_getm_notAfter" &
         " already exists, not redeclaring")
 when not declared(X509_set_issuer_name):
-  proc X509_set_issuer_name*(x509: ptr X509_553649236; name: ptr X509_NAME_553648964): cint {.
+  proc X509_set_issuer_name*(x509: ptr X509_553649238; name: ptr X509_NAME_553648964): cint {.
       cdecl, importc: "X509_set_issuer_name".}
 else:
   static :
     hint("Declaration of " & "X509_set_issuer_name" &
         " already exists, not redeclaring")
 when not declared(X509_set_subject_name):
-  proc X509_set_subject_name*(x509: ptr X509_553649236; name: ptr X509_NAME_553648964): cint {.
+  proc X509_set_subject_name*(x509: ptr X509_553649238; name: ptr X509_NAME_553648964): cint {.
       cdecl, importc: "X509_set_subject_name".}
 else:
   static :
     hint("Declaration of " & "X509_set_subject_name" &
         " already exists, not redeclaring")
 when not declared(X509_set_pubkey):
-  proc X509_set_pubkey*(x509: ptr X509_553649236; pkey: ptr EVP_PKEY_553649086): cint {.
+  proc X509_set_pubkey*(x509: ptr X509_553649238; pkey: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "X509_set_pubkey".}
 else:
   static :
     hint("Declaration of " & "X509_set_pubkey" &
         " already exists, not redeclaring")
 when not declared(X509_delete_ext):
-  proc X509_delete_ext*(x: ptr X509_553649236; loc: cint): ptr X509_EXTENSION_553648956 {.
+  proc X509_delete_ext*(x: ptr X509_553649238; loc: cint): ptr X509_EXTENSION_553648956 {.
       cdecl, importc: "X509_delete_ext".}
 else:
   static :
     hint("Declaration of " & "X509_delete_ext" &
         " already exists, not redeclaring")
 when not declared(X509_add_ext):
-  proc X509_add_ext*(x: ptr X509_553649236; ex: ptr X509_EXTENSION_553648956;
+  proc X509_add_ext*(x: ptr X509_553649238; ex: ptr X509_EXTENSION_553648956;
                      loc: cint): cint {.cdecl, importc: "X509_add_ext".}
 else:
   static :
     hint("Declaration of " & "X509_add_ext" & " already exists, not redeclaring")
 when not declared(X509_add1_ext_i2d):
-  proc X509_add1_ext_i2d*(x: ptr X509_553649236; nid: cint; value: pointer;
+  proc X509_add1_ext_i2d*(x: ptr X509_553649238; nid: cint; value: pointer;
                           crit: cint; flags: culong): cint {.cdecl,
       importc: "X509_add1_ext_i2d".}
 else:
@@ -71924,34 +71949,34 @@ else:
     hint("Declaration of " & "X509_add1_ext_i2d" &
         " already exists, not redeclaring")
 when not declared(X509_sign):
-  proc X509_sign*(x509: ptr X509_553649236; pkey: ptr EVP_PKEY_553649086;
+  proc X509_sign*(x509: ptr X509_553649238; pkey: ptr EVP_PKEY_553649086;
                   md: ptr EVP_MD_553649050): cint {.cdecl, importc: "X509_sign".}
 else:
   static :
     hint("Declaration of " & "X509_sign" & " already exists, not redeclaring")
 when not declared(X509_sign_ctx):
-  proc X509_sign_ctx*(x509: ptr X509_553649236; ctx: ptr EVP_MD_CTX_553649046): cint {.
+  proc X509_sign_ctx*(x509: ptr X509_553649238; ctx: ptr EVP_MD_CTX_553649046): cint {.
       cdecl, importc: "X509_sign_ctx".}
 else:
   static :
     hint("Declaration of " & "X509_sign_ctx" &
         " already exists, not redeclaring")
 when not declared(i2d_re_X509_tbs):
-  proc i2d_re_X509_tbs*(x509: ptr X509_553649236; outp: ptr ptr uint8): cint {.
+  proc i2d_re_X509_tbs*(x509: ptr X509_553649238; outp: ptr ptr uint8): cint {.
       cdecl, importc: "i2d_re_X509_tbs".}
 else:
   static :
     hint("Declaration of " & "i2d_re_X509_tbs" &
         " already exists, not redeclaring")
 when not declared(X509_set1_signature_algo):
-  proc X509_set1_signature_algo*(x509: ptr X509_553649236; algo: ptr X509_ALGOR_553648950): cint {.
+  proc X509_set1_signature_algo*(x509: ptr X509_553649238; algo: ptr X509_ALGOR_553648950): cint {.
       cdecl, importc: "X509_set1_signature_algo".}
 else:
   static :
     hint("Declaration of " & "X509_set1_signature_algo" &
         " already exists, not redeclaring")
 when not declared(X509_set1_signature_value):
-  proc X509_set1_signature_value*(x509: ptr X509_553649236; sig: ptr uint8;
+  proc X509_set1_signature_value*(x509: ptr X509_553649238; sig: ptr uint8;
                                   sig_len: csize_t): cint {.cdecl,
       importc: "X509_set1_signature_value".}
 else:
@@ -71959,20 +71984,20 @@ else:
     hint("Declaration of " & "X509_set1_signature_value" &
         " already exists, not redeclaring")
 when not declared(i2d_X509_AUX):
-  proc i2d_X509_AUX*(x509: ptr X509_553649236; outp: ptr ptr uint8): cint {.
+  proc i2d_X509_AUX*(x509: ptr X509_553649238; outp: ptr ptr uint8): cint {.
       cdecl, importc: "i2d_X509_AUX".}
 else:
   static :
     hint("Declaration of " & "i2d_X509_AUX" & " already exists, not redeclaring")
 when not declared(d2i_X509_AUX):
-  proc d2i_X509_AUX*(x509: ptr ptr X509_553649236; inp: ptr ptr uint8;
-                     length: clong): ptr X509_553649236 {.cdecl,
+  proc d2i_X509_AUX*(x509: ptr ptr X509_553649238; inp: ptr ptr uint8;
+                     length: clong): ptr X509_553649238 {.cdecl,
       importc: "d2i_X509_AUX".}
 else:
   static :
     hint("Declaration of " & "d2i_X509_AUX" & " already exists, not redeclaring")
 when not declared(X509_alias_set1):
-  proc X509_alias_set1*(x509: ptr X509_553649236; name: ptr uint8;
+  proc X509_alias_set1*(x509: ptr X509_553649238; name: ptr uint8;
                         len: ossl_ssize_t_553648856): cint {.cdecl,
       importc: "X509_alias_set1".}
 else:
@@ -71980,7 +72005,7 @@ else:
     hint("Declaration of " & "X509_alias_set1" &
         " already exists, not redeclaring")
 when not declared(X509_keyid_set1):
-  proc X509_keyid_set1*(x509: ptr X509_553649236; id: ptr uint8;
+  proc X509_keyid_set1*(x509: ptr X509_553649238; id: ptr uint8;
                         len: ossl_ssize_t_553648856): cint {.cdecl,
       importc: "X509_keyid_set1".}
 else:
@@ -71988,42 +72013,42 @@ else:
     hint("Declaration of " & "X509_keyid_set1" &
         " already exists, not redeclaring")
 when not declared(X509_alias_get0):
-  proc X509_alias_get0*(x509: ptr X509_553649236; out_len: ptr cint): ptr uint8 {.
+  proc X509_alias_get0*(x509: ptr X509_553649238; out_len: ptr cint): ptr uint8 {.
       cdecl, importc: "X509_alias_get0".}
 else:
   static :
     hint("Declaration of " & "X509_alias_get0" &
         " already exists, not redeclaring")
 when not declared(X509_keyid_get0):
-  proc X509_keyid_get0*(x509: ptr X509_553649236; out_len: ptr cint): ptr uint8 {.
+  proc X509_keyid_get0*(x509: ptr X509_553649238; out_len: ptr cint): ptr uint8 {.
       cdecl, importc: "X509_keyid_get0".}
 else:
   static :
     hint("Declaration of " & "X509_keyid_get0" &
         " already exists, not redeclaring")
 when not declared(X509_add1_trust_object):
-  proc X509_add1_trust_object*(x509: ptr X509_553649236; obj: ptr ASN1_OBJECT_553648868): cint {.
+  proc X509_add1_trust_object*(x509: ptr X509_553649238; obj: ptr ASN1_OBJECT_553648868): cint {.
       cdecl, importc: "X509_add1_trust_object".}
 else:
   static :
     hint("Declaration of " & "X509_add1_trust_object" &
         " already exists, not redeclaring")
 when not declared(X509_add1_reject_object):
-  proc X509_add1_reject_object*(x509: ptr X509_553649236; obj: ptr ASN1_OBJECT_553648868): cint {.
+  proc X509_add1_reject_object*(x509: ptr X509_553649238; obj: ptr ASN1_OBJECT_553648868): cint {.
       cdecl, importc: "X509_add1_reject_object".}
 else:
   static :
     hint("Declaration of " & "X509_add1_reject_object" &
         " already exists, not redeclaring")
 when not declared(X509_trust_clear):
-  proc X509_trust_clear*(x509: ptr X509_553649236): void {.cdecl,
+  proc X509_trust_clear*(x509: ptr X509_553649238): void {.cdecl,
       importc: "X509_trust_clear".}
 else:
   static :
     hint("Declaration of " & "X509_trust_clear" &
         " already exists, not redeclaring")
 when not declared(X509_reject_clear):
-  proc X509_reject_clear*(x509: ptr X509_553649236): void {.cdecl,
+  proc X509_reject_clear*(x509: ptr X509_553649238): void {.cdecl,
       importc: "X509_reject_clear".}
 else:
   static :
@@ -72104,7 +72129,7 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_CRL_get0_by_serial):
   proc X509_CRL_get0_by_serial*(crl: ptr X509_CRL_553648954;
-                                out_arg: ptr ptr X509_REVOKED_553649234;
+                                out_arg: ptr ptr X509_REVOKED_553649236;
                                 serial: ptr ASN1_INTEGER_553648886): cint {.
       cdecl, importc: "X509_CRL_get0_by_serial".}
 else:
@@ -72113,8 +72138,8 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_CRL_get0_by_cert):
   proc X509_CRL_get0_by_cert*(crl: ptr X509_CRL_553648954;
-                              out_arg: ptr ptr X509_REVOKED_553649234;
-                              x509: ptr X509_553649236): cint {.cdecl,
+                              out_arg: ptr ptr X509_REVOKED_553649236;
+                              x509: ptr X509_553649238): cint {.cdecl,
       importc: "X509_CRL_get0_by_cert".}
 else:
   static :
@@ -72231,7 +72256,7 @@ else:
     hint("Declaration of " & "X509_CRL_set_issuer_name" &
         " already exists, not redeclaring")
 when not declared(X509_CRL_add0_revoked):
-  proc X509_CRL_add0_revoked*(crl: ptr X509_CRL_553648954; rev: ptr X509_REVOKED_553649234): cint {.
+  proc X509_CRL_add0_revoked*(crl: ptr X509_CRL_553648954; rev: ptr X509_REVOKED_553649236): cint {.
       cdecl, importc: "X509_CRL_add0_revoked".}
 else:
   static :
@@ -72319,50 +72344,50 @@ else:
     hint("Declaration of " & "X509_REVOKED_it" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_new):
-  proc X509_REVOKED_new*(): ptr X509_REVOKED_553649234 {.cdecl,
+  proc X509_REVOKED_new*(): ptr X509_REVOKED_553649236 {.cdecl,
       importc: "X509_REVOKED_new".}
 else:
   static :
     hint("Declaration of " & "X509_REVOKED_new" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_free):
-  proc X509_REVOKED_free*(rev: ptr X509_REVOKED_553649234): void {.cdecl,
+  proc X509_REVOKED_free*(rev: ptr X509_REVOKED_553649236): void {.cdecl,
       importc: "X509_REVOKED_free".}
 else:
   static :
     hint("Declaration of " & "X509_REVOKED_free" &
         " already exists, not redeclaring")
 when not declared(d2i_X509_REVOKED):
-  proc d2i_X509_REVOKED*(out_arg: ptr ptr X509_REVOKED_553649234;
-                         inp: ptr ptr uint8; len: clong): ptr X509_REVOKED_553649234 {.
+  proc d2i_X509_REVOKED*(out_arg: ptr ptr X509_REVOKED_553649236;
+                         inp: ptr ptr uint8; len: clong): ptr X509_REVOKED_553649236 {.
       cdecl, importc: "d2i_X509_REVOKED".}
 else:
   static :
     hint("Declaration of " & "d2i_X509_REVOKED" &
         " already exists, not redeclaring")
 when not declared(i2d_X509_REVOKED):
-  proc i2d_X509_REVOKED*(alg: ptr X509_REVOKED_553649234; outp: ptr ptr uint8): cint {.
+  proc i2d_X509_REVOKED*(alg: ptr X509_REVOKED_553649236; outp: ptr ptr uint8): cint {.
       cdecl, importc: "i2d_X509_REVOKED".}
 else:
   static :
     hint("Declaration of " & "i2d_X509_REVOKED" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_dup):
-  proc X509_REVOKED_dup*(rev: ptr X509_REVOKED_553649234): ptr X509_REVOKED_553649234 {.
+  proc X509_REVOKED_dup*(rev: ptr X509_REVOKED_553649236): ptr X509_REVOKED_553649236 {.
       cdecl, importc: "X509_REVOKED_dup".}
 else:
   static :
     hint("Declaration of " & "X509_REVOKED_dup" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_get0_serialNumber):
-  proc X509_REVOKED_get0_serialNumber*(revoked: ptr X509_REVOKED_553649234): ptr ASN1_INTEGER_553648886 {.
+  proc X509_REVOKED_get0_serialNumber*(revoked: ptr X509_REVOKED_553649236): ptr ASN1_INTEGER_553648886 {.
       cdecl, importc: "X509_REVOKED_get0_serialNumber".}
 else:
   static :
     hint("Declaration of " & "X509_REVOKED_get0_serialNumber" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_set_serialNumber):
-  proc X509_REVOKED_set_serialNumber*(revoked: ptr X509_REVOKED_553649234;
+  proc X509_REVOKED_set_serialNumber*(revoked: ptr X509_REVOKED_553649236;
                                       serial: ptr ASN1_INTEGER_553648886): cint {.
       cdecl, importc: "X509_REVOKED_set_serialNumber".}
 else:
@@ -72370,14 +72395,14 @@ else:
     hint("Declaration of " & "X509_REVOKED_set_serialNumber" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_get0_revocationDate):
-  proc X509_REVOKED_get0_revocationDate*(revoked: ptr X509_REVOKED_553649234): ptr ASN1_TIME_553648896 {.
+  proc X509_REVOKED_get0_revocationDate*(revoked: ptr X509_REVOKED_553649236): ptr ASN1_TIME_553648896 {.
       cdecl, importc: "X509_REVOKED_get0_revocationDate".}
 else:
   static :
     hint("Declaration of " & "X509_REVOKED_get0_revocationDate" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_set_revocationDate):
-  proc X509_REVOKED_set_revocationDate*(revoked: ptr X509_REVOKED_553649234;
+  proc X509_REVOKED_set_revocationDate*(revoked: ptr X509_REVOKED_553649236;
                                         tm: ptr ASN1_TIME_553648896): cint {.
       cdecl, importc: "X509_REVOKED_set_revocationDate".}
 else:
@@ -72385,21 +72410,21 @@ else:
     hint("Declaration of " & "X509_REVOKED_set_revocationDate" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_get0_extensions):
-  proc X509_REVOKED_get0_extensions*(r: ptr X509_REVOKED_553649234): ptr struct_stack_st_X509_EXTENSION {.
+  proc X509_REVOKED_get0_extensions*(r: ptr X509_REVOKED_553649236): ptr struct_stack_st_X509_EXTENSION {.
       cdecl, importc: "X509_REVOKED_get0_extensions".}
 else:
   static :
     hint("Declaration of " & "X509_REVOKED_get0_extensions" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_get_ext_count):
-  proc X509_REVOKED_get_ext_count*(x: ptr X509_REVOKED_553649234): cint {.cdecl,
+  proc X509_REVOKED_get_ext_count*(x: ptr X509_REVOKED_553649236): cint {.cdecl,
       importc: "X509_REVOKED_get_ext_count".}
 else:
   static :
     hint("Declaration of " & "X509_REVOKED_get_ext_count" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_get_ext_by_NID):
-  proc X509_REVOKED_get_ext_by_NID*(x: ptr X509_REVOKED_553649234; nid: cint;
+  proc X509_REVOKED_get_ext_by_NID*(x: ptr X509_REVOKED_553649236; nid: cint;
                                     lastpos: cint): cint {.cdecl,
       importc: "X509_REVOKED_get_ext_by_NID".}
 else:
@@ -72407,7 +72432,7 @@ else:
     hint("Declaration of " & "X509_REVOKED_get_ext_by_NID" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_get_ext_by_OBJ):
-  proc X509_REVOKED_get_ext_by_OBJ*(x: ptr X509_REVOKED_553649234;
+  proc X509_REVOKED_get_ext_by_OBJ*(x: ptr X509_REVOKED_553649236;
                                     obj: ptr ASN1_OBJECT_553648868;
                                     lastpos: cint): cint {.cdecl,
       importc: "X509_REVOKED_get_ext_by_OBJ".}
@@ -72416,7 +72441,7 @@ else:
     hint("Declaration of " & "X509_REVOKED_get_ext_by_OBJ" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_get_ext_by_critical):
-  proc X509_REVOKED_get_ext_by_critical*(x: ptr X509_REVOKED_553649234;
+  proc X509_REVOKED_get_ext_by_critical*(x: ptr X509_REVOKED_553649236;
       crit: cint; lastpos: cint): cint {.cdecl,
       importc: "X509_REVOKED_get_ext_by_critical".}
 else:
@@ -72424,21 +72449,21 @@ else:
     hint("Declaration of " & "X509_REVOKED_get_ext_by_critical" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_get_ext):
-  proc X509_REVOKED_get_ext*(x: ptr X509_REVOKED_553649234; loc: cint): ptr X509_EXTENSION_553648956 {.
+  proc X509_REVOKED_get_ext*(x: ptr X509_REVOKED_553649236; loc: cint): ptr X509_EXTENSION_553648956 {.
       cdecl, importc: "X509_REVOKED_get_ext".}
 else:
   static :
     hint("Declaration of " & "X509_REVOKED_get_ext" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_delete_ext):
-  proc X509_REVOKED_delete_ext*(x: ptr X509_REVOKED_553649234; loc: cint): ptr X509_EXTENSION_553648956 {.
+  proc X509_REVOKED_delete_ext*(x: ptr X509_REVOKED_553649236; loc: cint): ptr X509_EXTENSION_553648956 {.
       cdecl, importc: "X509_REVOKED_delete_ext".}
 else:
   static :
     hint("Declaration of " & "X509_REVOKED_delete_ext" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_add_ext):
-  proc X509_REVOKED_add_ext*(x: ptr X509_REVOKED_553649234;
+  proc X509_REVOKED_add_ext*(x: ptr X509_REVOKED_553649236;
                              ex: ptr X509_EXTENSION_553648956; loc: cint): cint {.
       cdecl, importc: "X509_REVOKED_add_ext".}
 else:
@@ -72446,7 +72471,7 @@ else:
     hint("Declaration of " & "X509_REVOKED_add_ext" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_get_ext_d2i):
-  proc X509_REVOKED_get_ext_d2i*(revoked: ptr X509_REVOKED_553649234; nid: cint;
+  proc X509_REVOKED_get_ext_d2i*(revoked: ptr X509_REVOKED_553649236; nid: cint;
                                  out_critical: ptr cint; out_idx: ptr cint): pointer {.
       cdecl, importc: "X509_REVOKED_get_ext_d2i".}
 else:
@@ -72454,7 +72479,7 @@ else:
     hint("Declaration of " & "X509_REVOKED_get_ext_d2i" &
         " already exists, not redeclaring")
 when not declared(X509_REVOKED_add1_ext_i2d):
-  proc X509_REVOKED_add1_ext_i2d*(x: ptr X509_REVOKED_553649234; nid: cint;
+  proc X509_REVOKED_add1_ext_i2d*(x: ptr X509_REVOKED_553649236; nid: cint;
                                   value: pointer; crit: cint; flags: culong): cint {.
       cdecl, importc: "X509_REVOKED_add1_ext_i2d".}
 else:
@@ -72536,7 +72561,7 @@ else:
     hint("Declaration of " & "X509_REQ_get_attr_count" &
         " already exists, not redeclaring")
 when not declared(X509_REQ_get_attr):
-  proc X509_REQ_get_attr*(req: ptr X509_REQ_553648968; loc: cint): ptr X509_ATTRIBUTE_553649226 {.
+  proc X509_REQ_get_attr*(req: ptr X509_REQ_553648968; loc: cint): ptr X509_ATTRIBUTE_553649228 {.
       cdecl, importc: "X509_REQ_get_attr".}
 else:
   static :
@@ -72630,14 +72655,14 @@ else:
     hint("Declaration of " & "X509_REQ_set_pubkey" &
         " already exists, not redeclaring")
 when not declared(X509_REQ_delete_attr):
-  proc X509_REQ_delete_attr*(req: ptr X509_REQ_553648968; loc: cint): ptr X509_ATTRIBUTE_553649226 {.
+  proc X509_REQ_delete_attr*(req: ptr X509_REQ_553648968; loc: cint): ptr X509_ATTRIBUTE_553649228 {.
       cdecl, importc: "X509_REQ_delete_attr".}
 else:
   static :
     hint("Declaration of " & "X509_REQ_delete_attr" &
         " already exists, not redeclaring")
 when not declared(X509_REQ_add1_attr):
-  proc X509_REQ_add1_attr*(req: ptr X509_REQ_553648968; attr: ptr X509_ATTRIBUTE_553649226): cint {.
+  proc X509_REQ_add1_attr*(req: ptr X509_REQ_553648968; attr: ptr X509_ATTRIBUTE_553649228): cint {.
       cdecl, importc: "X509_REQ_add1_attr".}
 else:
   static :
@@ -73167,15 +73192,15 @@ else:
     hint("Declaration of " & "X509_EXTENSIONS_it" &
         " already exists, not redeclaring")
 when not declared(d2i_X509_EXTENSIONS):
-  proc d2i_X509_EXTENSIONS*(out_arg: ptr ptr X509_EXTENSIONS_553649494;
-                            inp: ptr ptr uint8; len: clong): ptr X509_EXTENSIONS_553649494 {.
+  proc d2i_X509_EXTENSIONS*(out_arg: ptr ptr X509_EXTENSIONS_553649496;
+                            inp: ptr ptr uint8; len: clong): ptr X509_EXTENSIONS_553649496 {.
       cdecl, importc: "d2i_X509_EXTENSIONS".}
 else:
   static :
     hint("Declaration of " & "d2i_X509_EXTENSIONS" &
         " already exists, not redeclaring")
 when not declared(i2d_X509_EXTENSIONS):
-  proc i2d_X509_EXTENSIONS*(alg: ptr X509_EXTENSIONS_553649494;
+  proc i2d_X509_EXTENSIONS*(alg: ptr X509_EXTENSIONS_553649496;
                             outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_X509_EXTENSIONS".}
 else:
@@ -73309,29 +73334,29 @@ else:
     hint("Declaration of " & "GENERAL_NAME_dup" &
         " already exists, not redeclaring")
 when not declared(GENERAL_NAMES_new):
-  proc GENERAL_NAMES_new*(): ptr GENERAL_NAMES_553649452 {.cdecl,
+  proc GENERAL_NAMES_new*(): ptr GENERAL_NAMES_553649454 {.cdecl,
       importc: "GENERAL_NAMES_new".}
 else:
   static :
     hint("Declaration of " & "GENERAL_NAMES_new" &
         " already exists, not redeclaring")
 when not declared(GENERAL_NAMES_free):
-  proc GENERAL_NAMES_free*(gens: ptr GENERAL_NAMES_553649452): void {.cdecl,
+  proc GENERAL_NAMES_free*(gens: ptr GENERAL_NAMES_553649454): void {.cdecl,
       importc: "GENERAL_NAMES_free".}
 else:
   static :
     hint("Declaration of " & "GENERAL_NAMES_free" &
         " already exists, not redeclaring")
 when not declared(d2i_GENERAL_NAMES):
-  proc d2i_GENERAL_NAMES*(out_arg: ptr ptr GENERAL_NAMES_553649452;
-                          inp: ptr ptr uint8; len: clong): ptr GENERAL_NAMES_553649452 {.
+  proc d2i_GENERAL_NAMES*(out_arg: ptr ptr GENERAL_NAMES_553649454;
+                          inp: ptr ptr uint8; len: clong): ptr GENERAL_NAMES_553649454 {.
       cdecl, importc: "d2i_GENERAL_NAMES".}
 else:
   static :
     hint("Declaration of " & "d2i_GENERAL_NAMES" &
         " already exists, not redeclaring")
 when not declared(i2d_GENERAL_NAMES):
-  proc i2d_GENERAL_NAMES*(in_arg: ptr GENERAL_NAMES_553649452;
+  proc i2d_GENERAL_NAMES*(in_arg: ptr GENERAL_NAMES_553649454;
                           outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_GENERAL_NAMES".}
 else:
@@ -73339,28 +73364,28 @@ else:
     hint("Declaration of " & "i2d_GENERAL_NAMES" &
         " already exists, not redeclaring")
 when not declared(OTHERNAME_new):
-  proc OTHERNAME_new*(): ptr OTHERNAME_553649498 {.cdecl,
+  proc OTHERNAME_new*(): ptr OTHERNAME_553649500 {.cdecl,
       importc: "OTHERNAME_new".}
 else:
   static :
     hint("Declaration of " & "OTHERNAME_new" &
         " already exists, not redeclaring")
 when not declared(OTHERNAME_free):
-  proc OTHERNAME_free*(name: ptr OTHERNAME_553649498): void {.cdecl,
+  proc OTHERNAME_free*(name: ptr OTHERNAME_553649500): void {.cdecl,
       importc: "OTHERNAME_free".}
 else:
   static :
     hint("Declaration of " & "OTHERNAME_free" &
         " already exists, not redeclaring")
 when not declared(EDIPARTYNAME_new):
-  proc EDIPARTYNAME_new*(): ptr EDIPARTYNAME_553649502 {.cdecl,
+  proc EDIPARTYNAME_new*(): ptr EDIPARTYNAME_553649504 {.cdecl,
       importc: "EDIPARTYNAME_new".}
 else:
   static :
     hint("Declaration of " & "EDIPARTYNAME_new" &
         " already exists, not redeclaring")
 when not declared(EDIPARTYNAME_free):
-  proc EDIPARTYNAME_free*(name: ptr EDIPARTYNAME_553649502): void {.cdecl,
+  proc EDIPARTYNAME_free*(name: ptr EDIPARTYNAME_553649504): void {.cdecl,
       importc: "EDIPARTYNAME_free".}
 else:
   static :
@@ -73480,36 +73505,36 @@ else:
     hint("Declaration of " & "X509_ATTRIBUTE_it" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_new):
-  proc X509_ATTRIBUTE_new*(): ptr X509_ATTRIBUTE_553649226 {.cdecl,
+  proc X509_ATTRIBUTE_new*(): ptr X509_ATTRIBUTE_553649228 {.cdecl,
       importc: "X509_ATTRIBUTE_new".}
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE_new" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_dup):
-  proc X509_ATTRIBUTE_dup*(attr: ptr X509_ATTRIBUTE_553649226): ptr X509_ATTRIBUTE_553649226 {.
+  proc X509_ATTRIBUTE_dup*(attr: ptr X509_ATTRIBUTE_553649228): ptr X509_ATTRIBUTE_553649228 {.
       cdecl, importc: "X509_ATTRIBUTE_dup".}
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE_dup" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_free):
-  proc X509_ATTRIBUTE_free*(attr: ptr X509_ATTRIBUTE_553649226): void {.cdecl,
+  proc X509_ATTRIBUTE_free*(attr: ptr X509_ATTRIBUTE_553649228): void {.cdecl,
       importc: "X509_ATTRIBUTE_free".}
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE_free" &
         " already exists, not redeclaring")
 when not declared(d2i_X509_ATTRIBUTE):
-  proc d2i_X509_ATTRIBUTE*(out_arg: ptr ptr X509_ATTRIBUTE_553649226;
-                           inp: ptr ptr uint8; len: clong): ptr X509_ATTRIBUTE_553649226 {.
+  proc d2i_X509_ATTRIBUTE*(out_arg: ptr ptr X509_ATTRIBUTE_553649228;
+                           inp: ptr ptr uint8; len: clong): ptr X509_ATTRIBUTE_553649228 {.
       cdecl, importc: "d2i_X509_ATTRIBUTE".}
 else:
   static :
     hint("Declaration of " & "d2i_X509_ATTRIBUTE" &
         " already exists, not redeclaring")
 when not declared(i2d_X509_ATTRIBUTE):
-  proc i2d_X509_ATTRIBUTE*(alg: ptr X509_ATTRIBUTE_553649226;
+  proc i2d_X509_ATTRIBUTE*(alg: ptr X509_ATTRIBUTE_553649228;
                            outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_X509_ATTRIBUTE".}
 else:
@@ -73517,41 +73542,41 @@ else:
     hint("Declaration of " & "i2d_X509_ATTRIBUTE" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_create):
-  proc X509_ATTRIBUTE_create*(nid: cint; attrtype: cint; value: pointer): ptr X509_ATTRIBUTE_553649226 {.
+  proc X509_ATTRIBUTE_create*(nid: cint; attrtype: cint; value: pointer): ptr X509_ATTRIBUTE_553649228 {.
       cdecl, importc: "X509_ATTRIBUTE_create".}
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE_create" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_create_by_NID):
-  proc X509_ATTRIBUTE_create_by_NID*(attr: ptr ptr X509_ATTRIBUTE_553649226;
+  proc X509_ATTRIBUTE_create_by_NID*(attr: ptr ptr X509_ATTRIBUTE_553649228;
                                      nid: cint; attrtype: cint; data: pointer;
-                                     len: cint): ptr X509_ATTRIBUTE_553649226 {.
+                                     len: cint): ptr X509_ATTRIBUTE_553649228 {.
       cdecl, importc: "X509_ATTRIBUTE_create_by_NID".}
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE_create_by_NID" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_create_by_OBJ):
-  proc X509_ATTRIBUTE_create_by_OBJ*(attr: ptr ptr X509_ATTRIBUTE_553649226;
+  proc X509_ATTRIBUTE_create_by_OBJ*(attr: ptr ptr X509_ATTRIBUTE_553649228;
                                      obj: ptr ASN1_OBJECT_553648868;
-                                     attrtype: cint; data: pointer; len: cint): ptr X509_ATTRIBUTE_553649226 {.
+                                     attrtype: cint; data: pointer; len: cint): ptr X509_ATTRIBUTE_553649228 {.
       cdecl, importc: "X509_ATTRIBUTE_create_by_OBJ".}
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE_create_by_OBJ" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_create_by_txt):
-  proc X509_ATTRIBUTE_create_by_txt*(attr: ptr ptr X509_ATTRIBUTE_553649226;
+  proc X509_ATTRIBUTE_create_by_txt*(attr: ptr ptr X509_ATTRIBUTE_553649228;
                                      attrname: cstring; type_arg: cint;
-                                     bytes: ptr uint8; len: cint): ptr X509_ATTRIBUTE_553649226 {.
+                                     bytes: ptr uint8; len: cint): ptr X509_ATTRIBUTE_553649228 {.
       cdecl, importc: "X509_ATTRIBUTE_create_by_txt".}
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE_create_by_txt" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_set1_object):
-  proc X509_ATTRIBUTE_set1_object*(attr: ptr X509_ATTRIBUTE_553649226;
+  proc X509_ATTRIBUTE_set1_object*(attr: ptr X509_ATTRIBUTE_553649228;
                                    obj: ptr ASN1_OBJECT_553648868): cint {.
       cdecl, importc: "X509_ATTRIBUTE_set1_object".}
 else:
@@ -73559,7 +73584,7 @@ else:
     hint("Declaration of " & "X509_ATTRIBUTE_set1_object" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_set1_data):
-  proc X509_ATTRIBUTE_set1_data*(attr: ptr X509_ATTRIBUTE_553649226;
+  proc X509_ATTRIBUTE_set1_data*(attr: ptr X509_ATTRIBUTE_553649228;
                                  attrtype: cint; data: pointer; len: cint): cint {.
       cdecl, importc: "X509_ATTRIBUTE_set1_data".}
 else:
@@ -73567,7 +73592,7 @@ else:
     hint("Declaration of " & "X509_ATTRIBUTE_set1_data" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_get0_data):
-  proc X509_ATTRIBUTE_get0_data*(attr: ptr X509_ATTRIBUTE_553649226; idx: cint;
+  proc X509_ATTRIBUTE_get0_data*(attr: ptr X509_ATTRIBUTE_553649228; idx: cint;
                                  attrtype: cint; unused: pointer): pointer {.
       cdecl, importc: "X509_ATTRIBUTE_get0_data".}
 else:
@@ -73575,70 +73600,70 @@ else:
     hint("Declaration of " & "X509_ATTRIBUTE_get0_data" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_count):
-  proc X509_ATTRIBUTE_count*(attr: ptr X509_ATTRIBUTE_553649226): cint {.cdecl,
+  proc X509_ATTRIBUTE_count*(attr: ptr X509_ATTRIBUTE_553649228): cint {.cdecl,
       importc: "X509_ATTRIBUTE_count".}
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE_count" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_get0_object):
-  proc X509_ATTRIBUTE_get0_object*(attr: ptr X509_ATTRIBUTE_553649226): ptr ASN1_OBJECT_553648868 {.
+  proc X509_ATTRIBUTE_get0_object*(attr: ptr X509_ATTRIBUTE_553649228): ptr ASN1_OBJECT_553648868 {.
       cdecl, importc: "X509_ATTRIBUTE_get0_object".}
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE_get0_object" &
         " already exists, not redeclaring")
 when not declared(X509_ATTRIBUTE_get0_type):
-  proc X509_ATTRIBUTE_get0_type*(attr: ptr X509_ATTRIBUTE_553649226; idx: cint): ptr ASN1_TYPE_553648906 {.
+  proc X509_ATTRIBUTE_get0_type*(attr: ptr X509_ATTRIBUTE_553649228; idx: cint): ptr ASN1_TYPE_553648906 {.
       cdecl, importc: "X509_ATTRIBUTE_get0_type".}
 else:
   static :
     hint("Declaration of " & "X509_ATTRIBUTE_get0_type" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_new):
-  proc X509_STORE_new*(): ptr X509_STORE_553649240 {.cdecl,
+  proc X509_STORE_new*(): ptr X509_STORE_553649242 {.cdecl,
       importc: "X509_STORE_new".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_new" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_up_ref):
-  proc X509_STORE_up_ref*(store: ptr X509_STORE_553649240): cint {.cdecl,
+  proc X509_STORE_up_ref*(store: ptr X509_STORE_553649242): cint {.cdecl,
       importc: "X509_STORE_up_ref".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_up_ref" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_free):
-  proc X509_STORE_free*(store: ptr X509_STORE_553649240): void {.cdecl,
+  proc X509_STORE_free*(store: ptr X509_STORE_553649242): void {.cdecl,
       importc: "X509_STORE_free".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_free" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_add_cert):
-  proc X509_STORE_add_cert*(store: ptr X509_STORE_553649240; x509: ptr X509_553649236): cint {.
+  proc X509_STORE_add_cert*(store: ptr X509_STORE_553649242; x509: ptr X509_553649238): cint {.
       cdecl, importc: "X509_STORE_add_cert".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_add_cert" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_add_crl):
-  proc X509_STORE_add_crl*(store: ptr X509_STORE_553649240; crl: ptr X509_CRL_553648954): cint {.
+  proc X509_STORE_add_crl*(store: ptr X509_STORE_553649242; crl: ptr X509_CRL_553648954): cint {.
       cdecl, importc: "X509_STORE_add_crl".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_add_crl" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_get0_param):
-  proc X509_STORE_get0_param*(store: ptr X509_STORE_553649240): ptr X509_VERIFY_PARAM_553648948 {.
+  proc X509_STORE_get0_param*(store: ptr X509_STORE_553649242): ptr X509_VERIFY_PARAM_553648948 {.
       cdecl, importc: "X509_STORE_get0_param".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_get0_param" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set1_param):
-  proc X509_STORE_set1_param*(store: ptr X509_STORE_553649240;
+  proc X509_STORE_set1_param*(store: ptr X509_STORE_553649242;
                               param: ptr X509_VERIFY_PARAM_553648948): cint {.
       cdecl, importc: "X509_STORE_set1_param".}
 else:
@@ -73646,93 +73671,93 @@ else:
     hint("Declaration of " & "X509_STORE_set1_param" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set_flags):
-  proc X509_STORE_set_flags*(store: ptr X509_STORE_553649240; flags: culong): cint {.
+  proc X509_STORE_set_flags*(store: ptr X509_STORE_553649242; flags: culong): cint {.
       cdecl, importc: "X509_STORE_set_flags".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_set_flags" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set_depth):
-  proc X509_STORE_set_depth*(store: ptr X509_STORE_553649240; depth: cint): cint {.
+  proc X509_STORE_set_depth*(store: ptr X509_STORE_553649242; depth: cint): cint {.
       cdecl, importc: "X509_STORE_set_depth".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_set_depth" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set_purpose):
-  proc X509_STORE_set_purpose*(store: ptr X509_STORE_553649240; purpose: cint): cint {.
+  proc X509_STORE_set_purpose*(store: ptr X509_STORE_553649242; purpose: cint): cint {.
       cdecl, importc: "X509_STORE_set_purpose".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_set_purpose" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set_trust):
-  proc X509_STORE_set_trust*(store: ptr X509_STORE_553649240; trust: cint): cint {.
+  proc X509_STORE_set_trust*(store: ptr X509_STORE_553649242; trust: cint): cint {.
       cdecl, importc: "X509_STORE_set_trust".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_set_trust" &
         " already exists, not redeclaring")
 when not declared(X509_OBJECT_new):
-  proc X509_OBJECT_new*(): ptr X509_OBJECT_553649232 {.cdecl,
+  proc X509_OBJECT_new*(): ptr X509_OBJECT_553649234 {.cdecl,
       importc: "X509_OBJECT_new".}
 else:
   static :
     hint("Declaration of " & "X509_OBJECT_new" &
         " already exists, not redeclaring")
 when not declared(X509_OBJECT_free):
-  proc X509_OBJECT_free*(obj: ptr X509_OBJECT_553649232): void {.cdecl,
+  proc X509_OBJECT_free*(obj: ptr X509_OBJECT_553649234): void {.cdecl,
       importc: "X509_OBJECT_free".}
 else:
   static :
     hint("Declaration of " & "X509_OBJECT_free" &
         " already exists, not redeclaring")
 when not declared(X509_OBJECT_get_type):
-  proc X509_OBJECT_get_type*(obj: ptr X509_OBJECT_553649232): cint {.cdecl,
+  proc X509_OBJECT_get_type*(obj: ptr X509_OBJECT_553649234): cint {.cdecl,
       importc: "X509_OBJECT_get_type".}
 else:
   static :
     hint("Declaration of " & "X509_OBJECT_get_type" &
         " already exists, not redeclaring")
 when not declared(X509_OBJECT_get0_X509):
-  proc X509_OBJECT_get0_X509*(obj: ptr X509_OBJECT_553649232): ptr X509_553649236 {.
+  proc X509_OBJECT_get0_X509*(obj: ptr X509_OBJECT_553649234): ptr X509_553649238 {.
       cdecl, importc: "X509_OBJECT_get0_X509".}
 else:
   static :
     hint("Declaration of " & "X509_OBJECT_get0_X509" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_get_lookup_crls):
-  proc X509_STORE_get_lookup_crls*(ctx: ptr X509_STORE_553649240): X509_STORE_CTX_lookup_crls_fn_553649528 {.
+  proc X509_STORE_get_lookup_crls*(ctx: ptr X509_STORE_553649242): X509_STORE_CTX_lookup_crls_fn_553649530 {.
       cdecl, importc: "X509_STORE_get_lookup_crls".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_get_lookup_crls" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set_lookup_crls):
-  proc X509_STORE_set_lookup_crls*(ctx: ptr X509_STORE_553649240;
-                                   lookup_crls: X509_STORE_CTX_lookup_crls_fn_553649528): void {.
+  proc X509_STORE_set_lookup_crls*(ctx: ptr X509_STORE_553649242;
+                                   lookup_crls: X509_STORE_CTX_lookup_crls_fn_553649530): void {.
       cdecl, importc: "X509_STORE_set_lookup_crls".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_set_lookup_crls" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_new):
-  proc X509_STORE_CTX_new*(): ptr X509_STORE_CTX_553649238 {.cdecl,
+  proc X509_STORE_CTX_new*(): ptr X509_STORE_CTX_553649240 {.cdecl,
       importc: "X509_STORE_CTX_new".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_new" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_free):
-  proc X509_STORE_CTX_free*(ctx: ptr X509_STORE_CTX_553649238): void {.cdecl,
+  proc X509_STORE_CTX_free*(ctx: ptr X509_STORE_CTX_553649240): void {.cdecl,
       importc: "X509_STORE_CTX_free".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_free" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_init):
-  proc X509_STORE_CTX_init*(ctx: ptr X509_STORE_CTX_553649238;
-                            store: ptr X509_STORE_553649240; x509: ptr X509_553649236;
+  proc X509_STORE_CTX_init*(ctx: ptr X509_STORE_CTX_553649240;
+                            store: ptr X509_STORE_553649242; x509: ptr X509_553649238;
                             chain: ptr struct_stack_st_X509): cint {.cdecl,
       importc: "X509_STORE_CTX_init".}
 else:
@@ -73740,42 +73765,42 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_init" &
         " already exists, not redeclaring")
 when not declared(X509_verify_cert):
-  proc X509_verify_cert*(ctx: ptr X509_STORE_CTX_553649238): cint {.cdecl,
+  proc X509_verify_cert*(ctx: ptr X509_STORE_CTX_553649240): cint {.cdecl,
       importc: "X509_verify_cert".}
 else:
   static :
     hint("Declaration of " & "X509_verify_cert" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get0_chain):
-  proc X509_STORE_CTX_get0_chain*(ctx: ptr X509_STORE_CTX_553649238): ptr struct_stack_st_X509 {.
+  proc X509_STORE_CTX_get0_chain*(ctx: ptr X509_STORE_CTX_553649240): ptr struct_stack_st_X509 {.
       cdecl, importc: "X509_STORE_CTX_get0_chain".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get0_chain" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get1_chain):
-  proc X509_STORE_CTX_get1_chain*(ctx: ptr X509_STORE_CTX_553649238): ptr struct_stack_st_X509 {.
+  proc X509_STORE_CTX_get1_chain*(ctx: ptr X509_STORE_CTX_553649240): ptr struct_stack_st_X509 {.
       cdecl, importc: "X509_STORE_CTX_get1_chain".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get1_chain" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_cert):
-  proc X509_STORE_CTX_set_cert*(c: ptr X509_STORE_CTX_553649238; x: ptr X509_553649236): void {.
+  proc X509_STORE_CTX_set_cert*(c: ptr X509_STORE_CTX_553649240; x: ptr X509_553649238): void {.
       cdecl, importc: "X509_STORE_CTX_set_cert".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_set_cert" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get_error):
-  proc X509_STORE_CTX_get_error*(ctx: ptr X509_STORE_CTX_553649238): cint {.
+  proc X509_STORE_CTX_get_error*(ctx: ptr X509_STORE_CTX_553649240): cint {.
       cdecl, importc: "X509_STORE_CTX_get_error".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get_error" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_error):
-  proc X509_STORE_CTX_set_error*(ctx: ptr X509_STORE_CTX_553649238; err: cint): void {.
+  proc X509_STORE_CTX_set_error*(ctx: ptr X509_STORE_CTX_553649240; err: cint): void {.
       cdecl, importc: "X509_STORE_CTX_set_error".}
 else:
   static :
@@ -73789,56 +73814,56 @@ else:
     hint("Declaration of " & "X509_verify_cert_error_string" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get_error_depth):
-  proc X509_STORE_CTX_get_error_depth*(ctx: ptr X509_STORE_CTX_553649238): cint {.
+  proc X509_STORE_CTX_get_error_depth*(ctx: ptr X509_STORE_CTX_553649240): cint {.
       cdecl, importc: "X509_STORE_CTX_get_error_depth".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get_error_depth" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get_current_cert):
-  proc X509_STORE_CTX_get_current_cert*(ctx: ptr X509_STORE_CTX_553649238): ptr X509_553649236 {.
+  proc X509_STORE_CTX_get_current_cert*(ctx: ptr X509_STORE_CTX_553649240): ptr X509_553649238 {.
       cdecl, importc: "X509_STORE_CTX_get_current_cert".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get_current_cert" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get0_current_issuer):
-  proc X509_STORE_CTX_get0_current_issuer*(ctx: ptr X509_STORE_CTX_553649238): ptr X509_553649236 {.
+  proc X509_STORE_CTX_get0_current_issuer*(ctx: ptr X509_STORE_CTX_553649240): ptr X509_553649238 {.
       cdecl, importc: "X509_STORE_CTX_get0_current_issuer".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get0_current_issuer" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get0_current_crl):
-  proc X509_STORE_CTX_get0_current_crl*(ctx: ptr X509_STORE_CTX_553649238): ptr X509_CRL_553648954 {.
+  proc X509_STORE_CTX_get0_current_crl*(ctx: ptr X509_STORE_CTX_553649240): ptr X509_CRL_553648954 {.
       cdecl, importc: "X509_STORE_CTX_get0_current_crl".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get0_current_crl" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get0_store):
-  proc X509_STORE_CTX_get0_store*(ctx: ptr X509_STORE_CTX_553649238): ptr X509_STORE_553649240 {.
+  proc X509_STORE_CTX_get0_store*(ctx: ptr X509_STORE_CTX_553649240): ptr X509_STORE_553649242 {.
       cdecl, importc: "X509_STORE_CTX_get0_store".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get0_store" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get0_cert):
-  proc X509_STORE_CTX_get0_cert*(ctx: ptr X509_STORE_CTX_553649238): ptr X509_553649236 {.
+  proc X509_STORE_CTX_get0_cert*(ctx: ptr X509_STORE_CTX_553649240): ptr X509_553649238 {.
       cdecl, importc: "X509_STORE_CTX_get0_cert".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get0_cert" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get0_untrusted):
-  proc X509_STORE_CTX_get0_untrusted*(ctx: ptr X509_STORE_CTX_553649238): ptr struct_stack_st_X509 {.
+  proc X509_STORE_CTX_get0_untrusted*(ctx: ptr X509_STORE_CTX_553649240): ptr struct_stack_st_X509 {.
       cdecl, importc: "X509_STORE_CTX_get0_untrusted".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get0_untrusted" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set0_trusted_stack):
-  proc X509_STORE_CTX_set0_trusted_stack*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_set0_trusted_stack*(ctx: ptr X509_STORE_CTX_553649240;
       sk: ptr struct_stack_st_X509): void {.cdecl,
       importc: "X509_STORE_CTX_set0_trusted_stack".}
 else:
@@ -73846,7 +73871,7 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_set0_trusted_stack" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set0_crls):
-  proc X509_STORE_CTX_set0_crls*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_set0_crls*(ctx: ptr X509_STORE_CTX_553649240;
                                  sk: ptr struct_stack_st_X509_CRL): void {.
       cdecl, importc: "X509_STORE_CTX_set0_crls".}
 else:
@@ -73854,7 +73879,7 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_set0_crls" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_default):
-  proc X509_STORE_CTX_set_default*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_set_default*(ctx: ptr X509_STORE_CTX_553649240;
                                    name: cstring): cint {.cdecl,
       importc: "X509_STORE_CTX_set_default".}
 else:
@@ -73862,14 +73887,14 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_set_default" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get0_param):
-  proc X509_STORE_CTX_get0_param*(ctx: ptr X509_STORE_CTX_553649238): ptr X509_VERIFY_PARAM_553648948 {.
+  proc X509_STORE_CTX_get0_param*(ctx: ptr X509_STORE_CTX_553649240): ptr X509_VERIFY_PARAM_553648948 {.
       cdecl, importc: "X509_STORE_CTX_get0_param".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get0_param" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set0_param):
-  proc X509_STORE_CTX_set0_param*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_set0_param*(ctx: ptr X509_STORE_CTX_553649240;
                                   param: ptr X509_VERIFY_PARAM_553648948): void {.
       cdecl, importc: "X509_STORE_CTX_set0_param".}
 else:
@@ -73877,7 +73902,7 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_set0_param" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_flags):
-  proc X509_STORE_CTX_set_flags*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_set_flags*(ctx: ptr X509_STORE_CTX_553649240;
                                  flags: culong): void {.cdecl,
       importc: "X509_STORE_CTX_set_flags".}
 else:
@@ -73885,15 +73910,15 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_set_flags" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_time):
-  proc X509_STORE_CTX_set_time*(ctx: ptr X509_STORE_CTX_553649238;
-                                flags: culong; t: time_t_553649366): void {.
+  proc X509_STORE_CTX_set_time*(ctx: ptr X509_STORE_CTX_553649240;
+                                flags: culong; t: time_t_553649368): void {.
       cdecl, importc: "X509_STORE_CTX_set_time".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_set_time" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_time_posix):
-  proc X509_STORE_CTX_set_time_posix*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_set_time_posix*(ctx: ptr X509_STORE_CTX_553649240;
                                       flags: culong; t: int64): void {.cdecl,
       importc: "X509_STORE_CTX_set_time_posix".}
 else:
@@ -73901,14 +73926,14 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_set_time_posix" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_depth):
-  proc X509_STORE_CTX_set_depth*(ctx: ptr X509_STORE_CTX_553649238; depth: cint): void {.
+  proc X509_STORE_CTX_set_depth*(ctx: ptr X509_STORE_CTX_553649240; depth: cint): void {.
       cdecl, importc: "X509_STORE_CTX_set_depth".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_set_depth" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_purpose):
-  proc X509_STORE_CTX_set_purpose*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_set_purpose*(ctx: ptr X509_STORE_CTX_553649240;
                                    purpose: cint): cint {.cdecl,
       importc: "X509_STORE_CTX_set_purpose".}
 else:
@@ -73916,14 +73941,14 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_set_purpose" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_trust):
-  proc X509_STORE_CTX_set_trust*(ctx: ptr X509_STORE_CTX_553649238; trust: cint): cint {.
+  proc X509_STORE_CTX_set_trust*(ctx: ptr X509_STORE_CTX_553649240; trust: cint): cint {.
       cdecl, importc: "X509_STORE_CTX_set_trust".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_set_trust" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_add_custom_crit_oid):
-  proc X509_STORE_CTX_add_custom_crit_oid*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_add_custom_crit_oid*(ctx: ptr X509_STORE_CTX_553649240;
       oid: ptr ASN1_OBJECT_553648868): cint {.cdecl,
       importc: "X509_STORE_CTX_add_custom_crit_oid".}
 else:
@@ -73931,8 +73956,8 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_add_custom_crit_oid" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_verify_crit_oids):
-  proc X509_STORE_CTX_set_verify_crit_oids*(ctx: ptr X509_STORE_CTX_553649238;
-      verify_custom_crit_oids: X509_STORE_CTX_verify_crit_oids_cb_553649530): void {.
+  proc X509_STORE_CTX_set_verify_crit_oids*(ctx: ptr X509_STORE_CTX_553649240;
+      verify_custom_crit_oids: X509_STORE_CTX_verify_crit_oids_cb_553649532): void {.
       cdecl, importc: "X509_STORE_CTX_set_verify_crit_oids".}
 else:
   static :
@@ -74008,7 +74033,7 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_VERIFY_PARAM_set_time):
   proc X509_VERIFY_PARAM_set_time*(param: ptr X509_VERIFY_PARAM_553648948;
-                                   t: time_t_553649366): void {.cdecl,
+                                   t: time_t_553649368): void {.cdecl,
       importc: "X509_VERIFY_PARAM_set_time".}
 else:
   static :
@@ -74125,7 +74150,7 @@ else:
     hint("Declaration of " & "X509_VERIFY_PARAM_disable_ec_key_explicit_params" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_load_locations):
-  proc X509_STORE_load_locations*(store: ptr X509_STORE_553649240;
+  proc X509_STORE_load_locations*(store: ptr X509_STORE_553649242;
                                   file: cstring; dir: cstring): cint {.cdecl,
       importc: "X509_STORE_load_locations".}
 else:
@@ -74133,29 +74158,29 @@ else:
     hint("Declaration of " & "X509_STORE_load_locations" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_add_lookup):
-  proc X509_STORE_add_lookup*(store: ptr X509_STORE_553649240;
-                              method_arg: ptr X509_LOOKUP_METHOD_553649230): ptr X509_LOOKUP_553649228 {.
+  proc X509_STORE_add_lookup*(store: ptr X509_STORE_553649242;
+                              method_arg: ptr X509_LOOKUP_METHOD_553649232): ptr X509_LOOKUP_553649230 {.
       cdecl, importc: "X509_STORE_add_lookup".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_add_lookup" &
         " already exists, not redeclaring")
 when not declared(X509_LOOKUP_hash_dir):
-  proc X509_LOOKUP_hash_dir*(): ptr X509_LOOKUP_METHOD_553649230 {.cdecl,
+  proc X509_LOOKUP_hash_dir*(): ptr X509_LOOKUP_METHOD_553649232 {.cdecl,
       importc: "X509_LOOKUP_hash_dir".}
 else:
   static :
     hint("Declaration of " & "X509_LOOKUP_hash_dir" &
         " already exists, not redeclaring")
 when not declared(X509_LOOKUP_file):
-  proc X509_LOOKUP_file*(): ptr X509_LOOKUP_METHOD_553649230 {.cdecl,
+  proc X509_LOOKUP_file*(): ptr X509_LOOKUP_METHOD_553649232 {.cdecl,
       importc: "X509_LOOKUP_file".}
 else:
   static :
     hint("Declaration of " & "X509_LOOKUP_file" &
         " already exists, not redeclaring")
 when not declared(X509_LOOKUP_load_file):
-  proc X509_LOOKUP_load_file*(lookup: ptr X509_LOOKUP_553649228; file: cstring;
+  proc X509_LOOKUP_load_file*(lookup: ptr X509_LOOKUP_553649230; file: cstring;
                               type_arg: cint): cint {.cdecl,
       importc: "X509_LOOKUP_load_file".}
 else:
@@ -74163,7 +74188,7 @@ else:
     hint("Declaration of " & "X509_LOOKUP_load_file" &
         " already exists, not redeclaring")
 when not declared(X509_LOOKUP_add_dir):
-  proc X509_LOOKUP_add_dir*(lookup: ptr X509_LOOKUP_553649228; path: cstring;
+  proc X509_LOOKUP_add_dir*(lookup: ptr X509_LOOKUP_553649230; path: cstring;
                             type_arg: cint): cint {.cdecl,
       importc: "X509_LOOKUP_add_dir".}
 else:
@@ -74171,7 +74196,7 @@ else:
     hint("Declaration of " & "X509_LOOKUP_add_dir" &
         " already exists, not redeclaring")
 when not declared(X509_LOOKUP_ctrl):
-  proc X509_LOOKUP_ctrl*(lookup: ptr X509_LOOKUP_553649228; cmd: cint;
+  proc X509_LOOKUP_ctrl*(lookup: ptr X509_LOOKUP_553649230; cmd: cint;
                          argc: cstring; argl: clong; ret: ptr cstring): cint {.
       cdecl, importc: "X509_LOOKUP_ctrl".}
 else:
@@ -74179,7 +74204,7 @@ else:
     hint("Declaration of " & "X509_LOOKUP_ctrl" &
         " already exists, not redeclaring")
 when not declared(X509_load_cert_file):
-  proc X509_load_cert_file*(lookup: ptr X509_LOOKUP_553649228; file: cstring;
+  proc X509_load_cert_file*(lookup: ptr X509_LOOKUP_553649230; file: cstring;
                             type_arg: cint): cint {.cdecl,
       importc: "X509_load_cert_file".}
 else:
@@ -74187,7 +74212,7 @@ else:
     hint("Declaration of " & "X509_load_cert_file" &
         " already exists, not redeclaring")
 when not declared(X509_load_crl_file):
-  proc X509_load_crl_file*(lookup: ptr X509_LOOKUP_553649228; file: cstring;
+  proc X509_load_crl_file*(lookup: ptr X509_LOOKUP_553649230; file: cstring;
                            type_arg: cint): cint {.cdecl,
       importc: "X509_load_crl_file".}
 else:
@@ -74195,7 +74220,7 @@ else:
     hint("Declaration of " & "X509_load_crl_file" &
         " already exists, not redeclaring")
 when not declared(X509_load_cert_crl_file):
-  proc X509_load_cert_crl_file*(lookup: ptr X509_LOOKUP_553649228;
+  proc X509_load_cert_crl_file*(lookup: ptr X509_LOOKUP_553649230;
                                 file: cstring; type_arg: cint): cint {.cdecl,
       importc: "X509_load_cert_crl_file".}
 else:
@@ -74217,7 +74242,7 @@ else:
     hint("Declaration of " & "X509_NAME_hash_old" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set_default_paths):
-  proc X509_STORE_set_default_paths*(store: ptr X509_STORE_553649240): cint {.
+  proc X509_STORE_set_default_paths*(store: ptr X509_STORE_553649242): cint {.
       cdecl, importc: "X509_STORE_set_default_paths".}
 else:
   static :
@@ -74395,29 +74420,29 @@ else:
     hint("Declaration of " & "RSA_PSS_PARAMS_it" &
         " already exists, not redeclaring")
 when not declared(RSA_PSS_PARAMS_new):
-  proc RSA_PSS_PARAMS_new*(): ptr RSA_PSS_PARAMS_553649156 {.cdecl,
+  proc RSA_PSS_PARAMS_new*(): ptr RSA_PSS_PARAMS_553649158 {.cdecl,
       importc: "RSA_PSS_PARAMS_new".}
 else:
   static :
     hint("Declaration of " & "RSA_PSS_PARAMS_new" &
         " already exists, not redeclaring")
 when not declared(RSA_PSS_PARAMS_free):
-  proc RSA_PSS_PARAMS_free*(params: ptr RSA_PSS_PARAMS_553649156): void {.cdecl,
+  proc RSA_PSS_PARAMS_free*(params: ptr RSA_PSS_PARAMS_553649158): void {.cdecl,
       importc: "RSA_PSS_PARAMS_free".}
 else:
   static :
     hint("Declaration of " & "RSA_PSS_PARAMS_free" &
         " already exists, not redeclaring")
 when not declared(d2i_RSA_PSS_PARAMS):
-  proc d2i_RSA_PSS_PARAMS*(out_arg: ptr ptr RSA_PSS_PARAMS_553649156;
-                           inp: ptr ptr uint8; len: clong): ptr RSA_PSS_PARAMS_553649156 {.
+  proc d2i_RSA_PSS_PARAMS*(out_arg: ptr ptr RSA_PSS_PARAMS_553649158;
+                           inp: ptr ptr uint8; len: clong): ptr RSA_PSS_PARAMS_553649158 {.
       cdecl, importc: "d2i_RSA_PSS_PARAMS".}
 else:
   static :
     hint("Declaration of " & "d2i_RSA_PSS_PARAMS" &
         " already exists, not redeclaring")
 when not declared(i2d_RSA_PSS_PARAMS):
-  proc i2d_RSA_PSS_PARAMS*(in_arg: ptr RSA_PSS_PARAMS_553649156;
+  proc i2d_RSA_PSS_PARAMS*(in_arg: ptr RSA_PSS_PARAMS_553649158;
                            outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_RSA_PSS_PARAMS".}
 else:
@@ -74521,7 +74546,7 @@ else:
     hint("Declaration of " & "X509_SIG_getm" &
         " already exists, not redeclaring")
 when not declared(X509_print_ex):
-  proc X509_print_ex*(bp: ptr BIO_553648984; x: ptr X509_553649236;
+  proc X509_print_ex*(bp: ptr BIO_553648984; x: ptr X509_553649238;
                       nmflag: culong; cflag: culong): cint {.cdecl,
       importc: "X509_print_ex".}
 else:
@@ -74529,7 +74554,7 @@ else:
     hint("Declaration of " & "X509_print_ex" &
         " already exists, not redeclaring")
 when not declared(X509_print_ex_fp):
-  proc X509_print_ex_fp*(fp: ptr Cfile_553649262; x: ptr X509_553649236;
+  proc X509_print_ex_fp*(fp: ptr Cfile_553649264; x: ptr X509_553649238;
                          nmflag: culong; cflag: culong): cint {.cdecl,
       importc: "X509_print_ex_fp".}
 else:
@@ -74537,13 +74562,13 @@ else:
     hint("Declaration of " & "X509_print_ex_fp" &
         " already exists, not redeclaring")
 when not declared(X509_print):
-  proc X509_print*(bp: ptr BIO_553648984; x: ptr X509_553649236): cint {.cdecl,
+  proc X509_print*(bp: ptr BIO_553648984; x: ptr X509_553649238): cint {.cdecl,
       importc: "X509_print".}
 else:
   static :
     hint("Declaration of " & "X509_print" & " already exists, not redeclaring")
 when not declared(X509_print_fp):
-  proc X509_print_fp*(fp: ptr Cfile_553649262; x: ptr X509_553649236): cint {.
+  proc X509_print_fp*(fp: ptr Cfile_553649264; x: ptr X509_553649238): cint {.
       cdecl, importc: "X509_print_fp".}
 else:
   static :
@@ -74557,7 +74582,7 @@ else:
     hint("Declaration of " & "X509_CRL_print" &
         " already exists, not redeclaring")
 when not declared(X509_CRL_print_fp):
-  proc X509_CRL_print_fp*(fp: ptr Cfile_553649262; x: ptr X509_CRL_553648954): cint {.
+  proc X509_CRL_print_fp*(fp: ptr Cfile_553649264; x: ptr X509_CRL_553648954): cint {.
       cdecl, importc: "X509_CRL_print_fp".}
 else:
   static :
@@ -74579,7 +74604,7 @@ else:
     hint("Declaration of " & "X509_REQ_print" &
         " already exists, not redeclaring")
 when not declared(X509_REQ_print_fp):
-  proc X509_REQ_print_fp*(fp: ptr Cfile_553649262; req: ptr X509_REQ_553648968): cint {.
+  proc X509_REQ_print_fp*(fp: ptr Cfile_553649264; req: ptr X509_REQ_553648968): cint {.
       cdecl, importc: "X509_REQ_print_fp".}
 else:
   static :
@@ -74609,7 +74634,7 @@ else:
     hint("Declaration of " & "X509_NAME_oneline" &
         " already exists, not redeclaring")
 when not declared(X509_NAME_print_ex_fp):
-  proc X509_NAME_print_ex_fp*(fp: ptr Cfile_553649262; nm: ptr X509_NAME_553648964;
+  proc X509_NAME_print_ex_fp*(fp: ptr Cfile_553649264; nm: ptr X509_NAME_553648964;
                               indent: cint; flags: culong): cint {.cdecl,
       importc: "X509_NAME_print_ex_fp".}
 else:
@@ -74641,7 +74666,7 @@ else:
     hint("Declaration of " & "X509V3_EXT_print" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_print_fp):
-  proc X509V3_EXT_print_fp*(out_arg: ptr Cfile_553649262;
+  proc X509V3_EXT_print_fp*(out_arg: ptr Cfile_553649264;
                             ext: ptr X509_EXTENSION_553648956; flag: cint;
                             indent: cint): cint {.cdecl,
       importc: "X509V3_EXT_print_fp".}
@@ -74666,7 +74691,7 @@ else:
     hint("Declaration of " & "GENERAL_NAME_print" &
         " already exists, not redeclaring")
 when not declared(X509_pubkey_digest):
-  proc X509_pubkey_digest*(x509: ptr X509_553649236; md: ptr EVP_MD_553649050;
+  proc X509_pubkey_digest*(x509: ptr X509_553649238; md: ptr EVP_MD_553649050;
                            out_arg: ptr uint8; out_len: ptr cuint): cint {.
       cdecl, importc: "X509_pubkey_digest".}
 else:
@@ -74674,7 +74699,7 @@ else:
     hint("Declaration of " & "X509_pubkey_digest" &
         " already exists, not redeclaring")
 when not declared(X509_digest):
-  proc X509_digest*(x509: ptr X509_553649236; md: ptr EVP_MD_553649050;
+  proc X509_digest*(x509: ptr X509_553649238; md: ptr EVP_MD_553649050;
                     out_arg: ptr uint8; out_len: ptr cuint): cint {.cdecl,
       importc: "X509_digest".}
 else:
@@ -74705,7 +74730,7 @@ else:
     hint("Declaration of " & "X509_NAME_digest" &
         " already exists, not redeclaring")
 when not declared(d2i_X509_bio):
-  proc d2i_X509_bio*(bp: ptr BIO_553648984; x509: ptr ptr X509_553649236): ptr X509_553649236 {.
+  proc d2i_X509_bio*(bp: ptr BIO_553648984; x509: ptr ptr X509_553649238): ptr X509_553649238 {.
       cdecl, importc: "d2i_X509_bio".}
 else:
   static :
@@ -74725,21 +74750,21 @@ else:
     hint("Declaration of " & "d2i_X509_REQ_bio" &
         " already exists, not redeclaring")
 when not declared(d2i_RSAPrivateKey_bio):
-  proc d2i_RSAPrivateKey_bio*(bp: ptr BIO_553648984; rsa: ptr ptr RSA_553649160): ptr RSA_553649160 {.
+  proc d2i_RSAPrivateKey_bio*(bp: ptr BIO_553648984; rsa: ptr ptr RSA_553649162): ptr RSA_553649162 {.
       cdecl, importc: "d2i_RSAPrivateKey_bio".}
 else:
   static :
     hint("Declaration of " & "d2i_RSAPrivateKey_bio" &
         " already exists, not redeclaring")
 when not declared(d2i_RSAPublicKey_bio):
-  proc d2i_RSAPublicKey_bio*(bp: ptr BIO_553648984; rsa: ptr ptr RSA_553649160): ptr RSA_553649160 {.
+  proc d2i_RSAPublicKey_bio*(bp: ptr BIO_553648984; rsa: ptr ptr RSA_553649162): ptr RSA_553649162 {.
       cdecl, importc: "d2i_RSAPublicKey_bio".}
 else:
   static :
     hint("Declaration of " & "d2i_RSAPublicKey_bio" &
         " already exists, not redeclaring")
 when not declared(d2i_RSA_PUBKEY_bio):
-  proc d2i_RSA_PUBKEY_bio*(bp: ptr BIO_553648984; rsa: ptr ptr RSA_553649160): ptr RSA_553649160 {.
+  proc d2i_RSA_PUBKEY_bio*(bp: ptr BIO_553648984; rsa: ptr ptr RSA_553649162): ptr RSA_553649162 {.
       cdecl, importc: "d2i_RSA_PUBKEY_bio".}
 else:
   static :
@@ -74810,7 +74835,7 @@ else:
     hint("Declaration of " & "d2i_PrivateKey_bio" &
         " already exists, not redeclaring")
 when not declared(i2d_X509_bio):
-  proc i2d_X509_bio*(bp: ptr BIO_553648984; x509: ptr X509_553649236): cint {.
+  proc i2d_X509_bio*(bp: ptr BIO_553648984; x509: ptr X509_553649238): cint {.
       cdecl, importc: "i2d_X509_bio".}
 else:
   static :
@@ -74830,21 +74855,21 @@ else:
     hint("Declaration of " & "i2d_X509_REQ_bio" &
         " already exists, not redeclaring")
 when not declared(i2d_RSAPrivateKey_bio):
-  proc i2d_RSAPrivateKey_bio*(bp: ptr BIO_553648984; rsa: ptr RSA_553649160): cint {.
+  proc i2d_RSAPrivateKey_bio*(bp: ptr BIO_553648984; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "i2d_RSAPrivateKey_bio".}
 else:
   static :
     hint("Declaration of " & "i2d_RSAPrivateKey_bio" &
         " already exists, not redeclaring")
 when not declared(i2d_RSAPublicKey_bio):
-  proc i2d_RSAPublicKey_bio*(bp: ptr BIO_553648984; rsa: ptr RSA_553649160): cint {.
+  proc i2d_RSAPublicKey_bio*(bp: ptr BIO_553648984; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "i2d_RSAPublicKey_bio".}
 else:
   static :
     hint("Declaration of " & "i2d_RSAPublicKey_bio" &
         " already exists, not redeclaring")
 when not declared(i2d_RSA_PUBKEY_bio):
-  proc i2d_RSA_PUBKEY_bio*(bp: ptr BIO_553648984; rsa: ptr RSA_553649160): cint {.
+  proc i2d_RSA_PUBKEY_bio*(bp: ptr BIO_553648984; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "i2d_RSA_PUBKEY_bio".}
 else:
   static :
@@ -74922,82 +74947,82 @@ else:
     hint("Declaration of " & "i2d_PKCS8PrivateKeyInfo_bio" &
         " already exists, not redeclaring")
 when not declared(d2i_X509_fp):
-  proc d2i_X509_fp*(fp: ptr Cfile_553649262; x509: ptr ptr X509_553649236): ptr X509_553649236 {.
+  proc d2i_X509_fp*(fp: ptr Cfile_553649264; x509: ptr ptr X509_553649238): ptr X509_553649238 {.
       cdecl, importc: "d2i_X509_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_X509_fp" & " already exists, not redeclaring")
 when not declared(d2i_X509_CRL_fp):
-  proc d2i_X509_CRL_fp*(fp: ptr Cfile_553649262; crl: ptr ptr X509_CRL_553648954): ptr X509_CRL_553648954 {.
+  proc d2i_X509_CRL_fp*(fp: ptr Cfile_553649264; crl: ptr ptr X509_CRL_553648954): ptr X509_CRL_553648954 {.
       cdecl, importc: "d2i_X509_CRL_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_X509_CRL_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_X509_REQ_fp):
-  proc d2i_X509_REQ_fp*(fp: ptr Cfile_553649262; req: ptr ptr X509_REQ_553648968): ptr X509_REQ_553648968 {.
+  proc d2i_X509_REQ_fp*(fp: ptr Cfile_553649264; req: ptr ptr X509_REQ_553648968): ptr X509_REQ_553648968 {.
       cdecl, importc: "d2i_X509_REQ_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_X509_REQ_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_RSAPrivateKey_fp):
-  proc d2i_RSAPrivateKey_fp*(fp: ptr Cfile_553649262; rsa: ptr ptr RSA_553649160): ptr RSA_553649160 {.
+  proc d2i_RSAPrivateKey_fp*(fp: ptr Cfile_553649264; rsa: ptr ptr RSA_553649162): ptr RSA_553649162 {.
       cdecl, importc: "d2i_RSAPrivateKey_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_RSAPrivateKey_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_RSAPublicKey_fp):
-  proc d2i_RSAPublicKey_fp*(fp: ptr Cfile_553649262; rsa: ptr ptr RSA_553649160): ptr RSA_553649160 {.
+  proc d2i_RSAPublicKey_fp*(fp: ptr Cfile_553649264; rsa: ptr ptr RSA_553649162): ptr RSA_553649162 {.
       cdecl, importc: "d2i_RSAPublicKey_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_RSAPublicKey_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_RSA_PUBKEY_fp):
-  proc d2i_RSA_PUBKEY_fp*(fp: ptr Cfile_553649262; rsa: ptr ptr RSA_553649160): ptr RSA_553649160 {.
+  proc d2i_RSA_PUBKEY_fp*(fp: ptr Cfile_553649264; rsa: ptr ptr RSA_553649162): ptr RSA_553649162 {.
       cdecl, importc: "d2i_RSA_PUBKEY_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_RSA_PUBKEY_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_DSA_PUBKEY_fp):
-  proc d2i_DSA_PUBKEY_fp*(fp: ptr Cfile_553649262; dsa: ptr ptr DSA_553649030): ptr DSA_553649030 {.
+  proc d2i_DSA_PUBKEY_fp*(fp: ptr Cfile_553649264; dsa: ptr ptr DSA_553649030): ptr DSA_553649030 {.
       cdecl, importc: "d2i_DSA_PUBKEY_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_DSA_PUBKEY_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_DSAPrivateKey_fp):
-  proc d2i_DSAPrivateKey_fp*(fp: ptr Cfile_553649262; dsa: ptr ptr DSA_553649030): ptr DSA_553649030 {.
+  proc d2i_DSAPrivateKey_fp*(fp: ptr Cfile_553649264; dsa: ptr ptr DSA_553649030): ptr DSA_553649030 {.
       cdecl, importc: "d2i_DSAPrivateKey_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_DSAPrivateKey_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_EC_PUBKEY_fp):
-  proc d2i_EC_PUBKEY_fp*(fp: ptr Cfile_553649262; eckey: ptr ptr EC_KEY_553649034): ptr EC_KEY_553649034 {.
+  proc d2i_EC_PUBKEY_fp*(fp: ptr Cfile_553649264; eckey: ptr ptr EC_KEY_553649034): ptr EC_KEY_553649034 {.
       cdecl, importc: "d2i_EC_PUBKEY_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_EC_PUBKEY_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_ECPrivateKey_fp):
-  proc d2i_ECPrivateKey_fp*(fp: ptr Cfile_553649262; eckey: ptr ptr EC_KEY_553649034): ptr EC_KEY_553649034 {.
+  proc d2i_ECPrivateKey_fp*(fp: ptr Cfile_553649264; eckey: ptr ptr EC_KEY_553649034): ptr EC_KEY_553649034 {.
       cdecl, importc: "d2i_ECPrivateKey_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_ECPrivateKey_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_PKCS8_fp):
-  proc d2i_PKCS8_fp*(fp: ptr Cfile_553649262; p8: ptr ptr X509_SIG_553648972): ptr X509_SIG_553648972 {.
+  proc d2i_PKCS8_fp*(fp: ptr Cfile_553649264; p8: ptr ptr X509_SIG_553648972): ptr X509_SIG_553648972 {.
       cdecl, importc: "d2i_PKCS8_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_PKCS8_fp" & " already exists, not redeclaring")
 when not declared(d2i_PKCS8_PRIV_KEY_INFO_fp):
-  proc d2i_PKCS8_PRIV_KEY_INFO_fp*(fp: ptr Cfile_553649262;
+  proc d2i_PKCS8_PRIV_KEY_INFO_fp*(fp: ptr Cfile_553649264;
                                    p8inf: ptr ptr PKCS8_PRIV_KEY_INFO_553649142): ptr PKCS8_PRIV_KEY_INFO_553649142 {.
       cdecl, importc: "d2i_PKCS8_PRIV_KEY_INFO_fp".}
 else:
@@ -75005,96 +75030,96 @@ else:
     hint("Declaration of " & "d2i_PKCS8_PRIV_KEY_INFO_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_PrivateKey_fp):
-  proc d2i_PrivateKey_fp*(fp: ptr Cfile_553649262; a: ptr ptr EVP_PKEY_553649086): ptr EVP_PKEY_553649086 {.
+  proc d2i_PrivateKey_fp*(fp: ptr Cfile_553649264; a: ptr ptr EVP_PKEY_553649086): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "d2i_PrivateKey_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_PrivateKey_fp" &
         " already exists, not redeclaring")
 when not declared(d2i_PUBKEY_fp):
-  proc d2i_PUBKEY_fp*(fp: ptr Cfile_553649262; a: ptr ptr EVP_PKEY_553649086): ptr EVP_PKEY_553649086 {.
+  proc d2i_PUBKEY_fp*(fp: ptr Cfile_553649264; a: ptr ptr EVP_PKEY_553649086): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "d2i_PUBKEY_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_PUBKEY_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_X509_fp):
-  proc i2d_X509_fp*(fp: ptr Cfile_553649262; x509: ptr X509_553649236): cint {.
+  proc i2d_X509_fp*(fp: ptr Cfile_553649264; x509: ptr X509_553649238): cint {.
       cdecl, importc: "i2d_X509_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_X509_fp" & " already exists, not redeclaring")
 when not declared(i2d_X509_CRL_fp):
-  proc i2d_X509_CRL_fp*(fp: ptr Cfile_553649262; crl: ptr X509_CRL_553648954): cint {.
+  proc i2d_X509_CRL_fp*(fp: ptr Cfile_553649264; crl: ptr X509_CRL_553648954): cint {.
       cdecl, importc: "i2d_X509_CRL_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_X509_CRL_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_X509_REQ_fp):
-  proc i2d_X509_REQ_fp*(fp: ptr Cfile_553649262; req: ptr X509_REQ_553648968): cint {.
+  proc i2d_X509_REQ_fp*(fp: ptr Cfile_553649264; req: ptr X509_REQ_553648968): cint {.
       cdecl, importc: "i2d_X509_REQ_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_X509_REQ_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_RSAPrivateKey_fp):
-  proc i2d_RSAPrivateKey_fp*(fp: ptr Cfile_553649262; rsa: ptr RSA_553649160): cint {.
+  proc i2d_RSAPrivateKey_fp*(fp: ptr Cfile_553649264; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "i2d_RSAPrivateKey_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_RSAPrivateKey_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_RSAPublicKey_fp):
-  proc i2d_RSAPublicKey_fp*(fp: ptr Cfile_553649262; rsa: ptr RSA_553649160): cint {.
+  proc i2d_RSAPublicKey_fp*(fp: ptr Cfile_553649264; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "i2d_RSAPublicKey_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_RSAPublicKey_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_RSA_PUBKEY_fp):
-  proc i2d_RSA_PUBKEY_fp*(fp: ptr Cfile_553649262; rsa: ptr RSA_553649160): cint {.
+  proc i2d_RSA_PUBKEY_fp*(fp: ptr Cfile_553649264; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "i2d_RSA_PUBKEY_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_RSA_PUBKEY_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_DSA_PUBKEY_fp):
-  proc i2d_DSA_PUBKEY_fp*(fp: ptr Cfile_553649262; dsa: ptr DSA_553649030): cint {.
+  proc i2d_DSA_PUBKEY_fp*(fp: ptr Cfile_553649264; dsa: ptr DSA_553649030): cint {.
       cdecl, importc: "i2d_DSA_PUBKEY_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_DSA_PUBKEY_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_DSAPrivateKey_fp):
-  proc i2d_DSAPrivateKey_fp*(fp: ptr Cfile_553649262; dsa: ptr DSA_553649030): cint {.
+  proc i2d_DSAPrivateKey_fp*(fp: ptr Cfile_553649264; dsa: ptr DSA_553649030): cint {.
       cdecl, importc: "i2d_DSAPrivateKey_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_DSAPrivateKey_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_EC_PUBKEY_fp):
-  proc i2d_EC_PUBKEY_fp*(fp: ptr Cfile_553649262; eckey: ptr EC_KEY_553649034): cint {.
+  proc i2d_EC_PUBKEY_fp*(fp: ptr Cfile_553649264; eckey: ptr EC_KEY_553649034): cint {.
       cdecl, importc: "i2d_EC_PUBKEY_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_EC_PUBKEY_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_ECPrivateKey_fp):
-  proc i2d_ECPrivateKey_fp*(fp: ptr Cfile_553649262; eckey: ptr EC_KEY_553649034): cint {.
+  proc i2d_ECPrivateKey_fp*(fp: ptr Cfile_553649264; eckey: ptr EC_KEY_553649034): cint {.
       cdecl, importc: "i2d_ECPrivateKey_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_ECPrivateKey_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_PKCS8_fp):
-  proc i2d_PKCS8_fp*(fp: ptr Cfile_553649262; p8: ptr X509_SIG_553648972): cint {.
+  proc i2d_PKCS8_fp*(fp: ptr Cfile_553649264; p8: ptr X509_SIG_553648972): cint {.
       cdecl, importc: "i2d_PKCS8_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_PKCS8_fp" & " already exists, not redeclaring")
 when not declared(i2d_PKCS8_PRIV_KEY_INFO_fp):
-  proc i2d_PKCS8_PRIV_KEY_INFO_fp*(fp: ptr Cfile_553649262;
+  proc i2d_PKCS8_PRIV_KEY_INFO_fp*(fp: ptr Cfile_553649264;
                                    p8inf: ptr PKCS8_PRIV_KEY_INFO_553649142): cint {.
       cdecl, importc: "i2d_PKCS8_PRIV_KEY_INFO_fp".}
 else:
@@ -75102,21 +75127,21 @@ else:
     hint("Declaration of " & "i2d_PKCS8_PRIV_KEY_INFO_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_PKCS8PrivateKeyInfo_fp):
-  proc i2d_PKCS8PrivateKeyInfo_fp*(fp: ptr Cfile_553649262; key: ptr EVP_PKEY_553649086): cint {.
+  proc i2d_PKCS8PrivateKeyInfo_fp*(fp: ptr Cfile_553649264; key: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "i2d_PKCS8PrivateKeyInfo_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_PKCS8PrivateKeyInfo_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_PrivateKey_fp):
-  proc i2d_PrivateKey_fp*(fp: ptr Cfile_553649262; pkey: ptr EVP_PKEY_553649086): cint {.
+  proc i2d_PrivateKey_fp*(fp: ptr Cfile_553649264; pkey: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "i2d_PrivateKey_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_PrivateKey_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_PUBKEY_fp):
-  proc i2d_PUBKEY_fp*(fp: ptr Cfile_553649262; pkey: ptr EVP_PKEY_553649086): cint {.
+  proc i2d_PUBKEY_fp*(fp: ptr Cfile_553649264; pkey: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "i2d_PUBKEY_fp".}
 else:
   static :
@@ -75125,21 +75150,21 @@ else:
 when not declared(X509_find_by_issuer_and_serial):
   proc X509_find_by_issuer_and_serial*(sk: ptr struct_stack_st_X509;
                                        name: ptr X509_NAME_553648964;
-                                       serial: ptr ASN1_INTEGER_553648886): ptr X509_553649236 {.
+                                       serial: ptr ASN1_INTEGER_553648886): ptr X509_553649238 {.
       cdecl, importc: "X509_find_by_issuer_and_serial".}
 else:
   static :
     hint("Declaration of " & "X509_find_by_issuer_and_serial" &
         " already exists, not redeclaring")
 when not declared(X509_find_by_subject):
-  proc X509_find_by_subject*(sk: ptr struct_stack_st_X509; name: ptr X509_NAME_553648964): ptr X509_553649236 {.
+  proc X509_find_by_subject*(sk: ptr struct_stack_st_X509; name: ptr X509_NAME_553648964): ptr X509_553649238 {.
       cdecl, importc: "X509_find_by_subject".}
 else:
   static :
     hint("Declaration of " & "X509_find_by_subject" &
         " already exists, not redeclaring")
 when not declared(X509_cmp_time):
-  proc X509_cmp_time*(s: ptr ASN1_TIME_553648896; t: ptr time_t_553649366): cint {.
+  proc X509_cmp_time*(s: ptr ASN1_TIME_553648896; t: ptr time_t_553649368): cint {.
       cdecl, importc: "X509_cmp_time".}
 else:
   static :
@@ -75161,7 +75186,7 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_time_adj):
   proc X509_time_adj*(s: ptr ASN1_TIME_553648896; offset_sec: clong;
-                      t: ptr time_t_553649366): ptr ASN1_TIME_553648896 {.cdecl,
+                      t: ptr time_t_553649368): ptr ASN1_TIME_553648896 {.cdecl,
       importc: "X509_time_adj".}
 else:
   static :
@@ -75169,7 +75194,7 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_time_adj_ex):
   proc X509_time_adj_ex*(s: ptr ASN1_TIME_553648896; offset_day: cint;
-                         offset_sec: clong; t: ptr time_t_553649366): ptr ASN1_TIME_553648896 {.
+                         offset_sec: clong; t: ptr time_t_553649368): ptr ASN1_TIME_553648896 {.
       cdecl, importc: "X509_time_adj_ex".}
 else:
   static :
@@ -75183,14 +75208,14 @@ else:
     hint("Declaration of " & "X509_gmtime_adj" &
         " already exists, not redeclaring")
 when not declared(X509_issuer_name_cmp):
-  proc X509_issuer_name_cmp*(a: ptr X509_553649236; b: ptr X509_553649236): cint {.
+  proc X509_issuer_name_cmp*(a: ptr X509_553649238; b: ptr X509_553649238): cint {.
       cdecl, importc: "X509_issuer_name_cmp".}
 else:
   static :
     hint("Declaration of " & "X509_issuer_name_cmp" &
         " already exists, not redeclaring")
 when not declared(X509_subject_name_cmp):
-  proc X509_subject_name_cmp*(a: ptr X509_553649236; b: ptr X509_553649236): cint {.
+  proc X509_subject_name_cmp*(a: ptr X509_553649238; b: ptr X509_553649238): cint {.
       cdecl, importc: "X509_subject_name_cmp".}
 else:
   static :
@@ -75203,28 +75228,28 @@ else:
   static :
     hint("Declaration of " & "X509_CRL_cmp" & " already exists, not redeclaring")
 when not declared(X509_issuer_name_hash):
-  proc X509_issuer_name_hash*(x509: ptr X509_553649236): uint32 {.cdecl,
+  proc X509_issuer_name_hash*(x509: ptr X509_553649238): uint32 {.cdecl,
       importc: "X509_issuer_name_hash".}
 else:
   static :
     hint("Declaration of " & "X509_issuer_name_hash" &
         " already exists, not redeclaring")
 when not declared(X509_subject_name_hash):
-  proc X509_subject_name_hash*(x509: ptr X509_553649236): uint32 {.cdecl,
+  proc X509_subject_name_hash*(x509: ptr X509_553649238): uint32 {.cdecl,
       importc: "X509_subject_name_hash".}
 else:
   static :
     hint("Declaration of " & "X509_subject_name_hash" &
         " already exists, not redeclaring")
 when not declared(X509_issuer_name_hash_old):
-  proc X509_issuer_name_hash_old*(x509: ptr X509_553649236): uint32 {.cdecl,
+  proc X509_issuer_name_hash_old*(x509: ptr X509_553649238): uint32 {.cdecl,
       importc: "X509_issuer_name_hash_old".}
 else:
   static :
     hint("Declaration of " & "X509_issuer_name_hash_old" &
         " already exists, not redeclaring")
 when not declared(X509_subject_name_hash_old):
-  proc X509_subject_name_hash_old*(x509: ptr X509_553649236): uint32 {.cdecl,
+  proc X509_subject_name_hash_old*(x509: ptr X509_553649238): uint32 {.cdecl,
       importc: "X509_subject_name_hash_old".}
 else:
   static :
@@ -75232,23 +75257,23 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_get_ex_new_index):
   proc X509_get_ex_new_index*(argl: clong; argp: pointer;
-                              unused: ptr CRYPTO_EX_unused_553649310;
-                              dup_unused: CRYPTO_EX_dup_553649308;
-                              free_func: CRYPTO_EX_free_553649306): cint {.
+                              unused: ptr CRYPTO_EX_unused_553649312;
+                              dup_unused: CRYPTO_EX_dup_553649310;
+                              free_func: CRYPTO_EX_free_553649308): cint {.
       cdecl, importc: "X509_get_ex_new_index".}
 else:
   static :
     hint("Declaration of " & "X509_get_ex_new_index" &
         " already exists, not redeclaring")
 when not declared(X509_set_ex_data):
-  proc X509_set_ex_data*(r: ptr X509_553649236; idx: cint; arg: pointer): cint {.
+  proc X509_set_ex_data*(r: ptr X509_553649238; idx: cint; arg: pointer): cint {.
       cdecl, importc: "X509_set_ex_data".}
 else:
   static :
     hint("Declaration of " & "X509_set_ex_data" &
         " already exists, not redeclaring")
 when not declared(X509_get_ex_data):
-  proc X509_get_ex_data*(r: ptr X509_553649236; idx: cint): pointer {.cdecl,
+  proc X509_get_ex_data*(r: ptr X509_553649238; idx: cint): pointer {.cdecl,
       importc: "X509_get_ex_data".}
 else:
   static :
@@ -75256,16 +75281,16 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get_ex_new_index):
   proc X509_STORE_CTX_get_ex_new_index*(argl: clong; argp: pointer;
-                                        unused: ptr CRYPTO_EX_unused_553649310;
-                                        dup_unused: CRYPTO_EX_dup_553649308;
-                                        free_func: CRYPTO_EX_free_553649306): cint {.
+                                        unused: ptr CRYPTO_EX_unused_553649312;
+                                        dup_unused: CRYPTO_EX_dup_553649310;
+                                        free_func: CRYPTO_EX_free_553649308): cint {.
       cdecl, importc: "X509_STORE_CTX_get_ex_new_index".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get_ex_new_index" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_ex_data):
-  proc X509_STORE_CTX_set_ex_data*(ctx: ptr X509_STORE_CTX_553649238; idx: cint;
+  proc X509_STORE_CTX_set_ex_data*(ctx: ptr X509_STORE_CTX_553649240; idx: cint;
                                    data: pointer): cint {.cdecl,
       importc: "X509_STORE_CTX_set_ex_data".}
 else:
@@ -75273,7 +75298,7 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_set_ex_data" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get_ex_data):
-  proc X509_STORE_CTX_get_ex_data*(ctx: ptr X509_STORE_CTX_553649238; idx: cint): pointer {.
+  proc X509_STORE_CTX_get_ex_data*(ctx: ptr X509_STORE_CTX_553649240; idx: cint): pointer {.
       cdecl, importc: "X509_STORE_CTX_get_ex_data".}
 else:
   static :
@@ -75281,16 +75306,16 @@ else:
         " already exists, not redeclaring")
 when not declared(X509_STORE_get_ex_new_index):
   proc X509_STORE_get_ex_new_index*(argl: clong; argp: pointer;
-                                    unused: ptr CRYPTO_EX_unused_553649310;
-                                    dup_unused: CRYPTO_EX_dup_553649308;
-                                    free_func: CRYPTO_EX_free_553649306): cint {.
+                                    unused: ptr CRYPTO_EX_unused_553649312;
+                                    dup_unused: CRYPTO_EX_dup_553649310;
+                                    free_func: CRYPTO_EX_free_553649308): cint {.
       cdecl, importc: "X509_STORE_get_ex_new_index".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_get_ex_new_index" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set_ex_data):
-  proc X509_STORE_set_ex_data*(ctx: ptr X509_STORE_553649240; idx: cint;
+  proc X509_STORE_set_ex_data*(ctx: ptr X509_STORE_553649242; idx: cint;
                                data: pointer): cint {.cdecl,
       importc: "X509_STORE_set_ex_data".}
 else:
@@ -75298,14 +75323,14 @@ else:
     hint("Declaration of " & "X509_STORE_set_ex_data" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_get_ex_data):
-  proc X509_STORE_get_ex_data*(ctx: ptr X509_STORE_553649240; idx: cint): pointer {.
+  proc X509_STORE_get_ex_data*(ctx: ptr X509_STORE_553649242; idx: cint): pointer {.
       cdecl, importc: "X509_STORE_get_ex_data".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_get_ex_data" &
         " already exists, not redeclaring")
 when not declared(ASN1_digest):
-  proc ASN1_digest*(i2d: i2d_of_void_553649352; type_arg: ptr EVP_MD_553649050;
+  proc ASN1_digest*(i2d: i2d_of_void_553649354; type_arg: ptr EVP_MD_553649050;
                     data: cstring; md: ptr uint8; len: ptr cuint): cint {.cdecl,
       importc: "ASN1_digest".}
 else:
@@ -75356,21 +75381,21 @@ else:
     hint("Declaration of " & "X509_supported_extension" &
         " already exists, not redeclaring")
 when not declared(X509_check_ca):
-  proc X509_check_ca*(x509: ptr X509_553649236): cint {.cdecl,
+  proc X509_check_ca*(x509: ptr X509_553649238): cint {.cdecl,
       importc: "X509_check_ca".}
 else:
   static :
     hint("Declaration of " & "X509_check_ca" &
         " already exists, not redeclaring")
 when not declared(X509_check_issued):
-  proc X509_check_issued*(issuer: ptr X509_553649236; subject: ptr X509_553649236): cint {.
+  proc X509_check_issued*(issuer: ptr X509_553649238; subject: ptr X509_553649238): cint {.
       cdecl, importc: "X509_check_issued".}
 else:
   static :
     hint("Declaration of " & "X509_check_issued" &
         " already exists, not redeclaring")
 when not declared(NAME_CONSTRAINTS_check):
-  proc NAME_CONSTRAINTS_check*(x509: ptr X509_553649236;
+  proc NAME_CONSTRAINTS_check*(x509: ptr X509_553649238;
                                nc: ptr NAME_CONSTRAINTS_553648934): cint {.
       cdecl, importc: "NAME_CONSTRAINTS_check".}
 else:
@@ -75378,7 +75403,7 @@ else:
     hint("Declaration of " & "NAME_CONSTRAINTS_check" &
         " already exists, not redeclaring")
 when not declared(X509_check_host):
-  proc X509_check_host*(x509: ptr X509_553649236; chk: cstring; chklen: csize_t;
+  proc X509_check_host*(x509: ptr X509_553649238; chk: cstring; chklen: csize_t;
                         flags: cuint; out_peername: ptr cstring): cint {.cdecl,
       importc: "X509_check_host".}
 else:
@@ -75386,7 +75411,7 @@ else:
     hint("Declaration of " & "X509_check_host" &
         " already exists, not redeclaring")
 when not declared(X509_check_email):
-  proc X509_check_email*(x509: ptr X509_553649236; chk: cstring;
+  proc X509_check_email*(x509: ptr X509_553649238; chk: cstring;
                          chklen: csize_t; flags: cuint): cint {.cdecl,
       importc: "X509_check_email".}
 else:
@@ -75394,37 +75419,37 @@ else:
     hint("Declaration of " & "X509_check_email" &
         " already exists, not redeclaring")
 when not declared(X509_check_ip):
-  proc X509_check_ip*(x509: ptr X509_553649236; chk: ptr uint8; chklen: csize_t;
+  proc X509_check_ip*(x509: ptr X509_553649238; chk: ptr uint8; chklen: csize_t;
                       flags: cuint): cint {.cdecl, importc: "X509_check_ip".}
 else:
   static :
     hint("Declaration of " & "X509_check_ip" &
         " already exists, not redeclaring")
 when not declared(X509_check_ip_asc):
-  proc X509_check_ip_asc*(x509: ptr X509_553649236; ipasc: cstring; flags: cuint): cint {.
+  proc X509_check_ip_asc*(x509: ptr X509_553649238; ipasc: cstring; flags: cuint): cint {.
       cdecl, importc: "X509_check_ip_asc".}
 else:
   static :
     hint("Declaration of " & "X509_check_ip_asc" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get1_issuer):
-  proc X509_STORE_CTX_get1_issuer*(out_issuer: ptr ptr X509_553649236;
-                                   ctx: ptr X509_STORE_CTX_553649238;
-                                   x509: ptr X509_553649236): cint {.cdecl,
+  proc X509_STORE_CTX_get1_issuer*(out_issuer: ptr ptr X509_553649238;
+                                   ctx: ptr X509_STORE_CTX_553649240;
+                                   x509: ptr X509_553649238): cint {.cdecl,
       importc: "X509_STORE_CTX_get1_issuer".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get1_issuer" &
         " already exists, not redeclaring")
 when not declared(X509_check_purpose):
-  proc X509_check_purpose*(x509: ptr X509_553649236; purpose: cint; ca: cint): cint {.
+  proc X509_check_purpose*(x509: ptr X509_553649238; purpose: cint; ca: cint): cint {.
       cdecl, importc: "X509_check_purpose".}
 else:
   static :
     hint("Declaration of " & "X509_check_purpose" &
         " already exists, not redeclaring")
 when not declared(X509_check_trust):
-  proc X509_check_trust*(x509: ptr X509_553649236; id: cint; flags: cint): cint {.
+  proc X509_check_trust*(x509: ptr X509_553649238; id: cint; flags: cint): cint {.
       cdecl, importc: "X509_check_trust".}
 else:
   static :
@@ -75438,21 +75463,21 @@ else:
     hint("Declaration of " & "X509_INFO_free" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_get):
-  proc X509V3_EXT_get*(ext: ptr X509_EXTENSION_553648956): ptr X509V3_EXT_METHOD_553649222 {.
+  proc X509V3_EXT_get*(ext: ptr X509_EXTENSION_553648956): ptr X509V3_EXT_METHOD_553649224 {.
       cdecl, importc: "X509V3_EXT_get".}
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_get" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_get_nid):
-  proc X509V3_EXT_get_nid*(nid: cint): ptr X509V3_EXT_METHOD_553649222 {.cdecl,
+  proc X509V3_EXT_get_nid*(nid: cint): ptr X509V3_EXT_METHOD_553649224 {.cdecl,
       importc: "X509V3_EXT_get_nid".}
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_get_nid" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_add):
-  proc X509V3_EXT_add*(ext: ptr X509V3_EXT_METHOD_553649222): cint {.cdecl,
+  proc X509V3_EXT_add*(ext: ptr X509V3_EXT_METHOD_553649224): cint {.cdecl,
       importc: "X509V3_EXT_add".}
 else:
   static :
@@ -75466,8 +75491,8 @@ else:
     hint("Declaration of " & "X509V3_EXT_add_alias" &
         " already exists, not redeclaring")
 when not declared(X509V3_set_ctx):
-  proc X509V3_set_ctx*(ctx: ptr X509V3_CTX_553649218; issuer: ptr X509_553649236;
-                       subject: ptr X509_553649236; req: ptr X509_REQ_553648968;
+  proc X509V3_set_ctx*(ctx: ptr X509V3_CTX_553649220; issuer: ptr X509_553649238;
+                       subject: ptr X509_553649238; req: ptr X509_REQ_553648968;
                        crl: ptr X509_CRL_553648954; flags: cint): void {.cdecl,
       importc: "X509V3_set_ctx".}
 else:
@@ -75475,14 +75500,14 @@ else:
     hint("Declaration of " & "X509V3_set_ctx" &
         " already exists, not redeclaring")
 when not declared(X509V3_set_nconf):
-  proc X509V3_set_nconf*(ctx: ptr X509V3_CTX_553649218; conf: ptr CONF_553649014): void {.
+  proc X509V3_set_nconf*(ctx: ptr X509V3_CTX_553649220; conf: ptr CONF_553649014): void {.
       cdecl, importc: "X509V3_set_nconf".}
 else:
   static :
     hint("Declaration of " & "X509V3_set_nconf" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_nconf):
-  proc X509V3_EXT_nconf*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649218;
+  proc X509V3_EXT_nconf*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649220;
                          name: cstring; value: cstring): ptr X509_EXTENSION_553648956 {.
       cdecl, importc: "X509V3_EXT_nconf".}
 else:
@@ -75490,7 +75515,7 @@ else:
     hint("Declaration of " & "X509V3_EXT_nconf" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_nconf_nid):
-  proc X509V3_EXT_nconf_nid*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649218;
+  proc X509V3_EXT_nconf_nid*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649220;
                              ext_nid: cint; value: cstring): ptr X509_EXTENSION_553648956 {.
       cdecl, importc: "X509V3_EXT_nconf_nid".}
 else:
@@ -75499,7 +75524,7 @@ else:
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_conf_nid):
   proc X509V3_EXT_conf_nid*(conf: ptr struct_lhash_st_CONF_VALUE;
-                            ctx: ptr X509V3_CTX_553649218; ext_nid: cint;
+                            ctx: ptr X509V3_CTX_553649220; ext_nid: cint;
                             value: cstring): ptr X509_EXTENSION_553648956 {.
       cdecl, importc: "X509V3_EXT_conf_nid".}
 else:
@@ -75507,7 +75532,7 @@ else:
     hint("Declaration of " & "X509V3_EXT_conf_nid" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_add_nconf_sk):
-  proc X509V3_EXT_add_nconf_sk*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649218;
+  proc X509V3_EXT_add_nconf_sk*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649220;
                                 section: cstring;
                                 sk: ptr ptr struct_stack_st_X509_EXTENSION): cint {.
       cdecl, importc: "X509V3_EXT_add_nconf_sk".}
@@ -75516,15 +75541,15 @@ else:
     hint("Declaration of " & "X509V3_EXT_add_nconf_sk" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_add_nconf):
-  proc X509V3_EXT_add_nconf*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649218;
-                             section: cstring; cert: ptr X509_553649236): cint {.
+  proc X509V3_EXT_add_nconf*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649220;
+                             section: cstring; cert: ptr X509_553649238): cint {.
       cdecl, importc: "X509V3_EXT_add_nconf".}
 else:
   static :
     hint("Declaration of " & "X509V3_EXT_add_nconf" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_REQ_add_nconf):
-  proc X509V3_EXT_REQ_add_nconf*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649218;
+  proc X509V3_EXT_REQ_add_nconf*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649220;
                                  section: cstring; req: ptr X509_REQ_553648968): cint {.
       cdecl, importc: "X509V3_EXT_REQ_add_nconf".}
 else:
@@ -75532,7 +75557,7 @@ else:
     hint("Declaration of " & "X509V3_EXT_REQ_add_nconf" &
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_CRL_add_nconf):
-  proc X509V3_EXT_CRL_add_nconf*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649218;
+  proc X509V3_EXT_CRL_add_nconf*(conf: ptr CONF_553649014; ctx: ptr X509V3_CTX_553649220;
                                  section: cstring; crl: ptr X509_CRL_553648954): cint {.
       cdecl, importc: "X509V3_EXT_CRL_add_nconf".}
 else:
@@ -75541,7 +75566,7 @@ else:
         " already exists, not redeclaring")
 when not declared(X509V3_EXT_conf):
   proc X509V3_EXT_conf*(conf: ptr struct_lhash_st_CONF_VALUE;
-                        ctx: ptr X509V3_CTX_553649218; name: cstring;
+                        ctx: ptr X509V3_CTX_553649220; name: cstring;
                         value: cstring): ptr X509_EXTENSION_553648956 {.cdecl,
       importc: "X509V3_EXT_conf".}
 else:
@@ -75549,7 +75574,7 @@ else:
     hint("Declaration of " & "X509V3_EXT_conf" &
         " already exists, not redeclaring")
 when not declared(i2s_ASN1_OCTET_STRING):
-  proc i2s_ASN1_OCTET_STRING*(method_arg: ptr X509V3_EXT_METHOD_553649222;
+  proc i2s_ASN1_OCTET_STRING*(method_arg: ptr X509V3_EXT_METHOD_553649224;
                               oct: ptr ASN1_OCTET_STRING_553648888): cstring {.
       cdecl, importc: "i2s_ASN1_OCTET_STRING".}
 else:
@@ -75557,15 +75582,15 @@ else:
     hint("Declaration of " & "i2s_ASN1_OCTET_STRING" &
         " already exists, not redeclaring")
 when not declared(s2i_ASN1_OCTET_STRING):
-  proc s2i_ASN1_OCTET_STRING*(method_arg: ptr X509V3_EXT_METHOD_553649222;
-                              ctx: ptr X509V3_CTX_553649218; str: cstring): ptr ASN1_OCTET_STRING_553648888 {.
+  proc s2i_ASN1_OCTET_STRING*(method_arg: ptr X509V3_EXT_METHOD_553649224;
+                              ctx: ptr X509V3_CTX_553649220; str: cstring): ptr ASN1_OCTET_STRING_553648888 {.
       cdecl, importc: "s2i_ASN1_OCTET_STRING".}
 else:
   static :
     hint("Declaration of " & "s2i_ASN1_OCTET_STRING" &
         " already exists, not redeclaring")
 when not declared(i2s_ASN1_INTEGER):
-  proc i2s_ASN1_INTEGER*(method_arg: ptr X509V3_EXT_METHOD_553649222;
+  proc i2s_ASN1_INTEGER*(method_arg: ptr X509V3_EXT_METHOD_553649224;
                          aint: ptr ASN1_INTEGER_553648886): cstring {.cdecl,
       importc: "i2s_ASN1_INTEGER".}
 else:
@@ -75573,7 +75598,7 @@ else:
     hint("Declaration of " & "i2s_ASN1_INTEGER" &
         " already exists, not redeclaring")
 when not declared(s2i_ASN1_INTEGER):
-  proc s2i_ASN1_INTEGER*(method_arg: ptr X509V3_EXT_METHOD_553649222;
+  proc s2i_ASN1_INTEGER*(method_arg: ptr X509V3_EXT_METHOD_553649224;
                          value: cstring): ptr ASN1_INTEGER_553648886 {.cdecl,
       importc: "s2i_ASN1_INTEGER".}
 else:
@@ -75581,7 +75606,7 @@ else:
     hint("Declaration of " & "s2i_ASN1_INTEGER" &
         " already exists, not redeclaring")
 when not declared(i2s_ASN1_ENUMERATED):
-  proc i2s_ASN1_ENUMERATED*(method_arg: ptr X509V3_EXT_METHOD_553649222;
+  proc i2s_ASN1_ENUMERATED*(method_arg: ptr X509V3_EXT_METHOD_553649224;
                             aint: ptr ASN1_ENUMERATED_553648878): cstring {.
       cdecl, importc: "i2s_ASN1_ENUMERATED".}
 else:
@@ -75596,7 +75621,7 @@ else:
     hint("Declaration of " & "X509V3_conf_free" &
         " already exists, not redeclaring")
 when not declared(i2v_GENERAL_NAME):
-  proc i2v_GENERAL_NAME*(method_arg: ptr X509V3_EXT_METHOD_553649222;
+  proc i2v_GENERAL_NAME*(method_arg: ptr X509V3_EXT_METHOD_553649224;
                          gen: ptr GENERAL_NAME_553648926;
                          ret: ptr struct_stack_st_CONF_VALUE): ptr struct_stack_st_CONF_VALUE {.
       cdecl, importc: "i2v_GENERAL_NAME".}
@@ -75605,8 +75630,8 @@ else:
     hint("Declaration of " & "i2v_GENERAL_NAME" &
         " already exists, not redeclaring")
 when not declared(i2v_GENERAL_NAMES):
-  proc i2v_GENERAL_NAMES*(method_arg: ptr X509V3_EXT_METHOD_553649222;
-                          gen: ptr GENERAL_NAMES_553649452;
+  proc i2v_GENERAL_NAMES*(method_arg: ptr X509V3_EXT_METHOD_553649224;
+                          gen: ptr GENERAL_NAMES_553649454;
                           extlist: ptr struct_stack_st_CONF_VALUE): ptr struct_stack_st_CONF_VALUE {.
       cdecl, importc: "i2v_GENERAL_NAMES".}
 else:
@@ -75628,28 +75653,28 @@ else:
     hint("Declaration of " & "a2i_IPADDRESS_NC" &
         " already exists, not redeclaring")
 when not declared(X509_get_notBefore):
-  proc X509_get_notBefore*(x509: ptr X509_553649236): ptr ASN1_TIME_553648896 {.
+  proc X509_get_notBefore*(x509: ptr X509_553649238): ptr ASN1_TIME_553648896 {.
       cdecl, importc: "X509_get_notBefore".}
 else:
   static :
     hint("Declaration of " & "X509_get_notBefore" &
         " already exists, not redeclaring")
 when not declared(X509_get_notAfter):
-  proc X509_get_notAfter*(x509: ptr X509_553649236): ptr ASN1_TIME_553648896 {.
+  proc X509_get_notAfter*(x509: ptr X509_553649238): ptr ASN1_TIME_553648896 {.
       cdecl, importc: "X509_get_notAfter".}
 else:
   static :
     hint("Declaration of " & "X509_get_notAfter" &
         " already exists, not redeclaring")
 when not declared(X509_set_notBefore):
-  proc X509_set_notBefore*(x509: ptr X509_553649236; tm: ptr ASN1_TIME_553648896): cint {.
+  proc X509_set_notBefore*(x509: ptr X509_553649238; tm: ptr ASN1_TIME_553648896): cint {.
       cdecl, importc: "X509_set_notBefore".}
 else:
   static :
     hint("Declaration of " & "X509_set_notBefore" &
         " already exists, not redeclaring")
 when not declared(X509_set_notAfter):
-  proc X509_set_notAfter*(x509: ptr X509_553649236; tm: ptr ASN1_TIME_553648896): cint {.
+  proc X509_set_notAfter*(x509: ptr X509_553649238; tm: ptr ASN1_TIME_553648896): cint {.
       cdecl, importc: "X509_set_notAfter".}
 else:
   static :
@@ -75670,7 +75695,7 @@ else:
     hint("Declaration of " & "X509_CRL_get_nextUpdate" &
         " already exists, not redeclaring")
 when not declared(X509_get_serialNumber):
-  proc X509_get_serialNumber*(x509: ptr X509_553649236): ptr ASN1_INTEGER_553648886 {.
+  proc X509_get_serialNumber*(x509: ptr X509_553649238): ptr ASN1_INTEGER_553648886 {.
       cdecl, importc: "X509_get_serialNumber".}
 else:
   static :
@@ -75694,21 +75719,21 @@ else:
     hint("Declaration of " & "X509_NAME_get_text_by_NID" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get0_parent_ctx):
-  proc X509_STORE_CTX_get0_parent_ctx*(ctx: ptr X509_STORE_CTX_553649238): ptr X509_STORE_CTX_553649238 {.
+  proc X509_STORE_CTX_get0_parent_ctx*(ctx: ptr X509_STORE_CTX_553649240): ptr X509_STORE_CTX_553649240 {.
       cdecl, importc: "X509_STORE_CTX_get0_parent_ctx".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get0_parent_ctx" &
         " already exists, not redeclaring")
 when not declared(X509_LOOKUP_free):
-  proc X509_LOOKUP_free*(ctx: ptr X509_LOOKUP_553649228): void {.cdecl,
+  proc X509_LOOKUP_free*(ctx: ptr X509_LOOKUP_553649230): void {.cdecl,
       importc: "X509_LOOKUP_free".}
 else:
   static :
     hint("Declaration of " & "X509_LOOKUP_free" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_cleanup):
-  proc X509_STORE_CTX_cleanup*(ctx: ptr X509_STORE_CTX_553649238): void {.cdecl,
+  proc X509_STORE_CTX_cleanup*(ctx: ptr X509_STORE_CTX_553649240): void {.cdecl,
       importc: "X509_STORE_CTX_cleanup".}
 else:
   static :
@@ -75729,14 +75754,14 @@ else:
     hint("Declaration of " & "X509V3_parse_list" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_get_chain):
-  proc X509_STORE_CTX_get_chain*(ctx: ptr X509_STORE_CTX_553649238): ptr struct_stack_st_X509 {.
+  proc X509_STORE_CTX_get_chain*(ctx: ptr X509_STORE_CTX_553649240): ptr struct_stack_st_X509 {.
       cdecl, importc: "X509_STORE_CTX_get_chain".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_get_chain" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_trusted_stack):
-  proc X509_STORE_CTX_trusted_stack*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_trusted_stack*(ctx: ptr X509_STORE_CTX_553649240;
                                      sk: ptr struct_stack_st_X509): void {.
       cdecl, importc: "X509_STORE_CTX_trusted_stack".}
 else:
@@ -75744,46 +75769,46 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_trusted_stack" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_verify_cb):
-  proc X509_STORE_CTX_set_verify_cb*(ctx: ptr X509_STORE_CTX_553649238;
-      verify_cb: proc (a0: cint; a1: ptr X509_STORE_CTX_553649238): cint {.cdecl.}): void {.
+  proc X509_STORE_CTX_set_verify_cb*(ctx: ptr X509_STORE_CTX_553649240;
+      verify_cb: proc (a0: cint; a1: ptr X509_STORE_CTX_553649240): cint {.cdecl.}): void {.
       cdecl, importc: "X509_STORE_CTX_set_verify_cb".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_CTX_set_verify_cb" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_get_verify_cb):
-  proc X509_STORE_get_verify_cb*(ctx: ptr X509_STORE_553649240): X509_STORE_CTX_verify_cb_553649560 {.
+  proc X509_STORE_get_verify_cb*(ctx: ptr X509_STORE_553649242): X509_STORE_CTX_verify_cb_553649562 {.
       cdecl, importc: "X509_STORE_get_verify_cb".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_get_verify_cb" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set_verify_cb):
-  proc X509_STORE_set_verify_cb*(store: ptr X509_STORE_553649240;
-                                 verify_cb: X509_STORE_CTX_verify_cb_553649560): void {.
+  proc X509_STORE_set_verify_cb*(store: ptr X509_STORE_553649242;
+                                 verify_cb: X509_STORE_CTX_verify_cb_553649562): void {.
       cdecl, importc: "X509_STORE_set_verify_cb".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_set_verify_cb" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set_get_crl):
-  proc X509_STORE_set_get_crl*(store: ptr X509_STORE_553649240;
-                               get_crl: X509_STORE_CTX_get_crl_fn_553649562): void {.
+  proc X509_STORE_set_get_crl*(store: ptr X509_STORE_553649242;
+                               get_crl: X509_STORE_CTX_get_crl_fn_553649564): void {.
       cdecl, importc: "X509_STORE_set_get_crl".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_set_get_crl" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_set_check_crl):
-  proc X509_STORE_set_check_crl*(store: ptr X509_STORE_553649240;
-                                 check_crl: X509_STORE_CTX_check_crl_fn_553649564): void {.
+  proc X509_STORE_set_check_crl*(store: ptr X509_STORE_553649242;
+                                 check_crl: X509_STORE_CTX_check_crl_fn_553649566): void {.
       cdecl, importc: "X509_STORE_set_check_crl".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_set_check_crl" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set_chain):
-  proc X509_STORE_CTX_set_chain*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_set_chain*(ctx: ptr X509_STORE_CTX_553649240;
                                  sk: ptr struct_stack_st_X509): void {.cdecl,
       importc: "X509_STORE_CTX_set_chain".}
 else:
@@ -75791,7 +75816,7 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_set_chain" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_CTX_set0_untrusted):
-  proc X509_STORE_CTX_set0_untrusted*(ctx: ptr X509_STORE_CTX_553649238;
+  proc X509_STORE_CTX_set0_untrusted*(ctx: ptr X509_STORE_CTX_553649240;
                                       sk: ptr struct_stack_st_X509): void {.
       cdecl, importc: "X509_STORE_CTX_set0_untrusted".}
 else:
@@ -75799,7 +75824,7 @@ else:
     hint("Declaration of " & "X509_STORE_CTX_set0_untrusted" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_get0_objects):
-  proc X509_STORE_get0_objects*(store: ptr X509_STORE_553649240): ptr struct_stack_st_X509_OBJECT {.
+  proc X509_STORE_get0_objects*(store: ptr X509_STORE_553649242): ptr struct_stack_st_X509_OBJECT {.
       cdecl, importc: "X509_STORE_get0_objects".}
 else:
   static :
@@ -75813,14 +75838,14 @@ else:
     hint("Declaration of " & "X509_PURPOSE_get_by_sname" &
         " already exists, not redeclaring")
 when not declared(X509_PURPOSE_get0):
-  proc X509_PURPOSE_get0*(id: cint): ptr X509_PURPOSE_553649568 {.cdecl,
+  proc X509_PURPOSE_get0*(id: cint): ptr X509_PURPOSE_553649570 {.cdecl,
       importc: "X509_PURPOSE_get0".}
 else:
   static :
     hint("Declaration of " & "X509_PURPOSE_get0" &
         " already exists, not redeclaring")
 when not declared(X509_PURPOSE_get_id):
-  proc X509_PURPOSE_get_id*(purpose: ptr X509_PURPOSE_553649568): cint {.cdecl,
+  proc X509_PURPOSE_get_id*(purpose: ptr X509_PURPOSE_553649570): cint {.cdecl,
       importc: "X509_PURPOSE_get_id".}
 else:
   static :
@@ -75840,7 +75865,7 @@ else:
     hint("Declaration of " & "X509_TRUST_get_count" &
         " already exists, not redeclaring")
 when not declared(X509_TRUST_get0):
-  proc X509_TRUST_get0*(idx: cint): ptr X509_TRUST_553649242 {.cdecl,
+  proc X509_TRUST_get0*(idx: cint): ptr X509_TRUST_553649244 {.cdecl,
       importc: "X509_TRUST_get0".}
 else:
   static :
@@ -75854,21 +75879,21 @@ else:
     hint("Declaration of " & "X509_TRUST_get_by_id" &
         " already exists, not redeclaring")
 when not declared(X509_TRUST_get_flags):
-  proc X509_TRUST_get_flags*(xp: ptr X509_TRUST_553649242): cint {.cdecl,
+  proc X509_TRUST_get_flags*(xp: ptr X509_TRUST_553649244): cint {.cdecl,
       importc: "X509_TRUST_get_flags".}
 else:
   static :
     hint("Declaration of " & "X509_TRUST_get_flags" &
         " already exists, not redeclaring")
 when not declared(X509_TRUST_get0_name):
-  proc X509_TRUST_get0_name*(xp: ptr X509_TRUST_553649242): cstring {.cdecl,
+  proc X509_TRUST_get0_name*(xp: ptr X509_TRUST_553649244): cstring {.cdecl,
       importc: "X509_TRUST_get0_name".}
 else:
   static :
     hint("Declaration of " & "X509_TRUST_get0_name" &
         " already exists, not redeclaring")
 when not declared(X509_TRUST_get_trust):
-  proc X509_TRUST_get_trust*(xp: ptr X509_TRUST_553649242): cint {.cdecl,
+  proc X509_TRUST_get_trust*(xp: ptr X509_TRUST_553649244): cint {.cdecl,
       importc: "X509_TRUST_get_trust".}
 else:
   static :
@@ -75881,21 +75906,21 @@ else:
     hint("Declaration of " & "X509_TRUST_cleanup" &
         " already exists, not redeclaring")
 when not declared(X509_OBJECT_get0_X509_CRL):
-  proc X509_OBJECT_get0_X509_CRL*(a: ptr X509_OBJECT_553649232): ptr X509_CRL_553648954 {.
+  proc X509_OBJECT_get0_X509_CRL*(a: ptr X509_OBJECT_553649234): ptr X509_CRL_553648954 {.
       cdecl, importc: "X509_OBJECT_get0_X509_CRL".}
 else:
   static :
     hint("Declaration of " & "X509_OBJECT_get0_X509_CRL" &
         " already exists, not redeclaring")
 when not declared(X509_OBJECT_set1_X509):
-  proc X509_OBJECT_set1_X509*(a: ptr X509_OBJECT_553649232; obj: ptr X509_553649236): cint {.
+  proc X509_OBJECT_set1_X509*(a: ptr X509_OBJECT_553649234; obj: ptr X509_553649238): cint {.
       cdecl, importc: "X509_OBJECT_set1_X509".}
 else:
   static :
     hint("Declaration of " & "X509_OBJECT_set1_X509" &
         " already exists, not redeclaring")
 when not declared(X509_OBJECT_set1_X509_CRL):
-  proc X509_OBJECT_set1_X509_CRL*(a: ptr X509_OBJECT_553649232;
+  proc X509_OBJECT_set1_X509_CRL*(a: ptr X509_OBJECT_553649234;
                                   obj: ptr X509_CRL_553648954): cint {.cdecl,
       importc: "X509_OBJECT_set1_X509_CRL".}
 else:
@@ -75903,14 +75928,14 @@ else:
     hint("Declaration of " & "X509_OBJECT_set1_X509_CRL" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_lock):
-  proc X509_STORE_lock*(v: ptr X509_STORE_553649240): cint {.cdecl,
+  proc X509_STORE_lock*(v: ptr X509_STORE_553649242): cint {.cdecl,
       importc: "X509_STORE_lock".}
 else:
   static :
     hint("Declaration of " & "X509_STORE_lock" &
         " already exists, not redeclaring")
 when not declared(X509_STORE_unlock):
-  proc X509_STORE_unlock*(v: ptr X509_STORE_553649240): cint {.cdecl,
+  proc X509_STORE_unlock*(v: ptr X509_STORE_553649242): cint {.cdecl,
       importc: "X509_STORE_unlock".}
 else:
   static :
@@ -75995,29 +76020,29 @@ else:
     hint("Declaration of " & "EXTENDED_KEY_USAGE_it" &
         " already exists, not redeclaring")
 when not declared(EXTENDED_KEY_USAGE_new):
-  proc EXTENDED_KEY_USAGE_new*(): ptr EXTENDED_KEY_USAGE_553649600 {.cdecl,
+  proc EXTENDED_KEY_USAGE_new*(): ptr EXTENDED_KEY_USAGE_553649602 {.cdecl,
       importc: "EXTENDED_KEY_USAGE_new".}
 else:
   static :
     hint("Declaration of " & "EXTENDED_KEY_USAGE_new" &
         " already exists, not redeclaring")
 when not declared(EXTENDED_KEY_USAGE_free):
-  proc EXTENDED_KEY_USAGE_free*(eku: ptr EXTENDED_KEY_USAGE_553649600): void {.
+  proc EXTENDED_KEY_USAGE_free*(eku: ptr EXTENDED_KEY_USAGE_553649602): void {.
       cdecl, importc: "EXTENDED_KEY_USAGE_free".}
 else:
   static :
     hint("Declaration of " & "EXTENDED_KEY_USAGE_free" &
         " already exists, not redeclaring")
 when not declared(d2i_EXTENDED_KEY_USAGE):
-  proc d2i_EXTENDED_KEY_USAGE*(out_arg: ptr ptr EXTENDED_KEY_USAGE_553649600;
-                               inp: ptr ptr uint8; len: clong): ptr EXTENDED_KEY_USAGE_553649600 {.
+  proc d2i_EXTENDED_KEY_USAGE*(out_arg: ptr ptr EXTENDED_KEY_USAGE_553649602;
+                               inp: ptr ptr uint8; len: clong): ptr EXTENDED_KEY_USAGE_553649602 {.
       cdecl, importc: "d2i_EXTENDED_KEY_USAGE".}
 else:
   static :
     hint("Declaration of " & "d2i_EXTENDED_KEY_USAGE" &
         " already exists, not redeclaring")
 when not declared(i2d_EXTENDED_KEY_USAGE):
-  proc i2d_EXTENDED_KEY_USAGE*(eku: ptr EXTENDED_KEY_USAGE_553649600;
+  proc i2d_EXTENDED_KEY_USAGE*(eku: ptr EXTENDED_KEY_USAGE_553649602;
                                outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_EXTENDED_KEY_USAGE".}
 else:
@@ -76031,29 +76056,29 @@ else:
     hint("Declaration of " & "CERTIFICATEPOLICIES_it" &
         " already exists, not redeclaring")
 when not declared(CERTIFICATEPOLICIES_new):
-  proc CERTIFICATEPOLICIES_new*(): ptr CERTIFICATEPOLICIES_553649640 {.cdecl,
+  proc CERTIFICATEPOLICIES_new*(): ptr CERTIFICATEPOLICIES_553649642 {.cdecl,
       importc: "CERTIFICATEPOLICIES_new".}
 else:
   static :
     hint("Declaration of " & "CERTIFICATEPOLICIES_new" &
         " already exists, not redeclaring")
 when not declared(CERTIFICATEPOLICIES_free):
-  proc CERTIFICATEPOLICIES_free*(policies: ptr CERTIFICATEPOLICIES_553649640): void {.
+  proc CERTIFICATEPOLICIES_free*(policies: ptr CERTIFICATEPOLICIES_553649642): void {.
       cdecl, importc: "CERTIFICATEPOLICIES_free".}
 else:
   static :
     hint("Declaration of " & "CERTIFICATEPOLICIES_free" &
         " already exists, not redeclaring")
 when not declared(d2i_CERTIFICATEPOLICIES):
-  proc d2i_CERTIFICATEPOLICIES*(out_arg: ptr ptr CERTIFICATEPOLICIES_553649640;
-                                inp: ptr ptr uint8; len: clong): ptr CERTIFICATEPOLICIES_553649640 {.
+  proc d2i_CERTIFICATEPOLICIES*(out_arg: ptr ptr CERTIFICATEPOLICIES_553649642;
+                                inp: ptr ptr uint8; len: clong): ptr CERTIFICATEPOLICIES_553649642 {.
       cdecl, importc: "d2i_CERTIFICATEPOLICIES".}
 else:
   static :
     hint("Declaration of " & "d2i_CERTIFICATEPOLICIES" &
         " already exists, not redeclaring")
 when not declared(i2d_CERTIFICATEPOLICIES):
-  proc i2d_CERTIFICATEPOLICIES*(policies: ptr CERTIFICATEPOLICIES_553649640;
+  proc i2d_CERTIFICATEPOLICIES*(policies: ptr CERTIFICATEPOLICIES_553649642;
                                 outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_CERTIFICATEPOLICIES".}
 else:
@@ -76061,56 +76086,56 @@ else:
     hint("Declaration of " & "i2d_CERTIFICATEPOLICIES" &
         " already exists, not redeclaring")
 when not declared(POLICYINFO_new):
-  proc POLICYINFO_new*(): ptr POLICYINFO_553649638 {.cdecl,
+  proc POLICYINFO_new*(): ptr POLICYINFO_553649640 {.cdecl,
       importc: "POLICYINFO_new".}
 else:
   static :
     hint("Declaration of " & "POLICYINFO_new" &
         " already exists, not redeclaring")
 when not declared(POLICYINFO_free):
-  proc POLICYINFO_free*(info: ptr POLICYINFO_553649638): void {.cdecl,
+  proc POLICYINFO_free*(info: ptr POLICYINFO_553649640): void {.cdecl,
       importc: "POLICYINFO_free".}
 else:
   static :
     hint("Declaration of " & "POLICYINFO_free" &
         " already exists, not redeclaring")
 when not declared(POLICYQUALINFO_new):
-  proc POLICYQUALINFO_new*(): ptr POLICYQUALINFO_553649626 {.cdecl,
+  proc POLICYQUALINFO_new*(): ptr POLICYQUALINFO_553649628 {.cdecl,
       importc: "POLICYQUALINFO_new".}
 else:
   static :
     hint("Declaration of " & "POLICYQUALINFO_new" &
         " already exists, not redeclaring")
 when not declared(POLICYQUALINFO_free):
-  proc POLICYQUALINFO_free*(info: ptr POLICYQUALINFO_553649626): void {.cdecl,
+  proc POLICYQUALINFO_free*(info: ptr POLICYQUALINFO_553649628): void {.cdecl,
       importc: "POLICYQUALINFO_free".}
 else:
   static :
     hint("Declaration of " & "POLICYQUALINFO_free" &
         " already exists, not redeclaring")
 when not declared(USERNOTICE_new):
-  proc USERNOTICE_new*(): ptr USERNOTICE_553649622 {.cdecl,
+  proc USERNOTICE_new*(): ptr USERNOTICE_553649624 {.cdecl,
       importc: "USERNOTICE_new".}
 else:
   static :
     hint("Declaration of " & "USERNOTICE_new" &
         " already exists, not redeclaring")
 when not declared(USERNOTICE_free):
-  proc USERNOTICE_free*(notice: ptr USERNOTICE_553649622): void {.cdecl,
+  proc USERNOTICE_free*(notice: ptr USERNOTICE_553649624): void {.cdecl,
       importc: "USERNOTICE_free".}
 else:
   static :
     hint("Declaration of " & "USERNOTICE_free" &
         " already exists, not redeclaring")
 when not declared(NOTICEREF_new):
-  proc NOTICEREF_new*(): ptr NOTICEREF_553649618 {.cdecl,
+  proc NOTICEREF_new*(): ptr NOTICEREF_553649620 {.cdecl,
       importc: "NOTICEREF_new".}
 else:
   static :
     hint("Declaration of " & "NOTICEREF_new" &
         " already exists, not redeclaring")
 when not declared(NOTICEREF_free):
-  proc NOTICEREF_free*(ref_arg: ptr NOTICEREF_553649618): void {.cdecl,
+  proc NOTICEREF_free*(ref_arg: ptr NOTICEREF_553649620): void {.cdecl,
       importc: "NOTICEREF_free".}
 else:
   static :
@@ -76123,29 +76148,29 @@ else:
     hint("Declaration of " & "CRL_DIST_POINTS_it" &
         " already exists, not redeclaring")
 when not declared(CRL_DIST_POINTS_new):
-  proc CRL_DIST_POINTS_new*(): ptr CRL_DIST_POINTS_553649606 {.cdecl,
+  proc CRL_DIST_POINTS_new*(): ptr CRL_DIST_POINTS_553649608 {.cdecl,
       importc: "CRL_DIST_POINTS_new".}
 else:
   static :
     hint("Declaration of " & "CRL_DIST_POINTS_new" &
         " already exists, not redeclaring")
 when not declared(CRL_DIST_POINTS_free):
-  proc CRL_DIST_POINTS_free*(crldp: ptr CRL_DIST_POINTS_553649606): void {.
+  proc CRL_DIST_POINTS_free*(crldp: ptr CRL_DIST_POINTS_553649608): void {.
       cdecl, importc: "CRL_DIST_POINTS_free".}
 else:
   static :
     hint("Declaration of " & "CRL_DIST_POINTS_free" &
         " already exists, not redeclaring")
 when not declared(d2i_CRL_DIST_POINTS):
-  proc d2i_CRL_DIST_POINTS*(out_arg: ptr ptr CRL_DIST_POINTS_553649606;
-                            inp: ptr ptr uint8; len: clong): ptr CRL_DIST_POINTS_553649606 {.
+  proc d2i_CRL_DIST_POINTS*(out_arg: ptr ptr CRL_DIST_POINTS_553649608;
+                            inp: ptr ptr uint8; len: clong): ptr CRL_DIST_POINTS_553649608 {.
       cdecl, importc: "d2i_CRL_DIST_POINTS".}
 else:
   static :
     hint("Declaration of " & "d2i_CRL_DIST_POINTS" &
         " already exists, not redeclaring")
 when not declared(i2d_CRL_DIST_POINTS):
-  proc i2d_CRL_DIST_POINTS*(crldp: ptr CRL_DIST_POINTS_553649606;
+  proc i2d_CRL_DIST_POINTS*(crldp: ptr CRL_DIST_POINTS_553649608;
                             outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_CRL_DIST_POINTS".}
 else:
@@ -76167,14 +76192,14 @@ else:
     hint("Declaration of " & "DIST_POINT_free" &
         " already exists, not redeclaring")
 when not declared(DIST_POINT_NAME_new):
-  proc DIST_POINT_NAME_new*(): ptr DIST_POINT_NAME_553649604 {.cdecl,
+  proc DIST_POINT_NAME_new*(): ptr DIST_POINT_NAME_553649606 {.cdecl,
       importc: "DIST_POINT_NAME_new".}
 else:
   static :
     hint("Declaration of " & "DIST_POINT_NAME_new" &
         " already exists, not redeclaring")
 when not declared(DIST_POINT_NAME_free):
-  proc DIST_POINT_NAME_free*(name: ptr DIST_POINT_NAME_553649604): void {.cdecl,
+  proc DIST_POINT_NAME_free*(name: ptr DIST_POINT_NAME_553649606): void {.cdecl,
       importc: "DIST_POINT_NAME_free".}
 else:
   static :
@@ -76217,14 +76242,14 @@ else:
     hint("Declaration of " & "i2d_ISSUING_DIST_POINT" &
         " already exists, not redeclaring")
 when not declared(ACCESS_DESCRIPTION_new):
-  proc ACCESS_DESCRIPTION_new*(): ptr ACCESS_DESCRIPTION_553649588 {.cdecl,
+  proc ACCESS_DESCRIPTION_new*(): ptr ACCESS_DESCRIPTION_553649590 {.cdecl,
       importc: "ACCESS_DESCRIPTION_new".}
 else:
   static :
     hint("Declaration of " & "ACCESS_DESCRIPTION_new" &
         " already exists, not redeclaring")
 when not declared(ACCESS_DESCRIPTION_free):
-  proc ACCESS_DESCRIPTION_free*(desc: ptr ACCESS_DESCRIPTION_553649588): void {.
+  proc ACCESS_DESCRIPTION_free*(desc: ptr ACCESS_DESCRIPTION_553649590): void {.
       cdecl, importc: "ACCESS_DESCRIPTION_free".}
 else:
   static :
@@ -76237,29 +76262,29 @@ else:
     hint("Declaration of " & "AUTHORITY_INFO_ACCESS_it" &
         " already exists, not redeclaring")
 when not declared(AUTHORITY_INFO_ACCESS_new):
-  proc AUTHORITY_INFO_ACCESS_new*(): ptr AUTHORITY_INFO_ACCESS_553649598 {.
+  proc AUTHORITY_INFO_ACCESS_new*(): ptr AUTHORITY_INFO_ACCESS_553649600 {.
       cdecl, importc: "AUTHORITY_INFO_ACCESS_new".}
 else:
   static :
     hint("Declaration of " & "AUTHORITY_INFO_ACCESS_new" &
         " already exists, not redeclaring")
 when not declared(AUTHORITY_INFO_ACCESS_free):
-  proc AUTHORITY_INFO_ACCESS_free*(aia: ptr AUTHORITY_INFO_ACCESS_553649598): void {.
+  proc AUTHORITY_INFO_ACCESS_free*(aia: ptr AUTHORITY_INFO_ACCESS_553649600): void {.
       cdecl, importc: "AUTHORITY_INFO_ACCESS_free".}
 else:
   static :
     hint("Declaration of " & "AUTHORITY_INFO_ACCESS_free" &
         " already exists, not redeclaring")
 when not declared(d2i_AUTHORITY_INFO_ACCESS):
-  proc d2i_AUTHORITY_INFO_ACCESS*(out_arg: ptr ptr AUTHORITY_INFO_ACCESS_553649598;
-                                  inp: ptr ptr uint8; len: clong): ptr AUTHORITY_INFO_ACCESS_553649598 {.
+  proc d2i_AUTHORITY_INFO_ACCESS*(out_arg: ptr ptr AUTHORITY_INFO_ACCESS_553649600;
+                                  inp: ptr ptr uint8; len: clong): ptr AUTHORITY_INFO_ACCESS_553649600 {.
       cdecl, importc: "d2i_AUTHORITY_INFO_ACCESS".}
 else:
   static :
     hint("Declaration of " & "d2i_AUTHORITY_INFO_ACCESS" &
         " already exists, not redeclaring")
 when not declared(i2d_AUTHORITY_INFO_ACCESS):
-  proc i2d_AUTHORITY_INFO_ACCESS*(aia: ptr AUTHORITY_INFO_ACCESS_553649598;
+  proc i2d_AUTHORITY_INFO_ACCESS*(aia: ptr AUTHORITY_INFO_ACCESS_553649600;
                                   outp: ptr ptr uint8): cint {.cdecl,
       importc: "i2d_AUTHORITY_INFO_ACCESS".}
 else:
@@ -76267,14 +76292,14 @@ else:
     hint("Declaration of " & "i2d_AUTHORITY_INFO_ACCESS" &
         " already exists, not redeclaring")
 when not declared(POLICY_MAPPING_new):
-  proc POLICY_MAPPING_new*(): ptr POLICY_MAPPING_553649652 {.cdecl,
+  proc POLICY_MAPPING_new*(): ptr POLICY_MAPPING_553649654 {.cdecl,
       importc: "POLICY_MAPPING_new".}
 else:
   static :
     hint("Declaration of " & "POLICY_MAPPING_new" &
         " already exists, not redeclaring")
 when not declared(POLICY_MAPPING_free):
-  proc POLICY_MAPPING_free*(mapping: ptr POLICY_MAPPING_553649652): void {.
+  proc POLICY_MAPPING_free*(mapping: ptr POLICY_MAPPING_553649654): void {.
       cdecl, importc: "POLICY_MAPPING_free".}
 else:
   static :
@@ -76287,14 +76312,14 @@ else:
     hint("Declaration of " & "POLICY_MAPPINGS_it" &
         " already exists, not redeclaring")
 when not declared(GENERAL_SUBTREE_new):
-  proc GENERAL_SUBTREE_new*(): ptr GENERAL_SUBTREE_553649666 {.cdecl,
+  proc GENERAL_SUBTREE_new*(): ptr GENERAL_SUBTREE_553649668 {.cdecl,
       importc: "GENERAL_SUBTREE_new".}
 else:
   static :
     hint("Declaration of " & "GENERAL_SUBTREE_new" &
         " already exists, not redeclaring")
 when not declared(GENERAL_SUBTREE_free):
-  proc GENERAL_SUBTREE_free*(subtree: ptr GENERAL_SUBTREE_553649666): void {.
+  proc GENERAL_SUBTREE_free*(subtree: ptr GENERAL_SUBTREE_553649668): void {.
       cdecl, importc: "GENERAL_SUBTREE_free".}
 else:
   static :
@@ -76321,14 +76346,14 @@ else:
     hint("Declaration of " & "NAME_CONSTRAINTS_free" &
         " already exists, not redeclaring")
 when not declared(POLICY_CONSTRAINTS_new):
-  proc POLICY_CONSTRAINTS_new*(): ptr POLICY_CONSTRAINTS_553649678 {.cdecl,
+  proc POLICY_CONSTRAINTS_new*(): ptr POLICY_CONSTRAINTS_553649680 {.cdecl,
       importc: "POLICY_CONSTRAINTS_new".}
 else:
   static :
     hint("Declaration of " & "POLICY_CONSTRAINTS_new" &
         " already exists, not redeclaring")
 when not declared(POLICY_CONSTRAINTS_free):
-  proc POLICY_CONSTRAINTS_free*(pcons: ptr POLICY_CONSTRAINTS_553649678): void {.
+  proc POLICY_CONSTRAINTS_free*(pcons: ptr POLICY_CONSTRAINTS_553649680): void {.
       cdecl, importc: "POLICY_CONSTRAINTS_free".}
 else:
   static :
@@ -76362,36 +76387,36 @@ else:
     hint("Declaration of " & "X509_PURPOSE_get_by_id" &
         " already exists, not redeclaring")
 when not declared(X509_PURPOSE_get0_name):
-  proc X509_PURPOSE_get0_name*(xp: ptr X509_PURPOSE_553649568): cstring {.cdecl,
+  proc X509_PURPOSE_get0_name*(xp: ptr X509_PURPOSE_553649570): cstring {.cdecl,
       importc: "X509_PURPOSE_get0_name".}
 else:
   static :
     hint("Declaration of " & "X509_PURPOSE_get0_name" &
         " already exists, not redeclaring")
 when not declared(X509_PURPOSE_get0_sname):
-  proc X509_PURPOSE_get0_sname*(xp: ptr X509_PURPOSE_553649568): cstring {.
+  proc X509_PURPOSE_get0_sname*(xp: ptr X509_PURPOSE_553649570): cstring {.
       cdecl, importc: "X509_PURPOSE_get0_sname".}
 else:
   static :
     hint("Declaration of " & "X509_PURPOSE_get0_sname" &
         " already exists, not redeclaring")
 when not declared(X509_PURPOSE_get_trust):
-  proc X509_PURPOSE_get_trust*(xp: ptr X509_PURPOSE_553649568): cint {.cdecl,
+  proc X509_PURPOSE_get_trust*(xp: ptr X509_PURPOSE_553649570): cint {.cdecl,
       importc: "X509_PURPOSE_get_trust".}
 else:
   static :
     hint("Declaration of " & "X509_PURPOSE_get_trust" &
         " already exists, not redeclaring")
 when not declared(PEM_get_EVP_CIPHER_INFO):
-  proc PEM_get_EVP_CIPHER_INFO*(header: cstring; cipher: ptr EVP_CIPHER_INFO_553649330): cint {.
+  proc PEM_get_EVP_CIPHER_INFO*(header: cstring; cipher: ptr EVP_CIPHER_INFO_553649332): cint {.
       cdecl, importc: "PEM_get_EVP_CIPHER_INFO".}
 else:
   static :
     hint("Declaration of " & "PEM_get_EVP_CIPHER_INFO" &
         " already exists, not redeclaring")
 when not declared(PEM_do_header):
-  proc PEM_do_header*(cipher: ptr EVP_CIPHER_INFO_553649330; data: ptr uint8;
-                      len: ptr clong; callback: pem_password_cb_553649680;
+  proc PEM_do_header*(cipher: ptr EVP_CIPHER_INFO_553649332; data: ptr uint8;
+                      len: ptr clong; callback: pem_password_cb_553649682;
                       u: pointer): cint {.cdecl, importc: "PEM_do_header".}
 else:
   static :
@@ -76415,26 +76440,26 @@ else:
 when not declared(PEM_bytes_read_bio):
   proc PEM_bytes_read_bio*(pdata: ptr ptr uint8; plen: ptr clong;
                            pnm: ptr cstring; name: cstring; bp: ptr BIO_553648984;
-                           cb: pem_password_cb_553649680; u: pointer): cint {.
+                           cb: pem_password_cb_553649682; u: pointer): cint {.
       cdecl, importc: "PEM_bytes_read_bio".}
 else:
   static :
     hint("Declaration of " & "PEM_bytes_read_bio" &
         " already exists, not redeclaring")
 when not declared(PEM_ASN1_read_bio):
-  proc PEM_ASN1_read_bio*(d2i: d2i_of_void_553649350; name: cstring;
+  proc PEM_ASN1_read_bio*(d2i: d2i_of_void_553649352; name: cstring;
                           bp: ptr BIO_553648984; x: ptr pointer;
-                          cb: pem_password_cb_553649680; u: pointer): pointer {.
+                          cb: pem_password_cb_553649682; u: pointer): pointer {.
       cdecl, importc: "PEM_ASN1_read_bio".}
 else:
   static :
     hint("Declaration of " & "PEM_ASN1_read_bio" &
         " already exists, not redeclaring")
 when not declared(PEM_ASN1_write_bio):
-  proc PEM_ASN1_write_bio*(i2d: i2d_of_void_553649352; name: cstring;
+  proc PEM_ASN1_write_bio*(i2d: i2d_of_void_553649354; name: cstring;
                            bp: ptr BIO_553648984; x: pointer;
                            enc: ptr EVP_CIPHER_553649062; pass: ptr uint8;
-                           pass_len: cint; cb: pem_password_cb_553649680;
+                           pass_len: cint; cb: pem_password_cb_553649682;
                            u: pointer): cint {.cdecl,
       importc: "PEM_ASN1_write_bio".}
 else:
@@ -76444,7 +76469,7 @@ else:
 when not declared(PEM_X509_INFO_read_bio):
   proc PEM_X509_INFO_read_bio*(bp: ptr BIO_553648984;
                                sk: ptr struct_stack_st_X509_INFO;
-                               cb: pem_password_cb_553649680; u: pointer): ptr struct_stack_st_X509_INFO {.
+                               cb: pem_password_cb_553649682; u: pointer): ptr struct_stack_st_X509_INFO {.
       cdecl, importc: "PEM_X509_INFO_read_bio".}
 else:
   static :
@@ -76453,7 +76478,7 @@ else:
 when not declared(PEM_X509_INFO_write_bio):
   proc PEM_X509_INFO_write_bio*(bp: ptr BIO_553648984; xi: ptr X509_INFO_553648958;
                                 enc: ptr EVP_CIPHER_553649062; kstr: ptr uint8;
-                                klen: cint; cd: pem_password_cb_553649680;
+                                klen: cint; cd: pem_password_cb_553649682;
                                 u: pointer): cint {.cdecl,
       importc: "PEM_X509_INFO_write_bio".}
 else:
@@ -76461,41 +76486,41 @@ else:
     hint("Declaration of " & "PEM_X509_INFO_write_bio" &
         " already exists, not redeclaring")
 when not declared(PEM_X509_INFO_read):
-  proc PEM_X509_INFO_read*(fp: ptr Cfile_553649262;
+  proc PEM_X509_INFO_read*(fp: ptr Cfile_553649264;
                            sk: ptr struct_stack_st_X509_INFO;
-                           cb: pem_password_cb_553649680; u: pointer): ptr struct_stack_st_X509_INFO {.
+                           cb: pem_password_cb_553649682; u: pointer): ptr struct_stack_st_X509_INFO {.
       cdecl, importc: "PEM_X509_INFO_read".}
 else:
   static :
     hint("Declaration of " & "PEM_X509_INFO_read" &
         " already exists, not redeclaring")
 when not declared(PEM_read):
-  proc PEM_read*(fp: ptr Cfile_553649262; name: ptr cstring;
+  proc PEM_read*(fp: ptr Cfile_553649264; name: ptr cstring;
                  header: ptr cstring; data: ptr ptr uint8; len: ptr clong): cint {.
       cdecl, importc: "PEM_read".}
 else:
   static :
     hint("Declaration of " & "PEM_read" & " already exists, not redeclaring")
 when not declared(PEM_write):
-  proc PEM_write*(fp: ptr Cfile_553649262; name: cstring; hdr: cstring;
+  proc PEM_write*(fp: ptr Cfile_553649264; name: cstring; hdr: cstring;
                   data: ptr uint8; len: clong): cint {.cdecl,
       importc: "PEM_write".}
 else:
   static :
     hint("Declaration of " & "PEM_write" & " already exists, not redeclaring")
 when not declared(PEM_ASN1_read):
-  proc PEM_ASN1_read*(d2i: d2i_of_void_553649350; name: cstring; fp: ptr Cfile_553649262;
-                      x: ptr pointer; cb: pem_password_cb_553649680; u: pointer): pointer {.
+  proc PEM_ASN1_read*(d2i: d2i_of_void_553649352; name: cstring; fp: ptr Cfile_553649264;
+                      x: ptr pointer; cb: pem_password_cb_553649682; u: pointer): pointer {.
       cdecl, importc: "PEM_ASN1_read".}
 else:
   static :
     hint("Declaration of " & "PEM_ASN1_read" &
         " already exists, not redeclaring")
 when not declared(PEM_ASN1_write):
-  proc PEM_ASN1_write*(i2d: i2d_of_void_553649352; name: cstring; fp: ptr Cfile_553649262;
+  proc PEM_ASN1_write*(i2d: i2d_of_void_553649354; name: cstring; fp: ptr Cfile_553649264;
                        x: pointer; enc: ptr EVP_CIPHER_553649062;
                        pass: ptr uint8; pass_len: cint;
-                       callback: pem_password_cb_553649680; u: pointer): cint {.
+                       callback: pem_password_cb_553649682; u: pointer): cint {.
       cdecl, importc: "PEM_ASN1_write".}
 else:
   static :
@@ -76510,60 +76535,60 @@ else:
     hint("Declaration of " & "PEM_def_callback" &
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_X509):
-  proc PEM_read_bio_X509*(bp: ptr BIO_553648984; x: ptr ptr X509_553649236;
-                          cb: pem_password_cb_553649680; u: pointer): ptr X509_553649236 {.
+  proc PEM_read_bio_X509*(bp: ptr BIO_553648984; x: ptr ptr X509_553649238;
+                          cb: pem_password_cb_553649682; u: pointer): ptr X509_553649238 {.
       cdecl, importc: "PEM_read_bio_X509".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_X509" &
         " already exists, not redeclaring")
 when not declared(PEM_read_X509):
-  proc PEM_read_X509*(fp: ptr Cfile_553649262; x: ptr ptr X509_553649236;
-                      cb: pem_password_cb_553649680; u: pointer): ptr X509_553649236 {.
+  proc PEM_read_X509*(fp: ptr Cfile_553649264; x: ptr ptr X509_553649238;
+                      cb: pem_password_cb_553649682; u: pointer): ptr X509_553649238 {.
       cdecl, importc: "PEM_read_X509".}
 else:
   static :
     hint("Declaration of " & "PEM_read_X509" &
         " already exists, not redeclaring")
 when not declared(PEM_write_bio_X509):
-  proc PEM_write_bio_X509*(bp: ptr BIO_553648984; x: ptr X509_553649236): cint {.
+  proc PEM_write_bio_X509*(bp: ptr BIO_553648984; x: ptr X509_553649238): cint {.
       cdecl, importc: "PEM_write_bio_X509".}
 else:
   static :
     hint("Declaration of " & "PEM_write_bio_X509" &
         " already exists, not redeclaring")
 when not declared(PEM_write_X509):
-  proc PEM_write_X509*(fp: ptr Cfile_553649262; x: ptr X509_553649236): cint {.
+  proc PEM_write_X509*(fp: ptr Cfile_553649264; x: ptr X509_553649238): cint {.
       cdecl, importc: "PEM_write_X509".}
 else:
   static :
     hint("Declaration of " & "PEM_write_X509" &
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_X509_AUX):
-  proc PEM_read_bio_X509_AUX*(bp: ptr BIO_553648984; x: ptr ptr X509_553649236;
-                              cb: pem_password_cb_553649680; u: pointer): ptr X509_553649236 {.
+  proc PEM_read_bio_X509_AUX*(bp: ptr BIO_553648984; x: ptr ptr X509_553649238;
+                              cb: pem_password_cb_553649682; u: pointer): ptr X509_553649238 {.
       cdecl, importc: "PEM_read_bio_X509_AUX".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_X509_AUX" &
         " already exists, not redeclaring")
 when not declared(PEM_read_X509_AUX):
-  proc PEM_read_X509_AUX*(fp: ptr Cfile_553649262; x: ptr ptr X509_553649236;
-                          cb: pem_password_cb_553649680; u: pointer): ptr X509_553649236 {.
+  proc PEM_read_X509_AUX*(fp: ptr Cfile_553649264; x: ptr ptr X509_553649238;
+                          cb: pem_password_cb_553649682; u: pointer): ptr X509_553649238 {.
       cdecl, importc: "PEM_read_X509_AUX".}
 else:
   static :
     hint("Declaration of " & "PEM_read_X509_AUX" &
         " already exists, not redeclaring")
 when not declared(PEM_write_bio_X509_AUX):
-  proc PEM_write_bio_X509_AUX*(bp: ptr BIO_553648984; x: ptr X509_553649236): cint {.
+  proc PEM_write_bio_X509_AUX*(bp: ptr BIO_553648984; x: ptr X509_553649238): cint {.
       cdecl, importc: "PEM_write_bio_X509_AUX".}
 else:
   static :
     hint("Declaration of " & "PEM_write_bio_X509_AUX" &
         " already exists, not redeclaring")
 when not declared(PEM_write_X509_AUX):
-  proc PEM_write_X509_AUX*(fp: ptr Cfile_553649262; x: ptr X509_553649236): cint {.
+  proc PEM_write_X509_AUX*(fp: ptr Cfile_553649264; x: ptr X509_553649238): cint {.
       cdecl, importc: "PEM_write_X509_AUX".}
 else:
   static :
@@ -76571,15 +76596,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_X509_REQ):
   proc PEM_read_bio_X509_REQ*(bp: ptr BIO_553648984; x: ptr ptr X509_REQ_553648968;
-                              cb: pem_password_cb_553649680; u: pointer): ptr X509_REQ_553648968 {.
+                              cb: pem_password_cb_553649682; u: pointer): ptr X509_REQ_553648968 {.
       cdecl, importc: "PEM_read_bio_X509_REQ".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_X509_REQ" &
         " already exists, not redeclaring")
 when not declared(PEM_read_X509_REQ):
-  proc PEM_read_X509_REQ*(fp: ptr Cfile_553649262; x: ptr ptr X509_REQ_553648968;
-                          cb: pem_password_cb_553649680; u: pointer): ptr X509_REQ_553648968 {.
+  proc PEM_read_X509_REQ*(fp: ptr Cfile_553649264; x: ptr ptr X509_REQ_553648968;
+                          cb: pem_password_cb_553649682; u: pointer): ptr X509_REQ_553648968 {.
       cdecl, importc: "PEM_read_X509_REQ".}
 else:
   static :
@@ -76593,7 +76618,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_X509_REQ" &
         " already exists, not redeclaring")
 when not declared(PEM_write_X509_REQ):
-  proc PEM_write_X509_REQ*(fp: ptr Cfile_553649262; x: ptr X509_REQ_553648968): cint {.
+  proc PEM_write_X509_REQ*(fp: ptr Cfile_553649264; x: ptr X509_REQ_553648968): cint {.
       cdecl, importc: "PEM_write_X509_REQ".}
 else:
   static :
@@ -76607,7 +76632,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_X509_REQ_NEW" &
         " already exists, not redeclaring")
 when not declared(PEM_write_X509_REQ_NEW):
-  proc PEM_write_X509_REQ_NEW*(fp: ptr Cfile_553649262; x: ptr X509_REQ_553648968): cint {.
+  proc PEM_write_X509_REQ_NEW*(fp: ptr Cfile_553649264; x: ptr X509_REQ_553648968): cint {.
       cdecl, importc: "PEM_write_X509_REQ_NEW".}
 else:
   static :
@@ -76615,15 +76640,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_X509_CRL):
   proc PEM_read_bio_X509_CRL*(bp: ptr BIO_553648984; x: ptr ptr X509_CRL_553648954;
-                              cb: pem_password_cb_553649680; u: pointer): ptr X509_CRL_553648954 {.
+                              cb: pem_password_cb_553649682; u: pointer): ptr X509_CRL_553648954 {.
       cdecl, importc: "PEM_read_bio_X509_CRL".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_X509_CRL" &
         " already exists, not redeclaring")
 when not declared(PEM_read_X509_CRL):
-  proc PEM_read_X509_CRL*(fp: ptr Cfile_553649262; x: ptr ptr X509_CRL_553648954;
-                          cb: pem_password_cb_553649680; u: pointer): ptr X509_CRL_553648954 {.
+  proc PEM_read_X509_CRL*(fp: ptr Cfile_553649264; x: ptr ptr X509_CRL_553648954;
+                          cb: pem_password_cb_553649682; u: pointer): ptr X509_CRL_553648954 {.
       cdecl, importc: "PEM_read_X509_CRL".}
 else:
   static :
@@ -76637,7 +76662,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_X509_CRL" &
         " already exists, not redeclaring")
 when not declared(PEM_write_X509_CRL):
-  proc PEM_write_X509_CRL*(fp: ptr Cfile_553649262; x: ptr X509_CRL_553648954): cint {.
+  proc PEM_write_X509_CRL*(fp: ptr Cfile_553649264; x: ptr X509_CRL_553648954): cint {.
       cdecl, importc: "PEM_write_X509_CRL".}
 else:
   static :
@@ -76645,15 +76670,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_PKCS7):
   proc PEM_read_bio_PKCS7*(bp: ptr BIO_553648984; x: ptr ptr PKCS7_553649136;
-                           cb: pem_password_cb_553649680; u: pointer): ptr PKCS7_553649136 {.
+                           cb: pem_password_cb_553649682; u: pointer): ptr PKCS7_553649136 {.
       cdecl, importc: "PEM_read_bio_PKCS7".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_PKCS7" &
         " already exists, not redeclaring")
 when not declared(PEM_read_PKCS7):
-  proc PEM_read_PKCS7*(fp: ptr Cfile_553649262; x: ptr ptr PKCS7_553649136;
-                       cb: pem_password_cb_553649680; u: pointer): ptr PKCS7_553649136 {.
+  proc PEM_read_PKCS7*(fp: ptr Cfile_553649264; x: ptr ptr PKCS7_553649136;
+                       cb: pem_password_cb_553649682; u: pointer): ptr PKCS7_553649136 {.
       cdecl, importc: "PEM_read_PKCS7".}
 else:
   static :
@@ -76667,7 +76692,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_PKCS7" &
         " already exists, not redeclaring")
 when not declared(PEM_write_PKCS7):
-  proc PEM_write_PKCS7*(fp: ptr Cfile_553649262; x: ptr PKCS7_553649136): cint {.
+  proc PEM_write_PKCS7*(fp: ptr Cfile_553649264; x: ptr PKCS7_553649136): cint {.
       cdecl, importc: "PEM_write_PKCS7".}
 else:
   static :
@@ -76675,15 +76700,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_PKCS8):
   proc PEM_read_bio_PKCS8*(bp: ptr BIO_553648984; x: ptr ptr X509_SIG_553648972;
-                           cb: pem_password_cb_553649680; u: pointer): ptr X509_SIG_553648972 {.
+                           cb: pem_password_cb_553649682; u: pointer): ptr X509_SIG_553648972 {.
       cdecl, importc: "PEM_read_bio_PKCS8".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_PKCS8" &
         " already exists, not redeclaring")
 when not declared(PEM_read_PKCS8):
-  proc PEM_read_PKCS8*(fp: ptr Cfile_553649262; x: ptr ptr X509_SIG_553648972;
-                       cb: pem_password_cb_553649680; u: pointer): ptr X509_SIG_553648972 {.
+  proc PEM_read_PKCS8*(fp: ptr Cfile_553649264; x: ptr ptr X509_SIG_553648972;
+                       cb: pem_password_cb_553649682; u: pointer): ptr X509_SIG_553648972 {.
       cdecl, importc: "PEM_read_PKCS8".}
 else:
   static :
@@ -76697,7 +76722,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_PKCS8" &
         " already exists, not redeclaring")
 when not declared(PEM_write_PKCS8):
-  proc PEM_write_PKCS8*(fp: ptr Cfile_553649262; x: ptr X509_SIG_553648972): cint {.
+  proc PEM_write_PKCS8*(fp: ptr Cfile_553649264; x: ptr X509_SIG_553648972): cint {.
       cdecl, importc: "PEM_write_PKCS8".}
 else:
   static :
@@ -76705,7 +76730,7 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_PKCS8_PRIV_KEY_INFO):
   proc PEM_read_bio_PKCS8_PRIV_KEY_INFO*(bp: ptr BIO_553648984;
-      x: ptr ptr PKCS8_PRIV_KEY_INFO_553649142; cb: pem_password_cb_553649680;
+      x: ptr ptr PKCS8_PRIV_KEY_INFO_553649142; cb: pem_password_cb_553649682;
       u: pointer): ptr PKCS8_PRIV_KEY_INFO_553649142 {.cdecl,
       importc: "PEM_read_bio_PKCS8_PRIV_KEY_INFO".}
 else:
@@ -76713,9 +76738,9 @@ else:
     hint("Declaration of " & "PEM_read_bio_PKCS8_PRIV_KEY_INFO" &
         " already exists, not redeclaring")
 when not declared(PEM_read_PKCS8_PRIV_KEY_INFO):
-  proc PEM_read_PKCS8_PRIV_KEY_INFO*(fp: ptr Cfile_553649262;
+  proc PEM_read_PKCS8_PRIV_KEY_INFO*(fp: ptr Cfile_553649264;
                                      x: ptr ptr PKCS8_PRIV_KEY_INFO_553649142;
-                                     cb: pem_password_cb_553649680; u: pointer): ptr PKCS8_PRIV_KEY_INFO_553649142 {.
+                                     cb: pem_password_cb_553649682; u: pointer): ptr PKCS8_PRIV_KEY_INFO_553649142 {.
       cdecl, importc: "PEM_read_PKCS8_PRIV_KEY_INFO".}
 else:
   static :
@@ -76730,7 +76755,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_PKCS8_PRIV_KEY_INFO" &
         " already exists, not redeclaring")
 when not declared(PEM_write_PKCS8_PRIV_KEY_INFO):
-  proc PEM_write_PKCS8_PRIV_KEY_INFO*(fp: ptr Cfile_553649262;
+  proc PEM_write_PKCS8_PRIV_KEY_INFO*(fp: ptr Cfile_553649264;
                                       x: ptr PKCS8_PRIV_KEY_INFO_553649142): cint {.
       cdecl, importc: "PEM_write_PKCS8_PRIV_KEY_INFO".}
 else:
@@ -76738,35 +76763,35 @@ else:
     hint("Declaration of " & "PEM_write_PKCS8_PRIV_KEY_INFO" &
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_RSAPrivateKey):
-  proc PEM_read_bio_RSAPrivateKey*(bp: ptr BIO_553648984; x: ptr ptr RSA_553649160;
-                                   cb: pem_password_cb_553649680; u: pointer): ptr RSA_553649160 {.
+  proc PEM_read_bio_RSAPrivateKey*(bp: ptr BIO_553648984; x: ptr ptr RSA_553649162;
+                                   cb: pem_password_cb_553649682; u: pointer): ptr RSA_553649162 {.
       cdecl, importc: "PEM_read_bio_RSAPrivateKey".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_RSAPrivateKey" &
         " already exists, not redeclaring")
 when not declared(PEM_read_RSAPrivateKey):
-  proc PEM_read_RSAPrivateKey*(fp: ptr Cfile_553649262; x: ptr ptr RSA_553649160;
-                               cb: pem_password_cb_553649680; u: pointer): ptr RSA_553649160 {.
+  proc PEM_read_RSAPrivateKey*(fp: ptr Cfile_553649264; x: ptr ptr RSA_553649162;
+                               cb: pem_password_cb_553649682; u: pointer): ptr RSA_553649162 {.
       cdecl, importc: "PEM_read_RSAPrivateKey".}
 else:
   static :
     hint("Declaration of " & "PEM_read_RSAPrivateKey" &
         " already exists, not redeclaring")
 when not declared(PEM_write_bio_RSAPrivateKey):
-  proc PEM_write_bio_RSAPrivateKey*(bp: ptr BIO_553648984; x: ptr RSA_553649160;
+  proc PEM_write_bio_RSAPrivateKey*(bp: ptr BIO_553648984; x: ptr RSA_553649162;
                                     enc: ptr EVP_CIPHER_553649062;
                                     pass: ptr uint8; pass_len: cint;
-                                    cb: pem_password_cb_553649680; u: pointer): cint {.
+                                    cb: pem_password_cb_553649682; u: pointer): cint {.
       cdecl, importc: "PEM_write_bio_RSAPrivateKey".}
 else:
   static :
     hint("Declaration of " & "PEM_write_bio_RSAPrivateKey" &
         " already exists, not redeclaring")
 when not declared(PEM_write_RSAPrivateKey):
-  proc PEM_write_RSAPrivateKey*(fp: ptr Cfile_553649262; x: ptr RSA_553649160;
+  proc PEM_write_RSAPrivateKey*(fp: ptr Cfile_553649264; x: ptr RSA_553649162;
                                 enc: ptr EVP_CIPHER_553649062; pass: ptr uint8;
-                                pass_len: cint; cb: pem_password_cb_553649680;
+                                pass_len: cint; cb: pem_password_cb_553649682;
                                 u: pointer): cint {.cdecl,
       importc: "PEM_write_RSAPrivateKey".}
 else:
@@ -76774,60 +76799,60 @@ else:
     hint("Declaration of " & "PEM_write_RSAPrivateKey" &
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_RSAPublicKey):
-  proc PEM_read_bio_RSAPublicKey*(bp: ptr BIO_553648984; x: ptr ptr RSA_553649160;
-                                  cb: pem_password_cb_553649680; u: pointer): ptr RSA_553649160 {.
+  proc PEM_read_bio_RSAPublicKey*(bp: ptr BIO_553648984; x: ptr ptr RSA_553649162;
+                                  cb: pem_password_cb_553649682; u: pointer): ptr RSA_553649162 {.
       cdecl, importc: "PEM_read_bio_RSAPublicKey".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_RSAPublicKey" &
         " already exists, not redeclaring")
 when not declared(PEM_read_RSAPublicKey):
-  proc PEM_read_RSAPublicKey*(fp: ptr Cfile_553649262; x: ptr ptr RSA_553649160;
-                              cb: pem_password_cb_553649680; u: pointer): ptr RSA_553649160 {.
+  proc PEM_read_RSAPublicKey*(fp: ptr Cfile_553649264; x: ptr ptr RSA_553649162;
+                              cb: pem_password_cb_553649682; u: pointer): ptr RSA_553649162 {.
       cdecl, importc: "PEM_read_RSAPublicKey".}
 else:
   static :
     hint("Declaration of " & "PEM_read_RSAPublicKey" &
         " already exists, not redeclaring")
 when not declared(PEM_write_bio_RSAPublicKey):
-  proc PEM_write_bio_RSAPublicKey*(bp: ptr BIO_553648984; x: ptr RSA_553649160): cint {.
+  proc PEM_write_bio_RSAPublicKey*(bp: ptr BIO_553648984; x: ptr RSA_553649162): cint {.
       cdecl, importc: "PEM_write_bio_RSAPublicKey".}
 else:
   static :
     hint("Declaration of " & "PEM_write_bio_RSAPublicKey" &
         " already exists, not redeclaring")
 when not declared(PEM_write_RSAPublicKey):
-  proc PEM_write_RSAPublicKey*(fp: ptr Cfile_553649262; x: ptr RSA_553649160): cint {.
+  proc PEM_write_RSAPublicKey*(fp: ptr Cfile_553649264; x: ptr RSA_553649162): cint {.
       cdecl, importc: "PEM_write_RSAPublicKey".}
 else:
   static :
     hint("Declaration of " & "PEM_write_RSAPublicKey" &
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_RSA_PUBKEY):
-  proc PEM_read_bio_RSA_PUBKEY*(bp: ptr BIO_553648984; x: ptr ptr RSA_553649160;
-                                cb: pem_password_cb_553649680; u: pointer): ptr RSA_553649160 {.
+  proc PEM_read_bio_RSA_PUBKEY*(bp: ptr BIO_553648984; x: ptr ptr RSA_553649162;
+                                cb: pem_password_cb_553649682; u: pointer): ptr RSA_553649162 {.
       cdecl, importc: "PEM_read_bio_RSA_PUBKEY".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_RSA_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(PEM_read_RSA_PUBKEY):
-  proc PEM_read_RSA_PUBKEY*(fp: ptr Cfile_553649262; x: ptr ptr RSA_553649160;
-                            cb: pem_password_cb_553649680; u: pointer): ptr RSA_553649160 {.
+  proc PEM_read_RSA_PUBKEY*(fp: ptr Cfile_553649264; x: ptr ptr RSA_553649162;
+                            cb: pem_password_cb_553649682; u: pointer): ptr RSA_553649162 {.
       cdecl, importc: "PEM_read_RSA_PUBKEY".}
 else:
   static :
     hint("Declaration of " & "PEM_read_RSA_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(PEM_write_bio_RSA_PUBKEY):
-  proc PEM_write_bio_RSA_PUBKEY*(bp: ptr BIO_553648984; x: ptr RSA_553649160): cint {.
+  proc PEM_write_bio_RSA_PUBKEY*(bp: ptr BIO_553648984; x: ptr RSA_553649162): cint {.
       cdecl, importc: "PEM_write_bio_RSA_PUBKEY".}
 else:
   static :
     hint("Declaration of " & "PEM_write_bio_RSA_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(PEM_write_RSA_PUBKEY):
-  proc PEM_write_RSA_PUBKEY*(fp: ptr Cfile_553649262; x: ptr RSA_553649160): cint {.
+  proc PEM_write_RSA_PUBKEY*(fp: ptr Cfile_553649264; x: ptr RSA_553649162): cint {.
       cdecl, importc: "PEM_write_RSA_PUBKEY".}
 else:
   static :
@@ -76835,15 +76860,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_DSAPrivateKey):
   proc PEM_read_bio_DSAPrivateKey*(bp: ptr BIO_553648984; x: ptr ptr DSA_553649030;
-                                   cb: pem_password_cb_553649680; u: pointer): ptr DSA_553649030 {.
+                                   cb: pem_password_cb_553649682; u: pointer): ptr DSA_553649030 {.
       cdecl, importc: "PEM_read_bio_DSAPrivateKey".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_DSAPrivateKey" &
         " already exists, not redeclaring")
 when not declared(PEM_read_DSAPrivateKey):
-  proc PEM_read_DSAPrivateKey*(fp: ptr Cfile_553649262; x: ptr ptr DSA_553649030;
-                               cb: pem_password_cb_553649680; u: pointer): ptr DSA_553649030 {.
+  proc PEM_read_DSAPrivateKey*(fp: ptr Cfile_553649264; x: ptr ptr DSA_553649030;
+                               cb: pem_password_cb_553649682; u: pointer): ptr DSA_553649030 {.
       cdecl, importc: "PEM_read_DSAPrivateKey".}
 else:
   static :
@@ -76853,16 +76878,16 @@ when not declared(PEM_write_bio_DSAPrivateKey):
   proc PEM_write_bio_DSAPrivateKey*(bp: ptr BIO_553648984; x: ptr DSA_553649030;
                                     enc: ptr EVP_CIPHER_553649062;
                                     pass: ptr uint8; pass_len: cint;
-                                    cb: pem_password_cb_553649680; u: pointer): cint {.
+                                    cb: pem_password_cb_553649682; u: pointer): cint {.
       cdecl, importc: "PEM_write_bio_DSAPrivateKey".}
 else:
   static :
     hint("Declaration of " & "PEM_write_bio_DSAPrivateKey" &
         " already exists, not redeclaring")
 when not declared(PEM_write_DSAPrivateKey):
-  proc PEM_write_DSAPrivateKey*(fp: ptr Cfile_553649262; x: ptr DSA_553649030;
+  proc PEM_write_DSAPrivateKey*(fp: ptr Cfile_553649264; x: ptr DSA_553649030;
                                 enc: ptr EVP_CIPHER_553649062; pass: ptr uint8;
-                                pass_len: cint; cb: pem_password_cb_553649680;
+                                pass_len: cint; cb: pem_password_cb_553649682;
                                 u: pointer): cint {.cdecl,
       importc: "PEM_write_DSAPrivateKey".}
 else:
@@ -76871,15 +76896,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_DSA_PUBKEY):
   proc PEM_read_bio_DSA_PUBKEY*(bp: ptr BIO_553648984; x: ptr ptr DSA_553649030;
-                                cb: pem_password_cb_553649680; u: pointer): ptr DSA_553649030 {.
+                                cb: pem_password_cb_553649682; u: pointer): ptr DSA_553649030 {.
       cdecl, importc: "PEM_read_bio_DSA_PUBKEY".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_DSA_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(PEM_read_DSA_PUBKEY):
-  proc PEM_read_DSA_PUBKEY*(fp: ptr Cfile_553649262; x: ptr ptr DSA_553649030;
-                            cb: pem_password_cb_553649680; u: pointer): ptr DSA_553649030 {.
+  proc PEM_read_DSA_PUBKEY*(fp: ptr Cfile_553649264; x: ptr ptr DSA_553649030;
+                            cb: pem_password_cb_553649682; u: pointer): ptr DSA_553649030 {.
       cdecl, importc: "PEM_read_DSA_PUBKEY".}
 else:
   static :
@@ -76893,7 +76918,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_DSA_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(PEM_write_DSA_PUBKEY):
-  proc PEM_write_DSA_PUBKEY*(fp: ptr Cfile_553649262; x: ptr DSA_553649030): cint {.
+  proc PEM_write_DSA_PUBKEY*(fp: ptr Cfile_553649264; x: ptr DSA_553649030): cint {.
       cdecl, importc: "PEM_write_DSA_PUBKEY".}
 else:
   static :
@@ -76901,15 +76926,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_DSAparams):
   proc PEM_read_bio_DSAparams*(bp: ptr BIO_553648984; x: ptr ptr DSA_553649030;
-                               cb: pem_password_cb_553649680; u: pointer): ptr DSA_553649030 {.
+                               cb: pem_password_cb_553649682; u: pointer): ptr DSA_553649030 {.
       cdecl, importc: "PEM_read_bio_DSAparams".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_DSAparams" &
         " already exists, not redeclaring")
 when not declared(PEM_read_DSAparams):
-  proc PEM_read_DSAparams*(fp: ptr Cfile_553649262; x: ptr ptr DSA_553649030;
-                           cb: pem_password_cb_553649680; u: pointer): ptr DSA_553649030 {.
+  proc PEM_read_DSAparams*(fp: ptr Cfile_553649264; x: ptr ptr DSA_553649030;
+                           cb: pem_password_cb_553649682; u: pointer): ptr DSA_553649030 {.
       cdecl, importc: "PEM_read_DSAparams".}
 else:
   static :
@@ -76923,7 +76948,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_DSAparams" &
         " already exists, not redeclaring")
 when not declared(PEM_write_DSAparams):
-  proc PEM_write_DSAparams*(fp: ptr Cfile_553649262; x: ptr DSA_553649030): cint {.
+  proc PEM_write_DSAparams*(fp: ptr Cfile_553649264; x: ptr DSA_553649030): cint {.
       cdecl, importc: "PEM_write_DSAparams".}
 else:
   static :
@@ -76931,15 +76956,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_ECPrivateKey):
   proc PEM_read_bio_ECPrivateKey*(bp: ptr BIO_553648984; x: ptr ptr EC_KEY_553649034;
-                                  cb: pem_password_cb_553649680; u: pointer): ptr EC_KEY_553649034 {.
+                                  cb: pem_password_cb_553649682; u: pointer): ptr EC_KEY_553649034 {.
       cdecl, importc: "PEM_read_bio_ECPrivateKey".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_ECPrivateKey" &
         " already exists, not redeclaring")
 when not declared(PEM_read_ECPrivateKey):
-  proc PEM_read_ECPrivateKey*(fp: ptr Cfile_553649262; x: ptr ptr EC_KEY_553649034;
-                              cb: pem_password_cb_553649680; u: pointer): ptr EC_KEY_553649034 {.
+  proc PEM_read_ECPrivateKey*(fp: ptr Cfile_553649264; x: ptr ptr EC_KEY_553649034;
+                              cb: pem_password_cb_553649682; u: pointer): ptr EC_KEY_553649034 {.
       cdecl, importc: "PEM_read_ECPrivateKey".}
 else:
   static :
@@ -76949,16 +76974,16 @@ when not declared(PEM_write_bio_ECPrivateKey):
   proc PEM_write_bio_ECPrivateKey*(bp: ptr BIO_553648984; x: ptr EC_KEY_553649034;
                                    enc: ptr EVP_CIPHER_553649062;
                                    pass: ptr uint8; pass_len: cint;
-                                   cb: pem_password_cb_553649680; u: pointer): cint {.
+                                   cb: pem_password_cb_553649682; u: pointer): cint {.
       cdecl, importc: "PEM_write_bio_ECPrivateKey".}
 else:
   static :
     hint("Declaration of " & "PEM_write_bio_ECPrivateKey" &
         " already exists, not redeclaring")
 when not declared(PEM_write_ECPrivateKey):
-  proc PEM_write_ECPrivateKey*(fp: ptr Cfile_553649262; x: ptr EC_KEY_553649034;
+  proc PEM_write_ECPrivateKey*(fp: ptr Cfile_553649264; x: ptr EC_KEY_553649034;
                                enc: ptr EVP_CIPHER_553649062; pass: ptr uint8;
-                               pass_len: cint; cb: pem_password_cb_553649680;
+                               pass_len: cint; cb: pem_password_cb_553649682;
                                u: pointer): cint {.cdecl,
       importc: "PEM_write_ECPrivateKey".}
 else:
@@ -76967,15 +76992,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_EC_PUBKEY):
   proc PEM_read_bio_EC_PUBKEY*(bp: ptr BIO_553648984; x: ptr ptr EC_KEY_553649034;
-                               cb: pem_password_cb_553649680; u: pointer): ptr EC_KEY_553649034 {.
+                               cb: pem_password_cb_553649682; u: pointer): ptr EC_KEY_553649034 {.
       cdecl, importc: "PEM_read_bio_EC_PUBKEY".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_EC_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(PEM_read_EC_PUBKEY):
-  proc PEM_read_EC_PUBKEY*(fp: ptr Cfile_553649262; x: ptr ptr EC_KEY_553649034;
-                           cb: pem_password_cb_553649680; u: pointer): ptr EC_KEY_553649034 {.
+  proc PEM_read_EC_PUBKEY*(fp: ptr Cfile_553649264; x: ptr ptr EC_KEY_553649034;
+                           cb: pem_password_cb_553649682; u: pointer): ptr EC_KEY_553649034 {.
       cdecl, importc: "PEM_read_EC_PUBKEY".}
 else:
   static :
@@ -76989,7 +77014,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_EC_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(PEM_write_EC_PUBKEY):
-  proc PEM_write_EC_PUBKEY*(fp: ptr Cfile_553649262; x: ptr EC_KEY_553649034): cint {.
+  proc PEM_write_EC_PUBKEY*(fp: ptr Cfile_553649264; x: ptr EC_KEY_553649034): cint {.
       cdecl, importc: "PEM_write_EC_PUBKEY".}
 else:
   static :
@@ -76997,15 +77022,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_DHparams):
   proc PEM_read_bio_DHparams*(bp: ptr BIO_553648984; x: ptr ptr DH_553649028;
-                              cb: pem_password_cb_553649680; u: pointer): ptr DH_553649028 {.
+                              cb: pem_password_cb_553649682; u: pointer): ptr DH_553649028 {.
       cdecl, importc: "PEM_read_bio_DHparams".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_DHparams" &
         " already exists, not redeclaring")
 when not declared(PEM_read_DHparams):
-  proc PEM_read_DHparams*(fp: ptr Cfile_553649262; x: ptr ptr DH_553649028;
-                          cb: pem_password_cb_553649680; u: pointer): ptr DH_553649028 {.
+  proc PEM_read_DHparams*(fp: ptr Cfile_553649264; x: ptr ptr DH_553649028;
+                          cb: pem_password_cb_553649682; u: pointer): ptr DH_553649028 {.
       cdecl, importc: "PEM_read_DHparams".}
 else:
   static :
@@ -77019,7 +77044,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_DHparams" &
         " already exists, not redeclaring")
 when not declared(PEM_write_DHparams):
-  proc PEM_write_DHparams*(fp: ptr Cfile_553649262; x: ptr DH_553649028): cint {.
+  proc PEM_write_DHparams*(fp: ptr Cfile_553649264; x: ptr DH_553649028): cint {.
       cdecl, importc: "PEM_write_DHparams".}
 else:
   static :
@@ -77027,15 +77052,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_PrivateKey):
   proc PEM_read_bio_PrivateKey*(bp: ptr BIO_553648984; x: ptr ptr EVP_PKEY_553649086;
-                                cb: pem_password_cb_553649680; u: pointer): ptr EVP_PKEY_553649086 {.
+                                cb: pem_password_cb_553649682; u: pointer): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "PEM_read_bio_PrivateKey".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_PrivateKey" &
         " already exists, not redeclaring")
 when not declared(PEM_read_PrivateKey):
-  proc PEM_read_PrivateKey*(fp: ptr Cfile_553649262; x: ptr ptr EVP_PKEY_553649086;
-                            cb: pem_password_cb_553649680; u: pointer): ptr EVP_PKEY_553649086 {.
+  proc PEM_read_PrivateKey*(fp: ptr Cfile_553649264; x: ptr ptr EVP_PKEY_553649086;
+                            cb: pem_password_cb_553649682; u: pointer): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "PEM_read_PrivateKey".}
 else:
   static :
@@ -77044,7 +77069,7 @@ else:
 when not declared(PEM_write_bio_PrivateKey):
   proc PEM_write_bio_PrivateKey*(bp: ptr BIO_553648984; x: ptr EVP_PKEY_553649086;
                                  enc: ptr EVP_CIPHER_553649062; pass: ptr uint8;
-                                 pass_len: cint; cb: pem_password_cb_553649680;
+                                 pass_len: cint; cb: pem_password_cb_553649682;
                                  u: pointer): cint {.cdecl,
       importc: "PEM_write_bio_PrivateKey".}
 else:
@@ -77052,9 +77077,9 @@ else:
     hint("Declaration of " & "PEM_write_bio_PrivateKey" &
         " already exists, not redeclaring")
 when not declared(PEM_write_PrivateKey):
-  proc PEM_write_PrivateKey*(fp: ptr Cfile_553649262; x: ptr EVP_PKEY_553649086;
+  proc PEM_write_PrivateKey*(fp: ptr Cfile_553649264; x: ptr EVP_PKEY_553649086;
                              enc: ptr EVP_CIPHER_553649062; pass: ptr uint8;
-                             pass_len: cint; cb: pem_password_cb_553649680;
+                             pass_len: cint; cb: pem_password_cb_553649682;
                              u: pointer): cint {.cdecl,
       importc: "PEM_write_PrivateKey".}
 else:
@@ -77063,15 +77088,15 @@ else:
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_PUBKEY):
   proc PEM_read_bio_PUBKEY*(bp: ptr BIO_553648984; x: ptr ptr EVP_PKEY_553649086;
-                            cb: pem_password_cb_553649680; u: pointer): ptr EVP_PKEY_553649086 {.
+                            cb: pem_password_cb_553649682; u: pointer): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "PEM_read_bio_PUBKEY".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(PEM_read_PUBKEY):
-  proc PEM_read_PUBKEY*(fp: ptr Cfile_553649262; x: ptr ptr EVP_PKEY_553649086;
-                        cb: pem_password_cb_553649680; u: pointer): ptr EVP_PKEY_553649086 {.
+  proc PEM_read_PUBKEY*(fp: ptr Cfile_553649264; x: ptr ptr EVP_PKEY_553649086;
+                        cb: pem_password_cb_553649682; u: pointer): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "PEM_read_PUBKEY".}
 else:
   static :
@@ -77085,7 +77110,7 @@ else:
     hint("Declaration of " & "PEM_write_bio_PUBKEY" &
         " already exists, not redeclaring")
 when not declared(PEM_write_PUBKEY):
-  proc PEM_write_PUBKEY*(fp: ptr Cfile_553649262; x: ptr EVP_PKEY_553649086): cint {.
+  proc PEM_write_PUBKEY*(fp: ptr Cfile_553649264; x: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "PEM_write_PUBKEY".}
 else:
   static :
@@ -77094,7 +77119,7 @@ else:
 when not declared(PEM_write_bio_PKCS8PrivateKey_nid):
   proc PEM_write_bio_PKCS8PrivateKey_nid*(bp: ptr BIO_553648984;
       x: ptr EVP_PKEY_553649086; nid: cint; pass: cstring; pass_len: cint;
-      cb: pem_password_cb_553649680; u: pointer): cint {.cdecl,
+      cb: pem_password_cb_553649682; u: pointer): cint {.cdecl,
       importc: "PEM_write_bio_PKCS8PrivateKey_nid".}
 else:
   static :
@@ -77104,7 +77129,7 @@ when not declared(PEM_write_bio_PKCS8PrivateKey):
   proc PEM_write_bio_PKCS8PrivateKey*(bp: ptr BIO_553648984; x: ptr EVP_PKEY_553649086;
                                       enc: ptr EVP_CIPHER_553649062;
                                       pass: cstring; pass_len: cint;
-                                      cb: pem_password_cb_553649680; u: pointer): cint {.
+                                      cb: pem_password_cb_553649682; u: pointer): cint {.
       cdecl, importc: "PEM_write_bio_PKCS8PrivateKey".}
 else:
   static :
@@ -77113,7 +77138,7 @@ else:
 when not declared(i2d_PKCS8PrivateKey_bio):
   proc i2d_PKCS8PrivateKey_bio*(bp: ptr BIO_553648984; x: ptr EVP_PKEY_553649086;
                                 enc: ptr EVP_CIPHER_553649062; pass: cstring;
-                                pass_len: cint; cb: pem_password_cb_553649680;
+                                pass_len: cint; cb: pem_password_cb_553649682;
                                 u: pointer): cint {.cdecl,
       importc: "i2d_PKCS8PrivateKey_bio".}
 else:
@@ -77123,7 +77148,7 @@ else:
 when not declared(i2d_PKCS8PrivateKey_nid_bio):
   proc i2d_PKCS8PrivateKey_nid_bio*(bp: ptr BIO_553648984; x: ptr EVP_PKEY_553649086;
                                     nid: cint; pass: cstring; pass_len: cint;
-                                    cb: pem_password_cb_553649680; u: pointer): cint {.
+                                    cb: pem_password_cb_553649682; u: pointer): cint {.
       cdecl, importc: "i2d_PKCS8PrivateKey_nid_bio".}
 else:
   static :
@@ -77131,16 +77156,16 @@ else:
         " already exists, not redeclaring")
 when not declared(d2i_PKCS8PrivateKey_bio):
   proc d2i_PKCS8PrivateKey_bio*(bp: ptr BIO_553648984; x: ptr ptr EVP_PKEY_553649086;
-                                cb: pem_password_cb_553649680; u: pointer): ptr EVP_PKEY_553649086 {.
+                                cb: pem_password_cb_553649682; u: pointer): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "d2i_PKCS8PrivateKey_bio".}
 else:
   static :
     hint("Declaration of " & "d2i_PKCS8PrivateKey_bio" &
         " already exists, not redeclaring")
 when not declared(i2d_PKCS8PrivateKey_fp):
-  proc i2d_PKCS8PrivateKey_fp*(fp: ptr Cfile_553649262; x: ptr EVP_PKEY_553649086;
+  proc i2d_PKCS8PrivateKey_fp*(fp: ptr Cfile_553649264; x: ptr EVP_PKEY_553649086;
                                enc: ptr EVP_CIPHER_553649062; pass: cstring;
-                               pass_len: cint; cb: pem_password_cb_553649680;
+                               pass_len: cint; cb: pem_password_cb_553649682;
                                u: pointer): cint {.cdecl,
       importc: "i2d_PKCS8PrivateKey_fp".}
 else:
@@ -77148,35 +77173,35 @@ else:
     hint("Declaration of " & "i2d_PKCS8PrivateKey_fp" &
         " already exists, not redeclaring")
 when not declared(i2d_PKCS8PrivateKey_nid_fp):
-  proc i2d_PKCS8PrivateKey_nid_fp*(fp: ptr Cfile_553649262; x: ptr EVP_PKEY_553649086;
+  proc i2d_PKCS8PrivateKey_nid_fp*(fp: ptr Cfile_553649264; x: ptr EVP_PKEY_553649086;
                                    nid: cint; pass: cstring; pass_len: cint;
-                                   cb: pem_password_cb_553649680; u: pointer): cint {.
+                                   cb: pem_password_cb_553649682; u: pointer): cint {.
       cdecl, importc: "i2d_PKCS8PrivateKey_nid_fp".}
 else:
   static :
     hint("Declaration of " & "i2d_PKCS8PrivateKey_nid_fp" &
         " already exists, not redeclaring")
 when not declared(PEM_write_PKCS8PrivateKey_nid):
-  proc PEM_write_PKCS8PrivateKey_nid*(fp: ptr Cfile_553649262; x: ptr EVP_PKEY_553649086;
+  proc PEM_write_PKCS8PrivateKey_nid*(fp: ptr Cfile_553649264; x: ptr EVP_PKEY_553649086;
                                       nid: cint; pass: cstring; pass_len: cint;
-                                      cb: pem_password_cb_553649680; u: pointer): cint {.
+                                      cb: pem_password_cb_553649682; u: pointer): cint {.
       cdecl, importc: "PEM_write_PKCS8PrivateKey_nid".}
 else:
   static :
     hint("Declaration of " & "PEM_write_PKCS8PrivateKey_nid" &
         " already exists, not redeclaring")
 when not declared(d2i_PKCS8PrivateKey_fp):
-  proc d2i_PKCS8PrivateKey_fp*(fp: ptr Cfile_553649262; x: ptr ptr EVP_PKEY_553649086;
-                               cb: pem_password_cb_553649680; u: pointer): ptr EVP_PKEY_553649086 {.
+  proc d2i_PKCS8PrivateKey_fp*(fp: ptr Cfile_553649264; x: ptr ptr EVP_PKEY_553649086;
+                               cb: pem_password_cb_553649682; u: pointer): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "d2i_PKCS8PrivateKey_fp".}
 else:
   static :
     hint("Declaration of " & "d2i_PKCS8PrivateKey_fp" &
         " already exists, not redeclaring")
 when not declared(PEM_write_PKCS8PrivateKey):
-  proc PEM_write_PKCS8PrivateKey*(fp: ptr Cfile_553649262; x: ptr EVP_PKEY_553649086;
+  proc PEM_write_PKCS8PrivateKey*(fp: ptr Cfile_553649264; x: ptr EVP_PKEY_553649086;
                                   enc: ptr EVP_CIPHER_553649062; pass: cstring;
-                                  pass_len: cint; cd: pem_password_cb_553649680;
+                                  pass_len: cint; cd: pem_password_cb_553649682;
                                   u: pointer): cint {.cdecl,
       importc: "PEM_write_PKCS8PrivateKey".}
 else:
@@ -77200,7 +77225,7 @@ else:
 when not declared(PEM_read_bio_ECPKParameters):
   proc PEM_read_bio_ECPKParameters*(bio: ptr BIO_553648984;
                                     out_group: ptr ptr EC_GROUP_553649032;
-                                    cb: pem_password_cb_553649680; u: pointer): ptr EC_GROUP_553649032 {.
+                                    cb: pem_password_cb_553649682; u: pointer): ptr EC_GROUP_553649032 {.
       cdecl, importc: "PEM_read_bio_ECPKParameters".}
 else:
   static :
@@ -77217,288 +77242,288 @@ else:
 when not declared(PEM_write_bio_PrivateKey_traditional):
   proc PEM_write_bio_PrivateKey_traditional*(bp: ptr BIO_553648984;
       x: ptr EVP_PKEY_553649086; enc: ptr EVP_CIPHER_553649062; kstr: ptr uint8;
-      klen: cint; cb: pem_password_cb_553649680; u: pointer): cint {.cdecl,
+      klen: cint; cb: pem_password_cb_553649682; u: pointer): cint {.cdecl,
       importc: "PEM_write_bio_PrivateKey_traditional".}
 else:
   static :
     hint("Declaration of " & "PEM_write_bio_PrivateKey_traditional" &
         " already exists, not redeclaring")
 when not declared(TLS_method):
-  proc TLS_method*(): ptr SSL_METHOD_553649190 {.cdecl, importc: "TLS_method".}
+  proc TLS_method*(): ptr SSL_METHOD_553649192 {.cdecl, importc: "TLS_method".}
 else:
   static :
     hint("Declaration of " & "TLS_method" & " already exists, not redeclaring")
 when not declared(DTLS_method):
-  proc DTLS_method*(): ptr SSL_METHOD_553649190 {.cdecl, importc: "DTLS_method".}
+  proc DTLS_method*(): ptr SSL_METHOD_553649192 {.cdecl, importc: "DTLS_method".}
 else:
   static :
     hint("Declaration of " & "DTLS_method" & " already exists, not redeclaring")
 when not declared(TLS_with_buffers_method):
-  proc TLS_with_buffers_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLS_with_buffers_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLS_with_buffers_method".}
 else:
   static :
     hint("Declaration of " & "TLS_with_buffers_method" &
         " already exists, not redeclaring")
 when not declared(DTLS_with_buffers_method):
-  proc DTLS_with_buffers_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc DTLS_with_buffers_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "DTLS_with_buffers_method".}
 else:
   static :
     hint("Declaration of " & "DTLS_with_buffers_method" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_new):
-  proc SSL_CTX_new*(method_arg: ptr SSL_METHOD_553649190): ptr SSL_CTX_553649182 {.
+  proc SSL_CTX_new*(method_arg: ptr SSL_METHOD_553649192): ptr SSL_CTX_553649184 {.
       cdecl, importc: "SSL_CTX_new".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_new" & " already exists, not redeclaring")
 when not declared(SSL_CTX_up_ref):
-  proc SSL_CTX_up_ref*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_up_ref*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_up_ref".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_up_ref" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_free):
-  proc SSL_CTX_free*(ctx: ptr SSL_CTX_553649182): void {.cdecl,
+  proc SSL_CTX_free*(ctx: ptr SSL_CTX_553649184): void {.cdecl,
       importc: "SSL_CTX_free".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_free" & " already exists, not redeclaring")
 when not declared(SSL_new):
-  proc SSL_new*(ctx: ptr SSL_CTX_553649182): ptr SSL_553649202 {.cdecl,
+  proc SSL_new*(ctx: ptr SSL_CTX_553649184): ptr SSL_553649204 {.cdecl,
       importc: "SSL_new".}
 else:
   static :
     hint("Declaration of " & "SSL_new" & " already exists, not redeclaring")
 when not declared(SSL_free):
-  proc SSL_free*(ssl: ptr SSL_553649202): void {.cdecl, importc: "SSL_free".}
+  proc SSL_free*(ssl: ptr SSL_553649204): void {.cdecl, importc: "SSL_free".}
 else:
   static :
     hint("Declaration of " & "SSL_free" & " already exists, not redeclaring")
 when not declared(SSL_get_SSL_CTX):
-  proc SSL_get_SSL_CTX*(ssl: ptr SSL_553649202): ptr SSL_CTX_553649182 {.cdecl,
+  proc SSL_get_SSL_CTX*(ssl: ptr SSL_553649204): ptr SSL_CTX_553649184 {.cdecl,
       importc: "SSL_get_SSL_CTX".}
 else:
   static :
     hint("Declaration of " & "SSL_get_SSL_CTX" &
         " already exists, not redeclaring")
 when not declared(SSL_set_connect_state):
-  proc SSL_set_connect_state*(ssl: ptr SSL_553649202): void {.cdecl,
+  proc SSL_set_connect_state*(ssl: ptr SSL_553649204): void {.cdecl,
       importc: "SSL_set_connect_state".}
 else:
   static :
     hint("Declaration of " & "SSL_set_connect_state" &
         " already exists, not redeclaring")
 when not declared(SSL_set_accept_state):
-  proc SSL_set_accept_state*(ssl: ptr SSL_553649202): void {.cdecl,
+  proc SSL_set_accept_state*(ssl: ptr SSL_553649204): void {.cdecl,
       importc: "SSL_set_accept_state".}
 else:
   static :
     hint("Declaration of " & "SSL_set_accept_state" &
         " already exists, not redeclaring")
 when not declared(SSL_is_server):
-  proc SSL_is_server*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_is_server*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_is_server".}
 else:
   static :
     hint("Declaration of " & "SSL_is_server" &
         " already exists, not redeclaring")
 when not declared(SSL_is_dtls):
-  proc SSL_is_dtls*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_is_dtls*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_is_dtls".}
 else:
   static :
     hint("Declaration of " & "SSL_is_dtls" & " already exists, not redeclaring")
 when not declared(SSL_set_bio):
-  proc SSL_set_bio*(ssl: ptr SSL_553649202; rbio: ptr BIO_553648984;
+  proc SSL_set_bio*(ssl: ptr SSL_553649204; rbio: ptr BIO_553648984;
                     wbio: ptr BIO_553648984): void {.cdecl,
       importc: "SSL_set_bio".}
 else:
   static :
     hint("Declaration of " & "SSL_set_bio" & " already exists, not redeclaring")
 when not declared(SSL_set0_rbio):
-  proc SSL_set0_rbio*(ssl: ptr SSL_553649202; rbio: ptr BIO_553648984): void {.
+  proc SSL_set0_rbio*(ssl: ptr SSL_553649204; rbio: ptr BIO_553648984): void {.
       cdecl, importc: "SSL_set0_rbio".}
 else:
   static :
     hint("Declaration of " & "SSL_set0_rbio" &
         " already exists, not redeclaring")
 when not declared(SSL_set0_wbio):
-  proc SSL_set0_wbio*(ssl: ptr SSL_553649202; wbio: ptr BIO_553648984): void {.
+  proc SSL_set0_wbio*(ssl: ptr SSL_553649204; wbio: ptr BIO_553648984): void {.
       cdecl, importc: "SSL_set0_wbio".}
 else:
   static :
     hint("Declaration of " & "SSL_set0_wbio" &
         " already exists, not redeclaring")
 when not declared(SSL_get_rbio):
-  proc SSL_get_rbio*(ssl: ptr SSL_553649202): ptr BIO_553648984 {.cdecl,
+  proc SSL_get_rbio*(ssl: ptr SSL_553649204): ptr BIO_553648984 {.cdecl,
       importc: "SSL_get_rbio".}
 else:
   static :
     hint("Declaration of " & "SSL_get_rbio" & " already exists, not redeclaring")
 when not declared(SSL_get_wbio):
-  proc SSL_get_wbio*(ssl: ptr SSL_553649202): ptr BIO_553648984 {.cdecl,
+  proc SSL_get_wbio*(ssl: ptr SSL_553649204): ptr BIO_553648984 {.cdecl,
       importc: "SSL_get_wbio".}
 else:
   static :
     hint("Declaration of " & "SSL_get_wbio" & " already exists, not redeclaring")
 when not declared(SSL_get_fd):
-  proc SSL_get_fd*(ssl: ptr SSL_553649202): cint {.cdecl, importc: "SSL_get_fd".}
+  proc SSL_get_fd*(ssl: ptr SSL_553649204): cint {.cdecl, importc: "SSL_get_fd".}
 else:
   static :
     hint("Declaration of " & "SSL_get_fd" & " already exists, not redeclaring")
 when not declared(SSL_get_rfd):
-  proc SSL_get_rfd*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_rfd*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_rfd".}
 else:
   static :
     hint("Declaration of " & "SSL_get_rfd" & " already exists, not redeclaring")
 when not declared(SSL_get_wfd):
-  proc SSL_get_wfd*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_wfd*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_wfd".}
 else:
   static :
     hint("Declaration of " & "SSL_get_wfd" & " already exists, not redeclaring")
 when not declared(SSL_set_fd):
-  proc SSL_set_fd*(ssl: ptr SSL_553649202; fd: cint): cint {.cdecl,
+  proc SSL_set_fd*(ssl: ptr SSL_553649204; fd: cint): cint {.cdecl,
       importc: "SSL_set_fd".}
 else:
   static :
     hint("Declaration of " & "SSL_set_fd" & " already exists, not redeclaring")
 when not declared(SSL_set_rfd):
-  proc SSL_set_rfd*(ssl: ptr SSL_553649202; fd: cint): cint {.cdecl,
+  proc SSL_set_rfd*(ssl: ptr SSL_553649204; fd: cint): cint {.cdecl,
       importc: "SSL_set_rfd".}
 else:
   static :
     hint("Declaration of " & "SSL_set_rfd" & " already exists, not redeclaring")
 when not declared(SSL_set_wfd):
-  proc SSL_set_wfd*(ssl: ptr SSL_553649202; fd: cint): cint {.cdecl,
+  proc SSL_set_wfd*(ssl: ptr SSL_553649204; fd: cint): cint {.cdecl,
       importc: "SSL_set_wfd".}
 else:
   static :
     hint("Declaration of " & "SSL_set_wfd" & " already exists, not redeclaring")
 when not declared(SSL_do_handshake):
-  proc SSL_do_handshake*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_do_handshake*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_do_handshake".}
 else:
   static :
     hint("Declaration of " & "SSL_do_handshake" &
         " already exists, not redeclaring")
 when not declared(SSL_connect):
-  proc SSL_connect*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_connect*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_connect".}
 else:
   static :
     hint("Declaration of " & "SSL_connect" & " already exists, not redeclaring")
 when not declared(SSL_accept):
-  proc SSL_accept*(ssl: ptr SSL_553649202): cint {.cdecl, importc: "SSL_accept".}
+  proc SSL_accept*(ssl: ptr SSL_553649204): cint {.cdecl, importc: "SSL_accept".}
 else:
   static :
     hint("Declaration of " & "SSL_accept" & " already exists, not redeclaring")
 when not declared(SSL_read):
-  proc SSL_read*(ssl: ptr SSL_553649202; buf: pointer; num: cint): cint {.cdecl,
+  proc SSL_read*(ssl: ptr SSL_553649204; buf: pointer; num: cint): cint {.cdecl,
       importc: "SSL_read".}
 else:
   static :
     hint("Declaration of " & "SSL_read" & " already exists, not redeclaring")
 when not declared(SSL_read_ex):
-  proc SSL_read_ex*(ssl: ptr SSL_553649202; buf: pointer; num: csize_t;
+  proc SSL_read_ex*(ssl: ptr SSL_553649204; buf: pointer; num: csize_t;
                     read_bytes: ptr csize_t): cint {.cdecl,
       importc: "SSL_read_ex".}
 else:
   static :
     hint("Declaration of " & "SSL_read_ex" & " already exists, not redeclaring")
 when not declared(SSL_peek):
-  proc SSL_peek*(ssl: ptr SSL_553649202; buf: pointer; num: cint): cint {.cdecl,
+  proc SSL_peek*(ssl: ptr SSL_553649204; buf: pointer; num: cint): cint {.cdecl,
       importc: "SSL_peek".}
 else:
   static :
     hint("Declaration of " & "SSL_peek" & " already exists, not redeclaring")
 when not declared(SSL_peek_ex):
-  proc SSL_peek_ex*(ssl: ptr SSL_553649202; buf: pointer; num: csize_t;
+  proc SSL_peek_ex*(ssl: ptr SSL_553649204; buf: pointer; num: csize_t;
                     read_bytes: ptr csize_t): cint {.cdecl,
       importc: "SSL_peek_ex".}
 else:
   static :
     hint("Declaration of " & "SSL_peek_ex" & " already exists, not redeclaring")
 when not declared(SSL_pending):
-  proc SSL_pending*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_pending*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_pending".}
 else:
   static :
     hint("Declaration of " & "SSL_pending" & " already exists, not redeclaring")
 when not declared(SSL_has_pending):
-  proc SSL_has_pending*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_has_pending*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_has_pending".}
 else:
   static :
     hint("Declaration of " & "SSL_has_pending" &
         " already exists, not redeclaring")
 when not declared(SSL_write):
-  proc SSL_write*(ssl: ptr SSL_553649202; buf: pointer; num: cint): cint {.
+  proc SSL_write*(ssl: ptr SSL_553649204; buf: pointer; num: cint): cint {.
       cdecl, importc: "SSL_write".}
 else:
   static :
     hint("Declaration of " & "SSL_write" & " already exists, not redeclaring")
 when not declared(SSL_write_ex):
-  proc SSL_write_ex*(s: ptr SSL_553649202; buf: pointer; num: csize_t;
+  proc SSL_write_ex*(s: ptr SSL_553649204; buf: pointer; num: csize_t;
                      written: ptr csize_t): cint {.cdecl,
       importc: "SSL_write_ex".}
 else:
   static :
     hint("Declaration of " & "SSL_write_ex" & " already exists, not redeclaring")
 when not declared(SSL_key_update):
-  proc SSL_key_update*(ssl: ptr SSL_553649202; request_type: cint): cint {.
+  proc SSL_key_update*(ssl: ptr SSL_553649204; request_type: cint): cint {.
       cdecl, importc: "SSL_key_update".}
 else:
   static :
     hint("Declaration of " & "SSL_key_update" &
         " already exists, not redeclaring")
 when not declared(SSL_get_key_update_type):
-  proc SSL_get_key_update_type*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_key_update_type*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_key_update_type".}
 else:
   static :
     hint("Declaration of " & "SSL_get_key_update_type" &
         " already exists, not redeclaring")
 when not declared(SSL_shutdown):
-  proc SSL_shutdown*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_shutdown*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_shutdown".}
 else:
   static :
     hint("Declaration of " & "SSL_shutdown" & " already exists, not redeclaring")
 when not declared(SSL_CTX_set_quiet_shutdown):
-  proc SSL_CTX_set_quiet_shutdown*(ctx: ptr SSL_CTX_553649182; mode: cint): void {.
+  proc SSL_CTX_set_quiet_shutdown*(ctx: ptr SSL_CTX_553649184; mode: cint): void {.
       cdecl, importc: "SSL_CTX_set_quiet_shutdown".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_quiet_shutdown" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_quiet_shutdown):
-  proc SSL_CTX_get_quiet_shutdown*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_get_quiet_shutdown*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_get_quiet_shutdown".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_quiet_shutdown" &
         " already exists, not redeclaring")
 when not declared(SSL_set_quiet_shutdown):
-  proc SSL_set_quiet_shutdown*(ssl: ptr SSL_553649202; mode: cint): void {.
+  proc SSL_set_quiet_shutdown*(ssl: ptr SSL_553649204; mode: cint): void {.
       cdecl, importc: "SSL_set_quiet_shutdown".}
 else:
   static :
     hint("Declaration of " & "SSL_set_quiet_shutdown" &
         " already exists, not redeclaring")
 when not declared(SSL_get_quiet_shutdown):
-  proc SSL_get_quiet_shutdown*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_quiet_shutdown*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_quiet_shutdown".}
 else:
   static :
     hint("Declaration of " & "SSL_get_quiet_shutdown" &
         " already exists, not redeclaring")
 when not declared(SSL_get_error):
-  proc SSL_get_error*(ssl: ptr SSL_553649202; ret_code: cint): cint {.cdecl,
+  proc SSL_get_error*(ssl: ptr SSL_553649204; ret_code: cint): cint {.cdecl,
       importc: "SSL_get_error".}
 else:
   static :
@@ -77512,14 +77537,14 @@ else:
     hint("Declaration of " & "SSL_error_description" &
         " already exists, not redeclaring")
 when not declared(DTLSv1_set_initial_timeout_duration):
-  proc DTLSv1_set_initial_timeout_duration*(ssl: ptr SSL_553649202;
+  proc DTLSv1_set_initial_timeout_duration*(ssl: ptr SSL_553649204;
       duration_ms: cuint): void {.cdecl, importc: "DTLSv1_set_initial_timeout_duration".}
 else:
   static :
     hint("Declaration of " & "DTLSv1_set_initial_timeout_duration" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_max_proto_version):
-  proc SSL_CTX_set_max_proto_version*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_max_proto_version*(ctx: ptr SSL_CTX_553649184;
                                       version: uint16): cint {.cdecl,
       importc: "SSL_CTX_set_max_proto_version".}
 else:
@@ -77527,55 +77552,55 @@ else:
     hint("Declaration of " & "SSL_CTX_set_max_proto_version" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_min_proto_version):
-  proc SSL_CTX_get_min_proto_version*(ctx: ptr SSL_CTX_553649182): uint16 {.
+  proc SSL_CTX_get_min_proto_version*(ctx: ptr SSL_CTX_553649184): uint16 {.
       cdecl, importc: "SSL_CTX_get_min_proto_version".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_min_proto_version" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_max_proto_version):
-  proc SSL_CTX_get_max_proto_version*(ctx: ptr SSL_CTX_553649182): uint16 {.
+  proc SSL_CTX_get_max_proto_version*(ctx: ptr SSL_CTX_553649184): uint16 {.
       cdecl, importc: "SSL_CTX_get_max_proto_version".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_max_proto_version" &
         " already exists, not redeclaring")
 when not declared(SSL_set_min_proto_version):
-  proc SSL_set_min_proto_version*(ssl: ptr SSL_553649202; version: uint16): cint {.
+  proc SSL_set_min_proto_version*(ssl: ptr SSL_553649204; version: uint16): cint {.
       cdecl, importc: "SSL_set_min_proto_version".}
 else:
   static :
     hint("Declaration of " & "SSL_set_min_proto_version" &
         " already exists, not redeclaring")
 when not declared(SSL_set_max_proto_version):
-  proc SSL_set_max_proto_version*(ssl: ptr SSL_553649202; version: uint16): cint {.
+  proc SSL_set_max_proto_version*(ssl: ptr SSL_553649204; version: uint16): cint {.
       cdecl, importc: "SSL_set_max_proto_version".}
 else:
   static :
     hint("Declaration of " & "SSL_set_max_proto_version" &
         " already exists, not redeclaring")
 when not declared(SSL_get_min_proto_version):
-  proc SSL_get_min_proto_version*(ssl: ptr SSL_553649202): uint16 {.cdecl,
+  proc SSL_get_min_proto_version*(ssl: ptr SSL_553649204): uint16 {.cdecl,
       importc: "SSL_get_min_proto_version".}
 else:
   static :
     hint("Declaration of " & "SSL_get_min_proto_version" &
         " already exists, not redeclaring")
 when not declared(SSL_get_max_proto_version):
-  proc SSL_get_max_proto_version*(ssl: ptr SSL_553649202): uint16 {.cdecl,
+  proc SSL_get_max_proto_version*(ssl: ptr SSL_553649204): uint16 {.cdecl,
       importc: "SSL_get_max_proto_version".}
 else:
   static :
     hint("Declaration of " & "SSL_get_max_proto_version" &
         " already exists, not redeclaring")
 when not declared(SSL_version):
-  proc SSL_version*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_version*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_version".}
 else:
   static :
     hint("Declaration of " & "SSL_version" & " already exists, not redeclaring")
 when not declared(SSL_CTX_set0_buffer_pool):
-  proc SSL_CTX_set0_buffer_pool*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set0_buffer_pool*(ctx: ptr SSL_CTX_553649184;
                                  pool: ptr CRYPTO_BUFFER_POOL_553649022): void {.
       cdecl, importc: "SSL_CTX_set0_buffer_pool".}
 else:
@@ -77583,51 +77608,51 @@ else:
     hint("Declaration of " & "SSL_CTX_set0_buffer_pool" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_certificate):
-  proc SSL_CTX_use_certificate*(ctx: ptr SSL_CTX_553649182; x509: ptr X509_553649236): cint {.
+  proc SSL_CTX_use_certificate*(ctx: ptr SSL_CTX_553649184; x509: ptr X509_553649238): cint {.
       cdecl, importc: "SSL_CTX_use_certificate".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_use_certificate" &
         " already exists, not redeclaring")
 when not declared(SSL_use_certificate):
-  proc SSL_use_certificate*(ssl: ptr SSL_553649202; x509: ptr X509_553649236): cint {.
+  proc SSL_use_certificate*(ssl: ptr SSL_553649204; x509: ptr X509_553649238): cint {.
       cdecl, importc: "SSL_use_certificate".}
 else:
   static :
     hint("Declaration of " & "SSL_use_certificate" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_PrivateKey):
-  proc SSL_CTX_use_PrivateKey*(ctx: ptr SSL_CTX_553649182; pkey: ptr EVP_PKEY_553649086): cint {.
+  proc SSL_CTX_use_PrivateKey*(ctx: ptr SSL_CTX_553649184; pkey: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "SSL_CTX_use_PrivateKey".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_use_PrivateKey" &
         " already exists, not redeclaring")
 when not declared(SSL_use_PrivateKey):
-  proc SSL_use_PrivateKey*(ssl: ptr SSL_553649202; pkey: ptr EVP_PKEY_553649086): cint {.
+  proc SSL_use_PrivateKey*(ssl: ptr SSL_553649204; pkey: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "SSL_use_PrivateKey".}
 else:
   static :
     hint("Declaration of " & "SSL_use_PrivateKey" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_cert_cb):
-  proc SSL_CTX_set_cert_cb*(ctx: ptr SSL_CTX_553649182;
-                            cb: proc (a0: ptr SSL_553649202; a1: pointer): cint {.
+  proc SSL_CTX_set_cert_cb*(ctx: ptr SSL_CTX_553649184;
+                            cb: proc (a0: ptr SSL_553649204; a1: pointer): cint {.
       cdecl.}; arg: pointer): void {.cdecl, importc: "SSL_CTX_set_cert_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_cert_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_set_cert_cb):
-  proc SSL_set_cert_cb*(ssl: ptr SSL_553649202;
-                        cb: proc (a0: ptr SSL_553649202; a1: pointer): cint {.
+  proc SSL_set_cert_cb*(ssl: ptr SSL_553649204;
+                        cb: proc (a0: ptr SSL_553649204; a1: pointer): cint {.
       cdecl.}; arg: pointer): void {.cdecl, importc: "SSL_set_cert_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_set_cert_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_peer_verify_algorithms):
-  proc SSL_get0_peer_verify_algorithms*(ssl: ptr SSL_553649202;
+  proc SSL_get0_peer_verify_algorithms*(ssl: ptr SSL_553649204;
                                         out_sigalgs: ptr ptr uint16): csize_t {.
       cdecl, importc: "SSL_get0_peer_verify_algorithms".}
 else:
@@ -77635,7 +77660,7 @@ else:
     hint("Declaration of " & "SSL_get0_peer_verify_algorithms" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_peer_delegation_algorithms):
-  proc SSL_get0_peer_delegation_algorithms*(ssl: ptr SSL_553649202;
+  proc SSL_get0_peer_delegation_algorithms*(ssl: ptr SSL_553649204;
       out_sigalgs: ptr ptr uint16): csize_t {.cdecl,
       importc: "SSL_get0_peer_delegation_algorithms".}
 else:
@@ -77643,7 +77668,7 @@ else:
     hint("Declaration of " & "SSL_get0_peer_delegation_algorithms" &
         " already exists, not redeclaring")
 when not declared(SSL_client_hello_get1_extensions_present):
-  proc SSL_client_hello_get1_extensions_present*(s: ptr SSL_553649202;
+  proc SSL_client_hello_get1_extensions_present*(s: ptr SSL_553649204;
       out_arg: ptr ptr cint; outlen: ptr csize_t): cint {.cdecl,
       importc: "SSL_client_hello_get1_extensions_present".}
 else:
@@ -77651,7 +77676,7 @@ else:
     hint("Declaration of " & "SSL_client_hello_get1_extensions_present" &
         " already exists, not redeclaring")
 when not declared(SSL_client_hello_get_extension_order):
-  proc SSL_client_hello_get_extension_order*(s: ptr SSL_553649202;
+  proc SSL_client_hello_get_extension_order*(s: ptr SSL_553649204;
       exts: ptr uint16; num_exts: ptr csize_t): cint {.cdecl,
       importc: "SSL_client_hello_get_extension_order".}
 else:
@@ -77659,8 +77684,8 @@ else:
     hint("Declaration of " & "SSL_client_hello_get_extension_order" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_client_hello_cb):
-  proc SSL_CTX_set_client_hello_cb*(c: ptr SSL_CTX_553649182;
-                                    cb: SSL_client_hello_cb_fn_553649688;
+  proc SSL_CTX_set_client_hello_cb*(c: ptr SSL_CTX_553649184;
+                                    cb: SSL_client_hello_cb_fn_553649690;
                                     arg: pointer): void {.cdecl,
       importc: "SSL_CTX_set_client_hello_cb".}
 else:
@@ -77668,21 +77693,21 @@ else:
     hint("Declaration of " & "SSL_CTX_set_client_hello_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_client_hello_isv2):
-  proc SSL_client_hello_isv2*(s: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_client_hello_isv2*(s: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_client_hello_isv2".}
 else:
   static :
     hint("Declaration of " & "SSL_client_hello_isv2" &
         " already exists, not redeclaring")
 when not declared(SSL_client_hello_get0_legacy_version):
-  proc SSL_client_hello_get0_legacy_version*(s: ptr SSL_553649202): cuint {.
+  proc SSL_client_hello_get0_legacy_version*(s: ptr SSL_553649204): cuint {.
       cdecl, importc: "SSL_client_hello_get0_legacy_version".}
 else:
   static :
     hint("Declaration of " & "SSL_client_hello_get0_legacy_version" &
         " already exists, not redeclaring")
 when not declared(SSL_client_hello_get0_ext):
-  proc SSL_client_hello_get0_ext*(s: ptr SSL_553649202; type_arg: cuint;
+  proc SSL_client_hello_get0_ext*(s: ptr SSL_553649204; type_arg: cuint;
                                   out_arg: ptr ptr uint8; outlen: ptr csize_t): cint {.
       cdecl, importc: "SSL_client_hello_get0_ext".}
 else:
@@ -77690,56 +77715,56 @@ else:
     hint("Declaration of " & "SSL_client_hello_get0_ext" &
         " already exists, not redeclaring")
 when not declared(SSL_certs_clear):
-  proc SSL_certs_clear*(ssl: ptr SSL_553649202): void {.cdecl,
+  proc SSL_certs_clear*(ssl: ptr SSL_553649204): void {.cdecl,
       importc: "SSL_certs_clear".}
 else:
   static :
     hint("Declaration of " & "SSL_certs_clear" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_check_private_key):
-  proc SSL_CTX_check_private_key*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_check_private_key*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_check_private_key".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_check_private_key" &
         " already exists, not redeclaring")
 when not declared(SSL_check_private_key):
-  proc SSL_check_private_key*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_check_private_key*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_check_private_key".}
 else:
   static :
     hint("Declaration of " & "SSL_check_private_key" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get0_certificate):
-  proc SSL_CTX_get0_certificate*(ctx: ptr SSL_CTX_553649182): ptr X509_553649236 {.
+  proc SSL_CTX_get0_certificate*(ctx: ptr SSL_CTX_553649184): ptr X509_553649238 {.
       cdecl, importc: "SSL_CTX_get0_certificate".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get0_certificate" &
         " already exists, not redeclaring")
 when not declared(SSL_get_certificate):
-  proc SSL_get_certificate*(ssl: ptr SSL_553649202): ptr X509_553649236 {.cdecl,
+  proc SSL_get_certificate*(ssl: ptr SSL_553649204): ptr X509_553649238 {.cdecl,
       importc: "SSL_get_certificate".}
 else:
   static :
     hint("Declaration of " & "SSL_get_certificate" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get0_privatekey):
-  proc SSL_CTX_get0_privatekey*(ctx: ptr SSL_CTX_553649182): ptr EVP_PKEY_553649086 {.
+  proc SSL_CTX_get0_privatekey*(ctx: ptr SSL_CTX_553649184): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "SSL_CTX_get0_privatekey".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get0_privatekey" &
         " already exists, not redeclaring")
 when not declared(SSL_get_privatekey):
-  proc SSL_get_privatekey*(ssl: ptr SSL_553649202): ptr EVP_PKEY_553649086 {.
+  proc SSL_get_privatekey*(ssl: ptr SSL_553649204): ptr EVP_PKEY_553649086 {.
       cdecl, importc: "SSL_get_privatekey".}
 else:
   static :
     hint("Declaration of " & "SSL_get_privatekey" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_signed_cert_timestamp_list):
-  proc SSL_CTX_set_signed_cert_timestamp_list*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_signed_cert_timestamp_list*(ctx: ptr SSL_CTX_553649184;
       list: ptr uint8; list_len: csize_t): cint {.cdecl,
       importc: "SSL_CTX_set_signed_cert_timestamp_list".}
 else:
@@ -77747,7 +77772,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_signed_cert_timestamp_list" &
         " already exists, not redeclaring")
 when not declared(SSL_set_signed_cert_timestamp_list):
-  proc SSL_set_signed_cert_timestamp_list*(ctx: ptr SSL_553649202;
+  proc SSL_set_signed_cert_timestamp_list*(ctx: ptr SSL_553649204;
       list: ptr uint8; list_len: csize_t): cint {.cdecl,
       importc: "SSL_set_signed_cert_timestamp_list".}
 else:
@@ -77755,7 +77780,7 @@ else:
     hint("Declaration of " & "SSL_set_signed_cert_timestamp_list" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_ocsp_response):
-  proc SSL_CTX_set_ocsp_response*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_ocsp_response*(ctx: ptr SSL_CTX_553649184;
                                   response: ptr uint8; response_len: csize_t): cint {.
       cdecl, importc: "SSL_CTX_set_ocsp_response".}
 else:
@@ -77763,7 +77788,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_ocsp_response" &
         " already exists, not redeclaring")
 when not declared(SSL_set_ocsp_response):
-  proc SSL_set_ocsp_response*(ssl: ptr SSL_553649202; response: ptr uint8;
+  proc SSL_set_ocsp_response*(ssl: ptr SSL_553649204; response: ptr uint8;
                               response_len: csize_t): cint {.cdecl,
       importc: "SSL_set_ocsp_response".}
 else:
@@ -77806,7 +77831,7 @@ else:
     hint("Declaration of " & "SSL_is_signature_algorithm_rsa_pss" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_signing_algorithm_prefs):
-  proc SSL_CTX_set_signing_algorithm_prefs*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_signing_algorithm_prefs*(ctx: ptr SSL_CTX_553649184;
       prefs: ptr uint16; num_prefs: csize_t): cint {.cdecl,
       importc: "SSL_CTX_set_signing_algorithm_prefs".}
 else:
@@ -77814,7 +77839,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_signing_algorithm_prefs" &
         " already exists, not redeclaring")
 when not declared(SSL_set_signing_algorithm_prefs):
-  proc SSL_set_signing_algorithm_prefs*(ssl: ptr SSL_553649202;
+  proc SSL_set_signing_algorithm_prefs*(ssl: ptr SSL_553649204;
                                         prefs: ptr uint16; num_prefs: csize_t): cint {.
       cdecl, importc: "SSL_set_signing_algorithm_prefs".}
 else:
@@ -77822,7 +77847,7 @@ else:
     hint("Declaration of " & "SSL_set_signing_algorithm_prefs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_cert_and_key):
-  proc SSL_CTX_use_cert_and_key*(ctx: ptr SSL_CTX_553649182; x509: ptr X509_553649236;
+  proc SSL_CTX_use_cert_and_key*(ctx: ptr SSL_CTX_553649184; x509: ptr X509_553649238;
                                  privatekey: ptr EVP_PKEY_553649086;
                                  chain: ptr struct_stack_st_X509; override: cint): cint {.
       cdecl, importc: "SSL_CTX_use_cert_and_key".}
@@ -77831,48 +77856,48 @@ else:
     hint("Declaration of " & "SSL_CTX_use_cert_and_key" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_chain_and_key):
-  proc SSL_CTX_set_chain_and_key*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_chain_and_key*(ctx: ptr SSL_CTX_553649184;
                                   certs: ptr ptr CRYPTO_BUFFER_553649024;
                                   num_certs: csize_t; privkey: ptr EVP_PKEY_553649086;
-                                  privkey_method: ptr SSL_PRIVATE_KEY_METHOD_553649192): cint {.
+                                  privkey_method: ptr SSL_PRIVATE_KEY_METHOD_553649194): cint {.
       cdecl, importc: "SSL_CTX_set_chain_and_key".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_chain_and_key" &
         " already exists, not redeclaring")
 when not declared(SSL_set_chain_and_key):
-  proc SSL_set_chain_and_key*(ssl: ptr SSL_553649202;
+  proc SSL_set_chain_and_key*(ssl: ptr SSL_553649204;
                               certs: ptr ptr CRYPTO_BUFFER_553649024;
                               num_certs: csize_t; privkey: ptr EVP_PKEY_553649086;
-                              privkey_method: ptr SSL_PRIVATE_KEY_METHOD_553649192): cint {.
+                              privkey_method: ptr SSL_PRIVATE_KEY_METHOD_553649194): cint {.
       cdecl, importc: "SSL_set_chain_and_key".}
 else:
   static :
     hint("Declaration of " & "SSL_set_chain_and_key" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get0_chain):
-  proc SSL_CTX_get0_chain*(ctx: ptr SSL_CTX_553649182): ptr struct_stack_st_CRYPTO_BUFFER {.
+  proc SSL_CTX_get0_chain*(ctx: ptr SSL_CTX_553649184): ptr struct_stack_st_CRYPTO_BUFFER {.
       cdecl, importc: "SSL_CTX_get0_chain".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get0_chain" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_RSAPrivateKey):
-  proc SSL_CTX_use_RSAPrivateKey*(ctx: ptr SSL_CTX_553649182; rsa: ptr RSA_553649160): cint {.
+  proc SSL_CTX_use_RSAPrivateKey*(ctx: ptr SSL_CTX_553649184; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "SSL_CTX_use_RSAPrivateKey".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_use_RSAPrivateKey" &
         " already exists, not redeclaring")
 when not declared(SSL_use_RSAPrivateKey):
-  proc SSL_use_RSAPrivateKey*(ssl: ptr SSL_553649202; rsa: ptr RSA_553649160): cint {.
+  proc SSL_use_RSAPrivateKey*(ssl: ptr SSL_553649204; rsa: ptr RSA_553649162): cint {.
       cdecl, importc: "SSL_use_RSAPrivateKey".}
 else:
   static :
     hint("Declaration of " & "SSL_use_RSAPrivateKey" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_certificate_ASN1):
-  proc SSL_CTX_use_certificate_ASN1*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_use_certificate_ASN1*(ctx: ptr SSL_CTX_553649184;
                                      der_len: csize_t; der: ptr uint8): cint {.
       cdecl, importc: "SSL_CTX_use_certificate_ASN1".}
 else:
@@ -77880,7 +77905,7 @@ else:
     hint("Declaration of " & "SSL_CTX_use_certificate_ASN1" &
         " already exists, not redeclaring")
 when not declared(SSL_use_certificate_ASN1):
-  proc SSL_use_certificate_ASN1*(ssl: ptr SSL_553649202; der: ptr uint8;
+  proc SSL_use_certificate_ASN1*(ssl: ptr SSL_553649204; der: ptr uint8;
                                  der_len: csize_t): cint {.cdecl,
       importc: "SSL_use_certificate_ASN1".}
 else:
@@ -77888,7 +77913,7 @@ else:
     hint("Declaration of " & "SSL_use_certificate_ASN1" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_PrivateKey_ASN1):
-  proc SSL_CTX_use_PrivateKey_ASN1*(pk: cint; ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_use_PrivateKey_ASN1*(pk: cint; ctx: ptr SSL_CTX_553649184;
                                     der: ptr uint8; der_len: csize_t): cint {.
       cdecl, importc: "SSL_CTX_use_PrivateKey_ASN1".}
 else:
@@ -77896,7 +77921,7 @@ else:
     hint("Declaration of " & "SSL_CTX_use_PrivateKey_ASN1" &
         " already exists, not redeclaring")
 when not declared(SSL_use_PrivateKey_ASN1):
-  proc SSL_use_PrivateKey_ASN1*(type_arg: cint; ssl: ptr SSL_553649202;
+  proc SSL_use_PrivateKey_ASN1*(type_arg: cint; ssl: ptr SSL_553649204;
                                 der: ptr uint8; der_len: csize_t): cint {.cdecl,
       importc: "SSL_use_PrivateKey_ASN1".}
 else:
@@ -77904,7 +77929,7 @@ else:
     hint("Declaration of " & "SSL_use_PrivateKey_ASN1" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_RSAPrivateKey_ASN1):
-  proc SSL_CTX_use_RSAPrivateKey_ASN1*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_use_RSAPrivateKey_ASN1*(ctx: ptr SSL_CTX_553649184;
                                        der: ptr uint8; der_len: csize_t): cint {.
       cdecl, importc: "SSL_CTX_use_RSAPrivateKey_ASN1".}
 else:
@@ -77912,7 +77937,7 @@ else:
     hint("Declaration of " & "SSL_CTX_use_RSAPrivateKey_ASN1" &
         " already exists, not redeclaring")
 when not declared(SSL_use_RSAPrivateKey_ASN1):
-  proc SSL_use_RSAPrivateKey_ASN1*(ssl: ptr SSL_553649202; der: ptr uint8;
+  proc SSL_use_RSAPrivateKey_ASN1*(ssl: ptr SSL_553649204; der: ptr uint8;
                                    der_len: csize_t): cint {.cdecl,
       importc: "SSL_use_RSAPrivateKey_ASN1".}
 else:
@@ -77920,7 +77945,7 @@ else:
     hint("Declaration of " & "SSL_use_RSAPrivateKey_ASN1" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_RSAPrivateKey_file):
-  proc SSL_CTX_use_RSAPrivateKey_file*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_use_RSAPrivateKey_file*(ctx: ptr SSL_CTX_553649184;
                                        file: cstring; type_arg: cint): cint {.
       cdecl, importc: "SSL_CTX_use_RSAPrivateKey_file".}
 else:
@@ -77928,7 +77953,7 @@ else:
     hint("Declaration of " & "SSL_CTX_use_RSAPrivateKey_file" &
         " already exists, not redeclaring")
 when not declared(SSL_use_RSAPrivateKey_file):
-  proc SSL_use_RSAPrivateKey_file*(ssl: ptr SSL_553649202; file: cstring;
+  proc SSL_use_RSAPrivateKey_file*(ssl: ptr SSL_553649204; file: cstring;
                                    type_arg: cint): cint {.cdecl,
       importc: "SSL_use_RSAPrivateKey_file".}
 else:
@@ -77936,7 +77961,7 @@ else:
     hint("Declaration of " & "SSL_use_RSAPrivateKey_file" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_certificate_file):
-  proc SSL_CTX_use_certificate_file*(ctx: ptr SSL_CTX_553649182; file: cstring;
+  proc SSL_CTX_use_certificate_file*(ctx: ptr SSL_CTX_553649184; file: cstring;
                                      type_arg: cint): cint {.cdecl,
       importc: "SSL_CTX_use_certificate_file".}
 else:
@@ -77944,7 +77969,7 @@ else:
     hint("Declaration of " & "SSL_CTX_use_certificate_file" &
         " already exists, not redeclaring")
 when not declared(SSL_use_certificate_file):
-  proc SSL_use_certificate_file*(ssl: ptr SSL_553649202; file: cstring;
+  proc SSL_use_certificate_file*(ssl: ptr SSL_553649204; file: cstring;
                                  type_arg: cint): cint {.cdecl,
       importc: "SSL_use_certificate_file".}
 else:
@@ -77952,7 +77977,7 @@ else:
     hint("Declaration of " & "SSL_use_certificate_file" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_PrivateKey_file):
-  proc SSL_CTX_use_PrivateKey_file*(ctx: ptr SSL_CTX_553649182; file: cstring;
+  proc SSL_CTX_use_PrivateKey_file*(ctx: ptr SSL_CTX_553649184; file: cstring;
                                     type_arg: cint): cint {.cdecl,
       importc: "SSL_CTX_use_PrivateKey_file".}
 else:
@@ -77960,7 +77985,7 @@ else:
     hint("Declaration of " & "SSL_CTX_use_PrivateKey_file" &
         " already exists, not redeclaring")
 when not declared(SSL_use_PrivateKey_file):
-  proc SSL_use_PrivateKey_file*(ssl: ptr SSL_553649202; file: cstring;
+  proc SSL_use_PrivateKey_file*(ssl: ptr SSL_553649204; file: cstring;
                                 type_arg: cint): cint {.cdecl,
       importc: "SSL_use_PrivateKey_file".}
 else:
@@ -77968,7 +77993,7 @@ else:
     hint("Declaration of " & "SSL_use_PrivateKey_file" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_certificate_chain_file):
-  proc SSL_CTX_use_certificate_chain_file*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_use_certificate_chain_file*(ctx: ptr SSL_CTX_553649184;
       file: cstring): cint {.cdecl,
                              importc: "SSL_CTX_use_certificate_chain_file".}
 else:
@@ -77976,29 +78001,29 @@ else:
     hint("Declaration of " & "SSL_CTX_use_certificate_chain_file" &
         " already exists, not redeclaring")
 when not declared(SSL_use_certificate_chain_file):
-  proc SSL_use_certificate_chain_file*(ssl: ptr SSL_553649202; file: cstring): cint {.
+  proc SSL_use_certificate_chain_file*(ssl: ptr SSL_553649204; file: cstring): cint {.
       cdecl, importc: "SSL_use_certificate_chain_file".}
 else:
   static :
     hint("Declaration of " & "SSL_use_certificate_chain_file" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_default_passwd_cb):
-  proc SSL_CTX_set_default_passwd_cb*(ctx: ptr SSL_CTX_553649182;
-                                      cb: pem_password_cb_553649680): void {.
+  proc SSL_CTX_set_default_passwd_cb*(ctx: ptr SSL_CTX_553649184;
+                                      cb: pem_password_cb_553649682): void {.
       cdecl, importc: "SSL_CTX_set_default_passwd_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_default_passwd_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_default_passwd_cb):
-  proc SSL_CTX_get_default_passwd_cb*(ctx: ptr SSL_CTX_553649182): pem_password_cb_553649680 {.
+  proc SSL_CTX_get_default_passwd_cb*(ctx: ptr SSL_CTX_553649184): pem_password_cb_553649682 {.
       cdecl, importc: "SSL_CTX_get_default_passwd_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_default_passwd_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_default_passwd_cb_userdata):
-  proc SSL_CTX_set_default_passwd_cb_userdata*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_default_passwd_cb_userdata*(ctx: ptr SSL_CTX_553649184;
       data: pointer): void {.cdecl,
                              importc: "SSL_CTX_set_default_passwd_cb_userdata".}
 else:
@@ -78006,156 +78031,156 @@ else:
     hint("Declaration of " & "SSL_CTX_set_default_passwd_cb_userdata" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_default_passwd_cb_userdata):
-  proc SSL_CTX_get_default_passwd_cb_userdata*(ctx: ptr SSL_CTX_553649182): pointer {.
+  proc SSL_CTX_get_default_passwd_cb_userdata*(ctx: ptr SSL_CTX_553649184): pointer {.
       cdecl, importc: "SSL_CTX_get_default_passwd_cb_userdata".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_default_passwd_cb_userdata" &
         " already exists, not redeclaring")
 when not declared(SSL_set_private_key_method):
-  proc SSL_set_private_key_method*(ssl: ptr SSL_553649202;
-                                   key_method: ptr SSL_PRIVATE_KEY_METHOD_553649192): void {.
+  proc SSL_set_private_key_method*(ssl: ptr SSL_553649204;
+                                   key_method: ptr SSL_PRIVATE_KEY_METHOD_553649194): void {.
       cdecl, importc: "SSL_set_private_key_method".}
 else:
   static :
     hint("Declaration of " & "SSL_set_private_key_method" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_private_key_method):
-  proc SSL_CTX_set_private_key_method*(ctx: ptr SSL_CTX_553649182;
-                                       key_method: ptr SSL_PRIVATE_KEY_METHOD_553649192): void {.
+  proc SSL_CTX_set_private_key_method*(ctx: ptr SSL_CTX_553649184;
+                                       key_method: ptr SSL_PRIVATE_KEY_METHOD_553649194): void {.
       cdecl, importc: "SSL_CTX_set_private_key_method".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_private_key_method" &
         " already exists, not redeclaring")
 when not declared(SSL_can_release_private_key):
-  proc SSL_can_release_private_key*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_can_release_private_key*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_can_release_private_key".}
 else:
   static :
     hint("Declaration of " & "SSL_can_release_private_key" &
         " already exists, not redeclaring")
 when not declared(SSL_get_cipher_by_value):
-  proc SSL_get_cipher_by_value*(value: uint16): ptr SSL_CIPHER_553649180 {.
+  proc SSL_get_cipher_by_value*(value: uint16): ptr SSL_CIPHER_553649182 {.
       cdecl, importc: "SSL_get_cipher_by_value".}
 else:
   static :
     hint("Declaration of " & "SSL_get_cipher_by_value" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_find):
-  proc SSL_CIPHER_find*(ssl: ptr SSL_553649202; ptr_arg: ptr uint8): ptr SSL_CIPHER_553649180 {.
+  proc SSL_CIPHER_find*(ssl: ptr SSL_553649204; ptr_arg: ptr uint8): ptr SSL_CIPHER_553649182 {.
       cdecl, importc: "SSL_CIPHER_find".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_find" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_id):
-  proc SSL_CIPHER_get_id*(cipher: ptr SSL_CIPHER_553649180): uint32 {.cdecl,
+  proc SSL_CIPHER_get_id*(cipher: ptr SSL_CIPHER_553649182): uint32 {.cdecl,
       importc: "SSL_CIPHER_get_id".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_id" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_protocol_id):
-  proc SSL_CIPHER_get_protocol_id*(cipher: ptr SSL_CIPHER_553649180): uint16 {.
+  proc SSL_CIPHER_get_protocol_id*(cipher: ptr SSL_CIPHER_553649182): uint16 {.
       cdecl, importc: "SSL_CIPHER_get_protocol_id".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_protocol_id" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_is_aead):
-  proc SSL_CIPHER_is_aead*(cipher: ptr SSL_CIPHER_553649180): cint {.cdecl,
+  proc SSL_CIPHER_is_aead*(cipher: ptr SSL_CIPHER_553649182): cint {.cdecl,
       importc: "SSL_CIPHER_is_aead".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_is_aead" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_is_block_cipher):
-  proc SSL_CIPHER_is_block_cipher*(cipher: ptr SSL_CIPHER_553649180): cint {.
+  proc SSL_CIPHER_is_block_cipher*(cipher: ptr SSL_CIPHER_553649182): cint {.
       cdecl, importc: "SSL_CIPHER_is_block_cipher".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_is_block_cipher" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_cipher_nid):
-  proc SSL_CIPHER_get_cipher_nid*(cipher: ptr SSL_CIPHER_553649180): cint {.
+  proc SSL_CIPHER_get_cipher_nid*(cipher: ptr SSL_CIPHER_553649182): cint {.
       cdecl, importc: "SSL_CIPHER_get_cipher_nid".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_cipher_nid" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_digest_nid):
-  proc SSL_CIPHER_get_digest_nid*(cipher: ptr SSL_CIPHER_553649180): cint {.
+  proc SSL_CIPHER_get_digest_nid*(cipher: ptr SSL_CIPHER_553649182): cint {.
       cdecl, importc: "SSL_CIPHER_get_digest_nid".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_digest_nid" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_kx_nid):
-  proc SSL_CIPHER_get_kx_nid*(cipher: ptr SSL_CIPHER_553649180): cint {.cdecl,
+  proc SSL_CIPHER_get_kx_nid*(cipher: ptr SSL_CIPHER_553649182): cint {.cdecl,
       importc: "SSL_CIPHER_get_kx_nid".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_kx_nid" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_auth_nid):
-  proc SSL_CIPHER_get_auth_nid*(cipher: ptr SSL_CIPHER_553649180): cint {.cdecl,
+  proc SSL_CIPHER_get_auth_nid*(cipher: ptr SSL_CIPHER_553649182): cint {.cdecl,
       importc: "SSL_CIPHER_get_auth_nid".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_auth_nid" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_handshake_digest):
-  proc SSL_CIPHER_get_handshake_digest*(cipher: ptr SSL_CIPHER_553649180): ptr EVP_MD_553649050 {.
+  proc SSL_CIPHER_get_handshake_digest*(cipher: ptr SSL_CIPHER_553649182): ptr EVP_MD_553649050 {.
       cdecl, importc: "SSL_CIPHER_get_handshake_digest".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_handshake_digest" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_prf_nid):
-  proc SSL_CIPHER_get_prf_nid*(cipher: ptr SSL_CIPHER_553649180): cint {.cdecl,
+  proc SSL_CIPHER_get_prf_nid*(cipher: ptr SSL_CIPHER_553649182): cint {.cdecl,
       importc: "SSL_CIPHER_get_prf_nid".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_prf_nid" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_min_version):
-  proc SSL_CIPHER_get_min_version*(cipher: ptr SSL_CIPHER_553649180): uint16 {.
+  proc SSL_CIPHER_get_min_version*(cipher: ptr SSL_CIPHER_553649182): uint16 {.
       cdecl, importc: "SSL_CIPHER_get_min_version".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_min_version" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_max_version):
-  proc SSL_CIPHER_get_max_version*(cipher: ptr SSL_CIPHER_553649180): uint16 {.
+  proc SSL_CIPHER_get_max_version*(cipher: ptr SSL_CIPHER_553649182): uint16 {.
       cdecl, importc: "SSL_CIPHER_get_max_version".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_max_version" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_standard_name):
-  proc SSL_CIPHER_standard_name*(cipher: ptr SSL_CIPHER_553649180): cstring {.
+  proc SSL_CIPHER_standard_name*(cipher: ptr SSL_CIPHER_553649182): cstring {.
       cdecl, importc: "SSL_CIPHER_standard_name".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_standard_name" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_name):
-  proc SSL_CIPHER_get_name*(cipher: ptr SSL_CIPHER_553649180): cstring {.cdecl,
+  proc SSL_CIPHER_get_name*(cipher: ptr SSL_CIPHER_553649182): cstring {.cdecl,
       importc: "SSL_CIPHER_get_name".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_name" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_kx_name):
-  proc SSL_CIPHER_get_kx_name*(cipher: ptr SSL_CIPHER_553649180): cstring {.
+  proc SSL_CIPHER_get_kx_name*(cipher: ptr SSL_CIPHER_553649182): cstring {.
       cdecl, importc: "SSL_CIPHER_get_kx_name".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_kx_name" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_bits):
-  proc SSL_CIPHER_get_bits*(cipher: ptr SSL_CIPHER_553649180;
+  proc SSL_CIPHER_get_bits*(cipher: ptr SSL_CIPHER_553649182;
                             out_alg_bits: ptr cint): cint {.cdecl,
       importc: "SSL_CIPHER_get_bits".}
 else:
@@ -78177,125 +78202,125 @@ else:
     hint("Declaration of " & "SSL_get_all_standard_cipher_names" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_strict_cipher_list):
-  proc SSL_CTX_set_strict_cipher_list*(ctx: ptr SSL_CTX_553649182; str: cstring): cint {.
+  proc SSL_CTX_set_strict_cipher_list*(ctx: ptr SSL_CTX_553649184; str: cstring): cint {.
       cdecl, importc: "SSL_CTX_set_strict_cipher_list".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_strict_cipher_list" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_cipher_list):
-  proc SSL_CTX_set_cipher_list*(ctx: ptr SSL_CTX_553649182; str: cstring): cint {.
+  proc SSL_CTX_set_cipher_list*(ctx: ptr SSL_CTX_553649184; str: cstring): cint {.
       cdecl, importc: "SSL_CTX_set_cipher_list".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_cipher_list" &
         " already exists, not redeclaring")
 when not declared(SSL_set_strict_cipher_list):
-  proc SSL_set_strict_cipher_list*(ssl: ptr SSL_553649202; str: cstring): cint {.
+  proc SSL_set_strict_cipher_list*(ssl: ptr SSL_553649204; str: cstring): cint {.
       cdecl, importc: "SSL_set_strict_cipher_list".}
 else:
   static :
     hint("Declaration of " & "SSL_set_strict_cipher_list" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_ciphersuites):
-  proc SSL_CTX_set_ciphersuites*(ctx: ptr SSL_CTX_553649182; str: cstring): cint {.
+  proc SSL_CTX_set_ciphersuites*(ctx: ptr SSL_CTX_553649184; str: cstring): cint {.
       cdecl, importc: "SSL_CTX_set_ciphersuites".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_ciphersuites" &
         " already exists, not redeclaring")
 when not declared(SSL_set_ciphersuites):
-  proc SSL_set_ciphersuites*(ssl: ptr SSL_553649202; str: cstring): cint {.
+  proc SSL_set_ciphersuites*(ssl: ptr SSL_553649204; str: cstring): cint {.
       cdecl, importc: "SSL_set_ciphersuites".}
 else:
   static :
     hint("Declaration of " & "SSL_set_ciphersuites" &
         " already exists, not redeclaring")
 when not declared(SSL_set_cipher_list):
-  proc SSL_set_cipher_list*(ssl: ptr SSL_553649202; str: cstring): cint {.cdecl,
+  proc SSL_set_cipher_list*(ssl: ptr SSL_553649204; str: cstring): cint {.cdecl,
       importc: "SSL_set_cipher_list".}
 else:
   static :
     hint("Declaration of " & "SSL_set_cipher_list" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_ciphers):
-  proc SSL_CTX_get_ciphers*(ctx: ptr SSL_CTX_553649182): ptr struct_stack_st_SSL_CIPHER {.
+  proc SSL_CTX_get_ciphers*(ctx: ptr SSL_CTX_553649184): ptr struct_stack_st_SSL_CIPHER {.
       cdecl, importc: "SSL_CTX_get_ciphers".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_ciphers" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_cipher_in_group):
-  proc SSL_CTX_cipher_in_group*(ctx: ptr SSL_CTX_553649182; i: csize_t): cint {.
+  proc SSL_CTX_cipher_in_group*(ctx: ptr SSL_CTX_553649184; i: csize_t): cint {.
       cdecl, importc: "SSL_CTX_cipher_in_group".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_cipher_in_group" &
         " already exists, not redeclaring")
 when not declared(SSL_get_ciphers):
-  proc SSL_get_ciphers*(ssl: ptr SSL_553649202): ptr struct_stack_st_SSL_CIPHER {.
+  proc SSL_get_ciphers*(ssl: ptr SSL_553649204): ptr struct_stack_st_SSL_CIPHER {.
       cdecl, importc: "SSL_get_ciphers".}
 else:
   static :
     hint("Declaration of " & "SSL_get_ciphers" &
         " already exists, not redeclaring")
 when not declared(SSL_is_init_finished):
-  proc SSL_is_init_finished*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_is_init_finished*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_is_init_finished".}
 else:
   static :
     hint("Declaration of " & "SSL_is_init_finished" &
         " already exists, not redeclaring")
 when not declared(SSL_in_init):
-  proc SSL_in_init*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_in_init*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_in_init".}
 else:
   static :
     hint("Declaration of " & "SSL_in_init" & " already exists, not redeclaring")
 when not declared(SSL_in_false_start):
-  proc SSL_in_false_start*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_in_false_start*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_in_false_start".}
 else:
   static :
     hint("Declaration of " & "SSL_in_false_start" &
         " already exists, not redeclaring")
 when not declared(SSL_get_peer_certificate):
-  proc SSL_get_peer_certificate*(ssl: ptr SSL_553649202): ptr X509_553649236 {.
+  proc SSL_get_peer_certificate*(ssl: ptr SSL_553649204): ptr X509_553649238 {.
       cdecl, importc: "SSL_get_peer_certificate".}
 else:
   static :
     hint("Declaration of " & "SSL_get_peer_certificate" &
         " already exists, not redeclaring")
 when not declared(SSL_get_peer_cert_chain):
-  proc SSL_get_peer_cert_chain*(ssl: ptr SSL_553649202): ptr struct_stack_st_X509 {.
+  proc SSL_get_peer_cert_chain*(ssl: ptr SSL_553649204): ptr struct_stack_st_X509 {.
       cdecl, importc: "SSL_get_peer_cert_chain".}
 else:
   static :
     hint("Declaration of " & "SSL_get_peer_cert_chain" &
         " already exists, not redeclaring")
 when not declared(SSL_get_peer_full_cert_chain):
-  proc SSL_get_peer_full_cert_chain*(ssl: ptr SSL_553649202): ptr struct_stack_st_X509 {.
+  proc SSL_get_peer_full_cert_chain*(ssl: ptr SSL_553649204): ptr struct_stack_st_X509 {.
       cdecl, importc: "SSL_get_peer_full_cert_chain".}
 else:
   static :
     hint("Declaration of " & "SSL_get_peer_full_cert_chain" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_verified_chain):
-  proc SSL_get0_verified_chain*(ssl: ptr SSL_553649202): ptr struct_stack_st_X509 {.
+  proc SSL_get0_verified_chain*(ssl: ptr SSL_553649204): ptr struct_stack_st_X509 {.
       cdecl, importc: "SSL_get0_verified_chain".}
 else:
   static :
     hint("Declaration of " & "SSL_get0_verified_chain" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_peer_certificates):
-  proc SSL_get0_peer_certificates*(ssl: ptr SSL_553649202): ptr struct_stack_st_CRYPTO_BUFFER {.
+  proc SSL_get0_peer_certificates*(ssl: ptr SSL_553649204): ptr struct_stack_st_CRYPTO_BUFFER {.
       cdecl, importc: "SSL_get0_peer_certificates".}
 else:
   static :
     hint("Declaration of " & "SSL_get0_peer_certificates" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_signed_cert_timestamp_list):
-  proc SSL_get0_signed_cert_timestamp_list*(ssl: ptr SSL_553649202;
+  proc SSL_get0_signed_cert_timestamp_list*(ssl: ptr SSL_553649204;
       out_arg: ptr ptr uint8; out_len: ptr csize_t): void {.cdecl,
       importc: "SSL_get0_signed_cert_timestamp_list".}
 else:
@@ -78303,7 +78328,7 @@ else:
     hint("Declaration of " & "SSL_get0_signed_cert_timestamp_list" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_ocsp_response):
-  proc SSL_get0_ocsp_response*(ssl: ptr SSL_553649202; out_arg: ptr ptr uint8;
+  proc SSL_get0_ocsp_response*(ssl: ptr SSL_553649204; out_arg: ptr ptr uint8;
                                out_len: ptr csize_t): void {.cdecl,
       importc: "SSL_get0_ocsp_response".}
 else:
@@ -78311,7 +78336,7 @@ else:
     hint("Declaration of " & "SSL_get0_ocsp_response" &
         " already exists, not redeclaring")
 when not declared(SSL_get_tls_unique):
-  proc SSL_get_tls_unique*(ssl: ptr SSL_553649202; out_arg: ptr uint8;
+  proc SSL_get_tls_unique*(ssl: ptr SSL_553649204; out_arg: ptr uint8;
                            out_len: ptr csize_t; max_out: csize_t): cint {.
       cdecl, importc: "SSL_get_tls_unique".}
 else:
@@ -78319,28 +78344,28 @@ else:
     hint("Declaration of " & "SSL_get_tls_unique" &
         " already exists, not redeclaring")
 when not declared(SSL_get_extms_support):
-  proc SSL_get_extms_support*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_extms_support*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_extms_support".}
 else:
   static :
     hint("Declaration of " & "SSL_get_extms_support" &
         " already exists, not redeclaring")
 when not declared(SSL_get_current_cipher):
-  proc SSL_get_current_cipher*(ssl: ptr SSL_553649202): ptr SSL_CIPHER_553649180 {.
+  proc SSL_get_current_cipher*(ssl: ptr SSL_553649204): ptr SSL_CIPHER_553649182 {.
       cdecl, importc: "SSL_get_current_cipher".}
 else:
   static :
     hint("Declaration of " & "SSL_get_current_cipher" &
         " already exists, not redeclaring")
 when not declared(SSL_get_client_ciphers):
-  proc SSL_get_client_ciphers*(ssl: ptr SSL_553649202): ptr struct_stack_st_SSL_CIPHER {.
+  proc SSL_get_client_ciphers*(ssl: ptr SSL_553649204): ptr struct_stack_st_SSL_CIPHER {.
       cdecl, importc: "SSL_get_client_ciphers".}
 else:
   static :
     hint("Declaration of " & "SSL_get_client_ciphers" &
         " already exists, not redeclaring")
 when not declared(SSL_client_hello_get0_ciphers):
-  proc SSL_client_hello_get0_ciphers*(ssl: ptr SSL_553649202;
+  proc SSL_client_hello_get0_ciphers*(ssl: ptr SSL_553649204;
                                       out_arg: ptr ptr uint8): csize_t {.cdecl,
       importc: "SSL_client_hello_get0_ciphers".}
 else:
@@ -78348,14 +78373,14 @@ else:
     hint("Declaration of " & "SSL_client_hello_get0_ciphers" &
         " already exists, not redeclaring")
 when not declared(SSL_get_secure_renegotiation_support):
-  proc SSL_get_secure_renegotiation_support*(ssl: ptr SSL_553649202): cint {.
+  proc SSL_get_secure_renegotiation_support*(ssl: ptr SSL_553649204): cint {.
       cdecl, importc: "SSL_get_secure_renegotiation_support".}
 else:
   static :
     hint("Declaration of " & "SSL_get_secure_renegotiation_support" &
         " already exists, not redeclaring")
 when not declared(SSL_export_keying_material):
-  proc SSL_export_keying_material*(ssl: ptr SSL_553649202; out_arg: ptr uint8;
+  proc SSL_export_keying_material*(ssl: ptr SSL_553649204; out_arg: ptr uint8;
                                    out_len: csize_t; label: cstring;
                                    label_len: csize_t; context: ptr uint8;
                                    context_len: csize_t; use_context: cint): cint {.
@@ -78372,12 +78397,12 @@ else:
     hint("Declaration of " & "SSL_extension_supported" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_add_client_custom_ext):
-  proc SSL_CTX_add_client_custom_ext*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_add_client_custom_ext*(ctx: ptr SSL_CTX_553649184;
                                       extension_value: cuint;
-                                      add_cb: SSL_custom_ext_add_cb_553649700;
-                                      free_cb: SSL_custom_ext_free_cb_553649702;
+                                      add_cb: SSL_custom_ext_add_cb_553649702;
+                                      free_cb: SSL_custom_ext_free_cb_553649704;
                                       add_arg: pointer;
-                                      parse_cb: SSL_custom_ext_parse_cb_553649704;
+                                      parse_cb: SSL_custom_ext_parse_cb_553649706;
                                       parse_arg: pointer): cint {.cdecl,
       importc: "SSL_CTX_add_client_custom_ext".}
 else:
@@ -78385,12 +78410,12 @@ else:
     hint("Declaration of " & "SSL_CTX_add_client_custom_ext" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_add_server_custom_ext):
-  proc SSL_CTX_add_server_custom_ext*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_add_server_custom_ext*(ctx: ptr SSL_CTX_553649184;
                                       extension_value: cuint;
-                                      add_cb: SSL_custom_ext_add_cb_553649700;
-                                      free_cb: SSL_custom_ext_free_cb_553649702;
+                                      add_cb: SSL_custom_ext_add_cb_553649702;
+                                      free_cb: SSL_custom_ext_free_cb_553649704;
                                       add_arg: pointer;
-                                      parse_cb: SSL_custom_ext_parse_cb_553649704;
+                                      parse_cb: SSL_custom_ext_parse_cb_553649706;
                                       parse_arg: pointer): cint {.cdecl,
       importc: "SSL_CTX_add_server_custom_ext".}
 else:
@@ -78398,58 +78423,58 @@ else:
     hint("Declaration of " & "SSL_CTX_add_server_custom_ext" &
         " already exists, not redeclaring")
 when not declared(PEM_read_bio_SSL_SESSION):
-  proc PEM_read_bio_SSL_SESSION*(bp: ptr BIO_553648984; x: ptr ptr SSL_SESSION_553649200;
-                                 cb: pem_password_cb_553649680; u: pointer): ptr SSL_SESSION_553649200 {.
+  proc PEM_read_bio_SSL_SESSION*(bp: ptr BIO_553648984; x: ptr ptr SSL_SESSION_553649202;
+                                 cb: pem_password_cb_553649682; u: pointer): ptr SSL_SESSION_553649202 {.
       cdecl, importc: "PEM_read_bio_SSL_SESSION".}
 else:
   static :
     hint("Declaration of " & "PEM_read_bio_SSL_SESSION" &
         " already exists, not redeclaring")
 when not declared(PEM_read_SSL_SESSION):
-  proc PEM_read_SSL_SESSION*(fp: ptr Cfile_553649262; x: ptr ptr SSL_SESSION_553649200;
-                             cb: pem_password_cb_553649680; u: pointer): ptr SSL_SESSION_553649200 {.
+  proc PEM_read_SSL_SESSION*(fp: ptr Cfile_553649264; x: ptr ptr SSL_SESSION_553649202;
+                             cb: pem_password_cb_553649682; u: pointer): ptr SSL_SESSION_553649202 {.
       cdecl, importc: "PEM_read_SSL_SESSION".}
 else:
   static :
     hint("Declaration of " & "PEM_read_SSL_SESSION" &
         " already exists, not redeclaring")
 when not declared(PEM_write_bio_SSL_SESSION):
-  proc PEM_write_bio_SSL_SESSION*(bp: ptr BIO_553648984; x: ptr SSL_SESSION_553649200): cint {.
+  proc PEM_write_bio_SSL_SESSION*(bp: ptr BIO_553648984; x: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "PEM_write_bio_SSL_SESSION".}
 else:
   static :
     hint("Declaration of " & "PEM_write_bio_SSL_SESSION" &
         " already exists, not redeclaring")
 when not declared(PEM_write_SSL_SESSION):
-  proc PEM_write_SSL_SESSION*(fp: ptr Cfile_553649262; x: ptr SSL_SESSION_553649200): cint {.
+  proc PEM_write_SSL_SESSION*(fp: ptr Cfile_553649264; x: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "PEM_write_SSL_SESSION".}
 else:
   static :
     hint("Declaration of " & "PEM_write_SSL_SESSION" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_new):
-  proc SSL_SESSION_new*(ctx: ptr SSL_CTX_553649182): ptr SSL_SESSION_553649200 {.
+  proc SSL_SESSION_new*(ctx: ptr SSL_CTX_553649184): ptr SSL_SESSION_553649202 {.
       cdecl, importc: "SSL_SESSION_new".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_new" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_up_ref):
-  proc SSL_SESSION_up_ref*(session: ptr SSL_SESSION_553649200): cint {.cdecl,
+  proc SSL_SESSION_up_ref*(session: ptr SSL_SESSION_553649202): cint {.cdecl,
       importc: "SSL_SESSION_up_ref".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_up_ref" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_free):
-  proc SSL_SESSION_free*(session: ptr SSL_SESSION_553649200): void {.cdecl,
+  proc SSL_SESSION_free*(session: ptr SSL_SESSION_553649202): void {.cdecl,
       importc: "SSL_SESSION_free".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_free" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_to_bytes):
-  proc SSL_SESSION_to_bytes*(in_arg: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_to_bytes*(in_arg: ptr SSL_SESSION_553649202;
                              out_data: ptr ptr uint8; out_len: ptr csize_t): cint {.
       cdecl, importc: "SSL_SESSION_to_bytes".}
 else:
@@ -78457,7 +78482,7 @@ else:
     hint("Declaration of " & "SSL_SESSION_to_bytes" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_to_bytes_for_ticket):
-  proc SSL_SESSION_to_bytes_for_ticket*(in_arg: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_to_bytes_for_ticket*(in_arg: ptr SSL_SESSION_553649202;
                                         out_data: ptr ptr uint8;
                                         out_len: ptr csize_t): cint {.cdecl,
       importc: "SSL_SESSION_to_bytes_for_ticket".}
@@ -78467,28 +78492,28 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_from_bytes):
   proc SSL_SESSION_from_bytes*(in_arg: ptr uint8; in_len: csize_t;
-                               ctx: ptr SSL_CTX_553649182): ptr SSL_SESSION_553649200 {.
+                               ctx: ptr SSL_CTX_553649184): ptr SSL_SESSION_553649202 {.
       cdecl, importc: "SSL_SESSION_from_bytes".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_from_bytes" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get_version):
-  proc SSL_SESSION_get_version*(session: ptr SSL_SESSION_553649200): cstring {.
+  proc SSL_SESSION_get_version*(session: ptr SSL_SESSION_553649202): cstring {.
       cdecl, importc: "SSL_SESSION_get_version".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_get_version" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get_protocol_version):
-  proc SSL_SESSION_get_protocol_version*(session: ptr SSL_SESSION_553649200): uint16 {.
+  proc SSL_SESSION_get_protocol_version*(session: ptr SSL_SESSION_553649202): uint16 {.
       cdecl, importc: "SSL_SESSION_get_protocol_version".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_get_protocol_version" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_set_protocol_version):
-  proc SSL_SESSION_set_protocol_version*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_set_protocol_version*(session: ptr SSL_SESSION_553649202;
       version: uint16): cint {.cdecl,
                                importc: "SSL_SESSION_set_protocol_version".}
 else:
@@ -78496,7 +78521,7 @@ else:
     hint("Declaration of " & "SSL_SESSION_set_protocol_version" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get_id):
-  proc SSL_SESSION_get_id*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_get_id*(session: ptr SSL_SESSION_553649202;
                            out_len: ptr cuint): ptr uint8 {.cdecl,
       importc: "SSL_SESSION_get_id".}
 else:
@@ -78504,7 +78529,7 @@ else:
     hint("Declaration of " & "SSL_SESSION_get_id" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_set1_id):
-  proc SSL_SESSION_set1_id*(session: ptr SSL_SESSION_553649200; sid: ptr uint8;
+  proc SSL_SESSION_set1_id*(session: ptr SSL_SESSION_553649202; sid: ptr uint8;
                             sid_len: csize_t): cint {.cdecl,
       importc: "SSL_SESSION_set1_id".}
 else:
@@ -78512,35 +78537,35 @@ else:
     hint("Declaration of " & "SSL_SESSION_set1_id" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get_time):
-  proc SSL_SESSION_get_time*(session: ptr SSL_SESSION_553649200): uint64 {.
+  proc SSL_SESSION_get_time*(session: ptr SSL_SESSION_553649202): uint64 {.
       cdecl, importc: "SSL_SESSION_get_time".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_get_time" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get_timeout):
-  proc SSL_SESSION_get_timeout*(session: ptr SSL_SESSION_553649200): uint32 {.
+  proc SSL_SESSION_get_timeout*(session: ptr SSL_SESSION_553649202): uint32 {.
       cdecl, importc: "SSL_SESSION_get_timeout".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_get_timeout" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get0_peer):
-  proc SSL_SESSION_get0_peer*(session: ptr SSL_SESSION_553649200): ptr X509_553649236 {.
+  proc SSL_SESSION_get0_peer*(session: ptr SSL_SESSION_553649202): ptr X509_553649238 {.
       cdecl, importc: "SSL_SESSION_get0_peer".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_get0_peer" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get0_peer_certificates):
-  proc SSL_SESSION_get0_peer_certificates*(session: ptr SSL_SESSION_553649200): ptr struct_stack_st_CRYPTO_BUFFER {.
+  proc SSL_SESSION_get0_peer_certificates*(session: ptr SSL_SESSION_553649202): ptr struct_stack_st_CRYPTO_BUFFER {.
       cdecl, importc: "SSL_SESSION_get0_peer_certificates".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_get0_peer_certificates" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get0_signed_cert_timestamp_list):
-  proc SSL_SESSION_get0_signed_cert_timestamp_list*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_get0_signed_cert_timestamp_list*(session: ptr SSL_SESSION_553649202;
       out_arg: ptr ptr uint8; out_len: ptr csize_t): void {.cdecl,
       importc: "SSL_SESSION_get0_signed_cert_timestamp_list".}
 else:
@@ -78548,7 +78573,7 @@ else:
     hint("Declaration of " & "SSL_SESSION_get0_signed_cert_timestamp_list" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get0_ocsp_response):
-  proc SSL_SESSION_get0_ocsp_response*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_get0_ocsp_response*(session: ptr SSL_SESSION_553649202;
                                        out_arg: ptr ptr uint8;
                                        out_len: ptr csize_t): void {.cdecl,
       importc: "SSL_SESSION_get0_ocsp_response".}
@@ -78557,7 +78582,7 @@ else:
     hint("Declaration of " & "SSL_SESSION_get0_ocsp_response" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get_master_key):
-  proc SSL_SESSION_get_master_key*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_get_master_key*(session: ptr SSL_SESSION_553649202;
                                    out_arg: ptr uint8; max_out: csize_t): csize_t {.
       cdecl, importc: "SSL_SESSION_get_master_key".}
 else:
@@ -78565,14 +78590,14 @@ else:
     hint("Declaration of " & "SSL_SESSION_get_master_key" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_set_time):
-  proc SSL_SESSION_set_time*(session: ptr SSL_SESSION_553649200; time: uint64): uint64 {.
+  proc SSL_SESSION_set_time*(session: ptr SSL_SESSION_553649202; time: uint64): uint64 {.
       cdecl, importc: "SSL_SESSION_set_time".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_set_time" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_set_timeout):
-  proc SSL_SESSION_set_timeout*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_set_timeout*(session: ptr SSL_SESSION_553649202;
                                 timeout: uint32): uint32 {.cdecl,
       importc: "SSL_SESSION_set_timeout".}
 else:
@@ -78580,7 +78605,7 @@ else:
     hint("Declaration of " & "SSL_SESSION_set_timeout" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get0_id_context):
-  proc SSL_SESSION_get0_id_context*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_get0_id_context*(session: ptr SSL_SESSION_553649202;
                                     out_len: ptr cuint): ptr uint8 {.cdecl,
       importc: "SSL_SESSION_get0_id_context".}
 else:
@@ -78588,7 +78613,7 @@ else:
     hint("Declaration of " & "SSL_SESSION_get0_id_context" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_set1_id_context):
-  proc SSL_SESSION_set1_id_context*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_set1_id_context*(session: ptr SSL_SESSION_553649202;
                                     sid_ctx: ptr uint8; sid_ctx_len: csize_t): cint {.
       cdecl, importc: "SSL_SESSION_set1_id_context".}
 else:
@@ -78596,28 +78621,28 @@ else:
     hint("Declaration of " & "SSL_SESSION_set1_id_context" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_should_be_single_use):
-  proc SSL_SESSION_should_be_single_use*(session: ptr SSL_SESSION_553649200): cint {.
+  proc SSL_SESSION_should_be_single_use*(session: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "SSL_SESSION_should_be_single_use".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_should_be_single_use" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_is_resumable):
-  proc SSL_SESSION_is_resumable*(session: ptr SSL_SESSION_553649200): cint {.
+  proc SSL_SESSION_is_resumable*(session: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "SSL_SESSION_is_resumable".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_is_resumable" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_has_ticket):
-  proc SSL_SESSION_has_ticket*(session: ptr SSL_SESSION_553649200): cint {.
+  proc SSL_SESSION_has_ticket*(session: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "SSL_SESSION_has_ticket".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_has_ticket" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get0_ticket):
-  proc SSL_SESSION_get0_ticket*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_get0_ticket*(session: ptr SSL_SESSION_553649202;
                                 out_ticket: ptr ptr uint8; out_len: ptr csize_t): void {.
       cdecl, importc: "SSL_SESSION_get0_ticket".}
 else:
@@ -78625,7 +78650,7 @@ else:
     hint("Declaration of " & "SSL_SESSION_get0_ticket" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_set_ticket):
-  proc SSL_SESSION_set_ticket*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_set_ticket*(session: ptr SSL_SESSION_553649202;
                                ticket: ptr uint8; ticket_len: csize_t): cint {.
       cdecl, importc: "SSL_SESSION_set_ticket".}
 else:
@@ -78633,28 +78658,28 @@ else:
     hint("Declaration of " & "SSL_SESSION_set_ticket" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get_ticket_lifetime_hint):
-  proc SSL_SESSION_get_ticket_lifetime_hint*(session: ptr SSL_SESSION_553649200): uint32 {.
+  proc SSL_SESSION_get_ticket_lifetime_hint*(session: ptr SSL_SESSION_553649202): uint32 {.
       cdecl, importc: "SSL_SESSION_get_ticket_lifetime_hint".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_get_ticket_lifetime_hint" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get0_cipher):
-  proc SSL_SESSION_get0_cipher*(session: ptr SSL_SESSION_553649200): ptr SSL_CIPHER_553649180 {.
+  proc SSL_SESSION_get0_cipher*(session: ptr SSL_SESSION_553649202): ptr SSL_CIPHER_553649182 {.
       cdecl, importc: "SSL_SESSION_get0_cipher".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_get0_cipher" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_has_peer_sha256):
-  proc SSL_SESSION_has_peer_sha256*(session: ptr SSL_SESSION_553649200): cint {.
+  proc SSL_SESSION_has_peer_sha256*(session: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "SSL_SESSION_has_peer_sha256".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_has_peer_sha256" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get0_peer_sha256):
-  proc SSL_SESSION_get0_peer_sha256*(session: ptr SSL_SESSION_553649200;
+  proc SSL_SESSION_get0_peer_sha256*(session: ptr SSL_SESSION_553649202;
                                      out_ptr: ptr ptr uint8;
                                      out_len: ptr csize_t): void {.cdecl,
       importc: "SSL_SESSION_get0_peer_sha256".}
@@ -78663,21 +78688,21 @@ else:
     hint("Declaration of " & "SSL_SESSION_get0_peer_sha256" &
         " already exists, not redeclaring")
 when not declared(SSL_set_session):
-  proc SSL_set_session*(ssl: ptr SSL_553649202; session: ptr SSL_SESSION_553649200): cint {.
+  proc SSL_set_session*(ssl: ptr SSL_553649204; session: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "SSL_set_session".}
 else:
   static :
     hint("Declaration of " & "SSL_set_session" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_timeout):
-  proc SSL_CTX_set_timeout*(ctx: ptr SSL_CTX_553649182; timeout: uint32): uint32 {.
+  proc SSL_CTX_set_timeout*(ctx: ptr SSL_CTX_553649184; timeout: uint32): uint32 {.
       cdecl, importc: "SSL_CTX_set_timeout".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_timeout" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_session_psk_dhe_timeout):
-  proc SSL_CTX_set_session_psk_dhe_timeout*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_session_psk_dhe_timeout*(ctx: ptr SSL_CTX_553649184;
       timeout: uint32): void {.cdecl,
                                importc: "SSL_CTX_set_session_psk_dhe_timeout".}
 else:
@@ -78685,14 +78710,14 @@ else:
     hint("Declaration of " & "SSL_CTX_set_session_psk_dhe_timeout" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_timeout):
-  proc SSL_CTX_get_timeout*(ctx: ptr SSL_CTX_553649182): uint32 {.cdecl,
+  proc SSL_CTX_get_timeout*(ctx: ptr SSL_CTX_553649184): uint32 {.cdecl,
       importc: "SSL_CTX_get_timeout".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_timeout" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_session_id_context):
-  proc SSL_CTX_set_session_id_context*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_session_id_context*(ctx: ptr SSL_CTX_553649184;
                                        sid_ctx: ptr uint8; sid_ctx_len: csize_t): cint {.
       cdecl, importc: "SSL_CTX_set_session_id_context".}
 else:
@@ -78700,7 +78725,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_session_id_context" &
         " already exists, not redeclaring")
 when not declared(SSL_set_session_id_context):
-  proc SSL_set_session_id_context*(ssl: ptr SSL_553649202; sid_ctx: ptr uint8;
+  proc SSL_set_session_id_context*(ssl: ptr SSL_553649204; sid_ctx: ptr uint8;
                                    sid_ctx_len: csize_t): cint {.cdecl,
       importc: "SSL_set_session_id_context".}
 else:
@@ -78708,135 +78733,135 @@ else:
     hint("Declaration of " & "SSL_set_session_id_context" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_session_id_context):
-  proc SSL_get0_session_id_context*(ssl: ptr SSL_553649202; out_len: ptr csize_t): ptr uint8 {.
+  proc SSL_get0_session_id_context*(ssl: ptr SSL_553649204; out_len: ptr csize_t): ptr uint8 {.
       cdecl, importc: "SSL_get0_session_id_context".}
 else:
   static :
     hint("Declaration of " & "SSL_get0_session_id_context" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_add_session):
-  proc SSL_CTX_add_session*(ctx: ptr SSL_CTX_553649182; session: ptr SSL_SESSION_553649200): cint {.
+  proc SSL_CTX_add_session*(ctx: ptr SSL_CTX_553649184; session: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "SSL_CTX_add_session".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_add_session" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_remove_session):
-  proc SSL_CTX_remove_session*(ctx: ptr SSL_CTX_553649182;
-                               session: ptr SSL_SESSION_553649200): cint {.
+  proc SSL_CTX_remove_session*(ctx: ptr SSL_CTX_553649184;
+                               session: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "SSL_CTX_remove_session".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_remove_session" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_flush_sessions):
-  proc SSL_CTX_flush_sessions*(ctx: ptr SSL_CTX_553649182; time: uint64): void {.
+  proc SSL_CTX_flush_sessions*(ctx: ptr SSL_CTX_553649184; time: uint64): void {.
       cdecl, importc: "SSL_CTX_flush_sessions".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_flush_sessions" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_set_new_cb):
-  proc SSL_CTX_sess_set_new_cb*(ctx: ptr SSL_CTX_553649182; new_session_cb: proc (
-      a0: ptr SSL_553649202; a1: ptr SSL_SESSION_553649200): cint {.cdecl.}): void {.
+  proc SSL_CTX_sess_set_new_cb*(ctx: ptr SSL_CTX_553649184; new_session_cb: proc (
+      a0: ptr SSL_553649204; a1: ptr SSL_SESSION_553649202): cint {.cdecl.}): void {.
       cdecl, importc: "SSL_CTX_sess_set_new_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_set_new_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_get_new_cb):
-  proc SSL_CTX_sess_get_new_cb*(ctx: ptr SSL_CTX_553649182): proc (a0: ptr SSL_553649202;
-      a1: ptr SSL_SESSION_553649200): cint {.cdecl.} {.cdecl,
+  proc SSL_CTX_sess_get_new_cb*(ctx: ptr SSL_CTX_553649184): proc (a0: ptr SSL_553649204;
+      a1: ptr SSL_SESSION_553649202): cint {.cdecl.} {.cdecl,
       importc: "SSL_CTX_sess_get_new_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_get_new_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_set_remove_cb):
-  proc SSL_CTX_sess_set_remove_cb*(ctx: ptr SSL_CTX_553649182; remove_session_cb: proc (
-      a0: ptr SSL_CTX_553649182; a1: ptr SSL_SESSION_553649200): void {.cdecl.}): void {.
+  proc SSL_CTX_sess_set_remove_cb*(ctx: ptr SSL_CTX_553649184; remove_session_cb: proc (
+      a0: ptr SSL_CTX_553649184; a1: ptr SSL_SESSION_553649202): void {.cdecl.}): void {.
       cdecl, importc: "SSL_CTX_sess_set_remove_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_set_remove_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_get_remove_cb):
-  proc SSL_CTX_sess_get_remove_cb*(ctx: ptr SSL_CTX_553649182): proc (
-      a0: ptr SSL_CTX_553649182; a1: ptr SSL_SESSION_553649200): void {.cdecl.} {.
+  proc SSL_CTX_sess_get_remove_cb*(ctx: ptr SSL_CTX_553649184): proc (
+      a0: ptr SSL_CTX_553649184; a1: ptr SSL_SESSION_553649202): void {.cdecl.} {.
       cdecl, importc: "SSL_CTX_sess_get_remove_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_get_remove_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_set_get_cb):
-  proc SSL_CTX_sess_set_get_cb*(ctx: ptr SSL_CTX_553649182; get_session_cb: proc (
-      a0: ptr SSL_553649202; a1: ptr uint8; a2: cint; a3: ptr cint): ptr SSL_SESSION_553649200 {.
+  proc SSL_CTX_sess_set_get_cb*(ctx: ptr SSL_CTX_553649184; get_session_cb: proc (
+      a0: ptr SSL_553649204; a1: ptr uint8; a2: cint; a3: ptr cint): ptr SSL_SESSION_553649202 {.
       cdecl.}): void {.cdecl, importc: "SSL_CTX_sess_set_get_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_set_get_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_get_get_cb):
-  proc SSL_CTX_sess_get_get_cb*(ctx: ptr SSL_CTX_553649182): proc (a0: ptr SSL_553649202;
-      a1: ptr uint8; a2: cint; a3: ptr cint): ptr SSL_SESSION_553649200 {.cdecl.} {.
+  proc SSL_CTX_sess_get_get_cb*(ctx: ptr SSL_CTX_553649184): proc (a0: ptr SSL_553649204;
+      a1: ptr uint8; a2: cint; a3: ptr cint): ptr SSL_SESSION_553649202 {.cdecl.} {.
       cdecl, importc: "SSL_CTX_sess_get_get_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_get_get_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_magic_pending_session_ptr):
-  proc SSL_magic_pending_session_ptr*(): ptr SSL_SESSION_553649200 {.cdecl,
+  proc SSL_magic_pending_session_ptr*(): ptr SSL_SESSION_553649202 {.cdecl,
       importc: "SSL_magic_pending_session_ptr".}
 else:
   static :
     hint("Declaration of " & "SSL_magic_pending_session_ptr" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_ticket_aead_method):
-  proc SSL_CTX_set_ticket_aead_method*(ctx: ptr SSL_CTX_553649182;
-                                       aead_method: ptr SSL_TICKET_AEAD_METHOD_553649204): void {.
+  proc SSL_CTX_set_ticket_aead_method*(ctx: ptr SSL_CTX_553649184;
+                                       aead_method: ptr SSL_TICKET_AEAD_METHOD_553649206): void {.
       cdecl, importc: "SSL_CTX_set_ticket_aead_method".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_ticket_aead_method" &
         " already exists, not redeclaring")
 when not declared(SSL_process_tls13_new_session_ticket):
-  proc SSL_process_tls13_new_session_ticket*(ssl: ptr SSL_553649202;
-      buf: ptr uint8; buf_len: csize_t): ptr SSL_SESSION_553649200 {.cdecl,
+  proc SSL_process_tls13_new_session_ticket*(ssl: ptr SSL_553649204;
+      buf: ptr uint8; buf_len: csize_t): ptr SSL_SESSION_553649202 {.cdecl,
       importc: "SSL_process_tls13_new_session_ticket".}
 else:
   static :
     hint("Declaration of " & "SSL_process_tls13_new_session_ticket" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_num_tickets):
-  proc SSL_CTX_set_num_tickets*(ctx: ptr SSL_CTX_553649182; num_tickets: csize_t): cint {.
+  proc SSL_CTX_set_num_tickets*(ctx: ptr SSL_CTX_553649184; num_tickets: csize_t): cint {.
       cdecl, importc: "SSL_CTX_set_num_tickets".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_num_tickets" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_num_tickets):
-  proc SSL_CTX_get_num_tickets*(ctx: ptr SSL_CTX_553649182): csize_t {.cdecl,
+  proc SSL_CTX_get_num_tickets*(ctx: ptr SSL_CTX_553649184): csize_t {.cdecl,
       importc: "SSL_CTX_get_num_tickets".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_num_tickets" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_groups_list):
-  proc SSL_CTX_set1_groups_list*(ctx: ptr SSL_CTX_553649182; groups: cstring): cint {.
+  proc SSL_CTX_set1_groups_list*(ctx: ptr SSL_CTX_553649184; groups: cstring): cint {.
       cdecl, importc: "SSL_CTX_set1_groups_list".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set1_groups_list" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_groups_list):
-  proc SSL_set1_groups_list*(ssl: ptr SSL_553649202; groups: cstring): cint {.
+  proc SSL_set1_groups_list*(ssl: ptr SSL_553649204; groups: cstring): cint {.
       cdecl, importc: "SSL_set1_groups_list".}
 else:
   static :
     hint("Declaration of " & "SSL_set1_groups_list" &
         " already exists, not redeclaring")
 when not declared(SSL_get_group_id):
-  proc SSL_get_group_id*(ssl: ptr SSL_553649202): uint16 {.cdecl,
+  proc SSL_get_group_id*(ssl: ptr SSL_553649204): uint16 {.cdecl,
       importc: "SSL_get_group_id".}
 else:
   static :
@@ -78850,28 +78875,28 @@ else:
     hint("Declaration of " & "SSL_get_group_name" &
         " already exists, not redeclaring")
 when not declared(SSL_get_peer_tmp_key):
-  proc SSL_get_peer_tmp_key*(ssl: ptr SSL_553649202; out_key: ptr ptr EVP_PKEY_553649086): cint {.
+  proc SSL_get_peer_tmp_key*(ssl: ptr SSL_553649204; out_key: ptr ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "SSL_get_peer_tmp_key".}
 else:
   static :
     hint("Declaration of " & "SSL_get_peer_tmp_key" &
         " already exists, not redeclaring")
 when not declared(SSL_get_server_tmp_key):
-  proc SSL_get_server_tmp_key*(ssl: ptr SSL_553649202; out_key: ptr ptr EVP_PKEY_553649086): cint {.
+  proc SSL_get_server_tmp_key*(ssl: ptr SSL_553649204; out_key: ptr ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "SSL_get_server_tmp_key".}
 else:
   static :
     hint("Declaration of " & "SSL_get_server_tmp_key" &
         " already exists, not redeclaring")
 when not declared(SSL_to_bytes):
-  proc SSL_to_bytes*(in_arg: ptr SSL_553649202; out_data: ptr ptr uint8;
+  proc SSL_to_bytes*(in_arg: ptr SSL_553649204; out_data: ptr ptr uint8;
                      out_len: ptr csize_t): cint {.cdecl,
       importc: "SSL_to_bytes".}
 else:
   static :
     hint("Declaration of " & "SSL_to_bytes" & " already exists, not redeclaring")
 when not declared(SSL_from_bytes):
-  proc SSL_from_bytes*(in_arg: ptr uint8; in_len: csize_t; ctx: ptr SSL_CTX_553649182): ptr SSL_553649202 {.
+  proc SSL_from_bytes*(in_arg: ptr uint8; in_len: csize_t; ctx: ptr SSL_CTX_553649184): ptr SSL_553649204 {.
       cdecl, importc: "SSL_from_bytes".}
 else:
   static :
@@ -78885,111 +78910,111 @@ else:
     hint("Declaration of " & "SSL_get_all_group_names" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_verify):
-  proc SSL_CTX_set_verify*(ctx: ptr SSL_CTX_553649182; mode: cint; callback: proc (
-      a0: cint; a1: ptr X509_STORE_CTX_553649238): cint {.cdecl.}): void {.
+  proc SSL_CTX_set_verify*(ctx: ptr SSL_CTX_553649184; mode: cint; callback: proc (
+      a0: cint; a1: ptr X509_STORE_CTX_553649240): cint {.cdecl.}): void {.
       cdecl, importc: "SSL_CTX_set_verify".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_verify" &
         " already exists, not redeclaring")
 when not declared(SSL_set_verify):
-  proc SSL_set_verify*(ssl: ptr SSL_553649202; mode: cint; callback: proc (
-      a0: cint; a1: ptr X509_STORE_CTX_553649238): cint {.cdecl.}): void {.
+  proc SSL_set_verify*(ssl: ptr SSL_553649204; mode: cint; callback: proc (
+      a0: cint; a1: ptr X509_STORE_CTX_553649240): cint {.cdecl.}): void {.
       cdecl, importc: "SSL_set_verify".}
 else:
   static :
     hint("Declaration of " & "SSL_set_verify" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_custom_verify):
-  proc SSL_CTX_set_custom_verify*(ctx: ptr SSL_CTX_553649182; mode: cint;
-      callback: proc (a0: ptr SSL_553649202; a1: ptr uint8): enum_ssl_verify_result_t_553649708 {.
+  proc SSL_CTX_set_custom_verify*(ctx: ptr SSL_CTX_553649184; mode: cint;
+      callback: proc (a0: ptr SSL_553649204; a1: ptr uint8): enum_ssl_verify_result_t_553649710 {.
       cdecl.}): void {.cdecl, importc: "SSL_CTX_set_custom_verify".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_custom_verify" &
         " already exists, not redeclaring")
 when not declared(SSL_set_custom_verify):
-  proc SSL_set_custom_verify*(ssl: ptr SSL_553649202; mode: cint; callback: proc (
-      a0: ptr SSL_553649202; a1: ptr uint8): enum_ssl_verify_result_t_553649708 {.
+  proc SSL_set_custom_verify*(ssl: ptr SSL_553649204; mode: cint; callback: proc (
+      a0: ptr SSL_553649204; a1: ptr uint8): enum_ssl_verify_result_t_553649710 {.
       cdecl.}): void {.cdecl, importc: "SSL_set_custom_verify".}
 else:
   static :
     hint("Declaration of " & "SSL_set_custom_verify" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_verify_mode):
-  proc SSL_CTX_get_verify_mode*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_get_verify_mode*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_get_verify_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_verify_mode" &
         " already exists, not redeclaring")
 when not declared(SSL_get_verify_mode):
-  proc SSL_get_verify_mode*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_verify_mode*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_verify_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_get_verify_mode" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_verify_callback):
-  proc SSL_CTX_get_verify_callback*(ctx: ptr SSL_CTX_553649182): proc (a0: cint;
-      a1: ptr X509_STORE_CTX_553649238): cint {.cdecl.} {.cdecl,
+  proc SSL_CTX_get_verify_callback*(ctx: ptr SSL_CTX_553649184): proc (a0: cint;
+      a1: ptr X509_STORE_CTX_553649240): cint {.cdecl.} {.cdecl,
       importc: "SSL_CTX_get_verify_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_verify_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_get_verify_callback):
-  proc SSL_get_verify_callback*(ssl: ptr SSL_553649202): proc (a0: cint;
-      a1: ptr X509_STORE_CTX_553649238): cint {.cdecl.} {.cdecl,
+  proc SSL_get_verify_callback*(ssl: ptr SSL_553649204): proc (a0: cint;
+      a1: ptr X509_STORE_CTX_553649240): cint {.cdecl.} {.cdecl,
       importc: "SSL_get_verify_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_get_verify_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_host):
-  proc SSL_set1_host*(ssl: ptr SSL_553649202; hostname: cstring): cint {.cdecl,
+  proc SSL_set1_host*(ssl: ptr SSL_553649204; hostname: cstring): cint {.cdecl,
       importc: "SSL_set1_host".}
 else:
   static :
     hint("Declaration of " & "SSL_set1_host" &
         " already exists, not redeclaring")
 when not declared(SSL_set_hostflags):
-  proc SSL_set_hostflags*(ssl: ptr SSL_553649202; flags: cuint): void {.cdecl,
+  proc SSL_set_hostflags*(ssl: ptr SSL_553649204; flags: cuint): void {.cdecl,
       importc: "SSL_set_hostflags".}
 else:
   static :
     hint("Declaration of " & "SSL_set_hostflags" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_verify_depth):
-  proc SSL_CTX_set_verify_depth*(ctx: ptr SSL_CTX_553649182; depth: cint): void {.
+  proc SSL_CTX_set_verify_depth*(ctx: ptr SSL_CTX_553649184; depth: cint): void {.
       cdecl, importc: "SSL_CTX_set_verify_depth".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_verify_depth" &
         " already exists, not redeclaring")
 when not declared(SSL_set_verify_depth):
-  proc SSL_set_verify_depth*(ssl: ptr SSL_553649202; depth: cint): void {.cdecl,
+  proc SSL_set_verify_depth*(ssl: ptr SSL_553649204; depth: cint): void {.cdecl,
       importc: "SSL_set_verify_depth".}
 else:
   static :
     hint("Declaration of " & "SSL_set_verify_depth" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_verify_depth):
-  proc SSL_CTX_get_verify_depth*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_get_verify_depth*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_get_verify_depth".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_verify_depth" &
         " already exists, not redeclaring")
 when not declared(SSL_get_verify_depth):
-  proc SSL_get_verify_depth*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_verify_depth*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_verify_depth".}
 else:
   static :
     hint("Declaration of " & "SSL_get_verify_depth" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_param):
-  proc SSL_CTX_set1_param*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set1_param*(ctx: ptr SSL_CTX_553649184;
                            param: ptr X509_VERIFY_PARAM_553648948): cint {.
       cdecl, importc: "SSL_CTX_set1_param".}
 else:
@@ -78997,85 +79022,85 @@ else:
     hint("Declaration of " & "SSL_CTX_set1_param" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_param):
-  proc SSL_set1_param*(ssl: ptr SSL_553649202; param: ptr X509_VERIFY_PARAM_553648948): cint {.
+  proc SSL_set1_param*(ssl: ptr SSL_553649204; param: ptr X509_VERIFY_PARAM_553648948): cint {.
       cdecl, importc: "SSL_set1_param".}
 else:
   static :
     hint("Declaration of " & "SSL_set1_param" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get0_param):
-  proc SSL_CTX_get0_param*(ctx: ptr SSL_CTX_553649182): ptr X509_VERIFY_PARAM_553648948 {.
+  proc SSL_CTX_get0_param*(ctx: ptr SSL_CTX_553649184): ptr X509_VERIFY_PARAM_553648948 {.
       cdecl, importc: "SSL_CTX_get0_param".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get0_param" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_param):
-  proc SSL_get0_param*(ssl: ptr SSL_553649202): ptr X509_VERIFY_PARAM_553648948 {.
+  proc SSL_get0_param*(ssl: ptr SSL_553649204): ptr X509_VERIFY_PARAM_553648948 {.
       cdecl, importc: "SSL_get0_param".}
 else:
   static :
     hint("Declaration of " & "SSL_get0_param" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_purpose):
-  proc SSL_CTX_set_purpose*(ctx: ptr SSL_CTX_553649182; purpose: cint): cint {.
+  proc SSL_CTX_set_purpose*(ctx: ptr SSL_CTX_553649184; purpose: cint): cint {.
       cdecl, importc: "SSL_CTX_set_purpose".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_purpose" &
         " already exists, not redeclaring")
 when not declared(SSL_set_purpose):
-  proc SSL_set_purpose*(ssl: ptr SSL_553649202; purpose: cint): cint {.cdecl,
+  proc SSL_set_purpose*(ssl: ptr SSL_553649204; purpose: cint): cint {.cdecl,
       importc: "SSL_set_purpose".}
 else:
   static :
     hint("Declaration of " & "SSL_set_purpose" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_trust):
-  proc SSL_CTX_set_trust*(ctx: ptr SSL_CTX_553649182; trust: cint): cint {.
+  proc SSL_CTX_set_trust*(ctx: ptr SSL_CTX_553649184; trust: cint): cint {.
       cdecl, importc: "SSL_CTX_set_trust".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_trust" &
         " already exists, not redeclaring")
 when not declared(SSL_set_trust):
-  proc SSL_set_trust*(ssl: ptr SSL_553649202; trust: cint): cint {.cdecl,
+  proc SSL_set_trust*(ssl: ptr SSL_553649204; trust: cint): cint {.cdecl,
       importc: "SSL_set_trust".}
 else:
   static :
     hint("Declaration of " & "SSL_set_trust" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_cert_store):
-  proc SSL_CTX_set_cert_store*(ctx: ptr SSL_CTX_553649182; store: ptr X509_STORE_553649240): void {.
+  proc SSL_CTX_set_cert_store*(ctx: ptr SSL_CTX_553649184; store: ptr X509_STORE_553649242): void {.
       cdecl, importc: "SSL_CTX_set_cert_store".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_cert_store" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_cert_store):
-  proc SSL_CTX_set1_cert_store*(ctx: ptr SSL_CTX_553649182;
-                                store: ptr X509_STORE_553649240): void {.cdecl,
+  proc SSL_CTX_set1_cert_store*(ctx: ptr SSL_CTX_553649184;
+                                store: ptr X509_STORE_553649242): void {.cdecl,
       importc: "SSL_CTX_set1_cert_store".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set1_cert_store" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_cert_store):
-  proc SSL_CTX_get_cert_store*(ctx: ptr SSL_CTX_553649182): ptr X509_STORE_553649240 {.
+  proc SSL_CTX_get_cert_store*(ctx: ptr SSL_CTX_553649184): ptr X509_STORE_553649242 {.
       cdecl, importc: "SSL_CTX_get_cert_store".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_cert_store" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_default_verify_paths):
-  proc SSL_CTX_set_default_verify_paths*(ctx: ptr SSL_CTX_553649182): cint {.
+  proc SSL_CTX_set_default_verify_paths*(ctx: ptr SSL_CTX_553649184): cint {.
       cdecl, importc: "SSL_CTX_set_default_verify_paths".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_default_verify_paths" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_load_verify_locations):
-  proc SSL_CTX_load_verify_locations*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_load_verify_locations*(ctx: ptr SSL_CTX_553649184;
                                       ca_file: cstring; ca_dir: cstring): cint {.
       cdecl, importc: "SSL_CTX_load_verify_locations".}
 else:
@@ -79083,14 +79108,14 @@ else:
     hint("Declaration of " & "SSL_CTX_load_verify_locations" &
         " already exists, not redeclaring")
 when not declared(SSL_get_verify_result):
-  proc SSL_get_verify_result*(ssl: ptr SSL_553649202): clong {.cdecl,
+  proc SSL_get_verify_result*(ssl: ptr SSL_553649204): clong {.cdecl,
       importc: "SSL_get_verify_result".}
 else:
   static :
     hint("Declaration of " & "SSL_get_verify_result" &
         " already exists, not redeclaring")
 when not declared(SSL_set_verify_result):
-  proc SSL_set_verify_result*(ssl: ptr SSL_553649202; arg: clong): void {.cdecl,
+  proc SSL_set_verify_result*(ssl: ptr SSL_553649204; arg: clong): void {.cdecl,
       importc: "SSL_set_verify_result".}
 else:
   static :
@@ -79111,73 +79136,73 @@ else:
     hint("Declaration of " & "SSL_get_ex_data_X509_STORE_CTX_idx" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_cert_verify_callback):
-  proc SSL_CTX_set_cert_verify_callback*(ctx: ptr SSL_CTX_553649182;
-      callback: proc (a0: ptr X509_STORE_CTX_553649238; a1: pointer): cint {.
+  proc SSL_CTX_set_cert_verify_callback*(ctx: ptr SSL_CTX_553649184;
+      callback: proc (a0: ptr X509_STORE_CTX_553649240; a1: pointer): cint {.
       cdecl.}; arg: pointer): void {.cdecl, importc: "SSL_CTX_set_cert_verify_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_cert_verify_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_enable_signed_cert_timestamps):
-  proc SSL_enable_signed_cert_timestamps*(ssl: ptr SSL_553649202): void {.cdecl,
+  proc SSL_enable_signed_cert_timestamps*(ssl: ptr SSL_553649204): void {.cdecl,
       importc: "SSL_enable_signed_cert_timestamps".}
 else:
   static :
     hint("Declaration of " & "SSL_enable_signed_cert_timestamps" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_enable_signed_cert_timestamps):
-  proc SSL_CTX_enable_signed_cert_timestamps*(ctx: ptr SSL_CTX_553649182): void {.
+  proc SSL_CTX_enable_signed_cert_timestamps*(ctx: ptr SSL_CTX_553649184): void {.
       cdecl, importc: "SSL_CTX_enable_signed_cert_timestamps".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_enable_signed_cert_timestamps" &
         " already exists, not redeclaring")
 when not declared(SSL_enable_ocsp_stapling):
-  proc SSL_enable_ocsp_stapling*(ssl: ptr SSL_553649202): void {.cdecl,
+  proc SSL_enable_ocsp_stapling*(ssl: ptr SSL_553649204): void {.cdecl,
       importc: "SSL_enable_ocsp_stapling".}
 else:
   static :
     hint("Declaration of " & "SSL_enable_ocsp_stapling" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_enable_ocsp_stapling):
-  proc SSL_CTX_enable_ocsp_stapling*(ctx: ptr SSL_CTX_553649182): void {.cdecl,
+  proc SSL_CTX_enable_ocsp_stapling*(ctx: ptr SSL_CTX_553649184): void {.cdecl,
       importc: "SSL_CTX_enable_ocsp_stapling".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_enable_ocsp_stapling" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set0_verify_cert_store):
-  proc SSL_CTX_set0_verify_cert_store*(ctx: ptr SSL_CTX_553649182;
-                                       store: ptr X509_STORE_553649240): cint {.
+  proc SSL_CTX_set0_verify_cert_store*(ctx: ptr SSL_CTX_553649184;
+                                       store: ptr X509_STORE_553649242): cint {.
       cdecl, importc: "SSL_CTX_set0_verify_cert_store".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set0_verify_cert_store" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_verify_cert_store):
-  proc SSL_CTX_set1_verify_cert_store*(ctx: ptr SSL_CTX_553649182;
-                                       store: ptr X509_STORE_553649240): cint {.
+  proc SSL_CTX_set1_verify_cert_store*(ctx: ptr SSL_CTX_553649184;
+                                       store: ptr X509_STORE_553649242): cint {.
       cdecl, importc: "SSL_CTX_set1_verify_cert_store".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set1_verify_cert_store" &
         " already exists, not redeclaring")
 when not declared(SSL_set0_verify_cert_store):
-  proc SSL_set0_verify_cert_store*(ssl: ptr SSL_553649202; store: ptr X509_STORE_553649240): cint {.
+  proc SSL_set0_verify_cert_store*(ssl: ptr SSL_553649204; store: ptr X509_STORE_553649242): cint {.
       cdecl, importc: "SSL_set0_verify_cert_store".}
 else:
   static :
     hint("Declaration of " & "SSL_set0_verify_cert_store" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_verify_cert_store):
-  proc SSL_set1_verify_cert_store*(ssl: ptr SSL_553649202; store: ptr X509_STORE_553649240): cint {.
+  proc SSL_set1_verify_cert_store*(ssl: ptr SSL_553649204; store: ptr X509_STORE_553649242): cint {.
       cdecl, importc: "SSL_set1_verify_cert_store".}
 else:
   static :
     hint("Declaration of " & "SSL_set1_verify_cert_store" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_verify_algorithm_prefs):
-  proc SSL_CTX_set_verify_algorithm_prefs*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_verify_algorithm_prefs*(ctx: ptr SSL_CTX_553649184;
       prefs: ptr uint16; num_prefs: csize_t): cint {.cdecl,
       importc: "SSL_CTX_set_verify_algorithm_prefs".}
 else:
@@ -79185,7 +79210,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_verify_algorithm_prefs" &
         " already exists, not redeclaring")
 when not declared(SSL_set_verify_algorithm_prefs):
-  proc SSL_set_verify_algorithm_prefs*(ssl: ptr SSL_553649202;
+  proc SSL_set_verify_algorithm_prefs*(ssl: ptr SSL_553649204;
                                        prefs: ptr uint16; num_prefs: csize_t): cint {.
       cdecl, importc: "SSL_set_verify_algorithm_prefs".}
 else:
@@ -79193,7 +79218,7 @@ else:
     hint("Declaration of " & "SSL_set_verify_algorithm_prefs" &
         " already exists, not redeclaring")
 when not declared(SSL_set_client_CA_list):
-  proc SSL_set_client_CA_list*(ssl: ptr SSL_553649202;
+  proc SSL_set_client_CA_list*(ssl: ptr SSL_553649204;
                                name_list: ptr struct_stack_st_X509_NAME): void {.
       cdecl, importc: "SSL_set_client_CA_list".}
 else:
@@ -79201,7 +79226,7 @@ else:
     hint("Declaration of " & "SSL_set_client_CA_list" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_client_CA_list):
-  proc SSL_CTX_set_client_CA_list*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_client_CA_list*(ctx: ptr SSL_CTX_553649184;
                                    name_list: ptr struct_stack_st_X509_NAME): void {.
       cdecl, importc: "SSL_CTX_set_client_CA_list".}
 else:
@@ -79209,7 +79234,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_client_CA_list" &
         " already exists, not redeclaring")
 when not declared(SSL_set0_client_CAs):
-  proc SSL_set0_client_CAs*(ssl: ptr SSL_553649202;
+  proc SSL_set0_client_CAs*(ssl: ptr SSL_553649204;
                             name_list: ptr struct_stack_st_CRYPTO_BUFFER): void {.
       cdecl, importc: "SSL_set0_client_CAs".}
 else:
@@ -79217,7 +79242,7 @@ else:
     hint("Declaration of " & "SSL_set0_client_CAs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set0_client_CAs):
-  proc SSL_CTX_set0_client_CAs*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set0_client_CAs*(ctx: ptr SSL_CTX_553649184;
                                 name_list: ptr struct_stack_st_CRYPTO_BUFFER): void {.
       cdecl, importc: "SSL_CTX_set0_client_CAs".}
 else:
@@ -79225,35 +79250,35 @@ else:
     hint("Declaration of " & "SSL_CTX_set0_client_CAs" &
         " already exists, not redeclaring")
 when not declared(SSL_get_client_CA_list):
-  proc SSL_get_client_CA_list*(ssl: ptr SSL_553649202): ptr struct_stack_st_X509_NAME {.
+  proc SSL_get_client_CA_list*(ssl: ptr SSL_553649204): ptr struct_stack_st_X509_NAME {.
       cdecl, importc: "SSL_get_client_CA_list".}
 else:
   static :
     hint("Declaration of " & "SSL_get_client_CA_list" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_server_requested_CAs):
-  proc SSL_get0_server_requested_CAs*(ssl: ptr SSL_553649202): ptr struct_stack_st_CRYPTO_BUFFER {.
+  proc SSL_get0_server_requested_CAs*(ssl: ptr SSL_553649204): ptr struct_stack_st_CRYPTO_BUFFER {.
       cdecl, importc: "SSL_get0_server_requested_CAs".}
 else:
   static :
     hint("Declaration of " & "SSL_get0_server_requested_CAs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_client_CA_list):
-  proc SSL_CTX_get_client_CA_list*(ctx: ptr SSL_CTX_553649182): ptr struct_stack_st_X509_NAME {.
+  proc SSL_CTX_get_client_CA_list*(ctx: ptr SSL_CTX_553649184): ptr struct_stack_st_X509_NAME {.
       cdecl, importc: "SSL_CTX_get_client_CA_list".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_client_CA_list" &
         " already exists, not redeclaring")
 when not declared(SSL_add_client_CA):
-  proc SSL_add_client_CA*(ssl: ptr SSL_553649202; x509: ptr X509_553649236): cint {.
+  proc SSL_add_client_CA*(ssl: ptr SSL_553649204; x509: ptr X509_553649238): cint {.
       cdecl, importc: "SSL_add_client_CA".}
 else:
   static :
     hint("Declaration of " & "SSL_add_client_CA" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_add_client_CA):
-  proc SSL_CTX_add_client_CA*(ctx: ptr SSL_CTX_553649182; x509: ptr X509_553649236): cint {.
+  proc SSL_CTX_add_client_CA*(ctx: ptr SSL_CTX_553649184; x509: ptr X509_553649238): cint {.
       cdecl, importc: "SSL_CTX_add_client_CA".}
 else:
   static :
@@ -79290,36 +79315,36 @@ else:
     hint("Declaration of " & "SSL_add_bio_cert_subjects_to_stack" &
         " already exists, not redeclaring")
 when not declared(SSL_get_servername):
-  proc SSL_get_servername*(ssl: ptr SSL_553649202; type_arg: cint): cstring {.
+  proc SSL_get_servername*(ssl: ptr SSL_553649204; type_arg: cint): cstring {.
       cdecl, importc: "SSL_get_servername".}
 else:
   static :
     hint("Declaration of " & "SSL_get_servername" &
         " already exists, not redeclaring")
 when not declared(SSL_get_servername_type):
-  proc SSL_get_servername_type*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_servername_type*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_servername_type".}
 else:
   static :
     hint("Declaration of " & "SSL_get_servername_type" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tlsext_servername_callback):
-  proc SSL_CTX_set_tlsext_servername_callback*(ctx: ptr SSL_CTX_553649182;
-      callback: proc (a0: ptr SSL_553649202; a1: ptr cint; a2: pointer): cint {.
+  proc SSL_CTX_set_tlsext_servername_callback*(ctx: ptr SSL_CTX_553649184;
+      callback: proc (a0: ptr SSL_553649204; a1: ptr cint; a2: pointer): cint {.
       cdecl.}): cint {.cdecl, importc: "SSL_CTX_set_tlsext_servername_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_tlsext_servername_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_set_SSL_CTX):
-  proc SSL_set_SSL_CTX*(ssl: ptr SSL_553649202; ctx: ptr SSL_CTX_553649182): ptr SSL_CTX_553649182 {.
+  proc SSL_set_SSL_CTX*(ssl: ptr SSL_553649204; ctx: ptr SSL_CTX_553649184): ptr SSL_CTX_553649184 {.
       cdecl, importc: "SSL_set_SSL_CTX".}
 else:
   static :
     hint("Declaration of " & "SSL_set_SSL_CTX" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_alpn_protos):
-  proc SSL_CTX_set_alpn_protos*(ctx: ptr SSL_CTX_553649182; protos: ptr uint8;
+  proc SSL_CTX_set_alpn_protos*(ctx: ptr SSL_CTX_553649184; protos: ptr uint8;
                                 protos_len: csize_t): cint {.cdecl,
       importc: "SSL_CTX_set_alpn_protos".}
 else:
@@ -79327,7 +79352,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_alpn_protos" &
         " already exists, not redeclaring")
 when not declared(SSL_set_alpn_protos):
-  proc SSL_set_alpn_protos*(ssl: ptr SSL_553649202; protos: ptr uint8;
+  proc SSL_set_alpn_protos*(ssl: ptr SSL_553649204; protos: ptr uint8;
                             protos_len: csize_t): cint {.cdecl,
       importc: "SSL_set_alpn_protos".}
 else:
@@ -79335,8 +79360,8 @@ else:
     hint("Declaration of " & "SSL_set_alpn_protos" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_alpn_select_cb):
-  proc SSL_CTX_set_alpn_select_cb*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_553649202; a1: ptr ptr uint8; a2: ptr uint8; a3: ptr uint8;
+  proc SSL_CTX_set_alpn_select_cb*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_553649204; a1: ptr ptr uint8; a2: ptr uint8; a3: ptr uint8;
       a4: cuint; a5: pointer): cint {.cdecl.}; arg: pointer): void {.cdecl,
       importc: "SSL_CTX_set_alpn_select_cb".}
 else:
@@ -79344,7 +79369,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_alpn_select_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_alpn_selected):
-  proc SSL_get0_alpn_selected*(ssl: ptr SSL_553649202; out_data: ptr ptr uint8;
+  proc SSL_get0_alpn_selected*(ssl: ptr SSL_553649204; out_data: ptr ptr uint8;
                                out_len: ptr cuint): void {.cdecl,
       importc: "SSL_get0_alpn_selected".}
 else:
@@ -79352,7 +79377,7 @@ else:
     hint("Declaration of " & "SSL_get0_alpn_selected" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_allow_unknown_alpn_protos):
-  proc SSL_CTX_set_allow_unknown_alpn_protos*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_allow_unknown_alpn_protos*(ctx: ptr SSL_CTX_553649184;
       enabled: cint): void {.cdecl,
                              importc: "SSL_CTX_set_allow_unknown_alpn_protos".}
 else:
@@ -79360,7 +79385,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_allow_unknown_alpn_protos" &
         " already exists, not redeclaring")
 when not declared(SSL_add_application_settings):
-  proc SSL_add_application_settings*(ssl: ptr SSL_553649202; proto: ptr uint8;
+  proc SSL_add_application_settings*(ssl: ptr SSL_553649204; proto: ptr uint8;
                                      proto_len: csize_t; settings: ptr uint8;
                                      settings_len: csize_t): cint {.cdecl,
       importc: "SSL_add_application_settings".}
@@ -79369,7 +79394,7 @@ else:
     hint("Declaration of " & "SSL_add_application_settings" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_peer_application_settings):
-  proc SSL_get0_peer_application_settings*(ssl: ptr SSL_553649202;
+  proc SSL_get0_peer_application_settings*(ssl: ptr SSL_553649204;
       out_data: ptr ptr uint8; out_len: ptr csize_t): void {.cdecl,
       importc: "SSL_get0_peer_application_settings".}
 else:
@@ -79377,39 +79402,39 @@ else:
     hint("Declaration of " & "SSL_get0_peer_application_settings" &
         " already exists, not redeclaring")
 when not declared(SSL_has_application_settings):
-  proc SSL_has_application_settings*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_has_application_settings*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_has_application_settings".}
 else:
   static :
     hint("Declaration of " & "SSL_has_application_settings" &
         " already exists, not redeclaring")
 when not declared(SSL_set_alps_use_new_codepoint):
-  proc SSL_set_alps_use_new_codepoint*(ssl: ptr SSL_553649202; use_new: cint): void {.
+  proc SSL_set_alps_use_new_codepoint*(ssl: ptr SSL_553649204; use_new: cint): void {.
       cdecl, importc: "SSL_set_alps_use_new_codepoint".}
 else:
   static :
     hint("Declaration of " & "SSL_set_alps_use_new_codepoint" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_add_cert_compression_alg):
-  proc SSL_CTX_add_cert_compression_alg*(ctx: ptr SSL_CTX_553649182;
-      alg_id: uint16; compress: ssl_cert_compression_func_t_553649710;
-      decompress: ssl_cert_decompression_func_t_553649712): cint {.cdecl,
+  proc SSL_CTX_add_cert_compression_alg*(ctx: ptr SSL_CTX_553649184;
+      alg_id: uint16; compress: ssl_cert_compression_func_t_553649712;
+      decompress: ssl_cert_decompression_func_t_553649714): cint {.cdecl,
       importc: "SSL_CTX_add_cert_compression_alg".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_add_cert_compression_alg" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_next_protos_advertised_cb):
-  proc SSL_CTX_set_next_protos_advertised_cb*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_553649202; a1: ptr ptr uint8; a2: ptr cuint; a3: pointer): cint {.
+  proc SSL_CTX_set_next_protos_advertised_cb*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_553649204; a1: ptr ptr uint8; a2: ptr cuint; a3: pointer): cint {.
       cdecl.}; arg: pointer): void {.cdecl, importc: "SSL_CTX_set_next_protos_advertised_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_next_protos_advertised_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_next_proto_select_cb):
-  proc SSL_CTX_set_next_proto_select_cb*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_553649202; a1: ptr ptr uint8; a2: ptr uint8; a3: ptr uint8;
+  proc SSL_CTX_set_next_proto_select_cb*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_553649204; a1: ptr ptr uint8; a2: ptr uint8; a3: ptr uint8;
       a4: cuint; a5: pointer): cint {.cdecl.}; arg: pointer): void {.cdecl,
       importc: "SSL_CTX_set_next_proto_select_cb".}
 else:
@@ -79417,7 +79442,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set_next_proto_select_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_next_proto_negotiated):
-  proc SSL_get0_next_proto_negotiated*(ssl: ptr SSL_553649202;
+  proc SSL_get0_next_proto_negotiated*(ssl: ptr SSL_553649204;
                                        out_data: ptr ptr uint8;
                                        out_len: ptr cuint): void {.cdecl,
       importc: "SSL_get0_next_proto_negotiated".}
@@ -79435,7 +79460,7 @@ else:
     hint("Declaration of " & "SSL_select_next_proto" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tls_channel_id_enabled):
-  proc SSL_CTX_set_tls_channel_id_enabled*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_tls_channel_id_enabled*(ctx: ptr SSL_CTX_553649184;
       enabled: cint): void {.cdecl,
                              importc: "SSL_CTX_set_tls_channel_id_enabled".}
 else:
@@ -79443,14 +79468,14 @@ else:
     hint("Declaration of " & "SSL_CTX_set_tls_channel_id_enabled" &
         " already exists, not redeclaring")
 when not declared(SSL_set_tls_channel_id_enabled):
-  proc SSL_set_tls_channel_id_enabled*(ssl: ptr SSL_553649202; enabled: cint): void {.
+  proc SSL_set_tls_channel_id_enabled*(ssl: ptr SSL_553649204; enabled: cint): void {.
       cdecl, importc: "SSL_set_tls_channel_id_enabled".}
 else:
   static :
     hint("Declaration of " & "SSL_set_tls_channel_id_enabled" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_tls_channel_id):
-  proc SSL_CTX_set1_tls_channel_id*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set1_tls_channel_id*(ctx: ptr SSL_CTX_553649184;
                                     private_key: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "SSL_CTX_set1_tls_channel_id".}
 else:
@@ -79458,7 +79483,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set1_tls_channel_id" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_tls_channel_id):
-  proc SSL_set1_tls_channel_id*(ssl: ptr SSL_553649202;
+  proc SSL_set1_tls_channel_id*(ssl: ptr SSL_553649204;
                                 private_key: ptr EVP_PKEY_553649086): cint {.
       cdecl, importc: "SSL_set1_tls_channel_id".}
 else:
@@ -79466,7 +79491,7 @@ else:
     hint("Declaration of " & "SSL_set1_tls_channel_id" &
         " already exists, not redeclaring")
 when not declared(SSL_get_tls_channel_id):
-  proc SSL_get_tls_channel_id*(ssl: ptr SSL_553649202; out_arg: ptr uint8;
+  proc SSL_get_tls_channel_id*(ssl: ptr SSL_553649204; out_arg: ptr uint8;
                                max_out: csize_t): csize_t {.cdecl,
       importc: "SSL_get_tls_channel_id".}
 else:
@@ -79474,67 +79499,67 @@ else:
     hint("Declaration of " & "SSL_get_tls_channel_id" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_srtp_profiles):
-  proc SSL_CTX_set_srtp_profiles*(ctx: ptr SSL_CTX_553649182; profiles: cstring): cint {.
+  proc SSL_CTX_set_srtp_profiles*(ctx: ptr SSL_CTX_553649184; profiles: cstring): cint {.
       cdecl, importc: "SSL_CTX_set_srtp_profiles".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_srtp_profiles" &
         " already exists, not redeclaring")
 when not declared(SSL_set_srtp_profiles):
-  proc SSL_set_srtp_profiles*(ssl: ptr SSL_553649202; profiles: cstring): cint {.
+  proc SSL_set_srtp_profiles*(ssl: ptr SSL_553649204; profiles: cstring): cint {.
       cdecl, importc: "SSL_set_srtp_profiles".}
 else:
   static :
     hint("Declaration of " & "SSL_set_srtp_profiles" &
         " already exists, not redeclaring")
 when not declared(SSL_get_srtp_profiles):
-  proc SSL_get_srtp_profiles*(ssl: ptr SSL_553649202): ptr struct_stack_st_SRTP_PROTECTION_PROFILE {.
+  proc SSL_get_srtp_profiles*(ssl: ptr SSL_553649204): ptr struct_stack_st_SRTP_PROTECTION_PROFILE {.
       cdecl, importc: "SSL_get_srtp_profiles".}
 else:
   static :
     hint("Declaration of " & "SSL_get_srtp_profiles" &
         " already exists, not redeclaring")
 when not declared(SSL_get_selected_srtp_profile):
-  proc SSL_get_selected_srtp_profile*(ssl: ptr SSL_553649202): ptr SRTP_PROTECTION_PROFILE_553649176 {.
+  proc SSL_get_selected_srtp_profile*(ssl: ptr SSL_553649204): ptr SRTP_PROTECTION_PROFILE_553649178 {.
       cdecl, importc: "SSL_get_selected_srtp_profile".}
 else:
   static :
     hint("Declaration of " & "SSL_get_selected_srtp_profile" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_psk_client_callback):
-  proc SSL_CTX_set_psk_client_callback*(ctx: ptr SSL_CTX_553649182;
-                                        cb: SSL_psk_client_cb_func_553649722): void {.
+  proc SSL_CTX_set_psk_client_callback*(ctx: ptr SSL_CTX_553649184;
+                                        cb: SSL_psk_client_cb_func_553649724): void {.
       cdecl, importc: "SSL_CTX_set_psk_client_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_psk_client_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_set_psk_client_callback):
-  proc SSL_set_psk_client_callback*(ssl: ptr SSL_553649202;
-                                    cb: SSL_psk_client_cb_func_553649722): void {.
+  proc SSL_set_psk_client_callback*(ssl: ptr SSL_553649204;
+                                    cb: SSL_psk_client_cb_func_553649724): void {.
       cdecl, importc: "SSL_set_psk_client_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_set_psk_client_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_psk_server_callback):
-  proc SSL_CTX_set_psk_server_callback*(ctx: ptr SSL_CTX_553649182;
-                                        cb: SSL_psk_server_cb_func_553649724): void {.
+  proc SSL_CTX_set_psk_server_callback*(ctx: ptr SSL_CTX_553649184;
+                                        cb: SSL_psk_server_cb_func_553649726): void {.
       cdecl, importc: "SSL_CTX_set_psk_server_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_psk_server_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_set_psk_server_callback):
-  proc SSL_set_psk_server_callback*(ssl: ptr SSL_553649202;
-                                    cb: SSL_psk_server_cb_func_553649724): void {.
+  proc SSL_set_psk_server_callback*(ssl: ptr SSL_553649204;
+                                    cb: SSL_psk_server_cb_func_553649726): void {.
       cdecl, importc: "SSL_set_psk_server_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_set_psk_server_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_use_psk_identity_hint):
-  proc SSL_CTX_use_psk_identity_hint*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_use_psk_identity_hint*(ctx: ptr SSL_CTX_553649184;
                                       identity_hint: cstring): cint {.cdecl,
       importc: "SSL_CTX_use_psk_identity_hint".}
 else:
@@ -79542,68 +79567,68 @@ else:
     hint("Declaration of " & "SSL_CTX_use_psk_identity_hint" &
         " already exists, not redeclaring")
 when not declared(SSL_use_psk_identity_hint):
-  proc SSL_use_psk_identity_hint*(ssl: ptr SSL_553649202; identity_hint: cstring): cint {.
+  proc SSL_use_psk_identity_hint*(ssl: ptr SSL_553649204; identity_hint: cstring): cint {.
       cdecl, importc: "SSL_use_psk_identity_hint".}
 else:
   static :
     hint("Declaration of " & "SSL_use_psk_identity_hint" &
         " already exists, not redeclaring")
 when not declared(SSL_get_psk_identity_hint):
-  proc SSL_get_psk_identity_hint*(ssl: ptr SSL_553649202): cstring {.cdecl,
+  proc SSL_get_psk_identity_hint*(ssl: ptr SSL_553649204): cstring {.cdecl,
       importc: "SSL_get_psk_identity_hint".}
 else:
   static :
     hint("Declaration of " & "SSL_get_psk_identity_hint" &
         " already exists, not redeclaring")
 when not declared(SSL_get_psk_identity):
-  proc SSL_get_psk_identity*(ssl: ptr SSL_553649202): cstring {.cdecl,
+  proc SSL_get_psk_identity*(ssl: ptr SSL_553649204): cstring {.cdecl,
       importc: "SSL_get_psk_identity".}
 else:
   static :
     hint("Declaration of " & "SSL_get_psk_identity" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_delegated_credential):
-  proc SSL_set1_delegated_credential*(ssl: ptr SSL_553649202;
+  proc SSL_set1_delegated_credential*(ssl: ptr SSL_553649204;
                                       dc: ptr CRYPTO_BUFFER_553649024;
                                       pkey: ptr EVP_PKEY_553649086;
-                                      key_method: ptr SSL_PRIVATE_KEY_METHOD_553649192): cint {.
+                                      key_method: ptr SSL_PRIVATE_KEY_METHOD_553649194): cint {.
       cdecl, importc: "SSL_set1_delegated_credential".}
 else:
   static :
     hint("Declaration of " & "SSL_set1_delegated_credential" &
         " already exists, not redeclaring")
 when not declared(SSL_delegated_credential_used):
-  proc SSL_delegated_credential_used*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_delegated_credential_used*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_delegated_credential_used".}
 else:
   static :
     hint("Declaration of " & "SSL_delegated_credential_used" &
         " already exists, not redeclaring")
 when not declared(SSL_quic_max_handshake_flight_len):
-  proc SSL_quic_max_handshake_flight_len*(ssl: ptr SSL_553649202;
-      level: enum_ssl_encryption_level_t_553649726): csize_t {.cdecl,
+  proc SSL_quic_max_handshake_flight_len*(ssl: ptr SSL_553649204;
+      level: enum_ssl_encryption_level_t_553649728): csize_t {.cdecl,
       importc: "SSL_quic_max_handshake_flight_len".}
 else:
   static :
     hint("Declaration of " & "SSL_quic_max_handshake_flight_len" &
         " already exists, not redeclaring")
 when not declared(SSL_quic_read_level):
-  proc SSL_quic_read_level*(ssl: ptr SSL_553649202): enum_ssl_encryption_level_t_553649726 {.
+  proc SSL_quic_read_level*(ssl: ptr SSL_553649204): enum_ssl_encryption_level_t_553649728 {.
       cdecl, importc: "SSL_quic_read_level".}
 else:
   static :
     hint("Declaration of " & "SSL_quic_read_level" &
         " already exists, not redeclaring")
 when not declared(SSL_quic_write_level):
-  proc SSL_quic_write_level*(ssl: ptr SSL_553649202): enum_ssl_encryption_level_t_553649726 {.
+  proc SSL_quic_write_level*(ssl: ptr SSL_553649204): enum_ssl_encryption_level_t_553649728 {.
       cdecl, importc: "SSL_quic_write_level".}
 else:
   static :
     hint("Declaration of " & "SSL_quic_write_level" &
         " already exists, not redeclaring")
 when not declared(SSL_provide_quic_data):
-  proc SSL_provide_quic_data*(ssl: ptr SSL_553649202;
-                              level: enum_ssl_encryption_level_t_553649726;
+  proc SSL_provide_quic_data*(ssl: ptr SSL_553649204;
+                              level: enum_ssl_encryption_level_t_553649728;
                               data: ptr uint8; len: csize_t): cint {.cdecl,
       importc: "SSL_provide_quic_data".}
 else:
@@ -79611,30 +79636,30 @@ else:
     hint("Declaration of " & "SSL_provide_quic_data" &
         " already exists, not redeclaring")
 when not declared(SSL_process_quic_post_handshake):
-  proc SSL_process_quic_post_handshake*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_process_quic_post_handshake*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_process_quic_post_handshake".}
 else:
   static :
     hint("Declaration of " & "SSL_process_quic_post_handshake" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_quic_method):
-  proc SSL_CTX_set_quic_method*(ctx: ptr SSL_CTX_553649182;
-                                quic_method: ptr SSL_QUIC_METHOD_553649196): cint {.
+  proc SSL_CTX_set_quic_method*(ctx: ptr SSL_CTX_553649184;
+                                quic_method: ptr SSL_QUIC_METHOD_553649198): cint {.
       cdecl, importc: "SSL_CTX_set_quic_method".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_quic_method" &
         " already exists, not redeclaring")
 when not declared(SSL_set_quic_method):
-  proc SSL_set_quic_method*(ssl: ptr SSL_553649202;
-                            quic_method: ptr SSL_QUIC_METHOD_553649196): cint {.
+  proc SSL_set_quic_method*(ssl: ptr SSL_553649204;
+                            quic_method: ptr SSL_QUIC_METHOD_553649198): cint {.
       cdecl, importc: "SSL_set_quic_method".}
 else:
   static :
     hint("Declaration of " & "SSL_set_quic_method" &
         " already exists, not redeclaring")
 when not declared(SSL_set_quic_transport_params):
-  proc SSL_set_quic_transport_params*(ssl: ptr SSL_553649202; params: ptr uint8;
+  proc SSL_set_quic_transport_params*(ssl: ptr SSL_553649204; params: ptr uint8;
                                       params_len: csize_t): cint {.cdecl,
       importc: "SSL_set_quic_transport_params".}
 else:
@@ -79642,7 +79667,7 @@ else:
     hint("Declaration of " & "SSL_set_quic_transport_params" &
         " already exists, not redeclaring")
 when not declared(SSL_get_peer_quic_transport_params):
-  proc SSL_get_peer_quic_transport_params*(ssl: ptr SSL_553649202;
+  proc SSL_get_peer_quic_transport_params*(ssl: ptr SSL_553649204;
       out_params: ptr ptr uint8; out_params_len: ptr csize_t): void {.cdecl,
       importc: "SSL_get_peer_quic_transport_params".}
 else:
@@ -79650,7 +79675,7 @@ else:
     hint("Declaration of " & "SSL_get_peer_quic_transport_params" &
         " already exists, not redeclaring")
 when not declared(SSL_set_quic_use_legacy_codepoint):
-  proc SSL_set_quic_use_legacy_codepoint*(ssl: ptr SSL_553649202;
+  proc SSL_set_quic_use_legacy_codepoint*(ssl: ptr SSL_553649204;
       use_legacy: cint): void {.cdecl,
                                 importc: "SSL_set_quic_use_legacy_codepoint".}
 else:
@@ -79658,7 +79683,7 @@ else:
     hint("Declaration of " & "SSL_set_quic_use_legacy_codepoint" &
         " already exists, not redeclaring")
 when not declared(SSL_set_quic_early_data_context):
-  proc SSL_set_quic_early_data_context*(ssl: ptr SSL_553649202;
+  proc SSL_set_quic_early_data_context*(ssl: ptr SSL_553649204;
                                         context: ptr uint8; context_len: csize_t): cint {.
       cdecl, importc: "SSL_set_quic_early_data_context".}
 else:
@@ -79666,84 +79691,84 @@ else:
     hint("Declaration of " & "SSL_set_quic_early_data_context" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_early_data_enabled):
-  proc SSL_CTX_set_early_data_enabled*(ctx: ptr SSL_CTX_553649182; enabled: cint): void {.
+  proc SSL_CTX_set_early_data_enabled*(ctx: ptr SSL_CTX_553649184; enabled: cint): void {.
       cdecl, importc: "SSL_CTX_set_early_data_enabled".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_early_data_enabled" &
         " already exists, not redeclaring")
 when not declared(SSL_set_early_data_enabled):
-  proc SSL_set_early_data_enabled*(ssl: ptr SSL_553649202; enabled: cint): void {.
+  proc SSL_set_early_data_enabled*(ssl: ptr SSL_553649204; enabled: cint): void {.
       cdecl, importc: "SSL_set_early_data_enabled".}
 else:
   static :
     hint("Declaration of " & "SSL_set_early_data_enabled" &
         " already exists, not redeclaring")
 when not declared(SSL_in_early_data):
-  proc SSL_in_early_data*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_in_early_data*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_in_early_data".}
 else:
   static :
     hint("Declaration of " & "SSL_in_early_data" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_early_data_capable):
-  proc SSL_SESSION_early_data_capable*(session: ptr SSL_SESSION_553649200): cint {.
+  proc SSL_SESSION_early_data_capable*(session: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "SSL_SESSION_early_data_capable".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_early_data_capable" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_copy_without_early_data):
-  proc SSL_SESSION_copy_without_early_data*(session: ptr SSL_SESSION_553649200): ptr SSL_SESSION_553649200 {.
+  proc SSL_SESSION_copy_without_early_data*(session: ptr SSL_SESSION_553649202): ptr SSL_SESSION_553649202 {.
       cdecl, importc: "SSL_SESSION_copy_without_early_data".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_copy_without_early_data" &
         " already exists, not redeclaring")
 when not declared(SSL_early_data_accepted):
-  proc SSL_early_data_accepted*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_early_data_accepted*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_early_data_accepted".}
 else:
   static :
     hint("Declaration of " & "SSL_early_data_accepted" &
         " already exists, not redeclaring")
 when not declared(SSL_reset_early_data_reject):
-  proc SSL_reset_early_data_reject*(ssl: ptr SSL_553649202): void {.cdecl,
+  proc SSL_reset_early_data_reject*(ssl: ptr SSL_553649204): void {.cdecl,
       importc: "SSL_reset_early_data_reject".}
 else:
   static :
     hint("Declaration of " & "SSL_reset_early_data_reject" &
         " already exists, not redeclaring")
 when not declared(SSL_get_ticket_age_skew):
-  proc SSL_get_ticket_age_skew*(ssl: ptr SSL_553649202): int32 {.cdecl,
+  proc SSL_get_ticket_age_skew*(ssl: ptr SSL_553649204): int32 {.cdecl,
       importc: "SSL_get_ticket_age_skew".}
 else:
   static :
     hint("Declaration of " & "SSL_get_ticket_age_skew" &
         " already exists, not redeclaring")
 when not declared(SSL_get_early_data_reason):
-  proc SSL_get_early_data_reason*(ssl: ptr SSL_553649202): enum_ssl_early_data_reason_t_553649728 {.
+  proc SSL_get_early_data_reason*(ssl: ptr SSL_553649204): enum_ssl_early_data_reason_t_553649730 {.
       cdecl, importc: "SSL_get_early_data_reason".}
 else:
   static :
     hint("Declaration of " & "SSL_get_early_data_reason" &
         " already exists, not redeclaring")
 when not declared(SSL_early_data_reason_string):
-  proc SSL_early_data_reason_string*(reason: enum_ssl_early_data_reason_t_553649728): cstring {.
+  proc SSL_early_data_reason_string*(reason: enum_ssl_early_data_reason_t_553649730): cstring {.
       cdecl, importc: "SSL_early_data_reason_string".}
 else:
   static :
     hint("Declaration of " & "SSL_early_data_reason_string" &
         " already exists, not redeclaring")
 when not declared(SSL_set_enable_ech_grease):
-  proc SSL_set_enable_ech_grease*(ssl: ptr SSL_553649202; enable: cint): void {.
+  proc SSL_set_enable_ech_grease*(ssl: ptr SSL_553649204; enable: cint): void {.
       cdecl, importc: "SSL_set_enable_ech_grease".}
 else:
   static :
     hint("Declaration of " & "SSL_set_enable_ech_grease" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_ech_config_list):
-  proc SSL_set1_ech_config_list*(ssl: ptr SSL_553649202;
+  proc SSL_set1_ech_config_list*(ssl: ptr SSL_553649204;
                                  ech_config_list: ptr uint8;
                                  ech_config_list_len: csize_t): cint {.cdecl,
       importc: "SSL_set1_ech_config_list".}
@@ -79752,7 +79777,7 @@ else:
     hint("Declaration of " & "SSL_set1_ech_config_list" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_ech_name_override):
-  proc SSL_get0_ech_name_override*(ssl: ptr SSL_553649202;
+  proc SSL_get0_ech_name_override*(ssl: ptr SSL_553649204;
                                    out_name: ptr cstring;
                                    out_name_len: ptr csize_t): void {.cdecl,
       importc: "SSL_get0_ech_name_override".}
@@ -79761,7 +79786,7 @@ else:
     hint("Declaration of " & "SSL_get0_ech_name_override" &
         " already exists, not redeclaring")
 when not declared(SSL_get0_ech_retry_configs):
-  proc SSL_get0_ech_retry_configs*(ssl: ptr SSL_553649202;
+  proc SSL_get0_ech_retry_configs*(ssl: ptr SSL_553649204;
                                    out_retry_configs: ptr ptr uint8;
                                    out_retry_configs_len: ptr csize_t): void {.
       cdecl, importc: "SSL_get0_ech_retry_configs".}
@@ -79779,28 +79804,28 @@ else:
     hint("Declaration of " & "SSL_marshal_ech_config" &
         " already exists, not redeclaring")
 when not declared(SSL_ECH_KEYS_new):
-  proc SSL_ECH_KEYS_new*(): ptr SSL_ECH_KEYS_553649188 {.cdecl,
+  proc SSL_ECH_KEYS_new*(): ptr SSL_ECH_KEYS_553649190 {.cdecl,
       importc: "SSL_ECH_KEYS_new".}
 else:
   static :
     hint("Declaration of " & "SSL_ECH_KEYS_new" &
         " already exists, not redeclaring")
 when not declared(SSL_ECH_KEYS_up_ref):
-  proc SSL_ECH_KEYS_up_ref*(keys: ptr SSL_ECH_KEYS_553649188): void {.cdecl,
+  proc SSL_ECH_KEYS_up_ref*(keys: ptr SSL_ECH_KEYS_553649190): void {.cdecl,
       importc: "SSL_ECH_KEYS_up_ref".}
 else:
   static :
     hint("Declaration of " & "SSL_ECH_KEYS_up_ref" &
         " already exists, not redeclaring")
 when not declared(SSL_ECH_KEYS_free):
-  proc SSL_ECH_KEYS_free*(keys: ptr SSL_ECH_KEYS_553649188): void {.cdecl,
+  proc SSL_ECH_KEYS_free*(keys: ptr SSL_ECH_KEYS_553649190): void {.cdecl,
       importc: "SSL_ECH_KEYS_free".}
 else:
   static :
     hint("Declaration of " & "SSL_ECH_KEYS_free" &
         " already exists, not redeclaring")
 when not declared(SSL_ECH_KEYS_add):
-  proc SSL_ECH_KEYS_add*(keys: ptr SSL_ECH_KEYS_553649188;
+  proc SSL_ECH_KEYS_add*(keys: ptr SSL_ECH_KEYS_553649190;
                          is_retry_config: cint; ech_config: ptr uint8;
                          ech_config_len: csize_t; key: ptr EVP_HPKE_KEY_553649076): cint {.
       cdecl, importc: "SSL_ECH_KEYS_add".}
@@ -79809,14 +79834,14 @@ else:
     hint("Declaration of " & "SSL_ECH_KEYS_add" &
         " already exists, not redeclaring")
 when not declared(SSL_ECH_KEYS_has_duplicate_config_id):
-  proc SSL_ECH_KEYS_has_duplicate_config_id*(keys: ptr SSL_ECH_KEYS_553649188): cint {.
+  proc SSL_ECH_KEYS_has_duplicate_config_id*(keys: ptr SSL_ECH_KEYS_553649190): cint {.
       cdecl, importc: "SSL_ECH_KEYS_has_duplicate_config_id".}
 else:
   static :
     hint("Declaration of " & "SSL_ECH_KEYS_has_duplicate_config_id" &
         " already exists, not redeclaring")
 when not declared(SSL_ECH_KEYS_marshal_retry_configs):
-  proc SSL_ECH_KEYS_marshal_retry_configs*(keys: ptr SSL_ECH_KEYS_553649188;
+  proc SSL_ECH_KEYS_marshal_retry_configs*(keys: ptr SSL_ECH_KEYS_553649190;
       out_arg: ptr ptr uint8; out_len: ptr csize_t): cint {.cdecl,
       importc: "SSL_ECH_KEYS_marshal_retry_configs".}
 else:
@@ -79824,14 +79849,14 @@ else:
     hint("Declaration of " & "SSL_ECH_KEYS_marshal_retry_configs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_ech_keys):
-  proc SSL_CTX_set1_ech_keys*(ctx: ptr SSL_CTX_553649182; keys: ptr SSL_ECH_KEYS_553649188): cint {.
+  proc SSL_CTX_set1_ech_keys*(ctx: ptr SSL_CTX_553649184; keys: ptr SSL_ECH_KEYS_553649190): cint {.
       cdecl, importc: "SSL_CTX_set1_ech_keys".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set1_ech_keys" &
         " already exists, not redeclaring")
 when not declared(SSL_ech_accepted):
-  proc SSL_ech_accepted*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_ech_accepted*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_ech_accepted".}
 else:
   static :
@@ -79852,21 +79877,21 @@ else:
     hint("Declaration of " & "SSL_alert_desc_string_long" &
         " already exists, not redeclaring")
 when not declared(SSL_send_fatal_alert):
-  proc SSL_send_fatal_alert*(ssl: ptr SSL_553649202; alert: uint8): cint {.
+  proc SSL_send_fatal_alert*(ssl: ptr SSL_553649204; alert: uint8): cint {.
       cdecl, importc: "SSL_send_fatal_alert".}
 else:
   static :
     hint("Declaration of " & "SSL_send_fatal_alert" &
         " already exists, not redeclaring")
 when not declared(SSL_set_ex_data):
-  proc SSL_set_ex_data*(ssl: ptr SSL_553649202; idx: cint; data: pointer): cint {.
+  proc SSL_set_ex_data*(ssl: ptr SSL_553649204; idx: cint; data: pointer): cint {.
       cdecl, importc: "SSL_set_ex_data".}
 else:
   static :
     hint("Declaration of " & "SSL_set_ex_data" &
         " already exists, not redeclaring")
 when not declared(SSL_get_ex_data):
-  proc SSL_get_ex_data*(ssl: ptr SSL_553649202; idx: cint): pointer {.cdecl,
+  proc SSL_get_ex_data*(ssl: ptr SSL_553649204; idx: cint): pointer {.cdecl,
       importc: "SSL_get_ex_data".}
 else:
   static :
@@ -79874,16 +79899,16 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_get_ex_new_index):
   proc SSL_get_ex_new_index*(argl: clong; argp: pointer;
-                             unused: ptr CRYPTO_EX_unused_553649310;
-                             dup_unused: CRYPTO_EX_dup_553649308;
-                             free_func: CRYPTO_EX_free_553649306): cint {.cdecl,
+                             unused: ptr CRYPTO_EX_unused_553649312;
+                             dup_unused: CRYPTO_EX_dup_553649310;
+                             free_func: CRYPTO_EX_free_553649308): cint {.cdecl,
       importc: "SSL_get_ex_new_index".}
 else:
   static :
     hint("Declaration of " & "SSL_get_ex_new_index" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_set_ex_data):
-  proc SSL_SESSION_set_ex_data*(session: ptr SSL_SESSION_553649200; idx: cint;
+  proc SSL_SESSION_set_ex_data*(session: ptr SSL_SESSION_553649202; idx: cint;
                                 data: pointer): cint {.cdecl,
       importc: "SSL_SESSION_set_ex_data".}
 else:
@@ -79891,7 +79916,7 @@ else:
     hint("Declaration of " & "SSL_SESSION_set_ex_data" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get_ex_data):
-  proc SSL_SESSION_get_ex_data*(session: ptr SSL_SESSION_553649200; idx: cint): pointer {.
+  proc SSL_SESSION_get_ex_data*(session: ptr SSL_SESSION_553649202; idx: cint): pointer {.
       cdecl, importc: "SSL_SESSION_get_ex_data".}
 else:
   static :
@@ -79899,23 +79924,23 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_get_ex_new_index):
   proc SSL_SESSION_get_ex_new_index*(argl: clong; argp: pointer;
-                                     unused: ptr CRYPTO_EX_unused_553649310;
-                                     dup_unused: CRYPTO_EX_dup_553649308;
-                                     free_func: CRYPTO_EX_free_553649306): cint {.
+                                     unused: ptr CRYPTO_EX_unused_553649312;
+                                     dup_unused: CRYPTO_EX_dup_553649310;
+                                     free_func: CRYPTO_EX_free_553649308): cint {.
       cdecl, importc: "SSL_SESSION_get_ex_new_index".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_get_ex_new_index" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_ex_data):
-  proc SSL_CTX_set_ex_data*(ctx: ptr SSL_CTX_553649182; idx: cint; data: pointer): cint {.
+  proc SSL_CTX_set_ex_data*(ctx: ptr SSL_CTX_553649184; idx: cint; data: pointer): cint {.
       cdecl, importc: "SSL_CTX_set_ex_data".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_ex_data" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_ex_data):
-  proc SSL_CTX_get_ex_data*(ctx: ptr SSL_CTX_553649182; idx: cint): pointer {.
+  proc SSL_CTX_get_ex_data*(ctx: ptr SSL_CTX_553649184; idx: cint): pointer {.
       cdecl, importc: "SSL_CTX_get_ex_data".}
 else:
   static :
@@ -79923,30 +79948,30 @@ else:
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_ex_new_index):
   proc SSL_CTX_get_ex_new_index*(argl: clong; argp: pointer;
-                                 unused: ptr CRYPTO_EX_unused_553649310;
-                                 dup_unused: CRYPTO_EX_dup_553649308;
-                                 free_func: CRYPTO_EX_free_553649306): cint {.
+                                 unused: ptr CRYPTO_EX_unused_553649312;
+                                 dup_unused: CRYPTO_EX_dup_553649310;
+                                 free_func: CRYPTO_EX_free_553649308): cint {.
       cdecl, importc: "SSL_CTX_get_ex_new_index".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_ex_new_index" &
         " already exists, not redeclaring")
 when not declared(SSL_get_ivs):
-  proc SSL_get_ivs*(ssl: ptr SSL_553649202; out_read_iv: ptr ptr uint8;
+  proc SSL_get_ivs*(ssl: ptr SSL_553649204; out_read_iv: ptr ptr uint8;
                     out_write_iv: ptr ptr uint8; out_iv_len: ptr csize_t): cint {.
       cdecl, importc: "SSL_get_ivs".}
 else:
   static :
     hint("Declaration of " & "SSL_get_ivs" & " already exists, not redeclaring")
 when not declared(SSL_get_key_block_len):
-  proc SSL_get_key_block_len*(ssl: ptr SSL_553649202): csize_t {.cdecl,
+  proc SSL_get_key_block_len*(ssl: ptr SSL_553649204): csize_t {.cdecl,
       importc: "SSL_get_key_block_len".}
 else:
   static :
     hint("Declaration of " & "SSL_get_key_block_len" &
         " already exists, not redeclaring")
 when not declared(SSL_generate_key_block):
-  proc SSL_generate_key_block*(ssl: ptr SSL_553649202; out_arg: ptr uint8;
+  proc SSL_generate_key_block*(ssl: ptr SSL_553649204; out_arg: ptr uint8;
                                out_len: csize_t): cint {.cdecl,
       importc: "SSL_generate_key_block".}
 else:
@@ -79954,7 +79979,7 @@ else:
     hint("Declaration of " & "SSL_generate_key_block" &
         " already exists, not redeclaring")
 when not declared(SSL_get_read_traffic_secret):
-  proc SSL_get_read_traffic_secret*(ssl: ptr SSL_553649202; secret: ptr uint8;
+  proc SSL_get_read_traffic_secret*(ssl: ptr SSL_553649204; secret: ptr uint8;
                                     out_len: ptr csize_t): cint {.cdecl,
       importc: "SSL_get_read_traffic_secret".}
 else:
@@ -79962,7 +79987,7 @@ else:
     hint("Declaration of " & "SSL_get_read_traffic_secret" &
         " already exists, not redeclaring")
 when not declared(SSL_get_write_traffic_secret):
-  proc SSL_get_write_traffic_secret*(ssl: ptr SSL_553649202; secret: ptr uint8;
+  proc SSL_get_write_traffic_secret*(ssl: ptr SSL_553649204; secret: ptr uint8;
                                      out_len: ptr csize_t): cint {.cdecl,
       importc: "SSL_get_write_traffic_secret".}
 else:
@@ -79970,21 +79995,21 @@ else:
     hint("Declaration of " & "SSL_get_write_traffic_secret" &
         " already exists, not redeclaring")
 when not declared(SSL_get_read_sequence):
-  proc SSL_get_read_sequence*(ssl: ptr SSL_553649202): uint64 {.cdecl,
+  proc SSL_get_read_sequence*(ssl: ptr SSL_553649204): uint64 {.cdecl,
       importc: "SSL_get_read_sequence".}
 else:
   static :
     hint("Declaration of " & "SSL_get_read_sequence" &
         " already exists, not redeclaring")
 when not declared(SSL_get_write_sequence):
-  proc SSL_get_write_sequence*(ssl: ptr SSL_553649202): uint64 {.cdecl,
+  proc SSL_get_write_sequence*(ssl: ptr SSL_553649204): uint64 {.cdecl,
       importc: "SSL_get_write_sequence".}
 else:
   static :
     hint("Declaration of " & "SSL_get_write_sequence" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_record_protocol_version):
-  proc SSL_CTX_set_record_protocol_version*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_record_protocol_version*(ctx: ptr SSL_CTX_553649184;
       version: cint): cint {.cdecl,
                              importc: "SSL_CTX_set_record_protocol_version".}
 else:
@@ -79992,14 +80017,14 @@ else:
     hint("Declaration of " & "SSL_CTX_set_record_protocol_version" &
         " already exists, not redeclaring")
 when not declared(SSL_serialize_capabilities):
-  proc SSL_serialize_capabilities*(ssl: ptr SSL_553649202; out_arg: ptr CBB_553649004): cint {.
+  proc SSL_serialize_capabilities*(ssl: ptr SSL_553649204; out_arg: ptr CBB_553649004): cint {.
       cdecl, importc: "SSL_serialize_capabilities".}
 else:
   static :
     hint("Declaration of " & "SSL_serialize_capabilities" &
         " already exists, not redeclaring")
 when not declared(SSL_request_handshake_hints):
-  proc SSL_request_handshake_hints*(ssl: ptr SSL_553649202;
+  proc SSL_request_handshake_hints*(ssl: ptr SSL_553649204;
                                     client_hello: ptr uint8;
                                     client_hello_len: csize_t;
                                     capabilities: ptr uint8;
@@ -80010,14 +80035,14 @@ else:
     hint("Declaration of " & "SSL_request_handshake_hints" &
         " already exists, not redeclaring")
 when not declared(SSL_serialize_handshake_hints):
-  proc SSL_serialize_handshake_hints*(ssl: ptr SSL_553649202; out_arg: ptr CBB_553649004): cint {.
+  proc SSL_serialize_handshake_hints*(ssl: ptr SSL_553649204; out_arg: ptr CBB_553649004): cint {.
       cdecl, importc: "SSL_serialize_handshake_hints".}
 else:
   static :
     hint("Declaration of " & "SSL_serialize_handshake_hints" &
         " already exists, not redeclaring")
 when not declared(SSL_set_handshake_hints):
-  proc SSL_set_handshake_hints*(ssl: ptr SSL_553649202; hints: ptr uint8;
+  proc SSL_set_handshake_hints*(ssl: ptr SSL_553649204; hints: ptr uint8;
                                 hints_len: csize_t): cint {.cdecl,
       importc: "SSL_set_handshake_hints".}
 else:
@@ -80025,8 +80050,8 @@ else:
     hint("Declaration of " & "SSL_set_handshake_hints" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_msg_callback):
-  proc SSL_CTX_set_msg_callback*(ctx: ptr SSL_CTX_553649182; cb: proc (a0: cint;
-      a1: cint; a2: cint; a3: pointer; a4: csize_t; a5: ptr SSL_553649202;
+  proc SSL_CTX_set_msg_callback*(ctx: ptr SSL_CTX_553649184; cb: proc (a0: cint;
+      a1: cint; a2: cint; a3: pointer; a4: csize_t; a5: ptr SSL_553649204;
       a6: pointer): void {.cdecl.}): void {.cdecl,
       importc: "SSL_CTX_set_msg_callback".}
 else:
@@ -80034,8 +80059,8 @@ else:
     hint("Declaration of " & "SSL_CTX_set_msg_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_set_msg_callback):
-  proc SSL_set_msg_callback*(ssl: ptr SSL_553649202; cb: proc (a0: cint;
-      a1: cint; a2: cint; a3: pointer; a4: csize_t; a5: ptr SSL_553649202;
+  proc SSL_set_msg_callback*(ssl: ptr SSL_553649204; cb: proc (a0: cint;
+      a1: cint; a2: cint; a3: pointer; a4: csize_t; a5: ptr SSL_553649204;
       a6: pointer): void {.cdecl.}): void {.cdecl,
       importc: "SSL_set_msg_callback".}
 else:
@@ -80043,60 +80068,60 @@ else:
     hint("Declaration of " & "SSL_set_msg_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_keylog_callback):
-  proc SSL_CTX_set_keylog_callback*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_553649202; a1: cstring): void {.cdecl.}): void {.cdecl,
+  proc SSL_CTX_set_keylog_callback*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_553649204; a1: cstring): void {.cdecl.}): void {.cdecl,
       importc: "SSL_CTX_set_keylog_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_keylog_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_keylog_callback):
-  proc SSL_CTX_get_keylog_callback*(ctx: ptr SSL_CTX_553649182): proc (
-      a0: ptr SSL_553649202; a1: cstring): void {.cdecl.} {.cdecl,
+  proc SSL_CTX_get_keylog_callback*(ctx: ptr SSL_CTX_553649184): proc (
+      a0: ptr SSL_553649204; a1: cstring): void {.cdecl.} {.cdecl,
       importc: "SSL_CTX_get_keylog_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_keylog_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_current_time_cb):
-  proc SSL_CTX_set_current_time_cb*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_553649202; a1: ptr struct_timeval_553649686): void {.cdecl.}): void {.
+  proc SSL_CTX_set_current_time_cb*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_553649204; a1: ptr struct_timeval_553649688): void {.cdecl.}): void {.
       cdecl, importc: "SSL_CTX_set_current_time_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_current_time_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_set_shed_handshake_config):
-  proc SSL_set_shed_handshake_config*(ssl: ptr SSL_553649202; enable: cint): void {.
+  proc SSL_set_shed_handshake_config*(ssl: ptr SSL_553649204; enable: cint): void {.
       cdecl, importc: "SSL_set_shed_handshake_config".}
 else:
   static :
     hint("Declaration of " & "SSL_set_shed_handshake_config" &
         " already exists, not redeclaring")
 when not declared(SSL_set_renegotiate_mode):
-  proc SSL_set_renegotiate_mode*(ssl: ptr SSL_553649202;
-                                 mode: enum_ssl_renegotiate_mode_t_553649730): void {.
+  proc SSL_set_renegotiate_mode*(ssl: ptr SSL_553649204;
+                                 mode: enum_ssl_renegotiate_mode_t_553649732): void {.
       cdecl, importc: "SSL_set_renegotiate_mode".}
 else:
   static :
     hint("Declaration of " & "SSL_set_renegotiate_mode" &
         " already exists, not redeclaring")
 when not declared(SSL_renegotiate):
-  proc SSL_renegotiate*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_renegotiate*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_renegotiate".}
 else:
   static :
     hint("Declaration of " & "SSL_renegotiate" &
         " already exists, not redeclaring")
 when not declared(SSL_renegotiate_pending):
-  proc SSL_renegotiate_pending*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_renegotiate_pending*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_renegotiate_pending".}
 else:
   static :
     hint("Declaration of " & "SSL_renegotiate_pending" &
         " already exists, not redeclaring")
 when not declared(SSL_early_callback_ctx_extension_get):
-  proc SSL_early_callback_ctx_extension_get*(client_hello: ptr SSL_CLIENT_HELLO_553649184;
+  proc SSL_early_callback_ctx_extension_get*(client_hello: ptr SSL_CLIENT_HELLO_553649186;
       extension_type: uint16; out_data: ptr ptr uint8; out_len: ptr csize_t): cint {.
       cdecl, importc: "SSL_early_callback_ctx_extension_get".}
 else:
@@ -80104,60 +80129,60 @@ else:
     hint("Declaration of " & "SSL_early_callback_ctx_extension_get" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_select_certificate_cb):
-  proc SSL_CTX_set_select_certificate_cb*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_CLIENT_HELLO_553649184): enum_ssl_select_cert_result_t_553649732 {.
+  proc SSL_CTX_set_select_certificate_cb*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_CLIENT_HELLO_553649186): enum_ssl_select_cert_result_t_553649734 {.
       cdecl.}): void {.cdecl, importc: "SSL_CTX_set_select_certificate_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_select_certificate_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_dos_protection_cb):
-  proc SSL_CTX_set_dos_protection_cb*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_CLIENT_HELLO_553649184): cint {.cdecl.}): void {.cdecl,
+  proc SSL_CTX_set_dos_protection_cb*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_CLIENT_HELLO_553649186): cint {.cdecl.}): void {.cdecl,
       importc: "SSL_CTX_set_dos_protection_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_dos_protection_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_reverify_on_resume):
-  proc SSL_CTX_set_reverify_on_resume*(ctx: ptr SSL_CTX_553649182; enabled: cint): void {.
+  proc SSL_CTX_set_reverify_on_resume*(ctx: ptr SSL_CTX_553649184; enabled: cint): void {.
       cdecl, importc: "SSL_CTX_set_reverify_on_resume".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_reverify_on_resume" &
         " already exists, not redeclaring")
 when not declared(SSL_set_enforce_rsa_key_usage):
-  proc SSL_set_enforce_rsa_key_usage*(ssl: ptr SSL_553649202; enabled: cint): void {.
+  proc SSL_set_enforce_rsa_key_usage*(ssl: ptr SSL_553649204; enabled: cint): void {.
       cdecl, importc: "SSL_set_enforce_rsa_key_usage".}
 else:
   static :
     hint("Declaration of " & "SSL_set_enforce_rsa_key_usage" &
         " already exists, not redeclaring")
 when not declared(SSL_was_key_usage_invalid):
-  proc SSL_was_key_usage_invalid*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_was_key_usage_invalid*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_was_key_usage_invalid".}
 else:
   static :
     hint("Declaration of " & "SSL_was_key_usage_invalid" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_info_callback):
-  proc SSL_CTX_set_info_callback*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_553649202; a1: cint; a2: cint): void {.cdecl.}): void {.cdecl,
+  proc SSL_CTX_set_info_callback*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_553649204; a1: cint; a2: cint): void {.cdecl.}): void {.cdecl,
       importc: "SSL_CTX_set_info_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_info_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_info_callback):
-  proc SSL_CTX_get_info_callback*(ctx: ptr SSL_CTX_553649182): proc (
-      a0: ptr SSL_553649202; a1: cint; a2: cint): void {.cdecl.} {.cdecl,
+  proc SSL_CTX_get_info_callback*(ctx: ptr SSL_CTX_553649184): proc (
+      a0: ptr SSL_553649204; a1: cint; a2: cint): void {.cdecl.} {.cdecl,
       importc: "SSL_CTX_get_info_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_info_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_set_info_callback):
-  proc SSL_set_info_callback*(ssl: ptr SSL_553649202; cb: proc (a0: ptr SSL_553649202;
+  proc SSL_set_info_callback*(ssl: ptr SSL_553649204; cb: proc (a0: ptr SSL_553649204;
       a1: cint; a2: cint): void {.cdecl.}): void {.cdecl,
       importc: "SSL_set_info_callback".}
 else:
@@ -80165,7 +80190,7 @@ else:
     hint("Declaration of " & "SSL_set_info_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_get_info_callback):
-  proc SSL_get_info_callback*(ssl: ptr SSL_553649202): proc (a0: ptr SSL_553649202;
+  proc SSL_get_info_callback*(ssl: ptr SSL_553649204): proc (a0: ptr SSL_553649204;
       a1: cint; a2: cint): void {.cdecl.} {.cdecl,
       importc: "SSL_get_info_callback".}
 else:
@@ -80173,35 +80198,35 @@ else:
     hint("Declaration of " & "SSL_get_info_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_state_string_long):
-  proc SSL_state_string_long*(ssl: ptr SSL_553649202): cstring {.cdecl,
+  proc SSL_state_string_long*(ssl: ptr SSL_553649204): cstring {.cdecl,
       importc: "SSL_state_string_long".}
 else:
   static :
     hint("Declaration of " & "SSL_state_string_long" &
         " already exists, not redeclaring")
 when not declared(SSL_get_shutdown):
-  proc SSL_get_shutdown*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_shutdown*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_shutdown".}
 else:
   static :
     hint("Declaration of " & "SSL_get_shutdown" &
         " already exists, not redeclaring")
 when not declared(SSL_get_peer_signature_algorithm):
-  proc SSL_get_peer_signature_algorithm*(ssl: ptr SSL_553649202): uint16 {.
+  proc SSL_get_peer_signature_algorithm*(ssl: ptr SSL_553649204): uint16 {.
       cdecl, importc: "SSL_get_peer_signature_algorithm".}
 else:
   static :
     hint("Declaration of " & "SSL_get_peer_signature_algorithm" &
         " already exists, not redeclaring")
 when not declared(SSL_get_peer_signature_nid):
-  proc SSL_get_peer_signature_nid*(ssl: ptr SSL_553649202; psig_nid: ptr cint): cint {.
+  proc SSL_get_peer_signature_nid*(ssl: ptr SSL_553649204; psig_nid: ptr cint): cint {.
       cdecl, importc: "SSL_get_peer_signature_nid".}
 else:
   static :
     hint("Declaration of " & "SSL_get_peer_signature_nid" &
         " already exists, not redeclaring")
 when not declared(SSL_get_peer_signature_type_nid):
-  proc SSL_get_peer_signature_type_nid*(ssl: ptr SSL_553649202;
+  proc SSL_get_peer_signature_type_nid*(ssl: ptr SSL_553649204;
                                         psigtype_nid: ptr cint): cint {.cdecl,
       importc: "SSL_get_peer_signature_type_nid".}
 else:
@@ -80209,7 +80234,7 @@ else:
     hint("Declaration of " & "SSL_get_peer_signature_type_nid" &
         " already exists, not redeclaring")
 when not declared(SSL_get_client_random):
-  proc SSL_get_client_random*(ssl: ptr SSL_553649202; out_arg: ptr uint8;
+  proc SSL_get_client_random*(ssl: ptr SSL_553649204; out_arg: ptr uint8;
                               max_out: csize_t): csize_t {.cdecl,
       importc: "SSL_get_client_random".}
 else:
@@ -80217,7 +80242,7 @@ else:
     hint("Declaration of " & "SSL_get_client_random" &
         " already exists, not redeclaring")
 when not declared(SSL_get_server_random):
-  proc SSL_get_server_random*(ssl: ptr SSL_553649202; out_arg: ptr uint8;
+  proc SSL_get_server_random*(ssl: ptr SSL_553649204; out_arg: ptr uint8;
                               max_out: csize_t): csize_t {.cdecl,
       importc: "SSL_get_server_random".}
 else:
@@ -80225,77 +80250,77 @@ else:
     hint("Declaration of " & "SSL_get_server_random" &
         " already exists, not redeclaring")
 when not declared(SSL_get_pending_cipher):
-  proc SSL_get_pending_cipher*(ssl: ptr SSL_553649202): ptr SSL_CIPHER_553649180 {.
+  proc SSL_get_pending_cipher*(ssl: ptr SSL_553649204): ptr SSL_CIPHER_553649182 {.
       cdecl, importc: "SSL_get_pending_cipher".}
 else:
   static :
     hint("Declaration of " & "SSL_get_pending_cipher" &
         " already exists, not redeclaring")
 when not declared(SSL_set_retain_only_sha256_of_client_certs):
-  proc SSL_set_retain_only_sha256_of_client_certs*(ssl: ptr SSL_553649202;
+  proc SSL_set_retain_only_sha256_of_client_certs*(ssl: ptr SSL_553649204;
       enable: cint): void {.cdecl, importc: "SSL_set_retain_only_sha256_of_client_certs".}
 else:
   static :
     hint("Declaration of " & "SSL_set_retain_only_sha256_of_client_certs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_retain_only_sha256_of_client_certs):
-  proc SSL_CTX_set_retain_only_sha256_of_client_certs*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_retain_only_sha256_of_client_certs*(ctx: ptr SSL_CTX_553649184;
       enable: cint): void {.cdecl, importc: "SSL_CTX_set_retain_only_sha256_of_client_certs".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_retain_only_sha256_of_client_certs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_grease_enabled):
-  proc SSL_CTX_set_grease_enabled*(ctx: ptr SSL_CTX_553649182; enabled: cint): void {.
+  proc SSL_CTX_set_grease_enabled*(ctx: ptr SSL_CTX_553649184; enabled: cint): void {.
       cdecl, importc: "SSL_CTX_set_grease_enabled".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_grease_enabled" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_permute_extensions):
-  proc SSL_CTX_set_permute_extensions*(ctx: ptr SSL_CTX_553649182; enabled: cint): void {.
+  proc SSL_CTX_set_permute_extensions*(ctx: ptr SSL_CTX_553649184; enabled: cint): void {.
       cdecl, importc: "SSL_CTX_set_permute_extensions".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_permute_extensions" &
         " already exists, not redeclaring")
 when not declared(SSL_set_permute_extensions):
-  proc SSL_set_permute_extensions*(ssl: ptr SSL_553649202; enabled: cint): void {.
+  proc SSL_set_permute_extensions*(ssl: ptr SSL_553649204; enabled: cint): void {.
       cdecl, importc: "SSL_set_permute_extensions".}
 else:
   static :
     hint("Declaration of " & "SSL_set_permute_extensions" &
         " already exists, not redeclaring")
 when not declared(SSL_max_seal_overhead):
-  proc SSL_max_seal_overhead*(ssl: ptr SSL_553649202): csize_t {.cdecl,
+  proc SSL_max_seal_overhead*(ssl: ptr SSL_553649204): csize_t {.cdecl,
       importc: "SSL_max_seal_overhead".}
 else:
   static :
     hint("Declaration of " & "SSL_max_seal_overhead" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_false_start_allowed_without_alpn):
-  proc SSL_CTX_set_false_start_allowed_without_alpn*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_false_start_allowed_without_alpn*(ctx: ptr SSL_CTX_553649184;
       allowed: cint): void {.cdecl, importc: "SSL_CTX_set_false_start_allowed_without_alpn".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_false_start_allowed_without_alpn" &
         " already exists, not redeclaring")
 when not declared(SSL_used_hello_retry_request):
-  proc SSL_used_hello_retry_request*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_used_hello_retry_request*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_used_hello_retry_request".}
 else:
   static :
     hint("Declaration of " & "SSL_used_hello_retry_request" &
         " already exists, not redeclaring")
 when not declared(SSL_set_jdk11_workaround):
-  proc SSL_set_jdk11_workaround*(ssl: ptr SSL_553649202; enable: cint): void {.
+  proc SSL_set_jdk11_workaround*(ssl: ptr SSL_553649204; enable: cint): void {.
       cdecl, importc: "SSL_set_jdk11_workaround".}
 else:
   static :
     hint("Declaration of " & "SSL_set_jdk11_workaround" &
         " already exists, not redeclaring")
 when not declared(SSL_set_check_client_certificate_type):
-  proc SSL_set_check_client_certificate_type*(ssl: ptr SSL_553649202;
+  proc SSL_set_check_client_certificate_type*(ssl: ptr SSL_553649204;
       enable: cint): void {.cdecl,
                             importc: "SSL_set_check_client_certificate_type".}
 else:
@@ -80303,77 +80328,77 @@ else:
     hint("Declaration of " & "SSL_set_check_client_certificate_type" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_connect):
-  proc SSL_CTX_sess_connect*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_sess_connect*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_sess_connect".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_connect" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_connect_good):
-  proc SSL_CTX_sess_connect_good*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_sess_connect_good*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_sess_connect_good".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_connect_good" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_connect_renegotiate):
-  proc SSL_CTX_sess_connect_renegotiate*(ctx: ptr SSL_CTX_553649182): cint {.
+  proc SSL_CTX_sess_connect_renegotiate*(ctx: ptr SSL_CTX_553649184): cint {.
       cdecl, importc: "SSL_CTX_sess_connect_renegotiate".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_connect_renegotiate" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_accept):
-  proc SSL_CTX_sess_accept*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_sess_accept*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_sess_accept".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_accept" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_accept_renegotiate):
-  proc SSL_CTX_sess_accept_renegotiate*(ctx: ptr SSL_CTX_553649182): cint {.
+  proc SSL_CTX_sess_accept_renegotiate*(ctx: ptr SSL_CTX_553649184): cint {.
       cdecl, importc: "SSL_CTX_sess_accept_renegotiate".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_accept_renegotiate" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_accept_good):
-  proc SSL_CTX_sess_accept_good*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_sess_accept_good*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_sess_accept_good".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_accept_good" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_hits):
-  proc SSL_CTX_sess_hits*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_sess_hits*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_sess_hits".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_hits" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_cb_hits):
-  proc SSL_CTX_sess_cb_hits*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_sess_cb_hits*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_sess_cb_hits".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_cb_hits" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_misses):
-  proc SSL_CTX_sess_misses*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_sess_misses*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_sess_misses".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_misses" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_timeouts):
-  proc SSL_CTX_sess_timeouts*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_sess_timeouts*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_sess_timeouts".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_sess_timeouts" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_sess_cache_full):
-  proc SSL_CTX_sess_cache_full*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_sess_cache_full*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_sess_cache_full".}
 else:
   static :
@@ -80385,26 +80410,26 @@ else:
   static :
     hint("Declaration of " & "BIO_f_ssl" & " already exists, not redeclaring")
 when not declared(BIO_set_ssl):
-  proc BIO_set_ssl*(bio: ptr BIO_553648984; ssl: ptr SSL_553649202;
+  proc BIO_set_ssl*(bio: ptr BIO_553648984; ssl: ptr SSL_553649204;
                     take_owership: cint): clong {.cdecl, importc: "BIO_set_ssl".}
 else:
   static :
     hint("Declaration of " & "BIO_set_ssl" & " already exists, not redeclaring")
 when not declared(BIO_get_ssl):
-  proc BIO_get_ssl*(bio: ptr BIO_553648984; ssl: ptr ptr SSL_553649202): clong {.
+  proc BIO_get_ssl*(bio: ptr BIO_553648984; ssl: ptr ptr SSL_553649204): clong {.
       cdecl, importc: "BIO_get_ssl".}
 else:
   static :
     hint("Declaration of " & "BIO_get_ssl" & " already exists, not redeclaring")
 when not declared(BIO_new_ssl_connect):
-  proc BIO_new_ssl_connect*(ctx: ptr SSL_CTX_553649182): ptr BIO_553648984 {.
+  proc BIO_new_ssl_connect*(ctx: ptr SSL_CTX_553649184): ptr BIO_553648984 {.
       cdecl, importc: "BIO_new_ssl_connect".}
 else:
   static :
     hint("Declaration of " & "BIO_new_ssl_connect" &
         " already exists, not redeclaring")
 when not declared(BIO_new_ssl):
-  proc BIO_new_ssl*(ctx: ptr SSL_CTX_553649182; client: cint): ptr BIO_553648984 {.
+  proc BIO_new_ssl*(ctx: ptr SSL_CTX_553649184; client: cint): ptr BIO_553648984 {.
       cdecl, importc: "BIO_new_ssl".}
 else:
   static :
@@ -80416,7 +80441,7 @@ else:
     hint("Declaration of " & "SSL_library_init" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_description):
-  proc SSL_CIPHER_description*(cipher: ptr SSL_CIPHER_553649180; buf: cstring;
+  proc SSL_CIPHER_description*(cipher: ptr SSL_CIPHER_553649182; buf: cstring;
                                len: cint): cstring {.cdecl,
       importc: "SSL_CIPHER_description".}
 else:
@@ -80424,193 +80449,193 @@ else:
     hint("Declaration of " & "SSL_CIPHER_description" &
         " already exists, not redeclaring")
 when not declared(SSL_CIPHER_get_version):
-  proc SSL_CIPHER_get_version*(cipher: ptr SSL_CIPHER_553649180): cstring {.
+  proc SSL_CIPHER_get_version*(cipher: ptr SSL_CIPHER_553649182): cstring {.
       cdecl, importc: "SSL_CIPHER_get_version".}
 else:
   static :
     hint("Declaration of " & "SSL_CIPHER_get_version" &
         " already exists, not redeclaring")
 when not declared(SSLv23_method):
-  proc SSLv23_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc SSLv23_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "SSLv23_method".}
 else:
   static :
     hint("Declaration of " & "SSLv23_method" &
         " already exists, not redeclaring")
 when not declared(TLSv1_method):
-  proc TLSv1_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLSv1_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLSv1_method".}
 else:
   static :
     hint("Declaration of " & "TLSv1_method" & " already exists, not redeclaring")
 when not declared(TLSv1_1_method):
-  proc TLSv1_1_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLSv1_1_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLSv1_1_method".}
 else:
   static :
     hint("Declaration of " & "TLSv1_1_method" &
         " already exists, not redeclaring")
 when not declared(TLSv1_2_method):
-  proc TLSv1_2_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLSv1_2_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLSv1_2_method".}
 else:
   static :
     hint("Declaration of " & "TLSv1_2_method" &
         " already exists, not redeclaring")
 when not declared(DTLSv1_method):
-  proc DTLSv1_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc DTLSv1_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "DTLSv1_method".}
 else:
   static :
     hint("Declaration of " & "DTLSv1_method" &
         " already exists, not redeclaring")
 when not declared(DTLSv1_2_method):
-  proc DTLSv1_2_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc DTLSv1_2_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "DTLSv1_2_method".}
 else:
   static :
     hint("Declaration of " & "DTLSv1_2_method" &
         " already exists, not redeclaring")
 when not declared(TLS_server_method):
-  proc TLS_server_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLS_server_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLS_server_method".}
 else:
   static :
     hint("Declaration of " & "TLS_server_method" &
         " already exists, not redeclaring")
 when not declared(TLS_client_method):
-  proc TLS_client_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLS_client_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLS_client_method".}
 else:
   static :
     hint("Declaration of " & "TLS_client_method" &
         " already exists, not redeclaring")
 when not declared(SSLv23_server_method):
-  proc SSLv23_server_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc SSLv23_server_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "SSLv23_server_method".}
 else:
   static :
     hint("Declaration of " & "SSLv23_server_method" &
         " already exists, not redeclaring")
 when not declared(SSLv23_client_method):
-  proc SSLv23_client_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc SSLv23_client_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "SSLv23_client_method".}
 else:
   static :
     hint("Declaration of " & "SSLv23_client_method" &
         " already exists, not redeclaring")
 when not declared(TLSv1_server_method):
-  proc TLSv1_server_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLSv1_server_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLSv1_server_method".}
 else:
   static :
     hint("Declaration of " & "TLSv1_server_method" &
         " already exists, not redeclaring")
 when not declared(TLSv1_client_method):
-  proc TLSv1_client_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLSv1_client_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLSv1_client_method".}
 else:
   static :
     hint("Declaration of " & "TLSv1_client_method" &
         " already exists, not redeclaring")
 when not declared(TLSv1_1_server_method):
-  proc TLSv1_1_server_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLSv1_1_server_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLSv1_1_server_method".}
 else:
   static :
     hint("Declaration of " & "TLSv1_1_server_method" &
         " already exists, not redeclaring")
 when not declared(TLSv1_1_client_method):
-  proc TLSv1_1_client_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLSv1_1_client_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLSv1_1_client_method".}
 else:
   static :
     hint("Declaration of " & "TLSv1_1_client_method" &
         " already exists, not redeclaring")
 when not declared(TLSv1_2_server_method):
-  proc TLSv1_2_server_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLSv1_2_server_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLSv1_2_server_method".}
 else:
   static :
     hint("Declaration of " & "TLSv1_2_server_method" &
         " already exists, not redeclaring")
 when not declared(TLSv1_2_client_method):
-  proc TLSv1_2_client_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc TLSv1_2_client_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "TLSv1_2_client_method".}
 else:
   static :
     hint("Declaration of " & "TLSv1_2_client_method" &
         " already exists, not redeclaring")
 when not declared(DTLS_server_method):
-  proc DTLS_server_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc DTLS_server_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "DTLS_server_method".}
 else:
   static :
     hint("Declaration of " & "DTLS_server_method" &
         " already exists, not redeclaring")
 when not declared(DTLS_client_method):
-  proc DTLS_client_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc DTLS_client_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "DTLS_client_method".}
 else:
   static :
     hint("Declaration of " & "DTLS_client_method" &
         " already exists, not redeclaring")
 when not declared(DTLSv1_server_method):
-  proc DTLSv1_server_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc DTLSv1_server_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "DTLSv1_server_method".}
 else:
   static :
     hint("Declaration of " & "DTLSv1_server_method" &
         " already exists, not redeclaring")
 when not declared(DTLSv1_client_method):
-  proc DTLSv1_client_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc DTLSv1_client_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "DTLSv1_client_method".}
 else:
   static :
     hint("Declaration of " & "DTLSv1_client_method" &
         " already exists, not redeclaring")
 when not declared(DTLSv1_2_server_method):
-  proc DTLSv1_2_server_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc DTLSv1_2_server_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "DTLSv1_2_server_method".}
 else:
   static :
     hint("Declaration of " & "DTLSv1_2_server_method" &
         " already exists, not redeclaring")
 when not declared(DTLSv1_2_client_method):
-  proc DTLSv1_2_client_method*(): ptr SSL_METHOD_553649190 {.cdecl,
+  proc DTLSv1_2_client_method*(): ptr SSL_METHOD_553649192 {.cdecl,
       importc: "DTLSv1_2_client_method".}
 else:
   static :
     hint("Declaration of " & "DTLSv1_2_client_method" &
         " already exists, not redeclaring")
 when not declared(SSL_clear):
-  proc SSL_clear*(ssl: ptr SSL_553649202): cint {.cdecl, importc: "SSL_clear".}
+  proc SSL_clear*(ssl: ptr SSL_553649204): cint {.cdecl, importc: "SSL_clear".}
 else:
   static :
     hint("Declaration of " & "SSL_clear" & " already exists, not redeclaring")
 when not declared(SSL_cutthrough_complete):
-  proc SSL_cutthrough_complete*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_cutthrough_complete*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_cutthrough_complete".}
 else:
   static :
     hint("Declaration of " & "SSL_cutthrough_complete" &
         " already exists, not redeclaring")
 when not declared(SSL_get_read_ahead):
-  proc SSL_get_read_ahead*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_read_ahead*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_read_ahead".}
 else:
   static :
     hint("Declaration of " & "SSL_get_read_ahead" &
         " already exists, not redeclaring")
 when not declared(SSL_set_read_ahead):
-  proc SSL_set_read_ahead*(ssl: ptr SSL_553649202; yes: cint): cint {.cdecl,
+  proc SSL_set_read_ahead*(ssl: ptr SSL_553649204; yes: cint): cint {.cdecl,
       importc: "SSL_set_read_ahead".}
 else:
   static :
     hint("Declaration of " & "SSL_set_read_ahead" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_default_read_buffer_len):
-  proc SSL_CTX_set_default_read_buffer_len*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_default_read_buffer_len*(ctx: ptr SSL_CTX_553649184;
       len: csize_t): cint {.cdecl,
                             importc: "SSL_CTX_set_default_read_buffer_len".}
 else:
@@ -80618,43 +80643,43 @@ else:
     hint("Declaration of " & "SSL_CTX_set_default_read_buffer_len" &
         " already exists, not redeclaring")
 when not declared(SSL_set_default_read_buffer_len):
-  proc SSL_set_default_read_buffer_len*(ssl: ptr SSL_553649202; len: csize_t): cint {.
+  proc SSL_set_default_read_buffer_len*(ssl: ptr SSL_553649204; len: csize_t): cint {.
       cdecl, importc: "SSL_set_default_read_buffer_len".}
 else:
   static :
     hint("Declaration of " & "SSL_set_default_read_buffer_len" &
         " already exists, not redeclaring")
 when not declared(i2d_SSL_SESSION):
-  proc i2d_SSL_SESSION*(in_arg: ptr SSL_SESSION_553649200; pp: ptr ptr uint8): cint {.
+  proc i2d_SSL_SESSION*(in_arg: ptr SSL_SESSION_553649202; pp: ptr ptr uint8): cint {.
       cdecl, importc: "i2d_SSL_SESSION".}
 else:
   static :
     hint("Declaration of " & "i2d_SSL_SESSION" &
         " already exists, not redeclaring")
 when not declared(d2i_SSL_SESSION):
-  proc d2i_SSL_SESSION*(a: ptr ptr SSL_SESSION_553649200; pp: ptr ptr uint8;
-                        length: clong): ptr SSL_SESSION_553649200 {.cdecl,
+  proc d2i_SSL_SESSION*(a: ptr ptr SSL_SESSION_553649202; pp: ptr ptr uint8;
+                        length: clong): ptr SSL_SESSION_553649202 {.cdecl,
       importc: "d2i_SSL_SESSION".}
 else:
   static :
     hint("Declaration of " & "d2i_SSL_SESSION" &
         " already exists, not redeclaring")
 when not declared(i2d_SSL_SESSION_bio):
-  proc i2d_SSL_SESSION_bio*(bio: ptr BIO_553648984; session: ptr SSL_SESSION_553649200): cint {.
+  proc i2d_SSL_SESSION_bio*(bio: ptr BIO_553648984; session: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "i2d_SSL_SESSION_bio".}
 else:
   static :
     hint("Declaration of " & "i2d_SSL_SESSION_bio" &
         " already exists, not redeclaring")
 when not declared(d2i_SSL_SESSION_bio):
-  proc d2i_SSL_SESSION_bio*(bio: ptr BIO_553648984; out_arg: ptr ptr SSL_SESSION_553649200): ptr SSL_SESSION_553649200 {.
+  proc d2i_SSL_SESSION_bio*(bio: ptr BIO_553648984; out_arg: ptr ptr SSL_SESSION_553649202): ptr SSL_SESSION_553649202 {.
       cdecl, importc: "d2i_SSL_SESSION_bio".}
 else:
   static :
     hint("Declaration of " & "d2i_SSL_SESSION_bio" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tlsext_use_srtp):
-  proc SSL_CTX_set_tlsext_use_srtp*(ctx: ptr SSL_CTX_553649182;
+  proc SSL_CTX_set_tlsext_use_srtp*(ctx: ptr SSL_CTX_553649184;
                                     profiles: cstring): cint {.cdecl,
       importc: "SSL_CTX_set_tlsext_use_srtp".}
 else:
@@ -80662,14 +80687,14 @@ else:
     hint("Declaration of " & "SSL_CTX_set_tlsext_use_srtp" &
         " already exists, not redeclaring")
 when not declared(SSL_set_tlsext_use_srtp):
-  proc SSL_set_tlsext_use_srtp*(ssl: ptr SSL_553649202; profiles: cstring): cint {.
+  proc SSL_set_tlsext_use_srtp*(ssl: ptr SSL_553649204; profiles: cstring): cint {.
       cdecl, importc: "SSL_set_tlsext_use_srtp".}
 else:
   static :
     hint("Declaration of " & "SSL_set_tlsext_use_srtp" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_sigalgs):
-  proc SSL_CTX_set1_sigalgs*(ctx: ptr SSL_CTX_553649182; values: ptr cint;
+  proc SSL_CTX_set1_sigalgs*(ctx: ptr SSL_CTX_553649184; values: ptr cint;
                              num_values: csize_t): cint {.cdecl,
       importc: "SSL_CTX_set1_sigalgs".}
 else:
@@ -80677,7 +80702,7 @@ else:
     hint("Declaration of " & "SSL_CTX_set1_sigalgs" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_sigalgs):
-  proc SSL_set1_sigalgs*(ssl: ptr SSL_553649202; values: ptr cint;
+  proc SSL_set1_sigalgs*(ssl: ptr SSL_553649204; values: ptr cint;
                          num_values: csize_t): cint {.cdecl,
       importc: "SSL_set1_sigalgs".}
 else:
@@ -80685,42 +80710,42 @@ else:
     hint("Declaration of " & "SSL_set1_sigalgs" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_sigalgs_list):
-  proc SSL_CTX_set1_sigalgs_list*(ctx: ptr SSL_CTX_553649182; str: cstring): cint {.
+  proc SSL_CTX_set1_sigalgs_list*(ctx: ptr SSL_CTX_553649184; str: cstring): cint {.
       cdecl, importc: "SSL_CTX_set1_sigalgs_list".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set1_sigalgs_list" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_sigalgs_list):
-  proc SSL_set1_sigalgs_list*(ssl: ptr SSL_553649202; str: cstring): cint {.
+  proc SSL_set1_sigalgs_list*(ssl: ptr SSL_553649204; str: cstring): cint {.
       cdecl, importc: "SSL_set1_sigalgs_list".}
 else:
   static :
     hint("Declaration of " & "SSL_set1_sigalgs_list" &
         " already exists, not redeclaring")
 when not declared(SSL_SESSION_print):
-  proc SSL_SESSION_print*(bp: ptr BIO_553648984; sess: ptr SSL_SESSION_553649200): cint {.
+  proc SSL_SESSION_print*(bp: ptr BIO_553648984; sess: ptr SSL_SESSION_553649202): cint {.
       cdecl, importc: "SSL_SESSION_print".}
 else:
   static :
     hint("Declaration of " & "SSL_SESSION_print" &
         " already exists, not redeclaring")
 when not declared(SSL_cache_hit):
-  proc SSL_cache_hit*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_cache_hit*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_cache_hit".}
 else:
   static :
     hint("Declaration of " & "SSL_cache_hit" &
         " already exists, not redeclaring")
 when not declared(SSL_get_default_timeout):
-  proc SSL_get_default_timeout*(ssl: ptr SSL_553649202): clong {.cdecl,
+  proc SSL_get_default_timeout*(ssl: ptr SSL_553649204): clong {.cdecl,
       importc: "SSL_get_default_timeout".}
 else:
   static :
     hint("Declaration of " & "SSL_get_default_timeout" &
         " already exists, not redeclaring")
 when not declared(SSL_get_version):
-  proc SSL_get_version*(ssl: ptr SSL_553649202): cstring {.cdecl,
+  proc SSL_get_version*(ssl: ptr SSL_553649204): cstring {.cdecl,
       importc: "SSL_get_version".}
 else:
   static :
@@ -80734,34 +80759,34 @@ else:
     hint("Declaration of " & "SSL_get_all_version_names" &
         " already exists, not redeclaring")
 when not declared(SSL_get_cipher_list):
-  proc SSL_get_cipher_list*(ssl: ptr SSL_553649202; n: cint): cstring {.cdecl,
+  proc SSL_get_cipher_list*(ssl: ptr SSL_553649204; n: cint): cstring {.cdecl,
       importc: "SSL_get_cipher_list".}
 else:
   static :
     hint("Declaration of " & "SSL_get_cipher_list" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_client_cert_cb):
-  proc SSL_CTX_set_client_cert_cb*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_553649202; a1: ptr ptr X509_553649236; a2: ptr ptr EVP_PKEY_553649086): cint {.
+  proc SSL_CTX_set_client_cert_cb*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_553649204; a1: ptr ptr X509_553649238; a2: ptr ptr EVP_PKEY_553649086): cint {.
       cdecl.}): void {.cdecl, importc: "SSL_CTX_set_client_cert_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_client_cert_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_want):
-  proc SSL_want*(ssl: ptr SSL_553649202): cint {.cdecl, importc: "SSL_want".}
+  proc SSL_want*(ssl: ptr SSL_553649204): cint {.cdecl, importc: "SSL_want".}
 else:
   static :
     hint("Declaration of " & "SSL_want" & " already exists, not redeclaring")
 when not declared(SSL_get_finished):
-  proc SSL_get_finished*(ssl: ptr SSL_553649202; buf: pointer; count: csize_t): csize_t {.
+  proc SSL_get_finished*(ssl: ptr SSL_553649204; buf: pointer; count: csize_t): csize_t {.
       cdecl, importc: "SSL_get_finished".}
 else:
   static :
     hint("Declaration of " & "SSL_get_finished" &
         " already exists, not redeclaring")
 when not declared(SSL_get_peer_finished):
-  proc SSL_get_peer_finished*(ssl: ptr SSL_553649202; buf: pointer;
+  proc SSL_get_peer_finished*(ssl: ptr SSL_553649204; buf: pointer;
                               count: csize_t): csize_t {.cdecl,
       importc: "SSL_get_peer_finished".}
 else:
@@ -80783,19 +80808,19 @@ else:
     hint("Declaration of " & "SSL_alert_desc_string" &
         " already exists, not redeclaring")
 when not declared(SSL_state_string):
-  proc SSL_state_string*(ssl: ptr SSL_553649202): cstring {.cdecl,
+  proc SSL_state_string*(ssl: ptr SSL_553649204): cstring {.cdecl,
       importc: "SSL_state_string".}
 else:
   static :
     hint("Declaration of " & "SSL_state_string" &
         " already exists, not redeclaring")
 when not declared(SSL_state):
-  proc SSL_state*(ssl: ptr SSL_553649202): cint {.cdecl, importc: "SSL_state".}
+  proc SSL_state*(ssl: ptr SSL_553649204): cint {.cdecl, importc: "SSL_state".}
 else:
   static :
     hint("Declaration of " & "SSL_state" & " already exists, not redeclaring")
 when not declared(SSL_set_shutdown):
-  proc SSL_set_shutdown*(ssl: ptr SSL_553649202; mode: cint): void {.cdecl,
+  proc SSL_set_shutdown*(ssl: ptr SSL_553649204; mode: cint): void {.cdecl,
       importc: "SSL_set_shutdown".}
 else:
   static :
@@ -80810,21 +80835,21 @@ else:
     hint("Declaration of " & "SSL_add_dir_cert_subjects_to_stack" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_enable_tls_channel_id):
-  proc SSL_CTX_enable_tls_channel_id*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_enable_tls_channel_id*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_enable_tls_channel_id".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_enable_tls_channel_id" &
         " already exists, not redeclaring")
 when not declared(SSL_enable_tls_channel_id):
-  proc SSL_enable_tls_channel_id*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_enable_tls_channel_id*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_enable_tls_channel_id".}
 else:
   static :
     hint("Declaration of " & "SSL_enable_tls_channel_id" &
         " already exists, not redeclaring")
 when not declared(SSL_get1_session):
-  proc SSL_get1_session*(ssl: ptr SSL_553649202): ptr SSL_SESSION_553649200 {.
+  proc SSL_get1_session*(ssl: ptr SSL_553649204): ptr SSL_SESSION_553649202 {.
       cdecl, importc: "SSL_get1_session".}
 else:
   static :
@@ -80838,21 +80863,21 @@ else:
     hint("Declaration of " & "OPENSSL_init_ssl" &
         " already exists, not redeclaring")
 when not declared(SSL_set_tlsext_status_type):
-  proc SSL_set_tlsext_status_type*(ssl: ptr SSL_553649202; type_arg: cint): cint {.
+  proc SSL_set_tlsext_status_type*(ssl: ptr SSL_553649204; type_arg: cint): cint {.
       cdecl, importc: "SSL_set_tlsext_status_type".}
 else:
   static :
     hint("Declaration of " & "SSL_set_tlsext_status_type" &
         " already exists, not redeclaring")
 when not declared(SSL_get_tlsext_status_type):
-  proc SSL_get_tlsext_status_type*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_get_tlsext_status_type*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_get_tlsext_status_type".}
 else:
   static :
     hint("Declaration of " & "SSL_get_tlsext_status_type" &
         " already exists, not redeclaring")
 when not declared(SSL_set_tlsext_status_ocsp_resp):
-  proc SSL_set_tlsext_status_ocsp_resp*(ssl: ptr SSL_553649202; resp: ptr uint8;
+  proc SSL_set_tlsext_status_ocsp_resp*(ssl: ptr SSL_553649204; resp: ptr uint8;
                                         resp_len: csize_t): cint {.cdecl,
       importc: "SSL_set_tlsext_status_ocsp_resp".}
 else:
@@ -80860,7 +80885,7 @@ else:
     hint("Declaration of " & "SSL_set_tlsext_status_ocsp_resp" &
         " already exists, not redeclaring")
 when not declared(SSL_get_tlsext_status_ocsp_resp):
-  proc SSL_get_tlsext_status_ocsp_resp*(ssl: ptr SSL_553649202;
+  proc SSL_get_tlsext_status_ocsp_resp*(ssl: ptr SSL_553649204;
                                         out_arg: ptr ptr uint8): csize_t {.
       cdecl, importc: "SSL_get_tlsext_status_ocsp_resp".}
 else:
@@ -80868,22 +80893,22 @@ else:
     hint("Declaration of " & "SSL_get_tlsext_status_ocsp_resp" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tlsext_status_cb):
-  proc SSL_CTX_set_tlsext_status_cb*(ctx: ptr SSL_CTX_553649182; callback: proc (
-      a0: ptr SSL_553649202; a1: pointer): cint {.cdecl.}): cint {.cdecl,
+  proc SSL_CTX_set_tlsext_status_cb*(ctx: ptr SSL_CTX_553649184; callback: proc (
+      a0: ptr SSL_553649204; a1: pointer): cint {.cdecl.}): cint {.cdecl,
       importc: "SSL_CTX_set_tlsext_status_cb".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_tlsext_status_cb" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tlsext_status_arg):
-  proc SSL_CTX_set_tlsext_status_arg*(ctx: ptr SSL_CTX_553649182; arg: pointer): cint {.
+  proc SSL_CTX_set_tlsext_status_arg*(ctx: ptr SSL_CTX_553649184; arg: pointer): cint {.
       cdecl, importc: "SSL_CTX_set_tlsext_status_arg".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_tlsext_status_arg" &
         " already exists, not redeclaring")
 when not declared(SSL_get_curve_id):
-  proc SSL_get_curve_id*(ssl: ptr SSL_553649202): uint16 {.cdecl,
+  proc SSL_get_curve_id*(ssl: ptr SSL_553649204): uint16 {.cdecl,
       importc: "SSL_get_curve_id".}
 else:
   static :
@@ -80904,14 +80929,14 @@ else:
     hint("Declaration of " & "SSL_get_all_curve_names" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set1_curves_list):
-  proc SSL_CTX_set1_curves_list*(ctx: ptr SSL_CTX_553649182; curves: cstring): cint {.
+  proc SSL_CTX_set1_curves_list*(ctx: ptr SSL_CTX_553649184; curves: cstring): cint {.
       cdecl, importc: "SSL_CTX_set1_curves_list".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set1_curves_list" &
         " already exists, not redeclaring")
 when not declared(SSL_set1_curves_list):
-  proc SSL_set1_curves_list*(ssl: ptr SSL_553649202; curves: cstring): cint {.
+  proc SSL_set1_curves_list*(ssl: ptr SSL_553649204; curves: cstring): cint {.
       cdecl, importc: "SSL_set1_curves_list".}
 else:
   static :
@@ -80939,14 +80964,14 @@ else:
     hint("Declaration of " & "SSL_COMP_get_name" &
         " already exists, not redeclaring")
 when not declared(SSL_COMP_get0_name):
-  proc SSL_COMP_get0_name*(comp: ptr SSL_COMP_553649742): cstring {.cdecl,
+  proc SSL_COMP_get0_name*(comp: ptr SSL_COMP_553649744): cstring {.cdecl,
       importc: "SSL_COMP_get0_name".}
 else:
   static :
     hint("Declaration of " & "SSL_COMP_get0_name" &
         " already exists, not redeclaring")
 when not declared(SSL_COMP_get_id):
-  proc SSL_COMP_get_id*(comp: ptr SSL_COMP_553649742): cint {.cdecl,
+  proc SSL_COMP_get_id*(comp: ptr SSL_COMP_553649744): cint {.cdecl,
       importc: "SSL_COMP_get_id".}
 else:
   static :
@@ -80960,36 +80985,36 @@ else:
     hint("Declaration of " & "SSL_COMP_free_compression_methods" &
         " already exists, not redeclaring")
 when not declared(SSL_get_current_compression):
-  proc SSL_get_current_compression*(ssl: ptr SSL_553649202): pointer {.cdecl,
+  proc SSL_get_current_compression*(ssl: ptr SSL_553649204): pointer {.cdecl,
       importc: "SSL_get_current_compression".}
 else:
   static :
     hint("Declaration of " & "SSL_get_current_compression" &
         " already exists, not redeclaring")
 when not declared(SSL_get_current_expansion):
-  proc SSL_get_current_expansion*(ssl: ptr SSL_553649202): pointer {.cdecl,
+  proc SSL_get_current_expansion*(ssl: ptr SSL_553649204): pointer {.cdecl,
       importc: "SSL_get_current_expansion".}
 else:
   static :
     hint("Declaration of " & "SSL_get_current_expansion" &
         " already exists, not redeclaring")
 when not declared(SSL_verify_client_post_handshake):
-  proc SSL_verify_client_post_handshake*(ssl: ptr SSL_553649202): cint {.cdecl,
+  proc SSL_verify_client_post_handshake*(ssl: ptr SSL_553649204): cint {.cdecl,
       importc: "SSL_verify_client_post_handshake".}
 else:
   static :
     hint("Declaration of " & "SSL_verify_client_post_handshake" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tmp_dh_callback):
-  proc SSL_CTX_set_tmp_dh_callback*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_553649202; a1: cint; a2: cint): ptr DH_553649028 {.cdecl.}): void {.
+  proc SSL_CTX_set_tmp_dh_callback*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_553649204; a1: cint; a2: cint): ptr DH_553649028 {.cdecl.}): void {.
       cdecl, importc: "SSL_CTX_set_tmp_dh_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_tmp_dh_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_set_tmp_dh_callback):
-  proc SSL_set_tmp_dh_callback*(ssl: ptr SSL_553649202; cb: proc (a0: ptr SSL_553649202;
+  proc SSL_set_tmp_dh_callback*(ssl: ptr SSL_553649204; cb: proc (a0: ptr SSL_553649204;
       a1: cint; a2: cint): ptr DH_553649028 {.cdecl.}): void {.cdecl,
       importc: "SSL_set_tmp_dh_callback".}
 else:
@@ -80997,42 +81022,42 @@ else:
     hint("Declaration of " & "SSL_set_tmp_dh_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_dh_auto):
-  proc SSL_CTX_set_dh_auto*(ctx: ptr SSL_CTX_553649182; onoff: cint): clong {.
+  proc SSL_CTX_set_dh_auto*(ctx: ptr SSL_CTX_553649184; onoff: cint): clong {.
       cdecl, importc: "SSL_CTX_set_dh_auto".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_dh_auto" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_get_security_level):
-  proc SSL_CTX_get_security_level*(ctx: ptr SSL_CTX_553649182): cint {.cdecl,
+  proc SSL_CTX_get_security_level*(ctx: ptr SSL_CTX_553649184): cint {.cdecl,
       importc: "SSL_CTX_get_security_level".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_get_security_level" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_security_level):
-  proc SSL_CTX_set_security_level*(ctx: ptr SSL_CTX_553649182; level: cint): void {.
+  proc SSL_CTX_set_security_level*(ctx: ptr SSL_CTX_553649184; level: cint): void {.
       cdecl, importc: "SSL_CTX_set_security_level".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_security_level" &
         " already exists, not redeclaring")
 when not declared(SSL_set_state):
-  proc SSL_set_state*(ssl: ptr SSL_553649202; state: cint): void {.cdecl,
+  proc SSL_set_state*(ssl: ptr SSL_553649204; state: cint): void {.cdecl,
       importc: "SSL_set_state".}
 else:
   static :
     hint("Declaration of " & "SSL_set_state" &
         " already exists, not redeclaring")
 when not declared(SSL_get_shared_ciphers):
-  proc SSL_get_shared_ciphers*(ssl: ptr SSL_553649202; buf: cstring; len: cint): cstring {.
+  proc SSL_get_shared_ciphers*(ssl: ptr SSL_553649204; buf: cstring; len: cint): cstring {.
       cdecl, importc: "SSL_get_shared_ciphers".}
 else:
   static :
     hint("Declaration of " & "SSL_get_shared_ciphers" &
         " already exists, not redeclaring")
 when not declared(SSL_get_shared_sigalgs):
-  proc SSL_get_shared_sigalgs*(ssl: ptr SSL_553649202; idx: cint;
+  proc SSL_get_shared_sigalgs*(ssl: ptr SSL_553649204; idx: cint;
                                psign: ptr cint; phash: ptr cint;
                                psignandhash: ptr cint; rsig: ptr uint8;
                                rhash: ptr uint8): cint {.cdecl,
@@ -81055,16 +81080,16 @@ else:
     hint("Declaration of " & "SSL_load_error_strings" &
         " already exists, not redeclaring")
 when not declared(SSL_CTX_set_tmp_rsa_callback):
-  proc SSL_CTX_set_tmp_rsa_callback*(ctx: ptr SSL_CTX_553649182; cb: proc (
-      a0: ptr SSL_553649202; a1: cint; a2: cint): ptr RSA_553649160 {.cdecl.}): void {.
+  proc SSL_CTX_set_tmp_rsa_callback*(ctx: ptr SSL_CTX_553649184; cb: proc (
+      a0: ptr SSL_553649204; a1: cint; a2: cint): ptr RSA_553649162 {.cdecl.}): void {.
       cdecl, importc: "SSL_CTX_set_tmp_rsa_callback".}
 else:
   static :
     hint("Declaration of " & "SSL_CTX_set_tmp_rsa_callback" &
         " already exists, not redeclaring")
 when not declared(SSL_set_tmp_rsa_callback):
-  proc SSL_set_tmp_rsa_callback*(ssl: ptr SSL_553649202; cb: proc (a0: ptr SSL_553649202;
-      a1: cint; a2: cint): ptr RSA_553649160 {.cdecl.}): void {.cdecl,
+  proc SSL_set_tmp_rsa_callback*(ssl: ptr SSL_553649204; cb: proc (a0: ptr SSL_553649204;
+      a1: cint; a2: cint): ptr RSA_553649162 {.cdecl.}): void {.cdecl,
       importc: "SSL_set_tmp_rsa_callback".}
 else:
   static :
@@ -81072,7 +81097,7 @@ else:
         " already exists, not redeclaring")
 when not declared(ngtcp2_crypto_boringssl_from_ssl_encryption_level):
   proc ngtcp2_crypto_boringssl_from_ssl_encryption_level*(
-      ssl_level: enum_ssl_encryption_level_t_553649726): ngtcp2_encryption_level_553648752 {.
+      ssl_level: enum_ssl_encryption_level_t_553649728): ngtcp2_encryption_level_553648752 {.
       cdecl, importc: "ngtcp2_crypto_boringssl_from_ssl_encryption_level".}
 else:
   static :
@@ -81080,7 +81105,7 @@ else:
         " already exists, not redeclaring")
 when not declared(ngtcp2_crypto_boringssl_from_ngtcp2_encryption_level):
   proc ngtcp2_crypto_boringssl_from_ngtcp2_encryption_level*(
-      encryption_level: ngtcp2_encryption_level_553648752): enum_ssl_encryption_level_t_553649726 {.
+      encryption_level: ngtcp2_encryption_level_553648752): enum_ssl_encryption_level_t_553649728 {.
       cdecl, importc: "ngtcp2_crypto_boringssl_from_ngtcp2_encryption_level".}
 else:
   static :
@@ -81088,18 +81113,143 @@ else:
         "ngtcp2_crypto_boringssl_from_ngtcp2_encryption_level" &
         " already exists, not redeclaring")
 when not declared(ngtcp2_crypto_boringssl_configure_server_context):
-  proc ngtcp2_crypto_boringssl_configure_server_context*(ssl_ctx: ptr SSL_CTX_553649182): cint {.
+  proc ngtcp2_crypto_boringssl_configure_server_context*(ssl_ctx: ptr SSL_CTX_553649184): cint {.
       cdecl, importc: "ngtcp2_crypto_boringssl_configure_server_context".}
 else:
   static :
     hint("Declaration of " & "ngtcp2_crypto_boringssl_configure_server_context" &
         " already exists, not redeclaring")
 when not declared(ngtcp2_crypto_boringssl_configure_client_context):
-  proc ngtcp2_crypto_boringssl_configure_client_context*(ssl_ctx: ptr SSL_CTX_553649182): cint {.
+  proc ngtcp2_crypto_boringssl_configure_client_context*(ssl_ctx: ptr SSL_CTX_553649184): cint {.
       cdecl, importc: "ngtcp2_crypto_boringssl_configure_client_context".}
 else:
   static :
     hint("Declaration of " & "ngtcp2_crypto_boringssl_configure_client_context" &
+        " already exists, not redeclaring")
+when not declared(RAND_bytes):
+  proc RAND_bytes*(buf: ptr uint8; len: csize_t): cint {.cdecl,
+      importc: "RAND_bytes".}
+else:
+  static :
+    hint("Declaration of " & "RAND_bytes" & " already exists, not redeclaring")
+when not declared(RAND_priv_bytes):
+  proc RAND_priv_bytes*(buf: ptr uint8; len: csize_t): cint {.cdecl,
+      importc: "RAND_priv_bytes".}
+else:
+  static :
+    hint("Declaration of " & "RAND_priv_bytes" &
+        " already exists, not redeclaring")
+when not declared(RAND_bytes_with_user_prediction_resistance):
+  proc RAND_bytes_with_user_prediction_resistance*(out_arg: ptr uint8;
+      out_len: csize_t; user_pred_resistance: array[32'i64, uint8]): cint {.
+      cdecl, importc: "RAND_bytes_with_user_prediction_resistance".}
+else:
+  static :
+    hint("Declaration of " & "RAND_bytes_with_user_prediction_resistance" &
+        " already exists, not redeclaring")
+when not declared(RAND_get_system_entropy_for_custom_prng):
+  proc RAND_get_system_entropy_for_custom_prng*(buf: ptr uint8; len: csize_t): void {.
+      cdecl, importc: "RAND_get_system_entropy_for_custom_prng".}
+else:
+  static :
+    hint("Declaration of " & "RAND_get_system_entropy_for_custom_prng" &
+        " already exists, not redeclaring")
+when not declared(RAND_pseudo_bytes):
+  proc RAND_pseudo_bytes*(buf: ptr uint8; len: csize_t): cint {.cdecl,
+      importc: "RAND_pseudo_bytes".}
+else:
+  static :
+    hint("Declaration of " & "RAND_pseudo_bytes" &
+        " already exists, not redeclaring")
+when not declared(RAND_seed):
+  proc RAND_seed*(buf: pointer; num: cint): void {.cdecl, importc: "RAND_seed".}
+else:
+  static :
+    hint("Declaration of " & "RAND_seed" & " already exists, not redeclaring")
+when not declared(RAND_load_file):
+  proc RAND_load_file*(path: cstring; num: clong): cint {.cdecl,
+      importc: "RAND_load_file".}
+else:
+  static :
+    hint("Declaration of " & "RAND_load_file" &
+        " already exists, not redeclaring")
+when not declared(RAND_write_file):
+  proc RAND_write_file*(file: cstring): cint {.cdecl, importc: "RAND_write_file".}
+else:
+  static :
+    hint("Declaration of " & "RAND_write_file" &
+        " already exists, not redeclaring")
+when not declared(RAND_file_name):
+  proc RAND_file_name*(buf: cstring; num: csize_t): cstring {.cdecl,
+      importc: "RAND_file_name".}
+else:
+  static :
+    hint("Declaration of " & "RAND_file_name" &
+        " already exists, not redeclaring")
+when not declared(RAND_add):
+  proc RAND_add*(buf: pointer; num: cint; entropy: cdouble): void {.cdecl,
+      importc: "RAND_add".}
+else:
+  static :
+    hint("Declaration of " & "RAND_add" & " already exists, not redeclaring")
+when not declared(RAND_egd):
+  proc RAND_egd*(a0: cstring): cint {.cdecl, importc: "RAND_egd".}
+else:
+  static :
+    hint("Declaration of " & "RAND_egd" & " already exists, not redeclaring")
+when not declared(RAND_egd_bytes):
+  proc RAND_egd_bytes*(a0: cstring; bytes: cint): cint {.cdecl,
+      importc: "RAND_egd_bytes".}
+else:
+  static :
+    hint("Declaration of " & "RAND_egd_bytes" &
+        " already exists, not redeclaring")
+when not declared(RAND_poll):
+  proc RAND_poll*(): cint {.cdecl, importc: "RAND_poll".}
+else:
+  static :
+    hint("Declaration of " & "RAND_poll" & " already exists, not redeclaring")
+when not declared(RAND_status):
+  proc RAND_status*(): cint {.cdecl, importc: "RAND_status".}
+else:
+  static :
+    hint("Declaration of " & "RAND_status" & " already exists, not redeclaring")
+when not declared(RAND_cleanup):
+  proc RAND_cleanup*(): void {.cdecl, importc: "RAND_cleanup".}
+else:
+  static :
+    hint("Declaration of " & "RAND_cleanup" & " already exists, not redeclaring")
+when not declared(RAND_SSLeay):
+  proc RAND_SSLeay*(): ptr RAND_METHOD_553649148 {.cdecl, importc: "RAND_SSLeay".}
+else:
+  static :
+    hint("Declaration of " & "RAND_SSLeay" & " already exists, not redeclaring")
+when not declared(RAND_OpenSSL):
+  proc RAND_OpenSSL*(): ptr RAND_METHOD_553649148 {.cdecl,
+      importc: "RAND_OpenSSL".}
+else:
+  static :
+    hint("Declaration of " & "RAND_OpenSSL" & " already exists, not redeclaring")
+when not declared(RAND_get_rand_method):
+  proc RAND_get_rand_method*(): ptr RAND_METHOD_553649148 {.cdecl,
+      importc: "RAND_get_rand_method".}
+else:
+  static :
+    hint("Declaration of " & "RAND_get_rand_method" &
+        " already exists, not redeclaring")
+when not declared(RAND_set_rand_method):
+  proc RAND_set_rand_method*(a0: ptr RAND_METHOD_553649148): cint {.cdecl,
+      importc: "RAND_set_rand_method".}
+else:
+  static :
+    hint("Declaration of " & "RAND_set_rand_method" &
+        " already exists, not redeclaring")
+when not declared(RAND_keep_random_devices_open):
+  proc RAND_keep_random_devices_open*(a: cint): void {.cdecl,
+      importc: "RAND_keep_random_devices_open".}
+else:
+  static :
+    hint("Declaration of " & "RAND_keep_random_devices_open" &
         " already exists, not redeclaring")
 when not declared(PF_INET):
   when 2 is static:
