@@ -54,7 +54,7 @@ jobs:
       run:
         shell: ${{ matrix.shell }}
 
-    name: '${{ matrix.platform.os }}-${{ matrix.platform.cpu }} (Nim ${{ matrix.nim.ref }})'
+    name: "${{ matrix.platform.os }}-${{ matrix.platform.cpu }} (Nim ${{ matrix.nim.ref }})"
     runs-on: ${{ matrix.builder }}
     steps:
       - name: Checkout
@@ -85,7 +85,7 @@ jobs:
           nimble install
 
       - name: Use gcc 14
-        if : ${{ matrix.platform.os == 'linux-gcc-14'}}
+        if: ${{ matrix.platform.os == 'linux-gcc-14'}}
         run: |
           # Add GCC-14 to alternatives
           sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 14
@@ -94,7 +94,7 @@ jobs:
           sudo update-alternatives --set gcc /usr/bin/gcc-14
 
       - name: Install deps (windows)
-        if : ${{ matrix.platform.os == 'windows'}}
+        if: ${{ matrix.platform.os == 'windows'}}
         run: |
           pacman -S --noconfirm base-devel gcc
 

@@ -12,7 +12,7 @@ test "default settings":
   )
   check transport_params.active_connection_id_limit > 0
 
-test "AWS-LC bindings":
+test "BoringSSL bindings":
   let
     clientMethod = TLS_client_method()
     ssl_ctx = SSL_CTX_new(clientMethod)

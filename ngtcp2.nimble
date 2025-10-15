@@ -4,7 +4,7 @@ author = "Status Research & Development GmbH"
 description = "Nim wrapper around the ngtcp2 library"
 license = "MIT"
 installDirs = @["libs", "build"]
-installFiles = @["ngtcp2.nim", "awslc.nim", "jitterentropy.nim"]
+installFiles = @["ngtcp2.nim", "boringssl.nim"]
 
 requires "nim >= 2.0.0"
 

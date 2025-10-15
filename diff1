@@ -1,0 +1,67 @@
+diff --git a/crypto/x509/x509name.cc b/crypto/x509/x509name.cc
+index 72c88834b..97966b518 100644
+--- a/crypto/x509/x509name.cc
++++ b/crypto/x509/x509name.cc
+@@ -21,7 +21,7 @@
+ #include <openssl/obj.h>
+ #include <openssl/stack.h>
+ #include <openssl/x509.h>
+-
++#include <iostream>
+ #include "../internal.h"
+ #include "internal.h"
+ 
+@@ -182,12 +182,17 @@ int X509_NAME_add_entry_by_NID(X509_NAME *name, int nid, int type,
+ int X509_NAME_add_entry_by_txt(X509_NAME *name, const char *field, int type,
+                                const unsigned char *bytes, ossl_ssize_t len,
+                                int loc, int set) {
+-  X509_NAME_ENTRY *ne =
++    std::cout << "HERE" << std::endl;
++
++          X509_NAME_ENTRY *ne =
+       X509_NAME_ENTRY_create_by_txt(NULL, field, type, bytes, len);
+   if (!ne) {
++    std::cout << "FAIL1" << std::endl;
+     return 0;
+   }
+   int ret = X509_NAME_add_entry(name, ne, loc, set);
++  std::cout << "THE RET2: " << ret << std::endl;
++
+   X509_NAME_ENTRY_free(ne);
+   return ret;
+ }
+@@ -197,11 +202,13 @@ int X509_NAME_add_entry_by_txt(X509_NAME *name, const char *field, int type,
+ int X509_NAME_add_entry(X509_NAME *name, const X509_NAME_ENTRY *entry, int loc,
+                         int set) {
+   if (name == nullptr) {
++        std::cout << "FAIL3" << std::endl;
+     return 0;
+   }
+   if (name->entries == nullptr) {
+     name->entries = sk_X509_NAME_ENTRY_new_null();
+     if (name->entries == nullptr) {
++          std::cout << "FAIL4" << std::endl;
+       return 0;
+     }
+   }
+@@ -238,10 +245,12 @@ int X509_NAME_add_entry(X509_NAME *name, const X509_NAME_ENTRY *entry, int loc,
+ 
+   bssl::UniquePtr<X509_NAME_ENTRY> new_entry(X509_NAME_ENTRY_dup(entry));
+   if (new_entry == nullptr) {
++        std::cout << "FAIL5" << std::endl;
+     return 0;
+   }
+   new_entry->set = set;
+   if (!sk_X509_NAME_ENTRY_insert(sk, new_entry.get(), loc)) {
++        std::cout << "FAIL6" << std::endl;
+     return 0;
+   }
+   new_entry.release(); // |sk| took ownership.
+@@ -263,6 +272,7 @@ X509_NAME_ENTRY *X509_NAME_ENTRY_create_by_txt(X509_NAME_ENTRY **ne,
+ 
+   obj = OBJ_txt2obj(field, 0);
+   if (obj == NULL) {
++        std::cout << "FAIL2" << std::endl;
+     OPENSSL_PUT_ERROR(X509, X509_R_INVALID_FIELD_NAME);
+     ERR_add_error_data(2, "name=", field);
+     return NULL;

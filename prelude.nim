@@ -1,9 +1,11 @@
 import os
 import strformat, strutils
-import ./awslc
+import ./boringssl
 
 # Socket definitions
 import nativesockets
+
+type ptrdiff_t* {.importc: "ptrdiff_t", header: "<stddef.h>".} = int
 
 {.passc: "-DNGTCP2_STATICLIB".}
 
@@ -20,17 +22,14 @@ const ngtcp2Crypto = root / "libs/ngtcp2/crypto"
 const ngtcp2CryptoIncludes = root / "libs/ngtcp2/crypto/includes"
 const ngtcp2Lib = root / "libs/ngtcp2/lib"
 const ngtcp2LibIncludes = root / "libs/ngtcp2/lib/includes"
-const awsLcInclude = root / "libs/aws-lc/include"
-const jitterEntropy =
-  root / "libs/aws-lc/third_party/jitterentropy/jitterentropy-library"
+const boringsslInclude = root / "libs/boringssl/include"
 
 {.passc: fmt"-I{libIncludes}".}
 {.passc: fmt"-I{ngtcp2Crypto}".}
 {.passc: fmt"-I{ngtcp2CryptoIncludes}".}
 {.passc: fmt"-I{ngtcp2Lib}".}
 {.passc: fmt"-I{ngtcp2LibIncludes}".}
-{.passc: fmt"-I{awsLcInclude}".}
-{.passc: fmt"-I{jitterEntropy}".}
+{.passc: fmt"-I{boringsslInclude}".}
 
 when defined(ngtcp2_enable_quictls):
   # QuicTLS/OpenSSL crypto support
