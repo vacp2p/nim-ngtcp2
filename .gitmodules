@@ -4,3 +4,6 @@
 [submodule "libs/aws-lc"]
 	path = libs/aws-lc
 	url = https://github.com/aws/aws-lc
+[submodule "libs/boringssl"]
+	path = libs/boringssl
+	url = https://boringssl.googlesource.com/boringssl
