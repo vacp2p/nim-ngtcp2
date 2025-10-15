@@ -1,23 +1,24 @@
-# libcrypto + libssl sources without cmake, no-asm, no fips, no tests, tools, decrepit or jitterentropy
+# libcrypto + libssl sources without cmake, no-asm, no fips, no tests, tools
 # TODO: look into use assembly files for perf
 
+import ./jitterentropy
+
 # ----- toolchain + includes -----
-{.passc: "-O3 -DBORINGSSL_IMPLEMENTATION -DOPENSSL_NO_ASM -DS2N_BN_HIDE_SYMBOLS".}
-{.passc: "-ffunction-sections -fdata-sections".}
-{.
-  passc:
-    "-I./libs/aws-lc/include -I./libs/aws-lc -I./libs/aws-lc/third_party/jitterentropy/jitterentropy-library"
-.}
+{.passc: "-DBORINGSSL_IMPLEMENTATION -DOPENSSL_NO_ASM -DS2N_BN_HIDE_SYMBOLS".}
+{.localPassC: "-ffunction-sections -fdata-sections".}
+{.passc: "-I./libs/aws-lc/include -I./libs/aws-lc".}
+
+{.localPassC: "-O3".}
 
 when not defined(release):
-  {.passc: "-DNDEBUG".}
+  {.localPassC: "-DNDEBUG".}
 
 # link stdc++/pthread as needed
 when defined(macosx):
-  {.passl: "-lc++".}
+  {.localPassC: "-lc++".}
 elif defined(linux):
-  {.passc: "-D_XOPEN_SOURCE=700".}
-  {.passl: "-lstdc++ -pthread".}
+  {.localPassC: "-D_XOPEN_SOURCE=700".}
+  {.localPassC: "-lstdc++ -pthread".}
 
 # ----- generated sources -----
 {.compile: "./libs/aws-lc/generated-src/err_data.c".}
@@ -336,29 +337,6 @@ elif defined(linux):
 {.compile: "./libs/aws-lc/ssl/tls13_client.cc".}
 {.compile: "./libs/aws-lc/ssl/tls13_enc.cc".}
 {.compile: "./libs/aws-lc/ssl/tls13_server.cc".}
-
-{.
-  compile:
-    "./libs/aws-lc/third_party/jitterentropy/jitterentropy-library/src/jitterentropy-base.c"
-.}
-{.
-  compile:
-    "./libs/aws-lc/third_party/jitterentropy/jitterentropy-library/src/jitterentropy-sha3.c"
-.}
-{.
-  compile:
-    "./libs/aws-lc/third_party/jitterentropy/jitterentropy-library/src/jitterentropy-health.c"
-.}
-{.
-  compile:
-    "./libs/aws-lc/third_party/jitterentropy/jitterentropy-library/src/jitterentropy-noise.c"
-.}
-{.
-  compile:
-    "./libs/aws-lc/third_party/jitterentropy/jitterentropy-library/src/jitterentropy-gcd.c"
-.}
-
-{.passc: "-O0".}
 
 # decrepit (still referenced)
 {.compile: "./libs/aws-lc/crypto/decrepit/bio/base64_bio.c".}

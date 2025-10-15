@@ -12,3 +12,4 @@ importc:
   "ngtcp2/ngtcp2_crypto.h"
   "ngtcp2/ngtcp2_crypto_boringssl.h"
   "openssl/rand.h"
+  "openssl/asn1.h"
