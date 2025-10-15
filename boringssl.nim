@@ -306,3 +306,4 @@ elif defined(windows):
 {.compile: "./libs/boringssl/ssl/tls13_server.cc".}
 {.compile: "./libs/boringssl/ssl/tls_method.cc".}
 {.compile: "./libs/boringssl/ssl/tls_record.cc".}
+{.compile: "./libs/boringssl/decrepit/x509/x509_decrepit.cc".}
