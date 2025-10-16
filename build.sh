@@ -6,23 +6,16 @@ rm -f ngtcp2.nim
 
 # assemble list of C files to be compiled
 toCompile=(
-  "${sources}/picotls/picotlsvs/picotls/wintimeofday.c"
-  "${sources}/picotls/lib/pembase64.c"
-  "${sources}/picotls/lib/hpke.c"
-  "${sources}/picotls/lib/picotls.c"
-  "${sources}/picotls/lib/openssl.c"
+  # "${sources}/path/to/file.c"
 )
 
 for file in `ls "${sources}/ngtcp2/crypto"/*.c`; do
   toCompile+=("$file")
 done
-for file in `ls "${sources}/ngtcp2/crypto/picotls"/*.c`; do
+for file in `ls "${sources}/ngtcp2/crypto/boringssl"/*.c`; do
   toCompile+=("$file")
 done
 for file in `ls "${sources}/ngtcp2/lib"/*.c`; do
-  toCompile+=("$file")
-done
-for file in `ls "${root}/build/lib"/*.c`; do
   toCompile+=("$file")
 done
 
