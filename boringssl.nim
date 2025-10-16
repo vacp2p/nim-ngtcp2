@@ -3,7 +3,10 @@
 
 # ----- toolchain + includes -----
 {.passc: "-DBORINGSSL_IMPLEMENTATION -DOPENSSL_NO_ASM -DS2N_BN_HIDE_SYMBOLS".}
-{.localPassC: "-ffunction-sections -fdata-sections -fno-exceptions -fno-rtti".}
+{.
+  localPassC:
+    "-fno-common -fvisibility=hidden -fno-strict-aliasing -Werror -Wformat=2 -Wsign-compare -Wwrite-strings -Wvla -Wshadow -Wtype-limits -Wmissing-field-initializers -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti"
+.}
 {.passc: "-I./libs/boringssl/include".}
 
 when not defined(release):
@@ -20,6 +23,125 @@ elif defined(windows):
     localPassC:
       "-D_HAS_EXCEPTIONS=0 -DWIN32_LEAN_AND_MEAN -DNOMINMAX -D_CRT_SECURE_NO_WARNINGS"
   .}
+
+const BORINGSS_USE_ASM {.booldefine.}: bool = true
+
+when BORINGSS_USE_ASM:
+  when not defined(windows):
+    {.compile: "./libs/boringssl/crypto/curve25519/asm/x25519-asm-arm.S".}
+    {.compile: "./libs/boringssl/crypto/hrss/asm/poly_rq_mul.S".}
+    {.compile: "./libs/boringssl/crypto/poly1305/poly1305_arm_asm.S".}
+    {.compile: "./libs/boringssl/gen/crypto/aes128gcmsiv-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/crypto/aes128gcmsiv-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha-armv4-linux.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha-armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha-armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha-armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha-x86-apple.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha-x86-linux.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha20_poly1305_armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha20_poly1305_armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha20_poly1305_armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha20_poly1305_x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/crypto/chacha20_poly1305_x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/crypto/md5-586-apple.S".}
+    {.compile: "./libs/boringssl/gen/crypto/md5-586-linux.S".}
+    {.compile: "./libs/boringssl/gen/crypto/md5-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/crypto/md5-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aes-gcm-avx2-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aes-gcm-avx2-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aes-gcm-avx512-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aes-gcm-avx512-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesni-gcm-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesni-gcm-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesni-x86-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesni-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesni-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesv8-armv7-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesv8-armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesv8-armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesv8-armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesv8-gcm-armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesv8-gcm-armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/aesv8-gcm-armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/armv4-mont-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/armv8-mont-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/armv8-mont-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/armv8-mont-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/bn-586-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/bn-586-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/bn-armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/bn-armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/bn-armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/bsaes-armv7-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/co-586-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/co-586-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghash-armv4-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghash-neon-armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghash-neon-armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghash-neon-armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghash-ssse3-x86-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghash-ssse3-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghash-ssse3-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghash-x86-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghash-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghash-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghashv8-armv7-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghashv8-armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghashv8-armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/ghashv8-armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/p256-armv8-asm-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/p256-armv8-asm-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/p256-armv8-asm-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/p256-x86_64-asm-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/p256-x86_64-asm-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/p256_beeu-armv8-asm-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/p256_beeu-armv8-asm-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/p256_beeu-armv8-asm-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/p256_beeu-x86_64-asm-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/p256_beeu-x86_64-asm-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/rdrand-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/rdrand-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/rsaz-avx2-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/rsaz-avx2-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha1-586-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha1-586-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha1-armv4-large-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha1-armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha1-armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha1-armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha1-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha1-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha256-586-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha256-586-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha256-armv4-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha256-armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha256-armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha256-armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha256-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha256-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha512-586-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha512-586-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha512-armv4-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha512-armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha512-armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha512-armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha512-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/sha512-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/vpaes-armv7-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/vpaes-armv8-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/vpaes-armv8-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/vpaes-armv8-win.S".}
+    {.compile: "./libs/boringssl/gen/bcm/vpaes-x86-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/vpaes-x86_64-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/vpaes-x86_64-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/x86-mont-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/x86_64-mont-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/x86_64-mont-linux.S".}
+    {.compile: "./libs/boringssl/gen/bcm/x86_64-mont5-apple.S".}
+    {.compile: "./libs/boringssl/gen/bcm/x86_64-mont5-linux.S".}
 
 # ----- generated sources -----
 {.compile: "./libs/boringssl/crypto/fipsmodule/bcm.cc".}
